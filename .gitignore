@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+ckpts/
+outputs/
+*.mp4
+tests/assets/*.npy

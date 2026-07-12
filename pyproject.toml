@@ -1,0 +1,38 @@
+[project]
+name = "dark-scene-pipeline"
+version = "0.1.0"
+description = "Dark complex scene algorithm: low-light enhancement + super-resolution + action recognition, offline and streaming"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "torch==2.7.0",           # PyPI default wheel bundles cu126, cxx11abi=TRUE
+    "torchvision==0.22.0",
+    "transformers==4.57.3",   # Qwen2.5-VL (RealRestorer text encoder), sdpa
+    "timm==1.0.27",           # legacy import paths (timm.models.layers/registry) still shipped
+    "einops>=0.8",
+    "numpy>=2.0,<2.1",
+    "opencv-python>=4.10",
+    "safetensors>=0.4",
+    "pillow>=10",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "huggingface_hub>=0.30",
+    "mamba-ssm==2.2.6.post3",
+    "causal-conv1d==1.5.2",
+]
+
+[tool.uv.sources]
+# Prebuilt CUDA kernels matching torch 2.7 / cu12 / cxx11abiTRUE / cp310 — no local nvcc needed.
+# If these URLs are slow in your region, prefix them with https://ghfast.top/ (see README).
+mamba-ssm = { url = "https://github.com/state-spaces/mamba/releases/download/v2.2.6.post3/mamba_ssm-2.2.6.post3+cu12torch2.7cxx11abiTRUE-cp310-cp310-linux_x86_64.whl" }
+causal-conv1d = { url = "https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.5.2/causal_conv1d-1.5.2+cu12torch2.7cxx11abiTRUE-cp310-cp310-linux_x86_64.whl" }
+
+[project.scripts]
+darkpipe = "darkpipe.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["darkpipe"]
