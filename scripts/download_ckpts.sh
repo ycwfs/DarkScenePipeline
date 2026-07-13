@@ -13,12 +13,10 @@ GH=https://ghfast.top/https://github.com
 #    On this machine: cp /data1/data1/wfs/project/low-light/Retinexformer/pretrain_model/NTIRE.pth .
 [ -f NTIRE.pth ] || echo "!! NTIRE.pth missing: copy from a Retinexformer checkout (pretrain_model/NTIRE.pth)"
 
-# 3) Finetuned recognizers (trained in-house on ARID; not publicly downloadable).
-#    On this machine:
-#    cp .../ar_pipeline/reco_enh/best.pth        r2plus1d_arid.pth
-#    cp .../ar_pipeline/reco_vm_enh_32f/best.pth videomamba_t_arid_32f.pth
-[ -f r2plus1d_arid.pth ] || echo "!! r2plus1d_arid.pth missing (see README: in-house ARID finetune)"
-[ -f videomamba_t_arid_32f.pth ] || echo "!! videomamba_t_arid_32f.pth missing (see README)"
+# 3) Finetuned recognizers (in-house ARID finetunes, published on this repo's release)
+REL="$GH/ycwfs/DarkScenePipeline/releases/download/v1.0.0"
+[ -f r2plus1d_arid.pth ] || wget -O r2plus1d_arid.pth "$REL/r2plus1d_arid.pth"
+[ -f videomamba_t_arid_32f.pth ] || wget -O videomamba_t_arid_32f.pth "$REL/videomamba_t_arid_32f.pth"
 
 # 4) RealRestorer HF bundle (~39 GiB) — only needed for --enhance realrestorer.
 if [ ! -d realrestorer/transformer ]; then
