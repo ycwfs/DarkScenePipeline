@@ -52,7 +52,7 @@ bash scripts/download_ckpts.sh     # or stage manually per the table
 ```
 | file (in `ckpts/`) | size | function | provenance |
 |---|---|---|---|
-| `NTIRE.pth` | 6.2 MB | enhance: retinexformer | Retinexformer model zoo (NTIRE 2025 low-light weight) |
+| `NTIRE.pth` | 6.2 MB | enhance: retinexformer | Retinexformer model zoo (NTIRE 2025 low-light weight); mirrored on this repo's [v1.0.0 release](https://github.com/ycwfs/DarkScenePipeline/releases/tag/v1.0.0) |
 | `mambairv2_lightSR_x2.pth` | 3.9 MB | sr: lightsr_x2 | [MambaIR release v1.0](https://github.com/csguoh/MambaIR/releases/tag/v1.0) (use `https://ghfast.top/` prefix for speed) |
 | `r2plus1d_arid.pth` | 120 MB | recognize: r3d | in-house: torchvision R(2+1)D-18 finetuned on NTIRE-enhanced ARID v1.5 split_1 (top-1 0.656 TTA) |
 | `videomamba_t_arid_32f.pth` | 27 MB | recognize: videomamba | in-house: VideoMamba-Tiny 32-frame finetuned on enhanced ARID (top-1 0.688 TTA — best) |

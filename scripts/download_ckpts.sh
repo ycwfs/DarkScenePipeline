@@ -9,12 +9,12 @@ GH=https://ghfast.top/https://github.com
 [ -f mambairv2_lightSR_x2.pth ] || \
   wget -O mambairv2_lightSR_x2.pth "$GH/csguoh/MambaIR/releases/download/v1.0/mambairv2_lightSR_x2.pth"
 
-# 2) Retinexformer NTIRE weight — from the Retinexformer release/model zoo.
-#    On this machine: cp /data1/data1/wfs/project/low-light/Retinexformer/pretrain_model/NTIRE.pth .
-[ -f NTIRE.pth ] || echo "!! NTIRE.pth missing: copy from a Retinexformer checkout (pretrain_model/NTIRE.pth)"
+# 2) Retinexformer NTIRE weight (originally from the Retinexformer model zoo,
+#    mirrored on this repo's release for one-command setup)
+REL="$GH/ycwfs/DarkScenePipeline/releases/download/v1.0.0"
+[ -f NTIRE.pth ] || wget -O NTIRE.pth "$REL/NTIRE.pth"
 
 # 3) Finetuned recognizers (in-house ARID finetunes, published on this repo's release)
-REL="$GH/ycwfs/DarkScenePipeline/releases/download/v1.0.0"
 [ -f r2plus1d_arid.pth ] || wget -O r2plus1d_arid.pth "$REL/r2plus1d_arid.pth"
 [ -f videomamba_t_arid_32f.pth ] || wget -O videomamba_t_arid_32f.pth "$REL/videomamba_t_arid_32f.pth"
 
