@@ -96,6 +96,35 @@ firefox http://localhost:8000/stream   # or ffplay/VLC
 When the source is faster than the GPU, the newest frame wins (bounded latency; drops are
 counted in `/health`). RealRestorer is rejected in serve mode (offline-only by design).
 
+## Model specifications
+Measured on a single RTX 4090; enhancement/SR at 320×240 input, RealRestorer at size-level 512
+(28 steps). "-" = not measured. Recognizer accuracy = ARID v1.5 split_1, multi-clip TTA.
+
+| function | model | params | ms / frame | fps | accuracy |
+|---|---|---|---|---|---|
+| enhance | Retinexformer (NTIRE) | 1.61 M | ~6 ms | ~168 | – |
+| enhance | RealRestorer — official diffusers, `device_map` on 2×24 GB | ≈12.4 B DiT + 8.3 B Qwen2.5-VL + 84 M VAE | ~836,000 ms | 0.0012 | – |
+| enhance | RealRestorer — sequential offload, 1×24 GB, single frame | same | ~184,000 ms | 0.005 | – |
+| enhance | RealRestorer — sequential offload, 1×24 GB, batched (chunk 8) — *packaged* | same | ~45,000 ms | 0.022 | – |
+| SR | MambaIRv2 lightSR ×2 | 0.77 M | ~145 ms | ~6.9 | Urban100 33.26 dB / 0.9378 (paper) |
+| recognize | R(2+1)D-18 | 31.31 M | 29 ms / 16-frame clip | ~34 clips/s | top-1 0.656 / top-5 0.947 |
+| recognize | VideoMamba-T (32f) | 6.96 M | 63 ms / 32-frame clip | ~16 clips/s | top-1 0.688 / top-5 0.911 |
+
+## Visual samples (native pixel sizes — no display resizing)
+Stage progression on a dark ARID frame; panel sizes are the REAL output sizes, so the
+super-resolution step is physically 2× larger:
+
+![stage progression](assets/stage_progression.png)
+
+Super-resolution true-size comparison, with the same region cropped at native pixels
+(110×82 before vs 220×164 after ×2 SR):
+
+![sr true size](assets/sr_true_size.png)
+
+Final pipeline output frame (enhanced + ×2 SR + recognition text below the frame):
+
+![pipeline output](assets/pipeline_output.png)
+
 ## Model selection guide
 - **retinexformer** (default): 1.6 M params, ~6 ms/frame — the real-time enhancer.
 - **realrestorer**: 12.4 B-param diffusion restorer conditioned on Qwen2.5-VL. Far higher
