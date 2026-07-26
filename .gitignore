@@ -1,7 +1,12 @@
 __pycache__/
 *.pyc
 .venv/
-ckpts/
+# Checkpoints are release-hosted (scripts/download_ckpts.sh) EXCEPT the two the recommended
+# configuration needs — those are versioned so a fresh clone runs retinexformer +
+# bicubic_x2 + behavior with no download at all. bicubic_x2 has no weights.
+ckpts/*
+!ckpts/NTIRE.pth
+!ckpts/videomamba_t_behavior_32f.pth
 outputs/
 *.mp4
 tests/assets/*.npy
