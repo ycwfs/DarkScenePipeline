@@ -5,3 +5,5 @@ ckpts/
 outputs/
 *.mp4
 tests/assets/*.npy
+# ARID v1.5 staged from OpenDataLab (7.5 GB) — fetch it, don't version it
+assets/OpenDataLab___Action_Recognition_in_the_Dark/

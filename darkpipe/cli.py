@@ -14,21 +14,58 @@ def build_parser():
     p.add_argument("--input", required=True,
                    help="video file | rtsp:// | http(s):// | webcam index")
     p.add_argument("--output", default="", help="output video path (offline)")
-    p.add_argument("--enhance", choices=["off", "retinexformer", "realrestorer"],
+    p.add_argument("--enhance", choices=["off", "retinexformer", "cidnet", "realrestorer"],
                    default="retinexformer")
-    p.add_argument("--sr", choices=["off", "lightsr_x2"], default="lightsr_x2")
-    p.add_argument("--recognize", choices=["off", "r3d", "videomamba"], default="videomamba")
+    p.add_argument("--sr", choices=["off", "bicubic_x2", "lightsr_x2", "catanet_x2"],
+                   default="off",
+                   help="x2 super-resolution. bicubic_x2 is the only one that meets the "
+                        "performance spec (~1-5 ms/frame) and it also scores highest on "
+                        "in-domain PSNR/SSIM for 240p dark video — use it unless you "
+                        "specifically want learned texture. lightsr_x2 / catanet_x2 run "
+                        "~1.1-1.2 fps at 640x480 on an RTX 3090 and are offline quality "
+                        "options for short clips; of the two, catanet_x2 (CVPR2025) has the "
+                        "better quality and is the only neural one under 1 s serve latency, "
+                        "while lightsr_x2 needs 3.2 GiB instead of ~10. See README "
+                        "'Performance' and compare/results/SR_REPORT.md.")
+    p.add_argument("--recognize",
+                   choices=["off", "r3d", "videomamba", "behavior", "xclip"],
+                   default="videomamba",
+                   help="r3d/videomamba: ARID-11 actions. behavior: trained 9-behavior head. "
+                        "xclip: open-vocabulary, any --labels, no retraining")
     p.add_argument("--device", default="cuda:0")
+    p.add_argument("--gpus", default="",
+                   help="offline only: comma-separated GPU ids to split the video across, "
+                        "e.g. '0,1,2,3'. One segment per GPU, concatenated afterwards; the "
+                        "recognition window restarts at each cut, so short clips are left "
+                        "on a single GPU")
     p.add_argument("--ckpt-dir", default="./ckpts")
     t = p.add_argument_group("tuning")
     t.add_argument("--enhance-chunk", type=int, default=32)
-    t.add_argument("--sr-chunk", type=int, default=8)
+    t.add_argument("--sr-chunk", type=int, default=None,
+                   help="frames per SR batch (default: 4 for lightsr_x2, 1 for catanet_x2, "
+                        "which needs ~10 GiB per 640x480 frame); halves itself on OOM")
     t.add_argument("--sr-fp32", action="store_true")
     t.add_argument("--reco-stride", type=int, default=None,
                    help="frames between recognition updates (default: window/2)")
+    t.add_argument("--reco-span-sec", type=float, default=None,
+                   help="cap the recognition window to the last N seconds, resampling its T "
+                        "frames from them (default: off offline, 1.0 in serve mode)")
+    t.add_argument("--reco-ckpt", default="",
+                   help="weights for r3d/videomamba/behavior (default: <ckpt-dir>/ the file "
+                        "in CKPT_FILES) — e.g. a behavior head trained for another enhancer")
+    t.add_argument("--labels", default="",
+                   help="comma-separated open-vocabulary labels for --recognize xclip "
+                        "(default: the nine behaviors + other)")
+    t.add_argument("--xclip-model", default="",
+                   help="X-CLIP snapshot dir (default: <ckpt-dir>/xclip-base-patch16-zero-shot)")
+    t.add_argument("--xclip-reject-tau", type=float, default=None,
+                   help="report 'other' unless a named behavior reaches this probability "
+                        "(default 0.4, calibrated on validation; 0 disables)")
     t.add_argument("--no-label-bar", action="store_true")
     t.add_argument("--events-json", default="")
     t.add_argument("--max-frames", type=int, default=None)
+    t.add_argument("--start-frame", type=int, default=0,
+                   help="offline: begin at this frame (set per segment by --gpus)")
     s = p.add_argument_group("serve")
     s.add_argument("--host", default="0.0.0.0")
     s.add_argument("--port", type=int, default=8000)
@@ -52,8 +89,13 @@ def main(argv=None):
     print(f"[config] mode={cfg.mode} enhance={cfg.enhance} sr={cfg.sr} "
           f"recognize={cfg.recognize} device={cfg.device}")
     if cfg.mode == "offline":
-        from .pipeline import run_offline
-        run_offline(cfg)
+        gpus = [g.strip() for g in cfg.gpus.split(",") if g.strip()]
+        if len(gpus) > 1:
+            from .shard import run_offline_sharded
+            run_offline_sharded(cfg, gpus)
+        else:
+            from .pipeline import run_offline
+            run_offline(cfg)
     else:
         from .server import run_server
         run_server(cfg)

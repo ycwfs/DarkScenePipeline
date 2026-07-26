@@ -4,7 +4,7 @@ import os
 import torch
 
 from ..constants import CKPT_FILES
-from ..utils import bgr_batch_to_tensor, reflect_pad_to, tensor_to_bgr_list
+from ..utils import bgr_batch_to_tensor, chunked, reflect_pad_to, tensor_to_bgr_list
 from .base import FrameStage
 
 
@@ -26,14 +26,14 @@ class RetinexformerStage(FrameStage):
         self.net = net.to(device).eval().half()
 
     @torch.inference_mode()
+    def _batch(self, frames: list) -> list:
+        x = bgr_batch_to_tensor(frames, self.device, torch.float16)
+        x, (h, w) = reflect_pad_to(x, 4)
+        y = self.net(x)[:, :, :h, :w]
+        return tensor_to_bgr_list(y)
+
     def __call__(self, frames: list) -> list:
-        outs = []
-        for i in range(0, len(frames), self.chunk):
-            x = bgr_batch_to_tensor(frames[i:i + self.chunk], self.device, torch.float16)
-            x, (h, w) = reflect_pad_to(x, 4)
-            y = self.net(x)[:, :, :h, :w]
-            outs.extend(tensor_to_bgr_list(y))
-        return outs
+        return chunked(self, frames, self._batch)
 
     def close(self) -> None:
         self.net = None

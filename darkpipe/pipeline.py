@@ -3,13 +3,48 @@
 The recognizer consumes POST-enhance, PRE-SR frames: both recognizer checkpoints were
 trained on enhanced (not super-resolved) frames, recognition preprocessing downsamples
 anyway, and SR was measured recognition-neutral — so SR stays out of the decision path.
+
+Decode and encode run on their own threads. They are cv2/ffmpeg work that releases the GIL,
+and they are not small: at 640x480 the whole enhance+recognize path measured 40 ms/frame of
+which only ~6 ms was the enhancer, so a serial loop spent most of its time not using the GPU.
+The queues are bounded (backpressure, no unbounded RAM growth) and single-producer /
+single-consumer, so frame order is preserved without any sequence bookkeeping.
 """
 import json
+import queue
+import threading
 import time
 
 from .media import VideoReader, VideoWriter
 from .render import append_label_bar
 from .stages import build_stages
+
+_STOP = object()          # sentinel: end of stream
+
+
+def _decode_thread(reader, q, err):
+    try:
+        for chunk in reader.chunks():
+            q.put(chunk)
+    except BaseException as e:            # noqa: BLE001 - re-raised on the main thread
+        err.append(e)
+    finally:
+        q.put(_STOP)
+
+
+def _encode_thread(writer, q, err):
+    try:
+        while True:
+            item = q.get()
+            if item is _STOP:
+                return
+            for f in item:
+                writer.write(f)
+    except BaseException as e:            # noqa: BLE001
+        err.append(e)
+        # drain so a failed writer cannot deadlock the producer on a bounded queue
+        while q.get() is not _STOP:
+            pass
 
 
 def run_offline(cfg):
@@ -22,7 +57,8 @@ def run_offline(cfg):
               f"stride={recognizer.stride})")
         recognizer.load(cfg.device)
 
-    reader = VideoReader(cfg.input, chunk=cfg.enhance_chunk, max_frames=cfg.max_frames)
+    reader = VideoReader(cfg.input, chunk=cfg.enhance_chunk, max_frames=cfg.max_frames,
+                         start_frame=cfg.start_frame)
     writer = VideoWriter(cfg.output, fps=reader.fps)
     whole = [s for s in frame_stages if s.whole_video]
     streaming = [s for s in frame_stages if not s.whole_video]
@@ -32,12 +68,14 @@ def run_offline(cfg):
     n_in = 0
     frame_idx = 0
 
+    # enhance stages (streaming, non-whole-video) come before SR in build order;
+    # the recognizer taps right after the LAST enhance stage / before SR.
+    enh_stages = [s for s in streaming if s.name.startswith("enhance")]
+    sr_stages = [s for s in streaming if s.name.startswith("sr")]
+
     def process_chunk(chunk):
+        """GPU work for one chunk -> the frames to encode."""
         nonlocal current, frame_idx
-        # enhance stages (streaming, non-whole-video) come before SR in build order;
-        # the recognizer taps right after the LAST enhance stage / before SR.
-        enh_stages = [s for s in streaming if s.name.startswith("enhance")]
-        sr_stages = [s for s in streaming if s.name.startswith("sr")]
         for s in enh_stages:
             chunk = s(chunk)
         if recognizer:
@@ -51,21 +89,48 @@ def run_offline(cfg):
             frame_idx += len(chunk)
         for s in sr_stages:
             chunk = s(chunk)
-        for f in chunk:
-            writer.write(append_label_bar(f, current) if
-                         (recognizer and not cfg.no_label_bar) else f)
+        if recognizer and not cfg.no_label_bar:
+            # NOTE: the bar shows the newest event for the whole chunk, matching the previous
+            # serial behaviour (`current` was likewise only advanced between pushes).
+            return [append_label_bar(f, current) for f in chunk]
+        return chunk
 
-    if whole:  # RealRestorer: two-pass (restore entire video first)
+    if whole:  # RealRestorer: two-pass (restore entire video first), no overlap to be had
         frames = reader.read_all()
         n_in = len(frames)
         for s in whole:
             frames = s(frames)
         for i in range(0, len(frames), cfg.enhance_chunk):
-            process_chunk(frames[i:i + cfg.enhance_chunk])
+            for f in process_chunk(frames[i:i + cfg.enhance_chunk]):
+                writer.write(f)
     else:
-        for chunk in reader.chunks():
-            n_in += len(chunk)
-            process_chunk(chunk)
+        in_q, out_q, err = queue.Queue(maxsize=2), queue.Queue(maxsize=2), []
+        dec = threading.Thread(target=_decode_thread, args=(reader, in_q, err), daemon=True)
+        enc = threading.Thread(target=_encode_thread, args=(writer, out_q, err), daemon=True)
+        dec.start()
+        enc.start()
+        drained = False
+        try:
+            while True:
+                chunk = in_q.get()
+                if chunk is _STOP:
+                    drained = True
+                    break
+                n_in += len(chunk)
+                out_q.put(process_chunk(chunk))
+        finally:
+            out_q.put(_STOP)
+            enc.join()
+            # If the loop exited early -- process_chunk raised -- the decode thread is still
+            # blocked on `in_q.put()` against a bounded queue with no consumer left, so
+            # `dec.join()` would never return and a crashed run would present as a hung one.
+            # (Measured: a CUDA OOM at --sr-chunk 8 held the process for 17 minutes at 0% GPU
+            # before it was killed.) Drain until the decoder's own `finally` sentinel arrives.
+            while not drained:
+                drained = in_q.get() is _STOP
+            dec.join()
+        if err:
+            raise err[0]
 
     writer.close()
     for s in frame_stages:

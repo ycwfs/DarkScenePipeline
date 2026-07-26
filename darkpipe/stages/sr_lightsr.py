@@ -13,7 +13,8 @@ import os
 import torch
 
 from ..constants import CKPT_FILES
-from ..utils import bgr_batch_to_tensor, psnr_uint8, reflect_pad_to, tensor_to_bgr_list
+from ..utils import (bgr_batch_to_tensor, chunked, psnr_uint8, reflect_pad_to,
+                      tensor_to_bgr_list)
 from .base import FrameStage
 
 LIGHTSR_KWARGS = dict(upscale=2, in_chans=3, img_size=64, img_range=1.0, embed_dim=48,
@@ -49,16 +50,18 @@ class LightSRStage(FrameStage):
                 self.autocast = False
 
     @torch.inference_mode()
+    def _batch(self, frames, autocast):
+        x = bgr_batch_to_tensor(frames, self.device, torch.float32)
+        x, (h, w) = reflect_pad_to(x, 16)
+        torch.manual_seed(0)
+        with torch.autocast("cuda", dtype=torch.float16, enabled=autocast):
+            y = self.net(x)
+        return tensor_to_bgr_list(y.float()[:, :, : h * 2, : w * 2])
+
     def _forward(self, frames, autocast):
-        outs = []
-        for i in range(0, len(frames), self.chunk):
-            x = bgr_batch_to_tensor(frames[i:i + self.chunk], self.device, torch.float32)
-            x, (h, w) = reflect_pad_to(x, 16)
-            torch.manual_seed(0)
-            with torch.autocast("cuda", dtype=torch.float16, enabled=autocast):
-                y = self.net(x)
-            outs.extend(tensor_to_bgr_list(y.float()[:, :, : h * 2, : w * 2]))
-        return outs
+        # Shares the enhancers' OOM-halving loop: SR is the hungriest stage (chunk 8 asks for
+        # 9.4 GiB at 640x480 on a 24 GB card), so it is the one that most needs to back off.
+        return chunked(self, frames, lambda b: self._batch(b, autocast))
 
     def __call__(self, frames: list) -> list:
         return self._forward(frames, self.autocast)

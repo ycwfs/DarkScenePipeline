@@ -8,23 +8,47 @@ def build_stages(cfg):
     if cfg.enhance == "retinexformer":
         from .enhance_retinexformer import RetinexformerStage
         frame_stages.append(RetinexformerStage(cfg.ckpt_dir, chunk=cfg.enhance_chunk))
+    elif cfg.enhance == "cidnet":
+        from .enhance_cidnet import CIDNetStage
+        frame_stages.append(CIDNetStage(cfg.ckpt_dir, chunk=cfg.enhance_chunk))
     elif cfg.enhance == "realrestorer":
         from .enhance_realrestorer import RealRestorerStage
         frame_stages.append(RealRestorerStage(
             cfg.ckpt_dir, bundle=cfg.rr_bundle, steps=cfg.rr_steps,
             cfg_scale=cfg.rr_cfg_scale, chunk=cfg.rr_chunk, prompt=cfg.rr_prompt))
 
-    if cfg.sr == "lightsr_x2":
+    if cfg.sr == "bicubic_x2":
+        from .sr_bicubic import BicubicStage
+        frame_stages.append(BicubicStage())
+    elif cfg.sr == "lightsr_x2":
         from .sr_lightsr import LightSRStage
         frame_stages.append(LightSRStage(cfg.ckpt_dir, chunk=cfg.sr_chunk,
                                          force_fp32=cfg.sr_fp32))
+    elif cfg.sr == "catanet_x2":
+        from .sr_catanet import CATANetStage
+        # CATANet needs ~10 GiB for one 640x480 frame; the shared sr_chunk default of 4 would
+        # OOM immediately, so unless the user asked for a specific chunk it starts at 1.
+        frame_stages.append(CATANetStage(cfg.ckpt_dir, chunk=cfg.sr_chunk,
+                                         force_fp32=cfg.sr_fp32))
 
     recognizer = None
+    kw = dict(stride=cfg.reco_stride, span_sec=cfg.reco_span_sec)
     if cfg.recognize == "r3d":
         from .recognize import R3DRecognizer
-        recognizer = R3DRecognizer(cfg.ckpt_dir, stride=cfg.reco_stride)
+        recognizer = R3DRecognizer(cfg.ckpt_dir, **kw)
     elif cfg.recognize == "videomamba":
         from .recognize import VideoMambaRecognizer
-        recognizer = VideoMambaRecognizer(cfg.ckpt_dir, stride=cfg.reco_stride)
+        recognizer = VideoMambaRecognizer(cfg.ckpt_dir, **kw)
+    elif cfg.recognize == "behavior":
+        from .recognize import BehaviorRecognizer
+        recognizer = BehaviorRecognizer(cfg.ckpt_dir, **kw)
+    if recognizer is not None and cfg.reco_ckpt:
+        recognizer.ckpt = cfg.reco_ckpt        # user-supplied head (validated in config.py)
+    if cfg.recognize == "xclip":
+        from ..constants import XCLIP_REJECT_TAU
+        from .recognize_xclip import XCLIPRecognizer
+        tau = XCLIP_REJECT_TAU if cfg.xclip_reject_tau is None else cfg.xclip_reject_tau
+        recognizer = XCLIPRecognizer(cfg.ckpt_dir, labels=cfg.label_list(),
+                                     model_dir=cfg.xclip_model, reject_tau=tau, **kw)
 
     return frame_stages, recognizer

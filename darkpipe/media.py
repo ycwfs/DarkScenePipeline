@@ -15,13 +15,19 @@ def open_capture(src):
 
 
 class VideoReader:
-    def __init__(self, src, chunk=32, max_frames=None):
+    def __init__(self, src, chunk=32, max_frames=None, start_frame=0):
         self.src = src
         self.chunk = chunk
         self.max_frames = max_frames
         self.cap = open_capture(src)
         self.fps = self.cap.get(cv2.CAP_PROP_FPS) or 25.0
         self.n_frames = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))  # 0/neg for streams
+        # Decode-and-discard rather than CAP_PROP_POS_FRAMES: seeking lands on a keyframe and
+        # cv2 reports the requested index either way, so a shard would silently start a few
+        # frames off and duplicate or drop frames at the segment boundary.
+        for _ in range(max(0, start_frame)):
+            if not self.cap.read()[0]:
+                break
 
     def chunks(self):
         n = 0

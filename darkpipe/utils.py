@@ -27,6 +27,33 @@ def reflect_pad_to(x, multiple):
     return x, (h, w)
 
 
+def chunked(stage, frames, fn):
+    """Apply `fn` over `frames` in batches of `stage.chunk`, halving the chunk on OOM.
+
+    The safe batch size is a function of resolution, not just of the card, and the enhancer,
+    SR and recognizer share one GPU — so no fixed default is right everywhere. Measured on a
+    24 GB 3090: the shipped enhance chunk of 32 needs a 2.2 GiB allocation at 1280x720 and
+    dies, while the same chunk is comfortable at 640x480. Rather than make the caller pick a
+    number per resolution, each stage finds its own ceiling on the first failure and keeps the
+    reduced value for the session (falling back to 1 frame at a time in the worst case, which
+    is what serve mode already does successfully at 720p).
+    """
+    outs = []
+    i = 0
+    while i < len(frames):
+        try:
+            outs.extend(fn(frames[i:i + stage.chunk]))
+        except torch.cuda.OutOfMemoryError:
+            if stage.chunk == 1:
+                raise
+            stage.chunk = max(1, stage.chunk // 2)
+            torch.cuda.empty_cache()
+            print(f"[{stage.name}] OOM -> chunk {stage.chunk}", flush=True)
+            continue
+        i += stage.chunk
+    return outs
+
+
 def psnr_uint8(a, b):
     mse = np.mean((a.astype(np.float64) - b.astype(np.float64)) ** 2)
     return 99.0 if mse < 1e-9 else 10 * np.log10(255.0 ** 2 / mse)

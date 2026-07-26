@@ -11,16 +11,23 @@ class PipelineConfig:
     mode: str = "offline"
     input: str = ""
     output: str = ""
-    enhance: str = "retinexformer"   # off | retinexformer | realrestorer
-    sr: str = "lightsr_x2"           # off | lightsr_x2
-    recognize: str = "videomamba"    # off | r3d | videomamba
+    enhance: str = "retinexformer"   # off | retinexformer | cidnet | realrestorer
+    sr: str = "off"                  # off | bicubic_x2 | lightsr_x2 | catanet_x2 (see cli)
+    recognize: str = "videomamba"    # off | r3d | videomamba | behavior | xclip
     device: str = "cuda:0"
     ckpt_dir: str = "./ckpts"
     # tuning
     enhance_chunk: int = 32
-    sr_chunk: int = 8
+    sr_chunk: int | None = None      # None -> per-backend default (see validate); halves on OOM
+    gpus: str = ""                   # comma-separated ids: shard offline work across GPUs
+    start_frame: int = 0             # offline: skip this many frames (used by the sharder)
     sr_fp32: bool = False
     reco_stride: int | None = None
+    reco_span_sec: float | None = None
+    reco_ckpt: str = ""              # override the r3d/videomamba/behavior weights
+    labels: str = ""                 # comma-separated, xclip only (open vocabulary)
+    xclip_model: str = ""            # override the X-CLIP snapshot directory
+    xclip_reject_tau: float | None = None
     no_label_bar: bool = False
     events_json: str = ""
     max_frames: int | None = None
@@ -38,6 +45,11 @@ class PipelineConfig:
     rr_prompt: str = ""
     warnings: list = field(default_factory=list)
 
+    def label_list(self):
+        """Open-vocabulary labels for --recognize xclip; None -> the default BEHAVIORS."""
+        v = [s.strip() for s in self.labels.split(",") if s.strip()]
+        return v or None
+
 
 def _die(msg):
     sys.exit(f"error: {msg}")
@@ -52,38 +64,103 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
              "offline-only. Use --enhance retinexformer for serve mode.")
 
     if cfg.device.startswith("cpu"):
-        if cfg.sr != "off" or cfg.recognize == "videomamba" or cfg.enhance == "realrestorer":
-            _die("lightSR / VideoMamba / RealRestorer need CUDA (mamba-ssm kernels or "
-                 "diffusion offload). Only --enhance retinexformer --sr off --recognize "
-                 "{off,r3d} can run on CPU (slowly).")
+        if cfg.sr in ("lightsr_x2", "catanet_x2") \
+                or cfg.recognize in ("videomamba", "behavior", "xclip") \
+                or cfg.enhance == "realrestorer":
+            _die("lightSR / CATANet / VideoMamba / X-CLIP / RealRestorer need CUDA (mamba-ssm "
+                 "kernels, fp16 autocast or diffusion offload). Only --enhance "
+                 "{retinexformer,cidnet} --sr {off,bicubic_x2} --recognize {off,r3d} can run "
+                 "on CPU (slowly).")
+
+    if cfg.gpus:
+        ids = [g.strip() for g in cfg.gpus.split(",") if g.strip()]
+        if not all(g.isdigit() for g in ids):
+            _die(f"--gpus takes comma-separated device ids, e.g. '0,1,2,3' (got {cfg.gpus!r})")
+        if len(set(ids)) != len(ids):
+            _die(f"--gpus has repeated ids ({cfg.gpus!r}); each segment needs its own GPU")
+        if cfg.mode != "offline":
+            _die("--gpus splits a file by frame range and is offline-only; a live stream has "
+                 "no future frames to shard. Use --device to pick one GPU for serve mode.")
+        if cfg.enhance == "realrestorer":
+            _die("--gpus cannot shard RealRestorer: it restores the whole video in one pass "
+                 "(a whole_video stage), so there are no independent segments.")
 
     if cfg.enhance == "off" and cfg.sr == "off" and cfg.recognize == "off":
         cfg.warnings.append("all functions disabled -> passthrough copy")
+
+    # Per-backend chunk default. lightSR's sweet spot is 4 (11.9 GiB at 640x480); CATANet
+    # needs ~10.3 GiB for a SINGLE frame at the same size, so 4 would OOM before the
+    # halving loop could help. An explicit --sr-chunk always wins. (bicubic ignores it: it
+    # is a CPU cv2.resize with no batch dimension.)
+    if cfg.sr_chunk is None:
+        cfg.sr_chunk = 1 if cfg.sr == "catanet_x2" else 4
+    elif cfg.sr_chunk < 1:
+        _die(f"--sr-chunk must be >= 1 (got {cfg.sr_chunk})")
+
+    if cfg.sr in ("lightsr_x2", "catanet_x2"):
+        rate = {"lightsr_x2": "~1.2 fps at 640x480 on an RTX 3090 (738 ms/frame at chunk 4), "
+                              "with 1082-1123 ms serve latency — over the 1 s real-time "
+                              "budget, so prefer --sr catanet_x2 in serve mode",
+                "catanet_x2": "~1.1 fps at 640x480 on an RTX 3090 (828 ms/frame at chunk 1), "
+                              "with 825-903 ms serve latency — inside the 1 s budget"}[cfg.sr]
+        cfg.warnings.append(f"--sr {cfg.sr} measured {rate}. Offline that is below the 10 fps "
+                            "floor: SR is a quality option for short clips, and every other "
+                            "configuration meets the spec without it.")
 
     # per-stage checkpoint existence
     need = []
     if cfg.enhance == "retinexformer":
         need.append(CKPT_FILES["retinexformer"])
+    if cfg.enhance == "cidnet":
+        need.append(CKPT_FILES["cidnet"])
     if cfg.enhance == "realrestorer":
         bundle = cfg.rr_bundle or os.path.join(cfg.ckpt_dir, CKPT_FILES["realrestorer"])
         if not os.path.isdir(os.path.join(bundle, "transformer")):
             _die(f"RealRestorer bundle not found at {bundle} — see README 'Checkpoint "
                  f"preparation' or run scripts/download_ckpts.sh")
         cfg.rr_bundle = bundle
-    if cfg.sr == "lightsr_x2":
-        need.append(CKPT_FILES["lightsr_x2"])
-    if cfg.recognize in ("r3d", "videomamba"):
-        need.append(CKPT_FILES[cfg.recognize])
+    if cfg.sr in CKPT_FILES:          # bicubic_x2 has no weights
+        need.append(CKPT_FILES[cfg.sr])
+    if cfg.recognize in ("r3d", "videomamba", "behavior"):
+        if cfg.reco_ckpt:
+            if not os.path.exists(cfg.reco_ckpt):
+                _die(f"--reco-ckpt {cfg.reco_ckpt} not found")
+        else:
+            need.append(CKPT_FILES[cfg.recognize])
+    elif cfg.reco_ckpt:
+        cfg.warnings.append(f"--reco-ckpt ignored for recognize={cfg.recognize} "
+                            f"(use --xclip-model for X-CLIP snapshots)")
     for f in need:
         p = os.path.join(cfg.ckpt_dir, f)
         if not os.path.exists(p):
             _die(f"missing checkpoint {p} — see README 'Checkpoint preparation' or run "
                  f"scripts/download_ckpts.sh")
 
+    if cfg.recognize == "xclip":
+        snap = cfg.xclip_model or os.path.join(cfg.ckpt_dir, CKPT_FILES["xclip"])
+        if not any(os.path.exists(os.path.join(snap, w))
+                   for w in ("pytorch_model.bin", "model.safetensors")):
+            _die(f"X-CLIP weights not found in {snap} — see README 'Checkpoint preparation' "
+                 f"or run scripts/download_ckpts.sh")
+        cfg.xclip_model = snap
+
+    if cfg.labels and cfg.recognize != "xclip":
+        cfg.warnings.append(f"--labels ignored: only --recognize xclip is open-vocabulary "
+                            f"(recognize={cfg.recognize} has a fixed trained head)")
+
     if cfg.recognize != "off":
         window = RECO_CFG[cfg.recognize]["T"]
         if cfg.reco_stride is not None and cfg.reco_stride > window:
             _die(f"--reco-stride {cfg.reco_stride} > recognition window {window}")
+        if cfg.reco_span_sec is not None and cfg.reco_span_sec <= 0:
+            _die("--reco-span-sec must be > 0")
+        # Offline processes every frame, so the last T frames already span T/fps ~ 1 s of
+        # video. Serve mode drops frames to keep up, so without a span cap the window would
+        # describe the last T/pipeline_fps seconds (~4-5 s) — past the 1 s freshness budget.
+        if cfg.mode == "serve" and cfg.reco_span_sec is None:
+            cfg.reco_span_sec = 1.0
+            cfg.warnings.append("--reco-span-sec defaulted to 1.0 s in serve mode "
+                                "(recognition window resampled from the last 1 s of stream)")
 
     if cfg.mode == "offline":
         if not cfg.output:
@@ -91,8 +168,16 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
             cfg.output = f"{stem}_out.mp4"
         exp = EXPECTED_FPS.get((cfg.enhance, cfg.sr))
         if exp:
-            cfg.warnings.append(f"expected throughput ~{exp:.1f} fps on a single GPU "
-                                f"for enhance={cfg.enhance} sr={cfg.sr} (see README)")
+            # Resolution scaling differs by configuration: with a neural SR backend, cost
+            # tracks pixel count almost exactly (measured 1.1 -> 5.1 fps going 640x480 ->
+            # 320x240, a 4x pixel drop); otherwise fixed per-call overhead flattens it
+            # (one paired 150-frame run: 22.2 -> 47.0 at 320x240, 8.1 at 720p, and bicubic
+            # tracks it within 2% at every resolution).
+            lo, hi = (4.5, 0.3) if cfg.sr in ("lightsr_x2", "catanet_x2") else (2.1, 0.36)
+            cfg.warnings.append(f"expected throughput ~{exp:.1f} fps on a single RTX 3090 at "
+                                f"640x480 for enhance={cfg.enhance} sr={cfg.sr}; roughly "
+                                f"{exp * lo:.0f} fps at 320x240 and {exp * hi:.1f} fps at "
+                                f"1280x720 (see README)")
     else:
         if cfg.output:
             cfg.warnings.append("--output is ignored in serve mode (use --record)")

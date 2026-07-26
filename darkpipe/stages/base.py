@@ -36,16 +36,27 @@ class RecognitionEvent:
 
 class Recognizer:
     """Sliding-window action recognizer. push() every processed frame; returns an event
-    every `stride` frames once the window is full."""
+    every `stride` frames once the window is full.
+
+    `labels` is per-instance, not global: the ARID recognizers speak CLASSES while the
+    behavior recognizers speak BEHAVIORS (and the open-vocabulary one accepts any list)."""
     name: str = "recognizer"
     window: int = 16
     stride: int = 8
+    labels: list = []
 
     def load(self, device: str) -> None:
         raise NotImplementedError
 
     def push(self, frame_bgr, frame_index: int, timestamp: float):
         raise NotImplementedError
+
+    def reset(self) -> None:
+        """Forget the current stream (buffer + stride phase), keeping the loaded weights.
+
+        For processing several independent clips through one loaded recognizer: without it
+        the tail of clip N leaks into the first window of clip N+1."""
+        pass
 
     def close(self) -> None:
         pass
