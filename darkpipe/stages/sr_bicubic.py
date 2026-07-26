@@ -36,7 +36,10 @@ class BicubicStage(FrameStage):
     name = "sr:bicubic_x2"
 
     def __init__(self, scale: int = 2):
+        # The only scale-generic backend: cv2.resize takes any factor, so x3/x4 need no
+        # weights and no extra checkpoint — unlike the two neural stages.
         self.scale = scale
+        self.name = f"sr:bicubic_x{scale}"
 
     def load(self, device: str) -> None:
         pass

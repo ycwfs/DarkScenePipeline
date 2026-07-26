@@ -12,7 +12,7 @@ import os
 
 import torch
 
-from ..constants import CKPT_FILES
+from ..constants import sr_ckpt_file
 from ..utils import (bgr_batch_to_tensor, chunked, psnr_uint8, reflect_pad_to,
                       tensor_to_bgr_list)
 from .base import FrameStage
@@ -26,8 +26,13 @@ LIGHTSR_KWARGS = dict(upscale=2, in_chans=3, img_size=64, img_range=1.0, embed_d
 class LightSRStage(FrameStage):
     name = "sr:lightsr_x2"
 
-    def __init__(self, ckpt_dir: str, chunk: int = 8, force_fp32: bool = False):
-        self.ckpt = os.path.join(ckpt_dir, CKPT_FILES["lightsr_x2"])
+    def __init__(self, ckpt_dir: str, chunk: int = 8, force_fp32: bool = False,
+                 scale: int = 2):
+        # Only `upscale` and the checkpoint change with scale: pixelshuffledirect builds its
+        # own upsampler from it, and the x3/x4 weights come from the same MambaIR release.
+        self.scale = scale
+        self.name = f"sr:lightsr_x{scale}"
+        self.ckpt = os.path.join(ckpt_dir, sr_ckpt_file("lightsr", scale))
         self.chunk = chunk
         self.autocast = not force_fp32
         self.net = None
@@ -35,7 +40,7 @@ class LightSRStage(FrameStage):
 
     def load(self, device: str) -> None:
         from ..vendor.mambairv2light_arch import MambaIRv2Light
-        net = MambaIRv2Light(**LIGHTSR_KWARGS)
+        net = MambaIRv2Light(**{**LIGHTSR_KWARGS, "upscale": self.scale})
         sd = torch.load(self.ckpt, map_location="cpu", weights_only=True)
         net.load_state_dict(sd["params"], strict=True)
         self.device = device
@@ -56,7 +61,7 @@ class LightSRStage(FrameStage):
         torch.manual_seed(0)
         with torch.autocast("cuda", dtype=torch.float16, enabled=autocast):
             y = self.net(x)
-        return tensor_to_bgr_list(y.float()[:, :, : h * 2, : w * 2])
+        return tensor_to_bgr_list(y.float()[:, :, : h * self.scale, : w * self.scale])
 
     def _forward(self, frames, autocast):
         # Shares the enhancers' OOM-halving loop: SR is the hungriest stage (chunk 8 asks for

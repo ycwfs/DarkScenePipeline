@@ -103,6 +103,25 @@ BEHAVIOR_RECOGNIZERS = ("behavior", "xclip")
 REALRESTORER_PROMPT = ("Please restore this low-quality image, recovering its normal "
                        "brightness and clarity.")
 
+# Super-resolution factor. All three backends are scale-generic: bicubic takes any integer,
+# and both neural arches build their upsampler from `upscale` (pixelshuffle for lightSR,
+# conv+PixelShuffle / two-stage for CATANet at x4). What is NOT generic is the weights — a
+# checkpoint is trained for one factor — so x3/x4 need the matching file from the same
+# upstream release, named by SR_CKPT_FILES below. `bicubic` needs no weights at any scale.
+SR_SCALES = (2, 3, 4)
+SR_BACKENDS = ("bicubic", "lightsr", "catanet")
+# Legacy CLI values kept working: each pins its scale, so `--sr lightsr_x2 --sr-scale 3` is
+# rejected as self-contradictory rather than silently loading x3.
+SR_ALIASES = {"bicubic_x2": ("bicubic", 2), "lightsr_x2": ("lightsr", 2),
+              "catanet_x2": ("catanet", 2)}
+SR_CKPT_FILES = {"lightsr": "mambairv2_lightSR_x{s}.pth", "catanet": "catanet_x{s}.pth"}
+
+
+def sr_ckpt_file(backend: str, scale: int) -> str:
+    """Checkpoint filename for a (backend, scale) pair; "" for weightless backends."""
+    return SR_CKPT_FILES.get(backend, "").format(s=scale)
+
+
 CKPT_FILES = {
     "retinexformer": "NTIRE.pth",
     "cidnet": "CIDNet_generalization.pth",

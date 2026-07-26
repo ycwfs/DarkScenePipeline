@@ -22,7 +22,7 @@ import os
 
 import torch
 
-from ..constants import CKPT_FILES
+from ..constants import sr_ckpt_file
 from ..utils import bgr_batch_to_tensor, chunked, psnr_uint8, tensor_to_bgr_list
 from .base import FrameStage
 
@@ -30,8 +30,13 @@ from .base import FrameStage
 class CATANetStage(FrameStage):
     name = "sr:catanet_x2"
 
-    def __init__(self, ckpt_dir: str, chunk: int = 1, force_fp32: bool = False):
-        self.ckpt = os.path.join(ckpt_dir, CKPT_FILES["catanet_x2"])
+    def __init__(self, ckpt_dir: str, chunk: int = 1, force_fp32: bool = False,
+                 scale: int = 2):
+        # x4 takes a different upsampler path in the arch (two PixelShuffle stages instead
+        # of one); x2/x3 share theirs. Weights are per-scale, from the CATANet release.
+        self.scale = scale
+        self.name = f"sr:catanet_x{scale}"
+        self.ckpt = os.path.join(ckpt_dir, sr_ckpt_file("catanet", scale))
         self.chunk = chunk
         self.autocast = not force_fp32
         self.net = None
@@ -39,7 +44,7 @@ class CATANetStage(FrameStage):
 
     def load(self, device: str) -> None:
         from ..vendor.catanet_arch import CATANet
-        net = CATANet(upscale=2)
+        net = CATANet(upscale=self.scale)
         sd = torch.load(self.ckpt, map_location="cpu", weights_only=True)
         net.load_state_dict(sd["params"], strict=True)
         self.device = device

@@ -39,6 +39,18 @@ def test_bicubic_is_an_exact_2x_and_needs_nothing():
     assert all(o.dtype == np.uint8 for o in out)
 
 
+def test_bicubic_scales_3_and_4():
+    """The only scale-generic backend: no weights to match, so x3/x4 are pure geometry."""
+    import numpy as np
+    from darkpipe.stages.sr_bicubic import BicubicStage
+    for s in (3, 4):
+        st = BicubicStage(scale=s)
+        st.load("cpu")
+        assert st.name == f"sr:bicubic_x{s}"
+        out = st([np.random.randint(0, 255, (31, 37, 3), np.uint8)])
+        assert out[0].shape == (31 * s, 37 * s, 3)
+
+
 def test_catanet_builds():
     from darkpipe.vendor.catanet_arch import CATANet
     net = CATANet(upscale=2)
@@ -58,6 +70,35 @@ def test_catanet_handles_odd_sizes():
         with torch.no_grad():
             y = net(torch.rand(1, 3, h, w))
         assert y.shape[-2:] == (h * 2, w * 2), (h, w, y.shape)
+
+
+def test_neural_sr_archs_build_and_load_at_every_scale():
+    """--sr-scale reaches the arch AND matches the released weights (strict load, all keys).
+
+    x4 takes CATANet's two-stage PixelShuffle upsampler; x2/x3 share the single-stage one.
+    Skipped per scale when that checkpoint has not been downloaded (they are release-hosted).
+    """
+    import pytest
+    import torch
+    from darkpipe.constants import sr_ckpt_file
+    from darkpipe.stages.sr_lightsr import LIGHTSR_KWARGS
+    from darkpipe.vendor.catanet_arch import CATANet
+    from darkpipe.vendor.mambairv2light_arch import MambaIRv2Light
+
+    ckpts = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "ckpts")
+    seen = 0
+    for s in (2, 3, 4):
+        for backend, build in (("lightsr", lambda: MambaIRv2Light(**{**LIGHTSR_KWARGS,
+                                                                    "upscale": s})),
+                               ("catanet", lambda: CATANet(upscale=s))):
+            p = os.path.join(ckpts, sr_ckpt_file(backend, s))
+            if not os.path.exists(p):
+                continue
+            build().load_state_dict(torch.load(p, map_location="cpu",
+                                               weights_only=True)["params"], strict=True)
+            seen += 1
+    if not seen:
+        pytest.skip("no SR checkpoints downloaded (scripts/download_ckpts.sh)")
 
 
 def test_videomamba_builds():

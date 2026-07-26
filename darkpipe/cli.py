@@ -16,17 +16,25 @@ def build_parser():
     p.add_argument("--output", default="", help="output video path (offline)")
     p.add_argument("--enhance", choices=["off", "retinexformer", "cidnet", "realrestorer"],
                    default="retinexformer")
-    p.add_argument("--sr", choices=["off", "bicubic_x2", "lightsr_x2", "catanet_x2"],
+    p.add_argument("--sr", choices=["off", "bicubic", "lightsr", "catanet",
+                                    "bicubic_x2", "lightsr_x2", "catanet_x2"],
                    default="off",
-                   help="x2 super-resolution. bicubic_x2 is the only one that meets the "
+                   help="super-resolution backend; the factor is --sr-scale (default 2). "
+                        "The `_x2` spellings are the older names and pin x2. bicubic is the "
+                        "only one that meets the "
                         "performance spec (~1-5 ms/frame) and it also scores highest on "
                         "in-domain PSNR/SSIM for 240p dark video — use it unless you "
-                        "specifically want learned texture. lightsr_x2 / catanet_x2 run "
+                        "specifically want learned texture. lightsr / catanet run "
                         "~1.1-1.2 fps at 640x480 on an RTX 3090 and are offline quality "
-                        "options for short clips; of the two, catanet_x2 (CVPR2025) has the "
+                        "options for short clips; of the two, catanet (CVPR2025) has the "
                         "better quality and is the only neural one under 1 s serve latency, "
-                        "while lightsr_x2 needs 3.2 GiB instead of ~10. See README "
+                        "while lightsr needs 3.2 GiB instead of ~10. See README "
                         "'Performance' and compare/results/SR_REPORT.md.")
+    p.add_argument("--sr-scale", type=int, choices=[2, 3, 4], default=None,
+                   help="super-resolution factor (default 2). bicubic needs no weights at any "
+                        "scale; lightsr/catanet need the checkpoint trained for that factor "
+                        "(mambairv2_lightSR_x<N>.pth / catanet_x<N>.pth — "
+                        "scripts/download_ckpts.sh --sr-scale <N>)")
     p.add_argument("--recognize",
                    choices=["off", "r3d", "videomamba", "behavior", "xclip"],
                    default="videomamba",
@@ -86,7 +94,7 @@ def main(argv=None):
     cfg = validate(PipelineConfig(**vars(args)))
     for w in cfg.warnings:
         print(f"[warn] {w}")
-    print(f"[config] mode={cfg.mode} enhance={cfg.enhance} sr={cfg.sr} "
+    print(f"[config] mode={cfg.mode} enhance={cfg.enhance} sr={cfg.sr_name()} "
           f"recognize={cfg.recognize} device={cfg.device}")
     if cfg.mode == "offline":
         gpus = [g.strip() for g in cfg.gpus.split(",") if g.strip()]

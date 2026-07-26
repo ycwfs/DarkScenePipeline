@@ -91,7 +91,8 @@ def run_offline_sharded(cfg, gpus, min_seg_frames=120):
             "--input", cfg.input, "--enhance", cfg.enhance, "--sr", cfg.sr,
             "--recognize", cfg.recognize, "--ckpt-dir", cfg.ckpt_dir,
             "--enhance-chunk", str(cfg.enhance_chunk), "--sr-chunk", str(cfg.sr_chunk)]
-    for flag, val in (("--reco-stride", cfg.reco_stride), ("--reco-span-sec", cfg.reco_span_sec),
+    for flag, val in (("--sr-scale", cfg.sr_scale),
+                      ("--reco-stride", cfg.reco_stride), ("--reco-span-sec", cfg.reco_span_sec),
                       ("--reco-ckpt", cfg.reco_ckpt), ("--labels", cfg.labels),
                       ("--xclip-model", cfg.xclip_model),
                       ("--xclip-reject-tau", cfg.xclip_reject_tau)):

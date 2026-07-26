@@ -27,6 +27,45 @@ def test_bicubic_sr_runs_on_cpu_without_weights():
     assert not any("below the 10 fps floor" in w for w in cfg.warnings)
 
 
+def test_sr_scale_defaults_to_2_and_names_the_stage():
+    cfg = validate(PipelineConfig(input="x.mp4", device="cpu", enhance="off",
+                                  sr="bicubic", recognize="off", ckpt_dir="/nonexistent"))
+    assert (cfg.sr, cfg.sr_scale, cfg.sr_name()) == ("bicubic", 2, "bicubic_x2")
+
+
+def test_sr_scale_3_and_4_accepted():
+    for s in (3, 4):
+        cfg = validate(PipelineConfig(input="x.mp4", device="cpu", enhance="off", sr="bicubic",
+                                      sr_scale=s, recognize="off", ckpt_dir="/nonexistent"))
+        assert cfg.sr_name() == f"bicubic_x{s}"
+
+
+def test_sr_scale_out_of_range_rejected():
+    with pytest.raises(SystemExit, match="--sr-scale must be one of"):
+        validate(PipelineConfig(input="x.mp4", device="cpu", enhance="off", sr="bicubic",
+                                sr_scale=8, recognize="off", ckpt_dir="/nonexistent"))
+
+
+def test_legacy_x2_alias_conflicting_with_sr_scale_rejected():
+    """`--sr bicubic_x2 --sr-scale 4` is contradictory: the alias pins the factor."""
+    with pytest.raises(SystemExit, match="pins x2"):
+        validate(PipelineConfig(input="x.mp4", device="cpu", enhance="off", sr="bicubic_x2",
+                                sr_scale=4, recognize="off", ckpt_dir="/nonexistent"))
+
+
+def test_sr_scale_ignored_when_sr_off():
+    cfg = validate(PipelineConfig(input="x.mp4", enhance="off", sr="off", sr_scale=4,
+                                  recognize="off"))
+    assert cfg.sr_scale is None and any("ignored: --sr is off" in w for w in cfg.warnings)
+
+
+def test_neural_sr_wants_the_checkpoint_for_that_scale():
+    """Weights are per-factor: x3 must ask for mambairv2_lightSR_x3.pth, not the x2 file."""
+    with pytest.raises(SystemExit, match=r"mambairv2_lightSR_x3\.pth"):
+        validate(PipelineConfig(input="x.mp4", enhance="off", sr="lightsr", sr_scale=3,
+                                recognize="off", ckpt_dir="/nonexistent"))
+
+
 def test_missing_ckpt_rejected():
     with pytest.raises(SystemExit, match="missing checkpoint"):
         validate(PipelineConfig(input="x.mp4", ckpt_dir="/nonexistent"))

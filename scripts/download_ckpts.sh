@@ -1,16 +1,29 @@
 #!/usr/bin/env bash
 # Checkpoint preparation for DarkScenePipeline. Run from the project root.
+#   bash scripts/download_ckpts.sh                 # everything, x2 neural SR weights
+#   bash scripts/download_ckpts.sh --sr-scale 4    # ... and the x4 SR weights as well
 # GitHub downloads use the https://ghfast.top/ mirror prefix (faster in CN; remove if unwanted).
 set -e
+SR_SCALES=2
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --sr-scale) SR_SCALES="$SR_SCALES $2"; shift 2 ;;
+    *) echo "unknown option: $1" >&2; exit 2 ;;
+  esac
+done
 mkdir -p ckpts && cd ckpts
 GH=https://ghfast.top/https://github.com
 
-# 1) x2 super-resolution backends (--sr): MambaIRv2 lightSR and CATANet (CVPR2025).
-#    Both are optional — --sr defaults to off (see README 'Performance').
-[ -f mambairv2_lightSR_x2.pth ] || \
-  wget -O mambairv2_lightSR_x2.pth "$GH/csguoh/MambaIR/releases/download/v1.0/mambairv2_lightSR_x2.pth"
-[ -f catanet_x2.pth ] || \
-  wget -O catanet_x2.pth "$GH/EquationWalker/CATANet/releases/download/v0.0/x2.pth"
+# 1) Super-resolution backends (--sr): MambaIRv2 lightSR and CATANet (CVPR2025). Both are
+#    optional — --sr defaults to off (see README 'Performance') — and per-scale: a checkpoint
+#    is trained for one factor, so --sr-scale 3/4 needs its own file from the same release.
+#    (--sr bicubic has no weights at any scale.)
+for S in $(echo "$SR_SCALES" | tr ' ' '\n' | sort -u); do
+  [ -f "mambairv2_lightSR_x$S.pth" ] || \
+    wget -O "mambairv2_lightSR_x$S.pth" "$GH/csguoh/MambaIR/releases/download/v1.0/mambairv2_lightSR_x$S.pth"
+  [ -f "catanet_x$S.pth" ] || \
+    wget -O "catanet_x$S.pth" "$GH/EquationWalker/CATANet/releases/download/v0.0/x$S.pth"
+done
 
 # 2) Retinexformer NTIRE weight (originally from the Retinexformer model zoo,
 #    mirrored on this repo's release for one-command setup)

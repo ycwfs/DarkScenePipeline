@@ -3,7 +3,8 @@ import os
 import sys
 from dataclasses import dataclass, field
 
-from .constants import CKPT_FILES, EXPECTED_FPS, RECO_CFG
+from .constants import (CKPT_FILES, EXPECTED_FPS, RECO_CFG, SR_ALIASES, SR_SCALES,
+                        sr_ckpt_file)
 
 
 @dataclass
@@ -12,7 +13,8 @@ class PipelineConfig:
     input: str = ""
     output: str = ""
     enhance: str = "retinexformer"   # off | retinexformer | cidnet | realrestorer
-    sr: str = "off"                  # off | bicubic_x2 | lightsr_x2 | catanet_x2 (see cli)
+    sr: str = "off"                  # off | bicubic | lightsr | catanet (+ legacy _x2 names)
+    sr_scale: int | None = None      # 2 | 3 | 4; None -> 2 (pinned to 2 by an _x2 alias)
     recognize: str = "videomamba"    # off | r3d | videomamba | behavior | xclip
     device: str = "cuda:0"
     ckpt_dir: str = "./ckpts"
@@ -50,6 +52,10 @@ class PipelineConfig:
         v = [s.strip() for s in self.labels.split(",") if s.strip()]
         return v or None
 
+    def sr_name(self):
+        """Display/lookup key: "off" or "<backend>_x<scale>" — the old CLI spelling."""
+        return "off" if self.sr == "off" else f"{self.sr}_x{self.sr_scale}"
+
 
 def _die(msg):
     sys.exit(f"error: {msg}")
@@ -59,17 +65,34 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
     if not cfg.input:
         _die("--input is required")
 
+    # --sr normalization first: everything below reasons about (backend, scale), not the
+    # legacy `<backend>_x2` spellings.
+    if cfg.sr in SR_ALIASES:
+        backend, pinned = SR_ALIASES[cfg.sr]
+        if cfg.sr_scale not in (None, pinned):
+            _die(f"--sr {cfg.sr} pins x{pinned}; for another factor use "
+                 f"--sr {backend} --sr-scale {cfg.sr_scale}")
+        cfg.sr, cfg.sr_scale = backend, pinned
+    elif cfg.sr == "off":
+        if cfg.sr_scale is not None:
+            cfg.warnings.append(f"--sr-scale {cfg.sr_scale} ignored: --sr is off")
+        cfg.sr_scale = None
+    else:
+        cfg.sr_scale = 2 if cfg.sr_scale is None else cfg.sr_scale
+        if cfg.sr_scale not in SR_SCALES:
+            _die(f"--sr-scale must be one of {SR_SCALES} (got {cfg.sr_scale})")
+
     if cfg.enhance == "realrestorer" and cfg.mode == "serve":
         _die("RealRestorer runs at ~45 s/frame (batched diffusion, sequential offload) and is "
              "offline-only. Use --enhance retinexformer for serve mode.")
 
     if cfg.device.startswith("cpu"):
-        if cfg.sr in ("lightsr_x2", "catanet_x2") \
+        if cfg.sr in ("lightsr", "catanet") \
                 or cfg.recognize in ("videomamba", "behavior", "xclip") \
                 or cfg.enhance == "realrestorer":
             _die("lightSR / CATANet / VideoMamba / X-CLIP / RealRestorer need CUDA (mamba-ssm "
                  "kernels, fp16 autocast or diffusion offload). Only --enhance "
-                 "{retinexformer,cidnet} --sr {off,bicubic_x2} --recognize {off,r3d} can run "
+                 "{retinexformer,cidnet} --sr {off,bicubic} --recognize {off,r3d} can run "
                  "on CPU (slowly).")
 
     if cfg.gpus:
@@ -93,19 +116,22 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
     # halving loop could help. An explicit --sr-chunk always wins. (bicubic ignores it: it
     # is a CPU cv2.resize with no batch dimension.)
     if cfg.sr_chunk is None:
-        cfg.sr_chunk = 1 if cfg.sr == "catanet_x2" else 4
+        cfg.sr_chunk = 1 if cfg.sr == "catanet" else 4
     elif cfg.sr_chunk < 1:
         _die(f"--sr-chunk must be >= 1 (got {cfg.sr_chunk})")
 
-    if cfg.sr in ("lightsr_x2", "catanet_x2"):
-        rate = {"lightsr_x2": "~1.2 fps at 640x480 on an RTX 3090 (738 ms/frame at chunk 4), "
-                              "with 1082-1123 ms serve latency — over the 1 s real-time "
-                              "budget, so prefer --sr catanet_x2 in serve mode",
-                "catanet_x2": "~1.1 fps at 640x480 on an RTX 3090 (828 ms/frame at chunk 1), "
-                              "with 825-903 ms serve latency — inside the 1 s budget"}[cfg.sr]
+    if cfg.sr in ("lightsr", "catanet"):
+        rate = {"lightsr": "~1.2 fps at 640x480 on an RTX 3090 (738 ms/frame at chunk 4), "
+                           "with 1082-1123 ms serve latency — over the 1 s real-time "
+                           "budget, so prefer --sr catanet in serve mode",
+                "catanet": "~1.1 fps at 640x480 on an RTX 3090 (828 ms/frame at chunk 1), "
+                           "with 825-903 ms serve latency — inside the 1 s budget"}[cfg.sr]
+        scale_note = "" if cfg.sr_scale == 2 else (
+            f" Those are the x2 numbers; x{cfg.sr_scale} was not benchmarked and produces "
+            f"{cfg.sr_scale ** 2 / 4:.2f}x the output pixels, so expect it to be slower.")
         cfg.warnings.append(f"--sr {cfg.sr} measured {rate}. Offline that is below the 10 fps "
                             "floor: SR is a quality option for short clips, and every other "
-                            "configuration meets the spec without it.")
+                            f"configuration meets the spec without it.{scale_note}")
 
     # per-stage checkpoint existence
     need = []
@@ -119,8 +145,8 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
             _die(f"RealRestorer bundle not found at {bundle} — see README 'Checkpoint "
                  f"preparation' or run scripts/download_ckpts.sh")
         cfg.rr_bundle = bundle
-    if cfg.sr in CKPT_FILES:          # bicubic_x2 has no weights
-        need.append(CKPT_FILES[cfg.sr])
+    if cfg.sr in ("lightsr", "catanet"):     # bicubic has no weights, at any scale
+        need.append(sr_ckpt_file(cfg.sr, cfg.sr_scale))
     if cfg.recognize in ("r3d", "videomamba", "behavior"):
         if cfg.reco_ckpt:
             if not os.path.exists(cfg.reco_ckpt):
@@ -166,16 +192,18 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
         if not cfg.output:
             stem, _ = os.path.splitext(os.path.basename(str(cfg.input)))
             cfg.output = f"{stem}_out.mp4"
-        exp = EXPECTED_FPS.get((cfg.enhance, cfg.sr))
+        # Keyed by the x2 spellings: those are the configurations that were benchmarked, so
+        # x3/x4 simply gets no prediction rather than a wrong one.
+        exp = EXPECTED_FPS.get((cfg.enhance, cfg.sr_name()))
         if exp:
             # Resolution scaling differs by configuration: with a neural SR backend, cost
             # tracks pixel count almost exactly (measured 1.1 -> 5.1 fps going 640x480 ->
             # 320x240, a 4x pixel drop); otherwise fixed per-call overhead flattens it
             # (one paired 150-frame run: 22.2 -> 47.0 at 320x240, 8.1 at 720p, and bicubic
             # tracks it within 2% at every resolution).
-            lo, hi = (4.5, 0.3) if cfg.sr in ("lightsr_x2", "catanet_x2") else (2.1, 0.36)
+            lo, hi = (4.5, 0.3) if cfg.sr in ("lightsr", "catanet") else (2.1, 0.36)
             cfg.warnings.append(f"expected throughput ~{exp:.1f} fps on a single RTX 3090 at "
-                                f"640x480 for enhance={cfg.enhance} sr={cfg.sr}; roughly "
+                                f"640x480 for enhance={cfg.enhance} sr={cfg.sr_name()}; roughly "
                                 f"{exp * lo:.0f} fps at 320x240 and {exp * hi:.1f} fps at "
                                 f"1280x720 (see README)")
     else:

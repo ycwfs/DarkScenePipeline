@@ -9,7 +9,8 @@ streaming-inference server.
                      ┌───────────────────────────┐
  dark video ──────►  │ 1. low-light enhancement  │   off | retinexformer (NTIRE) | cidnet (HVI-CIDNet) | realrestorer
  (file/RTSP/webcam)  ├───────────────────────────┤
-                     │ 2. super-resolution       │   off | bicubic_x2 (real-time) | lightsr_x2 (MambaIRv2) | catanet_x2 (CVPR2025)
+                     │ 2. super-resolution       │   off | bicubic (real-time) | lightsr (MambaIRv2) | catanet (CVPR2025)
+                     │    --sr-scale 2 | 3 | 4   │   any input resolution; output is exactly scale x it
                      ├───────────────────────────┤
                      │ 3. action recognition     │   off | r3d | videomamba (ARID-11)
                      │                           │   behavior (9 behaviors + other) | xclip (open vocabulary)
@@ -49,14 +50,15 @@ Notes:
 
 ## Checkpoint preparation
 ```bash
-bash scripts/download_ckpts.sh     # or stage manually per the table
+bash scripts/download_ckpts.sh                  # everything; neural SR weights for x2
+bash scripts/download_ckpts.sh --sr-scale 3 --sr-scale 4   # ... plus the x3/x4 SR weights
 ```
 | file (in `ckpts/`) | size | function | provenance |
 |---|---|---|---|
 | `NTIRE.pth` | 6.2 MB | enhance: retinexformer | Retinexformer model zoo (NTIRE 2025 low-light weight); mirrored on this repo's [v1.0.0 release](https://github.com/ycwfs/DarkScenePipeline/releases/tag/v1.0.0) |
 | `CIDNet_generalization.pth` | 7.6 MB | enhance: cidnet | HVI-CIDNet (CVPR2025) LOLv2-syn *generalization* weight ([Fediory/HVI-CIDNet](https://github.com/Fediory/HVI-CIDNet)); stage from a local HVI-CIDNet checkout |
-| `mambairv2_lightSR_x2.pth` | 3.9 MB | sr: lightsr_x2 | [MambaIR release v1.0](https://github.com/csguoh/MambaIR/releases/tag/v1.0) (use `https://ghfast.top/` prefix for speed) |
-| `catanet_x2.pth` | 2.1 MB | sr: catanet_x2 | [CATANet release v0.0](https://github.com/EquationWalker/CATANet/releases/tag/v0.0) `x2.pth` (CVPR2025 official weight, unmodified) |
+| `mambairv2_lightSR_x{2,3,4}.pth` | 3.9–4.1 MB | sr: lightsr, one per `--sr-scale` | [MambaIR release v1.0](https://github.com/csguoh/MambaIR/releases/tag/v1.0) (use `https://ghfast.top/` prefix for speed) |
+| `catanet_x{2,3,4}.pth` | 2.1–2.3 MB | sr: catanet, one per `--sr-scale` | [CATANet release v0.0](https://github.com/EquationWalker/CATANet/releases/tag/v0.0) `x{2,3,4}.pth` (CVPR2025 official weights, unmodified) |
 | `r2plus1d_arid.pth` | 120 MB | recognize: r3d | in-house: torchvision R(2+1)D-18 finetuned on NTIRE-enhanced ARID v1.5 split_1 (top-1 0.656 TTA) |
 | `videomamba_t_arid_32f.pth` | 27 MB | recognize: videomamba | in-house: VideoMamba-Tiny 32-frame finetuned on enhanced ARID (top-1 0.688 TTA — best) |
 | `videomamba_t_behavior_32f.pth` | 27 MB | recognize: behavior | in-house: VideoMamba-Tiny 32-frame trained on the 10-class behavior set (darkened + Retinexformer-enhanced HMDB51 + real-dark ARID; macro-F1 0.569) |
@@ -169,7 +171,7 @@ at 720p is fine on one GPU (serve processes one frame at a time).
 
 **6. Verify the install**
 ```bash
-.venv/bin/python -m pytest tests/ -q            # 39 passed
+.venv/bin/python -m pytest tests/ -q            # 66 passed
 .venv/bin/python scripts/check_parity.py        # numerical parity gates (needs ckpts + refs)
 ```
 The behavior recognizer emits: `Waving, Throwing object, Chasing, Falling, Fighting, Talking,
@@ -196,12 +198,14 @@ and how well it does per class: [Model specifications](#model-specifications) an
 # enhancement only
 .venv/bin/darkpipe --input dark.mp4 --recognize off
 
-# x2 super-resolution, real-time (costs 2-6% throughput; highest PSNR/SSIM on 240p dark video)
+# super-resolution, real-time (costs 2-6% throughput; highest PSNR/SSIM on 240p dark video)
 .venv/bin/darkpipe --input dark.mp4 --sr bicubic_x2 --recognize behavior
+.venv/bin/darkpipe --input dark.mp4 --sr bicubic --sr-scale 4 --recognize behavior   # x3/x4
 
-# x2 super-resolution, learned texture (quality option: ~1.2 fps, short clips only)
+# super-resolution, learned texture (quality option: ~1.2 fps, short clips only)
 .venv/bin/darkpipe --input dark.mp4 --sr catanet_x2      # better quality, faster per frame
 .venv/bin/darkpipe --input dark.mp4 --sr lightsr_x2      # 3.2 GiB instead of ~10, faster batched
+.venv/bin/darkpipe --input dark.mp4 --sr catanet --sr-scale 3   # needs ckpts/catanet_x3.pth
 
 # best-quality offline restoration (diffusion; ~45 s/frame, short clips only)
 .venv/bin/darkpipe --input dark.mp4 --enhance realrestorer --sr off --recognize off --max-frames 16
@@ -232,6 +236,41 @@ firefox http://localhost:8000/stream   # or ffplay/VLC
 ```
 When the source is faster than the GPU, the newest frame wins (bounded latency; drops are
 counted in `/health`). RealRestorer is rejected in serve mode (offline-only by design).
+
+## Super-resolution factor and input resolution
+**`--sr-scale {2,3,4}` works in both modes** — offline (single-GPU and `--gpus`) and serve:
+```bash
+.venv/bin/darkpipe --input dark.mp4 --sr bicubic --sr-scale 3 --recognize behavior
+.venv/bin/darkpipe --input dark.mp4 --sr bicubic --sr-scale 4 --gpus 0,1,2,3
+.venv/bin/darkpipe --mode serve --input rtsp://cam --sr bicubic --sr-scale 3 --port 8000
+```
+`--sr` takes the backend name (`bicubic`/`lightsr`/`catanet`) and `--sr-scale` the factor,
+defaulting to 2. The old `--sr bicubic_x2 | lightsr_x2 | catanet_x2` spellings still work and
+pin the factor to 2 (combining one with a conflicting `--sr-scale` is an error, not a silent
+override). `bicubic` needs no weights at any factor; the two neural backends need the
+checkpoint **trained for that factor** — `mambairv2_lightSR_x3.pth`, `catanet_x4.pth`, … —
+which `scripts/download_ckpts.sh --sr-scale 3` fetches. Measured, 1042 frames, one RTX 3090:
+
+| input | `--sr-scale` | output | offline fps | serve latency |
+|---|---|---|---|---|
+| 640×480 | 2 | 1280×960 | **24.9** | 41–69 ms |
+| 640×480 | 3 | 1920×1440 | **23.7** | 57–71 ms |
+| 640×480 | 4 | 2560×1920 | **19.6** | – |
+
+All three clear the 15 fps target at 640×480: the extra output pixels cost encode time, not
+GPU time. The neural backends stay a short-clip quality option at every factor (240p: lightSR
+4.2 fps at ×3 and 3.9 at ×4, CATANet 4.0 and 3.5).
+
+**Input resolution is unconstrained** — any size, any aspect ratio, odd or prime dimensions
+included. Each network does have an architectural stride (retinexformer 4, CIDNet 8, lightSR
+16, CATANet its per-block patch/group sizes), but every stage reflect-pads up to its multiple
+and crops the result back, so enhancement returns *exactly* the input size and SR *exactly*
+`scale ×` it. The recognizer is size-agnostic by construction: it resizes the short side to
+256 and center-crops 224 before the network sees a frame. `tests/test_resolution.py` asserts
+this end-to-end at 483×641, 197×353, 98×130, 41×640, 721×1281 and 240×320 — the last two
+being larger than any pad multiple and thinner than one recognizer crop respectively.
+The one practical limit is throughput, not correctness: cost tracks pixel count, so 1280×720
+is the resolution that needs `--gpus` (see Performance).
 
 ## Model specifications
 Enhance rows measured on a single RTX 4090 at 320×240 input (RealRestorer at size-level
@@ -384,10 +423,11 @@ labels itself as one on every frame.
   weak-labelled training data. Zero-shot macro-F1 is 0.261, so it trades accuracy for
   flexibility; `--xclip-reject-tau` (default 0.4, calibrated on validation) is what keeps it
   from forcing ordinary footage into one of the nine.
-- **bicubic_x2** — the only ×2 backend that meets the performance spec, and the one to use
+- **bicubic** — the only backend that meets the performance spec, and the one to use
   unless you specifically want learned texture. 0.6–2 ms/frame of CPU `cv2.INTER_CUBIC`: 2–6%
-  end-to-end cost, no weights, no VRAM, and the only `--sr` that runs on `--device cpu`. It
-  also scores the highest in-domain PSNR/SSIM of the three (42.92 dB / 0.9903).
+  end-to-end cost, no weights at any `--sr-scale`, no VRAM, and the only `--sr` that runs on
+  `--device cpu`. It also scores the highest in-domain PSNR/SSIM of the three (42.92 dB /
+  0.9903), and it is the only one whose ×3/×4 cost stays inside the 15 fps target at 640×480.
 - **catanet_x2**: CATANet (CVPR2025), 0.48 M params — the better *neural* ×2 backend. Higher in-domain
   PSNR/SSIM than lightSR on both test sets, 24–26% faster at batch 1, and the only SR
   configuration that holds real-time latency under 1 s at 640×480 (825–903 ms vs 1082–1123).
@@ -395,8 +435,10 @@ labels itself as one on every frame.
 - **lightsr_x2**: MambaIRv2 lightSR, 0.77 M params — keep it for a small card (3.2 GiB) or
   for batched offline work, where chunk-4 (730 ms/frame) beats CATANet's chunk-1 (771 ms).
 - Neither *neural* SR backend reaches the 10 fps offline floor, which is why `--sr` still
-  defaults to `off` and why `bicubic_x2` exists. Full comparison:
-  `compare/results/SR_REPORT.md`.
+  defaults to `off` and why `bicubic` exists. Full comparison:
+  `compare/results/SR_REPORT.md`. Both accept `--sr-scale 3`/`4` with the matching
+  per-factor checkpoint; the ×2 quality numbers above do not transfer to those factors,
+  which were not benchmarked (the CLI says so in a warning).
 - Recognition consumes **post-enhance, pre-SR** frames (the trained checkpoints saw enhanced
   frames; SR was measured recognition-neutral, so it stays out of the decision path).
 
@@ -420,11 +462,17 @@ Offline fps is the shipped CLI's own steady-state rate; real-time latency is ser
 | 320×240 | + `--sr bicubic_x2` ‡ | **24.4–45.3** | 25–49 ms |
 | **640×480** | + `--sr bicubic_x2` ‡ | **14.8–21.7** | 44–98 ms |
 | 1280×720 | + `--sr bicubic_x2` ‡ | 5.8–7.7 | 125–274 ms |
+| **640×480** | + `--sr bicubic --sr-scale 3` § | **23.7** | 57–71 ms |
+| **640×480** | + `--sr bicubic --sr-scale 4` § | **19.6** | – |
 | 320×240 | + `--sr catanet_x2` | 3.9–5.1 | 222–240 ms |
 | 320×240 | + `--sr lightsr_x2` | 4.1–5.5 | 274–292 ms |
 | 640×480 | + `--sr catanet_x2` | 1.1–1.2 | **825–903 ms** |
 | 640×480 | + `--sr lightsr_x2` | 1.0–1.2 | 1082–1123 ms |
 | any | `--enhance realrestorer` | 1/45 | 45 s |
+
+§ The `--sr-scale` rows are a separate 1042-frame run of the recommended configuration
+(`retinexformer + bicubic + behavior`) measured back to back at ×2/×3/×4 — 24.9 / 23.7 /
+19.6 fps — so they are comparable to each other, not to the ‡ rows above.
 
 ‡ The bicubic rows come from one paired 150-frame run (`behavior_perf_bicubic2.json`) that
 measured SR-off and SR-on back to back. That matters: absolute fps on this box moves by up to
@@ -521,6 +569,7 @@ recognition share one helper that halves the batch on `OutOfMemoryError`, which 
 
 ## Tests & verification
 ```bash
-.venv/bin/python -m pytest tests/ -q          # imports, CLI validation matrix, label bar
+.venv/bin/python -m pytest tests/ -q          # imports, CLI validation matrix, label bar,
+                                              # arbitrary input resolution (66 passed)
 .venv/bin/python scripts/check_parity.py      # numerical parity gates (needs ckpts + refs)
 ```

@@ -17,19 +17,21 @@ def build_stages(cfg):
             cfg.ckpt_dir, bundle=cfg.rr_bundle, steps=cfg.rr_steps,
             cfg_scale=cfg.rr_cfg_scale, chunk=cfg.rr_chunk, prompt=cfg.rr_prompt))
 
-    if cfg.sr == "bicubic_x2":
+    # cfg.sr is the normalized backend name and cfg.sr_scale the factor (config.validate
+    # resolves the legacy `<backend>_x2` spellings into that pair).
+    if cfg.sr == "bicubic":
         from .sr_bicubic import BicubicStage
-        frame_stages.append(BicubicStage())
-    elif cfg.sr == "lightsr_x2":
+        frame_stages.append(BicubicStage(scale=cfg.sr_scale))
+    elif cfg.sr == "lightsr":
         from .sr_lightsr import LightSRStage
         frame_stages.append(LightSRStage(cfg.ckpt_dir, chunk=cfg.sr_chunk,
-                                         force_fp32=cfg.sr_fp32))
-    elif cfg.sr == "catanet_x2":
+                                         force_fp32=cfg.sr_fp32, scale=cfg.sr_scale))
+    elif cfg.sr == "catanet":
         from .sr_catanet import CATANetStage
         # CATANet needs ~10 GiB for one 640x480 frame; the shared sr_chunk default of 4 would
         # OOM immediately, so unless the user asked for a specific chunk it starts at 1.
         frame_stages.append(CATANetStage(cfg.ckpt_dir, chunk=cfg.sr_chunk,
-                                         force_fp32=cfg.sr_fp32))
+                                         force_fp32=cfg.sr_fp32, scale=cfg.sr_scale))
 
     recognizer = None
     kw = dict(stride=cfg.reco_stride, span_sec=cfg.reco_span_sec)
