@@ -12,3 +12,8 @@ outputs/
 tests/assets/*.npy
 # ARID v1.5 staged from OpenDataLab (7.5 GB) — fetch it, don't version it
 assets/OpenDataLab___Action_Recognition_in_the_Dark/
+# Operator packaging artefacts: both zips are rebuilt from platform/ by
+# make_operator_zip.sh, and .build_ctx is the staged docker build context.
+platform/dist/
+platform/.build_ctx/
+platform/*.tar.gz

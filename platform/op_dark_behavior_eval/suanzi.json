@@ -1,0 +1,169 @@
+{
+  "name": "暗光场景行为识别测试验证",
+  "description": "暗光场景行为识别算子的配套测试验证算子：读取一份带标注的视频清单（每行 `视频路径,类别标签`），对每条片段按与处理算子完全一致的推理协议（均匀抽取识别窗口帧数 -> 同一低照度增强算子 -> 同一预处理 -> 同一识别模型）给出预测，统计总体准确率、宏平均 F1、各类别精确率/召回率/F1 与混淆矩阵，同时输出到标准输出日志和结果文件。评测不做超分——处理算子中识别器取的就是增强后、超分前的帧，因此评测域与部署域完全一致。类别标签必须取自模型类别表（behavior 模型为 wave、throw、chase、fall、fight、talk、drink、pick_up、shake_hands、other），不在表内的行会被跳过并在日志中提示。单卡 RTX 3090 实测平均每条片段 0.46 秒。",
+  "metadata": {
+    "arch": "amd64",
+    "limits": {
+      "cpu": "6",
+      "memory": "6Gi"
+    },
+    "request": {
+      "cpu": "3",
+      "memory": "4Gi"
+    },
+    "gpu": {
+      "type": "nvidia.com/gpu",
+      "count": 1,
+      "memory": "8Gi"
+    }
+  },
+  "inputs": [
+    {
+      "name": "dataset_manifest",
+      "type": "String",
+      "description": "带标注的评测清单文件，每行 `视频路径,类别标签`，逗号或制表符分隔；允许 # 开头的注释行与一行表头。视频路径为相对路径时按清单文件所在目录解析。",
+      "annotations": {
+        "show": "评测数据清单",
+        "component": "fileRead",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "enhance",
+      "type": "String",
+      "description": "评测时使用的低照度增强算法，必须与实际部署的处理算子保持一致，否则评测结果不能代表线上表现。",
+      "default": "retinexformer",
+      "annotations": {
+        "show": "低照度增强算法",
+        "component": "choice",
+        "choice": "['off', 'retinexformer', 'cidnet']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "recognize",
+      "type": "String",
+      "description": "待评测的行为识别模型，需与处理算子保持一致。此处不提供 off：没有识别器就无从评测。",
+      "default": "behavior",
+      "annotations": {
+        "show": "行为识别模型",
+        "component": "choice",
+        "choice": "['r3d', 'videomamba', 'behavior', 'xclip']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "max_clips",
+      "type": "Int",
+      "description": "最多评测的片段条数，0 表示评测清单全部内容。用于先跑小样本做流程冒烟，再跑全量。",
+      "default": 0,
+      "annotations": {
+        "show": "最大评测条数",
+        "component": "intInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "gpu_ids",
+      "type": "String",
+      "description": "使用的 GPU 卡号。评测按条串行执行，只取第一张卡。",
+      "default": "0",
+      "annotations": {
+        "show": "GPU卡号",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "enhance_chunk",
+      "type": "Int",
+      "description": "增强阶段每批送入 GPU 的帧数，与处理算子含义相同。评测每条片段抽取一个完整识别窗口（behavior 模型为 32 帧），分批处理使显存占用不随片段分辨率线性膨胀。",
+      "default": 4,
+      "annotations": {
+        "show": "增强批大小",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "ckpt_dir",
+      "type": "String",
+      "description": "模型权重目录，镜像内已预置默认配置所需权重，通常无需修改。",
+      "default": "/opt/darkpipe/ckpts",
+      "annotations": {
+        "show": "权重目录",
+        "component": "stringInput",
+        "parameter": 1
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "metrics_json",
+      "type": "String",
+      "description": "评测指标 JSON：清单行数、实际评测条数、跳过条数、总耗时与单条平均耗时、准确率、宏平均 F1、各类别 support/precision/recall/f1、类别表、混淆矩阵、生效配置以及被跳过样本的原因。",
+      "annotations": {
+        "show": "评测指标"
+      }
+    },
+    {
+      "name": "confusion_csv",
+      "type": "String",
+      "description": "混淆矩阵 CSV，首行首列为类别名，第 i 行第 j 列表示真实类别 i 被预测为类别 j 的样本数。",
+      "annotations": {
+        "show": "混淆矩阵"
+      }
+    }
+  ],
+  "implementation": {
+    "container": {
+      "image": "darkpipe-operator:0.1.0",
+      "command": [
+        "/opt/conda/envs/darkpipe/bin/python",
+        "-u",
+        "main.py"
+      ],
+      "args": [
+        "--dataset_manifest",
+        {
+          "inputPath": "dataset_manifest"
+        },
+        "--enhance",
+        {
+          "inputValue": "enhance"
+        },
+        "--recognize",
+        {
+          "inputValue": "recognize"
+        },
+        "--max_clips",
+        {
+          "inputValue": "max_clips"
+        },
+        "--gpu_ids",
+        {
+          "inputValue": "gpu_ids"
+        },
+        "--enhance_chunk",
+        {
+          "inputValue": "enhance_chunk"
+        },
+        "--ckpt_dir",
+        {
+          "inputValue": "ckpt_dir"
+        },
+        "--metrics_json",
+        {
+          "outputPath": "metrics_json"
+        },
+        "--confusion_csv",
+        {
+          "outputPath": "confusion_csv"
+        }
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

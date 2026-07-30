@@ -1,0 +1,243 @@
+{
+  "name": "暗光场景行为识别",
+  "description": "面向夜间/低照度监控视频的一体化处理算子：先做低照度增强（Retinexformer 或 HVI-CIDNet），再对增强后的帧做行为识别（挥手、投掷、追逐、跌倒、打斗、交谈、喝水、捡拾、握手，外加 other 共 10 类），最后可选做超分辨率放大并叠加标签条，输出带标注的视频、逐窗口事件 JSON 与运行汇总 JSON。识别取的是增强后、超分前的帧（识别模型即在增强帧上训练，超分对识别中性）。单卡 RTX 3090、640x480 输入、默认配置（retinexformer + bicubic x2 + behavior）实测 24.3 帧/秒（900 帧任务，全新进程含模型加载），满足离线处理不低于 15 帧/秒的要求；1280x720 输入单卡仅 8.0 帧/秒，需通过 gpu_ids 指定多卡分片，详见 README 的性能实测一节。输入支持共用文件库地址、本地路径、rtsp:// 与 http(s):// 流（流式输入请配合 max_frames 限定长度）。",
+  "metadata": {
+    "arch": "amd64",
+    "limits": {
+      "cpu": "6",
+      "memory": "6Gi"
+    },
+    "request": {
+      "cpu": "3",
+      "memory": "4Gi"
+    },
+    "gpu": {
+      "type": "nvidia.com/gpu",
+      "count": 1,
+      "memory": "8Gi"
+    }
+  },
+  "inputs": [
+    {
+      "name": "video_path",
+      "type": "String",
+      "description": "待处理视频文件。可为共用文件库地址（hdfs://用户名@ip:port/路径）、容器内本地路径，或 rtsp:// / http(s):// 流地址；流地址请同时设置 max_frames 以限定处理长度。",
+      "annotations": {
+        "show": "待处理视频",
+        "component": "fileRead",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "enhance",
+      "type": "String",
+      "description": "低照度增强算法。retinexformer：默认，速度与稳定性最佳；cidnet：HVI 色彩空间增强，色彩还原更好但极暗场景可能出现噪点；off：关闭增强，仅在输入本身照度正常时使用。",
+      "default": "retinexformer",
+      "annotations": {
+        "show": "低照度增强算法",
+        "component": "choice",
+        "choice": "['off', 'retinexformer', 'cidnet']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "sr",
+      "type": "String",
+      "description": "超分辨率算法。bicubic：默认，CPU 双三次插值，几乎不占额外时间；lightsr / catanet：神经网络超分，画质更好但实测仅约 1 fps，只适合短片段离线精修，不满足 15 帧/秒要求；off：不放大，输出与输入同分辨率。",
+      "default": "bicubic",
+      "annotations": {
+        "show": "超分辨率算法",
+        "component": "choice",
+        "choice": "['off', 'bicubic', 'lightsr', 'catanet']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "sr_scale",
+      "type": "Int",
+      "description": "超分放大倍数，sr 为 off 时忽略。放大 3 倍/4 倍的输出像素量分别是 2 倍的 2.25 倍与 4 倍，耗时相应增加。",
+      "default": 2,
+      "annotations": {
+        "show": "超分放大倍数",
+        "component": "choice",
+        "choice": "[2, 3, 4]",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "recognize",
+      "type": "String",
+      "description": "行为识别模型。behavior：默认，VideoMamba-Tiny 在 9 类行为 + other 上微调，识别结果写入事件 JSON 并叠加到画面；xclip：开放词表零样本识别，无需训练但更慢；r3d / videomamba：ARID 11 类动作模型；off：只做增强与超分，不做识别。",
+      "default": "behavior",
+      "annotations": {
+        "show": "行为识别模型",
+        "component": "choice",
+        "choice": "['off', 'r3d', 'videomamba', 'behavior', 'xclip']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "reco_span_sec",
+      "type": "Float",
+      "description": "识别窗口覆盖的视频时长（秒）。1.0 表示每次判定依据最近 1 秒的画面，与实时性要求一致；调大可提升对慢动作的稳定性，但事件时间定位变粗。",
+      "default": 1.0,
+      "annotations": {
+        "show": "识别窗口时长(秒)",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "max_frames",
+      "type": "Int",
+      "description": "最多处理的帧数，0 表示处理整段视频。对 rtsp:// 等无限流必须设置为正整数，否则算子不会自行结束。",
+      "default": 0,
+      "annotations": {
+        "show": "最大处理帧数",
+        "component": "intInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "label_bar",
+      "type": "Bool",
+      "description": "是否在输出视频底部叠加识别结果标签条。关闭后输出为纯增强/超分画面，识别结果仍会写入事件 JSON。",
+      "default": true,
+      "annotations": {
+        "show": "叠加标签条",
+        "component": "bool",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "gpu_ids",
+      "type": "String",
+      "description": "使用的 GPU 卡号，逗号分隔，如 \"0\" 或 \"0,1,2,3\"。填多张卡时按帧区间把视频切成多段并行处理再拼接，用于 720p 及以上分辨率达到 15 帧/秒；片段过短（每段少于 120 帧）时算子会自动减少实际使用的卡数。多卡分片时每段的识别窗口从空开始，相邻段交界处会少若干个事件。",
+      "default": "0",
+      "annotations": {
+        "show": "GPU卡号",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "enhance_chunk",
+      "type": "Int",
+      "description": "增强阶段每批送入 GPU 的帧数。实测 640x480 下取 4 与取 8 吞吐量持平（27.3 / 27.9 fps），但取 4 只需一半显存（2.4Gi 对 4.7Gi），故默认 4；显存不足时可继续调小，吞吐量随之下降。",
+      "default": 4,
+      "annotations": {
+        "show": "增强批大小",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "ckpt_dir",
+      "type": "String",
+      "description": "模型权重目录。镜像内已预置默认配置所需的全部权重，通常无需修改；仅当需要挂载外部权重（如 lightsr / catanet / xclip）时才指定。",
+      "default": "/opt/darkpipe/ckpts",
+      "annotations": {
+        "show": "权重目录",
+        "component": "stringInput",
+        "parameter": 1
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output_video",
+      "type": "String",
+      "description": "处理后的 mp4 视频：低照度增强 + 超分放大 +（可选）底部识别标签条。",
+      "annotations": {
+        "show": "输出视频"
+      }
+    },
+    {
+      "name": "events_json",
+      "type": "String",
+      "description": "行为识别事件 JSON 数组，每个元素含 label（行为名称）、score（置信度）、frame_index（起始帧号）、timestamp（起始秒数）等字段。recognize 为 off 时输出空数组。",
+      "annotations": {
+        "show": "识别事件"
+      }
+    },
+    {
+      "name": "summary_json",
+      "type": "String",
+      "description": "运行汇总 JSON：处理帧数、处理耗时与帧率、总耗时、使用卡数、事件条数、占比最高的行为、各行为计数以及实际生效的配置。体积很小，便于下游算子以 inputValue 方式直接读取内容。",
+      "annotations": {
+        "show": "运行汇总"
+      }
+    }
+  ],
+  "implementation": {
+    "container": {
+      "image": "darkpipe-operator:0.1.0",
+      "command": [
+        "/opt/conda/envs/darkpipe/bin/python",
+        "-u",
+        "main.py"
+      ],
+      "args": [
+        "--video_path",
+        {
+          "inputPath": "video_path"
+        },
+        "--enhance",
+        {
+          "inputValue": "enhance"
+        },
+        "--sr",
+        {
+          "inputValue": "sr"
+        },
+        "--sr_scale",
+        {
+          "inputValue": "sr_scale"
+        },
+        "--recognize",
+        {
+          "inputValue": "recognize"
+        },
+        "--reco_span_sec",
+        {
+          "inputValue": "reco_span_sec"
+        },
+        "--max_frames",
+        {
+          "inputValue": "max_frames"
+        },
+        "--label_bar",
+        {
+          "inputValue": "label_bar"
+        },
+        "--gpu_ids",
+        {
+          "inputValue": "gpu_ids"
+        },
+        "--enhance_chunk",
+        {
+          "inputValue": "enhance_chunk"
+        },
+        "--ckpt_dir",
+        {
+          "inputValue": "ckpt_dir"
+        },
+        "--output_video",
+        {
+          "outputPath": "output_video"
+        },
+        "--events_json",
+        {
+          "outputPath": "events_json"
+        },
+        "--summary_json",
+        {
+          "outputPath": "summary_json"
+        }
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}
