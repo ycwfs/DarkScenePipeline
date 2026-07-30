@@ -46,6 +46,11 @@ class PipelineConfig:
     rr_chunk: int = 8
     rr_prompt: str = ""
     warnings: list = field(default_factory=list)
+    # Filled by run_offline / run_offline_sharded: frames, seconds, fps of the PROCESSING
+    # loop (model loading excluded). Callers that need throughput -- the platform operator
+    # writes it into summary_json -- read it here instead of re-timing around the call and
+    # charging one-off startup to the frame rate.
+    stats: dict = field(default_factory=dict)
 
     def label_list(self):
         """Open-vocabulary labels for --recognize xclip; None -> the default BEHAVIORS."""

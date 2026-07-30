@@ -139,6 +139,8 @@ def run_offline(cfg):
         recognizer.close()
 
     dt = time.time() - t0
+    cfg.stats = dict(frames=n_in, seconds=round(dt, 3), fps=round(n_in / max(dt, 1e-9), 2),
+                     frames_written=writer.count, events=len(events), gpus=1)
     print(f"[done] {n_in} frames in {dt:.1f}s = {n_in / max(dt, 1e-9):.1f} fps "
           f"-> {cfg.output} ({writer.count} frames written)")
     if recognizer:

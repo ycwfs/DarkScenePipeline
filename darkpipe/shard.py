@@ -128,6 +128,11 @@ def run_offline_sharded(cfg, gpus, min_seg_frames=120):
 
     n_written = _concat(parts, cfg.output, fps)
     dt = time.time() - t0
+    # Unlike the single-GPU path this DOES include model loading: each worker is a fresh
+    # process, so its startup is part of what a sharded run actually costs.
+    cfg.stats = dict(frames=n_frames, seconds=round(dt, 3),
+                     fps=round(n_frames / max(dt, 1e-9), 2), frames_written=n_written,
+                     gpus=len(segs))
     print(f"[done] {n_frames} frames in {dt:.1f}s = {n_frames / max(dt, 1e-9):.1f} fps "
           f"-> {cfg.output} ({n_written} frames written, {len(segs)} GPUs)")
 
@@ -144,6 +149,7 @@ def run_offline_sharded(cfg, gpus, min_seg_frames=120):
         with open(cfg.events_json, "w") as f:
             json.dump(events, f, indent=2)
         print(f"[done] {len(events)} recognition events -> {cfg.events_json}")
+    cfg.stats["events"] = len(events)
     for p in parts + evs:
         if os.path.exists(p):
             os.remove(p)
