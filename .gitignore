@@ -7,6 +7,9 @@ __pycache__/
 ckpts/*
 !ckpts/NTIRE.pth
 !ckpts/videomamba_t_behavior_32f.pth
+# DarkAct-finetuned candidate (see compare/results/DARKACT_REPORT.md): not the shipped
+# default (--reco-ckpt behavior is unchanged), opt-in via --reco-ckpt for extreme-dark RGB.
+!ckpts/videomamba_t_behavior_32f_darkact.pth
 outputs/
 *.mp4
 tests/assets/*.npy
