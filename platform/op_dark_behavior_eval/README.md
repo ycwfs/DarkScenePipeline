@@ -37,8 +37,8 @@
 | 参数名 | 中文名 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
 | `dataset_manifest` | 评测数据清单 | String | 无（必选） | 带标注的清单文件，格式见下 |
-| `enhance` | 低照度增强算法 | String | `retinexformer` | `off` / `retinexformer` / `cidnet`，**须与处理算子一致** |
-| `recognize` | 行为识别模型 | String | `behavior` | `r3d` / `videomamba` / `behavior` / `xclip`，**须与处理算子一致** |
+| `enhance` | 低照度增强算法 | String | `retinexformer` | `off` / `retinexformer`，**须与处理算子一致** |
+| `recognize` | 行为识别模型 | String | `behavior` | `behavior`，**须与处理算子一致** |
 | `max_clips` | 最大评测条数 | Int | `0` | `0` = 评测全部；先跑小样本冒烟时填一个小数字 |
 | `gpu_ids` | GPU 卡号 | String | `0` | 评测按条串行，只取第一张卡 |
 | `enhance_chunk` | 增强批大小 | Int | `4` | 每批送 GPU 的帧数，显存不足时调小 |

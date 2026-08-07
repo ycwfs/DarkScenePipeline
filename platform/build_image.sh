@@ -14,10 +14,10 @@ REPO="$(dirname "$HERE")"
 IMAGE="${IMAGE:-darkpipe-operator:0.1.0}"
 CTX="$HERE/.build_ctx"
 
-# 默认配置（retinexformer + behavior）必需的权重，缺一不可
+# 平台部署只暴露 off/retinexformer + off/bicubic + off/behavior，缺一不可；
+# 其余权重（cidnet / r3d / ARID-videomamba / xclip 等）不再被 suanzi.json 的
+# choice 列表提供，因此不再打进镜像。
 REQUIRED=(NTIRE.pth videomamba_t_behavior_32f.pth)
-# 可选权重：存在就打进镜像，让 enhance=cidnet 等备选配置也开箱即用；不存在只提示
-OPTIONAL=(CIDNet_generalization.pth r2plus1d_arid.pth videomamba_t_arid_32f.pth)
 
 rm -rf "$CTX"
 mkdir -p "$CTX/ckpts"
@@ -30,14 +30,6 @@ for f in "${REQUIRED[@]}"; do
     fi
     cp "$REPO/ckpts/$f" "$CTX/ckpts/"
     echo "[ctx] 必需权重 $f"
-done
-for f in "${OPTIONAL[@]}"; do
-    if [[ -f "$REPO/ckpts/$f" ]]; then
-        cp "$REPO/ckpts/$f" "$CTX/ckpts/"
-        echo "[ctx] 可选权重 $f"
-    else
-        echo "[ctx] 跳过未准备的可选权重 $f（对应配置需在运行时挂载 ckpt_dir）"
-    fi
 done
 cp "$HERE/Dockerfile" "$CTX/Dockerfile"
 echo "[ctx] 构建上下文 $(du -sh "$CTX" | cut -f1)"

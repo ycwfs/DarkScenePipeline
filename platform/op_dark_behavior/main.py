@@ -32,13 +32,12 @@ def build_parser():
         prog="main.py", description="暗光场景行为识别算子：低照度增强 + 超分辨率 + 行为识别")
     # 参数名与 suanzi.json 的 inputs[].name / outputs[].name 逐一对应
     p.add_argument("--video_path", required=True,
-                   help="待处理视频：共用文件库地址(hdfs://)、本地路径、rtsp:// 或 http(s)://")
-    p.add_argument("--enhance", default="retinexformer",
-                   choices=["off", "retinexformer", "cidnet"])
-    p.add_argument("--sr", default="bicubic", choices=["off", "bicubic", "lightsr", "catanet"])
+                   help="待处理视频：国标(GB28181)/rtsp:// / http(s):// (flv、hls) 实时流地址，"
+                        "或容器内本地路径；不使用 hdfs://")
+    p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
+    p.add_argument("--sr", default="bicubic", choices=["off", "bicubic"])
     p.add_argument("--sr_scale", type=int, default=2, choices=[2, 3, 4])
-    p.add_argument("--recognize", default="behavior",
-                   choices=["off", "r3d", "videomamba", "behavior", "xclip"])
+    p.add_argument("--recognize", default="behavior", choices=["off", "behavior"])
     p.add_argument("--reco_span_sec", type=float, default=1.0)
     p.add_argument("--max_frames", type=int, default=0)
     p.add_argument("--label_bar", type=parse_bool, default=True)

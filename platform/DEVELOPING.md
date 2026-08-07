@@ -31,6 +31,16 @@ the weights only. `main.py` puts its own directory first on `sys.path`, so the c
 always wins. One source of truth; no image/zip version skew. The cost is a ~200 KB zip instead
 of a ~10 KB one, which is nothing.
 
+**The zip doesn't get the whole `darkpipe/` tree, only the reachable part.** The platform
+surface only exposes off/retinexformer + off/bicubic + off/behavior (same constraint as
+`build_image.sh`'s `REQUIRED` weights), so `cidnet`/`realrestorer`/`lightsr`/`catanet`/`xclip`
+stage files, their vendored architectures, and `cli.py`/`server.py` (the interactive CLI's
+`serve` subcommand, never called by an operator) can't be reached through either `main.py`.
+`make_operator_zip.sh` excludes exactly those paths from the `rsync` into the zip. The source
+tree itself is untouched — `compare/` and the interactive CLI still need the full backend set —
+this is a packaging-time trim, not a deletion. When the platform surface changes, update the
+`--exclude` list alongside `build_image.sh`'s `REQUIRED` array.
+
 **`cfg.stats`.** `run_offline` / `run_offline_sharded` publish `frames/seconds/fps/…` on the
 config object. The operator reports those as `fps`/`seconds` and its own wall-clock as
 `wall_seconds`. Without this the adapter's timer would wrap model loading and charge a one-off
@@ -52,9 +62,9 @@ bash platform/build_image.sh --save          # also writes darkpipe-operator-0.1
 ```
 
 `build_image.sh` stages its own build context containing only the weights it needs, so the
-10 GB `ckpts/` directory and the 163 GB `compare/` tree are never sent to the daemon. Required:
-`NTIRE.pth`, `videomamba_t_behavior_32f.pth`. Optional (included when present):
-`CIDNet_generalization.pth`, `r2plus1d_arid.pth`, `videomamba_t_arid_32f.pth`.
+10 GB `ckpts/` directory and the 163 GB `compare/` tree are never sent to the daemon. The
+platform surface only exposes off/retinexformer + off/bicubic + off/behavior, so the only
+weights required are `NTIRE.pth` and `videomamba_t_behavior_32f.pth`.
 
 Network notes for this box: github.com times out, so the Miniforge installer and the
 mamba-ssm / causal-conv1d wheels all need the `GH_PREFIX` mirror; PyPI, conda-forge and the
@@ -138,13 +148,13 @@ surfaces as an unrecognised-flag crash inside a scheduler rather than at review 
 
 ## Measured numbers (single RTX 3090, fresh process per row, 900-frame clips)
 
-| input | config | GPUs | fps | wall |
-| --- | --- | --- | --- | --- |
-| 640×480 | retinexformer + bicubic ×2 + behavior | 1 | 24.3 | 42.6 s |
-| 1280×720 | retinexformer + bicubic ×2 + behavior | 1 | 8.0 | 118.1 s |
-| 1280×720 | same | 4 | 11.2 | 80.2 s |
-| 1280×720 | retinexformer + sr off + behavior | 4 | 17.7 | 51.0 s |
-| 640×480 | same as row 1, **inside the container** | 1 | 22.9 | 45.7 s |
+| input     | config                                       | GPUs | fps  | wall    |
+| --------- | -------------------------------------------- | ---- | ---- | ------- |
+| 640×480  | retinexformer + bicubic ×2 + behavior       | 1    | 24.3 | 42.6 s  |
+| 1280×720 | retinexformer + bicubic ×2 + behavior       | 1    | 8.0  | 118.1 s |
+| 1280×720 | same                                         | 4    | 11.2 | 80.2 s  |
+| 1280×720 | retinexformer + sr off + behavior            | 4    | 17.7 | 51.0 s  |
+| 640×480  | same as row 1,**inside the container** | 1    | 22.9 | 45.7 s  |
 
 The container costs about 6% of throughput against the host on identical work (22.9 vs 24.3 fps,
 same 55 events), which is ordinary overhead and still well clear of the 15 fps target.
@@ -157,7 +167,15 @@ default too — that is a separate change and has not been made.
 
 ## Open question for the platform team
 
-How are 共用文件库 (`hdfs://user@ip:port/…`) inputs delivered? OpenCV cannot open an `hdfs://`
-URL. Both operators try `hdfs dfs -get` and fail loudly with a named cause if no HDFS client is
-in the container. If the framework instead materialises files to a local path before invoking
-the operator, that code path is dead and can be deleted — but it must not be assumed.
+**Resolved for `video_path`:** the processing operator's video input never uses `hdfs://`.
+Production input is real-time streams — 国标(GB28181, converted to a pullable URL by the
+gateway)/`rtsp://`/`http(s)://` (flv, hls) — plus container-local paths for testing; all of
+those OpenCV opens directly, so `fetch_input`'s `hdfs://` branch is never exercised for
+`video_path`. `op_dark_behavior/main.py`'s `--video_path` help text, `suanzi.json` description
+and README no longer mention `hdfs://` as an accepted form.
+
+**Still open for `op_dark_behavior_eval`'s `dataset_manifest`:** that parameter still goes
+through the same `fetch_input`, and whether its `hdfs://` branch is ever exercised (vs. the
+framework materialising the manifest to a local path before invoking the operator) has not been
+confirmed with the platform team. The branch stays in `oputil.py` — shared by both operators —
+until that's clarified; it must not be assumed dead there.

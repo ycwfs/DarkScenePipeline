@@ -27,10 +27,8 @@ def build_parser():
         prog="main.py", description="暗光场景行为识别测试验证算子：在带标注数据集上评测识别精度")
     p.add_argument("--dataset_manifest", required=True,
                    help="带标注清单文件，每行 `视频路径,类别标签`，逗号或制表符分隔，可含表头")
-    p.add_argument("--enhance", default="retinexformer",
-                   choices=["off", "retinexformer", "cidnet"])
-    p.add_argument("--recognize", default="behavior",
-                   choices=["r3d", "videomamba", "behavior", "xclip"])
+    p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
+    p.add_argument("--recognize", default="behavior", choices=["behavior"])
     p.add_argument("--max_clips", type=int, default=0)
     p.add_argument("--gpu_ids", default="0")
     # 与处理算子同一含义：增强阶段一次送入 GPU 的帧数。评测每条片段抽 32 帧，若整批送入，

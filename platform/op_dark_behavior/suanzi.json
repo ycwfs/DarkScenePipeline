@@ -1,6 +1,6 @@
 {
   "name": "暗光场景行为识别",
-  "description": "面向夜间/低照度监控视频的一体化处理算子：先做低照度增强（Retinexformer 或 HVI-CIDNet），再对增强后的帧做行为识别（挥手、投掷、追逐、跌倒、打斗、交谈、喝水、捡拾、握手，外加 other 共 10 类），最后可选做超分辨率放大并叠加标签条，输出带标注的视频、逐窗口事件 JSON 与运行汇总 JSON。识别取的是增强后、超分前的帧（识别模型即在增强帧上训练，超分对识别中性）。单卡 RTX 3090、640x480 输入、默认配置（retinexformer + bicubic x2 + behavior）实测 24.3 帧/秒（900 帧任务，全新进程含模型加载），满足离线处理不低于 15 帧/秒的要求；1280x720 输入单卡仅 8.0 帧/秒，需通过 gpu_ids 指定多卡分片，详见 README 的性能实测一节。输入支持共用文件库地址、本地路径、rtsp:// 与 http(s):// 流（流式输入请配合 max_frames 限定长度）。",
+  "description": "面向夜间/低照度监控视频的一体化处理算子：先做低照度增强（Retinexformer），再对增强后的帧做行为识别（挥手、投掷、追逐、跌倒、打斗、交谈、喝水、捡拾、握手，外加 other 共 10 类），最后可选做双三次插值超分辨率放大并叠加标签条，输出带标注的视频、逐窗口事件 JSON 与运行汇总 JSON。识别取的是增强后、超分前的帧（识别模型即在增强帧上训练，超分对识别中性）。单卡 RTX 3090、640x480 输入、默认配置（retinexformer + bicubic x2 + behavior）实测 24.3 帧/秒（900 帧任务，全新进程含模型加载），满足离线处理不低于 15 帧/秒的要求；1280x720 输入单卡仅 8.0 帧/秒，需通过 gpu_ids 指定多卡分片，详见 README 的性能实测一节。输入支持共用文件库地址、本地路径、rtsp:// 与 http(s):// 流（流式输入请配合 max_frames 限定长度）。",
   "metadata": {
     "arch": "amd64",
     "limits": {
@@ -21,7 +21,7 @@
     {
       "name": "video_path",
       "type": "String",
-      "description": "待处理视频文件。可为共用文件库地址（hdfs://用户名@ip:port/路径）、容器内本地路径，或 rtsp:// / http(s):// 流地址；流地址请同时设置 max_frames 以限定处理长度。",
+      "description": "待处理视频。线上默认为实时流：国标(GB28181，经网关转换为可拉流地址后下发) / rtsp:// / http(s):// (flv、hls)；也支持容器内本地路径。不使用 hdfs://。流地址请同时设置 max_frames 以限定单次处理长度。",
       "annotations": {
         "show": "待处理视频",
         "component": "fileRead",
@@ -31,24 +31,24 @@
     {
       "name": "enhance",
       "type": "String",
-      "description": "低照度增强算法。retinexformer：默认，速度与稳定性最佳；cidnet：HVI 色彩空间增强，色彩还原更好但极暗场景可能出现噪点；off：关闭增强，仅在输入本身照度正常时使用。",
+      "description": "低照度增强算法。retinexformer：默认，速度与稳定性最佳；off：关闭增强，仅在输入本身照度正常时使用。",
       "default": "retinexformer",
       "annotations": {
         "show": "低照度增强算法",
         "component": "choice",
-        "choice": "['off', 'retinexformer', 'cidnet']",
+        "choice": "['off', 'retinexformer']",
         "parameter": 1
       }
     },
     {
       "name": "sr",
       "type": "String",
-      "description": "超分辨率算法。bicubic：默认，CPU 双三次插值，几乎不占额外时间；lightsr / catanet：神经网络超分，画质更好但实测仅约 1 fps，只适合短片段离线精修，不满足 15 帧/秒要求；off：不放大，输出与输入同分辨率。",
+      "description": "超分辨率算法。bicubic：默认，CPU 双三次插值，几乎不占额外时间；off：不放大，输出与输入同分辨率。",
       "default": "bicubic",
       "annotations": {
         "show": "超分辨率算法",
         "component": "choice",
-        "choice": "['off', 'bicubic', 'lightsr', 'catanet']",
+        "choice": "['off', 'bicubic']",
         "parameter": 1
       }
     },
@@ -67,12 +67,12 @@
     {
       "name": "recognize",
       "type": "String",
-      "description": "行为识别模型。behavior：默认，VideoMamba-Tiny 在 9 类行为 + other 上微调，识别结果写入事件 JSON 并叠加到画面；xclip：开放词表零样本识别，无需训练但更慢；r3d / videomamba：ARID 11 类动作模型；off：只做增强与超分，不做识别。",
+      "description": "行为识别模型。behavior：默认，VideoMamba-Tiny 在 9 类行为 + other 上微调，识别结果写入事件 JSON 并叠加到画面；off：只做增强与超分，不做识别。",
       "default": "behavior",
       "annotations": {
         "show": "行为识别模型",
         "component": "choice",
-        "choice": "['off', 'r3d', 'videomamba', 'behavior', 'xclip']",
+        "choice": "['off', 'behavior']",
         "parameter": 1
       }
     },
@@ -134,7 +134,7 @@
     {
       "name": "ckpt_dir",
       "type": "String",
-      "description": "模型权重目录。镜像内已预置默认配置所需的全部权重，通常无需修改；仅当需要挂载外部权重（如 lightsr / catanet / xclip）时才指定。",
+      "description": "模型权重目录。镜像内已预置默认配置所需的全部权重，通常无需修改。",
       "default": "/opt/darkpipe/ckpts",
       "annotations": {
         "show": "权重目录",

@@ -37,8 +37,21 @@ for op in "${ops[@]}"; do
     cp "$src/main.py" "$src/suanzi.json" "$src/README.md" "$stage/"
     # 共用小工具与算法本体。darkpipe 只从仓库这一处复制，zip 里的代码与仓库不可能版本漂移；
     # main.py 会把自身所在目录放在 sys.path 最前面，因此包内的 darkpipe 一定优先被导入。
+    #
+    # 平台只暴露 off/retinexformer + off/bicubic + off/behavior（build_image.sh 同一注释），
+    # 因此 cidnet / realrestorer / lightsr / catanet / xclip 这几条代码路径在 suanzi.json 的
+    # choice 列表里已经选不到，连带其 vendor 权重架构与 cli.py/server.py（交互式 CLI 的
+    # serve 子命令，算子从不调用）打进 zip 纯属冗余。darkpipe/ 源码本体不删——compare/ 和
+    # 交互式 CLI 仍要用到完整后端集合——只是打包时不把这些不可达文件复制进 zip。
     cp "$HERE/oputil.py" "$stage/"
-    rsync -a --exclude='__pycache__' --exclude='*.pyc' "$REPO/darkpipe/" "$stage/darkpipe/"
+    rsync -a --exclude='__pycache__' --exclude='*.pyc' \
+        --exclude='cli.py' --exclude='server.py' \
+        --exclude='stages/enhance_cidnet.py' --exclude='stages/enhance_realrestorer.py' \
+        --exclude='stages/sr_lightsr.py' --exclude='stages/sr_catanet.py' \
+        --exclude='stages/recognize_xclip.py' \
+        --exclude='vendor/cidnet' --exclude='vendor/realrestorer' \
+        --exclude='vendor/catanet_arch.py' --exclude='vendor/mambairv2light_arch.py' \
+        "$REPO/darkpipe/" "$stage/darkpipe/"
 
     # 提交前自检：manifest 不合规就不出包
     python3 "$HERE/validate_suanzi.py" "$stage/suanzi.json" >/dev/null || {
