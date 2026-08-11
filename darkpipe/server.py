@@ -6,10 +6,20 @@ ProcessThread: owns the GPU; enhance -> recognizer.push -> SR -> label bar -> JP
 asyncio endpoints only read the JPEG slot / subscribe to the event bus:
   GET /stream  multipart MJPEG   GET /events  SSE recognition JSON
   GET /health  live counters     GET /config  active configuration
+  GET /live.flv  HTTP-FLV        GET /hls/index.m3u8  HLS  (both via ffmpeg, see streams.py)
+
+Every video format is fed from the same JPEG slot, so adding one costs a mux, not a second
+encode of the pipeline output.
+
+With `cfg.clip_dir` set, the same processed frames are also fed to a ClipRecorder, which
+writes an mp4 per non-`other` behaviour (darkpipe/clips.py). It runs on its own thread so
+the GPU loop keeps its latency budget.
 """
 import asyncio
 import json
+import os
 import queue
+import tempfile
 import threading
 import time
 from contextlib import asynccontextmanager
@@ -68,7 +78,7 @@ class EventBus:
 
 
 class ServerState:
-    def __init__(self, cfg):
+    def __init__(self, cfg, on_clip=None):
         self.cfg = cfg
         self.raw = LatestSlot()
         self.jpeg = LatestSlot()
@@ -83,6 +93,16 @@ class ServerState:
         self.latency_ms = 0.0
         self.capture_alive = False
         self.last_event = None
+        self.events_total = 0
+        self.on_clip = on_clip
+        self.clipper = None
+        self.eventlog = None
+        self.formats = ["mjpeg"]
+        self.hls = None                 # shared HLS segmenter
+        self.hls_dir = ""
+        self.push = None                # shared RTMP/RTSP push
+        self.flv_clients = 0
+        self.flv_lock = threading.Lock()
 
 
 def capture_loop(st: ServerState):
@@ -149,11 +169,15 @@ def process_loop(st: ServerState):
         chunk = [frame]
         for s in enh:
             chunk = s(chunk)
+        ev = None
         if recognizer:
             ev = recognizer.push(chunk[0], idx, time.time() - st.t_start)
             if ev:
                 st.last_event = ev
+                st.events_total += 1
                 st.bus.publish(ev)
+                if st.eventlog is not None:
+                    st.eventlog.write(ev)
         for s in srs:
             chunk = s(chunk)
         out = chunk[0]
@@ -162,6 +186,10 @@ def process_loop(st: ServerState):
         ok, buf = cv2.imencode(".jpg", out, [cv2.IMWRITE_JPEG_QUALITY, cfg.jpeg_quality])
         if ok:
             st.jpeg.put(buf.tobytes())
+        # The frame handed to the recorder is the one the demo stream shows -- label bar
+        # burned in -- because these clips are for people to watch, not to re-analyse.
+        if st.clipper is not None:
+            st.clipper.push(out, ev, time.time())
         if cfg.record:
             if recorder is None:
                 from .media import VideoWriter
@@ -182,11 +210,28 @@ def process_loop(st: ServerState):
         recognizer.close()
 
 
-def build_app(cfg):
+def build_app(cfg, on_clip=None):
     from fastapi import FastAPI
     from fastapi.responses import JSONResponse, StreamingResponse
 
-    st = ServerState(cfg)
+    st = ServerState(cfg, on_clip=on_clip)
+    if cfg.clip_dir:
+        from .clips import ClipRecorder, EventLog
+        st.clipper = ClipRecorder(
+            cfg.clip_dir, pre_sec=cfg.clip_pre_sec, post_sec=cfg.clip_post_sec,
+            max_sec=cfg.clip_max_sec,
+            skip_labels=[s.strip() for s in cfg.clip_skip_labels.split(",") if s.strip()],
+            min_confidence=cfg.clip_min_conf, on_saved=on_clip,
+            session=(cfg.clip_session or None))
+        print(f"[serve] 片段保存已开启 -> {st.clipper.root} "
+              f"(跳过 {sorted(st.clipper.skip) or '无'})")
+        # Every event, including the ones no clip is cut for -- this is the record that
+        # survives when /events is not reachable from outside the container.
+        st.eventlog = EventLog(os.path.join(st.clipper.root, "events.jsonl"))
+        print(f"[serve] 事件日志 -> {st.eventlog.path}")
+
+    from . import streams
+    st.formats = streams.parse_formats(cfg.stream_formats)
 
     @asynccontextmanager
     async def lifespan(app):
@@ -194,12 +239,31 @@ def build_app(cfg):
                    threading.Thread(target=process_loop, args=(st,), daemon=True)]
         for t in threads:
             t.start()
+        # Started after the workers so the first JPEG is usually there by the time ffmpeg
+        # asks for one; an empty slot only costs a repeated frame, not a failure.
+        if "hls" in st.formats:
+            st.hls_dir = cfg.hls_dir or os.path.join(tempfile.gettempdir(), "darkpipe_hls")
+            st.hls = streams.hls_writer(st.jpeg, cfg.max_stream_fps, st.hls_dir)
+            print(f"[serve] HLS 分片目录 {st.hls_dir}")
+        if cfg.rtmp_push_url:
+            st.push = streams.rtmp_push(st.jpeg, cfg.max_stream_fps, cfg.rtmp_push_url)
+            print(f"[serve] 推流到 {cfg.rtmp_push_url}")
         yield
+        for out in (st.hls, st.push):
+            if out is not None:
+                out.close()
         st.stop.set()
         for t in threads:
             t.join(timeout=5)
+        if st.clipper is not None:
+            st.clipper.close()                 # flush the in-flight clip before exiting
+            print(f"[serve] 片段统计 {st.clipper.stats()}")
+        if st.eventlog is not None:
+            st.eventlog.close()
+            print(f"[serve] 事件日志统计 {st.eventlog.stats()}")
 
     app = FastAPI(title="darkpipe", lifespan=lifespan)
+    app.state.dark = st
 
     @app.get("/health")
     def health():
@@ -209,7 +273,25 @@ def build_app(cfg):
                     reconnects=st.reconnects, fps_in=round(st.fps_in, 2),
                     fps_proc=round(st.fps_proc, 2),
                     frames_dropped=max(0, st.frames_in - st.frames_proc),
-                    latency_ms_last=round(st.latency_ms, 1))
+                    latency_ms_last=round(st.latency_ms, 1),
+                    events_total=st.events_total,
+                    last_label=(st.last_event.label if st.last_event else None))
+        if st.clipper is not None:
+            body["clips"] = st.clipper.stats()
+            body["clip_dir"] = st.clipper.root
+        if st.eventlog is not None:
+            body["event_log"] = st.eventlog.stats()
+        body["stream_formats"] = st.formats
+        body["flv_clients"] = st.flv_clients
+        # An ffmpeg that died takes its format down silently otherwise -- the endpoint keeps
+        # answering, it just never produces bytes. Report liveness per output, with ffmpeg's
+        # own last words when it is gone.
+        for key, out in (("hls", st.hls), ("push", st.push)):
+            if out is not None:
+                body[f"{key}_alive"] = out.alive()
+                err = out.error_tail()
+                if err:
+                    body[f"{key}_error"] = err
         return JSONResponse(body, status_code=200 if st.capture_alive else 503)
 
     @app.get("/config")
@@ -234,6 +316,68 @@ def build_app(cfg):
         return StreamingResponse(gen(),
                                  media_type="multipart/x-mixed-replace; boundary=frame")
 
+    @app.get("/live.flv")
+    async def live_flv():
+        """HTTP-FLV — the same shape the GB28181 gateways serve on the input side.
+
+        One ffmpeg per viewer (see streams.flv_pipe for why), so the client count is capped
+        rather than left to take the box down under a crowd.
+        """
+        from fastapi.responses import Response
+        if "flv" not in st.formats:
+            return Response("flv 未在 stream_formats 中启用", status_code=404,
+                            media_type="text/plain; charset=utf-8")
+        with st.flv_lock:
+            if st.flv_clients >= cfg.max_flv_clients:
+                return Response(f"FLV 并发观看数已达上限 {cfg.max_flv_clients}", status_code=503,
+                                media_type="text/plain; charset=utf-8")
+            st.flv_clients += 1
+        try:
+            out = streams.flv_pipe(st.jpeg, cfg.max_stream_fps)
+        except Exception as e:                                   # noqa: BLE001
+            with st.flv_lock:
+                st.flv_clients -= 1
+            return Response(f"无法启动 FLV 编码: {e}", status_code=503,
+                            media_type="text/plain; charset=utf-8")
+
+        async def gen():
+            try:
+                while True:
+                    # read1, not read: read(n) waits for the full n bytes, which holds finished
+                    # frames back until the buffer fills. read1 forwards whatever ffmpeg has
+                    # already produced -- the difference is latency, which is the whole point
+                    # of choosing FLV over HLS.
+                    chunk = await asyncio.to_thread(out.proc.stdout.read1, 65536)
+                    if not chunk:
+                        break
+                    yield chunk
+            finally:
+                out.close()
+                with st.flv_lock:
+                    st.flv_clients -= 1
+
+        return StreamingResponse(gen(), media_type="video/x-flv")
+
+    @app.get("/hls/{name}")
+    def hls_file(name: str):
+        """Playlist and segments. Served from the segmenter's own directory."""
+        from fastapi.responses import FileResponse, Response
+        if st.hls is None:
+            return Response("hls 未在 stream_formats 中启用", status_code=404,
+                            media_type="text/plain; charset=utf-8")
+        # The path comes from a URL; keep it to a bare filename so it cannot walk out of the
+        # segment directory.
+        if name != os.path.basename(name) or not name:
+            return Response("bad name", status_code=400, media_type="text/plain")
+        path = os.path.join(st.hls_dir, name)
+        if not os.path.exists(path):
+            return Response("尚未生成（分片需要几秒）", status_code=404,
+                            media_type="text/plain; charset=utf-8")
+        mime = ("application/vnd.apple.mpegurl" if name.endswith(".m3u8")
+                else "video/mp2t")
+        return FileResponse(path, media_type=mime,
+                            headers={"Cache-Control": "no-cache"})
+
     @app.get("/events")
     async def events():
         async def gen():
@@ -252,8 +396,27 @@ def build_app(cfg):
     return app
 
 
-def run_server(cfg):
+def run_server(cfg, on_clip=None, stop_after=0.0):
+    """Blocks until stopped. stop_after > 0 bounds the run (0 = until killed).
+
+    The bound exists because a persistent service is otherwise untestable end-to-end and
+    unschedulable as a finite job: with it, the same code path a camera runs forever can be
+    run for 60 seconds in CI or by an orchestrator that needs the container to terminate.
+    """
     import uvicorn
-    app = build_app(cfg)
+    app = build_app(cfg, on_clip=on_clip)
     print(f"[serve] http://{cfg.host}:{cfg.port}  endpoints: /stream /events /health /config")
-    uvicorn.run(app, host=cfg.host, port=cfg.port, log_level="warning")
+    server = uvicorn.Server(uvicorn.Config(app, host=cfg.host, port=cfg.port,
+                                           log_level="warning"))
+    if stop_after and stop_after > 0:
+        print(f"[serve] run_seconds={stop_after:g}，到期后自动退出")
+
+        def _bell():
+            print(f"[serve] 运行时长已达 {stop_after:g}s，开始收尾退出")
+            server.should_exit = True
+
+        t = threading.Timer(stop_after, _bell)
+        t.daemon = True
+        t.start()
+    server.run()
+    return app.state.dark

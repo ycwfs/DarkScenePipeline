@@ -1,6 +1,6 @@
 {
   "name": "暗光场景行为识别",
-  "description": "面向夜间/低照度监控视频的一体化处理算子：先做低照度增强（Retinexformer），再对增强后的帧做行为识别（挥手、投掷、追逐、跌倒、打斗、交谈、喝水、捡拾、握手，外加 other 共 10 类），最后可选做双三次插值超分辨率放大并叠加标签条，输出带标注的视频、逐窗口事件 JSON 与运行汇总 JSON。识别取的是增强后、超分前的帧（识别模型即在增强帧上训练，超分对识别中性）。单卡 RTX 3090、640x480 输入、默认配置（retinexformer + bicubic x2 + behavior）实测 24.3 帧/秒（900 帧任务，全新进程含模型加载），满足离线处理不低于 15 帧/秒的要求；1280x720 输入单卡仅 8.0 帧/秒，需通过 gpu_ids 指定多卡分片，详见 README 的性能实测一节。输入支持共用文件库地址、本地路径、rtsp:// 与 http(s):// 流（流式输入请配合 max_frames 限定长度）。",
+  "description": "面向夜间/低照度监控视频的一体化处理算子：先做低照度增强（Retinexformer），再对增强后的帧做行为识别（挥手、投掷、追逐、跌倒、打斗、交谈、喝水、捡拾、握手，外加 other 共 10 类），最后可选做双三次插值超分辨率放大并叠加标签条，输出带标注的视频、逐窗口事件 JSON 与运行汇总 JSON。识别取的是增强后、超分前的帧（识别模型即在增强帧上训练，超分对识别中性）。单卡 RTX 3090、640x480 输入、默认配置（retinexformer + bicubic x2 + behavior）实测 24.3 帧/秒（900 帧任务，全新进程含模型加载），满足离线处理不低于 15 帧/秒的要求；1280x720 输入单卡仅 8.0 帧/秒，需通过 gpu_ids 指定多卡分片，详见 README 的性能实测一节。输入支持共用文件库地址、本地路径、rtsp:// 与 http(s):// 流（流式输入请配合 max_frames 限定长度）。三个输出文件除写入框架的 outputPath 外，还会上传到 hdfs_output_dir 指定的目录，供容器退出后取回。",
   "metadata": {
     "arch": "amd64",
     "limits": {
@@ -24,7 +24,7 @@
       "description": "待处理视频。线上默认为实时流：国标(GB28181，经网关转换为可拉流地址后下发) / rtsp:// / http(s):// (flv、hls)；也支持容器内本地路径。不使用 hdfs://。流地址请同时设置 max_frames 以限定单次处理长度。",
       "annotations": {
         "show": "待处理视频",
-        "component": "fileRead",
+        "component": "stringInput",
         "parameter": 0
       }
     },
@@ -141,6 +141,26 @@
         "component": "stringInput",
         "parameter": 1
       }
+    },
+    {
+      "name": "local_output_dir",
+      "type": "String",
+      "description": "产出另存一份到这个容器内目录，如 /mnt/nfs/darkout。用于把结果直接写到平台挂载进容器的 NFS/共享存储上，事后可直接在本地浏览，不必经过 HDFS。目录结构为 local_output_dir/运行时间_进程号/文件名，与 hdfs_output_dir 下完全一致。留空则不另存本地。注意：与 hdfs_output_dir 至少要填一个——两个都留空时结果只存在于容器内，容器退出即不可再取，算子会在开始处理前直接报错退出。",
+      "annotations": {
+        "show": "本地落地目录(可留空)",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "hdfs_output_dir",
+      "type": "String",
+      "description": "产出上传一份到这个 HDFS 目录，如 hdfs://用户名@ip:port/a/b，算子会把 output_video/events_json/summary_json 上传到该目录下按运行时间区分的子目录中。留空则不上传 HDFS。与 local_output_dir 至少要填一个——两个都留空时结果随容器一起消失，算子会在开始处理前直接报错退出。",
+      "annotations": {
+        "show": "HDFS落地目录(可留空)",
+        "component": "stringInput",
+        "parameter": 0
+      }
     }
   ],
   "outputs": [
@@ -171,7 +191,7 @@
   ],
   "implementation": {
     "container": {
-      "image": "darkpipe-operator:0.1.0",
+      "image": "darkpipe-operator:0.2.0",
       "command": [
         "/opt/conda/envs/darkpipe/bin/python",
         "-u",
@@ -180,7 +200,7 @@
       "args": [
         "--video_path",
         {
-          "inputPath": "video_path"
+          "inputValue": "video_path"
         },
         "--enhance",
         {
@@ -221,6 +241,14 @@
         "--ckpt_dir",
         {
           "inputValue": "ckpt_dir"
+        },
+        "--local_output_dir",
+        {
+          "inputValue": "local_output_dir"
+        },
+        "--hdfs_output_dir",
+        {
+          "inputValue": "hdfs_output_dir"
         },
         "--output_video",
         {

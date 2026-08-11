@@ -7,7 +7,7 @@
 | 算子类型 | 处理算子                                                        |
 | 提交包名 | `事件_行为识别_暗光场景行为识别.zip`                          |
 | 主入口   | `main.py`                                                     |
-| 运行镜像 | `darkpipe-operator:0.1.0`（自带基础镜像，见「运行环境」一节） |
+| 运行镜像 | `darkpipe-operator:0.2.0`（自带基础镜像，见「运行环境」一节） |
 | 架构     | amd64，需 1 张 NVIDIA GPU                                       |
 
 ## 一、算子功能
@@ -52,6 +52,25 @@
 | `gpu_ids`       | GPU 卡号         | String | `0`                   | 逗号分隔，如`0,1,2,3`，多卡时按帧区间分片并行                                                          |
 | `enhance_chunk` | 增强批大小       | Int    | `4`                   | 增强阶段每批送 GPU 的帧数，显存不足时调小                                                                |
 | `ckpt_dir`      | 权重目录         | String | `/opt/darkpipe/ckpts` | 镜像内已预置默认配置所需权重，一般无需修改                                                               |
+| `local_output_dir` | 本地落地目录(可留空) | String | 无（**可留空**） | 容器内目录，如 `/mnt/nfs/darkout`；把结果直接写到平台挂进来的 NFS，事后本地浏览                        |
+| `hdfs_output_dir` | HDFS落地目录(可留空) | String | 无（**可留空**）     | 如 `hdfs://用户名@ip:port/a/b`；与 `local_output_dir` **至少填一个**                                      |
+
+### 必填参数
+
+按规范「有 `default` 字段即代表该参数必填、不能为空值」——没有 `default` 字段的三个参数如下，
+其余 10 个不填也会取默认值：
+
+| 参数名 | 是否必填 | 为什么 |
+| --- | --- | --- |
+| `video_path` | **必填** | 每次处理的视频/流地址都不同，没有通用默认值 |
+| `local_output_dir` | 可留空 | 留空则不另存本地 |
+| `hdfs_output_dir` | 可留空 | 留空则不上传 HDFS |
+
+**但 `local_output_dir` 与 `hdfs_output_dir` 不能同时留空。** 框架 `outputPath` 指向的文件只
+存在于容器内，容器退出即不可再取；两个都不填等于这次运行的结果谁也拿不到。算子会在**开始
+处理之前**就检查并报错退出，而不是白跑几分钟 GPU 再告诉你没地方放。
+
+两个目录可以同时填，此时同一次运行在两边落到**同名子目录**下，便于对照。
 
 ### 各选项怎么选
 
@@ -77,6 +96,14 @@
 | `output_video` | 输出视频 | 增强 + 超分 +（可选）底部识别标签条的 mp4 |
 | `events_json`  | 识别事件 | 行为事件 JSON 数组                        |
 | `summary_json` | 运行汇总 | 帧数、耗时、帧率、行为统计与生效配置      |
+
+**三个输出文件除了写入框架的 `outputPath` 之外，还会另存一份到 `local_output_dir`（通常是挂进
+容器的 NFS 目录）和/或 `hdfs_output_dir`。** 容器退出后 `outputPath` 指向的本地文件即不可再取——镜像不落盘保存产出，
+`outputPath`/`inputPath` 之间的传递也只发生在同一次编排内部——因此生产环境要事后取回结果，
+必须走这两份拷贝之一。实际落地路径是 `<目录>/<时间戳>_<进程号>/<文件名>`，每次运行落到独立
+子目录，不会互相覆盖；两个目录都填时用的是**同一个子目录名**，两边对得上。日志中会打印形如
+`[done] 输出视频(本地) -> /mnt/nfs/darkout/<YYYYmmdd_HHMMSS>_<pid>/output_video.mp4`
+`[done] 输出视频(hdfs) -> hdfs://.../<YYYYmmdd_HHMMSS>_<pid>/output_video.mp4` 的行给出确切地址。
 
 `events_json` 样例：
 
@@ -172,7 +199,7 @@
 
 ## 六、运行环境
 
-镜像 `darkpipe-operator:0.1.0` 由本算子随包提供的 `Dockerfile` 构建（构建方法见交付包中的
+镜像 `darkpipe-operator:0.2.0` 由本算子随包提供的 `Dockerfile` 构建（构建方法见交付包中的
 `DEVELOPING.md`）。
 
 **关于 Python 版本：** 规范推荐使用 Python 3.5–3.9，本算子使用 **Python 3.10**。原因是行为识别
@@ -199,14 +226,20 @@ CUDA 扩展可正常导入。镜像体积约 17.8 GB（压缩后约 6.4 GB），
 2. **框架不保证输出路径带扩展名。** 若 `output_video` 的路径没有 `.mp4` 等视频扩展名，算子会
    先写入带扩展名的临时文件、结束时改名到框架指定的路径——因为 OpenCV 依赖扩展名选择封装格式，
    直接写无扩展名路径会失败。使用者无需为此做任何配置。
-3. **`video_path` 不使用 `hdfs://`。** 线上输入统一走国标(GB28181)/`rtsp://`/`http(s)://`
-   （flv、hls）实时流地址，均由 OpenCV 直接打开，`oputil.py` 中的 `fetch_input` 对非
-   `hdfs://` 地址原样传递，无需下载落盘。`fetch_input` 仍保留 `hdfs://` 分支（`hdfs dfs -get`
-   落盘，无客户端时打印明确错误退出），供配套测试验证算子的 `dataset_manifest` 参数复用，但
-   本算子的 `video_path` 不会用到这条路径。
+3. **`video_path` 不使用 `hdfs://`，前端呈现为文本输入框而非文件选择器。** 线上输入统一走
+   国标(GB28181)/`rtsp://`/`http(s)://`（flv、hls）实时流地址，均由 OpenCV 直接打开，
+   `oputil.py` 中的 `fetch_input` 对非 `hdfs://` 地址原样传递，无需下载落盘。`video_path` 是
+   流地址而不是共用文件库里挑选的文件，因此 `suanzi.json` 中其 `component` 是 `stringInput`
+   （字符输入框），使用者手动输入地址，而不是从文件选择器里选。`fetch_input` 仍保留
+   `hdfs://` 分支（`hdfs dfs -get` 落盘，无客户端时打印明确错误退出），供配套测试验证算子的
+   `dataset_manifest` 参数复用，但本算子的 `video_path` 不会用到这条路径。
 4. **处理国标/`rtsp://`/`flv`/`hls` 等无限流时必须设置 `max_frames`**，否则算子不会自行结束。
-5. **日志与失败判定。** 所有日志通过 `print` 输出到标准输出，由框架收集。运行结束会打印一行
+5. **`hdfs_output_dir` 若为 `hdfs://` 地址，依赖容器内的 HDFS 客户端上传输出。** 走的是
+   `oputil.py` 中的 `upload_outputs`：`hdfs://` 地址用 `hdfs dfs -put`/`hadoop fs -put`，没有
+   客户端时打印明确错误并以非零码退出；填非 `hdfs://` 的普通目录（如框架挂载的本地/NFS 路径）
+   则直接复制文件，不依赖 HDFS 客户端。
+6. **日志与失败判定。** 所有日志通过 `print` 输出到标准输出，由框架收集。运行结束会打印一行
    `[metrics] frames=... seconds=... fps=... wall_seconds=... events=... label=...` 便于检索。
    任何异常都会打印完整调用栈并以非零退出码结束，框架据此判定任务失败。
-6. **精度评测请使用配套的测试验证算子**「暗光场景行为识别测试验证」
+7. **精度评测请使用配套的测试验证算子**「暗光场景行为识别测试验证」
    （`事件_行为识别_暗光场景行为识别测试验证.zip`），它与本算子使用完全一致的推理路径。

@@ -19,7 +19,8 @@ import traceback
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
-from oputil import ensure_parent, fetch_input, parse_gpu_ids  # noqa: E402
+from oputil import (deliver, ensure_parent, fetch_input,  # noqa: E402
+                    parse_gpu_ids, require_destination)
 
 
 def build_parser():
@@ -35,6 +36,12 @@ def build_parser():
     # 显存占用会随片段分辨率线性膨胀；分块后显存上限与分辨率无关地受控。
     p.add_argument("--enhance_chunk", type=int, default=4)
     p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
+    p.add_argument("--local_output_dir", default="",
+                   help="产出另存到这个容器内目录（挂载 NFS 后即可本地浏览），如 /mnt/nfs/darkout；"
+                        "留空则不另存本地")
+    p.add_argument("--hdfs_output_dir", default="",
+                   help="产出上传到这个 HDFS 目录，如 hdfs://用户名@ip:port/a/b；留空则不上传。"
+                        "与 local_output_dir 至少要填一个，否则结果随容器一起消失")
     p.add_argument("--metrics_json", required=True)
     p.add_argument("--confusion_csv", required=True)
     return p
@@ -122,6 +129,7 @@ def run(args):
     from darkpipe.stages import build_stages
     from darkpipe.stages.recognize import preprocess_frame
 
+    require_destination(args.local_output_dir, args.hdfs_output_dir)
     gpus = parse_gpu_ids(args.gpu_ids)
     device = f"cuda:{gpus[0]}"
     chunk = max(1, args.enhance_chunk)
@@ -215,6 +223,10 @@ def run(args):
               f"{sorted(unknown)[:10]}")
     print(f"[done] 指标 -> {args.metrics_json}")
     print(f"[done] 混淆矩阵 -> {args.confusion_csv}")
+
+    deliver({"metrics_json": args.metrics_json, "confusion_csv": args.confusion_csv},
+            args.local_output_dir, args.hdfs_output_dir,
+            {"metrics_json": "指标", "confusion_csv": "混淆矩阵"})
 
 
 def main(argv=None):

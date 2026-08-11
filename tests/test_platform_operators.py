@@ -17,7 +17,13 @@ import pytest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLATFORM = os.path.join(ROOT, "platform")
-OPS = ["op_dark_behavior", "op_dark_behavior_eval"]
+OPS = ["op_dark_behavior", "op_dark_behavior_eval", "op_dark_behavior_serve"]
+
+# Components whose value IS a file address the operator has to open, so the framework must
+# hand them over with `inputPath`. Everything else -- text boxes, dropdowns, numbers,
+# switches -- carries the value itself and takes `inputValue`. `dirRead` is deliberately NOT
+# here: the spec says it passes an Int directory ID, not a path.
+PATH_COMPONENTS = {"fileRead", "modelRead", "fileLoad"}
 
 sys.path.insert(0, ROOT)
 
@@ -121,6 +127,51 @@ def test_required_inputs_have_no_default(op):
             assert "default" not in item, \
                 f"{op}: {item['name']} is required in main.py, so suanzi.json must not " \
                 f"give it a default"
+
+
+@pytest.mark.parametrize("op", OPS)
+def test_arg_kind_matches_component(op):
+    """`inputValue` vs `inputPath` has to agree with how the page collects the value.
+
+    This is the one manifest error nothing else catches: both spellings are valid JSON, both
+    pass the spec checker, and the operator starts fine either way -- it just receives the
+    wrong thing at runtime, in production. A `stringInput` declared as `inputPath` tells the
+    framework to treat whatever the user typed as a file to open; a `fileRead` declared as
+    `inputValue` asks for the contents of a video instead of its address.
+    """
+    doc = manifest(op)
+    comp = {i["name"]: (i.get("annotations") or {}).get("component") for i in doc["inputs"]}
+    for a in doc["implementation"]["container"]["args"]:
+        if not isinstance(a, dict):
+            continue
+        (kind, ref), = a.items()
+        if kind not in ("inputValue", "inputPath"):
+            continue
+        want = "inputPath" if comp.get(ref) in PATH_COMPONENTS else "inputValue"
+        assert kind == want, \
+            f"{op}: {ref} is a {comp.get(ref)!r} component, so args must pass it as " \
+            f"{want}, not {kind}"
+
+
+@pytest.mark.parametrize("op", OPS)
+def test_optional_input_is_not_required_in_code(op):
+    """An input with no `default` may be left blank -- the code must not demand it.
+
+    The spec only says a default MAKES a parameter mandatory; it does not say the absence of
+    one does. So `required=True` in argparse is a second, independent decision, and the two
+    genuinely differ here: video_path must be filled, hdfs_output_dir may be left empty to
+    mean "don't push to HDFS". Without this test, flipping one without the other turns a
+    blank field into a crash at container start.
+    """
+    doc, flags = manifest(op), flags_of(parser_of(op))
+    for item in doc["inputs"]:
+        if "default" in item:
+            continue
+        action = flags[f"--{item['name']}"]
+        if not action.required:
+            assert action.default is not None, \
+                f"{op}: {item['name']} is optional, so main.py needs a usable default " \
+                f"(got None) for the blank-field case"
 
 
 @pytest.mark.parametrize("op", OPS)

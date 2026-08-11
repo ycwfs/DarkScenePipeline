@@ -24,7 +24,8 @@ import traceback
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
-from oputil import ensure_parent, fetch_input, parse_bool, parse_gpu_ids  # noqa: E402
+from oputil import (deliver, ensure_parent, fetch_input, parse_bool,  # noqa: E402
+                     parse_gpu_ids, require_destination)
 
 
 def build_parser():
@@ -46,6 +47,12 @@ def build_parser():
     # （2.38 GiB vs 4.70 GiB）。显存紧张时可继续调小，代价是吞吐量线性下降。
     p.add_argument("--enhance_chunk", type=int, default=4)
     p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
+    p.add_argument("--local_output_dir", default="",
+                   help="产出另存到这个容器内目录（挂载 NFS 后即可本地浏览），如 /mnt/nfs/darkout；"
+                        "留空则不另存本地")
+    p.add_argument("--hdfs_output_dir", default="",
+                   help="产出上传到这个 HDFS 目录，如 hdfs://用户名@ip:port/a/b；留空则不上传。"
+                        "与 local_output_dir 至少要填一个，否则结果随容器一起消失")
     p.add_argument("--output_video", required=True)
     p.add_argument("--events_json", required=True)
     p.add_argument("--summary_json", required=True)
@@ -68,6 +75,7 @@ def to_dicts(events):
 def run(args):
     from darkpipe.config import PipelineConfig, validate
 
+    require_destination(args.local_output_dir, args.hdfs_output_dir)
     gpus = parse_gpu_ids(args.gpu_ids)
     for p in (args.output_video, args.events_json, args.summary_json):
         ensure_parent(p)
@@ -156,6 +164,12 @@ def run(args):
     print(f"[done] 输出视频 -> {args.output_video}")
     print(f"[done] 识别事件 -> {args.events_json}")
     print(f"[done] 汇总信息 -> {args.summary_json}")
+
+    deliver({"output_video": args.output_video, "events_json": args.events_json,
+             "summary_json": args.summary_json},
+            args.local_output_dir, args.hdfs_output_dir,
+            {"output_video": "输出视频", "events_json": "识别事件",
+             "summary_json": "汇总信息"})
 
 
 def main(argv=None):

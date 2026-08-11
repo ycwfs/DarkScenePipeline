@@ -39,6 +39,22 @@ class PipelineConfig:
     jpeg_quality: int = 85
     max_stream_fps: float = 15.0
     record: str = ""
+    # serve: per-event clip recording (see darkpipe/clips.py). Off unless clip_dir is set.
+    clip_dir: str = ""
+    clip_pre_sec: float = 2.0
+    clip_post_sec: float = 2.0
+    clip_max_sec: float = 30.0
+    clip_skip_labels: str = "other"
+    clip_min_conf: float = 0.0
+    # Caller-supplied name for this run's clip subdirectory. Left empty the recorder invents
+    # one, which is fine standalone but drifts by a second from a name the caller generated
+    # separately -- and then the reported paths and the uploaded copies disagree.
+    clip_session: str = ""
+    # serve: which live output formats to expose. mjpeg is native; flv/hls need ffmpeg.
+    stream_formats: str = "mjpeg"
+    hls_dir: str = ""                # empty -> a temp dir under /tmp
+    rtmp_push_url: str = ""          # push to someone else's rtmp:// / rtsp:// server
+    max_flv_clients: int = 4
     # realrestorer
     rr_bundle: str = ""
     rr_steps: int = 28
@@ -216,6 +232,45 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
             cfg.warnings.append("--output is ignored in serve mode (use --record)")
         if cfg.events_json:
             cfg.warnings.append("--events-json is ignored in serve mode (use /events SSE)")
+
+    # Clip recording is driven by recognition events, so it is only ever a serve-mode
+    # feature and only ever does anything with a recognizer attached. Saying so here beats
+    # letting the user find an empty clip directory an hour into a run.
+    if cfg.clip_dir:
+        if cfg.mode != "serve":
+            _die("--clip-dir cuts clips out of a live stream on recognition events and is "
+                 "serve-only; offline already writes the whole processed video to --output.")
+        if cfg.recognize == "off":
+            _die("--clip-dir needs recognition events to know what to cut; "
+                 "--recognize off would never write a clip.")
+        for name, v in (("--clip-pre-sec", cfg.clip_pre_sec),
+                        ("--clip-post-sec", cfg.clip_post_sec)):
+            if v < 0:
+                _die(f"{name} must be >= 0 (got {v})")
+        if cfg.clip_max_sec <= 0:
+            _die(f"--clip-max-sec must be > 0 (got {cfg.clip_max_sec})")
+        if cfg.clip_max_sec < cfg.clip_pre_sec + cfg.clip_post_sec:
+            cfg.warnings.append(
+                f"--clip-max-sec {cfg.clip_max_sec}s is shorter than pre+post "
+                f"({cfg.clip_pre_sec}+{cfg.clip_post_sec}s), so every clip is cut off at the "
+                f"cap and the post-roll never lands")
+        if not 0.0 <= cfg.clip_min_conf <= 1.0:
+            _die(f"--clip-min-conf is a probability in [0,1] (got {cfg.clip_min_conf})")
+
+    # Everything except mjpeg is muxed by an ffmpeg subprocess. Checking for it here turns
+    # "the /live.flv endpoint quietly 503s" into a startup error naming the missing binary.
+    if cfg.mode == "serve":
+        from .streams import ffmpeg_path, parse_formats
+        try:
+            fmts = parse_formats(cfg.stream_formats)
+        except ValueError as e:
+            _die(str(e))
+        needs_ffmpeg = [f for f in fmts if f != "mjpeg"] or ([] if not cfg.rtmp_push_url
+                                                             else ["rtmp_push_url"])
+        if needs_ffmpeg and not ffmpeg_path():
+            _die(f"stream formats {needs_ffmpeg} need the ffmpeg binary, which is not in this "
+                 f"image. Use --stream-formats mjpeg, or rebuild the image (platform/"
+                 f"Dockerfile installs it).")
 
     if cfg.enhance != "realrestorer" and (cfg.rr_prompt or cfg.rr_bundle):
         cfg.warnings.append("--rr-* flags ignored (enhance != realrestorer)")

@@ -61,14 +61,17 @@ ARG CONV1D_WHL=https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.5
 RUN $PY -m pip install --no-cache-dir "${GH_PREFIX}${CONV1D_WHL}" "${GH_PREFIX}${MAMBA_WHL}"
 
 # 其余依赖与仓库 pyproject.toml 保持一致。opencv 用 headless 版：容器里没有 X11，算子也从不
-# 调用 imshow（已确认 darkpipe/ 中无任何 GUI 调用）。不装 fastapi/uvicorn——那是 serve 模式
-# 的依赖，算子走的是离线处理路径。
+# 调用 imshow（已确认 darkpipe/ 中无任何 GUI 调用）。同一个镜像也用来跑常驻的 serve 模式
+# （摄像头长开、实时出流，见 platform/op_dark_behavior_serve 与 platform/run_serve.sh），
+# 所以装上 fastapi/uvicorn（几 MB，相对镜像体积可忽略）。
 RUN $PY -m pip install --no-cache-dir \
         "transformers==4.57.3" \
         "timm==1.0.27" \
         "einops>=0.8" \
         "numpy>=2.0,<2.1" \
         "opencv-python-headless>=4.10" \
+        "fastapi>=0.115" \
+        "uvicorn>=0.30" \
         "safetensors>=0.4" \
         "pillow>=10" \
         "huggingface_hub>=0.30"
@@ -81,6 +84,15 @@ RUN $PY -m pip install --no-cache-dir \
 # libc6-dev 不能省：--no-install-recommends 装的 gcc 不带 crti.o/Scrt1.o，链接阶段会失败。
 # 链接 -lcuda 用的 libcuda.so 由 nvidia-container-toolkit 在运行时注入，不需要装 CUDA stub。
 RUN apt-get update && apt-get install -y --no-install-recommends gcc libc6-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# ffmpeg：实时服务算子的多格式出流（HTTP-FLV / HLS / 推流到外部 RTMP-RTSP 服务器）全部由它
+# 封装，MJPEG 那条路不经过它。opencv 自带的是 ffmpeg 的**库**，没有命令行程序，而这里要的正是
+# 一个能把 MJPEG 转封装成 FLV/HLS 并写到管道或推到远端的进程，所以必须单独装。
+#
+# 单独一层、放在 gcc 那层之后：上面那条注释的道理同样适用——改动这里不应该让已经装好的
+# 13 GB pip 依赖层（乃至 gcc 层）失效重装。代价是镜像多约 250 MB，相对 17 GB 可以接受。
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # triton 默认把编译缓存写到 $HOME/.triton。平台以哪个用户、哪个 HOME 启动容器都不确定，
@@ -100,6 +112,15 @@ RUN $PY -c "import torch, cv2, timm, einops, transformers; \
 from importlib.metadata import version; \
 print('torch', torch.__version__, 'cv2', cv2.__version__, \
 'mamba_ssm', version('mamba_ssm'), 'causal_conv1d', version('causal_conv1d'), 'ok')"
+
+# ffmpeg 不需要 GPU，所以这一条构建期就能真正验证，不是"假装验证"：确认命令行存在，且真的
+# 带着出流所需的 libx264 编码器与 flv/hls 封装器——Ubuntu 的 ffmpeg 是全功能构建，但装错源或
+# 换成精简构建时，缺的正是这几样，而那种缺失要到运行期开流才暴露。
+RUN ffmpeg -hide_banner -version | head -1 \
+    && ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264 \
+    && ffmpeg -hide_banner -muxers 2>/dev/null | grep -qE '^ *E +flv' \
+    && ffmpeg -hide_banner -muxers 2>/dev/null | grep -qE '^ *E +hls' \
+    && echo 'ffmpeg libx264/flv/hls ok'
 
 WORKDIR /opt/darkpipe
 # 不设 ENTRYPOINT：规范要求由 suanzi.json 的 command 提供

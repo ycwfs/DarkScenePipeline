@@ -80,6 +80,30 @@ def build_parser():
     s.add_argument("--jpeg-quality", type=int, default=85)
     s.add_argument("--max-stream-fps", type=float, default=15.0)
     s.add_argument("--record", default="")
+    s.add_argument("--clip-dir", default="",
+                   help="serve: save one mp4 per recognised behavior under this directory "
+                        "(empty = off). Clips are cut from the live stream around each "
+                        "event; see --clip-skip-labels")
+    s.add_argument("--clip-pre-sec", type=float, default=2.0,
+                   help="seconds kept from BEFORE the trigger (the window that caused the "
+                        "event is already past when it fires)")
+    s.add_argument("--clip-post-sec", type=float, default=2.0,
+                   help="a clip closes this long after its last qualifying event")
+    s.add_argument("--clip-max-sec", type=float, default=30.0,
+                   help="hard cap so a permanently active scene cannot grow one file forever")
+    s.add_argument("--clip-skip-labels", default="other",
+                   help="comma-separated labels that never start a clip (default: other)")
+    s.add_argument("--clip-min-conf", type=float, default=0.0,
+                   help="ignore events below this probability (0 = keep all)")
+    s.add_argument("--stream-formats", default="mjpeg",
+                   help="comma-separated live outputs: mjpeg (native), flv (/live.flv), "
+                        "hls (/hls/index.m3u8). Anything but mjpeg needs ffmpeg in the image")
+    s.add_argument("--hls-dir", default="",
+                   help="where HLS segments are written (default: a temp dir)")
+    s.add_argument("--rtmp-push-url", default="",
+                   help="also push the processed stream to an external rtmp:// / rtsp:// server")
+    s.add_argument("--max-flv-clients", type=int, default=4,
+                   help="concurrent /live.flv viewers; each one costs its own encoder")
     r = p.add_argument_group("realrestorer")
     r.add_argument("--rr-bundle", default="")
     r.add_argument("--rr-steps", type=int, default=28)

@@ -40,18 +40,23 @@ for op in "${ops[@]}"; do
     #
     # 平台只暴露 off/retinexformer + off/bicubic + off/behavior（build_image.sh 同一注释），
     # 因此 cidnet / realrestorer / lightsr / catanet / xclip 这几条代码路径在 suanzi.json 的
-    # choice 列表里已经选不到，连带其 vendor 权重架构与 cli.py/server.py（交互式 CLI 的
-    # serve 子命令，算子从不调用）打进 zip 纯属冗余。darkpipe/ 源码本体不删——compare/ 和
-    # 交互式 CLI 仍要用到完整后端集合——只是打包时不把这些不可达文件复制进 zip。
+    # choice 列表里已经选不到，连带其 vendor 权重架构与 cli.py（交互式 CLI，算子从不调用）
+    # 打进 zip 纯属冗余。darkpipe/ 源码本体不删——compare/ 和交互式 CLI 仍要用到完整后端
+    # 集合——只是打包时不把这些不可达文件复制进 zip。
+    #
+    # server.py 是按算子区分的：批处理算子从不调用它，实时服务算子的全部功能都在它里面。
+    # 排除列表因此不能是一份全局常量。
     cp "$HERE/oputil.py" "$stage/"
-    rsync -a --exclude='__pycache__' --exclude='*.pyc' \
-        --exclude='cli.py' --exclude='server.py' \
-        --exclude='stages/enhance_cidnet.py' --exclude='stages/enhance_realrestorer.py' \
-        --exclude='stages/sr_lightsr.py' --exclude='stages/sr_catanet.py' \
-        --exclude='stages/recognize_xclip.py' \
-        --exclude='vendor/cidnet' --exclude='vendor/realrestorer' \
-        --exclude='vendor/catanet_arch.py' --exclude='vendor/mambairv2light_arch.py' \
-        "$REPO/darkpipe/" "$stage/darkpipe/"
+    excludes=(--exclude='__pycache__' --exclude='*.pyc' --exclude='cli.py'
+              --exclude='stages/enhance_cidnet.py' --exclude='stages/enhance_realrestorer.py'
+              --exclude='stages/sr_lightsr.py' --exclude='stages/sr_catanet.py'
+              --exclude='stages/recognize_xclip.py'
+              --exclude='vendor/cidnet' --exclude='vendor/realrestorer'
+              --exclude='vendor/catanet_arch.py' --exclude='vendor/mambairv2light_arch.py')
+    if [[ "$op" != *serve* ]]; then
+        excludes+=(--exclude='server.py' --exclude='clips.py' --exclude='streams.py')
+    fi
+    rsync -a "${excludes[@]}" "$REPO/darkpipe/" "$stage/darkpipe/"
 
     # 提交前自检：manifest 不合规就不出包
     python3 "$HERE/validate_suanzi.py" "$stage/suanzi.json" >/dev/null || {

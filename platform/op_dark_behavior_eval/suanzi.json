@@ -1,6 +1,6 @@
 {
   "name": "暗光场景行为识别测试验证",
-  "description": "暗光场景行为识别算子的配套测试验证算子：读取一份带标注的视频清单（每行 `视频路径,类别标签`），对每条片段按与处理算子完全一致的推理协议（均匀抽取识别窗口帧数 -> 同一低照度增强算子 -> 同一预处理 -> 同一识别模型）给出预测，统计总体准确率、宏平均 F1、各类别精确率/召回率/F1 与混淆矩阵，同时输出到标准输出日志和结果文件。评测不做超分——处理算子中识别器取的就是增强后、超分前的帧，因此评测域与部署域完全一致。类别标签必须取自模型类别表（behavior 模型为 wave、throw、chase、fall、fight、talk、drink、pick_up、shake_hands、other），不在表内的行会被跳过并在日志中提示。单卡 RTX 3090 实测平均每条片段 0.46 秒。",
+  "description": "暗光场景行为识别算子的配套测试验证算子：读取一份带标注的视频清单（每行 `视频路径,类别标签`），对每条片段按与处理算子完全一致的推理协议（均匀抽取识别窗口帧数 -> 同一低照度增强算子 -> 同一预处理 -> 同一识别模型）给出预测，统计总体准确率、宏平均 F1、各类别精确率/召回率/F1 与混淆矩阵，同时输出到标准输出日志和结果文件。评测不做超分——处理算子中识别器取的就是增强后、超分前的帧，因此评测域与部署域完全一致。类别标签必须取自模型类别表（behavior 模型为 wave、throw、chase、fall、fight、talk、drink、pick_up、shake_hands、other），不在表内的行会被跳过并在日志中提示。单卡 RTX 3090 实测平均每条片段 0.46 秒。两个输出文件除写入框架的 outputPath 外，还会上传到 hdfs_output_dir 指定的目录，供容器退出后取回。",
   "metadata": {
     "arch": "amd64",
     "limits": {
@@ -95,6 +95,26 @@
         "component": "stringInput",
         "parameter": 1
       }
+    },
+    {
+      "name": "local_output_dir",
+      "type": "String",
+      "description": "产出另存一份到这个容器内目录，如 /mnt/nfs/darkout。用于把结果直接写到平台挂载进容器的 NFS/共享存储上，事后可直接在本地浏览，不必经过 HDFS。目录结构为 local_output_dir/运行时间_进程号/文件名，与 hdfs_output_dir 下完全一致。留空则不另存本地。注意：与 hdfs_output_dir 至少要填一个——两个都留空时结果只存在于容器内，容器退出即不可再取，算子会在开始处理前直接报错退出。",
+      "annotations": {
+        "show": "本地落地目录(可留空)",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "hdfs_output_dir",
+      "type": "String",
+      "description": "产出上传一份到这个 HDFS 目录，如 hdfs://用户名@ip:port/a/b，算子会把 metrics_json/confusion_csv 上传到该目录下按运行时间区分的子目录中。留空则不上传 HDFS。与 local_output_dir 至少要填一个——两个都留空时结果随容器一起消失，算子会在开始处理前直接报错退出。",
+      "annotations": {
+        "show": "HDFS落地目录(可留空)",
+        "component": "stringInput",
+        "parameter": 0
+      }
     }
   ],
   "outputs": [
@@ -117,7 +137,7 @@
   ],
   "implementation": {
     "container": {
-      "image": "darkpipe-operator:0.1.0",
+      "image": "darkpipe-operator:0.2.0",
       "command": [
         "/opt/conda/envs/darkpipe/bin/python",
         "-u",
@@ -151,6 +171,14 @@
         "--ckpt_dir",
         {
           "inputValue": "ckpt_dir"
+        },
+        "--local_output_dir",
+        {
+          "inputValue": "local_output_dir"
+        },
+        "--hdfs_output_dir",
+        {
+          "inputValue": "hdfs_output_dir"
         },
         "--metrics_json",
         {
