@@ -25,7 +25,14 @@ from collections import deque
 # Encoder settings shared by the low-latency outputs. ultrafast/zerolatency because this is a
 # live monitor -- a smaller file is worth nothing here and every extra frame of lookahead is
 # latency against the <= 1 s budget.
-LOW_LATENCY = ["-c:v", "libx264", "-preset", "ultrafast", "-tune", "zerolatency",
+#
+# The scale filter is not cosmetic: H.264 with yuv420p refuses odd dimensions, and libx264
+# fails at *encoder init*, so the whole output never starts -- "height not divisible by 2
+# (3840x2333)" from a 1080p source upscaled x2 plus a label bar. The bar is now kept even
+# (darkpipe/render.py), which covers that case at the source; this crops at most one row or
+# column and covers everything else, including an odd-sized source with SR off.
+LOW_LATENCY = ["-vf", "crop=trunc(iw/2)*2:trunc(ih/2)*2",
+               "-c:v", "libx264", "-preset", "ultrafast", "-tune", "zerolatency",
                "-pix_fmt", "yuv420p"]
 FORMATS = ("mjpeg", "flv", "hls")
 

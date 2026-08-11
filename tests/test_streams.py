@@ -75,3 +75,30 @@ def test_ffmpeg_build_has_what_the_formats_need():
                          capture_output=True, text=True).stdout
     assert "libx264" in enc
     assert " flv" in mux and " hls" in mux
+
+
+@pytest.mark.parametrize("h,w", [(2160, 3840), (960, 1280), (1080, 1920), (480, 640), (720, 1280)])
+def test_label_bar_keeps_an_even_frame_even(h, w):
+    """H.264 rejects odd dimensions at encoder init, so the whole output never starts.
+
+    Reported from production: a 1080p source upscaled x2 became 3840x2160, the bar added
+    round(0.08*2160)=173, and libx264 refused 3840x2333. MJPEG does not care and cv2's mp4
+    writer silently rounds down, so only the FLV/HLS/RTSP outputs actually broke -- and the
+    640x480 test resolution happened to land on 528, even, which is why it went unnoticed.
+
+    An odd-sized *source* is not this function's problem to solve (it would have to alter the
+    picture); the crop filter in streams.LOW_LATENCY handles that.
+    """
+    import numpy as np
+
+    from darkpipe.render import append_label_bar
+    out = append_label_bar(np.zeros((h, w, 3), np.uint8), None)
+    assert out.shape[0] % 2 == 0, f"{w}x{h} -> height {out.shape[0]} is odd"
+    assert out.shape[0] > h, "the bar still has to be there"
+
+
+def test_h264_outputs_force_even_dimensions():
+    """The belt to render.py's braces: any odd source still has to encode."""
+    from darkpipe.streams import LOW_LATENCY
+    assert "-vf" in LOW_LATENCY
+    assert "trunc(iw/2)*2:trunc(ih/2)*2" in LOW_LATENCY[LOW_LATENCY.index("-vf") + 1]

@@ -10,7 +10,13 @@ FONT = cv2.FONT_HERSHEY_SIMPLEX
 def append_label_bar(frame, event, extra: str = ""):
     """Returns frame with a text bar stacked underneath. event may be None (warmup)."""
     h, w = frame.shape[:2]
+    # Even height, always. H.264 with yuv420p rejects odd dimensions outright, and the bar is
+    # what makes them odd: 0.08 * 2160 rounds to 173, so a 1080p source upscaled x2 came out
+    # 3840x2333 and libx264 refused to open ("height not divisible by 2"). It went unnoticed
+    # for a while because MJPEG does not care, and cv2's mp4 writer silently rounds down --
+    # only the H.264 outputs (FLV/HLS/RTSP push) actually fail.
     bar_h = max(48, round(0.08 * h))
+    bar_h += bar_h & 1
     bar = np.full((bar_h, w, 3), 32, np.uint8)
     scale = bar_h / 48 * 0.9
     if event is None:
