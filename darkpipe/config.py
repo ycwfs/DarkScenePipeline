@@ -55,6 +55,9 @@ class PipelineConfig:
     hls_dir: str = ""                # empty -> a temp dir under /tmp
     rtmp_push_url: str = ""          # push to someone else's rtmp:// / rtsp:// server
     max_flv_clients: int = 4
+    # Bitrate cap for every H.264 output. Empty = uncapped, which on noisy enhanced footage
+    # measured 44 Mbit/s at 1080p and 179 Mbit/s at 4K.
+    stream_bitrate: str = "4M"
     # realrestorer
     rr_bundle: str = ""
     rr_steps: int = 28

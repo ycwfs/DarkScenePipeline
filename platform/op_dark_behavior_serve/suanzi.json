@@ -154,6 +154,17 @@
       }
     },
     {
+      "name": "stream_bitrate",
+      "type": "String",
+      "description": "所有 H.264 出流（/live.flv、/hls、推流）的码率上限，如 4M、8M。不设上限时，增强后的暗光画面因为噪声多，实测 1080p 约 44 Mbit/s、4K 约 179 Mbit/s——链路吃不下时不会优雅降级，而是画面出现绿色残缺块、最终连接被服务器断开。按下游带宽填写；填空字符串表示不限制。",
+      "default": "4M",
+      "annotations": {
+        "show": "出流码率上限",
+        "component": "stringInput",
+        "parameter": 1
+      }
+    },
+    {
       "name": "max_flv_clients",
       "type": "Int",
       "description": "/live.flv 的并发观看上限。每个观看端各占一个 ffmpeg 编码进程，超过上限的请求返回 503 而不是把机器拖垮。需要更多观看端时请改用 rtmp_push_url 交给流媒体服务器分发。",
@@ -329,6 +340,10 @@
         "--rtmp_push_url",
         {
           "inputValue": "rtmp_push_url"
+        },
+        "--stream_bitrate",
+        {
+          "inputValue": "stream_bitrate"
         },
         "--max_flv_clients",
         {

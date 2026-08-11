@@ -102,6 +102,9 @@ def build_parser():
                    help="where HLS segments are written (default: a temp dir)")
     s.add_argument("--rtmp-push-url", default="",
                    help="also push the processed stream to an external rtmp:// / rtsp:// server")
+    s.add_argument("--stream-bitrate", default="4M",
+                   help="cap for every H.264 output, e.g. 4M/8M; empty disables the cap "
+                        "(uncapped measured 44 Mbit/s at 1080p on noisy enhanced footage)")
     s.add_argument("--max-flv-clients", type=int, default=4,
                    help="concurrent /live.flv viewers; each one costs its own encoder")
     r = p.add_argument_group("realrestorer")

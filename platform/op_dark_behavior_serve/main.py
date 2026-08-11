@@ -58,6 +58,8 @@ def build_parser():
                    help="对外的实时视频流格式；flv/hls 由镜像内的 ffmpeg 封装")
     p.add_argument("--rtmp_push_url", default="",
                    help="推流到外部流媒体服务器，如 rtmp://ip:1935/live/key；留空不推")
+    p.add_argument("--stream_bitrate", default="4M",
+                   help="所有 H.264 出流的码率上限，如 4M/8M；留空则不限制")
     p.add_argument("--max_flv_clients", type=int, default=4)
     p.add_argument("--jpeg_quality", type=int, default=85)
     p.add_argument("--max_stream_fps", type=float, default=15.0)
@@ -161,7 +163,7 @@ def run(args):
         host="0.0.0.0", port=args.serve_port, jpeg_quality=args.jpeg_quality,
         max_stream_fps=args.max_stream_fps,
         stream_formats=args.stream_formats, rtmp_push_url=args.rtmp_push_url,
-        max_flv_clients=args.max_flv_clients,
+        max_flv_clients=args.max_flv_clients, stream_bitrate=args.stream_bitrate,
         clip_dir=args.clip_dir, clip_pre_sec=args.clip_pre_sec,
         clip_post_sec=args.clip_post_sec, clip_max_sec=args.clip_max_sec,
         clip_skip_labels=args.clip_skip_labels,

@@ -141,6 +141,7 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `serve_port` | 服务端口 | Int | `8000` | 所有接口都在这个端口上 |
 | `stream_formats` | 实时流输出格式 | String | `mjpeg,flv` | `mjpeg` / `mjpeg,flv` / `mjpeg,flv,hls` / `mjpeg,hls` |
 | `rtmp_push_url` | 推流地址(可留空) | String | 无（**可留空**） | 推到外部流媒体服务器，支持 `rtmp://ip:1935/应用/流名` 与 `rtsp://ip:8554/流名`（RTSP 固定走 TCP）；留空不推 |
+| `stream_bitrate` | 出流码率上限 | String | `4M` | 所有 H.264 出流的码率上限；**不要留空**，见下 |
 | `max_flv_clients` | FLV并发观看上限 | Int | `4` | 超出返回 503；需要更多观看端请改用推流 |
 | `jpeg_quality` | 演示流画质 | Int | `85` | 1-100，调低省带宽 |
 | `max_stream_fps` | 演示流最大帧率 | Float | `15.0` | 只限制推流，不限制识别与片段 |
@@ -241,6 +242,16 @@ tail -f /mnt/nfs/darkclips/*/events.jsonl      # 事件日志（不依赖端口�
 H.264 640x528。**RTSP 固定使用 TCP 传输**——ffmpeg 默认走 UDP，需要 RTP/RTCP 一对端口穿过
 中间的 NAT 与防火墙，在数据中心里常见的结果是握手成功、画面却过不去；TCP 全部走已经建立的
 那一条连接。
+
+**码率上限不是可选项。** 增强后的暗光画面噪声多，而 H.264 的比特几乎都花在噪声上：不设上限
+时实测 **1080p 约 44 Mbit/s、4K 约 179 Mbit/s**。链路吃不下时不会优雅降级，而是画面出现**绿色
+残缺块**（帧被截断，缺失的行在 yuv420p 里就是绿色），最后服务器直接断开连接。`stream_bitrate`
+默认 `4M`，按下游带宽调整即可（4K 演示建议 8M 以上）。
+
+**出流进程会自动重启。** 推流/HLS 的 ffmpeg 进程若因网络抖动或服务器断开而退出，会按 1s 起、
+翻倍至 30s 封顶的退避自动重连（`/health` 的 `push_restarts`/`hls_restarts` 给出次数），不需要
+重启整个算子。`/live.flv` 的每客户端进程不重启——它的 stdout 就是那次 HTTP 响应，进程没了这次
+响应也就结束了，客户端重连即可。
 
 推流失败的排查顺序：
 1. 看 `/health` 的 `push_error`，里面是 ffmpeg 的原话；

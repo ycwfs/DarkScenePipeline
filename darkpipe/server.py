@@ -243,10 +243,12 @@ def build_app(cfg, on_clip=None):
         # asks for one; an empty slot only costs a repeated frame, not a failure.
         if "hls" in st.formats:
             st.hls_dir = cfg.hls_dir or os.path.join(tempfile.gettempdir(), "darkpipe_hls")
-            st.hls = streams.hls_writer(st.jpeg, cfg.max_stream_fps, st.hls_dir)
+            st.hls = streams.hls_writer(st.jpeg, cfg.max_stream_fps, st.hls_dir,
+                                        cfg.stream_bitrate)
             print(f"[serve] HLS 分片目录 {st.hls_dir}")
         if cfg.rtmp_push_url:
-            st.push = streams.rtmp_push(st.jpeg, cfg.max_stream_fps, cfg.rtmp_push_url)
+            st.push = streams.rtmp_push(st.jpeg, cfg.max_stream_fps, cfg.rtmp_push_url,
+                                        cfg.stream_bitrate)
             print(f"[serve] 推流到 {cfg.rtmp_push_url}")
         yield
         for out in (st.hls, st.push):
@@ -283,12 +285,14 @@ def build_app(cfg, on_clip=None):
             body["event_log"] = st.eventlog.stats()
         body["stream_formats"] = st.formats
         body["flv_clients"] = st.flv_clients
+        body["stream_bitrate"] = cfg.stream_bitrate
         # An ffmpeg that died takes its format down silently otherwise -- the endpoint keeps
         # answering, it just never produces bytes. Report liveness per output, with ffmpeg's
         # own last words when it is gone.
         for key, out in (("hls", st.hls), ("push", st.push)):
             if out is not None:
                 body[f"{key}_alive"] = out.alive()
+                body[f"{key}_restarts"] = out.restarts
                 err = out.error_tail()
                 if err:
                     body[f"{key}_error"] = err
@@ -333,7 +337,7 @@ def build_app(cfg, on_clip=None):
                                 media_type="text/plain; charset=utf-8")
             st.flv_clients += 1
         try:
-            out = streams.flv_pipe(st.jpeg, cfg.max_stream_fps)
+            out = streams.flv_pipe(st.jpeg, cfg.max_stream_fps, cfg.stream_bitrate)
         except Exception as e:                                   # noqa: BLE001
             with st.flv_lock:
                 st.flv_clients -= 1
