@@ -37,14 +37,20 @@ LOW_LATENCY = ["-vf", "crop=trunc(iw/2)*2:trunc(ih/2)*2",
 
 
 def rate_limit(bitrate):
-    """Cap the encoder. Uncapped x264 on this content is not a tuning detail.
+    """Optional cap on the encoder, for a link that cannot carry the stream.
 
     Enhanced low-light video is noisy, and noise is what H.264 spends bits on: measured
-    44 Mbit/s at 1080p and 179 Mbit/s at 4K with no cap. A link that cannot absorb that
-    does not degrade gracefully -- frames arrive truncated, the missing rows render as
-    green (zero-filled yuv420p), and the server eventually drops the connection.
+    44 Mbit/s at 1080p and 179 Mbit/s at 4K uncapped. A link that cannot absorb that does
+    not degrade gracefully -- frames arrive truncated, the missing rows render as green
+    (zero-filled yuv420p), and the server eventually drops the connection.
+
+    That said, capping is a mitigation, not a fix: the deployment those symptoms came from
+    turned out to have a network fault, and the cap only softened the picture. So "no cap"
+    has to stay reachable, and an empty string is not enough -- on the platform this field
+    carries a default, which the spec makes mandatory and non-empty, so the UI cannot send
+    one. `0` / `off` / `none` mean the same thing.
     """
-    if not bitrate:
+    if str(bitrate).strip().lower() in ("", "0", "off", "none", "no"):
         return []
     return ["-b:v", bitrate, "-maxrate", bitrate, "-bufsize", f"{bitrate}"]
 

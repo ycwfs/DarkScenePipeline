@@ -140,3 +140,19 @@ def test_downscale_absent_when_not_requested():
     stages, _ = build_stages(PipelineConfig(input="x", enhance="off", sr="off",
                                             recognize="off", proc_max_side=0))
     assert [s.name for s in stages] == []
+
+
+@pytest.mark.parametrize("value,capped", [
+    ("4M", True), ("8M", True), ("500k", True),
+    ("", False), ("0", False), ("off", False), ("none", False), (" OFF ", False),
+])
+def test_bitrate_cap_can_be_turned_off_through_the_manifest(value, capped):
+    """Turning the cap off has to be expressible by a field that cannot be empty.
+
+    The cap was added on a misdiagnosis -- the green frames and dropped connection it was
+    meant to explain were a network fault -- so leaving it un-disableable would silently
+    hold every deployment to a softened picture. The platform makes a defaulted parameter
+    mandatory and non-empty, so an empty string is not something the UI can send.
+    """
+    from darkpipe.streams import rate_limit
+    assert bool(rate_limit(value)) is capped
