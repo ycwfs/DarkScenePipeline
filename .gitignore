@@ -20,3 +20,7 @@ assets/OpenDataLab___Action_Recognition_in_the_Dark/
 platform/dist/
 platform/.build_ctx/
 platform/*.tar.gz
+# 9 GB of downloaded data staged here by hand (BaiduPCS-Go + FallDataset.zip). Not part
+# of the operator packaging; ignored so `git add platform/` cannot try to hash it (it does,
+# and it takes minutes before failing on GitHub's 100 MB file limit).
+platform/BaiduPCS-Go-*/

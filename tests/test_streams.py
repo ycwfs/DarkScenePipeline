@@ -102,3 +102,41 @@ def test_h264_outputs_force_even_dimensions():
     from darkpipe.streams import LOW_LATENCY
     assert "-vf" in LOW_LATENCY
     assert "trunc(iw/2)*2:trunc(ih/2)*2" in LOW_LATENCY[LOW_LATENCY.index("-vf") + 1]
+
+
+@pytest.mark.parametrize("w,h,cap,want", [
+    (1920, 1080, 1280, (1280, 720)),      # the reported case: 1080p -> 720p
+    (3840, 2160, 1280, (1280, 720)),
+    (640, 480, 1280, (640, 480)),         # already small: untouched, never upscaled
+    (1080, 1920, 1280, (720, 1280)),      # portrait: the LONG side is what is capped
+    (1001, 777, 500, (500, 388)),         # odd arithmetic still lands on even dimensions
+])
+def test_downscale_caps_the_long_side(w, h, cap, want):
+    import numpy as np
+
+    from darkpipe.stages.downscale import DownscaleStage
+    out = DownscaleStage(cap)([np.zeros((h, w, 3), np.uint8)])[0]
+    assert (out.shape[1], out.shape[0]) == want
+    assert out.shape[0] % 2 == 0 and out.shape[1] % 2 == 0, "H.264 needs even dimensions"
+
+
+def test_downscale_is_wired_before_enhancement_and_not_dropped():
+    """Both loops used to select stages by name prefix, which would have skipped this one."""
+    from darkpipe.config import PipelineConfig
+    from darkpipe.stages import build_stages
+    cfg = PipelineConfig(input="x", enhance="off", sr="bicubic", sr_scale=2,
+                         recognize="off", proc_max_side=1280)
+    stages, _ = build_stages(cfg)
+    names = [s.name for s in stages]
+    assert names[0] == "downscale", f"downscale must run first, got {names}"
+    srs = [s for s in stages if s.name.startswith("sr")]
+    pre = [s for s in stages if s not in srs]
+    assert any(s.name == "downscale" for s in pre), "would be silently skipped at runtime"
+
+
+def test_downscale_absent_when_not_requested():
+    from darkpipe.config import PipelineConfig
+    from darkpipe.stages import build_stages
+    stages, _ = build_stages(PipelineConfig(input="x", enhance="off", sr="off",
+                                            recognize="off", proc_max_side=0))
+    assert [s.name for s in stages] == []

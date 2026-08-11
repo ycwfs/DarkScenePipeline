@@ -34,6 +34,8 @@ def build_parser():
     p.add_argument("--gpu_ids", default="0")
     # 与处理算子同一含义：增强阶段一次送入 GPU 的帧数。评测每条片段抽 32 帧，若整批送入，
     # 显存占用会随片段分辨率线性膨胀；分块后显存上限与分辨率无关地受控。
+    p.add_argument("--proc_max_side", type=int, default=0,
+                   help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，1080p 填 1280 可省四分之三算力且不损识别精度")
     p.add_argument("--enhance_chunk", type=int, default=4)
     p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
     p.add_argument("--local_output_dir", default="",
@@ -143,7 +145,7 @@ def run(args):
     # 超分与评测无关（识别取增强后、超分前的帧），关闭以免拖慢评测
     cfg = validate(PipelineConfig(input=rows[0][0], enhance=args.enhance, sr="off",
                                   recognize=args.recognize, device=device,
-                                  ckpt_dir=args.ckpt_dir, output="/tmp/darkeval/unused.mp4"))
+                                  ckpt_dir=args.ckpt_dir, proc_max_side=args.proc_max_side, output="/tmp/darkeval/unused.mp4"))
     stages, recognizer = build_stages(cfg)
     if recognizer is None:
         sys.exit(f"error: recognize={args.recognize} 没有识别器，无法评测")

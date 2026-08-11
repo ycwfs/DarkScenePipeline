@@ -45,6 +45,8 @@ def build_parser():
     p.add_argument("--gpu_ids", default="0")
     # 默认 4：实测 640x480 下 chunk 4 与 8 吞吐量持平（27.3 / 27.9 fps），显存却只要一半
     # （2.38 GiB vs 4.70 GiB）。显存紧张时可继续调小，代价是吞吐量线性下降。
+    p.add_argument("--proc_max_side", type=int, default=0,
+                   help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，1080p 填 1280 可省四分之三算力且不损识别精度")
     p.add_argument("--enhance_chunk", type=int, default=4)
     p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
     p.add_argument("--local_output_dir", default="",
@@ -96,7 +98,7 @@ def run(args):
             sr_scale=(args.sr_scale if args.sr != "off" else None),
             recognize=args.recognize, device=f"cuda:{gpus[0]}",
             gpus=(",".join(gpus) if len(gpus) > 1 else ""),
-            ckpt_dir=args.ckpt_dir, enhance_chunk=max(1, args.enhance_chunk),
+            ckpt_dir=args.ckpt_dir, proc_max_side=args.proc_max_side, enhance_chunk=max(1, args.enhance_chunk),
             reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
             no_label_bar=(not args.label_bar),
             events_json=args.events_json,

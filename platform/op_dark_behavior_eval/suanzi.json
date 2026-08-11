@@ -75,6 +75,17 @@
       }
     },
     {
+      "name": "proc_max_side",
+      "type": "Int",
+      "description": "处理前先把画面缩小到长边不超过该像素数，0 表示按原分辨率处理。增强的耗时与像素量成正比，而识别内部固定缩放到 224x224，因此高分辨率只对画面本身有意义：1080p 输入实测整条管线只有 约 3 帧/秒，此时 1 秒识别窗口里只有 3 帧真实画面被拉伸成 32 帧，运动信息过于稀疏。填 1280 （相当于 720p）可把工作量降到四分之一，对识别精度无损失。缩放在所有环节之前完成，识别、超分、标签条、片段与出流看到的都是同一尺寸。",
+      "default": 0,
+      "annotations": {
+        "show": "处理分辨率上限(长边)",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
       "name": "enhance_chunk",
       "type": "Int",
       "description": "增强阶段每批送入 GPU 的帧数，与处理算子含义相同。评测每条片段抽取一个完整识别窗口（behavior 模型为 32 帧），分批处理使显存占用不随片段分辨率线性膨胀。",
@@ -163,6 +174,10 @@
         "--gpu_ids",
         {
           "inputValue": "gpu_ids"
+        },
+        "--proc_max_side",
+        {
+          "inputValue": "proc_max_side"
         },
         "--enhance_chunk",
         {

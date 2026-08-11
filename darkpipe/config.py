@@ -19,6 +19,8 @@ class PipelineConfig:
     device: str = "cuda:0"
     ckpt_dir: str = "./ckpts"
     # tuning
+    # Cap the long side before any stage runs; 0 = process at source resolution.
+    proc_max_side: int = 0
     enhance_chunk: int = 32
     sr_chunk: int | None = None      # None -> per-backend default (see validate); halves on OOM
     gpus: str = ""                   # comma-separated ids: shard offline work across GPUs

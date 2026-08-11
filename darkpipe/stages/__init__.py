@@ -5,6 +5,11 @@ RealRestorer stack (transformers + 39 GiB bundle) is only touched when selected.
 def build_stages(cfg):
     """Returns (frame_stages: list[FrameStage], recognizer: Recognizer | None)."""
     frame_stages = []
+    # First, so every later stage -- and the recogniser, the clips and the streams -- sees
+    # the same reduced frame without knowing a downscale happened.
+    if getattr(cfg, "proc_max_side", 0):
+        from .downscale import DownscaleStage
+        frame_stages.append(DownscaleStage(cfg.proc_max_side))
     if cfg.enhance == "retinexformer":
         from .enhance_retinexformer import RetinexformerStage
         frame_stages.append(RetinexformerStage(cfg.ckpt_dir, chunk=cfg.enhance_chunk))

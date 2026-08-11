@@ -15,6 +15,20 @@ BEHAVIOR_DISPLAY = {
     "pick_up": "Picking up object", "shake_hands": "Shaking hands", "other": "Other",
 }
 
+# What the label bar draws, for a deployment whose viewers read Chinese. Kept separate from
+# BEHAVIOR_DISPLAY rather than replacing it: the English name is what identifies a behaviour
+# everywhere it has to survive a filesystem or a downstream parser -- clip directory names go
+# through label_key(), which strips non-ASCII and would turn every one of these into
+# "unknown". So this map is display-only, and the raw key stays the identity.
+BEHAVIOR_ZH = {
+    "wave": "挥手", "throw": "投掷物品", "chase": "追逐", "fall": "跌倒",
+    "fight": "打斗", "talk": "交谈", "drink": "喝水",
+    "pick_up": "捡拾物品", "shake_hands": "握手", "other": "其他",
+}
+# Reverse lookup: events carry the English display name, and the renderer only sees that.
+DISPLAY_TO_ZH = {BEHAVIOR_DISPLAY[k]: v for k, v in BEHAVIOR_ZH.items()}
+ZH_RECOGNIZING = "识别中..."
+
 # Prompt ensemble for the open-vocabulary recognizer: several phrasings per behavior, scored
 # independently and averaged. Wording follows CLIP-style captions ("a person ...ing"), which
 # X-CLIP's text tower was trained on.

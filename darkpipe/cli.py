@@ -48,6 +48,11 @@ def build_parser():
                         "on a single GPU")
     p.add_argument("--ckpt-dir", default="./ckpts")
     t = p.add_argument_group("tuning")
+    t.add_argument("--proc-max-side", type=int, default=0,
+                   help="shrink frames so the long side is at most N before enhancement "
+                        "(0 = source resolution). Cost tracks pixel count and the recogniser "
+                        "resizes to 224 regardless, so 1280 quarters the work on a 1080p "
+                        "source at no cost to recognition")
     t.add_argument("--enhance-chunk", type=int, default=32)
     t.add_argument("--sr-chunk", type=int, default=None,
                    help="frames per SR batch (default: 4 for lightsr_x2, 1 for catanet_x2, "
