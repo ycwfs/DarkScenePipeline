@@ -51,6 +51,8 @@ def build_parser():
     p.add_argument("--proc_max_side", type=int, default=1280,
                    help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，1080p 填 1280 可省四分之三算力且不损识别精度")
     p.add_argument("--reco_span_sec", type=float, default=1.0)
+    p.add_argument("--reco_min_conf", type=float, default=0.0,
+                   help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--label_bar", type=parse_bool, default=True)
     p.add_argument("--gpu_ids", default="0")
     p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
@@ -159,7 +161,7 @@ def run(args):
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
-        ckpt_dir=args.ckpt_dir, proc_max_side=args.proc_max_side,
+        ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
         no_label_bar=(not args.label_bar),
         host="0.0.0.0", port=args.serve_port, jpeg_quality=args.jpeg_quality,

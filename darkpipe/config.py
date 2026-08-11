@@ -28,6 +28,8 @@ class PipelineConfig:
     sr_fp32: bool = False
     reco_stride: int | None = None
     reco_span_sec: float | None = None
+    # Report `other` unless the top named behaviour reaches this probability. 0 disables.
+    reco_min_conf: float = 0.0
     reco_ckpt: str = ""              # override the r3d/videomamba/behavior weights
     labels: str = ""                 # comma-separated, xclip only (open vocabulary)
     xclip_model: str = ""            # override the X-CLIP snapshot directory

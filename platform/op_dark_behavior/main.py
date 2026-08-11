@@ -40,6 +40,8 @@ def build_parser():
     p.add_argument("--sr_scale", type=int, default=2, choices=[2, 3, 4])
     p.add_argument("--recognize", default="behavior", choices=["off", "behavior"])
     p.add_argument("--reco_span_sec", type=float, default=1.0)
+    p.add_argument("--reco_min_conf", type=float, default=0.0,
+                   help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--max_frames", type=int, default=0)
     p.add_argument("--label_bar", type=parse_bool, default=True)
     p.add_argument("--gpu_ids", default="0")
@@ -98,7 +100,7 @@ def run(args):
             sr_scale=(args.sr_scale if args.sr != "off" else None),
             recognize=args.recognize, device=f"cuda:{gpus[0]}",
             gpus=(",".join(gpus) if len(gpus) > 1 else ""),
-            ckpt_dir=args.ckpt_dir, proc_max_side=args.proc_max_side, enhance_chunk=max(1, args.enhance_chunk),
+            ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, enhance_chunk=max(1, args.enhance_chunk),
             reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
             no_label_bar=(not args.label_bar),
             events_json=args.events_json,

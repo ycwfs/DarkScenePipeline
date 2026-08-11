@@ -63,6 +63,10 @@ def build_parser():
     t.add_argument("--reco-span-sec", type=float, default=None,
                    help="cap the recognition window to the last N seconds, resampling its T "
                         "frames from them (default: off offline, 1.0 in serve mode)")
+    t.add_argument("--reco-min-conf", type=float, default=0.0,
+                   help="report `other` unless the top named behavior reaches this "
+                        "probability (0 = off). Suppresses low-confidence guesses so they "
+                        "are neither shown nor saved as a clip")
     t.add_argument("--reco-ckpt", default="",
                    help="weights for r3d/videomamba/behavior (default: <ckpt-dir>/ the file "
                         "in CKPT_FILES) — e.g. a behavior head trained for another enhancer")

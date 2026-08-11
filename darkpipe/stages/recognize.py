@@ -43,16 +43,41 @@ def preprocess_frame(frame_bgr, cfg):
     return (rgb - cfg["mean"]) / cfg["std"]
 
 
+def reject_probs(p, labels, tau):
+    """Open-set rule: unless a NAMED behavior clears `tau`, call it `other`.
+
+    Reported `other` confidence is 1 - max(named), i.e. "probability it is none of the nine" —
+    the quantity the rule actually decided on. The untouched distribution still reaches the
+    caller through the top-k list.
+
+    Module-level so the calibration script can sweep tau over stored raw probabilities instead
+    of re-running the vision tower, without reimplementing (and drifting from) the rule.
+    """
+    if "other" not in labels or tau <= 0:
+        return p
+    o = labels.index("other")
+    named = np.delete(p, o)
+    if named.max() < tau and p.argmax() != o:
+        p = p.copy()
+        # max() keeps `other` the argmax even for a tau above 0.5
+        p[o] = max(1.0 - float(named.max()), float(named.max()) + 1e-6)
+    return p
+
+
 class _WindowRecognizer(Recognizer):
     kind = "r3d"
     labels = CLASSES
 
     def __init__(self, ckpt_dir: str, stride: int | None = None,
-                 span_sec: float | None = None):
+                 span_sec: float | None = None, reject_tau: float = 0.0):
         self.cfg = RECO_CFG[self.kind]
         self.window = self.cfg["T"]
         self.stride = stride or self.window // 2
         self.span = span_sec
+        # Below this, a named behaviour is reported as `other` instead (see reject_probs).
+        # 0 disables. Only meaningful for label sets that contain `other` -- the ARID heads
+        # have no such class, and reject_probs leaves their distribution untouched.
+        self.reject_tau = reject_tau
         self.ckpt = os.path.join(ckpt_dir, CKPT_FILES[self.kind])
         self.buf = deque()  # (preprocessed HWC float32, timestamp)
         self._filled_pushes = 0  # pushes seen since the window first filled
@@ -131,6 +156,7 @@ class _WindowRecognizer(Recognizer):
         if not fire:
             return None
         prob = self._infer(np.stack(self._window_frames()))
+        prob = reject_probs(prob, self.labels, self.reject_tau)
         order = prob.argsort()[::-1][:min(3, len(self.labels))]
         return RecognitionEvent(
             frame_index=frame_index, timestamp=timestamp,

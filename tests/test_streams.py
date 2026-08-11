@@ -156,3 +156,57 @@ def test_bitrate_cap_can_be_turned_off_through_the_manifest(value, capped):
     """
     from darkpipe.streams import rate_limit
     assert bool(rate_limit(value)) is capped
+
+
+def _probs(**kw):
+    """Build a BEHAVIORS-shaped distribution from named entries."""
+    import numpy as np
+
+    from darkpipe.constants import BEHAVIORS
+    p = np.zeros(len(BEHAVIORS), np.float32)
+    for k, v in kw.items():
+        p[BEHAVIORS.index(k)] = v
+    return p
+
+
+@pytest.mark.parametrize("tau,top,conf,expect", [
+    (0.0,  "throw", 0.31, "throw"),    # off: the weak guess is reported as-is
+    (0.5,  "throw", 0.31, "other"),    # below tau -> other
+    (0.5,  "throw", 0.83, "throw"),    # above tau -> kept
+    (0.5,  "throw", 0.50, "throw"),    # exactly tau counts as clearing it
+    (0.95, "fall",  0.83, "other"),    # tau above 0.5 must still make `other` the argmax
+])
+def test_confidence_threshold_demotes_weak_guesses_to_other(tau, top, conf, expect):
+    """The reported label is what everything downstream keys on.
+
+    Demoting to `other` (rather than filtering separately) is what makes one threshold cover
+    all three consumers at once: the bar shows 其他, no clip is cut because `other` is in
+    clip_skip_labels, and the event log still records the window happened.
+    """
+    import numpy as np
+
+    from darkpipe.constants import BEHAVIORS
+    from darkpipe.stages.recognize import reject_probs
+    # `other` deliberately small: the named guess is the model's own argmax, so the
+    # threshold is the only thing that can change the answer.
+    p = _probs(**{top: conf, "other": 0.1})
+    out = reject_probs(p, BEHAVIORS, tau)
+    assert BEHAVIORS[int(np.argmax(out))] == expect
+
+
+def test_threshold_leaves_arid_heads_alone():
+    """The ARID label set has no `other`, so there is nothing to demote to."""
+    import numpy as np
+
+    from darkpipe.constants import CLASSES
+    from darkpipe.stages.recognize import reject_probs
+    p = np.zeros(len(CLASSES), np.float32); p[CLASSES.index("Jump")] = 0.2
+    assert np.array_equal(reject_probs(p, CLASSES, 0.9), p)
+
+
+def test_threshold_is_idempotent():
+    """xclip applies it inside _infer and the base push() applies it again."""
+    from darkpipe.constants import BEHAVIORS
+    from darkpipe.stages.recognize import reject_probs
+    once = reject_probs(_probs(throw=0.31, other=0.1), BEHAVIORS, 0.5)
+    assert (reject_probs(once, BEHAVIORS, 0.5) == once).all()

@@ -55,6 +55,9 @@
 | `local_output_dir` | 本地落地目录(可留空) | String | 无（**可留空**） | 容器内目录，如 `/mnt/nfs/darkout`；把结果直接写到平台挂进来的 NFS，事后本地浏览                        |
 | `hdfs_output_dir` | HDFS落地目录(可留空) | String | 无（**可留空**）     | 如 `hdfs://用户名@ip:port/a/b`；与 `local_output_dir` **至少填一个**                                      |
 
+**`reco_min_conf`（行为判定阈值）**：最高分的具名行为达不到该值时报为 `other`，用于压制低置信度
+误报；`0` 表示关闭。先按 `0` 跑一遍看置信度分布再定值。
+
 ### 必填参数
 
 按规范「有 `default` 字段即代表该参数必填、不能为空值」——没有 `default` 字段的三个参数如下，

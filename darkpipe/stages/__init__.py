@@ -39,7 +39,8 @@ def build_stages(cfg):
                                          force_fp32=cfg.sr_fp32, scale=cfg.sr_scale))
 
     recognizer = None
-    kw = dict(stride=cfg.reco_stride, span_sec=cfg.reco_span_sec)
+    kw = dict(stride=cfg.reco_stride, span_sec=cfg.reco_span_sec,
+              reject_tau=getattr(cfg, 'reco_min_conf', 0.0))
     if cfg.recognize == "r3d":
         from .recognize import R3DRecognizer
         recognizer = R3DRecognizer(cfg.ckpt_dir, **kw)

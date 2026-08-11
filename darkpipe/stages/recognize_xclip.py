@@ -20,33 +20,12 @@ import torch
 
 from ..constants import (BEHAVIOR_PROMPTS, BEHAVIORS, CKPT_FILES, PROMPT_TEMPLATES,
                          XCLIP_REJECT_TAU)
-from .recognize import _WindowRecognizer
+from .recognize import _WindowRecognizer, reject_probs
 
 
 def prompts_for(label: str) -> list:
     """Curated ensemble when we have one, generic templates for open-vocabulary labels."""
     return BEHAVIOR_PROMPTS.get(label) or [t.format(label) for t in PROMPT_TEMPLATES]
-
-
-def reject_probs(p, labels, tau):
-    """Open-set rule: unless a NAMED behavior clears `tau`, call it `other`.
-
-    Reported `other` confidence is 1 - max(named), i.e. "probability it is none of the nine" —
-    the quantity the rule actually decided on. The untouched distribution still reaches the
-    caller through the top-k list.
-
-    Module-level so the calibration script can sweep tau over stored raw probabilities instead
-    of re-running the vision tower, without reimplementing (and drifting from) the rule.
-    """
-    if "other" not in labels or tau <= 0:
-        return p
-    o = labels.index("other")
-    named = np.delete(p, o)
-    if named.max() < tau and p.argmax() != o:
-        p = p.copy()
-        # max() keeps `other` the argmax even for a tau above 0.5
-        p[o] = max(1.0 - float(named.max()), float(named.max()) + 1e-6)
-    return p
 
 
 class XCLIPRecognizer(_WindowRecognizer):

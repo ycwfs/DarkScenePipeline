@@ -30,6 +30,8 @@ def build_parser():
                    help="带标注清单文件，每行 `视频路径,类别标签`，逗号或制表符分隔，可含表头")
     p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
     p.add_argument("--recognize", default="behavior", choices=["behavior"])
+    p.add_argument("--reco_min_conf", type=float, default=0.0,
+                   help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--max_clips", type=int, default=0)
     p.add_argument("--gpu_ids", default="0")
     # 与处理算子同一含义：增强阶段一次送入 GPU 的帧数。评测每条片段抽 32 帧，若整批送入，
@@ -145,7 +147,7 @@ def run(args):
     # 超分与评测无关（识别取增强后、超分前的帧），关闭以免拖慢评测
     cfg = validate(PipelineConfig(input=rows[0][0], enhance=args.enhance, sr="off",
                                   recognize=args.recognize, device=device,
-                                  ckpt_dir=args.ckpt_dir, proc_max_side=args.proc_max_side, output="/tmp/darkeval/unused.mp4"))
+                                  ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, output="/tmp/darkeval/unused.mp4"))
     stages, recognizer = build_stages(cfg)
     if recognizer is None:
         sys.exit(f"error: recognize={args.recognize} 没有识别器，无法评测")
