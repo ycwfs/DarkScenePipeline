@@ -70,10 +70,11 @@ def run_offline(cfg):
 
     # enhance stages (streaming, non-whole-video) come before SR in build order;
     # the recognizer taps right after the LAST enhance stage / before SR.
-    sr_stages = [s for s in streaming if s.name.startswith("sr")]
-    # Complement, not a prefix list: a newly added pre-SR stage (e.g. downscale) must not be
-    # silently skipped just because it is not called "enhance*".
-    enh_stages = [s for s in streaming if s not in sr_stages]
+    # Split on the stage's own declaration, not on its name (see FrameStage.post_recognition).
+    # getattr, not attribute access: a stage that predates the flag (or a test double)
+    # must still run, and "before recognition" is the conservative default.
+    sr_stages = [s for s in streaming if getattr(s, "post_recognition", False)]
+    enh_stages = [s for s in streaming if not getattr(s, "post_recognition", False)]
 
     def process_chunk(chunk):
         """GPU work for one chunk -> the frames to encode."""

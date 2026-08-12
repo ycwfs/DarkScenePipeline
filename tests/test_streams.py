@@ -210,3 +210,68 @@ def test_threshold_is_idempotent():
     from darkpipe.stages.recognize import reject_probs
     once = reject_probs(_probs(throw=0.31, other=0.1), BEHAVIORS, 0.5)
     assert (reject_probs(once, BEHAVIORS, 0.5) == once).all()
+
+
+@pytest.mark.parametrize("factor", [1.4, 2.0, 2.6, 0.6])
+def test_saturation_changes_chroma_but_not_hue(factor):
+    """The whole reason to scale (a,b) in Lab: hue is invariant under it.
+
+    That is what separates this from the colourisation model that was tried first, which
+    scored 66 degrees of hue deviation because it discards the input's colour and invents
+    one from luminance. Here colours can only get stronger, never different.
+    """
+    import cv2
+    import numpy as np
+
+    from darkpipe.stages.saturation import SaturationStage
+    # Chroma like a real enhanced frame (~6-20), not random RGB noise (~43). At 43 a 2.6x
+    # boost clips the 8-bit range, and clipping is the one thing that does move hue -- so
+    # noise would be testing the clip path, not the property.
+    rng = np.random.default_rng(0)
+    base = np.full((64, 64, 3), 110, np.int16)
+    img = np.clip(base + rng.integers(-22, 22, (64, 64, 3)), 0, 255).astype(np.uint8)
+    out = SaturationStage(factor)([img])[0]
+
+    def lab(x):
+        return cv2.cvtColor(x, cv2.COLOR_BGR2LAB).astype(np.float32)
+
+    a, b = lab(img), lab(out)
+    ca = np.hypot(a[..., 1] - 128, a[..., 2] - 128)
+    cb_all = np.hypot(b[..., 1] - 128, b[..., 2] - 128)
+    # Both sides must retain real chroma: at 0.6x the result is nearly neutral, where the
+    # hue angle of an 8-bit value is dominated by quantisation rather than by the operation.
+    m = (ca > 8) & (cb_all > 8)
+    ha = np.arctan2(a[..., 2] - 128, a[..., 1] - 128)[m]
+    hb = np.arctan2(b[..., 2] - 128, b[..., 1] - 128)[m]
+    dev = np.abs(np.degrees(np.arctan2(np.sin(hb - ha), np.cos(hb - ha)))).mean()
+    assert dev < 3.0, f"hue moved {dev:.1f} deg; scaling a/b must leave it alone"
+    cb = np.hypot(b[..., 1] - 128, b[..., 2] - 128)
+    assert bool(cb[m].mean() > ca[m].mean()) == (factor > 1.0)
+
+
+def test_saturation_runs_after_recognition_not_before():
+    """Recognition must see the enhancer's output as the head was trained on it."""
+    from darkpipe.config import PipelineConfig
+    from darkpipe.stages import build_stages
+    stages, _ = build_stages(PipelineConfig(
+        input="x", enhance="off", sr="bicubic", sr_scale=2, recognize="off",
+        color_saturation=2.2))
+    sat = [s for s in stages if s.name.startswith("saturate")]
+    assert sat and sat[0].post_recognition, "boosting colour before recognition shifts the " \
+                                            "input distribution away from training"
+
+
+def test_saturation_absent_at_1x():
+    from darkpipe.config import PipelineConfig
+    from darkpipe.stages import build_stages
+    stages, _ = build_stages(PipelineConfig(input="x", enhance="off", sr="off",
+                                            recognize="off", color_saturation=1.0))
+    assert not [s for s in stages if "saturate" in s.name]
+
+
+@pytest.mark.parametrize("bad", [0.0, -1.0, 6.0])
+def test_saturation_out_of_range_is_rejected(bad):
+    from darkpipe.config import PipelineConfig, validate
+    with pytest.raises(SystemExit):
+        validate(PipelineConfig(input="x.mp4", output="/tmp/o.mp4", enhance="off", sr="off",
+                                recognize="off", color_saturation=bad))

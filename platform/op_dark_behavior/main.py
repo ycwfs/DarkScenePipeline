@@ -38,6 +38,8 @@ def build_parser():
     p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
     p.add_argument("--sr", default="bicubic", choices=["off", "bicubic"])
     p.add_argument("--sr_scale", type=int, default=2, choices=[2, 3, 4])
+    p.add_argument("--color_saturation", type=float, default=1.0,
+                   help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     p.add_argument("--recognize", default="behavior", choices=["off", "behavior"])
     p.add_argument("--reco_span_sec", type=float, default=1.0)
     p.add_argument("--reco_min_conf", type=float, default=0.0,
@@ -100,7 +102,7 @@ def run(args):
             sr_scale=(args.sr_scale if args.sr != "off" else None),
             recognize=args.recognize, device=f"cuda:{gpus[0]}",
             gpus=(",".join(gpus) if len(gpus) > 1 else ""),
-            ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, enhance_chunk=max(1, args.enhance_chunk),
+            ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, enhance_chunk=max(1, args.enhance_chunk),
             reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
             no_label_bar=(not args.label_bar),
             events_json=args.events_json,

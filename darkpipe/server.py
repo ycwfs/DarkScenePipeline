@@ -153,12 +153,10 @@ def process_loop(st: ServerState):
         s.load(cfg.device)
     if recognizer:
         recognizer.load(cfg.device)
-    # Everything that is not SR runs before recognition (recognition takes the enhanced,
-    # pre-SR frame). Selecting the complement rather than listing prefixes means adding a
-    # stage cannot silently drop it -- which is what "startswith(\'enhance\')" would have done
-    # to the downscale stage.
-    srs = [s for s in frame_stages if s.name.startswith("sr")]
-    enh = [s for s in frame_stages if s not in srs]
+    # Split on the stage's own declaration, not on its name. Recognition sees the enhanced
+    # pre-SR frame; anything flagged post_recognition only changes the picture.
+    srs = [s for s in frame_stages if getattr(s, "post_recognition", False)]
+    enh = [s for s in frame_stages if not getattr(s, "post_recognition", False)]
     recorder = None
     last_seq = 0
     n, t_win = 0, time.time()

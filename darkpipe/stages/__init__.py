@@ -22,6 +22,12 @@ def build_stages(cfg):
             cfg.ckpt_dir, bundle=cfg.rr_bundle, steps=cfg.rr_steps,
             cfg_scale=cfg.rr_cfg_scale, chunk=cfg.rr_chunk, prompt=cfg.rr_prompt))
 
+    # Before SR rather than after: both run post-recognition, and doing it at the smaller
+    # pre-upscale size is the cheaper order (x2 SR is 4x the pixels).
+    if getattr(cfg, "color_saturation", 1.0) != 1.0:
+        from .saturation import SaturationStage
+        frame_stages.append(SaturationStage(cfg.color_saturation))
+
     # cfg.sr is the normalized backend name and cfg.sr_scale the factor (config.validate
     # resolves the legacy `<backend>_x2` spellings into that pair).
     if cfg.sr == "bicubic":

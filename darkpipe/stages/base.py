@@ -6,6 +6,13 @@ class FrameStage:
     """Frame-in/frame-out stage (enhancement, super-resolution). BGR uint8 lists."""
     name: str = "stage"
     whole_video: bool = False  # True: stage must see the entire frame list at once
+    # True: run AFTER recognition, i.e. this stage only changes the picture people look at.
+    # Recognition takes the enhanced, pre-SR frame, and the behaviour head was trained on
+    # exactly that; a stage that alters colour or scale before it would shift the input
+    # distribution away from training for no gain, since recognition resizes to 224 and
+    # normalises anyway. Declared as a flag rather than inferred from the stage name --
+    # the name-prefix version of this split silently dropped a newly added stage once.
+    post_recognition: bool = False
 
     def load(self, device: str) -> None:
         raise NotImplementedError

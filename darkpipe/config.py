@@ -21,6 +21,8 @@ class PipelineConfig:
     # tuning
     # Cap the long side before any stage runs; 0 = process at source resolution.
     proc_max_side: int = 0
+    # Chroma multiplier applied after recognition. 1.0 = unchanged.
+    color_saturation: float = 1.0
     enhance_chunk: int = 32
     sr_chunk: int | None = None      # None -> per-backend default (see validate); halves on OOM
     gpus: str = ""                   # comma-separated ids: shard offline work across GPUs
@@ -135,6 +137,11 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
         if cfg.enhance == "realrestorer":
             _die("--gpus cannot shard RealRestorer: it restores the whole video in one pass "
                  "(a whole_video stage), so there are no independent segments.")
+
+    if not 0.0 < cfg.color_saturation <= 5.0:
+        _die(f"--color-saturation must be in (0, 5] (got {cfg.color_saturation}); "
+             f"1.0 leaves colour unchanged, ~2.0-2.6 is the useful range on enhanced "
+             f"low-light footage")
 
     if cfg.enhance == "off" and cfg.sr == "off" and cfg.recognize == "off":
         cfg.warnings.append("all functions disabled -> passthrough copy")

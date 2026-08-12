@@ -29,6 +29,7 @@ from .base import FrameStage
 
 class CATANetStage(FrameStage):
     name = "sr:catanet_x2"
+    post_recognition = True
 
     def __init__(self, ckpt_dir: str, chunk: int = 1, force_fp32: bool = False,
                  scale: int = 2):

@@ -53,6 +53,10 @@ def build_parser():
                         "(0 = source resolution). Cost tracks pixel count and the recogniser "
                         "resizes to 224 regardless, so 1280 quarters the work on a 1080p "
                         "source at no cost to recognition")
+    t.add_argument("--color-saturation", type=float, default=1.0,
+                   help="multiply chroma by this after recognition (1.0 = off). Enhancement "
+                        "leaves low-light footage desaturated; 2.0-2.6 restores it. Hue is "
+                        "unchanged by construction, so colours get stronger, never different")
     t.add_argument("--enhance-chunk", type=int, default=32)
     t.add_argument("--sr-chunk", type=int, default=None,
                    help="frames per SR batch (default: 4 for lightsr_x2, 1 for catanet_x2, "

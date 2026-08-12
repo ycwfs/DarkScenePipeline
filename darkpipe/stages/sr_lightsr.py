@@ -25,6 +25,7 @@ LIGHTSR_KWARGS = dict(upscale=2, in_chans=3, img_size=64, img_range=1.0, embed_d
 
 class LightSRStage(FrameStage):
     name = "sr:lightsr_x2"
+    post_recognition = True
 
     def __init__(self, ckpt_dir: str, chunk: int = 8, force_fp32: bool = False,
                  scale: int = 2):

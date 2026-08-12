@@ -34,6 +34,7 @@ from .base import FrameStage
 
 class BicubicStage(FrameStage):
     name = "sr:bicubic_x2"
+    post_recognition = True
 
     def __init__(self, scale: int = 2):
         # The only scale-generic backend: cv2.resize takes any factor, so x3/x4 need no
