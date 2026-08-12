@@ -110,7 +110,9 @@ def run(args):
         for w in cfg.warnings:
             print(f"[warn] {w}")
         print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
-              f"device={cfg.device} gpu_ids={','.join(gpus)} span={cfg.reco_span_sec}")
+              f"device={cfg.device} gpu_ids={','.join(gpus)} span={cfg.reco_span_sec}"
+          f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
+          f" color_saturation={cfg.color_saturation}")
 
         t0 = time.time()
         if len(gpus) > 1:

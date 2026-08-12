@@ -179,7 +179,9 @@ def run(args):
     for w in cfg.warnings:
         print(f"[warn] {w}")
     print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
-          f"device={cfg.device} span={cfg.reco_span_sec} port={cfg.port}")
+          f"device={cfg.device} span={cfg.reco_span_sec} port={cfg.port}"
+          f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
+          f" color_saturation={cfg.color_saturation}")
 
     hdfs_dir = (args.hdfs_output_dir or "").strip()
     sink = None

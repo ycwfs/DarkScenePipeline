@@ -325,3 +325,51 @@ def test_saturation_does_not_amplify_a_colour_cast(factor):
         if abs(before) > 1.0:
             assert abs(after) < abs(before) * 1.35, \
                 f"mean {name} cast grew {before:+.2f} -> {after:+.2f} (x{after/before:.2f})"
+
+
+@pytest.mark.parametrize("given,effective", [
+    (0.0, 0.0), (0.6, 0.6), (1.0, 1.0),
+    (60, 0.6), (95, 0.95), (50, 0.5),      # "60" means 60%, the way people say it
+])
+def test_threshold_accepts_percentages(given, effective):
+    """A threshold typed as 60 must mean 60%, not 6000%.
+
+    Users say "threshold 60" and the field is called a threshold. Read literally, 60 makes
+    it impossible for any window to clear the bar, so every detection silently becomes
+    `other` and the model looks broken. A probability cannot exceed 1, so values above 1 are
+    unambiguous.
+    """
+    from darkpipe.config import PipelineConfig, validate
+    cfg = validate(PipelineConfig(input="x.mp4", output="/tmp/o.mp4", enhance="off",
+                                  sr="off", recognize="behavior", reco_min_conf=given))
+    assert cfg.reco_min_conf == pytest.approx(effective)
+
+
+@pytest.mark.parametrize("bad", [-0.1, 101, 1000])
+def test_threshold_out_of_range_is_rejected(bad):
+    from darkpipe.config import PipelineConfig, validate
+    with pytest.raises(SystemExit):
+        validate(PipelineConfig(input="x.mp4", output="/tmp/o.mp4", enhance="off", sr="off",
+                                recognize="behavior", reco_min_conf=bad))
+
+
+def test_no_named_label_can_survive_below_the_threshold():
+    """The reported symptom: "投掷物品 40%" while the threshold was 60.
+
+    Sweeps the whole distribution space rather than a few cases -- whatever the shape, a
+    named behaviour must never be the reported label unless it cleared tau.
+    """
+    import numpy as np
+
+    from darkpipe.constants import BEHAVIORS
+    from darkpipe.stages.recognize import reject_probs
+    rng = np.random.default_rng(0)
+    tau = 0.6
+    for _ in range(2000):
+        p = rng.random(len(BEHAVIORS)).astype(np.float32)
+        p /= p.sum()
+        out = reject_probs(p.copy(), BEHAVIORS, tau)
+        top = BEHAVIORS[int(np.argmax(out))]
+        if top != "other":
+            assert p[int(np.argmax(out))] >= tau, \
+                f"reported {top} at {p[int(np.argmax(out))]:.2f}, below tau {tau}"

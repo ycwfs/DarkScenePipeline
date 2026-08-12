@@ -138,6 +138,20 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
             _die("--gpus cannot shard RealRestorer: it restores the whole video in one pass "
                  "(a whole_video stage), so there are no independent segments.")
 
+    # "60" means 60%, not 6000%. Users think of this as a percentage -- the field is even
+    # called a threshold -- and a probability cannot exceed 1, so a value above 1 is
+    # unambiguous and is read as percent rather than rejected. Without this, 60 silently
+    # demotes every window to `other` (nothing can clear it) and looks like a broken model.
+    if cfg.reco_min_conf > 1.0:
+        if cfg.reco_min_conf > 100.0:
+            _die(f"--reco-min-conf is a probability in [0,1] (or a percentage up to 100); "
+                 f"got {cfg.reco_min_conf}")
+        cfg.warnings.append(f"--reco-min-conf {cfg.reco_min_conf:g} read as "
+                            f"{cfg.reco_min_conf / 100:g} (percent)")
+        cfg.reco_min_conf /= 100.0
+    if cfg.reco_min_conf < 0.0:
+        _die(f"--reco-min-conf must be >= 0 (got {cfg.reco_min_conf})")
+
     if not 0.0 < cfg.color_saturation <= 5.0:
         _die(f"--color-saturation must be in (0, 5] (got {cfg.color_saturation}); "
              f"1.0 leaves colour unchanged, ~2.0-2.6 is the useful range on enhanced "
