@@ -373,3 +373,67 @@ def test_no_named_label_can_survive_below_the_threshold():
         if top != "other":
             assert p[int(np.argmax(out))] >= tau, \
                 f"reported {top} at {p[int(np.argmax(out))]:.2f}, below tau {tau}"
+
+
+def test_reader_survives_a_transient_decode_failure(tmp_path, monkeypatch):
+    """Regression: a 602-frame clip silently produced a 536-frame video.
+
+    One failed read used to end the whole stream. It is not proof of EOF -- the same file,
+    code and container read to the end on the next run. The damage is that the run still
+    reports success: the summary quotes its own short count, so 11% of the footage vanished
+    with nothing to indicate it.
+    """
+    import numpy as np
+
+    from darkpipe.media import VideoReader
+
+    class FlakyCap:
+        def __init__(self, total, fail_at):
+            self.i, self.total, self.fail_at, self.failed = 0, total, fail_at, False
+
+        def get(self, prop):
+            return float(self.total) if int(prop) == 7 else 25.0
+
+        def read(self):
+            if self.i == self.fail_at and not self.failed:
+                self.failed = True
+                return False, None            # one transient miss, mid-stream
+            if self.i >= self.total:
+                return False, None
+            self.i += 1
+            return True, np.zeros((4, 4, 3), np.uint8)
+
+        def release(self):
+            pass
+
+    monkeypatch.setattr("darkpipe.media.open_capture", lambda src: FlakyCap(100, 40))
+    r = VideoReader("fake.mp4", chunk=4)
+    assert sum(len(c) for c in r.chunks()) == 100, "a transient miss truncated the stream"
+    assert r.recovered == 1
+
+
+def test_reader_stops_at_a_real_end(monkeypatch):
+    """The retry must not turn a finished file into an infinite loop."""
+    import numpy as np
+
+    from darkpipe.media import VideoReader
+
+    class Cap:
+        def __init__(self):
+            self.i = 0
+
+        def get(self, prop):
+            return 10.0 if int(prop) == 7 else 25.0
+
+        def read(self):
+            if self.i >= 10:
+                return False, None
+            self.i += 1
+            return True, np.zeros((4, 4, 3), np.uint8)
+
+        def release(self):
+            pass
+
+    monkeypatch.setattr("darkpipe.media.open_capture", lambda src: Cap())
+    r = VideoReader("fake.mp4", chunk=3)
+    assert sum(len(c) for c in r.chunks()) == 10
