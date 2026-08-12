@@ -184,7 +184,14 @@ def process_loop(st: ServerState):
             chunk = s(chunk)
         out = chunk[0]
         if recognizer and not cfg.no_label_bar:
-            out = append_label_bar(out, st.last_event, extra=f"{st.fps_proc:.1f} fps")
+            # The configured stream rate, not the measured processing rate. These are
+            # different quantities and the burnt-in one should be the viewer's: the feeder
+            # resamples the JPEG slot onto a fixed max_stream_fps cadence (repeating the last
+            # frame when the pipeline is slower), so that is genuinely the rate the stream is
+            # delivered at. The processing rate stays reported, but in /health as fps_proc,
+            # where it is a diagnostic rather than a number on a monitoring wall.
+            out = append_label_bar(out, st.last_event,
+                                   extra=f"{cfg.max_stream_fps:g} fps")
         ok, buf = cv2.imencode(".jpg", out, [cv2.IMWRITE_JPEG_QUALITY, cfg.jpeg_quality])
         if ok:
             st.jpeg.put(buf.tobytes())

@@ -275,3 +275,19 @@ def test_saturation_out_of_range_is_rejected(bad):
     with pytest.raises(SystemExit):
         validate(PipelineConfig(input="x.mp4", output="/tmp/o.mp4", enhance="off", sr="off",
                                 recognize="off", color_saturation=bad))
+
+
+def test_label_bar_fps_is_the_configured_stream_rate():
+    """The burnt-in number is the viewer's frame rate, not the GPU's.
+
+    They are different quantities: the feeder resamples onto a fixed max_stream_fps cadence,
+    repeating the last frame when the pipeline runs slower, so the stream really is delivered
+    at that rate. The processing rate is still reported -- as fps_proc in /health, where it is
+    a diagnostic rather than a number burnt into a monitoring wall.
+    """
+    import inspect
+
+    from darkpipe import server
+    src = inspect.getsource(server.process_loop)
+    assert "max_stream_fps:g} fps" in src, "label bar should show the configured rate"
+    assert "fps_proc:.1f} fps" not in src, "measured rate must not be burnt into the picture"
