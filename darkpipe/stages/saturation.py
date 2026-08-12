@@ -45,10 +45,25 @@ class SaturationStage(FrameStage):
         out = []
         for f in frames:
             lab = cv2.cvtColor(f, cv2.COLOR_BGR2LAB).astype(np.float32)
-            # Clipping is what bounds the hue guarantee: a pixel whose scaled a or b runs
-            # past the 8-bit range does shift hue slightly. It only affects already-vivid
-            # pixels, and the measured deviation at 2.6x was 0.3 degrees.
-            lab[..., 1] = np.clip((lab[..., 1] - 128.0) * self.factor + 128.0, 0, 255)
-            lab[..., 2] = np.clip((lab[..., 2] - 128.0) * self.factor + 128.0, 0, 255)
-            out.append(cv2.cvtColor(lab.astype(np.uint8), cv2.COLOR_LAB2BGR))
+            for c in (1, 2):
+                # Scale about the frame's OWN mean chroma, not about the neutral point.
+                #
+                # Scaling about neutral multiplies the global colour cast along with
+                # everything else: a deployment reported the picture turning green at 2x,
+                # and that is exactly this -- low-light footage often carries a green cast
+                # (a Bayer sensor has twice as many green photosites), and doubling the
+                # chroma doubled the cast. Measured on a clip with a mild cast: 2.61x the
+                # cast at factor 2.6. Centring on the mean leaves the cast where it was
+                # (1.08x) while delivering the same chroma (15.1 vs 15.6).
+                #
+                # The cost is that hue is no longer *exactly* invariant -- centring on a
+                # non-neutral point rotates individual pixels slightly. Measured 5.8 deg of
+                # deviation from the source frames' own hues against 5.3 for the old
+                # version, both far below the 66 deg of re-colourisation. Amplifying a cast
+                # is the more visible error of the two.
+                m = float(lab[..., c].mean())
+                lab[..., c] = np.clip((lab[..., c] - m) * self.factor + m, 0, 255)
+            # round, not truncate: astype(uint8) floors, which biases a and b downward by
+            # ~0.5 on every frame -- toward green and blue, the very artefact being fixed.
+            out.append(cv2.cvtColor(np.round(lab).astype(np.uint8), cv2.COLOR_LAB2BGR))
         return out

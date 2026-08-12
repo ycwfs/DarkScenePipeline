@@ -214,11 +214,13 @@ def test_threshold_is_idempotent():
 
 @pytest.mark.parametrize("factor", [1.4, 2.0, 2.6, 0.6])
 def test_saturation_changes_chroma_but_not_hue(factor):
-    """The whole reason to scale (a,b) in Lab: hue is invariant under it.
+    """Scaling (a,b) in Lab moves chroma and leaves hue essentially where it was.
 
     That is what separates this from the colourisation model that was tried first, which
     scored 66 degrees of hue deviation because it discards the input's colour and invents
-    one from luminance. Here colours can only get stronger, never different.
+    one from luminance. Centring on the frame mean (rather than on neutral, so that a
+    global cast is not amplified) costs about half a degree of exactness; the bound here is
+    loose enough to cover that and tight enough to catch a real hue change.
     """
     import cv2
     import numpy as np
@@ -244,7 +246,7 @@ def test_saturation_changes_chroma_but_not_hue(factor):
     ha = np.arctan2(a[..., 2] - 128, a[..., 1] - 128)[m]
     hb = np.arctan2(b[..., 2] - 128, b[..., 1] - 128)[m]
     dev = np.abs(np.degrees(np.arctan2(np.sin(hb - ha), np.cos(hb - ha)))).mean()
-    assert dev < 3.0, f"hue moved {dev:.1f} deg; scaling a/b must leave it alone"
+    assert dev < 4.0, f"hue moved {dev:.1f} deg; scaling a/b must leave it ~alone"
     cb = np.hypot(b[..., 1] - 128, b[..., 2] - 128)
     assert bool(cb[m].mean() > ca[m].mean()) == (factor > 1.0)
 
@@ -291,3 +293,35 @@ def test_label_bar_fps_is_the_configured_stream_rate():
     src = inspect.getsource(server.process_loop)
     assert "max_stream_fps:g} fps" in src, "label bar should show the configured rate"
     assert "fps_proc:.1f} fps" not in src, "measured rate must not be burnt into the picture"
+
+
+@pytest.mark.parametrize("factor", [2.0, 2.6])
+def test_saturation_does_not_amplify_a_colour_cast(factor):
+    """Regression: a deployment reported the picture turning green at 2x.
+
+    Low-light footage often carries a green cast (a Bayer sensor has twice as many green
+    photosites as red or blue). Scaling chroma about the neutral point multiplies that cast
+    along with everything else, so 2x colour was also 2x green. Centring on the frame's own
+    mean boosts the same amount without touching the average colour.
+    """
+    import cv2
+    import numpy as np
+
+    from darkpipe.stages.saturation import SaturationStage
+    img = np.full((80, 80, 3), 120, np.uint8)
+    img[:, :30] = (150, 110, 105)
+    img[:, 55:] = (90, 130, 190)
+    img[..., 1] = np.clip(img[..., 1].astype(np.int16) + 14, 0, 255)   # green cast
+
+    def stats(x):
+        lab = cv2.cvtColor(x, cv2.COLOR_BGR2LAB).astype(np.float32)
+        return (lab[..., 1].mean() - 128, lab[..., 2].mean() - 128,
+                float(np.hypot(lab[..., 1] - 128, lab[..., 2] - 128).mean()))
+
+    a0, b0, c0 = stats(img)
+    a1, b1, c1 = stats(SaturationStage(factor)([img])[0])
+    assert c1 > c0 * 1.5, f"chroma barely moved: {c0:.1f} -> {c1:.1f}"
+    for name, before, after in (("a", a0, a1), ("b", b0, b1)):
+        if abs(before) > 1.0:
+            assert abs(after) < abs(before) * 1.35, \
+                f"mean {name} cast grew {before:+.2f} -> {after:+.2f} (x{after/before:.2f})"
