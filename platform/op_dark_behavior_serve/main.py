@@ -31,7 +31,7 @@ import traceback
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
-from oputil import (ensure_parent, make_remote_dir, parse_bool,  # noqa: E402
+from oputil import (resolve_ckpt_dir, ensure_parent, make_remote_dir, parse_bool,  # noqa: E402
                     parse_gpu_ids, run_dir_name, upload_file)
 
 
@@ -57,7 +57,8 @@ def build_parser():
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--label_bar", type=parse_bool, default=True)
     p.add_argument("--gpu_ids", default="0")
-    p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
+    p.add_argument("--ckpt_dir", default="ckpts",
+                   help="权重目录。默认 ckpts 指算子包内随包发布的那一份；也可填绝对路径改用镜像内或挂载进来的权重")
     p.add_argument("--serve_port", type=int, default=8000)
     p.add_argument("--stream_formats", default="mjpeg,flv",
                    choices=["mjpeg", "mjpeg,flv", "mjpeg,flv,hls", "mjpeg,hls"],
@@ -163,7 +164,7 @@ def run(args):
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
-        ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation,
+        ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
         no_label_bar=(not args.label_bar),
         host="0.0.0.0", port=args.serve_port, jpeg_quality=args.jpeg_quality,

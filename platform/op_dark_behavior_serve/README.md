@@ -222,7 +222,7 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `reco_min_conf` | 行为判定阈值 | Float | `0.0` | 低于该置信度报为「其他」，不显示也不存片段；`0`=关闭 |
 | `label_bar` | 叠加标签条 | Bool | `true` | 演示画面与片段底部是否叠加识别结果 |
 | `gpu_ids` | GPU卡号 | String | `0` | 实时流不做多卡分片，只取第一张 |
-| `ckpt_dir` | 权重目录 | String | `/opt/darkpipe/ckpts` | 镜像内已预置，一般无需修改 |
+| `ckpt_dir` | 权重目录 | String | `ckpts` | **随包发布**（约 33 MB），开箱即用；填绝对路径可改用镜像内或挂载的权重 |
 | `serve_port` | 服务端口 | Int | `8000` | 所有接口都在这个端口上 |
 | `stream_formats` | 实时流输出格式 | String | `mjpeg,flv` | `mjpeg` / `mjpeg,flv` / `mjpeg,flv,hls` / `mjpeg,hls` |
 | `rtmp_push_url` | 推流地址(可留空) | String | 无（**可留空**） | 推到外部流媒体服务器，支持 `rtmp://ip:1935/应用/流名` 与 `rtsp://ip:8554/流名`（RTSP 固定走 TCP）；留空不推 |

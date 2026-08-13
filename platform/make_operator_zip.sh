@@ -46,6 +46,19 @@ for op in "${ops[@]}"; do
     #
     # server.py 是按算子区分的：批处理算子从不调用它，实时服务算子的全部功能都在它里面。
     # 排除列表因此不能是一份全局常量。
+    # 权重随包发布，不烤进镜像。两者只有 33 MB，而镜像 6.1 GB——换一次权重如果要重传镜像，
+    # 上传成本差 185 倍。算子的 ckpt_dir 默认就指包内这一份（见 oputil.resolve_ckpt_dir）；
+    # 镜像里那份仍在，填绝对路径即可改用，两条路都通。
+    # 只放平台实际能选到的那两个：off/retinexformer + off/bicubic + off/behavior，
+    # 其中 bicubic 不需要权重（与 build_image.sh 的 REQUIRED 同一份清单）。
+    mkdir -p "$stage/ckpts"
+    for w in NTIRE.pth videomamba_t_behavior_32f.pth; do
+        [[ -f "$REPO/ckpts/$w" ]] || {
+            echo "error: 缺少权重 $REPO/ckpts/$w（先执行 scripts/download_ckpts.sh）" >&2
+            exit 1
+        }
+        cp "$REPO/ckpts/$w" "$stage/ckpts/"
+    done
     cp "$HERE/oputil.py" "$stage/"
     excludes=(--exclude='__pycache__' --exclude='*.pyc' --exclude='cli.py'
               --exclude='stages/enhance_cidnet.py' --exclude='stages/enhance_realrestorer.py'

@@ -42,7 +42,7 @@
 | `max_clips` | 最大评测条数 | Int | `0` | `0` = 评测全部；先跑小样本冒烟时填一个小数字 |
 | `gpu_ids` | GPU 卡号 | String | `0` | 评测按条串行，只取第一张卡 |
 | `enhance_chunk` | 增强批大小 | Int | `4` | 每批送 GPU 的帧数，显存不足时调小 |
-| `ckpt_dir` | 权重目录 | String | `/opt/darkpipe/ckpts` | 镜像内已预置默认权重，一般无需修改 |
+| `ckpt_dir` | 权重目录 | String | `ckpts` | **随包发布**（约 33 MB），开箱即用；填绝对路径可改用镜像内或挂载的权重 |
 | `local_output_dir` | 本地落地目录(可留空) | String | 无（**可留空**） | 容器内目录，如 `/mnt/nfs/darkout`；用于写到平台挂进来的 NFS，事后本地浏览 |
 | `hdfs_output_dir` | HDFS落地目录(可留空) | String | 无（**可留空**） | 如 `hdfs://用户名@ip:port/a/b`；两者至少填一个 |
 

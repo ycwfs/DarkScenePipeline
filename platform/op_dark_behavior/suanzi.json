@@ -167,8 +167,8 @@
     {
       "name": "ckpt_dir",
       "type": "String",
-      "description": "模型权重目录。镜像内已预置默认配置所需的全部权重，通常无需修改。",
-      "default": "/opt/darkpipe/ckpts",
+      "description": "模型权重目录。默认 ckpts 指算子包内随包发布的那一份（约 33 MB，含 Retinexformer 与行为识别两个权重），开箱即用、运行期不下载任何东西。权重放在算子包里而不是镜像里：镜像 6.1 GB，换一次权重若要重传镜像成本高得多。也可填绝对路径改用镜像内（/opt/darkpipe/ckpts）或挂载进容器的其他权重。",
+      "default": "ckpts",
       "annotations": {
         "show": "权重目录",
         "component": "stringInput",

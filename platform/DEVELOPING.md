@@ -26,8 +26,19 @@ platform/
 That is the exact code path the `darkpipe` CLI uses, so operator and CLI cannot diverge in
 behaviour or performance.
 
-**`darkpipe/` ships inside the zip, not inside the image.** The image holds the conda env and
-the weights only. `main.py` puts its own directory first on `sys.path`, so the copy in the zip
+**`darkpipe/` AND the weights ship inside the zip, not inside the image.** The image holds
+only the conda environment.
+
+Weights moved out of the image deliberately: they are 33 MB (NTIRE.pth 6.2 + behavior
+26.7) against a 6.1 GB image, so re-uploading an image to change a weight costs 185x what
+re-uploading the zip does. `ckpt_dir` therefore defaults to the packaged `ckpts`, and
+`oputil.resolve_ckpt_dir` resolves a relative value against the operator's own directory
+rather than the working directory -- with a fallback to cwd-relative so in-repo runs still
+find `./ckpts`. An absolute path is the escape hatch for image-resident or mounted weights.
+Verified by masking `/opt/darkpipe/ckpts` with an empty directory: the operator still runs,
+and pointing `--ckpt_dir` at the masked path fails cleanly, which is what makes that a real
+test rather than a vacuous one. The image's `COPY ckpts/` is now redundant and can go at the
+next rebuild; it is left in place because dropping it would itself require one. `main.py` puts its own directory first on `sys.path`, so the copy in the zip
 always wins. One source of truth; no image/zip version skew. The cost is a ~200 KB zip instead
 of a ~10 KB one, which is nothing.
 

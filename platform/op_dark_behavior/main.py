@@ -24,7 +24,7 @@ import traceback
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
-from oputil import (deliver, ensure_parent, fetch_input, parse_bool,  # noqa: E402
+from oputil import (resolve_ckpt_dir, deliver, ensure_parent, fetch_input, parse_bool,  # noqa: E402
                      parse_gpu_ids, require_destination)
 
 
@@ -52,7 +52,8 @@ def build_parser():
     p.add_argument("--proc_max_side", type=int, default=0,
                    help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，1080p 填 1280 可省四分之三算力且不损识别精度")
     p.add_argument("--enhance_chunk", type=int, default=4)
-    p.add_argument("--ckpt_dir", default="/opt/darkpipe/ckpts")
+    p.add_argument("--ckpt_dir", default="ckpts",
+                   help="权重目录。默认 ckpts 指算子包内随包发布的那一份；也可填绝对路径改用镜像内或挂载进来的权重")
     p.add_argument("--local_output_dir", default="",
                    help="产出另存到这个容器内目录（挂载 NFS 后即可本地浏览），如 /mnt/nfs/darkout；"
                         "留空则不另存本地")
@@ -102,7 +103,7 @@ def run(args):
             sr_scale=(args.sr_scale if args.sr != "off" else None),
             recognize=args.recognize, device=f"cuda:{gpus[0]}",
             gpus=(",".join(gpus) if len(gpus) > 1 else ""),
-            ckpt_dir=args.ckpt_dir, reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, enhance_chunk=max(1, args.enhance_chunk),
+            ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, enhance_chunk=max(1, args.enhance_chunk),
             reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
             no_label_bar=(not args.label_bar),
             events_json=args.events_json,

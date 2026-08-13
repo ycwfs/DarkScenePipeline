@@ -173,6 +173,21 @@ def deliver(files, local_dir, hdfs_dir, labels=None):
     return landed
 
 
+def resolve_ckpt_dir(value, here):
+    """权重目录：绝对路径原样用；相对路径优先按算子包所在目录解析。
+
+    权重随 zip 一起发布（约 33 MB），而不是烤进镜像——镜像 6.1 GB，换一次权重要重传整个镜像，
+    走 zip 只要传 33 MB。默认值因此是相对路径 `ckpts`，指向包内那一份。
+
+    相对路径先看包内有没有，没有再按当前目录解析：仓库里开发时 main.py 在
+    platform/op_xxx/ 下，权重却在仓库根的 ckpts/，两种情形要都能跑。
+    """
+    if os.path.isabs(value):
+        return value
+    packaged = os.path.join(here, value)
+    return packaged if os.path.isdir(packaged) else value
+
+
 def parse_gpu_ids(value):
     """'0' 或 '0,1,2' -> ['0','1','2']；非法值直接退出。"""
     ids = [g.strip() for g in str(value).split(",") if g.strip()]

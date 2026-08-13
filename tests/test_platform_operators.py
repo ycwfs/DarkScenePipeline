@@ -189,3 +189,35 @@ def test_entrypoint_is_main_py(op):
     cmd = manifest(op)["implementation"]["container"]["command"]
     assert cmd[0].startswith("/"), "command[0] must be an absolute interpreter path"
     assert os.path.basename(cmd[-1]) == "main.py"
+
+
+@pytest.mark.parametrize("op", OPS)
+def test_weights_ship_in_the_zip_not_only_the_image(op):
+    """Weights travel with the operator so a weight change is a 33 MB upload, not 6.1 GB.
+
+    make_operator_zip.sh copies them in; this checks the two halves that make that work --
+    the manifest defaulting to the packaged directory, and main.py resolving that relative
+    path against its own location rather than the working directory.
+    """
+    doc = manifest(op)
+    ck = [i for i in doc["inputs"] if i["name"] == "ckpt_dir"]
+    assert ck and ck[0].get("default") == "ckpts", \
+        "ckpt_dir must default to the packaged directory, not an image path"
+    src = open(os.path.join(PLATFORM, op, "main.py"), encoding="utf-8").read()
+    assert "resolve_ckpt_dir(args.ckpt_dir, _HERE)" in src, \
+        "a relative ckpt_dir must resolve against the operator directory, not the cwd"
+
+
+def test_resolve_ckpt_dir_prefers_the_packaged_copy(tmp_path):
+    sys.path.insert(0, PLATFORM)
+    try:
+        from oputil import resolve_ckpt_dir
+    finally:
+        sys.path.remove(PLATFORM)
+    here = str(tmp_path)
+    os.makedirs(os.path.join(here, "ckpts"))
+    assert resolve_ckpt_dir("ckpts", here) == os.path.join(here, "ckpts")
+    # absolute wins (the escape hatch for mounted or image-resident weights)
+    assert resolve_ckpt_dir("/opt/darkpipe/ckpts", here) == "/opt/darkpipe/ckpts"
+    # no packaged copy -> left cwd-relative, which is how in-repo runs find ./ckpts
+    assert resolve_ckpt_dir("ckpts", str(tmp_path / "nope")) == "ckpts"
