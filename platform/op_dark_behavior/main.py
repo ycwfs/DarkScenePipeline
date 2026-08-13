@@ -38,6 +38,9 @@ def build_parser():
     p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
     p.add_argument("--sr", default="bicubic", choices=["off", "bicubic"])
     p.add_argument("--sr_scale", type=int, default=2, choices=[2, 3, 4])
+    p.add_argument("--denoise", default="fast",
+                   choices=["off","fast","quality","quality_high"],
+                   help="画面去噪：off/fast(双边~5ms,35%)/quality(NLM窗7~119ms,51%)/quality_high(NLM窗15~376ms,75%)；识别之后进行，实时流与片段共用同一帧")
     p.add_argument("--color_saturation", type=float, default=1.0,
                    help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     p.add_argument("--recognize", default="behavior", choices=["off", "behavior"])
@@ -103,7 +106,7 @@ def run(args):
             sr_scale=(args.sr_scale if args.sr != "off" else None),
             recognize=args.recognize, device=f"cuda:{gpus[0]}",
             gpus=(",".join(gpus) if len(gpus) > 1 else ""),
-            ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, enhance_chunk=max(1, args.enhance_chunk),
+            ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, denoise=args.denoise, enhance_chunk=max(1, args.enhance_chunk),
             reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
             no_label_bar=(not args.label_bar),
             events_json=args.events_json,

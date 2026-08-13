@@ -231,7 +231,7 @@ def build_app(cfg, on_clip=None):
             max_sec=cfg.clip_max_sec,
             skip_labels=[s.strip() for s in cfg.clip_skip_labels.split(",") if s.strip()],
             min_confidence=cfg.clip_min_conf, on_saved=on_clip,
-            session=(cfg.clip_session or None))
+            session=(cfg.clip_session or None), denoise=cfg.clip_denoise)
         print(f"[serve] 片段保存已开启 -> {st.clipper.root} "
               f"(跳过 {sorted(st.clipper.skip) or '无'})")
         # Every event, including the ones no clip is cut for -- this is the record that

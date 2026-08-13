@@ -152,6 +152,32 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 帧率——出流侧确实是按这个固定节奏下发的（管线慢于它时重复上一帧），所以这才是观看端真正收到的帧率。
 实测处理帧率仍然有，在 `/health` 的 `fps_proc` 里，那是诊断用的数，不适合烧进大屏画面。
 
+### 去噪 `denoise` / `clip_denoise`
+
+真实部署素材实测（720p、增强之后测量，数据与脚本见 `compare/results/denoise/`）：
+
+| 档位 | 算法 | 降噪 | 边缘保留 | 耗时/帧 |
+| --- | --- | --- | --- | --- |
+| `off` | — | — | 100% | 0 |
+| **`fast`** | 双边滤波 d5 | 35% | 84% | **5 ms** |
+| `quality` | NLM 搜索窗 7 | 51% | 85% | 119 ms |
+| `quality_high` | NLM 搜索窗 15 | 75% | 81% | 376 ms |
+
+**两个参数的区别在于作用范围，这一点很重要**：实时流、保存片段、`--record` 三者**共用同一帧**
+（处理完的那一帧同时喂给 JPEG 编码和片段录制），所以：
+
+- **`denoise`** 是管线里的一个 stage，**对三者同时生效**。因此实时服务上只适合放 `fast`
+  （5 ms）；调到 `quality` 以上会直接吃掉时延预算，`quality_high` 在 serve 模式下会打印告警。
+- **`clip_denoise`** 在**片段写盘线程**上执行，只作用于片段，**完全不占实时时延**。片段是留证用
+  的、人会盯着细看，值得用更贵的档位。实测 NLM 窗 7 在该线程上跟得上：14 个片段、丢帧 0。
+
+**两者会叠加**：`denoise=fast` + `clip_denoise=quality` 时片段先后过两道，实测片段噪声降到
+0.00-0.08（基线 1.87），非常平滑——若觉得过头，把 `clip_denoise` 调成 `off` 或把 `denoise`
+关掉即可。
+
+去噪在**识别之后**进行（`quality_high` 视觉上已有明显平滑感，尽管边缘指标还有 81%——所以档位
+不要只看数字，先看 `compare/results/denoise/` 里的对比图）。
+
 ### 色彩恢复 `color_saturation`
 
 低照度增强会把画面拉灰——增强后平均彩度只有 **5.9**，而原始暗帧里蓝色椅子、橙色物品、桌面青绿
@@ -215,6 +241,7 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `enhance` | 低照度增强算法 | String | `retinexformer` | `off` / `retinexformer` |
 | `sr` | 超分辨率算法 | String | `bicubic` | `off` / `bicubic`；只影响画面与片段，不影响识别 |
 | `sr_scale` | 超分放大倍数 | Int | `2` | `2` / `3` / `4`，`sr=off` 时忽略 |
+| `denoise` | 画面去噪 | String | `fast` | `off`/`fast`/`quality`/`quality_high`，见下 |
 | `color_saturation` | 色彩饱和度 | Float | `1.0` | 画面色彩浓度倍数，`1.0`=不处理；建议 2.0-2.6，见下 |
 | `recognize` | 行为识别模型 | String | `behavior` | 仅 `behavior`，不提供 `off`（无事件即无片段） |
 | `proc_max_side` | 处理分辨率上限(长边) | Int | `1280` | 处理前把画面缩到长边≤该值，`0`=原分辨率。见下 |
@@ -235,6 +262,7 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `clip_post_sec` | 片段后置时长(秒) | Float | `2.0` | 最后一次命中后再录多久才收尾 |
 | `clip_max_sec` | 片段最长时长(秒) | Float | `30.0` | 单个片段的时长上限 |
 | `clip_skip_labels` | 不保存的行为 | String | `other` | 逗号分隔；填空表示全都保存 |
+| `clip_denoise` | 片段去噪 | String | `quality` | 只作用于片段，不占实时时延 |
 | `hdfs_output_dir` | 片段HDFS目录(可留空) | String | 无（**可留空**） | 留空则不推 HDFS，只保留本地一份 |
 | `run_seconds` | 运行时长上限(秒) | Float | `0` | `0` = 一直运行到容器被停止 |
 

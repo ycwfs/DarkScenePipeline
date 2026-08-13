@@ -22,6 +22,13 @@ def build_stages(cfg):
             cfg.ckpt_dir, bundle=cfg.rr_bundle, steps=cfg.rr_steps,
             cfg_scale=cfg.rr_cfg_scale, chunk=cfg.rr_chunk, prompt=cfg.rr_prompt))
 
+    # Denoise before saturation: boosting chroma amplifies chroma noise, so removing it
+    # first is the cheaper and cleaner order. Both sit before SR, where there are 4x fewer
+    # pixels to touch.
+    if getattr(cfg, "denoise", "off") != "off":
+        from .denoise import DenoiseStage
+        frame_stages.append(DenoiseStage(cfg.denoise))
+
     # Before SR rather than after: both run post-recognition, and doing it at the smaller
     # pre-upscale size is the cheaper order (x2 SR is 4x the pixels).
     if getattr(cfg, "color_saturation", 1.0) != 1.0:

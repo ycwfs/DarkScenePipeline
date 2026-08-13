@@ -437,3 +437,68 @@ def test_reader_stops_at_a_real_end(monkeypatch):
     monkeypatch.setattr("darkpipe.media.open_capture", lambda src: Cap())
     r = VideoReader("fake.mp4", chunk=3)
     assert sum(len(c) for c in r.chunks()) == 10
+
+
+@pytest.mark.parametrize("mode,expect_change", [
+    ("off", False), ("fast", True), ("quality", True), ("quality_high", True),
+])
+def test_denoise_modes_apply(mode, expect_change):
+    import numpy as np
+
+    from darkpipe.stages.denoise import DenoiseStage
+    rng = np.random.default_rng(0)
+    img = np.clip(np.full((64, 64, 3), 110, np.int16)
+                  + rng.integers(-25, 25, (64, 64, 3)), 0, 255).astype(np.uint8)
+    out = DenoiseStage(mode)([img])[0]
+    assert (not np.array_equal(out, img)) is expect_change
+    assert out.shape == img.shape
+
+
+def test_denoise_runs_after_recognition_and_before_saturation():
+    """Order matters twice over.
+
+    After recognition, because the behaviour head was trained on un-denoised enhancer output.
+    Before saturation, because boosting chroma amplifies chroma noise -- removing it first is
+    both cheaper and cleaner.
+    """
+    from darkpipe.config import PipelineConfig
+    from darkpipe.stages import build_stages
+    stages, _ = build_stages(PipelineConfig(
+        input="x", enhance="off", sr="bicubic", sr_scale=2, recognize="off",
+        denoise="fast", color_saturation=2.0))
+    names = [s.name for s in stages]
+    dn = next(i for i, n in enumerate(names) if n.startswith("denoise"))
+    sat = next(i for i, n in enumerate(names) if n.startswith("saturate"))
+    assert stages[dn].post_recognition, "denoising before recognition shifts the input distribution"
+    assert dn < sat, f"denoise must precede saturation, got {names}"
+
+
+def test_clip_denoise_is_independent_of_the_stream():
+    """The live stream and the clips share one frame, so clips need their own knob.
+
+    Anything strong enough to matter (NLM, 119-376 ms) cannot go in the shared path without
+    spending the whole latency budget -- but the clip writer thread is already off it.
+    """
+    import numpy as np
+
+    from darkpipe.clips import ClipRecorder
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        rec = ClipRecorder(d, denoise="fast")
+        # Needs real noise: a bilateral filter on a perfectly flat image correctly returns
+        # it unchanged, so a clean test image would pass whether or not it ran.
+        rng = np.random.default_rng(0)
+        img = np.clip(np.full((32, 32, 3), 100, np.int16)
+                      + rng.integers(-25, 25, (32, 32, 3)), 0, 255).astype(np.uint8)
+        assert not np.array_equal(rec._clean(img), img), "clip denoise did not apply"
+        plain = ClipRecorder(d, denoise="off")
+        assert np.array_equal(plain._clean(img), img)
+        rec.close(); plain.close()
+
+
+@pytest.mark.parametrize("bad", ["nlm", "high", "true", "1"])
+def test_denoise_rejects_unknown_modes(bad):
+    from darkpipe.config import PipelineConfig, validate
+    with pytest.raises(SystemExit):
+        validate(PipelineConfig(input="x.mp4", output="/tmp/o.mp4", enhance="off",
+                                sr="off", recognize="off", denoise=bad))

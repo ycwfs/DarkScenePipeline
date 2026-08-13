@@ -129,8 +129,14 @@ class ClipRecorder:
 
     def __init__(self, out_dir, pre_sec=2.0, post_sec=2.0, max_sec=30.0,
                  skip_labels=("other",), min_confidence=0.0, on_saved=None,
-                 queue_frames=32, session=None, stage_dir=None):
+                 queue_frames=32, session=None, stage_dir=None, denoise="off"):
         self.out_dir = out_dir
+        # Denoising applied to clips ONLY, on the writer thread. The live stream and the
+        # clips share one frame (server.py hands the same array to both), so anything strong
+        # enough to be worth doing -- NLM at 119-376 ms/frame -- cannot go in the shared
+        # path without spending the entire latency budget. Here it is already off the
+        # critical path, and a clip is what someone will actually sit and study.
+        self.denoise = denoise
         # Clips are encoded to local disk and moved to out_dir only once complete. out_dir is
         # normally a mounted NFS share, and writing frame-by-frame across it puts network
         # latency on the writer thread: one stall longer than the queue holds turns into
@@ -289,6 +295,12 @@ class ClipRecorder:
 
     # ---------------------------------------------------------------- writer thread
 
+    def _clean(self, frame):
+        if self.denoise == "off":
+            return frame
+        from .denoise_util import denoise_frame
+        return denoise_frame(frame, self.denoise)
+
     def _writer_loop(self):
         """Owns every cv2 call, and re-times frames onto a uniform clock as it writes.
 
@@ -331,7 +343,7 @@ class ClipRecorder:
             writer = VideoWriter(stage_mp4, used_fps)
             next_due = None
             for f, t in pending:
-                emit(f, t)
+                emit(self._clean(f), t)
             pending.clear()
 
         while True:

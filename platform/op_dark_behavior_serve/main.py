@@ -46,6 +46,9 @@ def build_parser():
     p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
     p.add_argument("--sr", default="bicubic", choices=["off", "bicubic"])
     p.add_argument("--sr_scale", type=int, default=2, choices=[2, 3, 4])
+    p.add_argument("--denoise", default="fast",
+                   choices=["off","fast","quality","quality_high"],
+                   help="画面去噪：off/fast(双边~5ms,35%)/quality(NLM窗7~119ms,51%)/quality_high(NLM窗15~376ms,75%)；识别之后进行，实时流与片段共用同一帧")
     p.add_argument("--color_saturation", type=float, default=1.0,
                    help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     # 不提供 off：本算子靠事件流切片段，没有识别器就既没有事件也没有片段
@@ -76,6 +79,10 @@ def build_parser():
     p.add_argument("--clip_post_sec", type=float, default=2.0)
     p.add_argument("--clip_max_sec", type=float, default=30.0)
     p.add_argument("--clip_skip_labels", default="other")
+    p.add_argument("--clip_denoise", default="quality",
+                   choices=["off","fast","quality","quality_high"],
+                   help="仅对保存的片段去噪，在写盘线程执行，不占实时时延；取值同 denoise")
+
     # 唯一没有 default 的可选参数：规范里「有 default 即必填不能为空」，要允许留空就不能给
     # default。留空表示不推 HDFS，只保留 clip_dir 里的那一份。
     p.add_argument("--hdfs_output_dir", default="",
@@ -164,7 +171,7 @@ def run(args):
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
-        ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation,
+        ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, denoise=args.denoise,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
         no_label_bar=(not args.label_bar),
         host="0.0.0.0", port=args.serve_port, jpeg_quality=args.jpeg_quality,
@@ -173,7 +180,7 @@ def run(args):
         max_flv_clients=args.max_flv_clients, stream_bitrate=args.stream_bitrate,
         clip_dir=args.clip_dir, clip_pre_sec=args.clip_pre_sec,
         clip_post_sec=args.clip_post_sec, clip_max_sec=args.clip_max_sec,
-        clip_skip_labels=args.clip_skip_labels,
+        clip_skip_labels=args.clip_skip_labels, clip_denoise=args.clip_denoise,
         # One session name for the local tree, the HDFS tree and session_json alike; letting
         # each side stamp its own produced directories a second apart.
         clip_session=session))

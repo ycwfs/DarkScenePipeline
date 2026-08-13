@@ -21,6 +21,8 @@ class PipelineConfig:
     # tuning
     # Cap the long side before any stage runs; 0 = process at source resolution.
     proc_max_side: int = 0
+    # Denoising for the picture (post-recognition). See darkpipe/stages/denoise.py.
+    denoise: str = "off"
     # Chroma multiplier applied after recognition. 1.0 = unchanged.
     color_saturation: float = 1.0
     enhance_chunk: int = 32
@@ -56,6 +58,8 @@ class PipelineConfig:
     # one, which is fine standalone but drifts by a second from a name the caller generated
     # separately -- and then the reported paths and the uploaded copies disagree.
     clip_session: str = ""
+    # Denoising applied to clips only, on the writer thread (off the latency budget).
+    clip_denoise: str = "off"
     # serve: which live output formats to expose. mjpeg is native; flv/hls need ffmpeg.
     stream_formats: str = "mjpeg"
     hls_dir: str = ""                # empty -> a temp dir under /tmp
@@ -151,6 +155,17 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
         cfg.reco_min_conf /= 100.0
     if cfg.reco_min_conf < 0.0:
         _die(f"--reco-min-conf must be >= 0 (got {cfg.reco_min_conf})")
+
+    from .stages.denoise import MODES as _DENOISE_MODES
+    if cfg.denoise not in _DENOISE_MODES:
+        _die(f"--denoise must be one of {list(_DENOISE_MODES)} (got {cfg.denoise!r})")
+    # quality_high is 376 ms/frame at 720p. In serve mode that is the whole latency budget
+    # several times over, and the live path shares its frame with the clips -- so say so
+    # rather than let it show up as a mysteriously stalled stream.
+    if cfg.mode == "serve" and cfg.denoise == "quality_high":
+        cfg.warnings.append("--denoise quality_high costs ~376 ms/frame at 720p and applies "
+                            "to the live stream too; use --clip-denoise for the clips and "
+                            "keep the stream on fast/quality")
 
     if not 0.0 < cfg.color_saturation <= 5.0:
         _die(f"--color-saturation must be in (0, 5] (got {cfg.color_saturation}); "
@@ -282,6 +297,9 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
                 f"--clip-max-sec {cfg.clip_max_sec}s is shorter than pre+post "
                 f"({cfg.clip_pre_sec}+{cfg.clip_post_sec}s), so every clip is cut off at the "
                 f"cap and the post-roll never lands")
+        if cfg.clip_denoise not in _DENOISE_MODES:
+            _die(f"--clip-denoise must be one of {list(_DENOISE_MODES)} "
+                 f"(got {cfg.clip_denoise!r})")
         if not 0.0 <= cfg.clip_min_conf <= 1.0:
             _die(f"--clip-min-conf is a probability in [0,1] (got {cfg.clip_min_conf})")
 

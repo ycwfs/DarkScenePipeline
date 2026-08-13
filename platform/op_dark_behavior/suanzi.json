@@ -65,6 +65,18 @@
       }
     },
     {
+      "name": "denoise",
+      "type": "String",
+      "description": "画面去噪档位，在识别之后进行、不影响识别结果。off：不去噪；fast：双边滤波，约 5 毫秒/帧，真实素材实测降噪 35%、边缘保留 84%，实时路径可放心开启；quality：NLM 搜索窗 7，约 119 毫秒/帧，降噪 51%、边缘 85%；quality_high：NLM 搜索窗 15，约 376 毫秒/帧，降噪 75% 但画面已有明显平滑感。注意实时流、保存片段、录制文件共用同一帧，本参数对三者同时生效——实时服务上调到 quality 以上会直接吃掉时延预算，片段单独去噪请用 clip_denoise。数据见 compare/results/denoise/。",
+      "default": "fast",
+      "annotations": {
+        "show": "画面去噪",
+        "component": "choice",
+        "choice": "['off', 'fast', 'quality', 'quality_high']",
+        "parameter": 1
+      }
+    },
+    {
       "name": "color_saturation",
       "type": "Float",
       "description": "画面色彩饱和度倍数，1.0 表示不处理。低照度增强会把画面拉灰——实测增强后平均彩度只有 5.9，而原始暗帧里蓝色椅子、橙色物品、桌面青绿反光都真实存在。本参数在 Lab 空间按该倍数缩放色度，只放大色度差异，不放大整体色偏。实测 2.6 倍时彩度 5.9→15.1、色相偏离 5.8°。缩放围绕画面自身平均色度，不会放大整体色偏（暗光素材常见的绿偏）。建议 2.0-2.6。该处理在识别之后进行，不影响识别结果。1280x720 下约 18 毫秒/帧。",
@@ -246,6 +258,10 @@
         "--sr_scale",
         {
           "inputValue": "sr_scale"
+        },
+        "--denoise",
+        {
+          "inputValue": "denoise"
         },
         "--color_saturation",
         {

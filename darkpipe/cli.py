@@ -53,6 +53,11 @@ def build_parser():
                         "(0 = source resolution). Cost tracks pixel count and the recogniser "
                         "resizes to 224 regardless, so 1280 quarters the work on a 1080p "
                         "source at no cost to recognition")
+    t.add_argument("--denoise", default="off",
+                   choices=["off", "fast", "quality", "quality_high"],
+                   help="denoise the picture after recognition. fast=bilateral (~5 ms, 35%%), "
+                        "quality=NLM win7 (~119 ms, 51%%), quality_high=NLM win15 (~376 ms, "
+                        "75%%, visibly smoothed). Measured at 720p on real footage")
     t.add_argument("--color-saturation", type=float, default=1.0,
                    help="multiply chroma by this after recognition (1.0 = off). Enhancement "
                         "leaves low-light footage desaturated; 2.0-2.6 restores it. Hue is "
@@ -106,6 +111,11 @@ def build_parser():
                    help="hard cap so a permanently active scene cannot grow one file forever")
     s.add_argument("--clip-skip-labels", default="other",
                    help="comma-separated labels that never start a clip (default: other)")
+    s.add_argument("--clip-denoise", default="off",
+                   choices=["off", "fast", "quality", "quality_high"],
+                   help="denoise SAVED CLIPS only, on the writer thread. The live stream and "
+                        "the clips share one frame, so this is the only place NLM's cost can "
+                        "be paid without spending the latency budget")
     s.add_argument("--clip-min-conf", type=float, default=0.0,
                    help="ignore events below this probability (0 = keep all)")
     s.add_argument("--stream-formats", default="mjpeg",
