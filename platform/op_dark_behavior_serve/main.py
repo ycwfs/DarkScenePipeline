@@ -53,13 +53,14 @@ def build_parser():
                    help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     # 不提供 off：本算子靠事件流切片段，没有识别器就既没有事件也没有片段
     p.add_argument("--recognize", default="behavior", choices=["behavior"])
-    p.add_argument("--proc_max_side", type=int, default=1280,
-                   help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，1080p 填 1280 可省四分之三算力且不损识别精度")
+    p.add_argument("--proc_max_side", type=int, default=840,
+                   help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，所以缩放不损识别精度。默认 840 是双卡下画质与帧率的折中(23.8 fps/p95 289 ms)；只分到 1 张卡时 840 只有 12.9 fps，达不到 15 fps，需改填 720")
     p.add_argument("--reco_span_sec", type=float, default=1.0)
     p.add_argument("--reco_min_conf", type=float, default=0.0,
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--label_bar", type=parse_bool, default=True)
-    p.add_argument("--gpu_ids", default="0")
+    p.add_argument("--gpu_ids", default="0,1",
+                   help="容器内 GPU 卡号(从 0 起编，与宿主机序号无关)，逗号分隔。填多张时按帧轮询分发，识别与定序固定在第一张卡上。实际可见的卡少于填写的会自动降级并告警，真正决定给几张卡的是 suanzi.json 里的 metadata.gpu.count")
     p.add_argument("--ckpt_dir", default="ckpts",
                    help="权重目录。默认 ckpts 指算子包内随包发布的那一份；也可填绝对路径改用镜像内或挂载进来的权重")
     p.add_argument("--serve_port", type=int, default=8000)
@@ -81,7 +82,7 @@ def build_parser():
     p.add_argument("--clip_skip_labels", default="other")
     p.add_argument("--clip_denoise", default="quality",
                    choices=["off","fast","quality","quality_high"],
-                   help="仅对保存的片段去噪，在写盘线程执行，不占实时时延；取值同 denoise")
+                   help="仅对保存的片段去噪，在写盘线程执行，不占 GPU；取值同 denoise。注意 quality(NLM) 是纯 CPU 重活，事件密集时会和管线抢 CPU 把端到端时延顶到秒级，要守 1 秒指标就填 off 或 fast")
 
     # 唯一没有 default 的可选参数：规范里「有 default 即必填不能为空」，要允许留空就不能给
     # default。留空表示不推 HDFS，只保留 clip_dir 里的那一份。
@@ -150,6 +151,38 @@ def endpoints(port, formats, push_url):
     return eps
 
 
+def _print_gpu_inventory(gpus):
+    """打印每张卡的型号、显存和 UUID，让日志自己回答「到底给了几张卡」。
+
+    只看 `[serve] 多卡按帧轮询：cuda:0, cuda:1` 那行是不够的——它打印的是**请求**的卡号，
+    不是实际拿到的硬件。UUID 才是判据：两行 UUID 不同 = 两张物理卡；相同 = 平台把一张卡
+    虚拟成了两个设备（本平台装了 HAMi vGPU，这是它能做到的），此时多卡不会有加速，两个
+    实例只是在同一块卡上互相分时间片，实测反而比单卡慢。
+    """
+    try:
+        import torch
+        if not torch.cuda.is_available():
+            print("[gpu] CUDA 不可用")
+            return
+        n = torch.cuda.device_count()
+        print(f"[gpu] torch 可见 {n} 张卡；本次使用 {', '.join('cuda:' + g for g in gpus)}")
+        seen = {}
+        for g in gpus:
+            i = int(g)
+            if i >= n:
+                print(f"[gpu]   cuda:{i} 不存在（可见的只有 0..{n - 1}）")
+                continue
+            p = torch.cuda.get_device_properties(i)
+            uu = str(getattr(p, "uuid", "?"))
+            print(f"[gpu]   cuda:{i} {p.name} {p.total_memory / 2**30:.1f}GiB uuid={uu}")
+            seen.setdefault(uu, []).append(i)
+        dup = [v for v in seen.values() if len(v) > 1]
+        if dup:
+            print(f"[gpu] 警告：{dup} 是同一块物理卡的多个设备号，多卡分发不会带来加速")
+    except Exception as e:                                   # 诊断信息，不值得让服务起不来
+        print(f"[gpu] 读取 GPU 信息失败（不影响运行）：{e}")
+
+
 def write_session(path, payload):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -160,9 +193,13 @@ def run(args):
     from darkpipe.server import run_server
 
     gpus = parse_gpu_ids(args.gpu_ids)
+    # 多卡时按帧轮询分发（第 1 帧给卡 A、第 2 帧给卡 B……），不是离线那种按帧段切片——
+    # 实时流没有「未来的帧」可切，但轮询也不需要。识别与定序固定在 gpus[0] 上：同一块卡
+    # 上出现两个提交 CUDA 任务的线程会互相时间片切分，实测比串行还慢。
     if len(gpus) > 1:
-        # 实时流没有「未来的帧」可切段，多卡分片是离线专属能力（darkpipe.config 也会拒绝）
-        print(f"[warn] 实时服务不做多卡分片，gpu_ids={args.gpu_ids} 只取第一张卡 {gpus[0]}")
+        print(f"[serve] 多卡按帧轮询：{', '.join('cuda:' + g for g in gpus)}"
+              f"（识别固定在 cuda:{gpus[0]}）")
+    _print_gpu_inventory(gpus)
     ensure_parent(args.session_json)
 
     session = run_dir_name()
@@ -171,6 +208,7 @@ def run(args):
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
+        gpus=(",".join(gpus) if len(gpus) > 1 else ""),
         ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, denoise=args.denoise,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
         no_label_bar=(not args.label_bar),
@@ -209,7 +247,7 @@ def run(args):
         "hdfs_clip_dir": (sink.root if sink else ""),
         "clip_skip_labels": args.clip_skip_labels,
         "config": {"enhance": cfg.enhance, "sr": cfg.sr_name(), "recognize": cfg.recognize,
-                   "gpu_ids": gpus[0], "reco_span_sec": cfg.reco_span_sec,
+                   "gpu_ids": ",".join(gpus), "reco_span_sec": cfg.reco_span_sec,
                    "serve_port": args.serve_port, "run_seconds": args.run_seconds},
     }
     # 先写一份「运行中」：框架给的 outputPath 必须存在，而常驻服务可能被直接杀掉，

@@ -5,6 +5,7 @@ import sys
 import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from darkpipe import config
 from darkpipe.config import PipelineConfig, validate
 
 CKPTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "ckpts")
@@ -116,10 +117,70 @@ def test_serve_output_warns():
     assert any("--record" in w for w in cfg.warnings)
 
 
-def test_gpus_serve_rejected():
-    with pytest.raises(SystemExit, match="offline-only"):
-        validate(PipelineConfig(input="x.mp4", mode="serve", enhance="off", sr="off",
-                                recognize="off", gpus="0,1"))
+@pytest.fixture
+def n_gpus(monkeypatch):
+    """Pin the visible GPU count, so --gpus assertions do not depend on the test machine."""
+    def _set(n):
+        monkeypatch.setattr(config, "_cuda_device_count", lambda: n)
+    return _set
+
+
+def test_gpus_is_accepted_in_serve_and_deals_frames_round_robin(n_gpus):
+    """serve fans out by dealing arriving frames, not by splitting a file into ranges.
+
+    Offline shards by frame range, which needs future frames to exist; a live stream has
+    none, so serve used to reject the flag outright. Round-robin dealing needs no future
+    frames, so the flag now works in both modes with a different mechanism behind it.
+    """
+    from darkpipe.server import serve_devices
+
+    n_gpus(4)
+    cfg = validate(PipelineConfig(input="rtsp://cam", mode="serve", enhance="off", sr="off",
+                                  recognize="off", gpus="2,3"))
+    assert serve_devices(cfg) == ["cuda:2", "cuda:3"]
+
+
+def test_gpus_with_one_id_warns_and_defers_to_device(n_gpus):
+    """One id shards nothing offline and deals nothing in serve, so it must not look used.
+
+    The trap is `--gpus 3 --device cuda:0` quietly running on cuda:0. Warn rather than die
+    -- the value is harmless -- but do not silently honour it in serve only, which would
+    make the same spelling pick different cards in the two modes.
+    """
+    from darkpipe.server import serve_devices
+
+    n_gpus(4)
+    cfg = validate(PipelineConfig(input="rtsp://cam", mode="serve", enhance="off", sr="off",
+                                  recognize="off", gpus="3", device="cuda:0"))
+    assert serve_devices(cfg) == ["cuda:0"]
+
+
+def test_gpus_beyond_what_is_visible_degrades_instead_of_crashing(n_gpus, capsys):
+    """Fewer cards than asked for must fall back, not die on `invalid device ordinal`.
+
+    This is the platform case: the serve operator declares metadata.gpu.count 2 and defaults
+    gpu_ids to "0,1", so a scheduler that hands over one card leaves the default pointing at
+    a device that does not exist. Without this the failure is a stage load blowing up ~15 s
+    in with a CUDA ordinal error; with it, the run drops to the single-GPU path that was
+    measured and shipped.
+    """
+    from darkpipe.server import serve_devices
+
+    n_gpus(1)
+    cfg = validate(PipelineConfig(input="rtsp://cam", mode="serve", enhance="off", sr="off",
+                                  recognize="off", gpus="0,1", device="cuda:0"))
+    assert serve_devices(cfg) == ["cuda:0"], "must fall back to one device"
+    assert "only 1 visible" in capsys.readouterr().out, "the degradation must be visible"
+
+
+def test_gpus_survives_a_partial_grant(n_gpus):
+    """Three asked for, two granted: keep both, do not collapse all the way to one."""
+    from darkpipe.server import serve_devices
+
+    n_gpus(2)
+    cfg = validate(PipelineConfig(input="rtsp://cam", mode="serve", enhance="off", sr="off",
+                                  recognize="off", gpus="0,1,2", device="cuda:0"))
+    assert serve_devices(cfg) == ["cuda:0", "cuda:1"]
 
 
 def test_gpus_rejects_repeats_and_junk():

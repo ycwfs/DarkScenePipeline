@@ -23,6 +23,7 @@ import torch
 import torch.nn as nn
 
 from ..constants import BEHAVIOR_DISPLAY, BEHAVIORS, CKPT_FILES, CLASSES, RECO_CFG
+from ..utils import free_device_cache
 from .base import RecognitionEvent, Recognizer
 
 
@@ -175,7 +176,7 @@ class _WindowRecognizer(Recognizer):
     def close(self) -> None:
         self.net = None
         self.buf.clear()
-        torch.cuda.empty_cache()
+        free_device_cache(self.device)
 
 
 class R3DRecognizer(_WindowRecognizer):

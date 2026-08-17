@@ -139,6 +139,14 @@ resampled from the last second of wall-clock video, so the label always describe
 frames), the policy the checkpoint was validated under. When the camera outruns the GPU the
 newest frame wins and the drop is counted in `/health` — that is what bounds the latency.
 
+**`--gpus 0,1` works in serve mode too**, and means something different than it does offline:
+offline cuts the file into one frame-range per GPU, which needs future frames to exist; a live
+stream has none, so serve deals arriving frames round-robin instead. Measured on two 3090s at
+`--proc-max-side 840`, 12.9 → **23.8 fps** (1.85×) — but p50 latency 109 → 197 ms, because the
+pipeline holds ~6 frames in flight instead of ~2. It buys rate and spends latency; worth it
+only while the delay budget is slack. Single-GPU behaviour is unchanged, and a `--gpus` naming
+more cards than the box has falls back to it with a warning rather than failing to start.
+
 **5. Measured on this box — and how to reproduce it**
 ```bash
 # offline: 1042 frames of ARID test clips, concatenated at each resolution
@@ -503,7 +511,10 @@ one day and 17.4 the next), so the **cost of a stage is only meaningful inside o
   the 15 fps target. That figure is end-to-end and includes per-worker model load, so it is
   the conservative one. Cost of the split: the recognition window restarts at each seam, so a
   4-way split emitted 52 events where the single-GPU run emitted 55. Real-time latency at
-  720p is fine on one GPU (111–273 ms) because serve mode processes one frame at a time.
+  720p is fine on one GPU (111–273 ms) — serve keeps one frame per stage rather than batching,
+  so latency tracks a single frame's cost, not the file's. Serve accepts `--gpus` as well, but
+  round-robins live frames instead of sharding (see step 4): it lifts rate and costs latency,
+  the opposite trade from the offline split, which lifts rate at no latency cost at all.
 - **With `--sr bicubic_x2`, super-resolution is inside the spec too.** It costs 2–6% of
   throughput and 2–18 ms of latency, so ×2 output holds ≥ 15 fps at 320×240 (24.4–45.3) and
   at 640×480 for every configuration except CIDNet + `behavior`, which lands at 14.8 fps —

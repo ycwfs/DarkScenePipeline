@@ -17,6 +17,20 @@ def tensor_to_bgr_list(y):
     return [cv2.cvtColor(f, cv2.COLOR_RGB2BGR) for f in out]
 
 
+def free_device_cache(device):
+    """Release cached blocks on `device` -- the stage's card, not whichever one is current.
+
+    `torch.cuda.empty_cache()` frees the *current* device, which is cuda:0 unless something
+    set it, so a stage on cuda:3 was freeing a card it never allocated on. That was invisible
+    while every stage in a process shared one card; serve mode now runs enhance instances on
+    several at once, where it would leak one card's weights per extra device.
+    """
+    if device is None or not str(device).startswith("cuda") or not torch.cuda.is_available():
+        return
+    with torch.cuda.device(device):
+        torch.cuda.empty_cache()
+
+
 def reflect_pad_to(x, multiple):
     """Pad [B,C,H,W] on bottom/right so H,W are multiples of `multiple`. Returns x, (h, w)."""
     h, w = x.shape[2:]
@@ -47,7 +61,7 @@ def chunked(stage, frames, fn):
             if stage.chunk == 1:
                 raise
             stage.chunk = max(1, stage.chunk // 2)
-            torch.cuda.empty_cache()
+            free_device_cache(getattr(stage, "device", None))
             print(f"[{stage.name}] OOM -> chunk {stage.chunk}", flush=True)
             continue
         i += stage.chunk

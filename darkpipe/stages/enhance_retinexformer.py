@@ -4,7 +4,7 @@ import os
 import torch
 
 from ..constants import CKPT_FILES
-from ..utils import bgr_batch_to_tensor, chunked, reflect_pad_to, tensor_to_bgr_list
+from ..utils import free_device_cache, bgr_batch_to_tensor, chunked, reflect_pad_to, tensor_to_bgr_list
 from .base import FrameStage
 
 
@@ -37,4 +37,4 @@ class RetinexformerStage(FrameStage):
 
     def close(self) -> None:
         self.net = None
-        torch.cuda.empty_cache()
+        free_device_cache(self.device)

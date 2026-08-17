@@ -13,8 +13,8 @@ import os
 import torch
 
 from ..constants import sr_ckpt_file
-from ..utils import (bgr_batch_to_tensor, chunked, psnr_uint8, reflect_pad_to,
-                      tensor_to_bgr_list)
+from ..utils import (bgr_batch_to_tensor, chunked, free_device_cache, psnr_uint8,
+                      reflect_pad_to, tensor_to_bgr_list)
 from .base import FrameStage
 
 LIGHTSR_KWARGS = dict(upscale=2, in_chans=3, img_size=64, img_range=1.0, embed_dim=48,
@@ -74,4 +74,4 @@ class LightSRStage(FrameStage):
 
     def close(self) -> None:
         self.net = None
-        torch.cuda.empty_cache()
+        free_device_cache(self.device)

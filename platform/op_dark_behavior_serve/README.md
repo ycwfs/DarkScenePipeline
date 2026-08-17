@@ -8,7 +8,7 @@
 | 提交包名 | `事件_行为识别_暗光场景行为识别实时服务.zip` |
 | 主入口 | `main.py` |
 | 运行镜像 | `darkpipe-operator:0.2.0`（与处理算子、测试验证算子共用同一镜像） |
-| 架构 | amd64，需 1 张 NVIDIA GPU |
+| 架构 | amd64，需 2 张 NVIDIA GPU（`metadata.gpu.count: 2`；只给 1 张也能跑，自动降级见下） |
 | 配套算子 | 暗光场景行为识别（批处理）、暗光场景行为识别测试验证 |
 
 ## 一、算子功能
@@ -110,11 +110,51 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `proc_max_side` | 实际处理尺寸 | 处理帧率 | 端到端时延 |
 | --- | --- | --- | --- |
 | `0`（原分辨率） | 1920×1080 | 2.6 fps | 296 ms |
-| **`1280`（默认）** | 1280×720 | **6.5 fps** | **172 ms** |
+| `1280` | 1280×720 | 6.5 fps | 172 ms |
+
+默认值取 **840**——见下一节的双卡实测表，它是「画质」与「帧率」的折中点：双卡下 23.8 fps，
+比 720 少 5.5 fps 换来 36% 的像素量。**只分到 1 张卡时 840 只有 12.9 fps，达不到 15 fps 的
+指标，此时必须改填 720**（单卡 15.6 fps）。启动时若检测到实际卡数少于申请数，日志会直接提示这一条。
 
 缩放在**所有环节之前**完成，识别、超分、标签条、片段与出流看到的都是同一尺寸，不需要谁额外知道
 缩放发生过。缩小用 INTER_AREA（缩图的正确滤波），而不是会产生混叠的双线性——混叠出来的高频细节
 正好会被增强算法放大。已经小于该值的画面原样通过，不会被放大。
+
+### 多卡并行 `gpu_ids`
+
+本算子申请 2 张 GPU（`metadata.gpu.count: 2`），按**帧**轮询分发：第 1 帧给第一张卡、第 2 帧给
+第二张卡，依次循环。这与批处理算子的多卡**分片**是两回事——分片按帧段切，需要「未来的帧」存在，
+实时流没有；轮询不需要，所以实时流也能用多卡。
+
+为什么必须是多张卡、而不是在一张卡上多开几个线程：840 下增强一帧是 1.9 ms 上传 + 35.8 ms GPU
+计算 + 3.7 ms 回传，GPU 计算占 86%，同卡上能重叠的只有剩下的 14%。同卡双实例实测最多 1.14x，
+已顶到 1/0.86 的理论上限；换成两张卡是 1.85x。
+
+RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（共享机器，各卡本身有
+其他负载）：
+
+| `proc_max_side` | 实际尺寸 | 1 卡 | 2 卡 | 提速 | 2 卡时延 p50 / p95 / max |
+| --- | --- | --- | --- | --- | --- |
+| `720` | 720×404 | 15.6 fps | **29.3 fps** | 1.88x | 155 / 243 / 274 ms |
+| **`840`（默认）** | 840×472 | 12.9 fps | **23.8 fps** | 1.85x | 197 / 289 / 336 ms |
+| `960` | 960×540 | 10.1 fps | **18.0 fps** | 1.79x | 260 / 350 / 392 ms |
+
+**多一张卡买的是帧率，不是时延——时延反而大约翻倍**（840 下 p50 109 → 197 ms）。不是单帧变慢了：
+每帧仍然完整跑在一张卡上、速度不变；是流水线变深了。一张卡同时在手的大约 2 帧（1 帧在增强、
+1 帧在输出队列），两张卡约 6 帧（2 帧在增强、2 帧在各自的预取槽、1 帧在交接队列、1 帧在输出队列），
+多出来的槽位里那几帧要排队等。840 下折算约 4.7 个帧周期 vs 1.4 个，正好是两个 p50 的比值。
+
+按指标看这笔交易是划算的：要求是 ≥15 fps 且 ≤1 秒，双卡 840 是 23.8 fps / p95 289 ms，
+帧率超出 59%、时延还剩 3.4 倍余量。
+
+三点部署注意：
+
+- `gpu_ids` 填的是**容器内**卡号，从 0 起连续编号，与宿主机卡号无关。默认 `0,1`。
+- 行为识别与输出定序固定在 `gpu_ids` 的第一张卡上，不单独占一张卡。原因是同一张卡上出现
+  两个提交 CUDA 任务的线程会互相时间片切分：之前把识别拆成独立线程与增强共卡，推理从 73 ms
+  涨到 250 ms、p95 从 119 ms 涨到 159 ms，比串行还差。现在每张卡上都只有一个提交 GPU 任务的线程。
+- 实际拿到的卡少于申请数时自动降级到单卡路径（就是本次改动之前一直在跑的那条路径），
+  并在日志里告警，不会因为 `cuda:1` 不存在而启动失败。
 
 ### 行为判定阈值 `reco_min_conf`
 
@@ -137,7 +177,7 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 **如果发现阈值没生效**（画面仍出现低于阈值的具名动作），先看启动日志里的 `[config]` 行：
 
 ```
-[config] enhance=retinexformer ... reco_min_conf=0.6 proc_max_side=1280 color_saturation=2.2
+[config] enhance=retinexformer ... reco_min_conf=0.6 proc_max_side=840 color_saturation=2.2
 ```
 
 `reco_min_conf` 显示的是**实际生效**的值。如果那里是 `0.0`，说明框架根本没有把这个参数传进来
@@ -168,8 +208,21 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 
 - **`denoise`** 是管线里的一个 stage，**对三者同时生效**。因此实时服务上只适合放 `fast`
   （5 ms）；调到 `quality` 以上会直接吃掉时延预算，`quality_high` 在 serve 模式下会打印告警。
-- **`clip_denoise`** 在**片段写盘线程**上执行，只作用于片段，**完全不占实时时延**。片段是留证用
-  的、人会盯着细看，值得用更贵的档位。实测 NLM 窗 7 在该线程上跟得上：14 个片段、丢帧 0。
+- **`clip_denoise`** 在**片段写盘线程**上执行，只作用于片段，**不占管线里的 GPU 时间**。片段是
+  留证用的、人会盯着细看，值得用更贵的档位。**但它并非「完全不占实时时延」**——它抢的是 CPU，
+  见下面的告警。
+
+> ⚠️ **`clip_denoise=quality` 会在写片段时把端到端时延顶到秒级。** 双卡 840、事件密集的素材
+> 实测：默认 `quality` 下 23 个统计窗口里有 5 个超过 1 秒（3.5 / 4.0 / 6.3 / 7.7 / 10.0 秒），
+> 且片段队列丢了 295 帧；同一段素材改成 `clip_denoise off` 后，超 1 秒的窗口降到 0（只剩启动时
+> 第一次推理的 3.5 秒预热），片段队列只丢 14 帧。原因是 NLM 是纯 CPU 的重活，写盘线程一旦开始
+> 批量去噪就和管线抢 CPU，此时各 stage 自身耗时全都正常（`enhance=82ms sr=15ms encode=19ms`、
+> `wait_gpu` 与 `wait_cpu` 都接近 0），只是主循环拿不到时间片。
+>
+> 这个问题**单卡时也存在**（同素材 4 个窗口超 1 秒，最高 4.1 秒），多卡只是把它放大：帧率高了
+> 1.8 倍，喂给写盘线程的帧也多了 1.8 倍。**要守住 1 秒指标，事件密集的场景把 `clip_denoise`
+> 设为 `off` 或 `fast`。** 事件稀疏的真实监控场景影响小得多——上面用的是每 15 秒就触发一次
+> 行为的压力素材。
 
 **两者会叠加**：`denoise=fast` + `clip_denoise=quality` 时片段先后过两道，实测片段噪声降到
 0.00-0.08（基线 1.87），非常平滑——若觉得过头，把 `clip_denoise` 调成 `off` 或把 `denoise`
@@ -244,11 +297,11 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `denoise` | 画面去噪 | String | `fast` | `off`/`fast`/`quality`/`quality_high`，见下 |
 | `color_saturation` | 色彩饱和度 | Float | `1.0` | 画面色彩浓度倍数，`1.0`=不处理；建议 2.0-2.6，见下 |
 | `recognize` | 行为识别模型 | String | `behavior` | 仅 `behavior`，不提供 `off`（无事件即无片段） |
-| `proc_max_side` | 处理分辨率上限(长边) | Int | `1280` | 处理前把画面缩到长边≤该值，`0`=原分辨率。见下 |
+| `proc_max_side` | 处理分辨率上限(长边) | Int | `840` | 处理前把画面缩到长边≤该值，`0`=原分辨率。**只分到 1 张卡时须改 720**，见下 |
 | `reco_span_sec` | 识别窗口时长(秒) | Float | `1.0` | 每次判定依据最近多少秒的画面 |
 | `reco_min_conf` | 行为判定阈值 | Float | `0.0` | 低于该置信度报为「其他」，不显示也不存片段；`0`=关闭 |
 | `label_bar` | 叠加标签条 | Bool | `true` | 演示画面与片段底部是否叠加识别结果 |
-| `gpu_ids` | GPU卡号 | String | `0` | 实时流不做多卡分片，只取第一张 |
+| `gpu_ids` | GPU卡号 | String | `0,1` | 逗号分隔，多张时按帧轮询分发；容器内卡号从 0 起编，见下 |
 | `ckpt_dir` | 权重目录 | String | `ckpts` | **随包发布**（约 33 MB），开箱即用；填绝对路径可改用镜像内或挂载的权重 |
 | `serve_port` | 服务端口 | Int | `8000` | 所有接口都在这个端口上 |
 | `stream_formats` | 实时流输出格式 | String | `mjpeg,flv` | `mjpeg` / `mjpeg,flv` / `mjpeg,flv,hls` / `mjpeg,hls` |
@@ -262,7 +315,7 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 | `clip_post_sec` | 片段后置时长(秒) | Float | `2.0` | 最后一次命中后再录多久才收尾 |
 | `clip_max_sec` | 片段最长时长(秒) | Float | `30.0` | 单个片段的时长上限 |
 | `clip_skip_labels` | 不保存的行为 | String | `other` | 逗号分隔；填空表示全都保存 |
-| `clip_denoise` | 片段去噪 | String | `quality` | 只作用于片段，不占实时时延 |
+| `clip_denoise` | 片段去噪 | String | `quality` | 只作用于片段，不占 GPU；**但 `quality` 抢 CPU，事件密集时会把时延顶到秒级，见下** |
 | `hdfs_output_dir` | 片段HDFS目录(可留空) | String | 无（**可留空**） | 留空则不推 HDFS，只保留本地一份 |
 | `run_seconds` | 运行时长上限(秒) | Float | `0` | `0` = 一直运行到容器被停止 |
 
@@ -322,7 +375,8 @@ docker run --rm --gpus all -p 8000:8000 \
     -w /opt/darkpipe/op darkpipe-operator:0.2.0 \
     /opt/conda/envs/darkpipe/bin/python -u main.py \
       --video_path /data/in.mp4 --enhance retinexformer --sr bicubic --sr_scale 2 \
-      --recognize behavior --reco_span_sec 1.0 --label_bar true --gpu_ids 0 \
+      --recognize behavior --reco_span_sec 1.0 --label_bar true \
+      --gpu_ids 0,1 --proc_max_side 840 \
       --ckpt_dir /opt/darkpipe/ckpts --serve_port 8000 \
       --stream_formats mjpeg,flv --rtmp_push_url "" --max_flv_clients 4 \
       --jpeg_quality 85 --max_stream_fps 15 \
@@ -331,6 +385,11 @@ docker run --rm --gpus all -p 8000:8000 \
       --hdfs_output_dir "" --run_seconds 60 \
       --session_json /out/session_json.json
 ```
+
+`--gpus all` 是必须的：只有它才会把宿主机的卡真的塞进容器。**起容器后先确认卡数**——
+`docker run ... nvidia-smi -L` 应该列出 2 张，且容器内编号从 `GPU 0` 开始（与宿主机序号无关）。
+只列出 1 张时服务仍会起来，但会走单卡降级路径，此时要把 `--proc_max_side` 改成 `720`。
+平台侧对应的是 `suanzi.json` 里的 `metadata.gpu.count`，不是这里的命令行。
 
 跑起来之后：
 

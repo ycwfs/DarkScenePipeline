@@ -42,10 +42,12 @@ def build_parser():
                         "xclip: open-vocabulary, any --labels, no retraining")
     p.add_argument("--device", default="cuda:0")
     p.add_argument("--gpus", default="",
-                   help="offline only: comma-separated GPU ids to split the video across, "
-                        "e.g. '0,1,2,3'. One segment per GPU, concatenated afterwards; the "
-                        "recognition window restarts at each cut, so short clips are left "
-                        "on a single GPU")
+                   help="comma-separated GPU ids to spread the work across, e.g. '0,1'. "
+                        "offline splits the video into one segment per GPU and concatenates "
+                        "afterwards (the recognition window restarts at each cut, so short "
+                        "clips are left on a single GPU); serve deals arriving frames "
+                        "round-robin instead, since a live stream has no future frames to "
+                        "cut into segments. Needs two or more ids to do anything")
     p.add_argument("--ckpt-dir", default="./ckpts")
     t = p.add_argument_group("tuning")
     t.add_argument("--proc-max-side", type=int, default=0,

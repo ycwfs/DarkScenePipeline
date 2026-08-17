@@ -44,5 +44,5 @@ class RealRestorerStage(FrameStage):
 
     def close(self) -> None:
         self.components = None
-        import torch
-        torch.cuda.empty_cache()
+        from ..utils import free_device_cache      # local: keeps torch off this module's import path
+        free_device_cache(self.device)

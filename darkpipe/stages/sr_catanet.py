@@ -23,7 +23,7 @@ import os
 import torch
 
 from ..constants import sr_ckpt_file
-from ..utils import bgr_batch_to_tensor, chunked, psnr_uint8, tensor_to_bgr_list
+from ..utils import free_device_cache, bgr_batch_to_tensor, chunked, psnr_uint8, tensor_to_bgr_list
 from .base import FrameStage
 
 
@@ -71,4 +71,4 @@ class CATANetStage(FrameStage):
 
     def close(self) -> None:
         self.net = None
-        torch.cuda.empty_cache()
+        free_device_cache(self.device)

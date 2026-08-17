@@ -95,6 +95,20 @@ def _die(msg):
     sys.exit(f"error: {msg}")
 
 
+def _cuda_device_count():
+    """Visible CUDA devices, or 0 if torch/CUDA is unavailable (then we cannot check).
+
+    Imported lazily and per call: this module is imported by tooling that has no business
+    initialising CUDA, and the count is only ever needed on the --gpus path. Per call rather
+    than cached so tests can substitute it.
+    """
+    try:
+        import torch
+        return torch.cuda.device_count() if torch.cuda.is_available() else 0
+    except Exception:                                # noqa: BLE001 - no torch, no check
+        return 0
+
+
 def validate(cfg: PipelineConfig) -> PipelineConfig:
     if not cfg.input:
         _die("--input is required")
@@ -134,13 +148,50 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
         if not all(g.isdigit() for g in ids):
             _die(f"--gpus takes comma-separated device ids, e.g. '0,1,2,3' (got {cfg.gpus!r})")
         if len(set(ids)) != len(ids):
-            _die(f"--gpus has repeated ids ({cfg.gpus!r}); each segment needs its own GPU")
-        if cfg.mode != "offline":
-            _die("--gpus splits a file by frame range and is offline-only; a live stream has "
-                 "no future frames to shard. Use --device to pick one GPU for serve mode.")
-        if cfg.enhance == "realrestorer":
+            _die(f"--gpus has repeated ids ({cfg.gpus!r}); each GPU can only do one job")
+        if cfg.mode not in ("offline", "serve"):
+            _die(f"--gpus applies to offline and serve, not --mode {cfg.mode}.")
+        # The flag means "use these GPUs" in both modes, but the mechanism differs and has
+        # to: offline splits the file into frame ranges, which needs future frames to exist.
+        # A live stream has none, so serve deals arriving frames round-robin instead. Same
+        # intent, and neither mechanism works in the other's mode.
+        if cfg.mode == "serve" and cfg.enhance == "realrestorer":
+            _die("--gpus cannot fan RealRestorer out: it restores a whole video in one pass "
+                 "(a whole_video stage) and has no per-frame path to deal frames into.")
+        if cfg.mode == "offline" and cfg.enhance == "realrestorer":
             _die("--gpus cannot shard RealRestorer: it restores the whole video in one pass "
                  "(a whole_video stage), so there are no independent segments.")
+        # Drop ids the box does not actually have, rather than letting a stage load fail on
+        # `invalid device ordinal` fifteen seconds in. This is the platform case: the
+        # operator manifest asks for `gpu.count: 2` and `gpu_ids` defaults to "0,1", but a
+        # scheduler that grants one card leaves that default pointing at a device that is
+        # not there. Falling back to the single-GPU path is a real degradation -- it is the
+        # path that was measured and shipped -- so it warns loudly and keeps running.
+        n_have = _cuda_device_count()
+        if n_have and any(int(g) >= n_have for g in ids):
+            keep = [g for g in ids if int(g) < n_have]
+            print(f"[warn] --gpus {cfg.gpus!r} names {len(ids)} GPUs but only {n_have} "
+                  f"visible; using {keep or [cfg.device]}. Check the operator's "
+                  f"metadata.gpu.count if you expected more.")
+            if cfg.mode == "serve" and len(keep) < 2 and cfg.proc_max_side > 720:
+                # Not a warning about the fallback itself but about its consequence: the
+                # serve defaults are sized for two cards (840 -> 23.8 fps), and one card at
+                # that resolution measures 12.9 fps, under the 15 fps the service is
+                # specified at. 720 is the setting that holds the line on a single card.
+                print(f"[warn] one GPU at --proc-max-side {cfg.proc_max_side} measures "
+                      f"~13 fps, below the 15 fps this service is specified for. Use "
+                      f"--proc-max-side 720 (~15.6 fps on one card).")
+            ids = keep
+            cfg.gpus = ",".join(ids)
+            if ids and not cfg.device.startswith("cpu"):
+                cfg.device = f"cuda:{ids[0]}"
+        if len(ids) == 1:
+            # Ignored rather than honoured, in both modes -- offline only shards at >1
+            # (cli.py) and serve only deals at >1 (server.serve_devices). Warn rather than
+            # die: the value is harmless, but silently running on --device's card when you
+            # named a different one is the kind of thing you discover from nvidia-smi.
+            print(f"[warn] --gpus {cfg.gpus!r} names one GPU, which does nothing on its own; "
+                  f"this run uses --device {cfg.device}. Name two or more to use them.")
 
     # "60" means 60%, not 6000%. Users think of this as a percentage -- the field is even
     # called a threshold -- and a probability cannot exceed 1, so a value above 1 is
