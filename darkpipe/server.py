@@ -382,6 +382,7 @@ def process_loop(st: ServerState):
         p_enh, p_rec, p_fire, p_sr, p_enc = (s.snap() for s in
                                              (s_enh, s_rec, s_fire, s_sr, s_enc))
         p_wait = dict(wait)
+        p_out = {}
         while running():
             t_wait = time.time()
             try:
@@ -452,6 +453,30 @@ def process_loop(st: ServerState):
                       + (f"wait_peer={(wait['peer'] - p_wait['peer']) / dt_win * 100:.0f}%  "
                          if n_gpu > 1 else "")
                       + f"(avg over {n} frames)")
+                # Push/HLS telemetry, printed from here rather than from the feeder threads:
+                # a feeder blocked in stdin.write prints nothing, which is exactly the case
+                # worth seeing. How to read it -- blocked% high => the media server is not
+                # draining us, so the fault is downstream of the container; blocked% ~0 with
+                # wrote ~= max_stream_fps and restarts flat => our side is delivering and a
+                # viewer-side outage is not ours; restarts climbing => read the [push] ffmpeg
+                # error lines; lag > 0 => the cadence fell behind and burst to catch up.
+                for key, out in (("push", st.push), ("hls", st.hls)):
+                    if out is None:
+                        continue
+                    c, p = out.snap(), p_out.get(key)
+                    if p is not None:
+                        print(f"[{key}] alive={int(c['alive'])}  "
+                              f"restarts={c['restarts']}  "
+                              f"wrote={(c['frames'] - p['frames']) / dt_win:.1f}fps"
+                              f"(dup {c['dup'] - p['dup']})  "
+                              f"rate={(c['bytes'] - p['bytes']) * 8 / dt_win / 1e6:.1f}Mbps  "
+                              f"blocked={(c['blocked'] - p['blocked']) / dt_win * 100:.0f}%  "
+                              f"stall={c['stall']:.1f}s  "
+                              # Peaks since start, not windowed: they are running maxima, and
+                              # diffing two maxima under-reports a window whose worst is below
+                              # the all-time worst. A peak that stops growing is the signal.
+                              f"peak_block={c['worst_ms']:.0f}ms  peak_lag={c['lag']:.2f}s")
+                    p_out[key] = c
                 n, t_win = 0, time.time()
                 p_enh, p_rec, p_fire, p_sr, p_enc = c_enh, c_rec, c_fire, c_sr, c_enc
                 p_wait = dict(wait)
@@ -666,6 +691,9 @@ def build_app(cfg, on_clip=None):
             st.push = streams.rtmp_push(st.jpeg, cfg.max_stream_fps, cfg.rtmp_push_url,
                                         cfg.stream_bitrate)
             print(f"[serve] 推流到 {cfg.rtmp_push_url}")
+            # The exact command, so the same push can be reproduced by hand from a shell on
+            # the host when the platform side and this side disagree about who dropped it.
+            print(f"[push] {' '.join(st.push._cmd)}")
         yield
         for out in (st.hls, st.push):
             if out is not None:

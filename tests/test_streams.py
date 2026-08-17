@@ -5,8 +5,12 @@ unavailable" -- it is a service that starts happily, reports healthy, serves the
 and only fails when someone finally opens the FLV URL during a demonstration. So a missing
 binary or a misspelled format has to stop the process at startup, naming what is wrong.
 """
+import io
+import time
+
 import pytest
 
+from darkpipe import streams
 from darkpipe.config import PipelineConfig, validate
 from darkpipe.streams import FORMATS, ffmpeg_path, parse_formats
 
@@ -502,3 +506,153 @@ def test_denoise_rejects_unknown_modes(bad):
     with pytest.raises(SystemExit):
         validate(PipelineConfig(input="x.mp4", output="/tmp/o.mp4", enhance="off",
                                 sr="off", recognize="off", denoise=bad))
+
+
+# --- push telemetry ---------------------------------------------------------------------
+#
+# The deployment pushes RTSP to a platform address and the platform re-serves it as FLV to a
+# browser. When that browser stalls, the only question worth answering is which side of the
+# push dropped it -- and `[process]` cannot answer it, because the JPEG slot is latest-wins
+# and the process loop never blocks on an output. These counters are the evidence.
+
+class _FakeStdin:
+    def __init__(self, block=0.0):
+        self.block, self.written = block, []
+
+    def write(self, b):
+        time.sleep(self.block)
+        self.written.append(b)
+
+    def flush(self):
+        pass
+
+    def close(self):
+        pass
+
+
+class _FakeProc:
+    """Stands in for ffmpeg: never exits, and its stdin blocks for a configurable time."""
+
+    def __init__(self, block=0.0, err=b""):
+        self.stdin = _FakeStdin(block)
+        self.stderr = io.BytesIO(err)
+        self.stdout = None
+
+    def poll(self):
+        return None
+
+    def terminate(self):
+        pass
+
+    def wait(self, timeout=None):
+        return 0
+
+    def kill(self):
+        pass
+
+
+class _FixedSlot:
+    """A LatestSlot whose sequence never advances -- i.e. a stalled pipeline."""
+
+    def __init__(self, item=b"\xff\xd8jpeg\xff\xd9", seq=1):
+        self.item, self.seq = item, seq
+
+    def get(self):
+        return self.item, self.seq
+
+
+@pytest.fixture
+def fake_ffmpeg(monkeypatch):
+    def install(block=0.0, err=b""):
+        proc = _FakeProc(block, err)
+        monkeypatch.setattr(streams, "ffmpeg_path", lambda: "/bin/true")
+        monkeypatch.setattr(streams.subprocess, "Popen", lambda *a, **k: proc)
+        return proc
+    return install
+
+
+def test_snap_measures_time_blocked_writing_to_ffmpeg(fake_ffmpeg):
+    """Back-pressure from the media server surfaces in stdin.write and nowhere else.
+
+    A 1080p JPEG is several hundred KB against a 64 KB pipe, so the write already waits on
+    ffmpeg; when the server downstream stops draining, that wait is the whole signal.
+    """
+    fake_ffmpeg(block=0.05)
+    out = streams.FFmpegOut(_FixedSlot(), [], fps=50.0)
+    time.sleep(0.6)
+    c = out.snap()
+    out.close()
+    assert c["frames"] >= 3, "feeder should have written several frames"
+    assert c["blocked"] > 0.1, f"blocked time not accumulated: {c}"
+    assert c["worst_ms"] >= 40, f"worst write not recorded: {c}"
+
+
+def test_snap_counts_repeated_frames_when_the_pipeline_lags(fake_ffmpeg):
+    """The cadence is fixed, so a slower pipeline is pushed as duplicates, not as fewer fps."""
+    fake_ffmpeg()
+    out = streams.FFmpegOut(_FixedSlot(), [], fps=50.0)
+    time.sleep(0.3)
+    c = out.snap()
+    out.close()
+    assert c["dup"] >= c["frames"] - 1 > 0, f"repeats not counted: {c}"
+
+
+def test_snap_reports_the_cadence_debt_a_long_write_leaves(fake_ffmpeg):
+    """`due` is never re-anchored outside a respawn, so a blocked write leaves debt.
+
+    The loop then writes back to back at sleep(0) to repay it, and ffmpeg stamps those frames
+    1/fps apart regardless -- a burst followed by a hole at the player. Measured, not yet
+    corrected: re-anchoring here would hide exactly what is being diagnosed.
+    """
+    fake_ffmpeg(block=0.05)             # 50 ms writes against a 10 ms cadence
+    out = streams.FFmpegOut(_FixedSlot(), [], fps=100.0)
+    time.sleep(0.5)
+    c = out.snap()
+    out.close()
+    assert c["lag"] > 0.1, f"cadence debt not reported: {c}"
+
+
+def test_snap_stall_grows_while_nothing_is_written(fake_ffmpeg):
+    """The reason the telemetry line is printed by someone else.
+
+    A feeder wedged inside stdin.write emits nothing at all, so `stall` -- time since the
+    last successful write -- is the only counter that moves when the push is hung.
+    """
+    fake_ffmpeg()
+
+    class _Empty:
+        def get(self):
+            return None, 0
+
+    out = streams.FFmpegOut(_Empty(), [], fps=50.0)
+    time.sleep(0.2)
+    c = out.snap()
+    out.close()
+    assert c["frames"] == 0 and c["stall"] == 0.0, f"nothing was ever written: {c}"
+
+
+def test_repeated_ffmpeg_warnings_are_collapsed(fake_ffmpeg, capsys):
+    """ffmpeg emits some warnings once per frame; at 15 fps that buries the operator log."""
+    fake_ffmpeg(err=b"same\nsame\nsame\ndifferent\n")
+    out = streams.FFmpegOut(_FixedSlot(), [], fps=50.0)
+    time.sleep(0.2)
+    out.close()
+    printed = capsys.readouterr().out
+    assert printed.count("[ffmpeg] same") == 1, "duplicates should print once"
+    assert "上一条重复 2 次" in printed, "the suppressed count must still be reported"
+    assert "[ffmpeg] different" in printed, "a changed message must get through"
+
+
+def test_push_is_louder_than_the_other_outputs(fake_ffmpeg):
+    """The push leaves the container, so its failures are the unreproducible ones.
+
+    At -loglevel error ffmpeg says nothing about a connection that degrades without dying,
+    which is the case the deployment actually hit.
+    """
+    fake_ffmpeg()
+    push = streams.rtmp_push(_FixedSlot(), 15.0, "rtsp://example/live")
+    cmd = push._cmd
+    push.close()
+    assert cmd[cmd.index("-loglevel") + 1] == "warning"
+    assert cmd[cmd.index("-rtsp_transport") + 1] == "tcp", "UDP silently goes nowhere via NAT"
+    assert cmd[cmd.index("-f", cmd.index("pipe:0")) + 1] == "rtsp"

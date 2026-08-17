@@ -286,6 +286,41 @@ RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（
 人会看到一个正在长大的半截 mp4。搬运是一次顺序拷贝，不在关键路径上，因此 `clip_dir` 指向 NFS
 是安全的，且目录里只会出现**完整可播**的片段。
 
+### 推流健康度 `[push]` 日志
+
+**`[process]` 那行说明不了推流。** 处理循环和推流之间隔着一个「只保留最新帧」的槽，覆盖式写入、
+永不阻塞生产者——推流进程整个死掉，`[process]` 的数字一个都不会变。实测（推到一个拒绝连接的地址）：
+
+```
+[process] fps_in=25.4  fps=25.3  latency=3ms  ...        ← 完全正常
+[push] alive=0  restarts=3  wrote=1.0fps(dup 0)  ...     ← 推流早就断了
+```
+
+所以推流单独有一行遥测，和 `[process]` 同一个 2 秒窗口打印（**由处理线程打印而不是推流线程自己
+打印**：推流线程卡死在写 ffmpeg 里的时候它自己什么都印不出来，而那恰恰是最该看见的时刻）：
+
+```
+[push] alive=1  restarts=0  wrote=14.9fps(dup 0)  rate=1.6Mbps  blocked=0%  stall=0.0s  peak_block=0ms  peak_lag=0.00s
+```
+
+| 字段 | 含义 | 怎么读 |
+|---|---|---|
+| `alive` / `restarts` | ffmpeg 是否存活 / 已重启次数 | `restarts` 持续增长 → 看上面 `[push]` 的 ffmpeg 报错原文 |
+| `wrote` | 实际写进 ffmpeg 的帧率 | 应恒等于 `max_stream_fps`（**不是** `[process]` 的 fps） |
+| `dup` | 重复推送的帧数 | >0 说明处理速度低于 `max_stream_fps`，在拿旧帧凑节拍 |
+| `rate` | 实际推出的码率 | 贴着 `stream_bitrate` 说明码率被压满，画质会糊 |
+| `blocked` | 卡在写 ffmpeg 上的时间占比 | **>0 就是下游在施加背压**，即平台的媒体服务器没在读 |
+| `stall` | 距上次成功写入的秒数 | 一直涨 = 推流线程卡死 |
+| `peak_lag` | 节拍欠账峰值（自启动累计） | >0 说明发生过「卡一下然后突刺补帧」 |
+
+**定位断流在哪一侧**：断流时刻如果这行仍是 `alive=1 restarts=0 blocked=0% stall=0.0s`，
+说明算子这侧一直在正常推，问题在平台的 RTSP→FLV 转封装或浏览器那一段；反之
+`blocked` 明显大于 0 或 `restarts` 在涨，才是算子到媒体服务器这一段的问题。
+
+推流的 ffmpeg 用 `-loglevel warning`（其它输出仍是 `error`）：它是唯一离开容器的输出，
+连接**没死但在劣化**时 `error` 级别什么都不说。重复告警会被折叠成「上一条重复 N 次」，
+避免 15 fps 下每帧一条把日志淹掉。启动时还会把完整 ffmpeg 命令打出来，便于在宿主机上手工复现。
+
 ## 二、输入参数
 
 | 参数名 | 中文名 | 类型 | 默认值 | 说明 |

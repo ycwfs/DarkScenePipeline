@@ -78,7 +78,7 @@ class FFmpegOut:
     """
 
     def __init__(self, slot, out_args, fps=15.0, pipe_stdout=False, name="ffmpeg",
-                 restart=None):
+                 restart=None, loglevel="error"):
         exe = ffmpeg_path()
         if not exe:
             raise RuntimeError("容器内没有 ffmpeg，无法输出该格式")
@@ -91,11 +91,18 @@ class FFmpegOut:
         # media server dropping the connection once should not leave the operator silently
         # not-streaming for the rest of a shift.
         self._restart = (not pipe_stdout) if restart is None else restart
-        self._cmd = [exe, "-hide_banner", "-loglevel", "error",
+        self._cmd = [exe, "-hide_banner", "-loglevel", loglevel,
                      "-f", "mjpeg", "-framerate", f"{self.fps:g}", "-i", "pipe:0", *out_args]
         self._pipe_stdout = pipe_stdout
         self._err = deque(maxlen=40)
         self._spawn_t = 0.0
+        # Push-side telemetry. `[process]` says nothing about any of this -- the JPEG slot is
+        # latest-wins, so the process loop never blocks on an output and its numbers stay
+        # perfect while a stream is dead. These counters are the only evidence of what the
+        # viewer actually got. Same lock-free discipline as _Stat: the feeder is the sole
+        # writer, readers snapshot and diff.
+        self._c = dict(frames=0, dup=0, bytes=0, blocked=0.0, worst_ms=0.0, lag=0.0)
+        self._last_ok = 0.0
         self._spawn()
         self.thread = threading.Thread(target=self._feed, args=(slot,), daemon=True,
                                        name=f"feed-{name}")
@@ -114,11 +121,23 @@ class FFmpegOut:
                          name=f"err-{self.name}").start()
 
     def _drain_err(self, proc):
+        # Consecutive duplicates are collapsed. ffmpeg happily emits the same warning once per
+        # frame ("Non-monotonous DTS", RTSP retransmits), which at 15 fps buries every other
+        # line in the operator log -- and this is the log the deployment reads. The count is
+        # reported when the message finally changes, so nothing is lost, only repeated.
+        prev, reps = None, 0
         for line in iter(proc.stderr.readline, b""):
             text = line.decode("utf-8", "replace").rstrip()
-            if text:
-                self._err.append(text)
-                print(f"[{self.name}] {text}")
+            if not text:
+                continue
+            if text == prev:
+                reps += 1
+                continue
+            if reps:
+                print(f"[{self.name}] 上一条重复 {reps} 次")
+            prev, reps = text, 0
+            self._err.append(text)
+            print(f"[{self.name}] {text}")
 
     def _feed(self, slot):
         """Resample the slot onto a fixed cadence: encoders want a constant rate, and the
@@ -126,6 +145,7 @@ class FFmpegOut:
         step = 1.0 / self.fps
         due = time.time()
         backoff = 1.0
+        last_seq = -1
         while not self.stop.is_set():
             if self.proc.poll() is not None:            # ffmpeg exited
                 if not self._restart:
@@ -149,14 +169,34 @@ class FFmpegOut:
                     print(f"[{self.name}] 重启失败: {e}")
                     continue
                 due = time.time()
-            jpg, _ = slot.get()
+            jpg, seq = slot.get()
             if jpg:
+                if seq == last_seq:
+                    self._c["dup"] += 1                 # pipeline slower than the cadence
+                last_seq = seq
+                # Timing the write is the whole point: a 1080p JPEG is several hundred KB
+                # against a 64 KB pipe, so every write already waits on ffmpeg. When the
+                # media server stops reading, ffmpeg's socket blocks, its input pipe fills,
+                # and that back-pressure surfaces *here* and nowhere else in the process.
+                t_w = time.time()
                 try:
                     self.proc.stdin.write(jpg)
                     self.proc.stdin.flush()
                 except (BrokenPipeError, ValueError, OSError):
                     continue                            # loop head handles the dead process
+                dt = time.time() - t_w
+                self._c["blocked"] += dt
+                self._c["worst_ms"] = max(self._c["worst_ms"], dt * 1000)
+                self._c["frames"] += 1
+                self._c["bytes"] += len(jpg)
+                self._last_ok = time.time()
             due += step
+            # Debt owed to the cadence. `due` is never re-anchored outside a respawn, so a
+            # write that blocked for T seconds leaves the loop owing T/step frames, which it
+            # then writes back to back at sleep(0) -- ffmpeg stamps them 1/fps apart
+            # regardless, so the player gets a burst and then a hole. Reported, not yet
+            # corrected: a re-anchor here would hide the very thing being diagnosed.
+            self._c["lag"] = max(self._c["lag"], time.time() - due)
             time.sleep(max(0.0, due - time.time()))
         try:
             self.proc.stdin.close()
@@ -165,6 +205,16 @@ class FFmpegOut:
 
     def alive(self):
         return self.proc.poll() is None
+
+    def snap(self):
+        """Cumulative counters plus two instantaneous ones, for a periodic telemetry line.
+
+        `stall` is time since the last successful write and is the reason a reader outside
+        this object prints the line: while the feeder is wedged inside stdin.write it emits
+        nothing at all, so a self-printing feeder would go quiet exactly when it matters.
+        """
+        return dict(self._c, alive=self.alive(), restarts=self.restarts,
+                    stall=(time.time() - self._last_ok) if self._last_ok else 0.0)
 
     def error_tail(self):
         return " | ".join(list(self._err)[-3:])
@@ -221,6 +271,10 @@ def rtmp_push(slot, fps, url, bitrate="4M"):
     """
     extra = ["-rtsp_transport", "tcp"] if url.startswith("rtsp://") else []
     fmt = "rtsp" if url.startswith("rtsp://") else "flv"
+    # `warning`, unlike the other outputs: this is the one that leaves the container, so its
+    # failures are the ones nobody can reproduce afterwards, and at `error` ffmpeg says
+    # nothing about a connection that degrades without dying. _drain_err collapses repeats,
+    # which is what made the louder level affordable.
     return FFmpegOut(slot, [*LOW_LATENCY, *rate_limit(bitrate), "-g", str(int(max(1, fps))),
                             "-an", *extra, "-f", fmt, url],
-                     fps=fps, name="push")
+                     fps=fps, name="push", loglevel="warning")
