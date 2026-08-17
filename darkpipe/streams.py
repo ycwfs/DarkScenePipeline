@@ -101,7 +101,8 @@ class FFmpegOut:
         # perfect while a stream is dead. These counters are the only evidence of what the
         # viewer actually got. Same lock-free discipline as _Stat: the feeder is the sole
         # writer, readers snapshot and diff.
-        self._c = dict(frames=0, dup=0, bytes=0, blocked=0.0, worst_ms=0.0, lag=0.0)
+        self._c = dict(frames=0, dup=0, bytes=0, blocked=0.0, worst_ms=0.0, lag=0.0,
+                       skipped=0.0)
         self._last_ok = 0.0
         self._spawn()
         self.thread = threading.Thread(target=self._feed, args=(slot,), daemon=True,
@@ -191,12 +192,20 @@ class FFmpegOut:
                 self._c["bytes"] += len(jpg)
                 self._last_ok = time.time()
             due += step
-            # Debt owed to the cadence. `due` is never re-anchored outside a respawn, so a
-            # write that blocked for T seconds leaves the loop owing T/step frames, which it
-            # then writes back to back at sleep(0) -- ffmpeg stamps them 1/fps apart
-            # regardless, so the player gets a burst and then a hole. Reported, not yet
-            # corrected: a re-anchor here would hide the very thing being diagnosed.
-            self._c["lag"] = max(self._c["lag"], time.time() - due)
+            behind = time.time() - due
+            self._c["lag"] = max(self._c["lag"], behind)
+            if behind > step:
+                # Cannot hold the cadence: ffmpeg is not draining as fast as `fps` asks. The
+                # debt must be forgiven rather than repaid, because repaying it writes the
+                # backlog back to back at sleep(0) while ffmpeg keeps stamping frames 1/fps
+                # apart -- so the stream's timeline falls behind wall clock without bound.
+                # Measured in deployment: 30 fps requested, 28.8 sustainable, and `lag` grew
+                # monotonically to 30 s over ~11 min with no plateau. Dropping the backlog
+                # instead means the stream runs at whatever rate is achievable and stays at
+                # the live edge, which is what a live viewer needs. `skipped` is the evidence
+                # that this is happening, and its rate is exactly the fps shortfall.
+                self._c["skipped"] += behind
+                due = time.time()
             time.sleep(max(0.0, due - time.time()))
         try:
             self.proc.stdin.close()

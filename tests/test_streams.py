@@ -597,19 +597,35 @@ def test_snap_counts_repeated_frames_when_the_pipeline_lags(fake_ffmpeg):
     assert c["dup"] >= c["frames"] - 1 > 0, f"repeats not counted: {c}"
 
 
-def test_snap_reports_the_cadence_debt_a_long_write_leaves(fake_ffmpeg):
-    """`due` is never re-anchored outside a respawn, so a blocked write leaves debt.
+def test_the_cadence_debt_a_long_write_leaves_is_dropped_not_repaid(fake_ffmpeg):
+    """Debt beyond one step is forgiven, so the stream cannot fall behind wall clock.
 
-    The loop then writes back to back at sleep(0) to repay it, and ffmpeg stamps those frames
-    1/fps apart regardless -- a burst followed by a hole at the player. Measured, not yet
-    corrected: re-anchoring here would hide exactly what is being diagnosed.
+    Repaying it would write the backlog back to back at sleep(0) while ffmpeg keeps stamping
+    frames 1/fps apart, so the timeline drifts behind real time without bound -- deployment
+    measured `lag` climbing monotonically to 30 s over ~11 min at 30 fps requested / 28.8
+    sustainable. Dropping it instead pins the stream to the live edge.
     """
     fake_ffmpeg(block=0.05)             # 50 ms writes against a 10 ms cadence
     out = streams.FFmpegOut(_FixedSlot(), [], fps=100.0)
     time.sleep(0.5)
     c = out.snap()
     out.close()
-    assert c["lag"] > 0.1, f"cadence debt not reported: {c}"
+    # Bounded by one step (10 ms) plus the write that overran it (50 ms), never accumulating.
+    assert c["lag"] < 0.1, f"debt was repaid instead of dropped: {c}"
+    # And the shortfall is reported rather than silently absorbed: writes take 5x the step,
+    # so ~80% of the timeline has to go.
+    assert c["skipped"] > 0.2, f"dropped timeline not reported: {c}"
+
+
+def test_a_feeder_that_keeps_up_drops_nothing(fake_ffmpeg):
+    """The re-anchor must not fire on a healthy push, or `dropped` stops meaning anything."""
+    fake_ffmpeg(block=0.001)            # 1 ms writes against a 20 ms cadence
+    out = streams.FFmpegOut(_FixedSlot(), [], fps=50.0)
+    time.sleep(0.4)
+    c = out.snap()
+    out.close()
+    assert c["skipped"] == 0.0, f"healthy push dropped timeline: {c}"
+    assert c["frames"] > 5, f"nothing was written at all: {c}"
 
 
 def test_snap_stall_grows_while_nothing_is_written(fake_ffmpeg):

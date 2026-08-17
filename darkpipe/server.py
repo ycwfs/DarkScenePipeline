@@ -469,8 +469,15 @@ def process_loop(st: ServerState):
                               f"restarts={c['restarts']}  "
                               f"wrote={(c['frames'] - p['frames']) / dt_win:.1f}fps"
                               f"(dup {c['dup'] - p['dup']})  "
-                              f"rate={(c['bytes'] - p['bytes']) * 8 / dt_win / 1e6:.1f}Mbps  "
+                              # MJPEG *into* ffmpeg, not the H.264 coming out -- it is a
+                              # feed rate, not a bitrate, and reads ~40x stream_bitrate at
+                              # 1080p q85. Named `pipe` so nobody mistakes it for the cap.
+                              f"pipe={(c['bytes'] - p['bytes']) * 8 / dt_win / 1e6:.1f}Mbps  "
                               f"blocked={(c['blocked'] - p['blocked']) / dt_win * 100:.0f}%  "
+                              # Share of the timeline dropped to stay at the live edge; this
+                              # is exactly the shortfall between max_stream_fps and what
+                              # ffmpeg can sustain. Persistently >0 => lower max_stream_fps.
+                              f"dropped={(c['skipped'] - p['skipped']) / dt_win * 100:.0f}%  "
                               f"stall={c['stall']:.1f}s  "
                               # Peaks since start, not windowed: they are running maxima, and
                               # diffing two maxima under-reports a window whose worst is below

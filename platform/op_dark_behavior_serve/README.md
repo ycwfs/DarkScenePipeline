@@ -300,22 +300,30 @@ RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（
 打印**：推流线程卡死在写 ffmpeg 里的时候它自己什么都印不出来，而那恰恰是最该看见的时刻）：
 
 ```
-[push] alive=1  restarts=0  wrote=14.9fps(dup 0)  rate=1.6Mbps  blocked=0%  stall=0.0s  peak_block=0ms  peak_lag=0.00s
+[push] alive=1  restarts=0  wrote=14.9fps(dup 0)  pipe=78.2Mbps  blocked=12%  dropped=0%  stall=0.0s  peak_block=0ms  peak_lag=0.00s
 ```
 
 | 字段 | 含义 | 怎么读 |
 |---|---|---|
 | `alive` / `restarts` | ffmpeg 是否存活 / 已重启次数 | `restarts` 持续增长 → 看上面 `[push]` 的 ffmpeg 报错原文 |
-| `wrote` | 实际写进 ffmpeg 的帧率 | 应恒等于 `max_stream_fps`（**不是** `[process]` 的 fps） |
+| `wrote` | 实际写进 ffmpeg 的帧率 | 应恒等于 `max_stream_fps`（**不是** `[process]` 的 fps）；持续低于它 = ffmpeg 吃不下 |
 | `dup` | 重复推送的帧数 | >0 说明处理速度低于 `max_stream_fps`，在拿旧帧凑节拍 |
-| `rate` | 实际推出的码率 | 贴着 `stream_bitrate` 说明码率被压满，画质会糊 |
-| `blocked` | 卡在写 ffmpeg 上的时间占比 | **>0 就是下游在施加背压**，即平台的媒体服务器没在读 |
+| `pipe` | 喂进 ffmpeg 的 **MJPEG** 流量 | **不是出流码率**，是解码前的原始 JPEG（1080p q85 约 40 倍于 `stream_bitrate`，正常）。用它判断有没有拿超大帧压垮 ffmpeg |
+| `blocked` | 卡在写 ffmpeg 上的时间占比 | 偶发升高 = 下游背压；**长期贴近 100% = ffmpeg 本身编不过来** |
+| `dropped` | 为追上直播沿而丢弃的时间轴占比 | **持续 >0 就是 `max_stream_fps` 高于 ffmpeg 的实际吞吐**，照实测值调低 |
 | `stall` | 距上次成功写入的秒数 | 一直涨 = 推流线程卡死 |
-| `peak_lag` | 节拍欠账峰值（自启动累计） | >0 说明发生过「卡一下然后突刺补帧」 |
+| `peak_lag` | 节拍欠账峰值（自启动累计） | 稳定在一个小值即正常；单调增长说明丢弃没兜住（不应发生） |
 
-**定位断流在哪一侧**：断流时刻如果这行仍是 `alive=1 restarts=0 blocked=0% stall=0.0s`，
+**定位断流在哪一侧**：断流时刻如果这行仍是 `alive=1 restarts=0 blocked=0% dropped=0% stall=0.0s`，
 说明算子这侧一直在正常推，问题在平台的 RTSP→FLV 转封装或浏览器那一段；反之
 `blocked` 明显大于 0 或 `restarts` 在涨，才是算子到媒体服务器这一段的问题。
+
+**`blocked≈100%` + `dropped` 持续 >0 是最常见的一种误配**：`max_stream_fps` 填得比 ffmpeg
+在当前分辨率下的实际吞吐还高。实测 1920×1080（`proc_max_side=960` + `bicubic_x2`）时 ffmpeg
+只能持续吃约 29 fps，若把 `max_stream_fps` 填成 30，缺口就会以约 4% 的速率累积——修复前表现为
+推流时间轴无界地落后于真实时间（11 分钟落后 30 秒），浏览器端就是不断卡顿/中断。
+**`max_stream_fps` 不要高于 `[process]` 的 fps**：高出的部分全是 `dup`（重复帧），
+零信息量却要让 ffmpeg 多解一遍码。
 
 推流的 ffmpeg 用 `-loglevel warning`（其它输出仍是 `error`）：它是唯一离开容器的输出，
 连接**没死但在劣化**时 `error` 级别什么都不说。重复告警会被折叠成「上一条重复 N 次」，
