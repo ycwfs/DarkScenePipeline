@@ -208,3 +208,52 @@ def test_segments_tile_the_video_exactly():
             assert sum(ln for _, ln in segs) == n
             assert [s for s, _ in segs] == [0] + [s + ln for s, ln in segs][:-1]
             assert len(segs) <= max(1, min(k, n // 120))
+
+
+def _fake_shard_run(monkeypatch, tmp_path, env_before=None):
+    """Run run_offline_sharded with the workers faked out; -> the env they were spawned with."""
+    import darkpipe.shard as shard
+
+    seen = {}
+
+    class FakeProc:
+        returncode = 0
+
+        def communicate(self):
+            return ("", None)
+
+    def fake_popen(cmd, **kw):
+        seen["cmd"], seen["env"] = cmd, kw.get("env")
+        return FakeProc()
+
+    monkeypatch.setattr(shard, "_frame_count", lambda src, mx: (600, 25.0))
+    monkeypatch.setattr(shard, "_concat", lambda parts, out, fps: 600)
+    monkeypatch.setattr(shard.subprocess, "Popen", fake_popen)
+    monkeypatch.delenv("PYTHONPATH", raising=False)
+    if env_before is not None:
+        monkeypatch.setenv("PYTHONPATH", env_before)
+    cfg = PipelineConfig(input="in.mp4", output=str(tmp_path / "out.mp4"), mode="offline",
+                         enhance="off", sr="off", recognize="off", events_json="")
+    shard.run_offline_sharded(cfg, ["0", "1"])
+    return seen
+
+
+def test_shard_workers_are_told_where_darkpipe_lives(monkeypatch, tmp_path):
+    """The workers are `python -m darkpipe.cli`, and a subprocess inherits the environment but
+    not sys.path. In the repo that gap is invisible -- an editable install puts darkpipe on
+    every interpreter's path -- so it only surfaced in the operator container, where darkpipe
+    merely sits next to main.py in the unpacked zip: both workers died instantly with
+    "No module named darkpipe.cli", and only on a 2-GPU host, since one GPU skips this path."""
+    seen = _fake_shard_run(monkeypatch, tmp_path)
+    import darkpipe
+
+    pkg_parent = os.path.dirname(os.path.dirname(os.path.abspath(darkpipe.__file__)))
+    assert seen["env"] is not None, "workers inherit os.environ verbatim, PYTHONPATH included"
+    assert seen["env"]["PYTHONPATH"].split(os.pathsep)[0] == pkg_parent
+    assert seen["cmd"][1:3] == ["-m", "darkpipe.cli"]
+
+
+def test_an_existing_pythonpath_is_kept(monkeypatch, tmp_path):
+    """Prepend, do not replace: the deployment may be pointing at vendored deps of its own."""
+    seen = _fake_shard_run(monkeypatch, tmp_path, env_before="/opt/site-stuff")
+    assert seen["env"]["PYTHONPATH"].split(os.pathsep)[-1] == "/opt/site-stuff"

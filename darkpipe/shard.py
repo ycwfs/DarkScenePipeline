@@ -88,6 +88,18 @@ def run_offline_sharded(cfg, gpus, min_seg_frames=120):
     work = os.path.join(os.path.dirname(os.path.abspath(cfg.output)) or ".",
                         f".shard_{os.getpid()}")
     os.makedirs(work, exist_ok=True)
+    # The workers must be able to import darkpipe, and a subprocess inherits the environment
+    # but NOT sys.path. In the repo that difference is invisible -- `-m` puts the cwd first
+    # and the cwd is the repo root -- but in the operator container darkpipe is not installed
+    # into the conda env: it sits next to main.py in the unpacked zip and is reachable only
+    # because main.py inserted its own directory into sys.path. The children then died with
+    # "No module named darkpipe.cli", and only on a 2-GPU host, because a single GPU never
+    # takes this path. Pass the package's parent explicitly; it is right whichever way the
+    # parent was started.
+    env = dict(os.environ)
+    pkg_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env["PYTHONPATH"] = os.pathsep.join([pkg_parent, env["PYTHONPATH"]]) \
+        if env.get("PYTHONPATH") else pkg_parent
     base = [sys.executable, "-m", "darkpipe.cli", "--mode", "offline",
             "--input", cfg.input, "--enhance", cfg.enhance, "--sr", cfg.sr,
             "--recognize", cfg.recognize, "--ckpt-dir", cfg.ckpt_dir,
@@ -117,7 +129,7 @@ def run_offline_sharded(cfg, gpus, min_seg_frames=120):
             cmd += ["--events-json", ev]
         print(f"[shard] gpu {gpus[i]}: frames {start}..{start + ln - 1} -> {part}")
         procs.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                      text=True))
+                                      text=True, env=env))
     fail = []
     for i, p in enumerate(procs):
         out = p.communicate()[0]
