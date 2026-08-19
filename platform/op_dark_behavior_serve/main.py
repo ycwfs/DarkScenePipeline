@@ -433,16 +433,45 @@ def run_serve_mode(args, src, session):
         print(f"[warn] 会话信息副本写入 {clip_root} 失败: {e}")
 
 
+def write_failed_session(args, reason):
+    """失败时也要把 session_json 写出来，否则平台只报「取不到 artifact」，真原因被埋掉。
+
+    实测过一次：算子在多卡分片那一步退出 1，堆栈明明就在日志里，编排层显示的却是
+    `cannot save artifact /tmp/outputs/session_json/data: no such file or directory`。
+    这个文件是本算子唯一的框架级输出，写不出来就等于失败原因不可见。
+    """
+    path = (getattr(args, "session_json", "") or "").strip()
+    if not path:
+        return
+    try:
+        ensure_parent(path)
+        write_session(path, {
+            "status": "failed",
+            "error": reason,
+            "source": getattr(args, "video_path", ""),
+            "stopped_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        })
+        print(f"[failed] 失败原因已写入 {path}")
+    except BaseException as e:                        # noqa: BLE001 - 收尾不能盖住真错误
+        print(f"[warn] 失败信息写入 {path} 失败: {e}")
+
+
 def main(argv=None):
     args = build_parser().parse_args(argv)
     try:
         run(args)
     except KeyboardInterrupt:
         print("[serve] 收到中断，已退出")
-    except SystemExit:
+    except SystemExit as e:
+        # 参数/配置被拒时走的是 sys.exit("error: ...")，退出码本身就是那句话；
+        # 纯数字退出码就没有更多信息可写，指回日志。退出码 0 是正常收尾，别覆盖。
+        if e.code not in (0, None):
+            write_failed_session(args, e.code if isinstance(e.code, str)
+                                 else f"算子以退出码 {e.code} 结束，原因见日志")
         raise
-    except BaseException:
+    except BaseException as e:
         traceback.print_exc()
+        write_failed_session(args, f"{type(e).__name__}: {e}")
         sys.exit(1)
 
 

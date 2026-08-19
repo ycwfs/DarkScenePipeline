@@ -8,6 +8,7 @@ file WITH a push URL is still the live demo path, and an `http://…mp4` address
 a stream.
 """
 import importlib.util
+import json
 import os
 import sys
 
@@ -140,6 +141,48 @@ def test_hosts_are_applied_before_anything_is_fetched(op, monkeypatch, tmp_path)
     assert [k for k, *_ in order] == ["hosts", "fetch"]
     assert order[0][1] == "10.46.79.133 hdfs-datanode", \
         "the deployed default must reach the call without the platform filling anything in"
+
+
+def test_a_crash_still_leaves_a_session_json_behind(op, monkeypatch, tmp_path):
+    """session_json is this operator's only framework-level output. When it is missing the
+    orchestrator reports `cannot save artifact .../session_json/data` and that is ALL the
+    operator's user sees -- the traceback is in the log, but the failure shown to them is
+    about a file, not about what actually broke."""
+    monkeypatch.setattr(op, "run", lambda a: (_ for _ in ()).throw(RuntimeError("boom")))
+    out = tmp_path / "nested" / "session.json"
+    with pytest.raises(SystemExit) as e:
+        op.main(["--video_path", "x.mp4", "--session_json", str(out)])
+    assert e.value.code == 1
+    payload = json.loads(out.read_text(encoding="utf-8"))
+    assert payload["status"] == "failed"
+    assert "boom" in payload["error"], "the reason has to travel with the artifact"
+
+
+def test_a_rejected_configuration_reports_its_own_reason(op, monkeypatch, tmp_path):
+    """`validate()` exits with the message as the exit code (`sys.exit("error: ...")`),
+    so a config rejection can say exactly what was wrong instead of just a number."""
+    def reject(args):
+        raise SystemExit("error: missing checkpoint /x/NTIRE.pth")
+
+    monkeypatch.setattr(op, "run", reject)
+    out = tmp_path / "session.json"
+    with pytest.raises(SystemExit):
+        op.main(["--video_path", "x.mp4", "--session_json", str(out)])
+    assert "missing checkpoint" in json.loads(out.read_text(encoding="utf-8"))["error"]
+
+
+def test_a_clean_exit_does_not_overwrite_the_real_session_json(op, monkeypatch, tmp_path):
+    """A finished run has already written its own payload; sys.exit(0) must not stomp it."""
+    out = tmp_path / "session.json"
+
+    def finish(args):
+        out.write_text('{"status": "finished"}', encoding="utf-8")
+        raise SystemExit(0)
+
+    monkeypatch.setattr(op, "run", finish)
+    with pytest.raises(SystemExit):
+        op.main(["--video_path", "x.mp4", "--session_json", str(out)])
+    assert json.loads(out.read_text(encoding="utf-8"))["status"] == "finished"
 
 
 def test_neither_mode_mints_a_second_session_name(op):
