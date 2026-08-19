@@ -19,11 +19,18 @@ NFS 后本地浏览），再按需上传 hdfs_output_dir。两处保存的目录
   * outputPath 的父目录由算子自行创建；
   * 日志一律 print 到标准输出，由框架收集；
   * 失败时打印堆栈并以非零码退出。
+
+离线模式：**输入是一个有限长的文件、且没有填 rtmp_push_url** 时，本算子自动转为离线推理
+——一次跑完整段视频，产出「整段处理后的视频 + 事件 JSON」，落到 clip_dir 与
+hdfs_output_dir，然后进程正常退出。既不起服务，也不按动作切片。输入地址可以是 hdfs://
+或 WebHDFS 的 http://<namenode>:9870/<路径>，会先下载到本地再处理。
 """
 import argparse
 import json
 import os
+import shutil
 import sys
+import tempfile
 import time
 import traceback
 
@@ -31,8 +38,9 @@ import traceback
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
-from oputil import (resolve_ckpt_dir, ensure_parent, make_remote_dir, parse_bool,  # noqa: E402
-                    parse_gpu_ids, run_dir_name, upload_file)
+from oputil import (resolve_ckpt_dir, apply_extra_hosts, deliver, ensure_parent,  # noqa: E402
+                    fetch_input, make_remote_dir, parse_bool, parse_gpu_ids, run_dir_name,
+                    upload_file)
 
 
 def build_parser():
@@ -42,7 +50,9 @@ def build_parser():
     # 参数名与 suanzi.json 的 inputs[].name / outputs[].name 逐一对应
     p.add_argument("--video_path", required=True,
                    help="待处理实时流：国标(GB28181)/rtsp:// / http(s):// (flv、hls)，"
-                        "或容器内本地视频文件（本地文件会循环播放，便于没有摄像头时演示）")
+                        "或容器内本地视频文件、hdfs:// 地址、WebHDFS 的 "
+                        "http://<namenode>:9870/<路径> 地址。填文件且 rtmp_push_url 留空时"
+                        "自动转为离线推理：跑完整段视频、产出整段结果后退出")
     p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
     p.add_argument("--sr", default="bicubic", choices=["off", "bicubic"])
     p.add_argument("--sr_scale", type=int, default=2, choices=[2, 3, 4])
@@ -68,14 +78,16 @@ def build_parser():
                    choices=["mjpeg", "mjpeg,flv", "mjpeg,flv,hls", "mjpeg,hls"],
                    help="对外的实时视频流格式；flv/hls 由镜像内的 ffmpeg 封装")
     p.add_argument("--rtmp_push_url", default="",
-                   help="推流到外部流媒体服务器，如 rtmp://ip:1935/live/key；留空不推")
+                   help="推流到外部流媒体服务器，如 rtmp://ip:1935/live/key；留空不推。"
+                        "留空且 video_path 是一个文件时，算子转为离线推理模式")
     p.add_argument("--stream_bitrate", default="4M",
                    help="所有 H.264 出流的码率上限，如 4M/8M；留空则不限制")
     p.add_argument("--max_flv_clients", type=int, default=4)
     p.add_argument("--jpeg_quality", type=int, default=85)
     p.add_argument("--max_stream_fps", type=float, default=15.0)
     p.add_argument("--clip_dir", default="/opt/darkpipe/clips",
-                   help="片段保存目录（容器内路径，建议挂载 NFS 后本地浏览）")
+                   help="片段保存目录（容器内路径，建议挂载 NFS 后本地浏览）；"
+                        "离线模式下整段处理结果也落在这里")
     p.add_argument("--clip_pre_sec", type=float, default=2.0)
     p.add_argument("--clip_post_sec", type=float, default=2.0)
     p.add_argument("--clip_max_sec", type=float, default=30.0)
@@ -87,9 +99,15 @@ def build_parser():
     # 唯一没有 default 的可选参数：规范里「有 default 即必填不能为空」，要允许留空就不能给
     # default。留空表示不推 HDFS，只保留 clip_dir 里的那一份。
     p.add_argument("--hdfs_output_dir", default="",
-                   help="片段另存的 HDFS 目录，如 hdfs://用户名@ip:port/a/b；留空则不推送")
+                   help="片段（离线模式下是整段视频）另存的 HDFS 目录，如 "
+                        "hdfs://用户名@ip:port/a/b，或 WebHDFS 的 http://<ip>:9870/a/b；"
+                        "留空则不推送。镜像内没有 hadoop 客户端，实际走的是 WebHDFS(HTTP)")
+    p.add_argument("--extra_hosts", default="10.46.79.133 hdfs-datanode",
+                   help="启动时追加到 /etc/hosts 的域名解析，格式「IP 主机名」，多条用逗号"
+                        "分隔。WebHDFS 会 307 跳到按主机名寻址的 DataNode，容器里默认解析"
+                        "不了；留空表示不加。写不进 /etc/hosts 时会退回用 NameNode 的地址重试")
     p.add_argument("--run_seconds", type=float, default=0.0,
-                   help="运行时长上限（秒），0 表示一直运行到容器被停止")
+                   help="运行时长上限（秒），0 表示一直运行到容器被停止；离线模式忽略此项")
     p.add_argument("--session_json", required=True)
     return p
 
@@ -188,7 +206,131 @@ def write_session(path, payload):
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
 
+def probe_video(path):
+    """-> (帧数, fps) 或 (0, 0.0)。只为把「输入到底是什么」写进日志，失败不影响运行。"""
+    try:
+        import cv2
+        cap = cv2.VideoCapture(path)
+        n, fps = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)), float(cap.get(cv2.CAP_PROP_FPS) or 0)
+        cap.release()
+        return max(n, 0), fps
+    except Exception:                                        # noqa: BLE001 - 诊断信息而已
+        return 0, 0.0
+
+
 def run(args):
+    """决定这次是常驻服务还是一次性离线推理，然后转给对应的实现。
+
+    判据只有一条，与需求逐字对应：**取回来之后它是磁盘上一个有限长的文件，且没有要推的流**。
+    hdfs:// 与 WebHDFS 的 http:// 地址在 fetch_input 里已经落成本地文件，所以这条判据同时
+    覆盖了「平台下发 HDFS 地址」这种情形。本地文件 + 填了推流地址仍走实时模式（循环播放
+    本地文件推出去，是原有的演示用法，不动它）。
+    """
+    # 先补 /etc/hosts：WebHDFS 的 307 会跳到按主机名寻址的 DataNode，这一步要在任何取数据
+    # 的动作之前完成。写不进去也只是告警——_webhdfs_call 里还有「改用 NameNode 地址重试」兜底。
+    apply_extra_hosts(args.extra_hosts)
+
+    session = run_dir_name()
+    # 下载目录不能用 tempfile 的自动清理：实时模式下这个文件要陪着服务跑一整天。
+    workdir = tempfile.mkdtemp(prefix="darkserve_")
+    try:
+        src = fetch_input(args.video_path, workdir, "input.mp4")
+        if os.path.isfile(src) and not (args.rtmp_push_url or "").strip():
+            n, fps = probe_video(src)
+            size = os.path.getsize(src) / 1e6
+            print(f"[mode] 离线推理：输入是有限长文件（{size:.0f} MB / "
+                  f"{n or '?'} 帧 / {fps:.2f} fps）且未填写 rtmp_push_url，"
+                  f"处理完整段后退出，不切片、不起服务")
+            return run_offline_mode(args, src, session, workdir)
+        why = ("已填写 rtmp_push_url" if (args.rtmp_push_url or "").strip()
+               else "输入不是本地文件（按实时流处理）")
+        print(f"[mode] 实时服务：{why}，常驻运行并按动作切片")
+        return run_serve_mode(args, src, session)
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+
+
+def run_offline_mode(args, src, session, workdir):
+    """跑完整段视频、交付、退出。复用离线算子那条已经验证过的代码路径。"""
+    from darkpipe.config import PipelineConfig, validate
+
+    gpus = parse_gpu_ids(args.gpu_ids)
+    _print_gpu_inventory(gpus)
+    ensure_parent(args.session_json)
+
+    stem = os.path.splitext(os.path.basename(src))[0] or "output"
+    out_video = os.path.join(workdir, f"{stem}_enhanced.mp4")
+    out_events = os.path.join(workdir, f"{stem}_events.json")
+    cfg = validate(PipelineConfig(
+        mode="offline", input=src, output=out_video, events_json=out_events,
+        enhance=args.enhance, sr=args.sr,
+        sr_scale=(args.sr_scale if args.sr != "off" else None),
+        recognize=args.recognize, device=f"cuda:{gpus[0]}",
+        gpus=(",".join(gpus) if len(gpus) > 1 else ""),
+        ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf,
+        proc_max_side=args.proc_max_side, color_saturation=args.color_saturation,
+        denoise=args.denoise,
+        reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
+        no_label_bar=(not args.label_bar)))
+    for w in cfg.warnings:
+        print(f"[warn] {w}")
+    print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
+          f"device={cfg.device} gpu_ids={','.join(gpus)} span={cfg.reco_span_sec}"
+          f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
+          f" color_saturation={cfg.color_saturation}")
+    print("[config] 离线模式：保存整段处理后的视频，clip_* 系列参数与 run_seconds 不生效")
+
+    t0 = time.time()
+    if len(gpus) > 1:
+        from darkpipe.shard import run_offline_sharded
+        events = run_offline_sharded(cfg, gpus)
+    else:
+        from darkpipe.pipeline import run_offline
+        events = run_offline(cfg)
+    dt = time.time() - t0
+
+    events = [e if isinstance(e, dict) else e.to_dict() for e in events]
+    if not os.path.exists(out_events):        # recognize=off 时管线不写事件文件
+        with open(out_events, "w", encoding="utf-8") as f:
+            json.dump(events, f, ensure_ascii=False, indent=2)
+    counts = {}
+    for e in events:
+        counts[e["label"]] = counts.get(e["label"], 0) + 1
+    st = cfg.stats
+    print(f"[metrics] 帧数={st.get('frames', 0)} 处理耗时={st.get('seconds', 0)}s "
+          f"fps={st.get('fps', 0)} 总耗时={dt:.1f}s 事件={len(events)} "
+          f"行为分布={counts or '无'}")
+
+    hdfs_dir = (args.hdfs_output_dir or "").strip()
+    print(f"[deliver] 本地 -> {args.clip_dir}/{session}"
+          + (f"；HDFS -> {hdfs_dir.rstrip('/')}/{session}" if hdfs_dir
+             else "；未填写 hdfs_output_dir，不回传 HDFS"))
+    landed = deliver({"output_video": out_video, "events_json": out_events},
+                     args.clip_dir, hdfs_dir,
+                     {"output_video": "整段处理结果", "events_json": "识别事件"},
+                     run=session)
+
+    payload = {
+        "session": session, "mode": "offline", "status": "finished",
+        "source": args.video_path, "local_input": src,
+        "started_at": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t0)),
+        "stopped_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "output_video": landed.get("output_video", []),
+        "events_json": landed.get("events_json", []),
+        "events_total": len(events), "label_counts": counts,
+        "stats": dict(st, wall_seconds=round(dt, 3)),
+        "config": {"enhance": cfg.enhance, "sr": cfg.sr_name(), "sr_scale": cfg.sr_scale,
+                   "recognize": cfg.recognize, "gpu_ids": ",".join(gpus),
+                   "reco_span_sec": cfg.reco_span_sec,
+                   "proc_max_side": cfg.proc_max_side},
+    }
+    write_session(args.session_json, payload)
+    print(f"[done] 会话信息 -> {args.session_json}")
+    print("[done] 离线推理完成，进程退出")
+
+
+def run_serve_mode(args, src, session):
+    """常驻拉流服务：三条对外流 + 按动作切片。这条路径的行为与本次改动前逐字一致。"""
     from darkpipe.config import PipelineConfig, validate
     from darkpipe.server import run_server
 
@@ -202,9 +344,8 @@ def run(args):
     _print_gpu_inventory(gpus)
     ensure_parent(args.session_json)
 
-    session = run_dir_name()
     cfg = validate(PipelineConfig(
-        mode="serve", input=args.video_path,
+        mode="serve", input=src,
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
@@ -239,7 +380,8 @@ def run(args):
 
     clip_root = os.path.join(args.clip_dir, session)
     payload = {
-        "session": session, "status": "running", "source": args.video_path,
+        "session": session, "mode": "serve", "status": "running",
+        "source": args.video_path, "local_input": src,
         "started_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         "endpoints": endpoints(args.serve_port, cfg.stream_formats, args.rtmp_push_url),
         "clip_dir": clip_root,

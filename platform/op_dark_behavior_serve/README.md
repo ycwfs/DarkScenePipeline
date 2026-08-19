@@ -24,6 +24,71 @@
 | 结果 | 一个完整 mp4 + 事件 JSON + 汇总 JSON | 三条 HTTP 流 + 一个个行为片段 mp4 |
 | 适用 | 录像回放、离线复核 | 值班大屏演示、实时留证 |
 
+### 两种运行模式（本算子自动判定）
+
+本算子在启动时先把输入取到手，再决定这次是常驻服务还是一次性离线推理。**判据只有一条**：
+
+> 取回来之后它是磁盘上一个有限长的文件，**且** `rtmp_push_url` 留空 → 离线模式；否则实时模式。
+
+| `video_path` | `rtmp_push_url` | 模式 | 产出 | 结束方式 |
+| --- | --- | --- | --- | --- |
+| `rtsp://…`、GB28181、flv/hls 流 | 任意 | 实时 | 三条 HTTP 流 + 按动作切的片段 mp4 | 常驻，等容器停止或 `run_seconds` 到期 |
+| 本地文件 / `hdfs://…` / WebHDFS `http://…mp4` | **留空** | **离线** | **整段处理后的视频** + 事件 JSON | **跑完自行退出** |
+| 本地文件 / HDFS 文件 | 已填 | 实时 | 同实时模式（循环播放该文件并推流） | 常驻 |
+
+日志里会明写这次选了哪种以及为什么，不用猜：
+
+```
+[mode] 离线推理：输入是有限长文件（86 MB / 3241 帧 / 25.00 fps）且未填写 rtmp_push_url，处理完整段后退出，不切片、不起服务
+[mode] 实时服务：已填写 rtmp_push_url，常驻运行并按动作切片
+```
+
+离线模式的几点差异，都是有意为之：
+
+- **输出是整段视频，不是片段**。帧率与时长同源视频一致（用的是源视频自己的帧率，不是实时
+  模式那个受拉流速度约束的值），`clip_*` 系列参数与 `run_seconds` 一概不生效。
+- 识别照常做，事件写进 `events.json` 并在 `session_json` 里给出各行为的计数，只是不再按事件切片。
+- 产出同时落 `clip_dir/<会话>/` 与 `hdfs_output_dir/<会话>/`。**上传失败是致命的**（非零码退出）——
+  批处理跑完就退，产出取不回来等于这次白跑；实时模式那边是「上传失败只告警」，因为本地片段
+  还在盘上，这是两种不同的取舍。
+- 长视频跑的过程中每约 5 秒打一行进度，别让平台的日志面板一片空白：
+  ```
+  [progress] 1280/3241 帧 (39.5%)  22.1 fps  已用 58s  剩余约 1.5 分钟
+  ```
+- 多卡分片顺带白拿：`gpu_ids` 填两张时离线模式按帧段切片并行，不是实时模式那种按帧轮询。
+
+### HDFS 地址怎么填
+
+**镜像里没有 hadoop 客户端，也没有 JVM**（为一次 `-get`/`-put` 塞一整套 JVM+hadoop 不划算），
+所以 HDFS 一律走 **WebHDFS 的 HTTP 通道**——这也正是平台已经在用的通道。`video_path` 与
+`hdfs_output_dir` 都接受两种写法：
+
+| 写法 | 例 | 说明 |
+| --- | --- | --- |
+| WebHDFS HTTP | `http://10.46.79.133:9870/behavor/darkpipe/x.mp4` | 平台下发的就是这种。9870 是 NameNode 的 **HTTP** 端口 |
+| `hdfs://` URI | `hdfs://bigdata@10.46.79.133:8020/behavor/darkpipe/x.mp4` | 里面的 8020 是 RPC 端口，算子会自动换算到 HTTP 端口 9870；端口不是 9870 的集群请直接用上面那种写法 |
+
+给的地址不带 `/webhdfs/v1/` 前缀也没关系，算子会自己补，并且**先按用户写的原样试一次**，
+失败再按 WebHDFS 形式试——两条都失败时错误信息里会同时列出两个试过的 URL 与各自的状态码，
+不会只给一句含糊的 "cannot open"。中文文件名会自动做百分号编码。
+
+`.m3u8`、`.mjpg`、无后缀的 http 地址仍按实时流原样交给解码器，不会被当成文件去下载。
+
+### `extra_hosts`：WebHDFS 那一跳的域名
+
+WebHDFS 是**两跳**的：先问 NameNode（`?op=OPEN` / `?op=CREATE`），NameNode 回一个 307，
+`Location` 里的 DataNode **是按主机名寻址的**（如 `hdfs-datanode`），文件体只走第二跳。
+容器里默认解析不了这个主机名，下载/上传就断在第二跳——这就是要加域名解析的原因。
+
+参数 `extra_hosts` 的默认值已经是现场环境的 `10.46.79.133 hdfs-datanode`，平台侧**什么都不用填**
+就能通；换环境时改参数即可，不必重新打包。多条用逗号分隔，格式是「IP 主机名」。
+
+兜底是两层的，任何一层单独成立都能跑通：
+
+1. 启动时把 `extra_hosts` 追加进 `/etc/hosts`（已能解析的名字自动跳过，不重复写）；
+2. `/etc/hosts` 不可写（非 root 或只读挂载）时只告警，随后遇到解析不了的跳转主机名，
+   **自动把跳转 URL 的 host 换成 NameNode 的地址重试一次**，并在日志里写明换了什么。
+
 ### 对外接口
 
 服务监听 `serve_port`（默认 8000），需要平台把该端口映射出来才能从容器外访问：
@@ -358,19 +423,20 @@ RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（
 | `max_flv_clients` | FLV并发观看上限 | Int | `4` | 超出返回 503；需要更多观看端请改用推流 |
 | `jpeg_quality` | 演示流画质 | Int | `85` | 1-100，调低省带宽 |
 | `max_stream_fps` | 演示流最大帧率 | Float | `15.0` | 出流帧率；**画面右下角显示的就是这个值** |
-| `clip_dir` | 片段保存目录 | String | `/opt/darkpipe/clips` | 容器内路径，建议挂 NFS 后本地浏览 |
+| `clip_dir` | 片段保存目录 | String | `/opt/darkpipe/clips` | 容器内路径，建议挂 NFS 后本地浏览；离线模式下整段视频也落这里 |
 | `clip_pre_sec` | 片段前置时长(秒) | Float | `2.0` | 向前多保留的秒数 |
 | `clip_post_sec` | 片段后置时长(秒) | Float | `2.0` | 最后一次命中后再录多久才收尾 |
 | `clip_max_sec` | 片段最长时长(秒) | Float | `30.0` | 单个片段的时长上限 |
 | `clip_skip_labels` | 不保存的行为 | String | `other` | 逗号分隔；填空表示全都保存 |
 | `clip_denoise` | 片段去噪 | String | `quality` | 只作用于片段，不占 GPU；**但 `quality` 抢 CPU，事件密集时会把时延顶到秒级，见下** |
-| `hdfs_output_dir` | 片段HDFS目录(可留空) | String | 无（**可留空**） | 留空则不推 HDFS，只保留本地一份 |
-| `run_seconds` | 运行时长上限(秒) | Float | `0` | `0` = 一直运行到容器被停止 |
+| `hdfs_output_dir` | 产出HDFS目录(可留空) | String | 无（**可留空**） | 留空则不推 HDFS，只保留本地一份；接受 `hdfs://` 与 WebHDFS `http://`，见上 |
+| `extra_hosts` | HDFS域名解析 | String | `10.46.79.133 hdfs-datanode` | 追加进 `/etc/hosts`，供 WebHDFS 的 DataNode 跳转用；格式「IP 主机名」，多条逗号分隔，见上 |
+| `run_seconds` | 运行时长上限(秒) | Float | `0` | `0` = 一直运行到容器被停止；**离线模式忽略此项** |
 
 ### 必填参数
 
 按规范「有 `default` 字段即代表该参数必填、不能为空值」——本算子里没有 `default` 字段的只有
-三个参数，其余 19 个不填也会取默认值：
+三个参数，其余 20 个不填也会取默认值：
 
 | 参数名 | 是否必填 | 说明 |
 | --- | --- | --- |
@@ -396,6 +462,10 @@ RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（
 （`status: stopped`）。这样即使容器被直接停掉，框架收走的也不是一个空文件。同一份内容还会写
 一份到 `clip_dir/<会话>/session.json`，挂 NFS 浏览时不用回头去找框架收走的那份。
 
+离线模式下 `session_json` 只写一次（跑完才有结果可写），字段随之不同：`mode` 为 `offline`、
+`status` 为 `finished`，用 `output_video` / `events_json` 给出整段产出在本地与 HDFS 的落地地址，
+`events_total` / `label_counts` 给出识别事件总数与各行为计数，`stats` 给出帧数、耗时与帧率。
+
 ```json
 {
   "session": "20260101_090000_1",
@@ -412,7 +482,29 @@ RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（
 ## 四、部署与验证
 
 平台调度时由框架下发命令行；本地验证可以直接跑，`run_seconds` 让这个常驻服务变成一次有限时长
-的任务：
+的任务。
+
+**离线模式**（输入是文件、不推流，跑完自己退出）——把一个 HDFS 上的视频整段处理完回传：
+
+```bash
+docker run --rm --gpus all \
+    -v /tmp/pkg:/opt/darkpipe/op:ro \
+    -v /mnt/nfs/darkclips:/opt/darkpipe/clips \
+    -v /tmp/out:/out \
+    -w /opt/darkpipe/op darkpipe-operator:0.2.0 \
+    /opt/conda/envs/darkpipe/bin/python -u main.py \
+      --video_path "http://10.46.79.133:9870/behavor/darkpipe/演示视频.mp4" \
+      --rtmp_push_url "" \
+      --clip_dir /opt/darkpipe/clips \
+      --hdfs_output_dir "http://10.46.79.133:9870/behavor/darkpipe/out" \
+      --extra_hosts "10.46.79.133 hdfs-datanode" \
+      --gpu_ids 0,1 --proc_max_side 840 \
+      --session_json /out/session_json.json
+```
+
+不需要 `-p 8000:8000`（不起服务），也不需要 `--run_seconds`（跑完即退）。
+
+**实时模式**（常驻拉流）：
 
 ```bash
 docker run --rm --gpus all -p 8000:8000 \
@@ -422,7 +514,8 @@ docker run --rm --gpus all -p 8000:8000 \
     -v /tmp/out:/out \
     -w /opt/darkpipe/op darkpipe-operator:0.2.0 \
     /opt/conda/envs/darkpipe/bin/python -u main.py \
-      --video_path /data/in.mp4 --enhance retinexformer --sr bicubic --sr_scale 2 \
+      --video_path rtsp://10.0.0.5:554/live \
+      --enhance retinexformer --sr bicubic --sr_scale 2 \
       --recognize behavior --reco_span_sec 1.0 --label_bar true \
       --gpu_ids 0,1 --proc_max_side 840 \
       --ckpt_dir /opt/darkpipe/ckpts --serve_port 8000 \
@@ -433,6 +526,10 @@ docker run --rm --gpus all -p 8000:8000 \
       --hdfs_output_dir "" --run_seconds 60 \
       --session_json /out/session_json.json
 ```
+
+**没有摄像头、想拿本地文件演示实时模式**时要注意：本地文件 + 留空的 `rtmp_push_url` 现在会被
+判成离线模式。要保持「循环播放本地文件 + 三条实时流」的旧演示行为，把 `--video_path` 换成本地
+文件并**填上 `--rtmp_push_url`**（推给任意一个流媒体服务器即可），或者直接用上面的 rtsp 地址。
 
 `--gpus all` 是必须的：只有它才会把宿主机的卡真的塞进容器。**起容器后先确认卡数**——
 `docker run ... nvidia-smi -L` 应该列出 2 张，且容器内编号从 `GPU 0` 开始（与宿主机序号无关）。
@@ -482,9 +579,10 @@ H.264 640x528。**RTSP 固定使用 TCP 传输**——ffmpeg 默认走 UDP，需
 
 ## 五、注意事项
 
-1. **本算子不会自行结束**（除非填了 `run_seconds`）。这是常驻服务的固有形态：摄像头不断流，
-   容器就不退出。平台若要求算子必须终止，请用 `run_seconds` 把它调度成一次有限时长的任务，
-   或改用批处理算子。
+1. **实时模式下本算子不会自行结束**（除非填了 `run_seconds`）。这是常驻服务的固有形态：
+   摄像头不断流，容器就不退出。平台若要求算子必须终止，请用 `run_seconds` 把它调度成一次
+   有限时长的任务，或改用批处理算子。**离线模式则一定会自行退出**——整段视频处理完、产出
+   交付完就正常结束，不需要 `run_seconds`。
 2. **需要平台把 `serve_port` 映射出来**，否则所有接口只能在容器内访问。
 3. **`flv` / `hls` 依赖镜像内的 ffmpeg**（`darkpipe-operator:0.2.0` 起随镜像提供）。用旧镜像
    又选了这两种格式时，服务会在**启动时**就报错退出并说明原因，不会等到有人打开地址才发现；
@@ -492,11 +590,15 @@ H.264 640x528。**RTSP 固定使用 TCP 传输**——ffmpeg 默认走 UDP，需
    万一中途挂掉能直接看出来。
 4. **`clip_dir` 要挂载到容器外**（NFS 或宿主机目录），否则容器一销毁片段就没了——容器内的
    路径本身不具备持久性，这也是同时提供 `hdfs_output_dir` 的原因。
-5. **`hdfs_output_dir` 留空即不推 HDFS**；填了 `hdfs://` 地址则依赖容器内的 HDFS 客户端，
-   上传失败只打印告警不中断服务（本地片段始终保留）；填非 `hdfs://` 的普通目录则直接复制，
-   不依赖 HDFS 客户端。
+5. **`hdfs_output_dir` 留空即不推 HDFS**；填了 HDFS 地址（`hdfs://` 或 WebHDFS 的 `http://`）
+   则走 WebHDFS 的 HTTP 通道上传——**镜像内没有 hadoop 客户端，也不需要**。实时模式下上传失败
+   只打印告警不中断服务（本地片段始终保留），离线模式下上传失败即以非零码退出。填非 HDFS
+   的普通目录则直接复制。
 6. **断流会自动重连**，退避从 0.5 秒指数增长到 8 秒封顶，重连次数记录在 `/health` 的
    `reconnects` 字段；`capture_alive` 为 false 时 `/health` 返回 503，可直接作为存活探针。
-7. **`video_path` 填本地视频文件时会循环播放**，这是为了在没有摄像头的环境下也能演示与验证，
-   不是缺陷。
-8. 任何未捕获异常都会打印完整调用栈并以非零退出码结束，框架据此判定任务失败。
+7. **`video_path` 填文件（本地路径或 HDFS 地址）且同时填了 `rtmp_push_url` 时会循环播放**，
+   这是为了在没有摄像头的环境下也能演示与验证，不是缺陷；`rtmp_push_url` 留空时则走离线模式，
+   只跑一遍就退出。
+8. **HDFS 输入会先整份下载到容器内的临时目录再处理**，因此容器需要有容纳该视频的临时空间；
+   处理结束（无论成败）临时目录都会被清掉。
+9. 任何未捕获异常都会打印完整调用栈并以非零退出码结束，框架据此判定任务失败。

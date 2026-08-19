@@ -47,6 +47,38 @@ def _encode_thread(writer, q, err):
             pass
 
 
+def _dur(sec):
+    return f"{sec:.0f}s" if sec < 90 else f"{sec / 60:.1f} 分钟"
+
+
+class _Progress:
+    """Periodic "still alive" line for long offline runs.
+
+    一段几分钟的视频要跑十几分钟，期间日志一行都没有——在平台的日志面板里看不出是在跑还是
+    卡死了，只能等。按时间节流而不是按帧数：3 fps 和 60 fps 都得是差不多的日志密度。
+    流式输入（n_frames<=0）退化成只报帧数与速率，没有百分比也没有 ETA 可言。
+    """
+
+    def __init__(self, total, every=5.0):
+        self.total = total if total and total > 0 else 0
+        self.every = every
+        self.t0 = self.last = time.time()
+
+    def __call__(self, done, force=False):
+        now = time.time()
+        if not force and now - self.last < self.every:
+            return
+        self.last = now
+        el = now - self.t0
+        fps = done / max(el, 1e-9)
+        head = f"[progress] {done}"
+        if self.total:
+            print(f"{head}/{self.total} 帧 ({done / self.total * 100:.1f}%)  {fps:.1f} fps  "
+                  f"已用 {_dur(el)}  剩余约 {_dur((self.total - done) / max(fps, 1e-9))}")
+        else:
+            print(f"{head} 帧  {fps:.1f} fps  已用 {_dur(el)}")
+
+
 def run_offline(cfg):
     frame_stages, recognizer = build_stages(cfg)
     for s in frame_stages:
@@ -67,6 +99,15 @@ def run_offline(cfg):
     t0 = time.time()
     n_in = 0
     frame_idx = 0
+
+    # n_frames is the whole file's count; a run may start late (--start-frame, used by the
+    # multi-GPU sharding) and/or stop early (--max-frames), so the denominator is neither.
+    total = max(int(reader.n_frames) - int(cfg.start_frame or 0), 0)
+    if cfg.max_frames:
+        total = min(total, cfg.max_frames) if total else cfg.max_frames
+    progress = _Progress(total)
+    print(f"[run] 输入 {cfg.input} -> {cfg.output}  "
+          f"{(str(total) + ' 帧') if total else '帧数未知（流式输入）'} @ {reader.fps:.2f} fps")
 
     # enhance stages (streaming, non-whole-video) come before SR in build order;
     # the recognizer taps right after the LAST enhance stage / before SR.
@@ -106,6 +147,7 @@ def run_offline(cfg):
         for i in range(0, len(frames), cfg.enhance_chunk):
             for f in process_chunk(frames[i:i + cfg.enhance_chunk]):
                 writer.write(f)
+            progress(min(i + cfg.enhance_chunk, n_in))
     else:
         in_q, out_q, err = queue.Queue(maxsize=2), queue.Queue(maxsize=2), []
         dec = threading.Thread(target=_decode_thread, args=(reader, in_q, err), daemon=True)
@@ -121,6 +163,7 @@ def run_offline(cfg):
                     break
                 n_in += len(chunk)
                 out_q.put(process_chunk(chunk))
+                progress(n_in)
         finally:
             out_q.put(_STOP)
             enc.join()

@@ -134,6 +134,24 @@ class ServerState:
         self.flv_lock = threading.Lock()
 
 
+_FINITE_SUFFIXES = (".mp4", ".mov", ".mkv", ".avi", ".m4v", ".webm")
+
+
+def _is_finite_source(src):
+    """Is this a file that ends, as opposed to a live stream that does not?
+
+    The old test was "no :// in the address", which classified an `http://.../x.mp4` as a live
+    stream: EOF then raised instead of looping, and the reconnect backoff reprinted the same
+    error every 8 s forever. The platform operator now downloads such addresses before getting
+    here, so this is belt-and-braces -- but the CLI still accepts a URL directly.
+    """
+    s = str(src)
+    if "://" not in s:
+        return not s.isdigit()          # a bare number is a camera index
+    from urllib.parse import urlsplit
+    return urlsplit(s).path.lower().endswith(_FINITE_SUFFIXES)
+
+
 def capture_loop(st: ServerState):
     backoff = 0.5
     while not st.stop.is_set():
@@ -141,7 +159,7 @@ def capture_loop(st: ServerState):
             cap = open_capture(st.cfg.input)
             st.capture_alive = True
             backoff = 0.5
-            is_file = str(st.cfg.input).find("://") < 0 and not str(st.cfg.input).isdigit()
+            is_file = _is_finite_source(st.cfg.input)
             src_fps = cap.get(cv2.CAP_PROP_FPS) or 25.0
             t_last = time.time()
             n, t_win = 0, time.time()
