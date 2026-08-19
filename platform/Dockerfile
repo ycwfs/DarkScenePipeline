@@ -114,8 +114,11 @@ print('torch', torch.__version__, 'cv2', cv2.__version__, \
 'mamba_ssm', version('mamba_ssm'), 'causal_conv1d', version('causal_conv1d'), 'ok')"
 
 # ffmpeg 不需要 GPU，所以这一条构建期就能真正验证，不是"假装验证"：确认命令行存在，且真的
-# 带着出流所需的 libx264 编码器与 flv/hls 封装器——Ubuntu 的 ffmpeg 是全功能构建，但装错源或
+# 带着 libx264 编码器与 flv/hls 封装器——Ubuntu 的 ffmpeg 是全功能构建，但装错源或
 # 换成精简构建时，缺的正是这几样，而那种缺失要到运行期开流才暴露。
+# libx264 不只出流要用：所有落盘的 mp4（动作切片、离线整段视频）也由 darkpipe/media.py 交给
+# ffmpeg 编码。cv2 这个构建里根本没有可用的 H.264 编码器，缺了 ffmpeg 就只能退回 MPEG-4
+# Part 2，文件在浏览器和微信里打不开——这正是之前"切片都打不开"的成因，别把这一条删了。
 RUN ffmpeg -hide_banner -version | head -1 \
     && ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libx264 \
     && ffmpeg -hide_banner -muxers 2>/dev/null | grep -qE '^ *E +flv' \

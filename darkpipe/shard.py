@@ -14,9 +14,10 @@ end-to-end by the parent:
               whether it landed where you asked. Exactness matters more than the wasted
               decode: an off-by-a-few seek would silently duplicate or drop frames at every
               segment boundary, which no amount of downstream checking would recover.
-  concat      there is no ffmpeg on this box, so the parts are re-encoded into the final
-              file with cv2. That is one extra decode+encode pass over the video (~3.5 ms
-              per frame at 720p).
+  concat      the parts are decoded with cv2 and re-encoded into the final file, i.e. one
+              extra decode+encode pass over the video (~3.5 ms per frame at 720p). An
+              ffmpeg concat-demuxer stream copy would avoid it; it is not done here because
+              the parts would first have to be proven to share identical encoder settings.
 
 Recognition has a real boundary effect: every worker starts with an empty window, so each
 segment emits its first event only after `window` frames instead of continuing across the

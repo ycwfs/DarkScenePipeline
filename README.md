@@ -574,7 +574,9 @@ recognition share one helper that halves the batch on `OutOfMemoryError`, which 
 - mamba wheel URL 404 → check the release pages for the `cu12torch2.7cxx11abiTRUE-cp310`
   asset of a newer version, or use the source-build fallback above.
 - `numpy` ABI errors → keep `numpy>=2.0,<2.1` (pinned; do not upgrade past 2.1).
-- VideoWriter fails → the opencv-python wheel ships mp4v; `avc1` is tried as fallback.
+- Output mp4 will not play in a browser / 微信 → check `ffprobe -show_entries stream=codec_name`.
+  It must say `h264`. `mpeg4`/`FMP4` means the ffmpeg binary was missing and `VideoWriter`
+  fell back to cv2, whose bundled encoder set has no usable H.264 (see the WARNING in the log).
 - RTSP drops/reconnects → watch `reconnects` in `/health`; capture retries with backoff.
 - Everything about checkpoints → `scripts/download_ckpts.sh` prints what is missing.
 
