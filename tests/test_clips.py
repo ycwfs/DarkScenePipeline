@@ -73,6 +73,111 @@ def test_consecutive_events_merge_into_one_clip(tmp_path):
         "six events during one continuous fight must not produce six overlapping files"
 
 
+def _meta(clip):
+    return json.load(open(os.path.splitext(clip)[0] + ".json", encoding="utf-8"))
+
+
+def test_a_second_behavior_gets_its_own_clip(tmp_path):
+    """One clip, one action.
+
+    Deployment produced a 30 s file holding a drink, a wave and a fall: the clip was extended
+    by *any* qualifying event, and in a scene with people moving something always qualifies,
+    so the post window never opened and only clip_max_sec ever ended it. post_sec=3 and
+    max_sec=60 here reproduce exactly that setup -- under the old rule this script is one
+    unbroken 9 s clip.
+    """
+    rec = ClipRecorder(str(tmp_path), pre_sec=0.2, post_sec=3.0, max_sec=60)
+    drive(rec, [("Drinking water", 1), (None, 9)] * 3
+               + [("Waving", 1), (None, 9)] * 3 + [(None, 40)])
+    rec.close()
+    got = clips_in(str(tmp_path))
+    assert len(got) == 2, "a drink followed by a wave is two clips, not one file with both"
+    for c in got:
+        m = _meta(c)
+        assert label_key(m["label"]) == os.path.basename(os.path.dirname(c)), \
+            "the headline label must agree with the directory the clip is filed under"
+    first = _meta(got[0])
+    assert "drinking_water" in got[0] and "waving" in got[1]
+    assert first["closed_because"].startswith("行为切换")
+    assert first["duration_seconds"] < 6.0, "the drink clip swallowed the wave"
+
+
+def test_a_single_stray_label_does_not_cut_the_clip(tmp_path):
+    """Hysteresis: near the boundary the recognizer alternates, and cutting on the first
+    disagreement would shred one incident into a pile of one-second files."""
+    rec = ClipRecorder(str(tmp_path), pre_sec=0.2, post_sec=2.0, max_sec=60)
+    drive(rec, [("Falling", 1), (None, 9), ("Waving", 1), (None, 9),
+                ("Falling", 1), (None, 9), ("Falling", 1), (None, 30)])
+    rec.close()
+    got = clips_in(str(tmp_path))
+    assert len(got) == 1 and "falling" in got[0]
+    m = _meta(got[0])
+    assert m["label"] == "Falling"
+    assert m["labels_in_clip"].get("Waving") == 1, \
+        "the stray label is still recorded -- it just does not get to cut the clip"
+
+
+def _wedge(rec):
+    """Give the recorder a queue nobody drains, and fill it. -> the real queue.
+
+    The writer thread is parked inside get() on the original queue object, so swapping the
+    attribute leaves it there: every put_nowait from here on hits a full queue. That is the
+    state a real switch runs into, where the writer is busy closing, moving to NFS and
+    uploading the clip that just ended.
+    """
+    import queue as _q
+    real = rec._q
+    rec._q = _q.Queue(maxsize=2)
+    rec._q.put_nowait(("frame", frame(), 0.0))
+    rec._q.put_nowait(("frame", frame(), 0.0))
+    return real
+
+
+def test_a_clip_that_cannot_open_is_retried_rather_than_lost(tmp_path):
+    """A full queue at the moment a clip starts must cost frames, not the whole behaviour.
+
+    This is the failure the switch rule introduced: closing a clip and opening the next one
+    now happen on the same frame, so the start message arrives while the writer is at its
+    busiest. Dropping it outright meant the second behaviour -- the one the split exists to
+    capture -- silently never appeared on disk.
+    """
+    rec = ClipRecorder(str(tmp_path), pre_sec=1.0, post_sec=2.0, max_sec=60)
+    real = _wedge(rec)
+    t = 0.0
+    rec.push(frame(), FakeEvent("Falling"), t)         # start does not fit
+    assert rec._active is None and rec.abandoned == 0, "gave up on the clip immediately"
+    for _ in range(5):                                  # queue still full: keep trying
+        t += 0.1
+        rec.push(frame(), None, t)
+    assert rec.abandoned == 0
+
+    rec._q.get_nowait()                                 # writer catches up by one slot
+    t += 0.1
+    rec.push(frame(), None, t)
+    assert rec._active is not None, "the retry never opened the clip"
+    kind, _path, _fps, pre = [i for i in rec._q.queue if i[0] == "start"][0]
+    assert len(pre) >= 6, \
+        f"the retried clip lost its lead-in: {len(pre)} pre-roll frames"
+    rec._q = real
+    rec.close()
+
+
+def test_a_wedged_writer_eventually_gives_up_instead_of_retrying_forever(tmp_path):
+    from darkpipe.clips import START_RETRY_SEC
+
+    rec = ClipRecorder(str(tmp_path), pre_sec=0.5, post_sec=2.0, max_sec=60)
+    real = _wedge(rec)
+    t = 0.0
+    rec.push(frame(), FakeEvent("Falling"), t)
+    while t < START_RETRY_SEC + 0.5:
+        t += 0.1
+        rec.push(frame(), None, t)
+    assert rec.abandoned == 1, "a permanently blocked writer must be reported, once"
+    assert rec._pending_start is None
+    rec._q = real
+    rec.close()
+
+
 def test_gap_longer_than_post_sec_splits_clips(tmp_path):
     rec = ClipRecorder(str(tmp_path), pre_sec=0.2, post_sec=0.5)
     drive(rec, [("Waving", 1), (None, 20), ("Waving", 1), (None, 20)])   # 2 s of silence

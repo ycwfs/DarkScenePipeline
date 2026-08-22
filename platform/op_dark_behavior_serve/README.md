@@ -168,10 +168,19 @@ data: {"frame_index": 480, "timestamp": 32.06, "label": "Falling", "confidence":
 
 1. **片段包含触发之前的画面。** 识别事件是在动作发生**之后**才产生的，从触发点开始录只能录到
    动作的尾巴，因此有 `clip_pre_sec`（默认 2 秒）的前置缓冲。
-2. **连续事件合并成一个片段，不是每个事件一个文件。** 识别器每隔半个窗口就产生一次事件，一次
-   五秒的跌倒会连续命中十几次；算子只在最后一次命中之后静默满 `clip_post_sec` 才收尾，因此得到
-   的是一个完整片段而不是十几个互相重叠的碎片。`clip_max_sec` 是兜底：画面里一直有人活动时，
-   片段不会无限增长成一个巨大文件。
+2. **一个片段里只有一个动作，同一个动作的连续事件合并成一个文件。** 识别器每隔半个窗口就产生
+   一次事件，一次五秒的跌倒会连续命中十几次；算子只在最后一次命中**本片段这个行为**之后静默满
+   `clip_post_sec` 才收尾，因此得到的是一个完整片段而不是十几个互相重叠的碎片。**换成另一个
+   行为则当场收尾、另起一个片段**（收尾原因写作 `行为切换 -> 挥手`）。
+   `clip_max_sec`（默认 **15 秒**）是兜底：同一个行为被连续识别很久时，片段不会无限增长。
+
+   > 早期版本是「任何命中都延长片段」，结果画面里只要一直有人活动就总有某个标签在命中，静默期
+   > 永远等不到，每个片段都长到 `clip_max_sec` 才收尾——一个 30 秒文件里装着喝水、挥手、跌倒
+   > 三个动作，动作本身其实只有几秒。现在延长片段的只有它自己那个行为。
+   >
+   > 换行为需要**连续两次**命中同一个新行为才算数：识别边界上模型会在两个标签之间来回跳，
+   > 一次不同就切会把一次完整动作剁成一堆一秒的碎片。跳来跳去的那种画面仍归第一个行为，
+   > 由 `clip_max_sec` 兜底。旁落的标签仍记在片段 `.json` 的 `labels_in_clip` 里。
 3. **片段按管线实测帧率写入，不是按源流帧率。** 实时模式会丢帧以保时延，用源流帧率写会让片段
    看起来忽快忽慢；用实测帧率写出来的片段是正常速度。
 4. **片段编码为 H.264（yuv420p, faststart），浏览器、微信、钉钉、Windows「电影和电视」都能
@@ -443,8 +452,8 @@ RTX 3090、`sr=bicubic ×2`、`recognize=behavior`，交替 3 轮取中位数（
 | `max_stream_fps` | 演示流最大帧率 | Float | `15.0` | 出流帧率；**画面右下角显示的就是这个值** |
 | `clip_dir` | 片段保存目录 | String | `/opt/darkpipe/clips` | 容器内路径，建议挂 NFS 后本地浏览；离线模式下整段视频也落这里 |
 | `clip_pre_sec` | 片段前置时长(秒) | Float | `2.0` | 向前多保留的秒数 |
-| `clip_post_sec` | 片段后置时长(秒) | Float | `2.0` | 最后一次命中后再录多久才收尾 |
-| `clip_max_sec` | 片段最长时长(秒) | Float | `30.0` | 单个片段的时长上限 |
+| `clip_post_sec` | 片段后置时长(秒) | Float | `2.0` | 最后一次命中**本片段行为**后再录多久才收尾；识别每秒一次，建议不小于 2 |
+| `clip_max_sec` | 片段最长时长(秒) | Float | `15.0` | 单个片段的时长上限，超过即收尾另起一个 |
 | `clip_skip_labels` | 不保存的行为 | String | `other` | 逗号分隔；填空表示全都保存 |
 | `clip_denoise` | 片段去噪 | String | `quality` | 只作用于片段，不占 GPU；**但 `quality` 抢 CPU，事件密集时会把时延顶到秒级，见下** |
 | `hdfs_output_dir` | 产出HDFS目录(可留空) | String | 无（**可留空**） | 留空则不推 HDFS，只保留本地一份；接受 `hdfs://` 与 WebHDFS `http://`，见上 |
@@ -540,7 +549,7 @@ docker run --rm --gpus all -p 8000:8000 \
       --stream_formats mjpeg,flv --rtmp_push_url "" --max_flv_clients 4 \
       --jpeg_quality 85 --max_stream_fps 15 \
       --clip_dir /opt/darkpipe/clips --clip_pre_sec 2 \
-      --clip_post_sec 2 --clip_max_sec 30 --clip_skip_labels other \
+      --clip_post_sec 2 --clip_max_sec 15 --clip_skip_labels other \
       --hdfs_output_dir "" --run_seconds 60 \
       --session_json /out/session_json.json
 ```

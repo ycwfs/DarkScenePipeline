@@ -9,16 +9,22 @@ Three properties drive the design and are not obvious from the outside:
   * **The GPU thread must never block on disk or network I/O.** The delivered pipeline has a
     hard <= 1 s end-to-end latency budget, so encoding happens on a writer thread behind a
     bounded queue; a full queue drops frames (loudly, counted) instead of stalling
-    recognition. Uploading is pushed further out still, into the caller's `on_saved` hook,
-    which also runs on the writer thread.
+    recognition, and a clip that cannot be opened is retried on later frames rather than
+    lost. Uploading is pushed further out still, into the caller's `on_saved` hook, which
+    also runs on the writer thread — so the queue is at its fullest just after a clip ends.
   * **A clip needs the frames from BEFORE its trigger.** By the time an event fires, the
     recognition window it describes is already in the past — writing from the trigger
     onwards would save the aftermath, not the behaviour. A pre-roll ring buffer, bounded by
     time rather than frame count (serve mode's frame rate varies), is what fixes that.
-  * **Consecutive events must not each start a clip.** A recognizer emits one event every
-    `stride` frames, so a five-second fall would otherwise produce a dozen overlapping
-    files. An active clip is extended by further qualifying events and closed only after
-    `post_sec` of silence, with `max_sec` as the backstop for a scene that never calms down.
+  * **Consecutive events must not each start a clip, and a clip holds exactly one
+    behaviour.** A recognizer emits one event every `stride` frames, so a five-second fall
+    would otherwise produce a dozen overlapping files: an active clip is extended by further
+    events *of its own label* and closed after `post_sec` without one. Extending it on any
+    label instead is what produced 30 s files containing a drink, a wave and a fall in a row
+    — in a scene with continuous activity some label is always firing, so the silence window
+    never opens and only `max_sec` ever ends the clip. A different label therefore closes the
+    current clip and opens its own (after `switch_after` events, so a boundary flicker
+    between two labels does not shred one incident into a pile of files).
 """
 import json
 import os
@@ -40,6 +46,8 @@ OPEN_AFTER = 20
 MAX_GAP = 1.0                    # longer than this is a stall, not a frame interval
 FPS_RANGE = (5, 30)              # nominal output rates worth choosing between
 MAX_DUP = 60                     # frames one stalled input frame may be stretched into
+# How long a clip that could not be opened keeps trying. See _start.
+START_RETRY_SEC = 3.0
 
 
 def measure_fps(times, fallback=15.0):
@@ -127,9 +135,9 @@ class EventLog:
 class ClipRecorder:
     """push() every processed frame with the event (or None) produced by that frame."""
 
-    def __init__(self, out_dir, pre_sec=2.0, post_sec=2.0, max_sec=30.0,
+    def __init__(self, out_dir, pre_sec=2.0, post_sec=2.0, max_sec=15.0, switch_after=2,
                  skip_labels=("other",), min_confidence=0.0, on_saved=None,
-                 queue_frames=32, session=None, stage_dir=None, denoise="off"):
+                 queue_frames=64, session=None, stage_dir=None, denoise="off"):
         self.out_dir = out_dir
         # Denoising applied to clips ONLY, on the writer thread. The live stream and the
         # clips share one frame (server.py hands the same array to both), so anything strong
@@ -146,6 +154,7 @@ class ClipRecorder:
         self.pre_sec = max(0.0, float(pre_sec))
         self.post_sec = max(0.0, float(post_sec))
         self.max_sec = max(1.0, float(max_sec))
+        self.switch_after = max(1, int(switch_after))
         self.skip = {label_key(s) for s in skip_labels if str(s).strip()}
         self.min_confidence = float(min_confidence)
         self.on_saved = on_saved
@@ -156,10 +165,16 @@ class ClipRecorder:
         self._gaps = deque(maxlen=150)      # recent inter-frame intervals, for the fps guess
         self._last_ts = None
         self._active = None
+        self._pending_start = None           # (event, deadline) -- see _start
         self._seq = 0
         self.saved = 0
         self.dropped_frames = 0
         self.abandoned = 0
+        # Sized to cover the writer's longest single stint: closing a clip means releasing the
+        # encoder, moving two files to NFS and then running on_saved (an HDFS upload -- 0.5 s
+        # measured, and unbounded in principle), during which nothing is dequeued. 64 frames is
+        # ~4 s of slack at the 15 fps cap, against ~2 s for the 32 it used to be; the cost is
+        # ~90 MB of frame references at the delivered 920 px working size.
         self._q = queue.Queue(maxsize=max(4, int(queue_frames)))
         self._thread = threading.Thread(target=self._writer_loop, daemon=True,
                                         name="clip-writer")
@@ -183,6 +198,15 @@ class ClipRecorder:
                  and float(getattr(event, "confidence", 1.0)) >= self.min_confidence)
 
         if self._active is None:
+            if self._pending_start is not None:
+                ev, deadline = self._pending_start
+                if ts <= deadline:
+                    self._start(ev, ts)          # still full -> stays pending, retried again
+                    return
+                self._pending_start = None
+                self.abandoned += 1
+                print(f"[clip] 写入队列持续满 {START_RETRY_SEC:.0f}s，放弃片段 "
+                      f"{label_key(ev.label)}（累计放弃 {self.abandoned}）")
             if fires:
                 self._start(event, ts)
             return
@@ -193,11 +217,23 @@ class ClipRecorder:
         act = self._active
         act["frames"] += 1
         if fires:
-            act["t_last_event"] = ts
+            # Counted whichever label it is: `labels_in_clip` is then an honest record of
+            # what else the recognizer saw while this clip ran.
             act["labels"][event.label] = act["labels"].get(event.label, 0) + 1
-            if float(getattr(event, "confidence", 0.0)) > act["best_confidence"]:
-                act["best_confidence"] = float(event.confidence)
-                act["label"] = event.label
+            if label_key(event.label) == act["key"]:
+                act["t_last_event"] = ts
+                act["pending"], act["pending_n"] = None, 0
+                # The headline label is fixed at _start and never reassigned: the file is
+                # already filed under that label's directory, so letting a later event
+                # rename it would leave the metadata disagreeing with the path.
+                if float(getattr(event, "confidence", 0.0)) > act["best_confidence"]:
+                    act["best_confidence"] = float(event.confidence)
+            else:
+                nxt = self._confirm_switch(act, event)
+                if nxt is not None:
+                    self._finish(ts, f"行为切换 -> {nxt.label}")
+                    self._start(nxt, ts)     # pre-roll gives the new clip its lead-in
+                    return
         if ts - act["t0"] >= self.max_sec:
             self._finish(ts, "达到 clip_max_sec 上限")
         elif ts - act["t_last_event"] > self.post_sec:
@@ -220,6 +256,26 @@ class ClipRecorder:
 
     # ---------------------------------------------------------------- clip lifecycle
 
+    def _confirm_switch(self, act, event):
+        """Another behaviour fired inside an active clip. -> the event to cut over to, or
+        None while it is still unconfirmed.
+
+        One event of disagreement is not a new behaviour. Near the decision boundary the
+        recognizer alternates between two labels from window to window, and cutting on the
+        first of them would shred one incident into a pile of one-second files — the same
+        failure the merge rule exists to prevent, just in the other direction. The evidence
+        required is `switch_after` events in a row naming the same new label, with no event
+        of the clip's own label in between (that resets the count).
+        """
+        p = act["pending"]
+        if p is None or label_key(p.label) != label_key(event.label):
+            act["pending"], act["pending_n"] = event, 1
+        else:
+            act["pending_n"] += 1
+            if float(getattr(event, "confidence", 0.0)) > float(getattr(p, "confidence", 0.0)):
+                act["pending"] = event       # 用置信度最高的那个事件给新片段命名
+        return act["pending"] if act["pending_n"] >= self.switch_after else None
+
     def _start(self, event, ts):
         self._seq += 1
         key = label_key(event.label)
@@ -234,17 +290,26 @@ class ClipRecorder:
             "t_trigger": ts, "t_last_event": ts, "frames": len(pre),
             "labels": {event.label: 1}, "best_confidence": float(event.confidence),
             "first_event": event.to_dict() if hasattr(event, "to_dict") else None,
+            "pending": None, "pending_n": 0,     # 待确认的行为切换，见 _confirm_switch
         }
         path = os.path.join(self.root, rel_dir, name + ".mp4")
         try:
             self._q.put_nowait(("start", path, fps, pre))
         except queue.Full:
             # Dropping the opening message would leave every later frame unanchored, so the
-            # clip is abandoned outright rather than written half-formed.
-            self.abandoned += 1
+            # clip cannot be written half-formed -- but giving up on it here loses the whole
+            # behaviour, and the queue is at its fullest at exactly the worst moment: a
+            # behaviour switch starts the next clip while the writer is still closing and
+            # uploading the previous one. So it is retried on the following frames instead.
+            # The pre-roll is re-snapshotted each attempt, so a clip that opens 200 ms late
+            # still contains its lead-in; only a queue that stays full for START_RETRY_SEC
+            # (the writer is wedged, not merely busy) counts as an abandoned clip.
+            self._seq -= 1                       # 这次没算数，序号留给下一次，保持连号
             self._active = None
-            print(f"[clip] 写入队列已满，放弃片段 {name}（累计放弃 {self.abandoned}）")
+            if self._pending_start is None:
+                self._pending_start = (event, ts + START_RETRY_SEC)
             return
+        self._pending_start = None
         print(f"[clip] 开始录制 {name} label={event.label} "
               f"conf={event.confidence:.2f} 预卷={len(pre)}帧")
 

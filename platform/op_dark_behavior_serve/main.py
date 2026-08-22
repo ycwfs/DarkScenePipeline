@@ -90,7 +90,7 @@ def build_parser():
                         "离线模式下整段处理结果也落在这里")
     p.add_argument("--clip_pre_sec", type=float, default=2.0)
     p.add_argument("--clip_post_sec", type=float, default=2.0)
-    p.add_argument("--clip_max_sec", type=float, default=30.0)
+    p.add_argument("--clip_max_sec", type=float, default=15.0)
     p.add_argument("--clip_skip_labels", default="other")
     p.add_argument("--clip_denoise", default="quality",
                    choices=["off","fast","quality","quality_high"],

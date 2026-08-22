@@ -108,8 +108,9 @@ def build_parser():
                    help="seconds kept from BEFORE the trigger (the window that caused the "
                         "event is already past when it fires)")
     s.add_argument("--clip-post-sec", type=float, default=2.0,
-                   help="a clip closes this long after its last qualifying event")
-    s.add_argument("--clip-max-sec", type=float, default=30.0,
+                   help="a clip closes this long after its last event OF ITS OWN label; a "
+                        "different behaviour closes it and opens the next clip")
+    s.add_argument("--clip-max-sec", type=float, default=15.0,
                    help="hard cap so a permanently active scene cannot grow one file forever")
     s.add_argument("--clip-skip-labels", default="other",
                    help="comma-separated labels that never start a clip (default: other)")

@@ -51,7 +51,7 @@ class PipelineConfig:
     clip_dir: str = ""
     clip_pre_sec: float = 2.0
     clip_post_sec: float = 2.0
-    clip_max_sec: float = 30.0
+    clip_max_sec: float = 15.0
     clip_skip_labels: str = "other"
     clip_min_conf: float = 0.0
     # Caller-supplied name for this run's clip subdirectory. Left empty the recorder invents
