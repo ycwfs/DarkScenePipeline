@@ -25,11 +25,13 @@ Everything runs in **one uv-managed environment** (Python 3.10, torch 2.7/cu126,
 mamba CUDA kernels — no local compilation).
 
 ## Requirements
+
 - Ubuntu Linux x86_64 with an NVIDIA GPU (driver ≥ 560, i.e. CUDA 12.6 runtime capable).
   ≥ 8 GB VRAM for the standard pipeline; **≥ 24 GB for `--enhance realrestorer`**.
 - [uv](https://docs.astral.sh/uv/) (`curl -LsSf https://astral.sh/uv/install.sh | sh`).
 
 ## Environment setup
+
 ```bash
 cd DarkScenePipeline
 uv python install 3.10          # uv-managed interpreter (ships C headers triton needs)
@@ -38,7 +40,9 @@ UV_MANAGED_PYTHON=1 uv sync
 # smoke test
 .venv/bin/python -c "import torch, mamba_ssm; print(torch.cuda.is_available())"
 ```
+
 Notes:
+
 - torch 2.7.0 comes from default PyPI wheels (they bundle cu126; no custom index).
 - `mamba-ssm` / `causal-conv1d` install from **pinned prebuilt release wheels**
   (`cu12torch2.7cxx11abiTRUE-cp310`, see `[tool.uv.sources]`) — no nvcc needed. If the
@@ -49,23 +53,26 @@ Notes:
   headers will crash at import time when triton JIT-compiles its launcher.
 
 ## Checkpoint preparation
+
 ```bash
 bash scripts/download_ckpts.sh                  # everything; neural SR weights for x2
 bash scripts/download_ckpts.sh --sr-scale 3 --sr-scale 4   # ... plus the x3/x4 SR weights
 ```
-| file (in `ckpts/`) | size | function | provenance |
-|---|---|---|---|
-| `NTIRE.pth` | 6.2 MB | enhance: retinexformer | Retinexformer model zoo (NTIRE 2025 low-light weight); mirrored on this repo's [v1.0.0 release](https://github.com/ycwfs/DarkScenePipeline/releases/tag/v1.0.0) |
-| `CIDNet_generalization.pth` | 7.6 MB | enhance: cidnet | HVI-CIDNet (CVPR2025) LOLv2-syn *generalization* weight ([Fediory/HVI-CIDNet](https://github.com/Fediory/HVI-CIDNet)); stage from a local HVI-CIDNet checkout |
-| `mambairv2_lightSR_x{2,3,4}.pth` | 3.9–4.1 MB | sr: lightsr, one per `--sr-scale` | [MambaIR release v1.0](https://github.com/csguoh/MambaIR/releases/tag/v1.0) (use `https://ghfast.top/` prefix for speed) |
-| `catanet_x{2,3,4}.pth` | 2.1–2.3 MB | sr: catanet, one per `--sr-scale` | [CATANet release v0.0](https://github.com/EquationWalker/CATANet/releases/tag/v0.0) `x{2,3,4}.pth` (CVPR2025 official weights, unmodified) |
-| `r2plus1d_arid.pth` | 120 MB | recognize: r3d | in-house: torchvision R(2+1)D-18 finetuned on NTIRE-enhanced ARID v1.5 split_1 (top-1 0.656 TTA) |
-| `videomamba_t_arid_32f.pth` | 27 MB | recognize: videomamba | in-house: VideoMamba-Tiny 32-frame finetuned on enhanced ARID (top-1 0.688 TTA — best) |
-| `videomamba_t_behavior_32f.pth` | 27 MB | recognize: behavior | in-house: VideoMamba-Tiny 32-frame trained on the 10-class behavior set (darkened + Retinexformer-enhanced HMDB51 + real-dark ARID; macro-F1 0.569) |
-| `xclip-base-patch16-zero-shot/` | 780 MB | recognize: xclip | `microsoft/xclip-base-patch16-zero-shot` HF snapshot (`HF_ENDPOINT=https://hf-mirror.com`) |
-| `realrestorer/` | ~39 GiB | enhance: realrestorer | `huggingface-cli download RealRestorer/RealRestorer --local-dir ckpts/realrestorer` (or symlink an existing HF snapshot) |
+
+| file (in `ckpts/`)                | size        | function                           | provenance                                                                                                                                                    |
+| ---------------------------------- | ----------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NTIRE.pth`                      | 6.2 MB      | enhance: retinexformer             | Retinexformer model zoo (NTIRE 2025 low-light weight); mirrored on this repo's [v1.0.0 release](https://github.com/ycwfs/DarkScenePipeline/releases/tag/v1.0.0) |
+| `CIDNet_generalization.pth`      | 7.6 MB      | enhance: cidnet                    | HVI-CIDNet (CVPR2025) LOLv2-syn *generalization* weight ([Fediory/HVI-CIDNet](https://github.com/Fediory/HVI-CIDNet)); stage from a local HVI-CIDNet checkout |
+| `mambairv2_lightSR_x{2,3,4}.pth` | 3.9–4.1 MB | sr: lightsr, one per `--sr-scale` | [MambaIR release v1.0](https://github.com/csguoh/MambaIR/releases/tag/v1.0) (use `https://ghfast.top/` prefix for speed)                                     |
+| `catanet_x{2,3,4}.pth`           | 2.1–2.3 MB | sr: catanet, one per `--sr-scale` | [CATANet release v0.0](https://github.com/EquationWalker/CATANet/releases/tag/v0.0) `x{2,3,4}.pth` (CVPR2025 official weights, unmodified)                   |
+| `r2plus1d_arid.pth`              | 120 MB      | recognize: r3d                     | in-house: torchvision R(2+1)D-18 finetuned on NTIRE-enhanced ARID v1.5 split_1 (top-1 0.656 TTA)                                                              |
+| `videomamba_t_arid_32f.pth`      | 27 MB       | recognize: videomamba              | in-house: VideoMamba-Tiny 32-frame finetuned on enhanced ARID (top-1 0.688 TTA — best)                                                                       |
+| `videomamba_t_behavior_32f.pth`  | 27 MB       | recognize: behavior                | in-house: VideoMamba-Tiny 32-frame trained on the 10-class behavior set (darkened + Retinexformer-enhanced HMDB51 + real-dark ARID; macro-F1 0.569)           |
+| `xclip-base-patch16-zero-shot/`  | 780 MB      | recognize: xclip                   | `microsoft/xclip-base-patch16-zero-shot` HF snapshot (`HF_ENDPOINT=https://hf-mirror.com`)                                                                |
+| `realrestorer/`                  | ~39 GiB     | enhance: realrestorer              | `huggingface-cli download RealRestorer/RealRestorer --local-dir ckpts/realrestorer` (or symlink an existing HF snapshot)                                    |
 
 ## Full steps — the recommended configuration
+
 **`--enhance retinexformer --sr bicubic_x2 --recognize behavior`** — all three functions on at
 once, and the only such combination that still meets the spec (real-time delay ≤ 1 s, offline
 ≥ 15 fps) at input sizes up to 640×480.
@@ -75,6 +82,7 @@ box (RTX 3090, one GPU unless the row says `--gpus`); reproduce them with the co
 step 5.
 
 **1. Environment** (once) — the full notes are in [Environment setup](#environment-setup):
+
 ```bash
 cd DarkScenePipeline
 uv python install 3.10
@@ -82,16 +90,20 @@ UV_MANAGED_PYTHON=1 uv venv --python 3.10 .venv
 UV_MANAGED_PYTHON=1 uv sync
 .venv/bin/python -c "import torch, mamba_ssm; print(torch.cuda.is_available())"   # -> True
 ```
+
 `uv sync` also installs this project, which is what creates the `.venv/bin/darkpipe` entry
 point. If that file is missing (a venv built with `--no-install-project`, or a sync that
 could not reach the mamba wheel URLs), add it without touching the dependency set:
+
 ```bash
 UV_MANAGED_PYTHON=1 uv pip install --no-deps -e .
 ```
+
 Everything also works as `.venv/bin/python main.py <same flags>`.
 
 **2. Checkpoints** — this configuration needs **two files, 33 MB total**; `bicubic_x2` has no
 weights at all:
+
 ```bash
 bash scripts/download_ckpts.sh          # stages everything; the two below are the only ones needed here
 ls -l ckpts/NTIRE.pth ckpts/videomamba_t_behavior_32f.pth
@@ -100,39 +112,46 @@ ls -l ckpts/NTIRE.pth ckpts/videomamba_t_behavior_32f.pth
 ```
 
 **3. Offline processing** — annotated mp4 + events JSON:
+
 ```bash
 .venv/bin/darkpipe \
   --input dark.mp4 --output out.mp4 --events-json events.json \
   --enhance retinexformer --sr bicubic_x2 --recognize behavior
 ```
+
 ```
 [config] mode=offline enhance=retinexformer sr=bicubic_x2 recognize=behavior device=cuda:0
 [done] 1042 frames in 42.3s = 24.6 fps -> out.mp4 (1042 frames written)
 [done] 64 recognition events; last: Drinking water; majority: Drinking water
 ```
+
 `out.mp4` is the enhanced video at **2× the input resolution** with a label bar below the
 frame; `events.json` carries one entry per prediction (frame index, timestamp, label,
 confidence, top-3). For 1280×720 input add `--gpus 0,1,2,3` (one GPU is under the 10 fps floor
 there) and see the 720p note in step 5 before promising 15 fps.
 
 **4. Streaming server** — same three stages, live:
+
 ```bash
 .venv/bin/darkpipe --mode serve --port 8000 \
   --input rtsp://camera/stream \
   --enhance retinexformer --sr bicubic_x2 --recognize behavior
 # --input 0 (webcam) and --input file.mp4 (loops) work too
 ```
-| endpoint | what to expect from this configuration |
-|---|---|
-| `GET /stream` | MJPEG at 2× input size (640×480 in → 1280×960 + label bar), `--max-stream-fps 15` |
-| `GET /events` | one SSE JSON per prediction, **~0.7 s apart** (32-frame window, stride 16, at ~25 fps) |
+
+| endpoint        | what to expect from this configuration                                                         |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| `GET /stream` | MJPEG at 2× input size (640×480 in → 1280×960 + label bar), `--max-stream-fps 15`         |
+| `GET /events` | one SSE JSON per prediction, **~0.7 s apart** (32-frame window, stride 16, at ~25 fps)    |
 | `GET /health` | `fps_in`, `fps_proc`, `frames_dropped`, **`latency_ms_last`** — the spec number |
-| `GET /config` | the resolved configuration, including the serve-mode `reco_span_sec: 1.0` |
+| `GET /config` | the resolved configuration, including the serve-mode `reco_span_sec: 1.0`                     |
+
 ```bash
 curl -s localhost:8000/health | jq .      # {"fps_in":29.9,"fps_proc":25.0,"latency_ms_last":40.9,...}
 curl -N localhost:8000/events             # {"label":"Drinking water","confidence":0.93,...}
 firefox http://localhost:8000/stream
 ```
+
 In serve mode `--reco-span-sec` defaults to **1.0 s**: the 32 frames fed to the recognizer are
 resampled from the last second of wall-clock video, so the label always describes the past
 ≤ 1 s no matter how fast the pipeline runs. Offline it defaults to off (last 32 *processed*
@@ -148,6 +167,7 @@ only while the delay budget is slack. Single-GPU behaviour is unchanged, and a `
 more cards than the box has falls back to it with a warning rather than failing to start.
 
 **5. Measured on this box — and how to reproduce it**
+
 ```bash
 # offline: 1042 frames of ARID test clips, concatenated at each resolution
 .venv/bin/darkpipe --input clip_320x240.mp4 --output /tmp/o.mp4 \
@@ -156,13 +176,14 @@ more cards than the box has falls back to it with a warning rather than failing 
 curl -s localhost:8000/health | jq '.latency_ms_last, .fps_proc'
 timeout 12 curl -sN localhost:8000/events | grep -c '^data:'      # -> 18 events / 12 s
 ```
-| input → output | offline fps (≥ 15 target, ≥ 10 floor) | real-time latency (≤ 1 s) |
-|---|---|---|
-| 320×240 → 640×480 | **63.7** ✓ | 25–49 ms ✓ |
-| **640×480 → 1280×960** | **24.6** ✓ | **41–69 ms** ✓ |
-| 640×480, GPU shared with a live serve process | 15.5 ✓ | – |
-| 1280×720 → 2560×1440, one GPU | 8.3 ✗ | 125–274 ms ✓ |
-| 1280×720 → 2560×1440, `--gpus 0,1,2,3` | 11.5 — floor only | – |
+
+| input → output                                | offline fps (≥ 15 target, ≥ 10 floor) | real-time latency (≤ 1 s) |
+| ---------------------------------------------- | --------------------------------------- | -------------------------- |
+| 320×240 → 640×480                           | **63.7** ✓                       | 25–49 ms ✓               |
+| **640×480 → 1280×960**                | **24.6** ✓                       | **41–69 ms** ✓     |
+| 640×480, GPU shared with a live serve process | 15.5 ✓                                 | –                         |
+| 1280×720 → 2560×1440, one GPU               | 8.3 ✗                                  | 125–274 ms ✓             |
+| 1280×720 → 2560×1440, `--gpus 0,1,2,3`     | 11.5 — floor only                      | –                         |
 
 Both spec numbers are met with margin at 640×480 and below: 24.6 fps against a 15 fps target,
 41–69 ms against a 1 s budget (15–25× inside it). Row 3 is the caveat worth knowing —
@@ -178,16 +199,18 @@ workers contend for it; the GPU work per shard is identical either way. So at 72
 at 720p is fine on one GPU (serve processes one frame at a time).
 
 **6. Verify the install**
+
 ```bash
 .venv/bin/python -m pytest tests/ -q            # 66 passed
 .venv/bin/python scripts/check_parity.py        # numerical parity gates (needs ckpts + refs)
 ```
-The behavior recognizer emits: `Waving, Throwing object, Chasing, Falling, Fighting, Talking,
-Drinking water, Picking up object, Shaking hands, Other`. What that model is, how it was trained
+
+The behavior recognizer emits: `Waving, Throwing object, Chasing, Falling, Fighting, Talking, Drinking water, Picking up object, Shaking hands, Other`. What that model is, how it was trained
 and how well it does per class: [Model specifications](#model-specifications) and
 `compare/results/BEHAVIOR_REPORT.md`.
 
 ## Usage — offline
+
 ```bash
 # default pipeline: retinexformer + ARID VideoMamba recognition (SR off — see Performance)
 .venv/bin/darkpipe --input dark_clip.mp4 --output out.mp4 --events-json events.json
@@ -221,37 +244,45 @@ and how well it does per class: [Model specifications](#model-specifications) an
 # recognition only, R(2+1)D-18
 .venv/bin/darkpipe --input dark.mp4 --enhance off --sr off --recognize r3d
 ```
+
 Output: mp4 whose frames are the enhanced (and 2×-upscaled) video with a **label bar below
 the frame** showing `Action NN%` (green when confident); `--events-json` writes every
 recognition event (frame index, label, confidence, top-3). All three functions off =
 passthrough copy (warned).
 
 ## Usage — streaming server
+
 ```bash
 .venv/bin/darkpipe --mode serve --input rtsp://camera/stream --port 8000
 # file and webcam sources work too:  --input 0   |   --input demo.mp4  (file loops)
 ```
-| endpoint | content |
-|---|---|
-| `GET /stream` | annotated video as browser-viewable MJPEG (`multipart/x-mixed-replace`) |
-| `GET /events` | recognition results as Server-Sent Events JSON |
+
+| endpoint        | content                                                                       |
+| --------------- | ----------------------------------------------------------------------------- |
+| `GET /stream` | annotated video as browser-viewable MJPEG (`multipart/x-mixed-replace`)     |
+| `GET /events` | recognition results as Server-Sent Events JSON                                |
 | `GET /health` | `fps_in`, `fps_proc`, `frames_dropped`, `latency_ms_last`, reconnects |
-| `GET /config` | the active pipeline configuration |
+| `GET /config` | the active pipeline configuration                                             |
+
 ```bash
 curl -s localhost:8000/health | jq .
 curl -N localhost:8000/events          # live recognition JSON
 firefox http://localhost:8000/stream   # or ffplay/VLC
 ```
+
 When the source is faster than the GPU, the newest frame wins (bounded latency; drops are
 counted in `/health`). RealRestorer is rejected in serve mode (offline-only by design).
 
 ## Super-resolution factor and input resolution
+
 **`--sr-scale {2,3,4}` works in both modes** — offline (single-GPU and `--gpus`) and serve:
+
 ```bash
 .venv/bin/darkpipe --input dark.mp4 --sr bicubic --sr-scale 3 --recognize behavior
 .venv/bin/darkpipe --input dark.mp4 --sr bicubic --sr-scale 4 --gpus 0,1,2,3
 .venv/bin/darkpipe --mode serve --input rtsp://cam --sr bicubic --sr-scale 3 --port 8000
 ```
+
 `--sr` takes the backend name (`bicubic`/`lightsr`/`catanet`) and `--sr-scale` the factor,
 defaulting to 2. The old `--sr bicubic_x2 | lightsr_x2 | catanet_x2` spellings still work and
 pin the factor to 2 (combining one with a conflicting `--sr-scale` is an error, not a silent
@@ -259,11 +290,11 @@ override). `bicubic` needs no weights at any factor; the two neural backends nee
 checkpoint **trained for that factor** — `mambairv2_lightSR_x3.pth`, `catanet_x4.pth`, … —
 which `scripts/download_ckpts.sh --sr-scale 3` fetches. Measured, 1042 frames, one RTX 3090:
 
-| input | `--sr-scale` | output | offline fps | serve latency |
-|---|---|---|---|---|
-| 640×480 | 2 | 1280×960 | **24.9** | 41–69 ms |
-| 640×480 | 3 | 1920×1440 | **23.7** | 57–71 ms |
-| 640×480 | 4 | 2560×1920 | **19.6** | – |
+| input    | `--sr-scale` | output     | offline fps    | serve latency |
+| -------- | -------------- | ---------- | -------------- | ------------- |
+| 640×480 | 2              | 1280×960  | **24.9** | 41–69 ms     |
+| 640×480 | 3              | 1920×1440 | **23.7** | 57–71 ms     |
+| 640×480 | 4              | 2560×1920 | **19.6** | –            |
 
 All three clear the 15 fps target at 640×480: the extra output pixels cost encode time, not
 GPU time. The neural backends stay a short-clip quality option at every factor (240p: lightSR
@@ -281,6 +312,7 @@ The one practical limit is throughput, not correctness: cost tracks pixel count,
 is the resolution that needs `--gpus` (see Performance).
 
 ## Model specifications
+
 Enhance rows measured on a single RTX 4090 at 320×240 input (RealRestorer at size-level
 512, 28 steps); **SR and recognizer rows re-measured on the RTX 3090 this release was
 benchmarked on**, fp16 forward only (except CATANet — see below), excluding frame
@@ -289,20 +321,20 @@ preprocessing. Accuracy: `r3d`/`videomamba` on ARID v1.5 split_1 (11 actions, mu
 (10 classes — see `compare/results/BEHAVIOR_REPORT.md`); SR in-domain against enhanced dark
 ARID frames (`compare/results/SR_REPORT.md`).
 
-| function | model | params | ms / frame | fps | accuracy |
-|---|---|---|---|---|---|
-| enhance | Retinexformer (NTIRE) | 1.61 M | ~6 ms | ~168 | – |
-| enhance | HVI-CIDNet (generalization) † | 1.98 M | ~30 ms (fp32) | ~33 | – |
-| enhance | RealRestorer — official diffusers, `device_map` on 2×24 GB | ≈12.4 B DiT + 8.3 B Qwen2.5-VL + 84 M VAE | ~836,000 ms | 0.0012 | – |
-| enhance | RealRestorer — sequential offload, 1×24 GB, single frame | same | ~184,000 ms | 0.005 | – |
-| enhance | RealRestorer — sequential offload, 1×24 GB, batched (chunk 8) — *packaged* | same | ~45,000 ms | 0.022 | – |
-| SR | bicubic ×2 (`bicubic_x2`) | 0 | **0.6 ms** (CPU) | **~1570** | in-domain **42.92 dB / 0.9903** |
-| SR | MambaIRv2 lightSR ×2 (`lightsr_x2`) | 0.77 M | 253 ms | 4.0 | in-domain 39.46 dB / 0.9851 |
-| SR | CATANet ×2, CVPR2025 (`catanet_x2`) | **0.48 M** | **188 ms** (fp32) | 5.3 | in-domain **39.56 dB / 0.9852** |
-| recognize | R(2+1)D-18 (`r3d`) | 31.31 M | 12.1 ms / 16-frame clip | 82.5 clips/s | ARID top-1 0.656 / top-5 0.947 |
-| recognize | VideoMamba-T 32f (`videomamba`) | 6.96 M | 55.1 ms / 32-frame clip | 18.1 clips/s | ARID top-1 0.688 / top-5 0.911 |
-| recognize | VideoMamba-T 32f, 10 behaviors (`behavior`) | 6.96 M | 55.0 ms / 32-frame clip | 18.2 clips/s | top-1 0.671 / **macro-F1 0.569** |
-| recognize | X-CLIP-B/16 zero-shot, open vocabulary (`xclip`) | 194.94 M | 43.9 ms / 32-frame clip | 22.8 clips/s | top-1 0.489 / macro-F1 0.261 (0.696 / 0.534 domain-adapted) |
+| function  | model                                                                          | params                                     | ms / frame              | fps             | accuracy                                                    |
+| --------- | ------------------------------------------------------------------------------ | ------------------------------------------ | ----------------------- | --------------- | ----------------------------------------------------------- |
+| enhance   | Retinexformer (NTIRE)                                                          | 1.61 M                                     | ~6 ms                   | ~168            | –                                                          |
+| enhance   | HVI-CIDNet (generalization) †                                                 | 1.98 M                                     | ~30 ms (fp32)           | ~33             | –                                                          |
+| enhance   | RealRestorer — official diffusers, `device_map` on 2×24 GB                  | ≈12.4 B DiT + 8.3 B Qwen2.5-VL + 84 M VAE | ~836,000 ms             | 0.0012          | –                                                          |
+| enhance   | RealRestorer — sequential offload, 1×24 GB, single frame                     | same                                       | ~184,000 ms             | 0.005           | –                                                          |
+| enhance   | RealRestorer — sequential offload, 1×24 GB, batched (chunk 8) — *packaged* | same                                       | ~45,000 ms              | 0.022           | –                                                          |
+| SR        | bicubic ×2 (`bicubic_x2`)                                                   | 0                                          | **0.6 ms** (CPU)  | **~1570** | in-domain **42.92 dB / 0.9903**                        |
+| SR        | MambaIRv2 lightSR ×2 (`lightsr_x2`)                                         | 0.77 M                                     | 253 ms                  | 4.0             | in-domain 39.46 dB / 0.9851                                 |
+| SR        | CATANet ×2, CVPR2025 (`catanet_x2`)                                         | **0.48 M**                           | **188 ms** (fp32) | 5.3             | in-domain **39.56 dB / 0.9852**                        |
+| recognize | R(2+1)D-18 (`r3d`)                                                           | 31.31 M                                    | 12.1 ms / 16-frame clip | 82.5 clips/s    | ARID top-1 0.656 / top-5 0.947                              |
+| recognize | VideoMamba-T 32f (`videomamba`)                                              | 6.96 M                                     | 55.1 ms / 32-frame clip | 18.1 clips/s    | ARID top-1 0.688 / top-5 0.911                              |
+| recognize | VideoMamba-T 32f, 10 behaviors (`behavior`)                                  | 6.96 M                                     | 55.0 ms / 32-frame clip | 18.2 clips/s    | top-1 0.671 / **macro-F1 0.569**                       |
+| recognize | X-CLIP-B/16 zero-shot, open vocabulary (`xclip`)                             | 194.94 M                                   | 43.9 ms / 32-frame clip | 22.8 clips/s    | top-1 0.489 / macro-F1 0.261 (0.696 / 0.534 domain-adapted) |
 
 X-CLIP is 28× the parameters of VideoMamba-T and still the faster of the two per clip: a
 ViT-B/16 at T=32 is dense matmul on tensor cores, while VideoMamba's selective scan is
@@ -323,6 +355,7 @@ they offer over bicubic is perceptual detail, not fidelity, and on true high-res
 sensor input the ranking would be expected to invert.
 
 ## Visual samples (native pixel sizes — no display resizing)
+
 Stage progression on a dark ARID frame; panel sizes are the REAL output sizes, so the
 super-resolution step is physically 2× larger:
 
@@ -338,6 +371,7 @@ Final pipeline output frame (enhanced + ×2 SR + recognition text below the fram
 ![pipeline output](assets/pipeline_output.png)
 
 ### Stage-by-stage video
+
 `compare/stage_video.py` writes **one video per pipeline step** plus a 2×2 grid of all four,
 from the real stage objects in the shipped order (enhance → recognizer tap → SR → label bar,
 exactly as `pipeline.py:process_chunk` runs them). Panels are at native pixel size, so the
@@ -351,6 +385,7 @@ steady-state ms/frame:
     --input <dark.mp4> --enhance retinexformer --sr bicubic_x2 --recognize behavior
 # -> compare/results/stage_video/*_{1_input,2_enhance,3_sr,4_recognition,grid}.mp4
 ```
+
 On the ARID `Drink_11_1` clip (94 frames, 320×240, RTX 3090) it reports enhancement at
 6.7 ms/frame, bicubic ×2 at 1.0 ms/frame and recognition at 4.7 ms/frame amortised over every
 frame — 12.4 ms of stage work per frame, the rest of the offline budget being decode, label
@@ -360,6 +395,7 @@ this 94-frame clip measures 20.3 fps end-to-end while the 150-frame benchmark re
 fps for the same configuration — on short clips the compile never amortises.
 
 ### One video per behavior class
+
 `compare/behavior/class_video.py` renders that same four-stage grid **once per behavior**, so
 the reel shows all ten labels rather than one clip. Source clips are the HMDB test split,
 darkened by the calibrated simulation each clip was trained at (`exposure k` is printed in the
@@ -374,6 +410,7 @@ others). Every frame carries the true class, the predicted one and an OK/MISS fl
 # -> compare/results/class_video/class_<behavior>_behavior.mp4  (10 videos)
 #    + class_contact_behavior.png (above) + class_index_behavior.json
 ```
+
 `--pick first` takes the sorted-first test clip per class and gets **7/10** right; the default
 `--pick correct` searches up to `--tries` clips for one the recognizer labels correctly and
 reaches **9/10**, `chase` failing on all six candidates. Neither number is an accuracy figure —
@@ -390,6 +427,7 @@ frames are clean:
 ```bash
 .venv/bin/python ../compare/behavior/class_video.py --source arid
 ```
+
 The two reels are never mixed in one sheet. The reason the simulated one is noisier is not that
 it is darker — the real `pick_up` clip is darker still — but that the simulation's shot noise
 was never calibrated against a real sensor's SNR, so it carries ~8× the per-pixel noise, which
@@ -404,11 +442,13 @@ For the six classes ARID does not cover, two flags make the HMDB reel presentabl
 --enhance-panel original # bright source in the enhancement slot: SR + recognition run on it,
                          # panel 2 captioned "original source (enhancer NOT run)"
 ```
+
 `--full-well 30000` is the one to show, because the enhancement in it is genuine — it fixes the
 *input*, not the picture. `--enhance-panel original` is an enhancement-perfect upper bound and
 labels itself as one on every frame.
 
 ## Model selection guide
+
 - **retinexformer** (default): 1.6 M params, ~6 ms/frame — the real-time enhancer.
 - **cidnet**: HVI-CIDNet (CVPR2025), 2.0 M params, ~30 ms/frame fp32 — higher-fidelity
   low-light enhancement (beats Retinexformer on LOLv2 PSNR/SSIM/LPIPS with dataset-matched
@@ -451,32 +491,33 @@ labels itself as one on every frame.
   frames; SR was measured recognition-neutral, so it stays out of the decision path).
 
 ## Performance
+
 Measured on **one RTX 3090**, 300-frame clips, via `compare/behavior/bench_pipeline.py`.
 Offline fps is the shipped CLI's own steady-state rate; real-time latency is serve mode's
 `/health.latency_ms_last`, timed from frame capture to encoded output.
 
-| resolution | configuration | offline fps | real-time latency |
-|---|---|---|---|
-| 320×240 | enhance only | 73.5 | 24 ms |
-| 320×240 | enhance + recognize | 36.8–84.1 | 23–31 ms |
-| **640×480** | enhance only | 27.1 | 31 ms |
-| **640×480** | retinexformer + `r3d` | **26.7** | 40 ms |
-| **640×480** | retinexformer + `videomamba` | **21.6** | 32 ms |
-| **640×480** | retinexformer + `behavior` | **21.4** | 33 ms |
-| **640×480** | retinexformer + `xclip` | **25.8** | 45 ms |
-| **640×480** | cidnet + `behavior` | **19.4** | 97 ms |
-| 1280×720 | retinexformer + recognize, 1 GPU | 6.8–8.8 | 111–273 ms |
-| 1280×720 | retinexformer + recognize, `--gpus 0,1,2,3` | **16.4** | – |
-| 320×240 | + `--sr bicubic_x2` ‡ | **24.4–45.3** | 25–49 ms |
-| **640×480** | + `--sr bicubic_x2` ‡ | **14.8–21.7** | 44–98 ms |
-| 1280×720 | + `--sr bicubic_x2` ‡ | 5.8–7.7 | 125–274 ms |
-| **640×480** | + `--sr bicubic --sr-scale 3` § | **23.7** | 57–71 ms |
-| **640×480** | + `--sr bicubic --sr-scale 4` § | **19.6** | – |
-| 320×240 | + `--sr catanet_x2` | 3.9–5.1 | 222–240 ms |
-| 320×240 | + `--sr lightsr_x2` | 4.1–5.5 | 274–292 ms |
-| 640×480 | + `--sr catanet_x2` | 1.1–1.2 | **825–903 ms** |
-| 640×480 | + `--sr lightsr_x2` | 1.0–1.2 | 1082–1123 ms |
-| any | `--enhance realrestorer` | 1/45 | 45 s |
+| resolution         | configuration                                | offline fps          | real-time latency     |
+| ------------------ | -------------------------------------------- | -------------------- | --------------------- |
+| 320×240           | enhance only                                 | 73.5                 | 24 ms                 |
+| 320×240           | enhance + recognize                          | 36.8–84.1           | 23–31 ms             |
+| **640×480** | enhance only                                 | 27.1                 | 31 ms                 |
+| **640×480** | retinexformer + `r3d`                       | **26.7**       | 40 ms                 |
+| **640×480** | retinexformer + `videomamba`                | **21.6**       | 32 ms                 |
+| **640×480** | retinexformer + `behavior`                  | **21.4**       | 33 ms                 |
+| **640×480** | retinexformer + `xclip`                     | **25.8**       | 45 ms                 |
+| **640×480** | cidnet + `behavior`                         | **19.4**       | 97 ms                 |
+| 1280×720          | retinexformer + recognize, 1 GPU             | 6.8–8.8             | 111–273 ms           |
+| 1280×720          | retinexformer + recognize, `--gpus 0,1,2,3` | **16.4**       | –                    |
+| 320×240           | + `--sr bicubic_x2` ‡                      | **24.4–45.3** | 25–49 ms             |
+| **640×480** | + `--sr bicubic_x2` ‡                      | **14.8–21.7** | 44–98 ms             |
+| 1280×720          | + `--sr bicubic_x2` ‡                      | 5.8–7.7             | 125–274 ms           |
+| **640×480** | + `--sr bicubic --sr-scale 3` §            | **23.7**       | 57–71 ms             |
+| **640×480** | + `--sr bicubic --sr-scale 4` §            | **19.6**       | –                    |
+| 320×240           | + `--sr catanet_x2`                         | 3.9–5.1             | 222–240 ms           |
+| 320×240           | + `--sr lightsr_x2`                         | 4.1–5.5             | 274–292 ms           |
+| 640×480           | + `--sr catanet_x2`                         | 1.1–1.2             | **825–903 ms** |
+| 640×480           | + `--sr lightsr_x2`                         | 1.0–1.2             | 1082–1123 ms         |
+| any                | `--enhance realrestorer`                   | 1/45                 | 45 s                  |
 
 § The `--sr-scale` rows are a separate 1042-frame run of the recommended configuration
 (`retinexformer + bicubic + behavior`) measured back to back at ×2/×3/×4 — 24.9 / 23.7 /
@@ -487,17 +528,17 @@ measured SR-off and SR-on back to back. That matters: absolute fps on this box m
 1.5× with machine load between sessions (`retinexformer + behavior` at 640×480 measured 21.4
 one day and 17.4 the next), so the **cost of a stage is only meaningful inside one run**:
 
-| resolution | configuration | `--sr off` | `--sr bicubic_x2` | cost |
-|---|---|---|---|---|
-| 320×240 | retinexformer, no recognizer | 47.0 | 45.3 | −3.6% |
-| 320×240 | retinexformer + `behavior` | 29.2 | 28.0 | −4.1% |
-| 320×240 | cidnet + `behavior` | 25.5 | 24.4 | −4.3% |
-| **640×480** | retinexformer, no recognizer | 22.2 | 21.7 | −2.3% |
-| **640×480** | retinexformer + `behavior` | 17.4 | 16.3 | −6.3% |
-| **640×480** | cidnet + `behavior` | 15.4 | 14.8 | −3.9% |
-| 1280×720 | retinexformer, no recognizer | 8.1 | 7.7 | −4.9% |
-| 1280×720 | retinexformer + `behavior` | 7.1 | 6.5 | −8.5% |
-| 1280×720 | cidnet + `behavior` | 6.2 | 5.8 | −6.5% |
+| resolution         | configuration                | `--sr off` | `--sr bicubic_x2` | cost   |
+| ------------------ | ---------------------------- | ------------ | ------------------- | ------ |
+| 320×240           | retinexformer, no recognizer | 47.0         | 45.3                | −3.6% |
+| 320×240           | retinexformer + `behavior`  | 29.2         | 28.0                | −4.1% |
+| 320×240           | cidnet + `behavior`         | 25.5         | 24.4                | −4.3% |
+| **640×480** | retinexformer, no recognizer | 22.2         | 21.7                | −2.3% |
+| **640×480** | retinexformer + `behavior`  | 17.4         | 16.3                | −6.3% |
+| **640×480** | cidnet + `behavior`         | 15.4         | 14.8                | −3.9% |
+| 1280×720          | retinexformer, no recognizer | 8.1          | 7.7                 | −4.9% |
+| 1280×720          | retinexformer + `behavior`  | 7.1          | 6.5                 | −8.5% |
+| 1280×720          | cidnet + `behavior`         | 6.2          | 5.8                 | −6.5% |
 
 **Spec compliance — real-time delay ≤ 1 s, offline ≥ 15 fps (floor 10 fps):**
 
@@ -545,6 +586,7 @@ recognition share one helper that halves the batch on `OutOfMemoryError`, which 
 720p run at all (the default enhance chunk of 32 needs 2.2 GiB per batch there).
 
 ## Architecture notes
+
 - `darkpipe/vendor/` carries the model code so no external repos are needed at runtime:
   - `retinexformer_arch.py` — verbatim from Retinexformer (self-contained).
   - `mambairv2light_arch.py` — MambaIR arch with its basicsr couplings removed; runs
@@ -569,6 +611,7 @@ recognition share one helper that halves the batch on `OutOfMemoryError`, which 
   (`scripts/check_parity.py`; enhancement 68.5 dB, SR 73.2 dB, recognizer logits argmax-equal).
 
 ## Troubleshooting
+
 - `Python.h: No such file or directory` at first import → you used a system Python without
   dev headers; recreate the venv with `UV_MANAGED_PYTHON=1` (see Environment setup).
 - mamba wheel URL 404 → check the release pages for the `cu12torch2.7cxx11abiTRUE-cp310`
@@ -581,6 +624,7 @@ recognition share one helper that halves the batch on `OutOfMemoryError`, which 
 - Everything about checkpoints → `scripts/download_ckpts.sh` prints what is missing.
 
 ## Tests & verification
+
 ```bash
 .venv/bin/python -m pytest tests/ -q          # imports, CLI validation matrix, label bar,
                                               # arbitrary input resolution (66 passed)
