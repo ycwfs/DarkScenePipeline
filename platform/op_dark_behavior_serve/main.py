@@ -40,7 +40,7 @@ sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
 from oputil import (resolve_ckpt_dir, apply_extra_hosts, deliver, ensure_parent,  # noqa: E402
                     fetch_input, make_remote_dir, parse_bool, parse_gpu_ids, run_dir_name,
-                    upload_file)
+                    source_tag, upload_file)
 
 
 def build_parser():
@@ -230,20 +230,24 @@ def run(args):
     # 的动作之前完成。写不进去也只是告警——_webhdfs_call 里还有「改用 NameNode 地址重试」兜底。
     apply_extra_hosts(args.extra_hosts)
 
-    session = run_dir_name()
     # 下载目录不能用 tempfile 的自动清理：实时模式下这个文件要陪着服务跑一整天。
     workdir = tempfile.mkdtemp(prefix="darkserve_")
     try:
         src = fetch_input(args.video_path, workdir, "input.mp4")
+        # 目录名带上输入的标识，不然一堆 20260821_164652_78 谁也说不出是哪路输入的结果。
+        # 标识取自 video_path（原始地址）而不是 src：HDFS 输入下载到本地就叫 input.mp4，
+        # 文件名已经丢了。
         if os.path.isfile(src) and not (args.rtmp_push_url or "").strip():
             n, fps = probe_video(src)
             size = os.path.getsize(src) / 1e6
+            session = run_dir_name(args.video_path)
             print(f"[mode] 离线推理：输入是有限长文件（{size:.0f} MB / "
                   f"{n or '?'} 帧 / {fps:.2f} fps）且未填写 rtmp_push_url，"
                   f"处理完整段后退出，不切片、不起服务")
             return run_offline_mode(args, src, session, workdir)
         why = ("已填写 rtmp_push_url" if (args.rtmp_push_url or "").strip()
                else "输入不是本地文件（按实时流处理）")
+        session = run_dir_name(args.video_path, live=True)
         print(f"[mode] 实时服务：{why}，常驻运行并按动作切片")
         return run_serve_mode(args, src, session)
     finally:
@@ -258,7 +262,10 @@ def run_offline_mode(args, src, session, workdir):
     _print_gpu_inventory(gpus)
     ensure_parent(args.session_json)
 
-    stem = os.path.splitext(os.path.basename(src))[0] or "output"
+    # 文件名同样取自原始地址：HDFS 输入落到本地叫 input.mp4，用它命名产出就成了
+    # input_enhanced.mp4，一样看不出是哪个视频。
+    stem = (source_tag(args.video_path)
+            or os.path.splitext(os.path.basename(src))[0] or "output")
     out_video = os.path.join(workdir, f"{stem}_enhanced.mp4")
     out_events = os.path.join(workdir, f"{stem}_events.json")
     cfg = validate(PipelineConfig(

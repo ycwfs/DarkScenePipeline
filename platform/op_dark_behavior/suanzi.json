@@ -190,7 +190,7 @@
     {
       "name": "local_output_dir",
       "type": "String",
-      "description": "产出另存一份到这个容器内目录，如 /mnt/nfs/darkout。用于把结果直接写到平台挂载进容器的 NFS/共享存储上，事后可直接在本地浏览，不必经过 HDFS。目录结构为 local_output_dir/运行时间_进程号/文件名，与 hdfs_output_dir 下完全一致。留空则不另存本地。注意：与 hdfs_output_dir 至少要填一个——两个都留空时结果只存在于容器内，容器退出即不可再取，算子会在开始处理前直接报错退出。",
+      "description": "产出另存一份到这个容器内目录，如 /mnt/nfs/darkout。用于把结果直接写到平台挂载进容器的 NFS/共享存储上，事后可直接在本地浏览，不必经过 HDFS。目录结构为 local_output_dir/视频名_运行时间_进程号/文件名，与 hdfs_output_dir 下完全一致；子目录名带上输入视频的名字（如 demo_20260821_164652_78），同一个目录里跑过多个视频时不必点开就知道哪批产出是哪个视频的。留空则不另存本地。注意：与 hdfs_output_dir 至少要填一个——两个都留空时结果只存在于容器内，容器退出即不可再取，算子会在开始处理前直接报错退出。",
       "annotations": {
         "show": "本地落地目录(可留空)",
         "component": "stringInput",

@@ -25,7 +25,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
 from oputil import (resolve_ckpt_dir, deliver, ensure_parent, fetch_input, parse_bool,  # noqa: E402
-                     parse_gpu_ids, require_destination)
+                     parse_gpu_ids, require_destination, run_dir_name)
 
 
 def build_parser():
@@ -177,11 +177,14 @@ def run(args):
     print(f"[done] 识别事件 -> {args.events_json}")
     print(f"[done] 汇总信息 -> {args.summary_json}")
 
+    # 子目录名带上输入视频的名字（`demo_20260821_164652_78`），不然落地目录里一排
+    # 时间戳，看不出哪一批产出对应哪个视频。
     deliver({"output_video": args.output_video, "events_json": args.events_json,
              "summary_json": args.summary_json},
             args.local_output_dir, args.hdfs_output_dir,
             {"output_video": "输出视频", "events_json": "识别事件",
-             "summary_json": "汇总信息"})
+             "summary_json": "汇总信息"},
+            run=run_dir_name(args.video_path))
 
 
 def main(argv=None):

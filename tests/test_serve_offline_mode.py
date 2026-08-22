@@ -187,9 +187,34 @@ def test_a_clean_exit_does_not_overwrite_the_real_session_json(op, monkeypatch, 
 
 def test_neither_mode_mints_a_second_session_name(op):
     """One name keys clip_dir, the HDFS tree and session_json alike -- a second call to
-    run_dir_name() inside a mode body would silently split them a second apart."""
+    run_dir_name() inside a mode body would silently split them a second apart.
+
+    run() mints it once per branch (the branches are mutually exclusive, and the two differ:
+    a live stream is tagged as a suffix, a file as a prefix) and hands it down.
+    """
     import inspect
     for fn in (op.run_offline_mode, op.run_serve_mode):
         assert "run_dir_name" not in inspect.getsource(fn), \
             f"{fn.__name__} generates its own session instead of using the one passed in"
-    assert inspect.getsource(op.run).count("run_dir_name()") == 1
+    src = inspect.getsource(op.run)
+    assert src.count("run_dir_name(") == 2 == src.count("session = run_dir_name(")
+
+
+def test_the_session_name_says_which_input_produced_it(op, spy, monkeypatch, tmp_path):
+    """`20260821_164652_78` alone left a browsing user unable to tell one run from another."""
+    op.run(args_for(op, "rtmp://10.46.79.133/live/darkpipe_input_024", "", str(tmp_path)))
+    assert spy["mode"] == "serve" and spy["session"].endswith("_darkpipe_input_024")
+
+    f = tmp_path / "demo.mp4"
+    f.write_bytes(b"x")
+    op.run(args_for(op, str(f), "", str(tmp_path)))
+    assert spy["mode"] == "offline" and spy["session"].startswith("demo_")
+
+    # The HDFS case is the one that needs the *original* address: fetch_input lands the video
+    # as input.mp4, so a tag taken from the local copy would read `input_...` every time.
+    landed = tmp_path / "input.mp4"
+    landed.write_bytes(b"video")
+    monkeypatch.setattr(op, "fetch_input", lambda *a, **kw: str(landed))
+    op.run(args_for(op, "http://10.46.79.133:9870/behavor/darkpipe/夜间演示.mp4", "",
+                    str(tmp_path)))
+    assert spy["session"].startswith("夜间演示_"), spy["session"]

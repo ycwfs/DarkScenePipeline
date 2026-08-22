@@ -5,6 +5,7 @@ zip 都是自包含的，不依赖对方。
 """
 import argparse
 import os
+import re
 import shutil
 import socket
 import subprocess
@@ -28,6 +29,9 @@ _REDIRECT_CODES = (301, 302, 303, 307, 308)
 # 只有「看起来是一个有限长文件」的 http 地址才下载。.m3u8 / 无后缀 / mjpg 这类是实时流，
 # 必须原样交给 cv2.VideoCapture 边拉边解，下载它等于永远不返回。
 _FILE_SUFFIXES = (".mp4", ".mov", ".mkv", ".avi", ".m4v", ".webm")
+# 目录名里留下字母/数字/下划线/中文（\w 在 re.UNICODE 下含中文），其余一律换成下划线：
+# 空格、冒号、斜杠在 NFS 与 shell 里都是麻烦。
+_TAG_UNSAFE = re.compile(r"[^\w.-]+", re.UNICODE)
 
 
 def parse_bool(v):
@@ -327,9 +331,46 @@ def fetch_input(src, workdir, default_name="input.bin"):
     return src
 
 
-def run_dir_name():
-    """一次运行的专属子目录名，时间戳+进程号，避免同一个目标目录被反复写入时互相覆盖。"""
-    return f"{time.strftime('%Y%m%d_%H%M%S')}_{os.getpid()}"
+def source_tag(src, limit=40):
+    """从输入地址里取一个人一眼能认出来的短标识。取不到返回 ""。
+
+    实时流取地址末段（`rtmp://ip/live/darkpipe_input_024` -> `darkpipe_input_024`，这一段
+    正是流名），文件取文件名主干（`/data/demo.mp4` -> `demo`）。末段为空（地址只有主机）时
+    退回主机名，`user:pass@` 在这一步被丢掉，不会把口令写进目录名。
+    保留中文：目录名是给人看的，`演示视频2026_08_19` 比一串下划线有用得多；WebHDFS 那边
+    `webhdfs_url` 已经做了百分号编码，非 ASCII 目录名可以正常上传。
+    """
+    s = str(src or "").strip()
+    for sep in ("?", "#"):
+        s = s.split(sep, 1)[0]
+    host = ""
+    if "://" in s:
+        netloc, _, path = s.split("://", 1)[1].partition("/")
+        host = netloc.rsplit("@", 1)[-1].split(":", 1)[0]
+    else:
+        path = s
+    name = path.rstrip("/").rsplit("/", 1)[-1]
+    if "." in name:
+        name = os.path.splitext(name)[0]
+    tag = _TAG_UNSAFE.sub("_", name).strip("_.-")
+    if not tag:
+        tag = _TAG_UNSAFE.sub("_", host).strip("_.-")
+    return tag[:limit].strip("_.-")
+
+
+def run_dir_name(source="", live=False):
+    """一次运行的专属子目录名，时间戳+进程号，避免同一个目标目录被反复写入时互相覆盖。
+
+    给了 source 就把它的标识拼进来，好让人不点开目录就知道这批产出是哪路输入的结果：
+    实时流放在**后缀**（`20260821_164652_78_darkpipe_input_024`），离线文件放在**前缀**
+    （`demo_20260821_164652_78`）。位置不同是有意的——离线通常是同一个目录里跑很多个不同
+    的文件，前缀让同一个视频的多次运行排在一起；实时流一个流跑很久，按时间排更好找。
+    """
+    stamp = f"{time.strftime('%Y%m%d_%H%M%S')}_{os.getpid()}"
+    tag = source_tag(source)
+    if not tag:
+        return stamp
+    return f"{stamp}_{tag}" if live else f"{tag}_{stamp}"
 
 
 def _hdfs_cli():

@@ -109,10 +109,15 @@
 **三个输出文件除了写入框架的 `outputPath` 之外，还会另存一份到 `local_output_dir`（通常是挂进
 容器的 NFS 目录）和/或 `hdfs_output_dir`。** 容器退出后 `outputPath` 指向的本地文件即不可再取——镜像不落盘保存产出，
 `outputPath`/`inputPath` 之间的传递也只发生在同一次编排内部——因此生产环境要事后取回结果，
-必须走这两份拷贝之一。实际落地路径是 `<目录>/<时间戳>_<进程号>/<文件名>`，每次运行落到独立
-子目录，不会互相覆盖；两个目录都填时用的是**同一个子目录名**，两边对得上。日志中会打印形如
-`[done] 输出视频(本地) -> /mnt/nfs/darkout/<YYYYmmdd_HHMMSS>_<pid>/output_video.mp4`
-`[done] 输出视频(hdfs) -> hdfs://.../<YYYYmmdd_HHMMSS>_<pid>/output_video.mp4` 的行给出确切地址。
+必须走这两份拷贝之一。实际落地路径是 `<目录>/<视频名>_<时间戳>_<进程号>/<文件名>`，每次运行落到
+独立子目录，不会互相覆盖；两个目录都填时用的是**同一个子目录名**，两边对得上。
+
+**子目录名前面带的是输入视频的名字**（`demo_20260821_164652_78`，取自你填的 `video_path`
+原文——HDFS 输入下载到容器里一律叫 `input.mp4`，用本地副本命名就每次都是 `input_…` 了）。
+同一个落地目录里跑过多个视频时，不必点开文件就知道哪批产出对应哪个视频；名字取不出来时
+（地址里只有主机、或全是标点）退回原来的 `<时间戳>_<进程号>`。日志中会打印形如
+`[done] 输出视频(本地) -> /mnt/nfs/darkout/demo_<YYYYmmdd_HHMMSS>_<pid>/output_video.mp4`
+`[done] 输出视频(hdfs) -> hdfs://.../demo_<YYYYmmdd_HHMMSS>_<pid>/output_video.mp4` 的行给出确切地址。
 
 `events_json` 样例：
 
