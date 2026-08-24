@@ -413,19 +413,23 @@ def make_remote_dir(dest_dir):
     return True, dest_dir
 
 
-def upload_file(local_path, dest_dir):
+def upload_file(local_path, dest_dir, dest_name=""):
     """把单个文件送到 dest_dir（须已存在）。-> (成功?, 落地地址或错误说明)。
+
+    dest_name 指定落地后的文件名，留空则沿用源文件名。框架下发的 outputPath 形如
+    `/tmp/outputs/<输出名>/data`——文件名部分对每个输出都叫 `data`，直接沿用会让同一次运行的
+    多个产出落成同一个文件（详见 upload_outputs）。
 
     同样不退出进程：常驻服务不能因为一次上传失败就整体死掉，本地那份文件已经在盘上了。
     """
     if not is_remote_dir(dest_dir):
-        dest = os.path.join(dest_dir, os.path.basename(local_path))
+        dest = os.path.join(dest_dir, dest_name or os.path.basename(local_path))
         try:
             shutil.copy2(local_path, dest)
         except OSError as e:
             return False, f"复制 {local_path} -> {dest} 失败: {e}"
         return True, dest
-    name = os.path.basename(local_path)
+    name = dest_name or os.path.basename(local_path)
     dest = dest_dir.rstrip("/") + "/" + name
     exe, sub = _hdfs_cli()
     if exe and dest_dir.startswith("hdfs://"):
@@ -467,16 +471,30 @@ def upload_outputs(files, dest_dir, run=None):
     这里的失败是致命的（sys.exit）：批处理算子跑完就退出，产出取不回来就等于这次运行白跑，
     与常驻服务保存片段时「失败只告警」是不同的取舍。
 
-    files: {输出名: 本地路径}。返回 {输出名: 落地后的地址}。
+    files: {输出名: 本地路径} 或 {输出名: (本地路径, 落地文件名)}。返回 {输出名: 落地后的地址}。
+
+    **落地文件名要显式给。** 框架下发的 outputPath 是 `/tmp/outputs/<输出名>/data`——目录名区分
+    输出，文件名一律叫 `data`。沿用源文件名的话，一次运行的三个产出会依次复制到同一个
+    `<run>/data` 上，前两个被后一个覆盖，日志却打三行成功。实测过：离线算子的整段视频被
+    summary_json 盖掉，NFS 上只剩一个 15 字节的 `data`。没给名字时这里兜底改成
+    `<输出名><扩展名>` 并告警，宁可名字难看也不能丢文件。
     """
     run_dir = dest_dir.rstrip("/") + "/" + (run or run_dir_name())
     ok, msg = make_remote_dir(run_dir)
     if not ok:
         sys.exit(f"error: 产出目录 {dest_dir} 不可用：{msg}")
 
-    urls = {}
-    for name, local_path in files.items():
-        ok, msg = upload_file(local_path, run_dir)
+    urls, taken = {}, {}
+    for name, item in files.items():
+        local_path, dest_name = item if isinstance(item, tuple) else (item, "")
+        dest_name = dest_name or os.path.basename(local_path)
+        if dest_name in taken:
+            fallback = name + os.path.splitext(dest_name)[1]
+            print(f"[warn] 输出 {name} 与 {taken[dest_name]} 的落地文件名都是 {dest_name}，"
+                  f"改用 {fallback} 以免互相覆盖")
+            dest_name = fallback
+        taken[dest_name] = name
+        ok, msg = upload_file(local_path, run_dir, dest_name)
         if not ok:
             sys.exit(f"error: 输出 {name} 落地失败：{msg}")
         print(f"[output] {local_path} -> {msg}")

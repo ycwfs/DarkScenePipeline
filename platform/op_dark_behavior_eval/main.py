@@ -20,7 +20,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
 from oputil import (resolve_ckpt_dir, deliver, ensure_parent, fetch_input,  # noqa: E402
-                    parse_gpu_ids, require_destination, run_dir_name)
+                    parse_gpu_ids, require_destination, run_dir_name, source_tag)
 
 
 def build_parser():
@@ -231,7 +231,12 @@ def run(args):
 
     # 子目录名带上清单的名字（`manifest_20260821_164652_78`），同一个落地目录里跑过多份
     # 数据集时，不点开文件就知道哪一批指标是哪份清单的。
-    deliver({"metrics_json": args.metrics_json, "confusion_csv": args.confusion_csv},
+    #
+    # 落地文件名要显式给：两个 outputPath 的文件名部分都是框架给的 `data`，照抄源文件名会让
+    # 混淆矩阵覆盖掉指标文件，只剩一个 `data`（见 oputil.upload_outputs）。
+    stem = source_tag(args.dataset_manifest) or "eval"
+    deliver({"metrics_json": (args.metrics_json, f"{stem}_metrics.json"),
+             "confusion_csv": (args.confusion_csv, f"{stem}_confusion.csv")},
             args.local_output_dir, args.hdfs_output_dir,
             {"metrics_json": "指标", "confusion_csv": "混淆矩阵"},
             run=run_dir_name(args.dataset_manifest))

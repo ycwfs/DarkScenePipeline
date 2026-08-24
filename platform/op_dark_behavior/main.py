@@ -25,7 +25,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path[:0] = [_HERE, os.path.dirname(_HERE)]
 
 from oputil import (resolve_ckpt_dir, deliver, ensure_parent, fetch_input, parse_bool,  # noqa: E402
-                     parse_gpu_ids, require_destination, run_dir_name)
+                     parse_gpu_ids, require_destination, run_dir_name, source_tag)
 
 
 def build_parser():
@@ -179,8 +179,14 @@ def run(args):
 
     # 子目录名带上输入视频的名字（`demo_20260821_164652_78`），不然落地目录里一排
     # 时间戳，看不出哪一批产出对应哪个视频。
-    deliver({"output_video": args.output_video, "events_json": args.events_json,
-             "summary_json": args.summary_json},
+    #
+    # 落地文件名必须显式指定：三个 outputPath 的文件名部分都是框架给的 `data`，照抄源文件名
+    # 会让三个产出落到同一个 `<run>/data`，视频被 summary_json 覆盖掉。名字里带上输入视频的
+    # 名字，是因为文件常被单独拷走，离开子目录后仍要认得出它是哪个视频的结果。
+    stem = source_tag(args.video_path) or "output"
+    deliver({"output_video": (args.output_video, f"{stem}_enhanced.mp4"),
+             "events_json": (args.events_json, f"{stem}_events.json"),
+             "summary_json": (args.summary_json, f"{stem}_summary.json")},
             args.local_output_dir, args.hdfs_output_dir,
             {"output_video": "输出视频", "events_json": "识别事件",
              "summary_json": "汇总信息"},

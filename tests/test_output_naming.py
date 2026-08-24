@@ -65,3 +65,78 @@ def test_an_unidentifiable_source_keeps_the_old_name():
     for name in (oputil.run_dir_name(), oputil.run_dir_name("", live=True),
                  oputil.run_dir_name("///")):
         assert STAMP.match(name), name
+
+
+# ---------------------------------------------------------------------------
+# 落地文件名。目录名说清了「哪一路输入」，文件名还得说清「哪一个产出」。
+#
+# 框架下发的 outputPath 是 `/tmp/outputs/<输出名>/data`：区分输出的是目录，文件名一律叫
+# `data`。落地时照抄源文件名，一次运行的几个产出就会依次复制到同一个 `<run>/data` 上。
+# 实测过一次：离线算子的整段视频先落地，随后被 events_json、summary_json 依次覆盖，NFS 上
+# 只剩一个 15 字节的 `data`，日志却打了三行 `[done] ... -> .../data`。
+# ---------------------------------------------------------------------------
+
+def _framework_outputs(tmp_path, names):
+    """按平台的真实形状造 outputPath：/tmp/outputs/<输出名>/data，内容各不相同。"""
+    made = {}
+    for name in names:
+        d = tmp_path / "outputs" / name
+        d.mkdir(parents=True)
+        (d / "data").write_bytes(f"<{name}>".encode())
+        made[name] = str(d / "data")
+    return made
+
+
+def test_outputs_that_share_the_basename_data_do_not_collapse_into_one_file(tmp_path):
+    got = _framework_outputs(tmp_path, ["output_video", "events_json", "summary_json"])
+    nfs = tmp_path / "nfs"
+    nfs.mkdir()
+    landed = oputil.deliver(
+        {"output_video": (got["output_video"], "demo_enhanced.mp4"),
+         "events_json": (got["events_json"], "demo_events.json"),
+         "summary_json": (got["summary_json"], "demo_summary.json")},
+        str(nfs), "", run="demo_20260824_120000_11")
+
+    run_dir = nfs / "demo_20260824_120000_11"
+    assert sorted(p.name for p in run_dir.iterdir()) == [
+        "demo_enhanced.mp4", "demo_events.json", "demo_summary.json"]
+    # 视频还是视频，没有被后面两个 JSON 覆盖
+    assert (run_dir / "demo_enhanced.mp4").read_bytes() == b"<output_video>"
+    assert len(set(v[0] for v in landed.values())) == 3
+
+
+def test_a_caller_that_forgets_to_name_its_outputs_still_loses_nothing(tmp_path):
+    """兜底：名字没给全也不能丢文件——宁可落成 `<输出名>` 这种难看的名字。"""
+    got = _framework_outputs(tmp_path, ["output_video", "events_json"])
+    nfs = tmp_path / "nfs"
+    nfs.mkdir()
+    oputil.deliver({"output_video": got["output_video"], "events_json": got["events_json"]},
+                   str(nfs), "", run="r")
+
+    landed = sorted((nfs / "r").iterdir(), key=lambda p: p.name)
+    assert len(landed) == 2, f"两个产出落成了 {len(landed)} 个文件"
+    assert {p.read_bytes() for p in landed} == {b"<output_video>", b"<events_json>"}
+
+
+@pytest.mark.parametrize("op", ["op_dark_behavior", "op_dark_behavior_eval"])
+def test_the_batch_operators_name_every_output_they_deliver(op):
+    """这两个算子交付的全部是框架 outputPath，名字必须自己给。
+
+    实时服务算子不在此列：它交付的是自己 workdir 里 `<来源>_enhanced.mp4` 这样已经有名字的
+    文件，不是 outputPath。静态检查是因为真跑一遍要 GPU，而这个错误恰恰是「跑通了、日志全绿、
+    文件没了」的那一类。
+    """
+    import ast
+    src = os.path.join(ROOT, "platform", op, "main.py")
+    with open(src, encoding="utf-8") as f:
+        tree = ast.parse(f.read())
+    calls = [n for n in ast.walk(tree)
+             if isinstance(n, ast.Call) and getattr(n.func, "id", "") == "deliver"]
+    assert calls, f"{op} 没有 deliver 调用？"
+    for call in calls:
+        files = call.args[0]
+        assert isinstance(files, ast.Dict), f"{op}: deliver 的第一个参数不是字面量字典"
+        for key, value in zip(files.keys, files.values):
+            assert isinstance(value, ast.Tuple), (
+                f"{op}: 输出 {getattr(key, 'value', '?')} 没给落地文件名，"
+                f"会与同一次运行的其他产出一起落成 <run>/data")
