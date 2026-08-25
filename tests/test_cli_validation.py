@@ -117,6 +117,14 @@ def test_serve_output_warns():
     assert any("--record" in w for w in cfg.warnings)
 
 
+def test_offline_clip_dir_no_longer_rejected():
+    """Offline clip production used to be serve-only and was rejected outright; a recognizer
+    attached plus legal clip_* settings must now validate cleanly in offline mode too."""
+    cfg = validate(PipelineConfig(input="x.mp4", mode="offline", enhance="off", sr="off",
+                                  recognize="videomamba", ckpt_dir=CKPTS, clip_dir="/tmp/clips"))
+    assert cfg.clip_dir == "/tmp/clips"
+
+
 @pytest.fixture
 def n_gpus(monkeypatch):
     """Pin the visible GPU count, so --gpus assertions do not depend on the test machine."""

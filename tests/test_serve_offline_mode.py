@@ -3,9 +3,9 @@
 One operator now covers two shapes of work: a resident stream service, and a one-shot offline
 run over a finite file (which is what an HDFS address resolves to once fetched). The whole
 decision rests on a single line in `run()`, so it is worth stating in tests what each input
-combination is supposed to mean -- especially the two that are easy to get backwards: a local
-file WITH a push URL is still the live demo path, and an `http://…mp4` address is a file, not
-a stream.
+combination is supposed to mean -- especially the two that are easy to get backwards: a file
+is offline even WITH a push URL (files are processed once and the run exits, never looped;
+the push URL is ignored), and an `http://…mp4` address is a file, not a stream.
 """
 import importlib.util
 import json
@@ -64,12 +64,15 @@ def test_a_local_file_with_no_push_url_runs_offline(op, spy, tmp_path):
     assert spy["src"] == str(f)
 
 
-def test_a_local_file_with_a_push_url_still_runs_the_live_service(op, spy, tmp_path):
-    """The loop-a-file-and-push demo predates this change and must survive it."""
+def test_a_local_file_with_a_push_url_still_runs_offline(op, spy, tmp_path):
+    """A finite file is processed once and the run exits -- never looped as a fake live
+    stream. The push URL must not flip the decision: a stale rtmp_push_url left in the
+    platform form used to trap file inputs in a loop-forever service that saved clips
+    but never the full processed video."""
     f = tmp_path / "clip.mp4"
     f.write_bytes(b"x")
     op.run(args_for(op, str(f), "rtmp://10.0.0.9:1935/live/k", str(tmp_path)))
-    assert spy["mode"] == "serve"
+    assert spy["mode"] == "offline"
 
 
 @pytest.mark.parametrize("src", ["rtsp://10.0.0.1:554/live",
@@ -95,14 +98,15 @@ def test_a_downloaded_hdfs_input_counts_as_a_file(op, spy, monkeypatch, tmp_path
     assert spy["src"] == str(landed)
 
 
-def test_the_service_is_fed_the_fetched_path_not_the_original_address(op, spy, monkeypatch,
-                                                                     tmp_path):
-    """A downloaded file + a push URL: the pipeline must open the local copy, not the URL."""
+def test_a_fetched_file_with_a_push_url_runs_offline_on_the_local_copy(op, spy, monkeypatch,
+                                                                       tmp_path):
+    """A downloaded HDFS file + a push URL: offline like any other file, and the pipeline
+    must open the local copy, not the original address."""
     landed = tmp_path / "input.mp4"
     landed.write_bytes(b"video")
     monkeypatch.setattr(op, "fetch_input", lambda *a, **kw: str(landed))
     op.run(args_for(op, "hdfs://u@10.0.0.1:8020/a/x.mp4", "rtmp://h/live/k", str(tmp_path)))
-    assert spy["mode"] == "serve"
+    assert spy["mode"] == "offline"
     assert spy["src"] == str(landed)
 
 
@@ -218,3 +222,52 @@ def test_the_session_name_says_which_input_produced_it(op, spy, monkeypatch, tmp
     op.run(args_for(op, "http://10.46.79.133:9870/behavor/darkpipe/夜间演示.mp4", "",
                     str(tmp_path)))
     assert spy["session"].startswith("夜间演示_"), spy["session"]
+
+
+def test_offline_mode_wires_clip_params_and_downgrades_multi_gpu_when_clipping(
+        op, monkeypatch, tmp_path, capsys):
+    """run_offline_mode must hand its clip_* args to PipelineConfig (matching run_serve_mode's
+    own wiring), stage clips under its own workdir rather than writing straight into the
+    delivered clip_dir, and -- since clip_dir defaults non-empty -- downgrade a multi-GPU
+    request to one card: clip production needs one continuous timeline, and --gpus sharding
+    hands out independent, non-overlapping frame ranges with no cross-shard coordination.
+
+    Calls run_offline_mode directly (not through op.run/the `spy` fixture) so the real body
+    executes -- fetch_input/apply_extra_hosts are run()'s concern, not this function's.
+    """
+    import darkpipe.config as dcfg
+    import darkpipe.pipeline as dpipe
+
+    monkeypatch.setattr(op, "_print_gpu_inventory", lambda gpus: None)
+
+    seen = {}
+
+    def fake_validate(cfg):
+        seen["cfg"] = cfg
+        open(cfg.output, "w").close()          # deliver() needs a real file to copy
+        cfg.stats = {"frames": 0, "seconds": 0, "fps": 0, "clips": None}
+        return cfg
+
+    monkeypatch.setattr(dcfg, "validate", fake_validate)
+    monkeypatch.setattr(dpipe, "run_offline", lambda cfg: [])
+
+    workdir = tmp_path / "workdir"
+    workdir.mkdir()
+    deliver_dir = tmp_path / "deliver_out"
+    deliver_dir.mkdir()
+    f = tmp_path / "clip.mp4"
+    f.write_bytes(b"x")
+    args = args_for(op, str(f), "", str(tmp_path), gpu_ids="0,1", clip_dir=str(deliver_dir))
+    op.run_offline_mode(args, str(f), "demo_s1", str(workdir))
+
+    cfg = seen["cfg"]
+    assert cfg.clip_dir and cfg.clip_dir != str(deliver_dir), \
+        "clips must stage under the run's own workdir, not straight into the delivered clip_dir"
+    assert (cfg.clip_pre_sec, cfg.clip_post_sec, cfg.clip_max_sec,
+            cfg.clip_skip_labels, cfg.clip_denoise) == (
+            args.clip_pre_sec, args.clip_post_sec, args.clip_max_sec,
+            args.clip_skip_labels, args.clip_denoise)
+    assert cfg.clip_session == "demo_s1"
+    assert cfg.device == "cuda:0" and cfg.gpus == "", \
+        "clip_dir's non-empty default must downgrade gpu_ids='0,1' to a single card"
+    assert "cuda:0" in capsys.readouterr().out

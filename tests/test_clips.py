@@ -9,10 +9,13 @@ just produce useless clips hours later on someone else's NFS mount.
 import glob
 import json
 import os
+import re
+import time
 
 import numpy as np
 import pytest
 
+from darkpipe import clips as clips_mod
 from darkpipe.clips import ClipRecorder, label_key
 
 
@@ -371,3 +374,76 @@ def test_skip_list_matches_regardless_of_spelling(tmp_path):
     drive(rec, [("Other", 20)])                       # display spelling, not "other"
     rec.close()
     assert clips_in(str(tmp_path)) == []
+
+
+def test_range_naming_uses_source_timeline_and_chinese_label(tmp_path):
+    """Offline mode: clip filenames are `<start>-<end>s-<中文label>.mp4`, flat under the
+    session directory -- the "2-3s-喝水.mp4" example from the request verbatim, not the
+    live-mode `<timestamp>_<key>_<seq>.mp4` scheme (which stays the naming="key" default,
+    exercised by every other test in this file, and is unaffected by this one).
+    """
+    rec = ClipRecorder(str(tmp_path), pre_sec=0.2, post_sec=0.3, naming="range")
+    drive(rec, [(None, 5), ("Drinking water", 1), (None, 10)])
+    rec.close()
+    got = sorted(glob.glob(os.path.join(str(tmp_path), "*", "*.mp4")))
+    assert len(got) == 1, got
+    m = re.match(r"^(\d+)-(\d+)s-喝水\.mp4$", os.path.basename(got[0]))
+    assert m, f"unexpected filename: {os.path.basename(got[0])}"
+    assert int(m.group(2)) > int(m.group(1))
+    assert os.path.dirname(got[0]) == rec.root, "range naming is flat, no per-label subdirectory"
+    meta = _meta(got[0])
+    assert "start_seconds" in meta and "end_seconds" in meta
+    assert "started_at" not in meta, "started_at is wall-clock; offline timestamps are source-relative"
+
+
+def test_range_naming_dedups_two_clips_in_the_same_second_window(tmp_path):
+    """Two incidents that round to the same <start>-<end>s window and the same label must not
+    clobber each other on disk -- the second gets `-<seq>` appended."""
+    rec = ClipRecorder(str(tmp_path), pre_sec=0.1, post_sec=0.1, max_sec=60, naming="range")
+    rec.push(frame(), FakeEvent("Falling"), 2.0)   # t0=2.0: empty pre-roll before this frame
+    rec.push(frame(), None, 2.2)                   # post_sec silence closes it -> "2-3s"
+    rec.push(frame(), FakeEvent("Falling"), 2.3)   # new clip; pre-roll pulls t0 back to 2.2
+    rec.push(frame(), None, 2.6)                   # closes at end_s=3 again -> same window
+    rec.close()
+    got = sorted(glob.glob(os.path.join(str(tmp_path), "*", "*.mp4")))
+    names = {os.path.basename(g) for g in got}
+    assert names == {"2-3s-跌倒.mp4", "2-3s-跌倒-2.mp4"}, names
+
+
+def test_realtime_false_never_drops_or_abandons_when_the_writer_is_slow(tmp_path, monkeypatch):
+    """Offline runs (realtime=False) have no live deadline to protect -- a writer thread
+    that cannot keep up must only cost wall-clock time, never a dropped frame or an
+    abandoned clip. Contrasted against realtime=True (serve/live default) under the exact
+    same slow writer and the same tiny queue_frames, where dropping/abandoning instead of
+    stalling the live pipeline is the deliberate, unchanged behaviour (see the module
+    docstring and ClipRecorder.__init__'s `realtime` comment).
+    """
+    class SlowWriter:
+        def __init__(self, path, fps):
+            self.count = 0
+            open(path, "wb").close()   # _writer_loop shutil.move()s this file when "end" fires
+
+        def write(self, frame):
+            time.sleep(0.02)
+            self.count += 1
+
+        def close(self):
+            pass
+
+    monkeypatch.setattr(clips_mod, "VideoWriter", SlowWriter)
+    script = [(None, 2), ("Falling", 40), (None, 2)]
+
+    offline = ClipRecorder(str(tmp_path / "offline"), pre_sec=0.1, post_sec=0.1, max_sec=60,
+                           queue_frames=4, naming="range", realtime=False)
+    drive(offline, script, fps=200.0)
+    offline.close()
+    assert offline.dropped_frames == 0
+    assert offline.abandoned == 0
+    assert offline.saved == 1
+
+    live = ClipRecorder(str(tmp_path / "live"), pre_sec=0.1, post_sec=0.1, max_sec=60,
+                        queue_frames=4, naming="key", realtime=True)
+    drive(live, script, fps=200.0)
+    live.close()
+    assert live.dropped_frames > 0 or live.abandoned > 0, \
+        "the bounded queue is the point of realtime=True -- it must actually shed work here"

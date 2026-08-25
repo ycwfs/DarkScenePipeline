@@ -101,9 +101,11 @@ def build_parser():
     s.add_argument("--max-stream-fps", type=float, default=15.0)
     s.add_argument("--record", default="")
     s.add_argument("--clip-dir", default="",
-                   help="serve: save one mp4 per recognised behavior under this directory "
-                        "(empty = off). Clips are cut from the live stream around each "
-                        "event; see --clip-skip-labels")
+                   help="save one mp4 per recognised behavior under this directory (empty = "
+                        "off), in both modes. serve cuts clips from the live stream around "
+                        "each event; offline cuts them from the already-decoded timeline "
+                        "once the run ends, named by their position in the source video "
+                        "instead of a wall-clock timestamp. See --clip-skip-labels")
     s.add_argument("--clip-pre-sec", type=float, default=2.0,
                    help="seconds kept from BEFORE the trigger (the window that caused the "
                         "event is already past when it fires)")

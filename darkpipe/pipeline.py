@@ -11,10 +11,12 @@ The queues are bounded (backpressure, no unbounded RAM growth) and single-produc
 single-consumer, so frame order is preserved without any sequence bookkeeping.
 """
 import json
+import os
 import queue
 import threading
 import time
 
+from .clips import ClipRecorder
 from .media import VideoReader, VideoWriter
 from .render import append_label_bar
 from .stages import build_stages
@@ -95,6 +97,19 @@ def run_offline(cfg):
     whole = [s for s in frame_stages if s.whole_video]
     streaming = [s for s in frame_stages if not s.whole_video]
 
+    clipper = None
+    if cfg.clip_dir:
+        clipper = ClipRecorder(
+            cfg.clip_dir, pre_sec=cfg.clip_pre_sec, post_sec=cfg.clip_post_sec,
+            max_sec=cfg.clip_max_sec,
+            skip_labels=[s.strip() for s in cfg.clip_skip_labels.split(",") if s.strip()],
+            min_confidence=cfg.clip_min_conf, session=(cfg.clip_session or None),
+            denoise=cfg.clip_denoise, naming="range", realtime=False,
+            stage_dir=os.path.join(os.path.dirname(os.path.abspath(cfg.output)) or ".",
+                                   ".clip_stage"))
+        print(f"[clip] 片段保存已开启（离线模式：写盘队列不设上限，慢只影响耗时，"
+              f"不丢帧、不弃段）-> {clipper.root}")
+
     events, current = [], None
     t0 = time.time()
     n_in = 0
@@ -122,13 +137,17 @@ def run_offline(cfg):
         nonlocal current, frame_idx
         for s in enh_stages:
             chunk = s(chunk)
+        chunk_events = []
         if recognizer:
             for f in chunk:
-                ev = recognizer.push(f, frame_idx, frame_idx / reader.fps)
+                ts = frame_idx / reader.fps
+                ev = recognizer.push(f, frame_idx, ts)
                 frame_idx += 1
                 if ev:
                     current = ev
                     events.append(ev)
+                if clipper is not None:
+                    chunk_events.append((ev, ts))
         else:
             frame_idx += len(chunk)
         for s in sr_stages:
@@ -136,7 +155,12 @@ def run_offline(cfg):
         if recognizer and not cfg.no_label_bar:
             # NOTE: the bar shows the newest event for the whole chunk, matching the previous
             # serial behaviour (`current` was likewise only advanced between pushes).
-            return [append_label_bar(f, current) for f in chunk]
+            chunk = [append_label_bar(f, current) for f in chunk]
+        if clipper is not None:
+            # Same frames the output video gets -- label bar burned in, if any -- so a saved
+            # clip matches what the full processed video shows at that timestamp.
+            for f, (ev, ts) in zip(chunk, chunk_events):
+                clipper.push(f, ev, ts)
         return chunk
 
     if whole:  # RealRestorer: two-pass (restore entire video first), no overlap to be had
@@ -183,10 +207,14 @@ def run_offline(cfg):
         s.close()
     if recognizer:
         recognizer.close()
+    if clipper is not None:
+        clipper.close()
+        print(f"[clip] {clipper.stats()}")
 
     dt = time.time() - t0
     cfg.stats = dict(frames=n_in, seconds=round(dt, 3), fps=round(n_in / max(dt, 1e-9), 2),
-                     frames_written=writer.count, events=len(events), gpus=1)
+                     frames_written=writer.count, events=len(events), gpus=1,
+                     clips=(clipper.stats() if clipper else None))
     print(f"[done] {n_in} frames in {dt:.1f}s = {n_in / max(dt, 1e-9):.1f} fps "
           f"-> {cfg.output} ({writer.count} frames written)")
     if recognizer:

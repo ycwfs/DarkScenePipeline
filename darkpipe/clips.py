@@ -37,6 +37,7 @@ import threading
 import time
 from collections import deque
 
+from .constants import DISPLAY_TO_ZH
 from .media import VideoWriter
 
 _SANITIZE = re.compile(r"[^a-z0-9]+")
@@ -137,8 +138,22 @@ class ClipRecorder:
 
     def __init__(self, out_dir, pre_sec=2.0, post_sec=2.0, max_sec=15.0, switch_after=2,
                  skip_labels=("other",), min_confidence=0.0, on_saved=None,
-                 queue_frames=64, session=None, stage_dir=None, denoise="off"):
+                 queue_frames=64, session=None, stage_dir=None, denoise="off",
+                 naming="key", realtime=True):
         self.out_dir = out_dir
+        # "key": <timestamp>_<label_key>_<seq>.mp4 under a per-label subdirectory (serve
+        # mode, live wall-clock timestamps). "range": <start>-<end>s-<中文label>.mp4, flat,
+        # named from the clip's own position on the source timeline (offline mode, where
+        # "when did this happen" means seconds into the file, not a wall-clock moment).
+        self.naming = naming
+        self._used_names = set()
+        # True (serve/live default): a wedged writer must not stall the live pipeline
+        # forever, so the queue is bounded and a writer that falls behind costs dropped
+        # frames or an abandoned clip -- see queue_frames/START_RETRY_SEC/_finish() below.
+        # False (offline batch runs pass this): there is no live deadline to protect and
+        # the whole point is a complete result, so the queue below is built unbounded
+        # instead -- a slow writer only makes the run take longer, nothing is ever dropped.
+        self.realtime = bool(realtime)
         # Denoising applied to clips ONLY, on the writer thread. The live stream and the
         # clips share one frame (server.py hands the same array to both), so anything strong
         # enough to be worth doing -- NLM at 119-376 ms/frame -- cannot go in the shared
@@ -175,7 +190,11 @@ class ClipRecorder:
         # measured, and unbounded in principle), during which nothing is dequeued. 64 frames is
         # ~4 s of slack at the 15 fps cap, against ~2 s for the 32 it used to be; the cost is
         # ~90 MB of frame references at the delivered 920 px working size.
-        self._q = queue.Queue(maxsize=max(4, int(queue_frames)))
+        # realtime=False (offline): maxsize=0 makes this queue unlimited, so put_nowait()/
+        # put() below can never raise queue.Full -- the abandon/drop branches in _start(),
+        # _finish() and _send_frame() simply never fire. A slow writer just backs the queue
+        # up; it always drains once the source file finishes feeding frames.
+        self._q = queue.Queue(maxsize=max(4, int(queue_frames)) if self.realtime else 0)
         self._thread = threading.Thread(target=self._writer_loop, daemon=True,
                                         name="clip-writer")
         self._thread.start()
@@ -322,15 +341,35 @@ class ClipRecorder:
             "label_key": act["key"], "confidence": round(act["best_confidence"], 4),
             "labels_in_clip": act["labels"], "frames": act["frames"],
             "fps": round(act["fps"], 3), "duration_seconds": round(duration, 3),
-            "started_at": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(act["t0"])),
             "trigger_stream_time": round(act["t_trigger"], 3),
             "first_event": act["first_event"], "closed_because": why,
         }
+        final_path = final_rel_dir = None
+        if self.naming == "range":
+            # Whole seconds for the filename (matches the "2-3s-喝水.mp4" spec verbatim);
+            # end<=start only when a clip's whole duration rounds into one second, which
+            # would otherwise render as the nonsensical "3-3s".
+            start_s, end_s = round(act["t0"]), round(ts)
+            if end_s <= start_s:
+                end_s = start_s + 1
+            label_zh = DISPLAY_TO_ZH.get(act["label"], act["label"])
+            name = f"{start_s}-{end_s}s-{label_zh}"
+            if name in self._used_names:
+                # seq is unique and monotonic per recorder, so this always resolves the
+                # collision in one step rather than needing a retry loop.
+                name = f"{name}-{act['seq']}"
+            self._used_names.add(name)
+            final_rel_dir = ""
+            final_path = os.path.join(self.root, name + ".mp4")
+            meta["start_seconds"] = round(act["t0"], 2)
+            meta["end_seconds"] = round(ts, 2)
+        else:
+            meta["started_at"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(act["t0"]))
         # `end` must get through: a dropped close leaves an unreleased VideoWriter and a
         # truncated file. It is one message per clip, so a bounded block is affordable here
         # in a way that a per-frame block would not be.
         try:
-            self._q.put(("end", meta, ts), timeout=10)
+            self._q.put(("end", meta, ts, final_path, final_rel_dir), timeout=10)
         except queue.Full:
             self.abandoned += 1
             print(f"[clip] 写入队列持续阻塞，片段 {act['name']} 可能不完整")
@@ -436,6 +475,11 @@ class ClipRecorder:
                 elif kind == "end":
                     if mp4_path is None:
                         continue
+                    if len(item) > 3 and item[3]:
+                        # naming="range": _finish already computed the real final path from
+                        # the clip's now-known duration: override what "start" guessed.
+                        mp4_path, rel_dir = item[3], (item[4] or "")
+                        meta_path = os.path.splitext(mp4_path)[0] + ".json"
                     if writer is None:                # clip shorter than OPEN_AFTER frames
                         open_now()
                     # Fill the grid out to the clip's real end. Without this a queue overflow

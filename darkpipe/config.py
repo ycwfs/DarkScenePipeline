@@ -327,13 +327,11 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
         if cfg.events_json:
             cfg.warnings.append("--events-json is ignored in serve mode (use /events SSE)")
 
-    # Clip recording is driven by recognition events, so it is only ever a serve-mode
-    # feature and only ever does anything with a recognizer attached. Saying so here beats
-    # letting the user find an empty clip directory an hour into a run.
+    # Clip recording is driven by recognition events, so it only ever does anything with a
+    # recognizer attached, in either mode: serve cuts clips out of the live stream as events
+    # arrive, offline cuts them from the timeline it already has in full once the run ends.
+    # Saying so here beats letting the user find an empty clip directory an hour into a run.
     if cfg.clip_dir:
-        if cfg.mode != "serve":
-            _die("--clip-dir cuts clips out of a live stream on recognition events and is "
-                 "serve-only; offline already writes the whole processed video to --output.")
         if cfg.recognize == "off":
             _die("--clip-dir needs recognition events to know what to cut; "
                  "--recognize off would never write a clip.")

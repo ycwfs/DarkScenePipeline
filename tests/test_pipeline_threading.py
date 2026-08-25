@@ -5,7 +5,10 @@ matters is that nothing is dropped, duplicated, or reordered, so this runs the r
 `run_offline` in passthrough mode (all stages off, no label bar) over a clip of frames
 stamped with their own index, and asserts the output is the input, in order.
 """
+import glob
+import json
 import os
+import re
 import sys
 
 import cv2
@@ -139,3 +142,59 @@ def test_decode_error_surfaces_on_the_main_thread(tmp_path):
         run_offline(PipelineConfig(input=str(tmp_path / "nope.mp4"),
                                    output=str(tmp_path / "o.mp4"), enhance="off", sr="off",
                                    recognize="off", device="cpu", no_label_bar=True))
+
+
+def test_offline_clip_recording_uses_time_range_names_and_respects_skip_labels(
+        clip, tmp_path, monkeypatch):
+    """clip_dir + a recognizer, end to end: `run_offline` must feed its own ClipRecorder
+    from the same (frame, event, ts) the output video is built from, name the result by
+    source-timeline position (see naming="range" in darkpipe/clips.py), and still honour
+    clip_skip_labels -- `other` must not itself become a clip, nor keep one open forever.
+    """
+    from darkpipe import pipeline
+    from darkpipe.config import PipelineConfig
+
+    class FakeEvent:
+        def __init__(self, label, confidence=0.9):
+            self.label, self.confidence = label, confidence
+
+        def to_dict(self):
+            return {"label": self.label, "confidence": self.confidence}
+
+    class FakeRecognizer:
+        name, window, stride = "fake", 1, 1
+
+        def load(self, device):
+            pass
+
+        def close(self):
+            pass
+
+        def push(self, frame, idx, ts):
+            # first 1s (30 of 77 frames @ 30fps) "Drinking water", the rest "Other".
+            return FakeEvent("Drinking water" if idx < 30 else "Other")
+
+    monkeypatch.setattr(pipeline, "build_stages", lambda cfg: ([], FakeRecognizer()))
+    clip_dir = str(tmp_path / "clips")
+    cfg = PipelineConfig(input=clip, output=str(tmp_path / "out.mp4"), enhance="off", sr="off",
+                         recognize="behavior", device="cpu", no_label_bar=True,
+                         clip_dir=clip_dir, clip_pre_sec=0.1, clip_post_sec=0.1,
+                         clip_session="s1")
+    events = pipeline.run_offline(cfg)
+    assert events, "the fake recognizer must have produced events for the clipper to see"
+    assert os.path.exists(cfg.output)
+
+    got = sorted(glob.glob(os.path.join(clip_dir, "s1", "*.mp4")))
+    assert len(got) == 1, f"expected exactly one clip (Other must not start its own): {got}"
+    fname = os.path.basename(got[0])
+    m = re.match(r"^(\d+)-(\d+)s-喝水\.mp4$", fname)
+    assert m, f"unexpected clip filename: {fname}"
+    start_s, end_s = int(m.group(1)), int(m.group(2))
+
+    meta = json.load(open(os.path.splitext(got[0])[0] + ".json", encoding="utf-8"))
+    assert meta["label"] == "Drinking water"
+    assert meta["start_seconds"] is not None and meta["end_seconds"] is not None
+    # The window must close shortly after the last qualifying event (idx 29, ~1s in) plus
+    # clip_post_sec padding -- long before the "Other" tail would run the clip to EOF.
+    assert start_s == 0 and end_s <= 2, f"clip ran past the drinking-water portion: {meta}"
+    assert cfg.stats["clips"]["clips_saved"] == 1
