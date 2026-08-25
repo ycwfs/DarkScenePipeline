@@ -10,6 +10,11 @@ ckpts/*
 # DarkAct-finetuned candidate (see compare/results/DARKACT_REPORT.md): not the shipped
 # default (--reco-ckpt behavior is unchanged), opt-in via --reco-ckpt for extreme-dark RGB.
 !ckpts/videomamba_t_behavior_32f_darkact.pth
+# 2026-08-25 real-actiondata fine-tune (43 videos, two cameras; chase recall 0.08 -> 0.80,
+# ARID top1 0.804 under the user's relaxed >=0.5 gate). Uploaded to the platform via
+# BEHAVIOR_CKPT for validation; versioned as the backup of that exact artifact. Becomes
+# ckpts/videomamba_t_behavior_32f.pth if validation passes.
+!ckpts/videomamba_t_behavior_32f_realact2_final.pth
 # Retinexformer fine-tuned on real-development-data: rejected (better PSNR, 53-73% more
 # output noise, recognition down — compare/results/denoise/finetune_visual_compare.py
 # reproduces the picture). Kept locally as an opt-in --ckpt_dir, not versioned.
