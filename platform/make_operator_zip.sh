@@ -51,13 +51,22 @@ for op in "${ops[@]}"; do
     # 镜像里那份仍在，填绝对路径即可改用，两条路都通。
     # 只放平台实际能选到的那两个：off/retinexformer + off/bicubic + off/behavior，
     # 其中 bicubic 不需要权重（与 build_image.sh 的 REQUIRED 同一份清单）。
+    #
+    # BEHAVIOR_CKPT：把候选行为权重打进包（包内文件名不变），仓库里的正式
+    # videomamba_t_behavior_32f.pth 保持原样——上平台验证一个候选权重不应该以覆盖
+    # 本地正式权重为前提，验证不通过时也就没有要回滚的东西。
     mkdir -p "$stage/ckpts"
     for w in NTIRE.pth videomamba_t_behavior_32f.pth; do
-        [[ -f "$REPO/ckpts/$w" ]] || {
-            echo "error: 缺少权重 $REPO/ckpts/$w（先执行 scripts/download_ckpts.sh）" >&2
+        src_w="$REPO/ckpts/$w"
+        if [[ "$w" == videomamba_t_behavior_32f.pth && -n "${BEHAVIOR_CKPT:-}" ]]; then
+            src_w="$BEHAVIOR_CKPT"
+            echo "[zip] 行为权重使用候选: $src_w -> ckpts/$w"
+        fi
+        [[ -f "$src_w" ]] || {
+            echo "error: 缺少权重 $src_w（先执行 scripts/download_ckpts.sh）" >&2
             exit 1
         }
-        cp "$REPO/ckpts/$w" "$stage/ckpts/"
+        cp "$src_w" "$stage/ckpts/$w"
     done
     cp "$HERE/oputil.py" "$stage/"
     excludes=(--exclude='__pycache__' --exclude='*.pyc' --exclude='cli.py'
