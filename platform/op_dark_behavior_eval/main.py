@@ -30,7 +30,7 @@ def build_parser():
                    help="带标注清单文件，每行 `视频路径,类别标签`，逗号或制表符分隔，可含表头")
     p.add_argument("--enhance", default="retinexformer", choices=["off", "retinexformer"])
     p.add_argument("--recognize", default="behavior", choices=["behavior"])
-    p.add_argument("--reco_min_conf", type=float, default=0.8,
+    p.add_argument("--reco_min_conf", type=float, default=0.65,
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--max_clips", type=int, default=0)
     p.add_argument("--gpu_ids", default="0")

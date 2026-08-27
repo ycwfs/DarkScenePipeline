@@ -56,7 +56,7 @@
       "name": "reco_min_conf",
       "type": "Float",
       "description": "行为判定的置信度阈值（0-1）。最高分的具名行为达不到该阈值时，本次判定报为 other（画面显示「其他」），因此既不会显示为某个动作，也不会被切成片段保存（other 默认在 clip_skip_labels 里）。0 表示关闭该阈值，按模型原始判定输出。用于抑制低置信度的误报：暗光场景下模型对不确定的画面仍会给出某个具名行为，只是分数偏低。取值建议先看 events.jsonl 里 confidence 的实际分布再定，填得过高会把真实动作一起滤掉。",
-      "default": 0.8,
+      "default": 0.65,
       "annotations": {
         "show": "行为判定阈值",
         "component": "floatInput",

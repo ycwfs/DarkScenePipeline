@@ -45,7 +45,7 @@ def build_parser():
                    help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     p.add_argument("--recognize", default="behavior", choices=["off", "behavior"])
     p.add_argument("--reco_span_sec", type=float, default=1.0)
-    p.add_argument("--reco_min_conf", type=float, default=0.8,
+    p.add_argument("--reco_min_conf", type=float, default=0.65,
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--max_frames", type=int, default=0)
     p.add_argument("--label_bar", type=parse_bool, default=True)

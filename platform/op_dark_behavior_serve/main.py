@@ -69,7 +69,7 @@ def build_parser():
     p.add_argument("--proc_max_side", type=int, default=840,
                    help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，所以缩放不损识别精度。默认 840 是双卡下画质与帧率的折中(23.8 fps/p95 289 ms)；只分到 1 张卡时 840 只有 12.9 fps，达不到 15 fps，需改填 720")
     p.add_argument("--reco_span_sec", type=float, default=1.0)
-    p.add_argument("--reco_min_conf", type=float, default=0.5,
+    p.add_argument("--reco_min_conf", type=float, default=0.65,
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
     p.add_argument("--label_bar", type=parse_bool, default=True)
     p.add_argument("--gpu_ids", default="0,1",
