@@ -33,3 +33,31 @@ platform/*.tar.gz
 # of the operator packaging; ignored so `git add platform/` cannot try to hash it (it does,
 # and it takes minutes before failing on GitHub's 100 MB file limit).
 platform/BaiduPCS-Go-*/
+
+# ---- 2026-10 整理：开发工具入仓 (compare/)，产物与权重不入库 ----
+# compare/ 是仓库外开发工具树 ../compare 的副本，相对路径常量已改指仓库根；运行期缓存与
+# 数据集 (realact/skel/platneg 缓存、ARID v1.5、real-actiondata、平台负样本) 留在仓库外
+# /ssd1/wfs/project/lowlight/ 原位，脚本默认路径指向那里，见 compare/README.md。
+compare/behavior/cache/
+check.sh
+# 权重不进 git（GitHub 单文件 100MB 上限）：部署权重走 ckpts/ 白名单 + 算子 zip /
+# NVIDIA-Box 交付；models/ 是 RTMO-s onnx 等姿态权重，随算子包交付，解包即得；
+# platform/dark-demo-v2/ckpts/ 是打包时从仓库 ckpts/ + models/ 拷出的，可重建。
+models/
+platform/dark-demo-v2/ckpts/
+*.zip
+*.filepart
+*.tar.gz
+*.log
+# 平台采集/回放/可视化产物、外部研究树
+online-negative-sample/
+online_neg_*
+reco_vis_video*/
+skel_vis_10perclass/
+teacher_vs_rtmo/
+darkpose_teacher_test/
+real-actiondata-0909/
+lowlight-skeleton-detection/
+replay_ckpt_pn/
+NVIDIA-Box/
+assets/demo_5actions/
