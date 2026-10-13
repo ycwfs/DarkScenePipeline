@@ -76,6 +76,31 @@ RUN $PY -m pip install --no-cache-dir \
         "pillow>=10" \
         "huggingface_hub>=0.30"
 
+# 骨架分支（行为识别 v2，darkpipe/stages/skeleton_aux.py）的推理依赖：RTMO-s 姿态模型经
+# onnxruntime 的 CUDA EP 跑。0.2.0 镜像没有这两样，算子启动时会自动降级为纯 RGB 识别；
+# 0.3.0 起随镜像提供，行为识别算子不再依赖运行期 pip。单独一层，上面那条注释的道理同样
+# 适用——放在 13 GB 大层之后，改动这里不让它失效重装。
+#
+# 两条硬约束，都是 0.3.0 首次构建 + 容器实跑踩出来的：
+# 1) rtmlib 必须 --no-deps 安装。它的依赖声明里写着 onnxruntime（CPU 版）与
+#    opencv-python / opencv-contrib-python（非 headless 版）。onnxruntime-gpu 与 onnxruntime
+#    是两个发行名、同一个 site-packages/onnxruntime 目录，一句 pip 命令里两者都装时文件互相
+#    覆盖、赢家不确定——首版构建装出来的 pybind 主模块就是 CPU 的，get_available_providers
+#    只剩 Azure+CPU，姿态实测 103 ms/帧，骨架分支被加载探测直接关停；非 headless opencv
+#    则与已有 headless 形成三份 cv2 交叠。rtmlib 代码实际只 import numpy/cv2/onnxruntime/
+#    tqdm，前三个镜像里都有，这里单独补 tqdm。
+# 2) 必须 onnxruntime-gpu（CUDA EP），不能装 CPU 版：CPU 姿态推理 8-15 倍于时延预算。
+RUN $PY -m pip install --no-cache-dir --no-deps rtmlib==0.0.16 tqdm \
+    && $PY -m pip install --no-cache-dir onnxruntime-gpu==1.23.2 \
+    && if $PY -m pip show opencv-python opencv-contrib-python >/dev/null 2>&1; then \
+           echo 'error: non-headless opencv leaked into the image'; exit 1; fi
+
+# onnxruntime 的 CUDA EP 以 dlopen 方式加载 cudnn/cublas/cudart，不吃 torch 的 RPATH，
+# 只认标准搜索路径——所以把 torch 的 pip 伴生库目录显式给进来（torch 自己加载不需要这个
+# 变量，onnxruntime 需要；三段显式列全，不用花括号展开）。缺了它 ORT 静默回退 CPU，
+# 症状恰好是上面说的"姿态耗时探测超时、骨架分支被关"，必须与依赖同镜像交付。
+ENV LD_LIBRARY_PATH=/opt/conda/envs/darkpipe/lib/python3.10/site-packages/nvidia/cudnn/lib:/opt/conda/envs/darkpipe/lib/python3.10/site-packages/nvidia/cublas/lib:/opt/conda/envs/darkpipe/lib/python3.10/site-packages/nvidia/cuda_runtime/lib
+
 # triton（torch 的依赖，由 mamba_ssm 触发）在第一次用到 GPU 时会现场编译一个 C 辅助模块，
 # 编译不了就直接 RuntimeError: Failed to find C compiler。runtime 版 CUDA 基础镜像不带编译器，
 # 所以必须补一个 gcc。这个坑构建期发现不了——构建期没有 GPU，triton 根本走不到编译那一步，
@@ -108,10 +133,15 @@ COPY ckpts/ /opt/darkpipe/ckpts/
 #   2) mamba_ssm / causal_conv1d 只查版本、不 import——它们会连带初始化 triton，而 triton 在
 #      没有 GPU 的构建环境里直接抛 "0 active drivers"。这两个包能否真正跑起来，由交付前的
 #      docker run --gpus all 实跑验证（见 DEVELOPING.md），而不是在这里假装验证过。
-RUN $PY -c "import torch, cv2, timm, einops, transformers; \
+RUN $PY -c "import torch, cv2, timm, einops, transformers, rtmlib, onnxruntime; \
+from rtmlib import RTMO; \
 from importlib.metadata import version; \
+ps = onnxruntime.get_available_providers(); \
+assert any('CUDA' in p for p in ps), 'ORT providers missing CUDA: %s' % (ps,); \
 print('torch', torch.__version__, 'cv2', cv2.__version__, \
-'mamba_ssm', version('mamba_ssm'), 'causal_conv1d', version('causal_conv1d'), 'ok')"
+'mamba_ssm', version('mamba_ssm'), 'causal_conv1d', version('causal_conv1d'), \
+'rtmlib', version('rtmlib'), 'onnxruntime-gpu', version('onnxruntime-gpu'), \
+'providers', ps, 'ok')"
 
 # ffmpeg 不需要 GPU，所以这一条构建期就能真正验证，不是"假装验证"：确认命令行存在，且真的
 # 带着 libx264 编码器与 flv/hls 封装器——Ubuntu 的 ffmpeg 是全功能构建，但装错源或

@@ -1,0 +1,521 @@
+{
+  "name": "暗光场景行为识别实时服务",
+  "description": "面向夜间/低照度监控实时流的常驻服务算子：持续拉取国标(GB28181)/rtsp/http(s)(flv、hls)视频流，逐帧做低照度增强（Retinexformer）与行为识别（挥手、投掷、追逐、跌倒、打斗、交谈、喝水、捡拾、握手，外加 other 共 10 类），并对外提供三条 HTTP 流：/stream 为叠加识别标签条的 MJPEG 视频流，可直接用浏览器或 ffplay/OpenCV 打开做实时演示；/events 为 SSE 事件流，每识别出一次行为推送一条 JSON；/health 为健康检查与实时计数。同时按事件流把不属于 other 的行为切成独立片段视频，先写入 clip_dir 指定的容器内目录（挂载 NFS 后即可本地浏览），再按需上传到 hdfs_output_dir；hdfs_output_dir 留空时只保存本地一份，不推送 HDFS。片段目录结构为 会话/行为/时间_行为_序号.mp4 并附同名 json。与处理算子共用同一套代码路径与同一个镜像。默认使用 2 张 GPU 并按帧轮询分发（第 1 帧给第一张卡、第 2 帧给第二张卡，依次循环），RTX 3090 双卡、处理分辨率长边 840（默认值）实测 23.8 帧/秒、端到端时延 p95 289 毫秒，满足不低于 15 帧/秒且不超过 1 秒的要求；平台只分到 1 张卡时自动降级为单卡运行，此时需把 proc_max_side 改为 720 才能达到 15 帧/秒。断流会自动重连（指数退避）。另有离线模式：video_path 填的是有限长的视频文件（本地路径、hdfs:// 或 WebHDFS 的 http://<namenode>:9870/... 地址）时，本算子自动转为一次性离线推理——整段视频只处理一遍、不循环播放，产出「整段处理后的视频（<视频名>-处理后.mp4）+ 按动作切分的片段视频（按时间顺序+中文动作名命名，如 2-3s-喝水.mp4，与实时模式 时间_行为_序号.mp4 的命名不同）+ 事件 JSON」到 clip_dir 与 hdfs_output_dir，然后进程正常退出，不起常驻服务。此时输出视频的帧率与时长同源视频一致，clip_* 系列参数同样生效，run_seconds 与 rtmp_push_url 不生效。",
+  "metadata": {
+    "arch": "amd64",
+    "limits": {
+      "cpu": "8",
+      "memory": "12Gi"
+    },
+    "request": {
+      "cpu": "4",
+      "memory": "6Gi"
+    },
+    "gpu": {
+      "type": "nvidia.com/gpu",
+      "count": 3,
+      "memory": "8Gi"
+    }
+  },
+  "inputs": [
+    {
+      "name": "video_path",
+      "type": "String",
+      "description": "待处理的视频地址，支持三类：(1) 实时流——国标(GB28181，经网关转换为可拉流地址后下发) / rtsp:// / http(s):// (flv、hls)；(2) 有限长的视频文件——容器内本地路径、hdfs://用户名@ip:port/a/b.mp4，或 WebHDFS 的 http://<namenode>:9870/a/b.mp4（镜像内没有 hadoop 客户端，HDFS 一律走 WebHDFS 的 HTTP 通道下载到容器内再处理）；(3) 一个目录（含 NFS 挂载目录）——转为离线批处理，把目录里的视频文件（.mp4/.mov/.mkv/.avi/.m4v/.webm，向下最多两层）按文件名顺序依次处理，每个文件一个产出子目录，单个文件失败只跳过它并继续。注意：本算子**不支持在平台上选「NFS 上的单个文件」**——那种选法平台只会下发一个物化路径，容器里取不到该文件，算子会在启动时报错退出；要处理 NFS 上的视频请改选**目录**。填文件或目录时（无论 rtmp_push_url 是否填写），本算子自动转为离线推理模式：每段视频只处理一遍、不循环播放，产出「整段处理后的视频 + 按动作切分的片段视频 + 事件 JSON」后进程退出，不起服务。没有摄像头想演示实时模式时，先在算子外用 ffmpeg 把文件循环推成流，再把拉流地址填进本参数。",
+      "annotations": {
+        "show": "实时流地址",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "enhance",
+      "type": "String",
+      "description": "低照度增强算法。retinexformer：默认，速度与稳定性最佳；off：关闭增强，仅在输入本身照度正常时使用。",
+      "default": "retinexformer",
+      "annotations": {
+        "show": "低照度增强算法",
+        "component": "choice",
+        "choice": "['off', 'retinexformer']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "sr",
+      "type": "String",
+      "description": "超分辨率算法。bicubic：默认，CPU 双三次插值，几乎不占额外时间；off：不放大，输出与输入同分辨率。超分只影响演示画面与片段清晰度，不影响识别（识别取的是增强后、超分前的帧）。",
+      "default": "bicubic",
+      "annotations": {
+        "show": "超分辨率算法",
+        "component": "choice",
+        "choice": "['off', 'bicubic']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "sr_scale",
+      "type": "Int",
+      "description": "超分放大倍数，sr 为 off 时忽略。倍数越大，MJPEG 每帧越大、片段文件越大，带宽与磁盘占用相应增加。",
+      "default": 2,
+      "annotations": {
+        "show": "超分放大倍数",
+        "component": "choice",
+        "choice": "[2, 3, 4]",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "denoise",
+      "type": "String",
+      "description": "画面去噪档位，在识别之后进行、不影响识别结果。off：不去噪；fast：双边滤波，约 5 毫秒/帧，真实素材实测降噪 35%、边缘保留 84%，实时路径可放心开启；quality：NLM 搜索窗 7，约 119 毫秒/帧，降噪 51%、边缘 85%；quality_high：NLM 搜索窗 15，约 376 毫秒/帧，降噪 75% 但画面已有明显平滑感。注意实时流、保存片段、录制文件共用同一帧，本参数对三者同时生效——实时服务上调到 quality 以上会直接吃掉时延预算，片段单独去噪请用 clip_denoise。数据见 compare/results/denoise/。",
+      "default": "fast",
+      "annotations": {
+        "show": "画面去噪",
+        "component": "choice",
+        "choice": "['off', 'fast', 'quality', 'quality_high']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "color_saturation",
+      "type": "Float",
+      "description": "画面色彩饱和度倍数，1.0 表示不处理。低照度增强会把画面拉灰——实测增强后平均彩度只有 5.9，而原始暗帧里蓝色椅子、橙色物品、桌面青绿反光都真实存在。本参数在 Lab 空间按该倍数缩放色度，只放大色度差异，不放大整体色偏。实测 2.6 倍时彩度 5.9→15.1、色相偏离 5.8°。缩放围绕画面自身平均色度，不会放大整体色偏（暗光素材常见的绿偏）。建议 2.0-2.6。该处理在识别之后进行，不影响识别结果。1280x720 下约 18 毫秒/帧。",
+      "default": 1.0,
+      "annotations": {
+        "show": "色彩饱和度",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "recognize",
+      "type": "String",
+      "description": "行为识别模型。behavior：VideoMamba-Tiny 在 9 类行为 + other 上微调。本算子不提供 off：片段是按识别事件切出来的，没有识别器就既没有事件流也没有片段。",
+      "default": "behavior",
+      "annotations": {
+        "show": "行为识别模型",
+        "component": "choice",
+        "choice": "['behavior']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "proc_max_side",
+      "type": "Int",
+      "description": "处理前先把画面缩小到长边不超过该像素数，0 表示按原分辨率处理。增强的耗时与像素量成正比，而识别内部固定缩放到 224x224，因此高分辨率只对画面本身有意义，对识别精度没有帮助：1080p 原分辨率实测整条管线只有约 3 帧/秒，此时 1 秒识别窗口里只有 3 帧真实画面被拉伸成 32 帧，运动信息过于稀疏。默认 840 是画质与帧率的折中值，双卡实测 23.8 帧/秒、时延 p95 289 毫秒；填 720 可换到 29.3 帧/秒，填 960 降到 18.0 帧/秒。只分到 1 张卡时 840 只有 12.9 帧/秒，达不到 15 帧/秒，此时应改填 720。缩放在所有环节之前完成，识别、超分、标签条、片段与出流看到的都是同一尺寸。",
+      "default": 840,
+      "annotations": {
+        "show": "处理分辨率上限(长边)",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "reco_span_sec",
+      "type": "Float",
+      "description": "识别窗口覆盖的视频时长（秒）。1.0 表示每次判定依据最近 1 秒的画面，与实时性要求一致；调大可提升对慢动作的稳定性，但事件时间定位变粗、片段触发也随之滞后。",
+      "default": 1.0,
+      "annotations": {
+        "show": "识别窗口时长(秒)",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "reco_min_conf",
+      "type": "Float",
+      "description": "行为判定的置信度阈值（0-1）。最高分的具名行为达不到该阈值时，本次判定报为 other（画面显示「其他」），因此既不会显示为某个动作，也不会被切成片段保存（other 默认在 clip_skip_labels 里）。0 表示关闭该阈值，按模型原始判定输出。用于抑制低置信度的误报：暗光场景下模型对不确定的画面仍会给出某个具名行为，只是分数偏低。取值建议先看 events.jsonl 里 confidence 的实际分布再定，填得过高会把真实动作一起滤掉。",
+      "default": 0.65,
+      "annotations": {
+        "show": "行为判定阈值",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "label_bar",
+      "type": "Bool",
+      "description": "是否在演示画面与保存的片段底部叠加识别结果标签条。关闭后画面为纯增强/超分结果，识别结果仍会推送到事件流。",
+      "default": true,
+      "annotations": {
+        "show": "叠加标签条",
+        "component": "bool",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "gpu_ids",
+      "type": "String",
+      "description": "使用的 GPU 卡号，逗号分隔。填多张时按帧轮询分发（第 1 帧给第一张、第 2 帧给第二张，依次循环），吞吐近似线性提升；行为识别固定在最后一张卡上，其余卡按帧轮询做增强。注意这里是容器内的卡号，从 0 开始连续编号，与宿主机卡号无关，可用卡数由算子声明的 gpu.count 决定（当前为 3）；默认使用三张卡 \"0,1,2\"，只想用一张卡时把本项填成 \"0\" 即可。实际可见的卡少于填写数量时会自动降级到能用的卡数并打印告警，不会启动失败；只分到 1 张卡时建议把 proc_max_side 一并改成 720 才能达到 15 帧/秒。",
+      "default": "0,1,2",
+      "annotations": {
+        "show": "GPU卡号",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "ckpt_dir",
+      "type": "String",
+      "description": "模型权重目录。默认 ckpts 指算子包内随包发布的那一份（约 33 MB，含 Retinexformer 与行为识别两个权重），开箱即用、运行期不下载任何东西。权重放在算子包里而不是镜像里：镜像 6.1 GB，换一次权重若要重传镜像成本高得多。也可填绝对路径改用镜像内（/opt/darkpipe/ckpts）或挂载进容器的其他权重。",
+      "default": "ckpts",
+      "annotations": {
+        "show": "权重目录",
+        "component": "stringInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "serve_port",
+      "type": "Int",
+      "description": "服务监听端口，/stream、/events、/health、/config 四个接口都在这个端口上。需要平台把该端口映射出来才能从容器外访问。",
+      "default": 8000,
+      "annotations": {
+        "show": "服务端口",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "stream_formats",
+      "type": "String",
+      "description": "对外提供哪些实时视频流格式，逗号分隔。mjpeg：/stream，浏览器与 OpenCV 可直接打开，时延最低，不依赖 ffmpeg；flv：/live.flv，HTTP-FLV，与国标网关下发的输入流同一种格式，便于既有播放器/平台直接接入；hls：/hls/index.m3u8，浏览器原生支持，但分片机制决定其时延约 3-6 秒，只适合非实时观看。事件流 /events 与健康检查 /health 始终提供，不受此项影响。",
+      "default": "mjpeg,flv",
+      "annotations": {
+        "show": "实时流输出格式",
+        "component": "choice",
+        "choice": "['mjpeg', 'mjpeg,flv', 'mjpeg,flv,hls', 'mjpeg,hls']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "rtmp_push_url",
+      "type": "String",
+      "description": "把处理后的画面推到外部流媒体服务器，如 rtmp://ip:1935/live/streamkey 或 rtsp://ip:554/live。留空则不推送。适用于已有流媒体网关、希望由网关统一分发给多个观看端的场景，此时观看并发不受本算子限制。仅对实时流输入生效：video_path 是一个有限长的视频文件（含 hdfs/WebHDFS 地址）时，算子一律转为离线推理模式，处理完整段视频后自行退出，本参数被忽略。",
+      "annotations": {
+        "show": "推流地址(可留空)",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "stream_bitrate",
+      "type": "String",
+      "description": "所有 H.264 出流（/live.flv、/hls、推流）的码率上限，如 3M、4M、8M。填 0（或 off）表示不限制码率，按画面复杂度自适应。不限制不等于更流畅：码率没有上限时，每个关键帧（每秒一个）都是一次几十到上百 KB 的突发，实测 1080p 一个关键帧约 110-130KB，链路一次吐不完就把编码进程堵住，表现为播放端周期性卡顿、闪屏，而平均码率看着还很正常。设上限会让编码器把关键帧压小（实测 3M 时峰值关键帧比不限制小 46%），突发被摊平，卡顿随之消失，代价是运动剧烈时画面细节变少。1080p 建议 3M-4M；确认链路带宽远大于实测码率（不限制时实测 1080p 约 44 Mbit/s、4K 约 179 Mbit/s）时才填 0，否则会出现画面绿色残缺块甚至连接被断开。",
+      "default": "3M",
+      "annotations": {
+        "show": "出流码率上限",
+        "component": "stringInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "max_flv_clients",
+      "type": "Int",
+      "description": "/live.flv 的并发观看上限。每个观看端各占一个 ffmpeg 编码进程，超过上限的请求返回 503 而不是把机器拖垮。需要更多观看端时请改用 rtmp_push_url 交给流媒体服务器分发。",
+      "default": 4,
+      "annotations": {
+        "show": "FLV并发观看上限",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "jpeg_quality",
+      "type": "Int",
+      "description": "所有出流共用的 JPEG 中间帧质量（1-100）。管线每帧只编一次 JPEG，/stream 直接发它，FLV/HLS/推流则都由它喂给 ffmpeg 再转 H.264——所以这个值掐着整条出流链路的吞吐，不只是演示画面。不影响识别与片段（片段拿的是编码前的原始帧）。1680x1020 实测每帧字节：q100 511KB、q95 256KB、q85 138KB，而 q100 相对 q95 的画质提升接近于零，多出的字节在后续 H.264（约 2.9 Mbit/s）重编时也留不下来。q100 曾导致 JPEG 管道达 65 Mbit/s、写管道占用 63% 的推流线程时间、丢弃约 10% 的节拍。默认 85。",
+      "default": 85,
+      "annotations": {
+        "show": "出流 JPEG 画质",
+        "component": "intInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "max_stream_fps",
+      "type": "Float",
+      "description": "所有出流（/stream、FLV、HLS、推流）对外推送的最大帧率，用于限制带宽。识别与片段保存不受此值限制。",
+      "default": 15.0,
+      "annotations": {
+        "show": "出流最大帧率",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "clip_dir",
+      "type": "String",
+      "description": "产出保存目录（容器内路径），建议挂载 NFS 后直接本地浏览。实时模式下保存行为片段，目录结构为 clip_dir/会话/行为/时间_行为_序号.mp4，每个 mp4 附一个同名 json 记录标签、置信度、帧数与时长；离线模式下这里保存整段处理后的视频、事件 JSON，以及按动作切分的片段视频，目录结构为 clip_dir/会话/，片段平铺在会话目录下（不再按行为分子目录），命名为 <起始秒>-<结束秒>s-<中文动作>.mp4（如 2-3s-喝水.mp4，按片段在原视频里的时间顺序+动作类别命名，与实时模式的 时间_行为_序号 命名不同），同样附同名 json。「会话」名里带输入的标识，一眼就能看出这批产出是哪路输入的结果：实时流放后缀（20260821_164652_78_darkpipe_input_024，取流地址末段即流名），离线视频放前缀（demo_20260821_164652_78，取文件名），取不到标识时退回原来的 时间戳_进程号。",
+      "default": "/opt/darkpipe/clips",
+      "annotations": {
+        "show": "片段保存目录",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "clip_pre_sec",
+      "type": "Float",
+      "description": "片段向前多保留的秒数。识别事件是在动作发生之后才产生的，不往前多留一段就只能录到动作的尾巴。",
+      "default": 1.0,
+      "annotations": {
+        "show": "片段前置时长(秒)",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "clip_post_sec",
+      "type": "Float",
+      "description": "片段在最后一次命中**本片段行为**的事件之后继续录制的秒数，超过这个静默期才收尾成文件。同一个行为的连续命中会合并进同一个片段，不会每个事件切一个文件；换成另一个行为则当场收尾、另起一个片段，因此一个片段里只会有一个动作。识别大约每 0.7~1.3 秒出一次结果（取决于实际分到几张 GPU），这个值越接近该间隔，一次连续动作被切成多段的风险越高；默认 1 秒是按双卡吞吐（约 0.7 秒/次）留的余量，只分到 1 张卡时（约 1.2~1.3 秒/次）这个余量基本吃光，建议调大或把 proc_max_side 改成 720。",
+      "default": 1.0,
+      "annotations": {
+        "show": "片段后置时长(秒)",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "clip_max_sec",
+      "type": "Float",
+      "description": "单个片段的最长时长，超过即收尾另起一个。用于兜底：同一个行为被连续识别了很久时（真的持续了很久，或者模型一直误报同一类），片段不会无限增长成一个巨大文件。默认 15 秒 = 前后各 1 秒余量 + 13 秒动作，一段正常动作装得下；想留更完整的上下文再往上调。",
+      "default": 15.0,
+      "annotations": {
+        "show": "片段最长时长(秒)",
+        "component": "floatInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "clip_skip_labels",
+      "type": "String",
+      "description": "不保存片段的行为标签，逗号分隔。默认 other，即只留下九类实际行为；填空字符串表示所有识别结果都保存。",
+      "default": "other",
+      "annotations": {
+        "show": "不保存的行为",
+        "component": "stringInput",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "clip_denoise",
+      "type": "String",
+      "description": "仅对保存的行为片段去噪，在片段写盘线程上执行，不占用 GPU。取值同 denoise。片段是留证用的、人会盯着细看，值得用更贵的档位；默认 quality（NLM 窗 7，降噪 51%）。若 denoise 已经开启，片段会先后经过两道去噪。注意：NLM 是纯 CPU 的重活，虽然不占 GPU，但写片段时会和管线抢 CPU——事件密集的素材实测默认 quality 下有 5/23 个统计窗口端到端时延超过 1 秒（最高 10 秒），改成 off 后降到 0。要守住不超过 1 秒的指标，事件密集的场景请填 off 或 fast；事件稀疏的常规监控场景影响很小。",
+      "default": "quality",
+      "annotations": {
+        "show": "片段去噪",
+        "component": "choice",
+        "choice": "['off', 'fast', 'quality', 'quality_high']",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "hdfs_output_dir",
+      "type": "String",
+      "description": "产出另存一份到这个 HDFS 目录，目录结构与 clip_dir 内完全一致（实时模式是行为片段，离线模式是整段视频、事件 JSON 与按动作切分的片段视频）。可填 hdfs://用户名@ip:port/a/b，也可直接填 WebHDFS 的 http://<namenode>:9870/a/b —— 镜像内没有 hadoop 客户端，两种写法最终都走 WebHDFS 的 HTTP 通道（hdfs:// 的 HTTP 端口按 9870 推导，端口不是 9870 时请用 http:// 写法）。留空则不推送 HDFS，只保留 clip_dir 里的那一份。实时模式下上传失败只告警不中断服务，本地片段始终保留；离线模式下产出取不回来等于白跑，上传失败即以非零码退出。",
+      "annotations": {
+        "show": "片段HDFS目录(可留空)",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "extra_hosts",
+      "type": "String",
+      "description": "启动时追加到容器 /etc/hosts 的域名解析，格式「IP 主机名」，多条用逗号分隔。WebHDFS 读写文件时 NameNode 会 307 跳转到按主机名寻址的 DataNode（如 hdfs-datanode），容器内默认解析不了这个名字，下载/上传会在第二跳失败，因此默认值就是本环境的 「10.46.79.133 hdfs-datanode」。换环境时改这里即可，不必重新打包。已能解析的主机名会跳过；/etc/hosts 不可写（非 root 或只读挂载）时只告警，算子会自动改用 NameNode 的 IP 重试那一跳。留空表示不追加任何解析。",
+      "default": "10.46.79.133 hdfs-datanode",
+      "annotations": {
+        "show": "HDFS域名解析",
+        "component": "stringInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "run_seconds",
+      "type": "Float",
+      "description": "运行时长上限（秒），0 表示一直运行到容器被停止。填正数可把这个常驻服务当成一次有限时长的任务来调度，也便于冒烟验证。离线模式忽略此项：整段视频跑完即退出。",
+      "default": 0.0,
+      "annotations": {
+        "show": "运行时长上限(秒)",
+        "component": "floatInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "skel_fusion_alpha",
+      "type": "Float",
+      "description": "行为识别骨架分支的融合权重(0-1)。识别时同时跑 COCO-17 骨架分支(RTMO-s 姿态+ST-GCN)，最继行为概率 p=α·RGB+(1-α)·骨架，且窗内检测不到人时直接报 other(无人门控，压空景误报)。现场三套件(行为窗/64 段行人误报视频/红外夜视正样本)实测 α=0.70 最优：误报 1/365、正样本 18/18、旧验证集 top1 0.9831。α≥0.999 完全关闭骨架分支按纯 RGB 运行；运行环境缺少 rtmlib/onnxruntime-gpu 时自动降级为纯 RGB 并在启动日志提示。",
+      "default": 0.7,
+      "annotations": {
+        "show": "骨架融合权重(0.7=推荐)",
+        "component": "floatInput",
+        "parameter": 0
+      }
+    },
+    {
+      "name": "skel_no_person",
+      "type": "String",
+      "description": "识别窗内骨架分支检测不到人时的处理策略。other=该窗直接报 other(压空景误报最强，但姿态模型漏检到真实行为时会被一并压掉)；soft=骨架按(1-α)权重投 other 票，RGB 置信度足够高(≥0.65/α，α=0.7 时即 0.93)的行为窗仍可正常报出，漏报与误报兼顾，默认推荐；rgb=骨架在该窗弃权，按纯 RGB 结果识别(误报回到 v1 水平)。三档均为现场三套件实测后提供。",
+      "default": "soft",
+      "annotations": {
+        "show": "无人窗策略(soft=推荐)",
+        "component": "choice",
+        "choice": "['soft', 'other', 'rgb']",
+        "parameter": 1
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "session_json",
+      "type": "String",
+      "description": "会话信息 JSON：会话号、状态、流地址、三条 HTTP 接口地址、片段本地目录与 HDFS 目录、生效配置；服务停止后补写事件总数、片段数与上传结果。服务一启动就先写一份，避免容器被直接停止时该文件为空。同一份内容也会写到片段目录下的 session.json。",
+      "annotations": {
+        "show": "会话信息"
+      }
+    }
+  ],
+  "implementation": {
+    "container": {
+      "image": "darkpipe-operator:0.3.0",
+      "command": [
+        "/opt/conda/envs/darkpipe/bin/python",
+        "-u",
+        "main.py"
+      ],
+      "args": [
+        "--video_path",
+        {
+          "inputValue": "video_path"
+        },
+        "--enhance",
+        {
+          "inputValue": "enhance"
+        },
+        "--sr",
+        {
+          "inputValue": "sr"
+        },
+        "--sr_scale",
+        {
+          "inputValue": "sr_scale"
+        },
+        "--denoise",
+        {
+          "inputValue": "denoise"
+        },
+        "--color_saturation",
+        {
+          "inputValue": "color_saturation"
+        },
+        "--recognize",
+        {
+          "inputValue": "recognize"
+        },
+        "--proc_max_side",
+        {
+          "inputValue": "proc_max_side"
+        },
+        "--reco_span_sec",
+        {
+          "inputValue": "reco_span_sec"
+        },
+        "--reco_min_conf",
+        {
+          "inputValue": "reco_min_conf"
+        },
+        "--label_bar",
+        {
+          "inputValue": "label_bar"
+        },
+        "--gpu_ids",
+        {
+          "inputValue": "gpu_ids"
+        },
+        "--ckpt_dir",
+        {
+          "inputValue": "ckpt_dir"
+        },
+        "--serve_port",
+        {
+          "inputValue": "serve_port"
+        },
+        "--stream_formats",
+        {
+          "inputValue": "stream_formats"
+        },
+        "--rtmp_push_url",
+        {
+          "inputValue": "rtmp_push_url"
+        },
+        "--stream_bitrate",
+        {
+          "inputValue": "stream_bitrate"
+        },
+        "--max_flv_clients",
+        {
+          "inputValue": "max_flv_clients"
+        },
+        "--jpeg_quality",
+        {
+          "inputValue": "jpeg_quality"
+        },
+        "--max_stream_fps",
+        {
+          "inputValue": "max_stream_fps"
+        },
+        "--clip_dir",
+        {
+          "inputValue": "clip_dir"
+        },
+        "--clip_pre_sec",
+        {
+          "inputValue": "clip_pre_sec"
+        },
+        "--clip_post_sec",
+        {
+          "inputValue": "clip_post_sec"
+        },
+        "--clip_max_sec",
+        {
+          "inputValue": "clip_max_sec"
+        },
+        "--clip_skip_labels",
+        {
+          "inputValue": "clip_skip_labels"
+        },
+        "--clip_denoise",
+        {
+          "inputValue": "clip_denoise"
+        },
+        "--hdfs_output_dir",
+        {
+          "inputValue": "hdfs_output_dir"
+        },
+        "--extra_hosts",
+        {
+          "inputValue": "extra_hosts"
+        },
+        "--run_seconds",
+        {
+          "inputValue": "run_seconds"
+        },
+        "--skel_fusion_alpha",
+        {
+          "inputValue": "skel_fusion_alpha"
+        },
+        "--skel_no_person",
+        {
+          "inputValue": "skel_no_person"
+        },
+        "--session_json",
+        {
+          "outputPath": "session_json"
+        }
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

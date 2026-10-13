@@ -1,0 +1,10 @@
+# 骨架分支（skel_fusion_alpha < 1 时）的运行环境依赖。
+# 镜像 darkpipe-operator:0.3.0 起已内置这两样（含 LD_LIBRARY_PATH），无需安装；
+# 本文件保留给在旧镜像 0.2.0 上应急装入 conda 环境的情形：
+#   /opt/conda/envs/darkpipe/bin/pip install -r requirements-skeleton.txt
+# 缺任何一样算子都会在启动时自动降级为纯 RGB 识别并在日志打印原因（功能不受损，
+# 但骨架分支不生效）。
+# 注意必须用 onnxruntime-gpu：CPU 版推理实测 8-15 倍于预算，算子加载时会探测姿态耗时，
+# 超过 25 ms/帧 直接关闭骨架分支（守住 ≤1 秒时延指标），不会带着超标时延硬跑。
+rtmlib==0.0.16
+onnxruntime-gpu==1.23.2
