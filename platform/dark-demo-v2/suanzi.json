@@ -363,6 +363,50 @@
         "choice": "['soft', 'other', 'rgb']",
         "parameter": 1
       }
+    },
+    {
+      "name": "fuse_mode",
+      "type": "String",
+      "description": "双分支决策模式。alpha=加权融合 p=α·RGB+(1-α)·骨架，四套件实测最优，默认。max_prior=会议定稿的三部曲(v2)：步骤1 照度门——画面提亮前的原图平均亮度低于 lum_gate 时只跑 RGB 识别，不用不稳定的骨架与物体检测做二次判断；步骤2 双分支分类——骨架侧取窗内合格骨架（关键点均分≥0.5 且 ≥10/17 点可见）中非other且置信度高于 skel_tau 的最高分者为骨架结果（无人合格则骨架弃权、采用 RGB 结果），与 RGB 结果取置信度高者为初步结果，初步结果置信度低于 act_tau 时直接报 other；步骤3 先验二次判断——捡拾(地面有物体靠近骨架)/挥手(手臂最高点过躯干中线)/喝水(杯子等容器靠近手臂)/握手(两人骨架手部交互)不满足必要条件时直接报 other，其余类别不二次判断。注意三部曲四套件实测误报明显更多，仅作可选档保留",
+      "default": "alpha",
+      "annotations": {
+        "show": "决策模式(max_prior=推荐)",
+        "component": "choice",
+        "choice": "['max_prior', 'alpha']"
+      }
+    },
+    {
+      "name": "lum_gate",
+      "type": "Number",
+      "description": "三部曲步骤1的照度门（0-255，量的是画面提亮之前的原图平均亮度，不是提亮之后的；0=关闭）：低于该值说明场景真的太暗，姿态和检测本来就不可靠，只跑 RGB 识别。默认 75=现场全部视频实测的姿态/检测性能开始明显下降的亮度拐点，作为保险留用。仅 fuse_mode=max_prior 时生效",
+      "default": 75.0,
+      "annotations": {
+        "show": "照度门阈值(原图亮度,0=关)",
+        "component": "input",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "act_tau",
+      "type": "Number",
+      "description": "三部曲步骤2的启动阈值（0-1）：初步结果（RGB 与骨架中置信度高者）的置信度低于该值时直接报 other，不再做先验二次判断。仅 fuse_mode=max_prior 时生效",
+      "default": 0.65,
+      "annotations": {
+        "show": "启动阈值",
+        "component": "input",
+        "parameter": 1
+      }
+    },
+    {
+      "name": "skel_tau",
+      "type": "Number",
+      "description": "三部曲步骤2的骨架识别阈值（0-1）：合格骨架中仅有非other且置信度高于该值者可当选骨架结果，无人合格则骨架弃权、采用 RGB 结果。仅 fuse_mode=max_prior 时生效",
+      "default": 0.65,
+      "annotations": {
+        "show": "骨架识别阈值",
+        "component": "input",
+        "parameter": 1
+      }
     }
   ],
   "outputs": [
@@ -511,6 +555,22 @@
         "--session_json",
         {
           "outputPath": "session_json"
+        },
+        "--fuse_mode",
+        {
+          "inputValue": "fuse_mode"
+        },
+        "--lum_gate",
+        {
+          "inputValue": "lum_gate"
+        },
+        "--act_tau",
+        {
+          "inputValue": "act_tau"
+        },
+        "--skel_tau",
+        {
+          "inputValue": "skel_tau"
         }
       ],
       "env": {

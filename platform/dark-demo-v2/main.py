@@ -76,7 +76,15 @@ def build_parser():
     p.add_argument("--skel_fusion_alpha", type=float, default=0.7,
                    help="骨架分支融合权重(0-1)：p=α·RGB+(1-α)·骨架；α≥0.999 完全关闭骨架分支按纯 RGB 运行。0.70 为现场三套件实测推荐档")
     p.add_argument("--skel_no_person", default="soft", choices=["other", "soft", "rgb"],
-                   help="识别窗内骨架检测不到人时的处理：other=直接报 other(压误报最狠，但姿态漏检真行为时会被误杀)；soft=骨架以(1-α)权重投 other 票，RGB 证据足够强(RGB置信≥0.65/α)仍可报出行为，兼顾漏报与误报，默认；rgb=骨架弃权，该窗按纯 RGB 识别(误报回到 v1 水平)")
+                   help="识别窗内骨架检测不到人时的处理：other=直接报 other(压误报最狠，但姿态漏检真行为时会被误杀)；soft=骨架以(1-α)权重投 other 票，RGB 证据足够强(RGB置信≥0.65/α)仍可报出行为，兼顾漏报与误报，默认；rgb=骨架弃权，该窗按纯 RGB 识别(误报回到 v1 水平)。仅 fuse_mode=alpha 时生效")
+    p.add_argument("--fuse_mode", default="alpha", choices=["alpha", "max_prior"],
+                   help="双分支决策模式：alpha=加权融合 p=α·RGB+(1-α)·骨架，四套件实测最优，默认。max_prior=会议三部曲(v2)——画面提亮前的原图照度低于 --lum_gate 时仅用 RGB；否则 RGB 与骨架(窗内最多6个合格骨架中非other且置信度>--skel_tau 者为骨架结果，无人合格则骨架弃权)分别分类取置信度高者为初步结果，置信度<--act_tau 直接报 other，捡东西/挥手/喝水/握手再过先验二次判断(不满足直接报 other)。注意三部曲四套件实测误报明显更多，仅作可选档保留")
+    p.add_argument("--lum_gate", type=float, default=75.0,
+                   help="三部曲步骤1的照度门(0-255，量的是画面提亮之前的原图平均亮度，不是提亮之后的；0=关闭)：低于该值说明场景真的太暗，姿态和检测本来就不可靠，只跑 RGB 识别。默认 75=现场全部视频实测的姿态/检测性能开始明显下降的亮度拐点，作为保险留用")
+    p.add_argument("--act_tau", type=float, default=0.65,
+                   help="三部曲步骤2的启动阈值(0-1)：初步结果(两分支中置信度高者)的置信度低于该值时直接报 other，不再做先验二次判断")
+    p.add_argument("--skel_tau", type=float, default=0.65,
+                   help="三部曲步骤2的骨架识别阈值(0-1)：合格骨架中仅有非other且置信度高于该值的人可当选骨架结果；无人合格则骨架弃权、采用 RGB 结果")
     p.add_argument("--label_bar", type=parse_bool, default=True)
     p.add_argument("--gpu_ids", default="0,1,2",
                    help="容器内 GPU 卡号(从 0 起编，与宿主机序号无关)，逗号分隔。填多张时最后一张专供行为识别，其余卡按帧轮询做增强(定序在第一张增强卡上)；填一张时增强与识别共用该卡。实际可见的卡少于填写的会自动降级并告警，真正决定给几张卡的是 suanzi.json 里的 metadata.gpu.count")
@@ -328,6 +336,8 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
         no_label_bar=(not args.label_bar),
         skel_fusion_alpha=args.skel_fusion_alpha,
         skel_no_person=args.skel_no_person,
+        fuse_mode=args.fuse_mode, lum_gate=args.lum_gate,
+        act_tau=args.act_tau, skel_tau=args.skel_tau,
         clip_dir=clip_dir_local, clip_pre_sec=args.clip_pre_sec,
         clip_post_sec=args.clip_post_sec, clip_max_sec=args.clip_max_sec,
         clip_skip_labels=args.clip_skip_labels, clip_denoise=args.clip_denoise,
@@ -339,7 +349,7 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
         print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
               f"device={cfg.device} gpu_ids={','.join(gpus)} span={cfg.reco_span_sec}"
               f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
-              f" color_saturation={cfg.color_saturation}")
+              f" fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
         print("[config] 离线模式：保存整段处理后的视频，并按动作切分保存片段"
               "（clip_* 系列参数生效）")
         # Same reason as the serve-mode line below: these are manifest-settable and had no
@@ -667,6 +677,8 @@ def run_serve_mode(args, src, session):
         no_label_bar=(not args.label_bar),
         skel_fusion_alpha=args.skel_fusion_alpha,
         skel_no_person=args.skel_no_person,
+        fuse_mode=args.fuse_mode, lum_gate=args.lum_gate,
+        act_tau=args.act_tau, skel_tau=args.skel_tau,
         host="0.0.0.0", port=args.serve_port, jpeg_quality=args.jpeg_quality,
         max_stream_fps=args.max_stream_fps,
         stream_formats=args.stream_formats, rtmp_push_url=args.rtmp_push_url,
@@ -682,7 +694,7 @@ def run_serve_mode(args, src, session):
     print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
           f"device={cfg.device} span={cfg.reco_span_sec} port={cfg.port}"
           f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
-          f" color_saturation={cfg.color_saturation}")
+          f" fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
     # The output path's own knobs, on their own line because they are the ones that decide what
     # a viewer actually receives, and because none of them used to be printed at all. That cost a
     # deployment ~10% of its stream cadence: jpeg_quality was 100 everywhere, 598 KB JPEGs were

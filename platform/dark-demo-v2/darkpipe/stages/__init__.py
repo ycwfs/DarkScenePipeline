@@ -66,7 +66,11 @@ def build_stages(cfg):
                                         skel_fusion_alpha=getattr(cfg, "skel_fusion_alpha",
                                                                   0.7),
                                         skel_no_person=getattr(cfg, "skel_no_person",
-                                                               "soft"))
+                                                               "soft"),
+                                        fuse_mode=getattr(cfg, "fuse_mode", "alpha"),
+                                        lum_gate=getattr(cfg, "lum_gate", 75.0),
+                                        act_tau=getattr(cfg, "act_tau", 0.65),
+                                        skel_tau=getattr(cfg, "skel_tau", 0.65))
     if recognizer is not None and cfg.reco_ckpt:
         recognizer.ckpt = cfg.reco_ckpt        # user-supplied head (validated in config.py)
     if cfg.recognize == "xclip":

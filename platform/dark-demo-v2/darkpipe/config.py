@@ -43,6 +43,33 @@ class PipelineConfig:
     # the absent skeleton vote `other` with weight (1-a) so a confident RGB window still
     # survives; "rgb" lets the skeleton abstain (pure v1 behaviour on those windows).
     skel_no_person: str = "soft"
+    # Skeleton+RGB decision mode. "alpha" (DEFAULT, the deployed v2.0 weighted blend
+    # p = a*p_rgb + (1-a)*p_skel, with skel_no_person): every field suite prefers it --
+    # max_prior loses on all four (val top1 0.70 vs 0.98, platform replay 141-177 vs 10
+    # false fires) because the object priors are blind on IR footage and "higher confidence
+    # wins" removes the alpha damping that IS the false-fire suppression.
+    # "max_prior" (meeting three-step, v2 of 2026-10-14, kept as an opt-in mode): step 1
+    # gates on the RAW pre-enhancement scene brightness -- below `lum_gate` only the RGB
+    # branch runs; above it both branches classify (skeleton side: qualifying persons
+    # whose named top-1 beats `skel_tau`), the higher-confidence top-1 is the preliminary
+    # result, a winner under `act_tau` reports other before any prior, and pick_up /
+    # wave / drink / shake_hands then face the prior gate (object_prior.py) where a
+    # failed necessary condition reports `other`.
+    fuse_mode: str = "alpha"
+    # max_prior v2 knobs. lum_gate is the step-1 threshold on the RAW frame's mean BT.601
+    # luma (0-255), measured BEFORE enhancement (Retinexformer whitens its output, so a
+    # gate on the enhanced frame cannot see darkness -- the 10-14 sweep over 1020 windows
+    # proved no enhanced-luma threshold does anything); 0 disables it. Default 75 is the
+    # field-measured degradation knee (compare/behavior/skeleton/lum_curve.py, all field
+    # takes: pose availability 0.28-0.71 below 75, a flat 1.000 plateau at and above it).
+    # Kept as a safety net rather than a fix: the actual trouble windows sit at raw luma
+    # 135-154, far above the gate, and the误报压制 mechanism is the alpha fusion itself.
+    # act_tau/skel_tau follow the meeting's two-threshold wording; no setting of either
+    # separates the true positives (conf >= 0.91) from the platform false fires (70 of
+    # them >= 0.9).
+    lum_gate: float = 75.0
+    act_tau: float = 0.65
+    skel_tau: float = 0.65
     labels: str = ""                 # comma-separated, xclip only (open vocabulary)
     xclip_model: str = ""            # override the X-CLIP snapshot directory
     xclip_reject_tau: float | None = None

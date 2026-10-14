@@ -50,6 +50,18 @@ POSE_SCORE_THR = 0.3
 # measurements: real person windows sit at 0.5+ while the RTMO "ghost person" false
 # detections on empty scenes score below it (compare/behavior/skeleton probe_pose_ab.py).
 TAU = 0.5
+# max_prior decision mode ("meeting three-step"): per-frame up to MAX_PERSONS skeletons are
+# recognized INDIVIDUALLY and the skeleton branch's result is the highest-probability
+# person's -- replacing the presence-weighted merge of merge_persons, which the meeting
+# replaced by "take the higher score". A person qualifies for that contest only if its
+# window presence clears TAU AND its skeleton is complete: meeting wording "置信度高于阈值
+# 且骨骼完整" operationalized as >= COMP_MIN_VIS of 17 keypoints above POSE_SCORE_THR on at
+# least COMP_FRAC of the frames where the person appears. Slot identity is per frame (no
+# tracker), so a slot may mix persons over time; the best-of-slots selection is what makes
+# that harmless -- the meeting rule itself picks the best person.
+MAX_PERSONS = 6
+COMP_MIN_VIS = 10
+COMP_FRAC = 0.5
 # What a no-person window reports. The hard "other" (v2.0 behaviour) is the strongest false
 # positive brake -- but it is also a recall hazard: a real behaviour whose person the pose
 # model MISSED (extreme dark, heavy occlusion, person at the frame edge) is forced to
@@ -147,6 +159,24 @@ def merge_persons(logits, presence):
     return (logits * w.unsqueeze(-1)).sum(1)
 
 
+def completeness(sk, conf_thr=POSE_SCORE_THR, min_vis=COMP_MIN_VIS):
+    """sk (T, M, 17, 3) -> (M,) fraction, over the frames where a person was filled into
+    the slot, of frames with >= min_vis keypoints above conf_thr ("骨骼完整")."""
+    T, M, _, _ = sk.shape
+    out = np.zeros(M, np.float32)
+    for m in range(M):
+        seen = 0
+        ok = 0
+        for t in range(T):
+            cf = sk[t, m, :, 2]
+            if (cf > conf_thr).sum() >= 3:               # same "a person is here" bar as
+                seen += 1                                # normalize_window
+                ok += (cf > conf_thr).sum() >= min_vis
+        if seen:
+            out[m] = ok / seen
+    return out
+
+
 def normalize_window(sk, conf_thr=0.3):
     """sk (T, M, 17, 3) xy-norm+conf -> (M, 3, T, 17) float32, hip-centred, torso-scaled.
 
@@ -223,14 +253,21 @@ class SkeletonAux:
                     "当前按纯 RGB 模型运行")
         try:
             # Price the probe at steady state, not first call: the CUDA EP's first inference
-            # pays session init (measured 884 ms), the second runs at the real per-frame cost
-            # (measured 8.9 ms). Timing only the first call would misread GPU as CPU and
-            # disable the branch on a perfectly healthy card.
+            # pays session init (measured 884 ms), and even the second can land during the
+            # clock/memory-pool ramp of a process that just loaded several models (observed
+            # 26-40 ms on an idle 3090 whose steady state is 9-10 ms). Jitter only ever adds
+            # time, so the probe takes the MINIMUM of three timed calls -- the honest answer
+            # to "can this card meet the budget".
             dummy = np.zeros((472, 840, 3), np.uint8)    # proc_max_side=840 enhanced frame
             self.pose(dummy)                             # session init, untimed
-            t0 = time.perf_counter()
             self.pose(dummy)
-            self.pose_ms = (time.perf_counter() - t0) * 1000
+            self.pose(dummy)
+            times = []
+            for _ in range(3):
+                t0 = time.perf_counter()
+                self.pose(dummy)
+                times.append((time.perf_counter() - t0) * 1000)
+            self.pose_ms = min(times)
             if self.pose_ms > self.POSE_MS_BUDGET:
                 self.pose = None
                 return (f"[recognize] 骨架分支关闭：姿态推理实测 {self.pose_ms:.0f} ms/帧，"
@@ -252,25 +289,63 @@ class SkeletonAux:
         session was already priced by the load() probe."""
         self.probs([np.zeros((472, 840, 3), np.uint8)] * 32)
 
-    def probs(self, frames_bgr):
-        """frames (enhanced BGR uint8) -> (p_skel (10,) float32, presence float in [0,1])."""
+    def _fill_slots(self, frames_bgr, m_max):
+        """Per-frame top-`m_max` persons (by mean keypoint score) -> sk (T, m_max, 17, 3)
+        normalized xy+conf. No tracker: slot m holds DIFFERENT persons on different frames;
+        callers handle that (merge_persons weights it away, analyze picks best-of-slots)."""
         T = len(frames_bgr)
-        sk = np.zeros((T, 2, 17, 3), np.float32)
+        sk = np.zeros((T, m_max, 17, 3), np.float32)
         H, W = frames_bgr[0].shape[:2]
         for t in range(T):
             kpts, scores = self.pose(frames_bgr[t])
             if len(kpts) == 0:
                 continue
             per = scores.mean(1)                          # person-level score
-            for m, i in enumerate(np.argsort(per)[::-1][:2]):
+            for m, i in enumerate(np.argsort(per)[::-1][:m_max]):
                 sk[t, m, :, :2] = kpts[i] / np.array([W, H], np.float32)
                 sk[t, m, :, 2] = scores[i]
+        return sk
+
+    def probs(self, frames_bgr):
+        """frames (enhanced BGR uint8) -> (p_skel (10,) float32, presence float in [0,1]).
+        The fuse_mode="alpha" path: presence-weighted person merge, byte-identical to the
+        v2.0 weighted-fusion behaviour."""
+        sk = self._fill_slots(frames_bgr, 2)
         x, pres = normalize_window(sk)
         xt = torch.from_numpy(x).unsqueeze(0).to(self.device)
         with torch.no_grad():
             lg = torch.stack([self.net(xt[:, m]) for m in range(xt.shape[1])], 1)[0]
         p = merge_persons(lg, torch.tensor(pres).unsqueeze(0).to(self.device))[0].softmax(0)
         return p.float().cpu().numpy(), float(pres.max())
+
+    def analyze(self, frames_bgr):
+        """The max_prior path ("meeting three-step" step 1): up to MAX_PERSONS skeletons
+        recognized individually, skeleton result = highest-probability QUALIFYING person.
+
+        -> dict with keys
+          p        (10,) float32 best person's distribution, or None if nobody qualifies
+          pres     float window presence (max per-person mean keypoint score) -- the
+                   "骨架本身置信度" of the meeting's step-3 skip rule
+          sk       (T, MAX_PERSONS, 17, 3) normalized keypoints (PriorGate input)
+          valid    (MAX_PERSONS,) bool -- pres >= TAU AND complete (see MAX_PERSONS note)
+          slot_p   (MAX_PERSONS, 10) per-person distributions
+          best     int argmax person among valid (meaningless when p is None)
+        """
+        sk = self._fill_slots(frames_bgr, MAX_PERSONS)
+        x, pres = normalize_window(sk)
+        comp = completeness(sk)
+        xt = torch.from_numpy(x).unsqueeze(0).to(self.device)
+        with torch.no_grad():
+            lg = torch.stack([self.net(xt[:, m]) for m in range(xt.shape[1])], 0)[:, 0]
+        slot_p = lg.softmax(1).float().cpu().numpy()
+        valid = (pres >= TAU) & (comp >= COMP_FRAC)
+        out = dict(p=None, pres=float(pres.max()), sk=sk, valid=valid, slot_p=slot_p,
+                   best=-1)
+        if valid.any():
+            cand = np.flatnonzero(valid)
+            out["best"] = int(cand[np.argmax(slot_p[cand].max(1))])
+            out["p"] = slot_p[out["best"]]
+        return out
 
     def fuse(self, pr, ps, pres):
         """No-person policy (see NO_PERSON_MODES) + weighted blend. `ps` is only meaningful

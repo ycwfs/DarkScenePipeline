@@ -637,13 +637,16 @@ def process_loop(st: ServerState):
 
     rec_idx = [0]
 
-    def recognize(frame, t_cap):
-        """Buffer a frame; every `stride` frames this also fires the window inference."""
+    def recognize(frame, t_cap, raw_frame=None):
+        """Buffer a frame; every `stride` frames this also fires the window inference.
+
+        `raw_frame` is the same moment's pre-enhancement frame, for the recognizer's
+        illuminance gate (enhanced luma is whitened -- see stages.recognize.frame_luma)."""
         t0 = time.time()
         # Capture time, not "now": the recognizer's window is defined in wall-clock seconds
         # (`span_sec`), so feeding it processing time would stretch the window by however far
         # behind the source this thread is running.
-        ev = recognizer.push(frame, rec_idx[0], t_cap - st.t_start)
+        ev = recognizer.push(frame, rec_idx[0], t_cap - st.t_start, raw_frame=raw_frame)
         dt = time.time() - t0
         s_rec.add(dt)
         rec_idx[0] += 1
@@ -656,7 +659,7 @@ def process_loop(st: ServerState):
                 st.eventlog.write(ev)
         return ev
 
-    def hand_to_recognizer(frame, t_cap):
+    def hand_to_recognizer(frame, t_cap, raw_frame=None):
         """Recognize this frame, or queue it for the card that does. Returns the event or None.
 
         Returning None in the async case is not a loss of information: the label bar reads
@@ -666,14 +669,15 @@ def process_loop(st: ServerState):
 
         Sharing the frame with another thread is safe because nothing downstream mutates it in
         place: the recognizer preprocesses into a new array on entry (`_preprocess`), the SR
-        stage returns a new array, and append_label_bar returns an np.vstack.
+        stage returns a new array, and append_label_bar returns an np.vstack. That includes
+        `raw_frame`, which only the recognizer reads (a reference, not a copy).
         """
         if not recognizer:
             return None
         if not reco_async:
-            return recognize(frame, t_cap)
+            return recognize(frame, t_cap, raw_frame)
         try:
-            reco_q.put_nowait((frame, t_cap))
+            reco_q.put_nowait((frame, t_cap, raw_frame))
         except queue.Full:
             reco_dropped[0] += 1
         return None
@@ -690,10 +694,10 @@ def process_loop(st: ServerState):
         bind_thread_device(reco_dev)
         while running():
             try:
-                frame, t_cap = reco_q.get(timeout=0.1)
+                frame, t_cap, raw_frame = reco_q.get(timeout=0.1)
             except queue.Empty:
                 continue
-            ev = recognize(frame, t_cap)
+            ev = recognize(frame, t_cap, raw_frame)
             if ev:
                 try:
                     ev_q.put_nowait(ev)
@@ -1048,8 +1052,9 @@ def process_loop(st: ServerState):
             s_gpu[0].add(time.time() - t0)
             # Recognition off this thread when it has a device of its own; when it does not,
             # inline and before the handoff so the event and the frame it was computed from stay
-            # together. Either way it reads the enhanced pre-SR frame.
-            ev = hand_to_recognizer(chunk[0], t_cap)
+            # together. Either way it reads the enhanced pre-SR frame. The pre-enhancement
+            # `frame` rides along for the illuminance gate.
+            ev = hand_to_recognizer(chunk[0], t_cap, raw_frame=frame)
             out_q.put((chunk[0], t_cap, ev))
 
     # --- multi-GPU. Unused when the enhance side has one device, which keeps the single-GPU
@@ -1134,8 +1139,9 @@ def process_loop(st: ServerState):
                 # Billed to w_peer[k]: blocking here means devices[0] has not come round to
                 # collect, so this card is idle waiting on another card. That is the same
                 # imbalance the sequencer's done_q wait measures, seen from the other side --
-                # which side shows it just says who is ahead.
-                put_until(done_q[k], (enhance_on(k, frame), t_cap), bill=(w_peer, k))
+                # which side shows it just says who is ahead. The raw pre-enhancement frame
+                # rides along for the recognizer's illuminance gate.
+                put_until(done_q[k], (enhance_on(k, frame), t_cap, frame), bill=(w_peer, k))
         loop.__name__ = f"gpu_worker{k}"
         return loop
 
@@ -1161,15 +1167,16 @@ def process_loop(st: ServerState):
                     continue
                 slot[0].release()
                 enhanced = enhance_on(0, frame)
+                raw_frame = frame
             else:
                 t_wait = time.time()
                 try:
-                    enhanced, t_cap = done_q[k].get(timeout=0.1)
+                    enhanced, t_cap, raw_frame = done_q[k].get(timeout=0.1)
                     w_peer[0] += time.time() - t_wait
                 except queue.Empty:
                     w_peer[0] += time.time() - t_wait
                     continue
-            ev = hand_to_recognizer(enhanced, t_cap)
+            ev = hand_to_recognizer(enhanced, t_cap, raw_frame=raw_frame)
             # wait_cpu, same meaning as in enhance_loop: GPU work blocked behind the encoder.
             if not put_until(out_q, (enhanced, t_cap, ev), bill=(wait, "cpu")):
                 return

@@ -77,6 +77,20 @@ def reject_probs(p, labels, tau):
     return p
 
 
+def frame_luma(frame_bgr):
+    """Mean BT.601 luma (0-255) of one BGR uint8 frame -- the RAW-scene brightness the
+    max_prior illuminance gate keys on (default 75, the field-measured pose/detection
+    degradation knee, 2026-10-14). Retinexformer whitens its output -- every field suite's
+    ENHANCED windows land at luma 66-180 regardless of how dark the scene was -- so a gate
+    on the enhanced frame cannot see darkness at all; the gate only works on the frame
+    BEFORE enhancement. Callers hand the pre-enhancement frame (post-downscale) in through
+    push(raw_frame=...) and this measures it. Channel means first (cv2.mean -- 0.1 ms at
+    840p, where numpy's axis reduction costs 10 ms), weighted sum second: identical result
+    to weighting every pixel."""
+    b, g, r = cv2.mean(frame_bgr)[:3]
+    return float(0.114 * b + 0.587 * g + 0.299 * r)
+
+
 class _WindowRecognizer(Recognizer):
     kind = "r3d"
     labels = CLASSES
@@ -297,35 +311,81 @@ class VideoMambaRecognizer(_WindowRecognizer):
         return net
 
 
+def prior_reject(p, label):
+    """Step-3 veto: the preliminary result failed its necessary condition -> report `other`.
+
+    The named entries are KEPT and `other` is raised just above the rejected winner, so the
+    event's top-k still shows what almost fired ("喝水 0.90" under "其他 0.90") -- a rule
+    rejection is not the model's confusion, and hiding the near-miss would make platform
+    acceptance of the veto impossible to audit. `other` becoming the argmax is all the
+    decision machinery needs (clips and the label bar key on the top-1 label)."""
+    o = BEHAVIORS.index("other")
+    i = BEHAVIORS.index(label)
+    p = p.copy()
+    p[o] = max(float(p[o]), float(p[i]) + 1e-6)
+    return p
+
+
 class BehaviorRecognizer(VideoMambaRecognizer):
     """Same VideoMamba-T/32f backbone, retrained head over BEHAVIORS (9 behaviors + other).
 
     v2: optionally fused with a COCO-17 skeleton branch (RTMO-s pose + ST-GCN, see
-    skeleton_aux.py). Every firing window additionally gets the skeleton branch's 10-way
-    probability; the reported distribution is `alpha * p_rgb + (1 - alpha) * p_skel`. A
-    window in which the pose model sees no person takes the `no_person` policy (see
-    skeleton_aux.NO_PERSON_MODES): force `other`, let the absent skeleton vote `other` with
-    weight (1-alpha), or let the skeleton abstain -- the brake exists because on empty scenes
-    the RGB branch occasionally reports a behaviour at 0.85+ while the skeleton branch,
-    having no person, cannot; the softer settings exist because the pose model can also miss
-    a REAL person (extreme dark, occlusion), and a hard `other` would kill those windows no
-    matter how confident the RGB branch is. `skel_fusion_alpha >= 0.999` (or a failed/absent
-    skeleton setup -- missing rtmlib, missing onnxruntime CUDA, weights not shipped) falls
-    back to pure RGB, the historical behaviour, so the branch can only ever degrade to what
-    shipped before it, never break it.
+    skeleton_aux.py). Two decision modes:
+
+      fuse_mode="alpha" (DEFAULT -- every field suite prefers it: max_prior loses on all
+        four, val top1 0.70 vs 0.98 and platform replay 141-177 vs 10 false fires): the
+        v2.0 weighted blend p = alpha*p_rgb + (1-alpha)*p_skel with the no-person policy.
+      fuse_mode="max_prior" (the meeting "three-step", v2 of 2026-10-14, opt-in): step 1
+        gates on illuminance -- the RAW pre-enhancement scene brightness (push(raw_frame=...),
+        default 75 = the field-measured degradation knee): below `lum_gate` only the RGB
+        branch runs (the skeleton and object detector are unstable there, so no second
+        judgment either); above it,
+        both branches classify, the skeleton side recognizing up to MAX_PERSONS skeletons
+        individually (SkeletonAux.analyze). Step 2 picks the skeleton result: among
+        qualifying persons, one whose top-1 is NOT other and beats `skel_tau`; if none,
+        the skeleton side abstains and the RGB result stands. Higher-confidence branch
+        wins as the preliminary result; a winner below `act_tau` reports other outright,
+        before any prior. Step 3: preliminary results for pick_up / wave / drink /
+        shake_hands face the object/geometry prior gate (object_prior.PRIOR_ACTIONS) and
+        a failed condition reports `other` (prior_reject).
+
+    Either way a failed/absent skeleton setup (missing rtmlib, missing onnxruntime CUDA,
+    weights not shipped) degrades to pure RGB -- byte-for-byte the v1 behaviour -- so the
+    branch can only ever degrade to what shipped before it, never break it.
     """
     kind = "behavior"
     labels = BEHAVIORS
 
     def __init__(self, ckpt_dir: str, stride: int | None = None,
                  span_sec: float | None = None, reject_tau: float = 0.0,
-                 skel_fusion_alpha: float = 0.7, skel_no_person: str = "soft"):
+                 skel_fusion_alpha: float = 0.7, skel_no_person: str = "soft",
+                 fuse_mode: str = "alpha", lum_gate: float = 75.0,
+                 act_tau: float = 0.65, skel_tau: float = 0.65):
         super().__init__(ckpt_dir, stride=stride, span_sec=span_sec, reject_tau=reject_tau)
         self.skel_alpha = float(skel_fusion_alpha)
         self.skel_no_person = skel_no_person
+        self.fuse_mode = fuse_mode if fuse_mode in ("alpha", "max_prior") else "alpha"
+        # max_prior v2 (2026-10-14 meeting revision): the illuminance gate (lum_gate, 0
+        # disables it -- below the gate only the RGB branch runs, no priors; default 75 is
+        # the RAW pre-enhancement luma where field-wide pose/detection availability collapses,
+        # and it keys on raw_frame=... push() input -- enhanced luma is useless here), the
+        # activation threshold (a lower-confidence winner reports other before any prior
+        # runs) and the skeleton-side recognition threshold (a person's named top-1 must
+        # beat it to be eligible as the skeleton result). Two INDEPENDENT knobs per the
+        # meeting's wording; both default to the open-set reject_tau value.
+        self.lum_gate = float(lum_gate)
+        self.act_tau = float(act_tau)
+        self.skel_tau = float(skel_tau)
         self.skel = None               # skeleton_aux.SkeletonAux once load() succeeds
+        self.prior = None              # object_prior.PriorGate in max_prior mode
+        self.prior_note = ""           # why the last firing window was vetoed/passed, if any
         self.rawbuf = deque()          # raw enhanced BGR frames, 1:1 with self.buf
+        # RAW-scene (pre-enhancement) frame luma, 1:1 with rawbuf; None where the caller
+        # passed no raw_frame (a caller that predates the gate -- the gate then skips, i.e.
+        # fails open, keeping the old behaviour byte-for-byte).
+        self.lumbuf = deque()
         self.t_parts["skel"] = 0.0     # skeleton branch cost per firing window (see t_parts)
+        self.t_parts["prior"] = 0.0    # object-detection prior gate cost
 
     def load(self, device: str) -> None:
         super().load(device)
@@ -342,6 +402,23 @@ class BehaviorRecognizer(VideoMambaRecognizer):
             print(f"[recognize] [warn] {reason}")
             return
         self.skel = aux
+        if self.fuse_mode == "max_prior":
+            from .object_prior import PriorGate
+            self.prior = PriorGate(os.path.dirname(self.ckpt), device)
+            reason = self.prior.load()      # never fatal: object priors fail open, wave
+            if reason:                      # (geometry) keeps working without the detector
+                print(f"[recognize] [warn] {reason}")
+            else:
+                print(f"[recognize] 物体先验已启用 (yolo26m 检测 {self.prior.det.det_ms:.1f} ms/帧)")
+            from .skeleton_aux import (COMP_FRAC, COMP_MIN_VIS, MAX_PERSONS, TAU)
+            gate = (f"照度门 {self.lum_gate:.0f}（量提亮前原图亮度，低于则仅用RGB）"
+                    if self.lum_gate > 0 else "照度门关")
+            print(f"[recognize] 决策模式=max_prior：{gate}，双分支分类取高分，骨架窗内最多 "
+                  f"{MAX_PERSONS} 人各自识别(质量≥{TAU:g} 且 ≥{COMP_MIN_VIS}/17 点完整率"
+                  f"≥{COMP_FRAC:g})，非other且>{self.skel_tau:g} 者为骨架结果，"
+                  f"胜者置信度<{self.act_tau:g} 直接other；捡东西/挥手/喝水/握手过先验"
+                  f"二次判断(不满足→other)")
+            return
         from .skeleton_aux import NO_PERSON_ZH, TAU
         print(f"[recognize] 骨架分支已启用 RTMO-s+ST-GCN 融合 α={self.skel_alpha:g} "
               f"(无人窗策略={NO_PERSON_ZH.get(self.skel_no_person, self.skel_no_person)}"
@@ -352,6 +429,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         super()._trim()
         while len(self.rawbuf) > len(self.buf):     # keep the raw ring 1:1 with buf
             self.rawbuf.popleft()
+            self.lumbuf.popleft()                   # and the luma ring 1:1 with the raw one
 
     def _raw_window(self):
         """The `_window_frames` policy applied to the raw BGR ring (same indices either way:
@@ -364,11 +442,85 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         idx = np.linspace(0, n - 1, self.window).round().astype(int)
         return [self.rawbuf[i] for i in idx]
 
+    def _luma_window(self):
+        """The same index selection applied to the RAW-scene luma ring (1:1 with the raw
+        frame ring, so the indices are identical). A None entry means the caller did not
+        supply a pre-enhancement frame for that push; the gate then skips (fails open)."""
+        n = len(self.lumbuf)
+        if n != len(self.rawbuf):
+            return [None] * self.window
+        if self.span is None or n == self.window:
+            return list(self.lumbuf)
+        if n == 1:
+            return [self.lumbuf[0]] * self.window
+        idx = np.linspace(0, n - 1, self.window).round().astype(int)
+        return [self.lumbuf[i] for i in idx]
+
+    def _decide_max_prior(self, p_rgb, info, raw_window, luma_window):
+        """The meeting three-step v2 (2026-10-14 revision). Returns (reported distribution,
+        note).
+
+        Step 1  illuminance gate: below `lum_gate` only the RGB branch runs -- no skeleton,
+                no object detector, no priors. `lum_gate <= 0` disables the gate. The gate
+                measures the RAW pre-enhancement scene luma (`luma_window`, per-frame values
+                from frame_luma on the caller's raw_frame) -- enhanced luma is whitened by
+                Retinexformer and cannot see darkness. Windows with no supplied raw luma
+                skip the gate (fail open).
+        Step 2  skeleton side: among `valid` persons, eligible = top-1 is not other AND
+                beats `skel_tau`; the strongest eligible person is THE skeleton result,
+                otherwise the skeleton side abstains (an "other" skeleton must not out-vote
+                the RGB branch by confidence -- abstention, not a competing vote). The
+                higher-confidence branch's top-1 is the preliminary result; below
+                `act_tau` it reports other outright, before any prior runs.
+        Step 3  PRIOR_ACTIONS preliminary results face the prior gate; a failed necessary
+                condition reports other (prior_reject keeps the near-miss in the top-k).
+        """
+        o = self.labels.index("other")
+        if self.lum_gate > 0:
+            vals = [v for v in luma_window if v is not None]
+            if vals:
+                lum = float(np.mean(vals))
+                if lum < self.lum_gate:
+                    return p_rgb, (f"照度 {lum:.0f}（提亮前原图）< 门限 "
+                                   f"{self.lum_gate:.0f}，仅用RGB结果")
+        skel_p = None
+        if info["p"] is not None:
+            cand = [m for m in np.flatnonzero(info["valid"])
+                    if int(info["slot_p"][m].argmax()) != o
+                    and float(info["slot_p"][m].max()) > self.skel_tau]
+            if cand:
+                m = cand[int(np.argmax(info["slot_p"][cand].max(1)))]
+                skel_p = info["slot_p"][m]
+        if skel_p is None or float(p_rgb.max()) >= float(skel_p.max()):
+            init, init_label = p_rgb, self.labels[int(p_rgb.argmax())]
+        else:
+            init, init_label = skel_p, self.labels[int(skel_p.argmax())]
+        if float(init.max()) < self.act_tau:
+            out = np.zeros_like(init)
+            out[o] = 1.0
+            return out, f"置信度 {float(init.max()):.2f} < 启动阈值 {self.act_tau:g}，直接判为other"
+        from .object_prior import PRIOR_ACTIONS
+        if init_label in PRIOR_ACTIONS and self.prior is not None:
+            t0 = time.perf_counter()
+            ok, reason = self.prior.check(init_label, info["sk"], info["valid"], raw_window)
+            self.t_parts["prior"] += time.perf_counter() - t0
+            if not ok:
+                return prior_reject(init, init_label), f"先验否决 {init_label}: {reason}"
+            return init, f"先验通过 {init_label}: {reason}"
+        return init, ""
+
     @torch.inference_mode()
-    def push(self, frame_bgr, frame_index: int, timestamp: float):
+    def push(self, frame_bgr, frame_index: int, timestamp: float, raw_frame=None):
+        """`frame_bgr` is the enhanced frame the model sees; `raw_frame` is the same moment's
+        PRE-enhancement frame (post-downscale), whose luma the max_prior illuminance gate
+        measures. Optional for backward compatibility -- without it the gate just never
+        engages (fail open), exactly the pre-gate behaviour."""
         if self.skel is not None:
             self.rawbuf.append(frame_bgr)           # enhanced frame as received, BGR uint8 --
-        self.buf.append((self._preprocess(frame_bgr), timestamp))   # the pose model's domain
+            # the pose model's domain; and the RAW-scene brightness, if the caller kept the
+            # pre-enhancement frame around
+            self.lumbuf.append(frame_luma(raw_frame) if raw_frame is not None else None)
+        self.buf.append((self._preprocess(frame_bgr), timestamp))
         self._trim()
         if not self._ready():
             return None
@@ -380,11 +532,19 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         arr = np.stack(self._window_frames())
         self.t_parts["window"] += time.perf_counter() - t0
         prob = self._infer(arr)
+        self.prior_note = ""
         if self.skel is not None and len(self.rawbuf) == len(self.buf):
+            raw = self._raw_window()
+            lums = self._luma_window()
             t0 = time.perf_counter()
-            ps, pres = self.skel.probs(self._raw_window())
-            self.t_parts["skel"] += time.perf_counter() - t0
-            prob = self.skel.fuse(prob, ps, pres)
+            if self.fuse_mode == "max_prior":
+                info = self.skel.analyze(raw)
+                self.t_parts["skel"] += time.perf_counter() - t0
+                prob, self.prior_note = self._decide_max_prior(prob, info, raw, lums)
+            else:
+                ps, pres = self.skel.probs(raw)
+                self.t_parts["skel"] += time.perf_counter() - t0
+                prob = self.skel.fuse(prob, ps, pres)
         prob = reject_probs(prob, self.labels, self.reject_tau)
         order = prob.argsort()[::-1][:min(3, len(self.labels))]
         return RecognitionEvent(
@@ -396,6 +556,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
     def reset(self) -> None:
         super().reset()
         self.rawbuf.clear()
+        self.lumbuf.clear()
 
     def warmup(self) -> None:
         super().warmup()
@@ -404,8 +565,14 @@ class BehaviorRecognizer(VideoMambaRecognizer):
             # pays cuBLAS/cuDNN setup. Both belong at startup with the RGB warmup, not in the
             # first firing window of a live stream.
             self.skel.warmup()
+        if self.prior is not None:
+            # The YOLO onnxruntime session init was already priced by PriorGate.load()'s
+            # probe; this absorbs the first REAL-size letterbox+inference of the gate.
+            self.prior.warmup()
 
     def close(self) -> None:
         self.skel = None                             # drops the onnxruntime session too
+        self.prior = None
         self.rawbuf.clear()
+        self.lumbuf.clear()
         super().close()

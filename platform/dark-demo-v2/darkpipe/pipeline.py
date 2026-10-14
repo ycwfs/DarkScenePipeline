@@ -144,13 +144,16 @@ def run_offline(cfg, on_ready=None):
     def process_chunk(chunk):
         """GPU work for one chunk -> the frames to encode."""
         nonlocal current, frame_idx
+        # References only: the pre-enhancement frames, kept so the recognizer's illuminance
+        # gate can measure the RAW scene (enhanced luma is whitened -- see frame_luma).
+        raw_chunk = list(chunk)
         for s in enh_stages:
             chunk = s(chunk)
         chunk_events = []
         if recognizer:
-            for f in chunk:
+            for i, f in enumerate(chunk):
                 ts = frame_idx / reader.fps
-                ev = recognizer.push(f, frame_idx, ts)
+                ev = recognizer.push(f, frame_idx, ts, raw_frame=raw_chunk[i])
                 frame_idx += 1
                 if ev:
                     current = ev
