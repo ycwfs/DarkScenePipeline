@@ -91,6 +91,23 @@ def frame_luma(frame_bgr):
     return float(0.114 * b + 0.587 * g + 0.299 * r)
 
 
+def gate_luma(luma_window, lum_gate):
+    """The illuminance gate, shared by BOTH decision modes (the 2026-10-14 "两部曲" runs it
+    ahead of the alpha blend, max_prior as its step 1): returns the blocking RAW
+    pre-enhancement window luma when the gate engages, else None -- gate off (`lum_gate`
+    <= 0), no raw luma supplied for the window (fail open, the pre-gate behaviour), or the
+    window is at/above the gate. Module-level so the offline eval stack (prior_eval.py,
+    which invokes _decide_max_prior with a plain attribute bag as `self`) runs the exact
+    same gate math without inheriting from this class."""
+    if not lum_gate or lum_gate <= 0 or not luma_window:
+        return None
+    vals = [v for v in luma_window if v is not None]
+    if not vals:
+        return None
+    lum = float(np.mean(vals))
+    return None if lum >= lum_gate else lum
+
+
 class _WindowRecognizer(Recognizer):
     kind = "r3d"
     labels = CLASSES
@@ -335,11 +352,15 @@ class BehaviorRecognizer(VideoMambaRecognizer):
       fuse_mode="alpha" (DEFAULT -- every field suite prefers it: max_prior loses on all
         four, val top1 0.70 vs 0.98 and platform replay 141-177 vs 10 false fires): the
         v2.0 weighted blend p = alpha*p_rgb + (1-alpha)*p_skel with the no-person policy.
+        2026-10-14 "两部曲" (instruction.md revision): the illuminance gate below now runs
+        ahead of the blend as well, so the shipped default (alpha + lum_gate=75) IS the
+        meeting's two-step -- pure RGB in genuinely dark scenes (where pose availability
+        collapses), weighted fusion wherever the skeleton branch is reliable.
       fuse_mode="max_prior" (the meeting "three-step", v2 of 2026-10-14, opt-in): step 1
-        gates on illuminance -- the RAW pre-enhancement scene brightness (push(raw_frame=...),
-        default 75 = the field-measured degradation knee): below `lum_gate` only the RGB
-        branch runs (the skeleton and object detector are unstable there, so no second
-        judgment either); above it,
+        is the SAME illuminance gate -- the RAW pre-enhancement scene brightness
+        (push(raw_frame=...), default 75 = the field-measured degradation knee): below
+        `lum_gate` only the RGB branch runs (the skeleton and object detector are unstable
+        there, so no second judgment either); above it,
         both branches classify, the skeleton side recognizing up to MAX_PERSONS skeletons
         individually (SkeletonAux.analyze). Step 2 picks the skeleton result: among
         qualifying persons, one whose top-1 is NOT other and beats `skel_tau`; if none,
@@ -365,14 +386,15 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         self.skel_alpha = float(skel_fusion_alpha)
         self.skel_no_person = skel_no_person
         self.fuse_mode = fuse_mode if fuse_mode in ("alpha", "max_prior") else "alpha"
-        # max_prior v2 (2026-10-14 meeting revision): the illuminance gate (lum_gate, 0
-        # disables it -- below the gate only the RGB branch runs, no priors; default 75 is
-        # the RAW pre-enhancement luma where field-wide pose/detection availability collapses,
-        # and it keys on raw_frame=... push() input -- enhanced luma is useless here), the
-        # activation threshold (a lower-confidence winner reports other before any prior
-        # runs) and the skeleton-side recognition threshold (a person's named top-1 must
-        # beat it to be eligible as the skeleton result). Two INDEPENDENT knobs per the
-        # meeting's wording; both default to the open-set reject_tau value.
+        # Illuminance gate (lum_gate, 0 disables it -- below the gate only the RGB branch
+        # runs in EITHER decision mode, see gate_luma; default 75 is the RAW
+        # pre-enhancement luma where field-wide pose/detection availability collapses, and
+        # it keys on the raw_frame=... push() input -- enhanced luma is useless here),
+        # plus the max_prior-only thresholds: the activation threshold (a lower-confidence
+        # winner reports other before any prior runs) and the skeleton-side recognition
+        # threshold (a person's named top-1 must beat it to be eligible as the skeleton
+        # result). INDEPENDENT knobs per the meeting's wording; act_tau/skel_tau default
+        # to the open-set reject_tau value.
         self.lum_gate = float(lum_gate)
         self.act_tau = float(act_tau)
         self.skel_tau = float(skel_tau)
@@ -420,9 +442,11 @@ class BehaviorRecognizer(VideoMambaRecognizer):
                   f"二次判断(不满足→other)")
             return
         from .skeleton_aux import NO_PERSON_ZH, TAU
+        gate = (f"，照度门 {self.lum_gate:.0f}（量提亮前原图亮度，低于门限的窗仅用RGB"
+                f"、不做骨架融合，两部曲）" if self.lum_gate > 0 else "，照度门关")
         print(f"[recognize] 骨架分支已启用 RTMO-s+ST-GCN 融合 α={self.skel_alpha:g} "
               f"(无人窗策略={NO_PERSON_ZH.get(self.skel_no_person, self.skel_no_person)}"
-              f"，TAU={TAU:g}，姿态 {aux.pose_ms:.1f} ms/帧)")
+              f"，TAU={TAU:g}，姿态 {aux.pose_ms:.1f} ms/帧){gate}")
 
     def _trim(self):
         n0 = len(self.buf)
@@ -476,13 +500,10 @@ class BehaviorRecognizer(VideoMambaRecognizer):
                 condition reports other (prior_reject keeps the near-miss in the top-k).
         """
         o = self.labels.index("other")
-        if self.lum_gate > 0:
-            vals = [v for v in luma_window if v is not None]
-            if vals:
-                lum = float(np.mean(vals))
-                if lum < self.lum_gate:
-                    return p_rgb, (f"照度 {lum:.0f}（提亮前原图）< 门限 "
-                                   f"{self.lum_gate:.0f}，仅用RGB结果")
+        lum = gate_luma(luma_window, self.lum_gate)
+        if lum is not None:
+            return p_rgb, (f"照度 {lum:.0f}（提亮前原图）< 门限 "
+                           f"{self.lum_gate:.0f}，仅用RGB结果")
         skel_p = None
         if info["p"] is not None:
             cand = [m for m in np.flatnonzero(info["valid"])
@@ -512,9 +533,9 @@ class BehaviorRecognizer(VideoMambaRecognizer):
     @torch.inference_mode()
     def push(self, frame_bgr, frame_index: int, timestamp: float, raw_frame=None):
         """`frame_bgr` is the enhanced frame the model sees; `raw_frame` is the same moment's
-        PRE-enhancement frame (post-downscale), whose luma the max_prior illuminance gate
-        measures. Optional for backward compatibility -- without it the gate just never
-        engages (fail open), exactly the pre-gate behaviour."""
+        PRE-enhancement frame (post-downscale), whose luma the illuminance gate measures
+        (both decision modes). Optional for backward compatibility -- without it the gate
+        just never engages (fail open), exactly the pre-gate behaviour."""
         if self.skel is not None:
             self.rawbuf.append(frame_bgr)           # enhanced frame as received, BGR uint8 --
             # the pose model's domain; and the RAW-scene brightness, if the caller kept the
@@ -536,15 +557,24 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         if self.skel is not None and len(self.rawbuf) == len(self.buf):
             raw = self._raw_window()
             lums = self._luma_window()
-            t0 = time.perf_counter()
-            if self.fuse_mode == "max_prior":
-                info = self.skel.analyze(raw)
-                self.t_parts["skel"] += time.perf_counter() - t0
-                prob, self.prior_note = self._decide_max_prior(prob, info, raw, lums)
+            lum = gate_luma(lums, self.lum_gate)
+            if lum is not None:
+                # 两部曲 (2026-10-14 instruction.md revision): the gate runs ahead of BOTH
+                # decision modes -- below it the skeleton branch does not even load, pure
+                # RGB, the same below-gate behaviour max_prior's step 1 has. Skipping the
+                # pose run also gives dark scenes its ~9 ms/frame back.
+                self.prior_note = (f"照度 {lum:.0f}（提亮前原图）< 门限 "
+                                   f"{self.lum_gate:.0f}，仅用RGB结果")
             else:
-                ps, pres = self.skel.probs(raw)
-                self.t_parts["skel"] += time.perf_counter() - t0
-                prob = self.skel.fuse(prob, ps, pres)
+                t0 = time.perf_counter()
+                if self.fuse_mode == "max_prior":
+                    info = self.skel.analyze(raw)
+                    self.t_parts["skel"] += time.perf_counter() - t0
+                    prob, self.prior_note = self._decide_max_prior(prob, info, raw, lums)
+                else:
+                    ps, pres = self.skel.probs(raw)
+                    self.t_parts["skel"] += time.perf_counter() - t0
+                    prob = self.skel.fuse(prob, ps, pres)
         prob = reject_probs(prob, self.labels, self.reject_tau)
         order = prob.argsort()[::-1][:min(3, len(self.labels))]
         return RecognitionEvent(

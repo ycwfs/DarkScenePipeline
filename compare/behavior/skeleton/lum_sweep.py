@@ -11,7 +11,9 @@ Prints:
   2. suite A binned by luma: RGB-only top1 vs max_prior top1 and skeleton reliability
      (mean qualifying persons) -- where the skeleton stops earning its keep;
   3. the sweep table: for each t, all four suites' headline numbers, with the deployed
-     stack's alpha baselines alongside.
+     stack's alpha baselines alongside;
+  4. the 两部曲 sweep (2026-10-14): alpha blend + gate -- below t pure RGB, above t the
+     recorded a0.80/a0.70 blend, per t.
 
 Usage: python lum_sweep.py [runs.jsonl]
 """
@@ -46,6 +48,13 @@ def rgb_only(row):
 
 def outcome(row, t):
     return rgb_only(row) if row["lum"] < t else np.array(row["mp"])
+
+
+def alpha_outcome(row, t, key):
+    """The meeting "两部曲" (2026-10-14 instruction.md revision): below the gate pure RGB,
+    above it the RECORDED alpha blend (a0.80 / a0.70). Exact offline mix, same argument as
+    `outcome`: the gate changes nothing at or above it, and the blend is per-window."""
+    return rgb_only(row) if row["lum"] < t else np.array(row[key])
 
 
 def main(path):
@@ -112,6 +121,29 @@ def main(path):
         fp = sum(fired(np.array(r[key])) for r in sub_p)
         fc = sum(fired(np.array(r[key])) for r in sub_c)
         print(f"  {key}: {a}  B {fb}/{len(sub_b)}  P {fp}/{len(sub_p)}  C {fc}/{len(sub_c)}")
+
+    print("\n== 4. 两部曲 sweep (alpha blend + gate: below t pure RGB, above t the"
+          " recorded blend) ==")
+    for key, al in (("a0.80", "0.80"), ("a0.70", "0.70")):
+        print(f"  -- alpha={al} --")
+        print("  t      A top1   A mF1    B fired   P fired   C fired")
+        for t in [0] + [30, 40, 50, 60, 65, 70, 75, 80, 90, 105, 120, 135, 150]:
+            line = f" {t:4d} " if t else "  off "
+            if sub:
+                cm = np.zeros((10, 10), np.int64)
+                for r in sub:
+                    cm[LABELS.index(r["expect"]),
+                       int(np.argmax(alpha_outcome(r, t, key)))] += 1
+                tp = np.diag(cm).astype(float)
+                f1 = 2 * tp / np.maximum(cm.sum(0) + cm.sum(1), 1e-9)
+                line += f" {tp.sum() / cm.sum():.4f} {f1[cm.sum(1) > 0].mean():.4f}"
+            else:
+                line += "   -      -"
+            fb = sum(fired(alpha_outcome(r, t, key)) for r in sub_b)
+            fp = sum(fired(alpha_outcome(r, t, key)) for r in sub_p)
+            fc = sum(fired(alpha_outcome(r, t, key)) for r in sub_c)
+            print(line + f"   {fb:3d}/{len(sub_b):<3d}  {fp:3d}/{len(sub_p):<3d}  "
+                         f"{fc:2d}/{len(sub_c)}")
 
 
 if __name__ == "__main__":

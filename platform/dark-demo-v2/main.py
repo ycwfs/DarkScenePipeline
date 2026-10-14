@@ -78,9 +78,9 @@ def build_parser():
     p.add_argument("--skel_no_person", default="soft", choices=["other", "soft", "rgb"],
                    help="识别窗内骨架检测不到人时的处理：other=直接报 other(压误报最狠，但姿态漏检真行为时会被误杀)；soft=骨架以(1-α)权重投 other 票，RGB 证据足够强(RGB置信≥0.65/α)仍可报出行为，兼顾漏报与误报，默认；rgb=骨架弃权，该窗按纯 RGB 识别(误报回到 v1 水平)。仅 fuse_mode=alpha 时生效")
     p.add_argument("--fuse_mode", default="alpha", choices=["alpha", "max_prior"],
-                   help="双分支决策模式：alpha=加权融合 p=α·RGB+(1-α)·骨架，四套件实测最优，默认。max_prior=会议三部曲(v2)——画面提亮前的原图照度低于 --lum_gate 时仅用 RGB；否则 RGB 与骨架(窗内最多6个合格骨架中非other且置信度>--skel_tau 者为骨架结果，无人合格则骨架弃权)分别分类取置信度高者为初步结果，置信度<--act_tau 直接报 other，捡东西/挥手/喝水/握手再过先验二次判断(不满足直接报 other)。注意三部曲四套件实测误报明显更多，仅作可选档保留")
+                   help="双分支决策模式：alpha=加权融合 p=α·RGB+(1-α)·骨架，四套件实测最优，默认；配合 --lum_gate 即两部曲(照度低于门限的窗仅用RGB，不低于才做加权融合)。max_prior=会议三部曲(v2)——画面提亮前的原图照度低于 --lum_gate 时仅用 RGB；否则 RGB 与骨架(窗内最多6个合格骨架中非other且置信度>--skel_tau 者为骨架结果，无人合格则骨架弃权)分别分类取置信度高者为初步结果，置信度<--act_tau 直接报 other，捡东西/挥手/喝水/握手再过先验二次判断(不满足直接报 other)。注意三部曲四套件实测误报明显更多，仅作可选档保留")
     p.add_argument("--lum_gate", type=float, default=75.0,
-                   help="三部曲步骤1的照度门(0-255，量的是画面提亮之前的原图平均亮度，不是提亮之后的；0=关闭)：低于该值说明场景真的太暗，姿态和检测本来就不可靠，只跑 RGB 识别。默认 75=现场全部视频实测的姿态/检测性能开始明显下降的亮度拐点，作为保险留用")
+                   help="照度门(0-255，量的是画面提亮之前的原图平均亮度，不是提亮之后的；0=关闭)，两种决策模式共用：低于该值说明场景真的太暗，姿态和检测本来就不可靠，只跑 RGB 识别(两种模式下都跳过骨架)。默认 75=现场全部视频实测的姿态/检测性能开始明显下降的亮度拐点，作为保险留用")
     p.add_argument("--act_tau", type=float, default=0.65,
                    help="三部曲步骤2的启动阈值(0-1)：初步结果(两分支中置信度高者)的置信度低于该值时直接报 other，不再做先验二次判断")
     p.add_argument("--skel_tau", type=float, default=0.65,

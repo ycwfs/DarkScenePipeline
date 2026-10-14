@@ -143,12 +143,16 @@ CKPT_FILES = {
     "catanet_x2": "catanet_x2.pth",
     "r3d": "r2plus1d_arid.pth",
     "videomamba": "videomamba_t_arid_32f.pth",
-    # 2026-10 v2: the behavior head trained on the full field dataset (390 takes), whole-frame
-    # 400x224 input. The checkpoint's own "preprocess" metadata selects the input pipeline at
-    # load time (stages/recognize.py), so the previous crop-chain weight
-    # (videomamba_t_behavior_32f.pth, md5 eed5c06a, kept in ckpts/ for rollback) still runs
-    # under this entry by reverting this one line.
-    "behavior": "videomamba_t_behavior_32f_realactall_full.pth",
+    # 2026-10-14 swap (user ruling "换上最好的模型"): the _pn head = realactall_full
+    # continued (lr 2e-5, 8 epochs, lwf 2.0, best ep12) on the 96 platform round-trip
+    # false-positive clips replayed as negative windows (cache realact_all_rf_v1_all_pn,
+    # 5868->6440 windows). Measured: 96-clip replay FP clips 21->3 at alpha 0.8 (-86%) and
+    # 7->1 at alpha 0.7; suites A bit-identical, B +1 window at alpha 0.7 only, C 18/18 --
+    # no regression anywhere else. Whole-frame 400x224 like its init. Rollbacks kept in
+    # ckpts/ and reachable by reverting this one line:
+    #   videomamba_t_behavior_32f_realactall_full.pth  pre-pn full-dataset head (10-02..14)
+    #   videomamba_t_behavior_32f.pth                  09-15 crop-chain head (md5 eed5c06a)
+    "behavior": "videomamba_t_behavior_32f_realactall_full_pn.pth",
     "xclip": "xclip-base-patch16-zero-shot",  # HF snapshot directory
     "realrestorer": "realrestorer",  # HF bundle directory
 }

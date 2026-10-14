@@ -56,14 +56,16 @@ class PipelineConfig:
     # wave / drink / shake_hands then face the prior gate (object_prior.py) where a
     # failed necessary condition reports `other`.
     fuse_mode: str = "alpha"
-    # max_prior v2 knobs. lum_gate is the step-1 threshold on the RAW frame's mean BT.601
-    # luma (0-255), measured BEFORE enhancement (Retinexformer whitens its output, so a
-    # gate on the enhanced frame cannot see darkness -- the 10-14 sweep over 1020 windows
-    # proved no enhanced-luma threshold does anything); 0 disables it. Default 75 is the
-    # field-measured degradation knee (compare/behavior/skeleton/lum_curve.py, all field
-    # takes: pose availability 0.28-0.71 below 75, a flat 1.000 plateau at and above it).
-    # Kept as a safety net rather than a fix: the actual trouble windows sit at raw luma
-    # 135-154, far above the gate, and the误报压制 mechanism is the alpha fusion itself.
+    # max_prior v2 knobs. lum_gate is the threshold on the RAW frame's mean BT.601 luma
+    # (0-255), measured BEFORE enhancement (Retinexformer whitens its output, so a gate on
+    # the enhanced frame cannot see darkness -- the 10-14 sweep over 1020 windows proved
+    # no enhanced-luma threshold does anything); 0 disables it. It gates BOTH decision
+    # modes (the 2026-10-14 "两部曲": alpha + this gate -- below it pure RGB, above it the
+    # blend; max_prior runs it as its step 1). Default 75 is the field-measured
+    # degradation knee (compare/behavior/skeleton/lum_curve.py, all field takes: pose
+    # availability 0.28-0.71 below 75, a flat 1.000 plateau at and above it). Kept as a
+    # safety net rather than a fix: the actual trouble windows sit at raw luma 135-154,
+    # far above the gate, and the误报压制 mechanism is the alpha fusion itself.
     # act_tau/skel_tau follow the meeting's two-threshold wording; no setting of either
     # separates the true positives (conf >= 0.91) from the platform false fires (70 of
     # them >= 0.9).
