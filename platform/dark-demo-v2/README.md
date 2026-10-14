@@ -793,8 +793,11 @@ H.264 640x528。**RTSP 固定使用 TCP 传输**——ffmpeg 默认走 UDP，需
    回滚只需把 `darkpipe/constants.py` 里 `CKPT_FILES["behavior"]` 改回一行：
    `videomamba_t_behavior_32f_realactall_full.pth`（全量数据版，md5 `04707beb…`）或
    `videomamba_t_behavior_32f.pth`（09-15 裁剪链版，md5 `eed5c06a`），三代权重同一套
-   代码通吃。注意：**生产拿到这份权重需要重新打包交付**（算子 zip/盒子包/镜像），仅改
-   仓库不改变已交付的包。
+   代码通吃。生产交付已于 10-14 重新打包：算子包 `platform/dark-demo-v2.tar.gz`
+   （md5 `75c14464…`，10-02 旧包原件备份为 `dark-demo-v2_20261002.tar.gz`）与盒子包
+   `NVIDIA-Box.zip`（md5 `3c5da25e…`，10-05 旧包原件备份为 `NVIDIA-Box_20261005.zip`）；
+   镜像不含权重，无需变动。清单 `suanzi.json` 的新参数（fuse_mode/lum_gate/act_tau/
+   skel_tau）仍需平台**重新导入**才在生产生效。
 2. **新增骨架分支**（`darkpipe/stages/skeleton_aux.py`）：每个识别窗在 RGB 分支之外再跑
    RTMO-s 姿态（COCO-17，`ckpts/rtmo-s_end2end.onnx`）+ ST-GCN
    （`ckpts/stgcn_behavior_32f_realactall_full.pth`，0.29M 参数），两分支概率按

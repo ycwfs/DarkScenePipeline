@@ -377,34 +377,34 @@
     },
     {
       "name": "lum_gate",
-      "type": "Number",
+      "type": "Float",
       "description": "照度门（0-255，量的是画面提亮之前的原图平均亮度，不是提亮之后的；0=关闭），两种决策模式共用：低于该值说明场景真的太暗，姿态和检测本来就不可靠，只跑 RGB 识别、跳过骨架融合。默认 75=现场全部视频实测的姿态/检测性能开始明显下降的亮度拐点，作为保险留用。alpha 模式配合本参数即两部曲（照度正常时加权融合），max_prior 模式下作为其步骤1",
       "default": 75.0,
       "annotations": {
         "show": "照度门阈值(原图亮度,0=关)",
-        "component": "input",
+        "component": "floatInput",
         "parameter": 1
       }
     },
     {
       "name": "act_tau",
-      "type": "Number",
+      "type": "Float",
       "description": "三部曲步骤2的启动阈值（0-1）：初步结果（RGB 与骨架中置信度高者）的置信度低于该值时直接报 other，不再做先验二次判断。仅 fuse_mode=max_prior 时生效",
       "default": 0.65,
       "annotations": {
         "show": "启动阈值",
-        "component": "input",
+        "component": "floatInput",
         "parameter": 1
       }
     },
     {
       "name": "skel_tau",
-      "type": "Number",
+      "type": "Float",
       "description": "三部曲步骤2的骨架识别阈值（0-1）：合格骨架中仅有非other且置信度高于该值者可当选骨架结果，无人合格则骨架弃权、采用 RGB 结果。仅 fuse_mode=max_prior 时生效",
       "default": 0.65,
       "annotations": {
         "show": "骨架识别阈值",
-        "component": "input",
+        "component": "floatInput",
         "parameter": 1
       }
     }

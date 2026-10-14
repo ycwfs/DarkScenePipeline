@@ -212,8 +212,14 @@ v2 附加的两个阈值（`act_tau` 启动阈值、`skel_tau` 骨架识别阈�
 
 - 已提交 master 的状态 = 本文第二节表格（**RGB 头已换 pn 版**）+ 决策模式默认 alpha +
   照度门 75（提亮前，两种模式共用）——**出厂默认组合 alpha+门75 就是会议的两部曲**。
-- **pn 换装（10-14）生产生效需重新打包交付**（算子 zip/盒子包/镜像），仓库换装不改变
-  已交付的包；suanzi.json 的 fuse_mode/lum_gate/act_tau/skel_tau 同样待平台重导入。
+- **pn 换装（10-14）已重新打包交付**：算子包 `platform/dark-demo-v2.tar.gz` md5
+  `75c14464`（10-02 旧包原件备份 `dark-demo-v2_20261002.tar.gz`，md5 `6e8d60f8`）；
+  盒子包 `NVIDIA-Box.zip` md5 `3c5da25e`（10-05 旧包原件备份 `NVIDIA-Box_20261005.zip`，
+  md5 `2127a2b5`）。镜像不含权重，不需要动。打包门禁抓到三部曲轮新加的三个数值参数
+  type/component 不合规范（Number/input），已改 Float/floatInput（提交见 suanzi.json）。
+  算子包相比 10-02 新增 `yolo26m_detect.onnx`（82MB，max_prior 可选档依赖）与
+  `darkpipe/stages/object_prior.py`，包体 95.6→190MB；盒子包新增 pn 权重并移植照度门
+  （101.9→127.9MB），回滚链 0.9077 逐位复现。
 - suanzi.json 的新参数（fuse_mode/lum_gate/act_tau/skel_tau）要**平台重新导入清单**
   才会在生产生效；导入前生产用的是注册时的旧清单。
 - 三部曲是否彻底下线等会议裁决；若会议坚持上，先解决第五节根因 1（现场可用的
