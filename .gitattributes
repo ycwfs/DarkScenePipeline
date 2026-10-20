@@ -1,0 +1,13 @@
+# Preserve audited upstream/model-source bytes used by the delivery manifests.
+NVIDIA-Box/models/** linguist-vendored -whitespace
+
+# Machine-generated evidence keeps its original bytes (CSV uses RFC 4180 CRLF).
+reports/**/*.csv linguist-generated -whitespace
+reports/**/*.xml linguist-generated -whitespace
+reports/**/*.svg linguist-generated -whitespace
+reports/**/*.json linguist-generated
+reports/**/*.jsonl linguist-generated
+reports/**/*.png linguist-generated
+reports/**/*.jpg linguist-generated
+reports/**/*.pdf linguist-generated
+reports/**/*.pptx linguist-generated

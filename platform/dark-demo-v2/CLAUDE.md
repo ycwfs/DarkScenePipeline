@@ -17,26 +17,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 有若干代码路径引用了**没有**打进这个包的模块。它们能从 `darkpipe/config.py` 与
 `darkpipe/stages/__init__.py` 的枚举里走到，但一 import 就会失败：
 
-- `darkpipe/cli.py` —— **缺失**，因此 `darkpipe/shard.py`（多卡离线分片，靠
-  `python -m darkpipe.cli` 起子进程）在这里跑不起来。实际影响不大：`main.py` 在
-  `clip_dir` 非空时一律降级为单卡，而 `clip_dir` 本身有非空默认值，所以分片这条路
-  正常情况下根本走不到。
+- v2 不带通用 `darkpipe/cli.py`。离线分片改用随包 `darkpipe/shard_worker.py`，通过 JSON
+  传完整 PipelineConfig；禁用片段后可达。启用片段仍须保持单卡连续时间轴。
 - `enhance_cidnet.py`、`enhance_realrestorer.py`、`sr_lightsr.py`、`sr_catanet.py`、
   `recognize_xclip.py` —— **缺失**。可用的组合只有 `enhance={off,retinexformer}`、
   `sr={off,bicubic}`、`recognize=behavior`。
 
-`ckpts/` 里正好只有这些可用路径需要的两份权重：`NTIRE.pth`（Retinexformer）与
-`videomamba_t_behavior_32f.pth`（行为识别头）。注意 `PipelineConfig.recognize` 的默认值
+`ckpts/` 随包保留 8 份权重：NTIRE、现役整帧 pn2 RGB 头、三份 RGB 回滚备份、
+RTMO、ST-GCN 和 YOLO。现役 RGB 头由 `constants.CKPT_FILES["behavior"]` 指名。注意 `PipelineConfig.recognize` 的默认值
 仍是 `videomamba`，而那份权重不在这里——`main.py` 总是显式传 `recognize=behavior`。
+
+当前 v2 用仓库根的 `python3 platform/package_v2.py` 打包，不能使用旧
+`make_operator_zip.sh`；打包会校验入口/清单默认值与选项，并记录逐文件哈希。
+默认处理长边 720（2026-10-15 从 840 下调）、阈值 0.75（10-19 用户选择），片段前后各 2 秒；更新后要重新导入平台清单。
 
 本目录下没有测试套件、`requirements.txt`、`Dockerfile`，也没有 linter 配置，它们都在
 上游仓库里。不要在这里凭空造出来。
 
 ## 怎么跑
 
-这个包里没有任何东西能在无 CUDA 的机器上跑：`mamba_ssm` 与 `causal_conv1d`
+默认完整识别栈需要 CUDA：`mamba_ssm` 与 `causal_conv1d`
 （VideoMamba 的 selective-scan kernel）只有 CUDA 实现，而 `config.validate` 会直接拒掉
-`recognize=behavior` 配 `--device cpu`。运行环境是镜像 `darkpipe-operator:0.2.0` 里的
+`recognize=behavior` 配 `--device cpu`。运行环境是镜像 `darkpipe-operator:0.3.0` 里的
 `darkpipe` conda 环境；H.264 编码与 FLV/HLS/RTMP 出流都是调镜像里的 `ffmpeg` 二进制。
 
 两种模式共用同一个入口，由 `--video_path` 决定走哪条：
@@ -47,7 +49,7 @@ python -u main.py --video_path /data/demo.mp4 --session_json /out/session_json.j
 
 # 实时——流地址：常驻在 --serve_port 上，直到被杀或 --run_seconds 到期
 python -u main.py --video_path rtsp://10.0.0.5:554/live --run_seconds 60 \
-    --gpu_ids 0,1 --proc_max_side 840 --session_json /out/session_json.json
+    --gpu_ids 0,1 --proc_max_side 720 --session_json /out/session_json.json
 ```
 
 `--run_seconds` 的意义就在于把常驻服务变成有限时长，从而可测试、可被编排调度。两种模式
@@ -75,7 +77,7 @@ tail -f <clip_dir>/*/events.jsonl         # 同样的事件，落在盘上，不
 - 只改 `main.py` 里的默认值，在生产上不生效：平台是按已注册的清单拼命令行的，所以
   `suanzi.json` 必须重新导入。启动日志里的 `[config]` 打印的正是实际生效值，就是为了
   诊断这一类问题。
-- 真正决定分到几张卡的是 `metadata.gpu.count`（2），不是 `gpu_ids`。
+- 真正决定分到几张卡的是 `metadata.gpu.count`（3），不是 `gpu_ids`。
 
 ## 架构
 
@@ -176,11 +178,9 @@ downscale → enhance → 【识别取帧点】 → denoise → saturation → S
 - **`server.py:process_loop`，单卡** —— 按争用的资源切成两个线程：GPU（增强 + 识别）与
   CPU（超分 → 标签条 → JPEG → 片段）。吞吐从两者之**和**变成两者之**大**。这笔交易是
   **牺牲时延换帧率**，只有在「≥15 fps 且 ≤1 秒」这条硬指标下才划算。
-- **`server.py:process_loop`，多卡**（`gpu_ids` 填了多张）—— 一个 dealer 线程把最新帧
-  严格轮询地发给每张卡各自的增强 worker；worker 0 额外独占**全部**识别工作并负责按序输出。
-  正因为是严格轮询，`next_out % n_gpu` 就够用了——不需要重排缓冲，也不需要序号。每张卡上
-  只有一个提交 CUDA 任务的线程，因为同卡两个提交线程会互相切分时间片（把识别单独拆成一个
-  线程与增强共卡时，推理从 73 ms 涨到 250 ms）。
+- **`server.py:process_loop`，多卡**（`gpu_ids` 填了多张）—— 最后一张卡独占识别，
+  其余卡各有增强 worker 并按帧轮询；默认三卡是两卡增强、一卡识别。单卡、旧双卡测量
+  不代表现役三卡栈的性能，当前速度问题仍待单独处理。
 
 实时是**按帧**轮询，离线分片是**按帧段**切分。两种机制在对方的模式里都不成立——实时流没有
 「未来的帧」可切段。`config.validate` 会强制这一点。
@@ -213,7 +213,18 @@ downscale → enhance → 【识别取帧点】 → denoise → saturation → S
    模式下队列是有界的——满了就丢帧，丢得很响且有计数，为的是守住 ≤1 秒这条指标。离线模式
    设 `maxsize=0`（无上限）：那边没有时延指标，只要求结果完整，所以写盘慢只会拉长总耗时、
    绝不丢一帧（`clips_abandoned`/`frames_dropped` 恒为 0）。片段先写临时目录，录完整了才
-   整体搬进 `clip_dir`，所以挂 NFS 的 `clip_dir` 里永远不会出现半截 mp4。
+   搬进 `clip_dir`，同名 JSON 是完整标记（跨文件系统移动失败可能留下无标记的 MP4）。
+   收尾会等待写盘排空；连续 60 秒无进展或写盘异常时明确失败，记录计数并保留恢复文件。
+
+10-19 的队列协议修复必须保留：start/frame 为 end 保留一个槽；备用 `_pending_end` 永不因
+10 秒期限被丢弃，后续 start 不能越过它。`END_RETRY_SEC` 只控制告警间隔（也用于上传队列
+收尾等待）。quality 逐帧去噪可让健康写线程忙超过 10 秒，不能据此判死。新片段开录仍有
+3 秒重试上限，过载丢帧/放弃开录与真实写盘失败要区分。
+
+标签条由 output_loop 私有的 `display_event` 驱动；异步事件必须在绘制前从 ev_q 取一次，
+同一事件同时交给标签条与 clipper，不能改回绘制时读 `st.last_event`、编码后再取 ev_q。
+否则识别线程在 JPEG 编码期间更新事件，会再次出现“全片其他却按喝水命名”。
+`st.last_event` 仍供遥测使用。回归见仓库 `tests/test_v2_platform_feedback.py`。
 
 `naming="key"`（实时，`<行为>/<时间>_<行为>_<序号>.mp4`）与 `naming="range"`（离线，平铺的
 `<起>-<止>s-<中文动作>.mp4`）—— 实时是一个流跑很久，按时间排更好找；离线是同一个目录里
@@ -265,3 +276,11 @@ WebHDFS 是**两跳**的：NameNode 回一个 307，其 `Location` 里的 DataNo
 - 诊断信息永不影响运行：`probe_video`、`_print_gpu_inventory` 这类都吞掉异常改为打印。
 - `parse_bool` 存在的原因是 argparse 的 `type=bool` 会把 `"false"` 当真值；平台以字符串
   下发的布尔参数都要用它。
+
+## 动作骨架绘制（2026-10-19）
+
+`pose_overlay` 默认 true。只画最终具名动作对应的骨架候选，Other/照度门关闭/无人/骨架分类不支持该动作时不画。
+`SkeletonAux.last_analysis` 保存本次窗口的逐槽概率与归一化姿态，显示信息不反向参与融合。槽位不是稳定人物 ID，
+不能把它宣称为可靠的人物跟踪。输出线程拥有 `ActionPoseOverlay`，以干净增强帧做光流跟随，超过 1 秒或
+匹配不可靠即隐藏。实时必须传 `t_cap - st.t_start`，与事件的相对时间一致，不能传墙钟时间。
+离线每帧保留自己的事件，不能把块末尾事件应用到整个块。图像参考只在内部传递，不能写入事件 JSON。

@@ -1,0 +1,100 @@
+{
+  "A": {
+    "n": 177,
+    "luma_min": 23.9,
+    "luma_max": 154.1,
+    "a0.70": {
+      "triggered": 108,
+      "correct": 177,
+      "classes": {
+        "chase": 30,
+        "drink": 39,
+        "other": 69,
+        "pick_up": 17,
+        "wave": 22
+      }
+    },
+    "mp": {
+      "triggered": 86,
+      "correct": 155,
+      "classes": {
+        "chase": 30,
+        "other": 91,
+        "drink": 18,
+        "pick_up": 17,
+        "wave": 21
+      }
+    }
+  },
+  "B": {
+    "n": 365,
+    "luma_min": 26.9,
+    "luma_max": 129.4,
+    "a0.70": {
+      "triggered": 5,
+      "correct": 360,
+      "classes": {
+        "other": 360,
+        "chase": 5
+      }
+    },
+    "mp": {
+      "triggered": 6,
+      "correct": 359,
+      "classes": {
+        "other": 359,
+        "chase": 6
+      }
+    }
+  },
+  "C": {
+    "n": 18,
+    "luma_min": 135.0,
+    "luma_max": 154.1,
+    "a0.70": {
+      "triggered": 18,
+      "correct": 18,
+      "classes": {
+        "wave": 4,
+        "pick_up": 5,
+        "chase": 3,
+        "drink": 6
+      }
+    },
+    "mp": {
+      "triggered": 7,
+      "correct": 7,
+      "classes": {
+        "wave": 4,
+        "other": 11,
+        "chase": 3
+      }
+    }
+  },
+  "P": {
+    "n": 460,
+    "luma_min": 135.5,
+    "luma_max": 149.6,
+    "a0.70": {
+      "triggered": 1,
+      "correct": 459,
+      "classes": {
+        "other": 459,
+        "drink": 1
+      }
+    },
+    "mp": {
+      "triggered": 150,
+      "correct": 310,
+      "classes": {
+        "other": 310,
+        "shake_hands": 20,
+        "chase": 91,
+        "fall": 1,
+        "throw": 18,
+        "wave": 10,
+        "pick_up": 10
+      }
+    }
+  }
+}

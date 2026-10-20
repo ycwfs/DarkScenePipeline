@@ -1,0 +1,107 @@
+{
+  "model_sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+  "count": 10,
+  "all_matched": true,
+  "rows": [
+    {
+      "sample": "喝水16.mp4",
+      "processed_replay": false,
+      "label": "Drinking water",
+      "operator_confidence": 0.9337613582611084,
+      "box_confidence": 0.9338725805282593,
+      "skeleton_active": true,
+      "drawn_actors": 1,
+      "matched": true
+    },
+    {
+      "sample": "挥手22.mp4",
+      "processed_replay": false,
+      "label": "Other",
+      "operator_confidence": 0.739637553691864,
+      "box_confidence": 0.7396082878112793,
+      "skeleton_active": true,
+      "drawn_actors": 0,
+      "matched": true
+    },
+    {
+      "sample": "捡东西2.mp4",
+      "processed_replay": false,
+      "label": "Picking up object",
+      "operator_confidence": 0.8526179790496826,
+      "box_confidence": 0.852664589881897,
+      "skeleton_active": true,
+      "drawn_actors": 1,
+      "matched": true
+    },
+    {
+      "sample": "追逐16.mp4",
+      "processed_replay": false,
+      "label": "Chasing",
+      "operator_confidence": 0.9093466997146606,
+      "box_confidence": 0.9092564582824707,
+      "skeleton_active": true,
+      "drawn_actors": 1,
+      "matched": true
+    },
+    {
+      "sample": "追逐19.mp4",
+      "processed_replay": false,
+      "label": "Chasing",
+      "operator_confidence": 0.9246350526809692,
+      "box_confidence": 0.9248046875,
+      "skeleton_active": false,
+      "drawn_actors": 0,
+      "matched": true
+    },
+    {
+      "sample": "sample_drink.mp4",
+      "processed_replay": false,
+      "label": "Drinking water",
+      "operator_confidence": 0.9379374980926514,
+      "box_confidence": 0.93798828125,
+      "skeleton_active": false,
+      "drawn_actors": 0,
+      "matched": true
+    },
+    {
+      "sample": "sample_wave.mp4",
+      "processed_replay": false,
+      "label": "Waving",
+      "operator_confidence": 0.9064962267875671,
+      "box_confidence": 0.90673828125,
+      "skeleton_active": false,
+      "drawn_actors": 0,
+      "matched": true
+    },
+    {
+      "sample": "other1.mp4",
+      "processed_replay": false,
+      "label": "Other",
+      "operator_confidence": 0.9230566024780273,
+      "box_confidence": 0.923095703125,
+      "skeleton_active": true,
+      "drawn_actors": 0,
+      "matched": true
+    },
+    {
+      "sample": "20261015_181324_drinking_water_0005.mp4",
+      "processed_replay": true,
+      "label": "Other",
+      "operator_confidence": 0.7371763586997986,
+      "box_confidence": 0.737130880355835,
+      "skeleton_active": true,
+      "drawn_actors": 0,
+      "matched": true
+    },
+    {
+      "sample": "20261019_092534_waving_0006.mp4",
+      "processed_replay": true,
+      "label": "Other",
+      "operator_confidence": 0.6376523375511169,
+      "box_confidence": 0.6377484202384949,
+      "skeleton_active": true,
+      "drawn_actors": 0,
+      "matched": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "processing_thread_alive": false,
+  "processing_errors": [
+    "injected enhancement failure"
+  ],
+  "stop_flag": false,
+  "health_http_status": 200,
+  "health": {
+    "status": "ok",
+    "uptime_s": 0.1,
+    "capture_alive": true,
+    "source": "http://camera/live",
+    "reconnects": 0,
+    "fps_in": 0.0,
+    "fps_proc": 0.0,
+    "frames_dropped": 1,
+    "latency_ms_last": 0.0,
+    "events_total": 0,
+    "last_label": null,
+    "stream_formats": [
+      "mjpeg"
+    ],
+    "flv_clients": 0,
+    "flv_total": 0,
+    "flv_rejected": 0,
+    "flv_viewers": [],
+    "stream_bitrate": "4M"
+  }
+}

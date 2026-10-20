@@ -2,8 +2,9 @@
 # 打包算子 zip：suanzi.json / README.md / main.py 直接位于包根，不套任何文件夹。
 #
 # 用法：
-#   bash platform/make_operator_zip.sh                      # 打包全部算子
+#   bash platform/make_operator_zip.sh                      # 打包旧版 op_* 算子
 #   bash platform/make_operator_zip.sh op_dark_behavior     # 只打包指定算子
+#   python3 platform/package_v2.py                         # 当前 dark-demo-v2 交付包
 #
 # 包名取自算子目录下的 zip_name 文件（一级类别_二级类别_算子名称）。
 set -euo pipefail
@@ -22,6 +23,11 @@ fi
 
 mkdir -p "$DIST"
 for op in "${ops[@]}"; do
+    if [[ "$op" == "dark-demo-v2" ]]; then
+        echo "error: dark-demo-v2 使用独立代码和 pn/骨架权重，请运行：" >&2
+        echo "       python3 platform/package_v2.py --output platform/dist/dark-demo-v2.zip" >&2
+        exit 1
+    fi
     src="$HERE/$op"
     [[ -d "$src" ]] || { echo "error: 找不到算子目录 $src" >&2; exit 1; }
     for f in main.py suanzi.json README.md zip_name; do

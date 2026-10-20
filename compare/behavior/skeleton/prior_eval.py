@@ -1,18 +1,16 @@
 """max_prior decision-mode A/B vs the alpha-fusion baseline, on the three field suites
 plus the platform round-trip clips. One pass computes BOTH modes:
 
-  alpha mode   p = a*p_rgb + (1-a)*p_skel2 with the suite's hard no-person gate -- the same
-               math as fusion_eval.py (so its historical numbers stay comparable). p_skel2 is
-               the presence-weighted merge of the TOP-2 slots of the SAME 6-slot pose run
-               analyze() does, which is exactly what the deployed probs() computes (its top-2
-               fill IS slots 0/1 of the top-6 fill).
+  alpha mode   uses the deployed SkeletonAux.fuse policy (default: soft), the raw-luma
+               gate (default: 75), and reject_probs. Ungated vectors are stored alongside
+               deployed decisions so lum_sweep can replay any threshold without rounding.
   max_prior    the deployed meeting three-step: SkeletonAux.analyze (up to 6 qualifying
                skeletons, best person) -> higher-confidence branch wins -> PriorGate on
                pick_up/wave/drink -> prior_reject -> reject_probs. Called through the
                deployed classes, not reimplemented.
 
 Everything routes through the deployed package (darkpipe from platform/dark-demo-v2): the
-RGB head is ckpts/videomamba_t_behavior_32f.pth, the skeleton branch and the prior gate are
+RGB head is selected by constants.CKPT_FILES["behavior"], the skeleton branch and the prior gate are
 the same objects serve constructs. Windows are cut from the RAW takes and enhanced with the
 deployed chain (downscale 840 -> Retinexformer), suite A included -- its RGB cache cannot
 provide keypoints or object detections.
@@ -26,32 +24,32 @@ Suites:
 Usage: python -u prior_eval.py <gpu> [--suites ABCP] [--out runs.jsonl]
 """
 import argparse
-import csv
 import glob
 import json
 import os
 import sys
 import time
 from collections import defaultdict
+from pathlib import Path
+from types import SimpleNamespace
 
 import cv2
 import numpy as np
 import torch
 
-REPO = "/ssd1/wfs/project/lowlight/DarkScenePipeline"
+REPO = str(Path(__file__).resolve().parents[3])
 PKG = os.path.join(REPO, "platform", "dark-demo-v2")
 sys.path.insert(0, PKG)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from darkpipe.constants import IN_MEAN, IN_STD, RECO_CFG
+from darkpipe.constants import IN_MEAN, IN_STD
 from darkpipe.stages.downscale import DownscaleStage
 from darkpipe.stages.enhance_retinexformer import RetinexformerStage
 from darkpipe.stages.object_prior import PriorGate
-from darkpipe.stages.recognize import (BehaviorRecognizer, frame_luma, preprocess_frame,
-                                       prior_reject, reject_probs)
-from darkpipe.stages.skeleton_aux import (MAX_PERSONS, TAU, SkeletonAux, merge_persons,
+from darkpipe.stages.recognize import (BehaviorRecognizer, frame_luma, gate_luma, preprocess_frame,
+                                       reject_probs)
+from darkpipe.stages.skeleton_aux import (SkeletonAux, merge_persons,
                                           normalize_window)
-from darkpipe.vendor.videomamba import videomamba_tiny
 
 LABELS = ["wave", "throw", "chase", "fall", "fight", "talk", "drink", "pick_up",
           "shake_hands", "other"]
@@ -91,6 +89,38 @@ def fired(p, conf=REJECT):
     return LABELS[int(p.argmax())] != "other" and float(p.max()) >= conf
 
 
+def alpha_fuse(pr, ps, alpha, presence, no_person="soft"):
+    """Reuse the production policy, including soft attenuation when no person is found."""
+    return SkeletonAux.fuse(SimpleNamespace(alpha=alpha, no_person=no_person),
+                            pr, ps, presence)
+
+
+def decision_record(stack, p_rgb, info, ps2, pres2, win, lums, alphas,
+                    no_person="soft", reject_tau=REJECT):
+    """Full precision float32 probabilities + float64 luma; safe for exact JSON replay."""
+    lum = float(np.mean(lums))
+    raw_stack = SimpleNamespace(**vars(stack))
+    raw_stack.lum_gate = 0.0
+    mp_raw, note_raw = BehaviorRecognizer._decide_max_prior(raw_stack, p_rgb, info, win, lums)
+    mp_raw = reject_probs(mp_raw, LABELS, reject_tau)
+    rgb = reject_probs(p_rgb, LABELS, reject_tau)
+    gated = gate_luma(lums, stack.lum_gate) is not None
+    row = dict(schema_version=2, probability_dtype="float32", no_person=no_person,
+               reject_tau=reject_tau, lum_gate=stack.lum_gate,
+               rgb=[float(x) for x in p_rgb], ps2=[float(x) for x in ps2],
+               pres2=float(pres2), pres=float(info["pres"]), lum=lum,
+               nvalid=int(info["valid"].sum()),
+               note=(f"照度 {lum:.1f} < {stack.lum_gate:g}，仅 RGB" if gated else note_raw),
+               mp=[float(x) for x in (rgb if gated else mp_raw)],
+               mp_ungated=[float(x) for x in mp_raw])
+    for alpha in alphas:
+        key = f"a{alpha:.2f}"
+        raw = reject_probs(alpha_fuse(p_rgb, ps2, alpha, pres2, no_person), LABELS, reject_tau)
+        row[key] = [float(x) for x in (rgb if gated else raw)]
+        row[key + "_ungated"] = [float(x) for x in raw]
+    return row
+
+
 class Stack:
     """The deployed recognizers, minus the ring buffer: rgb head + SkeletonAux + PriorGate
     are the serve objects; windows arrive pre-cut. Carries the attribute set the DEPLOYED
@@ -98,7 +128,7 @@ class Stack:
     prior / t_parts), so run_window invokes the real method with this stack as `self` --
     the decision math cannot drift from what serve runs."""
 
-    def __init__(self, dev, lum_gate=0.0, act_tau=0.65, skel_tau=0.65):
+    def __init__(self, dev, lum_gate=75.0, act_tau=0.65, skel_tau=0.65):
         self.dev = dev
         self.labels = LABELS
         self.lum_gate = float(lum_gate)
@@ -110,6 +140,7 @@ class Stack:
         meta = torch.load(rgb_path, map_location="cpu")
         h, w = (int(x) for x in meta["preprocess"][len("fullfov"):].split("x", 1))
         self.cfg = dict(fov=(h, w), mean=IN_MEAN, std=IN_STD)
+        from darkpipe.vendor.videomamba import videomamba_tiny
         self.rgb = videomamba_tiny(num_classes=10, num_frames=32, img_size=(h, w))
         self.rgb.load_state_dict(meta["model"], strict=True)
         self.rgb = self.rgb.to(dev).eval()
@@ -145,7 +176,7 @@ class Stack:
             lg = torch.stack([self.skel.net(xt[:, m]) for m in range(xt.shape[1])], 1)[0]
         ps2 = merge_persons(lg, torch.tensor(pres[:2]).unsqueeze(0).to(self.dev))
         self.t["skel2"] += time.perf_counter() - t0
-        return info, ps2[0].softmax(0).cpu().numpy(), float(pres.max())
+        return info, ps2[0].softmax(0).float().cpu().numpy(), float(pres[:2].max())
 
     def skel_pick(self, info):
         """Diagnostic-only re-derivation of the skeleton side's candidate (the deployed
@@ -167,10 +198,11 @@ def main():
     ap.add_argument("gpu")
     ap.add_argument("--suites", default="ABCP")
     ap.add_argument("--out", default="/tmp/prior_eval_runs.jsonl")
-    ap.add_argument("--lum-gate", type=float, default=0.0,
+    ap.add_argument("--lum-gate", type=float, default=75.0,
                     help="deployed step-1 illuminance gate on RAW pre-enhance luma "
                          "(0 = off; per-window raw luma is always recorded, so gate "
                          "sweeps run offline on the JSONL)")
+    ap.add_argument("--no-person", choices=("soft", "rgb", "other"), default="soft")
     ap.add_argument("--act-tau", type=float, default=0.65)
     ap.add_argument("--skel-tau", type=float, default=0.65)
     a = ap.parse_args()
@@ -193,8 +225,6 @@ def main():
     def run_window(suite, name, expect, win, raw_win):
         p_rgb = S.rgb_probs(win)
         info, ps2, pres2 = S.skel_run(win)
-        # alpha mode (suite convention: hard onehot on no-person, as fusion_eval)
-        recs = {f"a{al:.2f}": (alpha_fuse(p_rgb, ps2, al, pres2)) for al in alphas}
         # max_prior mode: the DEPLOYED decision method, this stack as self
         sp = S.skel_pick(info)                       # audit columns only (see method doc)
         if sp is None or float(p_rgb.max()) >= float(sp.max()):
@@ -207,29 +237,11 @@ def main():
         # luma (whitened, can't see darkness).
         idx = np.linspace(0, len(raw_win) - 1, 32).round().astype(int)
         lums = [frame_luma(raw_win[i]) for i in idx]
-        p_mp, note = BehaviorRecognizer._decide_max_prior(S, p_rgb, info, win, lums)
-        p_mp = reject_probs(p_mp, LABELS, REJECT)
-        row = dict(suite=suite, name=name, expect=expect,
-                   rgb=[round(float(x), 4) for x in p_rgb],
-                   ps2=[round(float(x), 4) for x in ps2], pres2=round(pres2, 3),
-                   pres=round(info["pres"], 3), branch=branch, init=init_label,
-                   lum=round(float(np.mean(lums)), 1),
-                   nvalid=int(info["valid"].sum()),
-                   # full precision: prior_reject's +1e-6 tie-break is rounded away at
-                   # 4 decimals (0.8189 vs 0.8189 -> argmax flips back to the vetoed
-                   # label), which miscounts vetoed windows as fired
-                   note=note, mp=[float(x) for x in p_mp])
-        for k, v in recs.items():
-            row[k] = [round(float(x), 4) for x in v]
+        row = decision_record(S, p_rgb, info, ps2, pres2, win, lums, alphas,
+                              no_person=a.no_person)
+        row.update(suite=suite, name=name, expect=expect, branch=branch, init=init_label)
         rows.append(row)
         return row
-
-    def alpha_fuse(pr, ps, al, pres):
-        if pres >= TAU:
-            return al * pr + (1 - al) * ps
-        out = np.zeros(10, np.float32)
-        out[OTHER] = 1.0
-        return out
 
     # ---- A. val ---------------------------------------------------------------------
     if "A" in a.suites:

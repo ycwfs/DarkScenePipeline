@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "input_frames": 75,
+  "full_output_frames": 75,
+  "events": 4,
+  "clips": {
+    "session": "喝水16/20261019_145604_1",
+    "clips_saved": 1,
+    "clips_abandoned": 0,
+    "clips_forced": 0,
+    "frames_dropped": 0,
+    "uploads_dropped": 0,
+    "stage_orphans_cleaned": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "write_error": null,
+    "recovery_stage_dir": null,
+    "writer_alive": false,
+    "uploads_pending": 0
+  },
+  "videos": [
+    {
+      "file": "real-offline/delivered/喝水16/20261019_145604_1/0-3s-喝水.mp4",
+      "frames": 74,
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 874,
+          "r_frame_rate": "25/1",
+          "nb_frames": "74"
+        }
+      ],
+      "format": {
+        "duration": "2.960000"
+      }
+    },
+    {
+      "file": "real-offline/delivered/喝水16/20261019_145604_1/喝水16-处理后.mp4",
+      "frames": 75,
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 874,
+          "r_frame_rate": "25/1",
+          "nb_frames": "75"
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    }
+  ]
+}

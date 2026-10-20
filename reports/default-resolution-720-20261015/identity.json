@@ -1,0 +1,29 @@
+{
+  "archive": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/dark-demo-v2_720_20261015.tar.gz",
+  "size": 190636483,
+  "md5": "ad2aa5e8e1a4d819408685f6b8d4f047",
+  "sha256": "0bc3b0636c59e69f6b2728cbd1fab265b799ab7d4acd009eb4b39727814241c9",
+  "files_verified": 45,
+  "changed_files": [
+    "CLAUDE.md",
+    "README.md",
+    "main.py",
+    "suanzi.json"
+  ],
+  "unchanged_weights": 7,
+  "image_id_before": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "image_archive_stat_before": {
+    "size": 6796727259,
+    "mtime_ns": 1790950156995934708,
+    "ctime_ns": 1790950157003934854
+  },
+  "image_id_after": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "image_archive_stat_after": {
+    "size": 6796727259,
+    "mtime_ns": 1790950156995934708,
+    "ctime_ns": 1790950157003934854
+  },
+  "package_and_source_verified_after": true,
+  "old_archive_unchanged": true,
+  "changes_limited_to_proc_max_side_and_docs": true
+}

@@ -1,0 +1,3558 @@
+{
+  "videos_checked": 54,
+  "decode_failures": [],
+  "metadata_frame_failures": [],
+  "metadata_duration_failures": [],
+  "copy_failures": [],
+  "whole_video_checks": [
+    {
+      "source": "/tmp/darkpipe-audit-20261014-9muj2fz3/offline-input/喝水16.mp4",
+      "output": "offline-batch/output/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+      "input_stream": {
+        "avg_frame_rate": "25/1",
+        "duration": "3.000000",
+        "nb_frames": "75"
+      },
+      "output_stream": {
+        "codec_name": "h264",
+        "width": 1680,
+        "height": 1020,
+        "avg_frame_rate": "25/1",
+        "duration": "3.000000",
+        "nb_frames": "75",
+        "nb_read_frames": "75"
+      },
+      "frames_match": true,
+      "fps_match": true
+    },
+    {
+      "source": "/tmp/darkpipe-audit-20261014-9muj2fz3/offline-input/挥手22.mp4",
+      "output": "offline-batch/output/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+      "input_stream": {
+        "avg_frame_rate": "25/1",
+        "duration": "2.160000",
+        "nb_frames": "54"
+      },
+      "output_stream": {
+        "codec_name": "h264",
+        "width": 1680,
+        "height": 1020,
+        "avg_frame_rate": "25/1",
+        "duration": "2.160000",
+        "nb_frames": "54",
+        "nb_read_frames": "54"
+      },
+      "frames_match": true,
+      "fps_match": true
+    },
+    {
+      "source": "/tmp/darkpipe-audit-20261014-9muj2fz3/offline-input/捡东西2.mp4",
+      "output": "offline-batch/output/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+      "input_stream": {
+        "avg_frame_rate": "25/1",
+        "duration": "2.840000",
+        "nb_frames": "71"
+      },
+      "output_stream": {
+        "codec_name": "h264",
+        "width": 1680,
+        "height": 1020,
+        "avg_frame_rate": "25/1",
+        "duration": "2.840000",
+        "nb_frames": "71",
+        "nb_read_frames": "71"
+      },
+      "frames_match": true,
+      "fps_match": true
+    },
+    {
+      "source": "/tmp/darkpipe-audit-20261014-9muj2fz3/offline-input/追逐16.mp4",
+      "output": "offline-batch/output/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+      "input_stream": {
+        "avg_frame_rate": "25/1",
+        "duration": "1.800000",
+        "nb_frames": "45"
+      },
+      "output_stream": {
+        "codec_name": "h264",
+        "width": 1680,
+        "height": 1020,
+        "avg_frame_rate": "25/1",
+        "duration": "1.800000",
+        "nb_frames": "45",
+        "nb_read_frames": "45"
+      },
+      "frames_match": true,
+      "fps_match": true
+    },
+    {
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/追逐19.mp4",
+      "output": "offline-dark/output/追逐19/20261014_113541_1/追逐19-处理后.mp4",
+      "input_stream": {
+        "avg_frame_rate": "25/1",
+        "duration": "2.960000",
+        "nb_frames": "74"
+      },
+      "output_stream": {
+        "codec_name": "h264",
+        "width": 1680,
+        "height": 1020,
+        "avg_frame_rate": "25/1",
+        "duration": "2.960000",
+        "nb_frames": "74",
+        "nb_read_frames": "74"
+      },
+      "frames_match": true,
+      "fps_match": true
+    }
+  ],
+  "copies": [
+    {
+      "file": "output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/喝水16/喝水16_events.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/挥手22/挥手22_events.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.json",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/offline-input/20261014_113224_1/追逐16/追逐16_events.json",
+      "identical": true
+    },
+    {
+      "file": "output/追逐19/20261014_113541_1/0-3s-追逐.json",
+      "identical": true
+    },
+    {
+      "file": "output/追逐19/20261014_113541_1/0-3s-追逐.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/追逐19/20261014_113541_1/追逐19-处理后.mp4",
+      "identical": true
+    },
+    {
+      "file": "output/追逐19/20261014_113541_1/追逐19_events.json",
+      "identical": true
+    }
+  ],
+  "videos": [
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112233_drinking_water_0001.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.250000",
+            "nb_frames": "36",
+            "nb_read_frames": "36"
+          }
+        ],
+        "format": {
+          "duration": "2.250000",
+          "size": "218681"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 1,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8314,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 34,
+        "fps": 16.0,
+        "duration_seconds": 2.22,
+        "trigger_stream_time": 1791976953.995,
+        "first_event": {
+          "frame_index": 14,
+          "timestamp": 31.058,
+          "label": "Drinking water",
+          "confidence": 0.8314,
+          "topk": [
+            [
+              "Drinking water",
+              0.8314
+            ],
+            [
+              "Waving",
+              0.0409
+            ],
+            [
+              "Other",
+              0.0391
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:32",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112233_drinking_water_0001.mp4",
+        "frames_written": 36,
+        "capture_fps": 15.315,
+        "playback_speed": 0.987
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.029999999999999805,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112235_drinking_water_0002.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "duration": "2.000000",
+            "nb_frames": "30",
+            "nb_read_frames": "30"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "199799"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 2,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9455,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 23,
+        "fps": 15.0,
+        "duration_seconds": 1.955,
+        "trigger_stream_time": 1791976955.318,
+        "first_event": {
+          "frame_index": 34,
+          "timestamp": 32.339,
+          "label": "Drinking water",
+          "confidence": 0.9455,
+          "topk": [
+            [
+              "Drinking water",
+              0.9455
+            ],
+            [
+              "Other",
+              0.0084
+            ],
+            [
+              "Talking",
+              0.0066
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:34",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112235_drinking_water_0002.mp4",
+        "frames_written": 30,
+        "capture_fps": 11.765,
+        "playback_speed": 0.978
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.04499999999999993,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112237_drinking_water_0003.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.000000",
+            "nb_frames": "34",
+            "nb_read_frames": "34"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "214191"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 3,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9315,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 31,
+        "fps": 17.0,
+        "duration_seconds": 1.99,
+        "trigger_stream_time": 1791976957.47,
+        "first_event": {
+          "frame_index": 56,
+          "timestamp": 34.301,
+          "label": "Drinking water",
+          "confidence": 0.9315,
+          "topk": [
+            [
+              "Drinking water",
+              0.9315
+            ],
+            [
+              "Other",
+              0.0125
+            ],
+            [
+              "Talking",
+              0.0082
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:36",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112237_drinking_water_0003.mp4",
+        "frames_written": 34,
+        "capture_fps": 15.578,
+        "playback_speed": 0.995
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.010000000000000009,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112239_drinking_water_0004.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.062500",
+            "nb_frames": "33",
+            "nb_read_frames": "33"
+          }
+        ],
+        "format": {
+          "duration": "2.063000",
+          "size": "215923"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 4,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9507,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 23,
+        "fps": 16.0,
+        "duration_seconds": 2.011,
+        "trigger_stream_time": 1791976959.108,
+        "first_event": {
+          "frame_index": 75,
+          "timestamp": 35.78,
+          "label": "Drinking water",
+          "confidence": 0.9507,
+          "topk": [
+            [
+              "Drinking water",
+              0.9507
+            ],
+            [
+              "Other",
+              0.0079
+            ],
+            [
+              "Chasing",
+              0.0059
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:38",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112239_drinking_water_0004.mp4",
+        "frames_written": 33,
+        "capture_fps": 11.437,
+        "playback_speed": 0.975
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.052000000000000046,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112241_drinking_water_0005.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.062500",
+            "nb_frames": "33",
+            "nb_read_frames": "33"
+          }
+        ],
+        "format": {
+          "duration": "2.063000",
+          "size": "223951"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 5,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9497,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 29,
+        "fps": 16.0,
+        "duration_seconds": 2.021,
+        "trigger_stream_time": 1791976961.969,
+        "first_event": {
+          "frame_index": 111,
+          "timestamp": 38.891,
+          "label": "Drinking water",
+          "confidence": 0.9497,
+          "topk": [
+            [
+              "Drinking water",
+              0.9497
+            ],
+            [
+              "Other",
+              0.0082
+            ],
+            [
+              "Talking",
+              0.0059
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:40",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112241_drinking_water_0005.mp4",
+        "frames_written": 33,
+        "capture_fps": 14.349,
+        "playback_speed": 0.98
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.04200000000000026,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112243_drinking_water_0006.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "177106"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 6,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9437,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 24,
+        "fps": 17.0,
+        "duration_seconds": 2.027,
+        "trigger_stream_time": 1791976963.635,
+        "first_event": {
+          "frame_index": 131,
+          "timestamp": 40.621,
+          "label": "Drinking water",
+          "confidence": 0.9437,
+          "topk": [
+            [
+              "Drinking water",
+              0.9437
+            ],
+            [
+              "Other",
+              0.0105
+            ],
+            [
+              "Talking",
+              0.0063
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:42",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112243_drinking_water_0006.mp4",
+        "frames_written": 35,
+        "capture_fps": 11.84,
+        "playback_speed": 0.985
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.03200000000000003,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112245_drinking_water_0007.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "200533"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 7,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.7761,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 30,
+        "fps": 17.0,
+        "duration_seconds": 2.019,
+        "trigger_stream_time": 1791976965.763,
+        "first_event": {
+          "frame_index": 151,
+          "timestamp": 42.658,
+          "label": "Drinking water",
+          "confidence": 0.7761,
+          "topk": [
+            [
+              "Drinking water",
+              0.7761
+            ],
+            [
+              "Other",
+              0.074
+            ],
+            [
+              "Waving",
+              0.0565
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:44",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112245_drinking_water_0007.mp4",
+        "frames_written": 35,
+        "capture_fps": 14.859,
+        "playback_speed": 0.981
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.040000000000000036,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112247_drinking_water_0008.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "5/1",
+            "duration": "2.400000",
+            "nb_frames": "12",
+            "nb_read_frames": "12"
+          }
+        ],
+        "format": {
+          "duration": "2.400000",
+          "size": "166703"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 8,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9473,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 13,
+        "fps": 5.0,
+        "duration_seconds": 2.34,
+        "trigger_stream_time": 1791976967.713,
+        "first_event": {
+          "frame_index": 177,
+          "timestamp": 44.499,
+          "label": "Drinking water",
+          "confidence": 0.9473,
+          "topk": [
+            [
+              "Drinking water",
+              0.9473
+            ],
+            [
+              "Other",
+              0.008
+            ],
+            [
+              "Chasing",
+              0.0065
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:46",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112247_drinking_water_0008.mp4",
+        "frames_written": 12,
+        "capture_fps": 5.556,
+        "playback_speed": 0.975
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.06000000000000005,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112255_drinking_water_0009.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "1.882353",
+            "nb_frames": "32",
+            "nb_read_frames": "32"
+          }
+        ],
+        "format": {
+          "duration": "1.883000",
+          "size": "202676"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 9,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8665,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 32,
+        "fps": 17.0,
+        "duration_seconds": 1.83,
+        "trigger_stream_time": 1791976975.945,
+        "first_event": {
+          "frame_index": 212,
+          "timestamp": 52.062,
+          "label": "Drinking water",
+          "confidence": 0.8665,
+          "topk": [
+            [
+              "Drinking water",
+              0.8665
+            ],
+            [
+              "Other",
+              0.0365
+            ],
+            [
+              "Waving",
+              0.024
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:55",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112255_drinking_water_0009.mp4",
+        "frames_written": 32,
+        "capture_fps": 17.486,
+        "playback_speed": 0.972
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.052999999999999936,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112258_drinking_water_0010.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.000000",
+            "nb_frames": "34",
+            "nb_read_frames": "34"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "214072"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 10,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8847,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 34,
+        "fps": 17.0,
+        "duration_seconds": 1.991,
+        "trigger_stream_time": 1791976978.382,
+        "first_event": {
+          "frame_index": 246,
+          "timestamp": 55.099,
+          "label": "Drinking water",
+          "confidence": 0.8847,
+          "topk": [
+            [
+              "Drinking water",
+              0.8847
+            ],
+            [
+              "Other",
+              0.0315
+            ],
+            [
+              "Chasing",
+              0.0195
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:57",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112258_drinking_water_0010.mp4",
+        "frames_written": 34,
+        "capture_fps": 17.077,
+        "playback_speed": 0.996
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.008999999999999897,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112300_drinking_water_0011.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.000000",
+            "nb_frames": "34",
+            "nb_read_frames": "34"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "206874"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 11,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9385,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 35,
+        "fps": 17.0,
+        "duration_seconds": 1.979,
+        "trigger_stream_time": 1791976980.854,
+        "first_event": {
+          "frame_index": 272,
+          "timestamp": 57.136,
+          "label": "Drinking water",
+          "confidence": 0.9385,
+          "topk": [
+            [
+              "Drinking water",
+              0.9385
+            ],
+            [
+              "Other",
+              0.0102
+            ],
+            [
+              "Shaking hands",
+              0.0083
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:22:59",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112300_drinking_water_0011.mp4",
+        "frames_written": 34,
+        "capture_fps": 17.686,
+        "playback_speed": 0.99
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.020999999999999908,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112303_drinking_water_0012.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "207897"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 12,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9239,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 35,
+        "fps": 17.0,
+        "duration_seconds": 2.007,
+        "trigger_stream_time": 1791976983.825,
+        "first_event": {
+          "frame_index": 310,
+          "timestamp": 60.29,
+          "label": "Drinking water",
+          "confidence": 0.9239,
+          "topk": [
+            [
+              "Drinking water",
+              0.9239
+            ],
+            [
+              "Other",
+              0.012
+            ],
+            [
+              "Shaking hands",
+              0.0117
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:23:02",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112303_drinking_water_0012.mp4",
+        "frames_written": 35,
+        "capture_fps": 17.439,
+        "playback_speed": 0.975
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.052000000000000046,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112305_drinking_water_0013.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.062500",
+            "nb_frames": "33",
+            "nb_read_frames": "33"
+          }
+        ],
+        "format": {
+          "duration": "2.063000",
+          "size": "223501"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 13,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9502,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 32,
+        "fps": 16.0,
+        "duration_seconds": 2.044,
+        "trigger_stream_time": 1791976985.812,
+        "first_event": {
+          "frame_index": 342,
+          "timestamp": 62.859,
+          "label": "Drinking water",
+          "confidence": 0.9502,
+          "topk": [
+            [
+              "Drinking water",
+              0.9502
+            ],
+            [
+              "Other",
+              0.0079
+            ],
+            [
+              "Chasing",
+              0.0058
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:23:04",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112305_drinking_water_0013.mp4",
+        "frames_written": 33,
+        "capture_fps": 15.656,
+        "playback_speed": 0.991
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.019000000000000128,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112307_drinking_water_0014.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "210447"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 14,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8762,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 35,
+        "fps": 17.0,
+        "duration_seconds": 2.05,
+        "trigger_stream_time": 1791976987.287,
+        "first_event": {
+          "frame_index": 358,
+          "timestamp": 64.097,
+          "label": "Drinking water",
+          "confidence": 0.8762,
+          "topk": [
+            [
+              "Drinking water",
+              0.8762
+            ],
+            [
+              "Other",
+              0.0306
+            ],
+            [
+              "Waving",
+              0.0244
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:23:06",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112307_drinking_water_0014.mp4",
+        "frames_written": 35,
+        "capture_fps": 17.073,
+        "playback_speed": 0.996
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.009000000000000341,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112309_drinking_water_0015.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.000000",
+            "nb_frames": "34",
+            "nb_read_frames": "34"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "195077"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 15,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9495,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 27,
+        "fps": 17.0,
+        "duration_seconds": 1.99,
+        "trigger_stream_time": 1791976989.885,
+        "first_event": {
+          "frame_index": 378,
+          "timestamp": 65.619,
+          "label": "Drinking water",
+          "confidence": 0.9495,
+          "topk": [
+            [
+              "Drinking water",
+              0.9495
+            ],
+            [
+              "Other",
+              0.0074
+            ],
+            [
+              "Chasing",
+              0.0063
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:23:08",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112309_drinking_water_0015.mp4",
+        "frames_written": 34,
+        "capture_fps": 13.568,
+        "playback_speed": 0.995
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.010000000000000009,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112312_drinking_water_0016.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.117647",
+            "nb_frames": "36",
+            "nb_read_frames": "36"
+          }
+        ],
+        "format": {
+          "duration": "2.118000",
+          "size": "200645"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 16,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.875,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 29,
+        "fps": 17.0,
+        "duration_seconds": 2.086,
+        "trigger_stream_time": 1791976992.601,
+        "first_event": {
+          "frame_index": 418,
+          "timestamp": 69.419,
+          "label": "Drinking water",
+          "confidence": 0.875,
+          "topk": [
+            [
+              "Drinking water",
+              0.875
+            ],
+            [
+              "Waving",
+              0.029
+            ],
+            [
+              "Shaking hands",
+              0.0188
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:23:11",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112312_drinking_water_0016.mp4",
+        "frames_written": 36,
+        "capture_fps": 13.902,
+        "playback_speed": 0.985
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.03200000000000003,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112314_drinking_water_0017.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.062500",
+            "nb_frames": "33",
+            "nb_read_frames": "33"
+          }
+        ],
+        "format": {
+          "duration": "2.063000",
+          "size": "207260"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 17,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9406,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 29,
+        "fps": 16.0,
+        "duration_seconds": 2.022,
+        "trigger_stream_time": 1791976994.412,
+        "first_event": {
+          "frame_index": 434,
+          "timestamp": 70.778,
+          "label": "Drinking water",
+          "confidence": 0.9406,
+          "topk": [
+            [
+              "Drinking water",
+              0.9406
+            ],
+            [
+              "Other",
+              0.0118
+            ],
+            [
+              "Talking",
+              0.0066
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:23:13",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112314_drinking_water_0017.mp4",
+        "frames_written": 33,
+        "capture_fps": 14.342,
+        "playback_speed": 0.98
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.04100000000000037,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112317_drinking_water_0018.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "duration": "1.266667",
+            "nb_frames": "19",
+            "nb_read_frames": "19"
+          }
+        ],
+        "format": {
+          "duration": "1.267000",
+          "size": "146528"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112158_1",
+        "seq": 18,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9423,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 21,
+        "fps": 15.0,
+        "duration_seconds": 1.221,
+        "trigger_stream_time": 1791976997.187,
+        "first_event": {
+          "frame_index": 474,
+          "timestamp": 74.059,
+          "label": "Drinking water",
+          "confidence": 0.9423,
+          "topk": [
+            [
+              "Drinking water",
+              0.9423
+            ],
+            [
+              "Other",
+              0.0111
+            ],
+            [
+              "Talking",
+              0.0065
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "服务停止",
+        "started_at": "2026-10-14 11:23:16",
+        "video": "/audit/live-off-capped/clips/127.0.0.1/20261014_112158_1/drinking_water/20261014_112317_drinking_water_0018.mp4",
+        "frames_written": 19,
+        "capture_fps": 17.199,
+        "playback_speed": 0.964
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.04599999999999982,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-off-capped/sample.flv",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "nb_read_frames": "150"
+          }
+        ],
+        "format": {
+          "duration": "9.999000",
+          "size": "3905357"
+        }
+      }
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111720_drinking_water_0001.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "1.062500",
+            "nb_frames": "17",
+            "nb_read_frames": "17"
+          }
+        ],
+        "format": {
+          "duration": "1.063000",
+          "size": "165962"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 1,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8787,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 17,
+        "fps": 16.0,
+        "duration_seconds": 1.032,
+        "trigger_stream_time": 1791976640.373,
+        "first_event": {
+          "frame_index": 1,
+          "timestamp": 19.632,
+          "label": "Drinking water",
+          "confidence": 0.8787,
+          "topk": [
+            [
+              "Drinking water",
+              0.8787
+            ],
+            [
+              "Waving",
+              0.0326
+            ],
+            [
+              "Other",
+              0.0232
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:20",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111720_drinking_water_0001.mp4",
+        "frames_written": 17,
+        "capture_fps": 16.473,
+        "playback_speed": 0.971
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.030999999999999917,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111729_drinking_water_0002.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "14/1",
+            "duration": "2.071429",
+            "nb_frames": "29",
+            "nb_read_frames": "29"
+          }
+        ],
+        "format": {
+          "duration": "2.072000",
+          "size": "234680"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 2,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.7143,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 22,
+        "fps": 14.0,
+        "duration_seconds": 2.006,
+        "trigger_stream_time": 1791976649.379,
+        "first_event": {
+          "frame_index": 52,
+          "timestamp": 27.867,
+          "label": "Drinking water",
+          "confidence": 0.7143,
+          "topk": [
+            [
+              "Drinking water",
+              0.7143
+            ],
+            [
+              "Chasing",
+              0.0852
+            ],
+            [
+              "Other",
+              0.0661
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:28",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111729_drinking_water_0002.mp4",
+        "frames_written": 29,
+        "capture_fps": 10.967,
+        "playback_speed": 0.968
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.06600000000000028,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111733_drinking_water_0003.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.941176",
+            "nb_frames": "50",
+            "nb_read_frames": "50"
+          }
+        ],
+        "format": {
+          "duration": "2.942000",
+          "size": "230286"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 3,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9479,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 27,
+        "fps": 17.0,
+        "duration_seconds": 2.935,
+        "trigger_stream_time": 1791976653.186,
+        "first_event": {
+          "frame_index": 83,
+          "timestamp": 32.705,
+          "label": "Drinking water",
+          "confidence": 0.9479,
+          "topk": [
+            [
+              "Drinking water",
+              0.9479
+            ],
+            [
+              "Other",
+              0.0079
+            ],
+            [
+              "Chasing",
+              0.0064
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:32",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111733_drinking_water_0003.mp4",
+        "frames_written": 50,
+        "capture_fps": 9.199,
+        "playback_speed": 0.998
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.007000000000000117,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111740_drinking_water_0004.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "duration": "1.666667",
+            "nb_frames": "25",
+            "nb_read_frames": "25"
+          }
+        ],
+        "format": {
+          "duration": "1.667000",
+          "size": "236452"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 4,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.941,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 19,
+        "fps": 15.0,
+        "duration_seconds": 1.639,
+        "trigger_stream_time": 1791976660.21,
+        "first_event": {
+          "frame_index": 128,
+          "timestamp": 38.03,
+          "label": "Drinking water",
+          "confidence": 0.941,
+          "topk": [
+            [
+              "Drinking water",
+              0.941
+            ],
+            [
+              "Other",
+              0.0118
+            ],
+            [
+              "Talking",
+              0.0072
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:39",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111740_drinking_water_0004.mp4",
+        "frames_written": 25,
+        "capture_fps": 11.592,
+        "playback_speed": 0.983
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.028000000000000025,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111749_drinking_water_0005.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "247104"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 5,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9164,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 32,
+        "fps": 17.0,
+        "duration_seconds": 2.007,
+        "trigger_stream_time": 1791976669.044,
+        "first_event": {
+          "frame_index": 167,
+          "timestamp": 49.472,
+          "label": "Drinking water",
+          "confidence": 0.9164,
+          "topk": [
+            [
+              "Drinking water",
+              0.9164
+            ],
+            [
+              "Waving",
+              0.0163
+            ],
+            [
+              "Other",
+              0.0138
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:48",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111749_drinking_water_0005.mp4",
+        "frames_written": 35,
+        "capture_fps": 15.944,
+        "playback_speed": 0.975
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.052000000000000046,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111751_drinking_water_0006.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "1.764706",
+            "nb_frames": "30",
+            "nb_read_frames": "30"
+          }
+        ],
+        "format": {
+          "duration": "1.765000",
+          "size": "200661"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 6,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.929,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 23,
+        "fps": 17.0,
+        "duration_seconds": 1.744,
+        "trigger_stream_time": 1791976671.471,
+        "first_event": {
+          "frame_index": 193,
+          "timestamp": 51.313,
+          "label": "Drinking water",
+          "confidence": 0.929,
+          "topk": [
+            [
+              "Drinking water",
+              0.929
+            ],
+            [
+              "Shaking hands",
+              0.0112
+            ],
+            [
+              "Fighting",
+              0.0109
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:50",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111751_drinking_water_0006.mp4",
+        "frames_written": 30,
+        "capture_fps": 13.188,
+        "playback_speed": 0.988
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.020999999999999908,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111754_drinking_water_0007.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "5/1",
+            "duration": "1.800000",
+            "nb_frames": "9",
+            "nb_read_frames": "9"
+          }
+        ],
+        "format": {
+          "duration": "1.800000",
+          "size": "181616"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 7,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8609,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 15,
+        "fps": 5.0,
+        "duration_seconds": 1.745,
+        "trigger_stream_time": 1791976674.292,
+        "first_event": {
+          "frame_index": 227,
+          "timestamp": 54.55,
+          "label": "Drinking water",
+          "confidence": 0.8609,
+          "topk": [
+            [
+              "Drinking water",
+              0.8609
+            ],
+            [
+              "Waving",
+              0.0285
+            ],
+            [
+              "Shaking hands",
+              0.0275
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:53",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111754_drinking_water_0007.mp4",
+        "frames_written": 9,
+        "capture_fps": 8.596,
+        "playback_speed": 0.969
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.05499999999999994,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111756_drinking_water_0008.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "3.562500",
+            "nb_frames": "57",
+            "nb_read_frames": "57"
+          }
+        ],
+        "format": {
+          "duration": "3.563000",
+          "size": "213746"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 8,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9455,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 20,
+        "fps": 16.0,
+        "duration_seconds": 3.529,
+        "trigger_stream_time": 1791976676.629,
+        "first_event": {
+          "frame_index": 243,
+          "timestamp": 56.713,
+          "label": "Drinking water",
+          "confidence": 0.9455,
+          "topk": [
+            [
+              "Drinking water",
+              0.9455
+            ],
+            [
+              "Other",
+              0.0091
+            ],
+            [
+              "Chasing",
+              0.0063
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:17:55",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111756_drinking_water_0008.mp4",
+        "frames_written": 57,
+        "capture_fps": 5.667,
+        "playback_speed": 0.991
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.03400000000000025,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111802_drinking_water_0009.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "duration": "2.000000",
+            "nb_frames": "30",
+            "nb_read_frames": "30"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "194398"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 9,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9423,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 21,
+        "fps": 15.0,
+        "duration_seconds": 1.95,
+        "trigger_stream_time": 1791976682.217,
+        "first_event": {
+          "frame_index": 288,
+          "timestamp": 62.153,
+          "label": "Drinking water",
+          "confidence": 0.9423,
+          "topk": [
+            [
+              "Drinking water",
+              0.9423
+            ],
+            [
+              "Other",
+              0.0108
+            ],
+            [
+              "Talking",
+              0.0065
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:18:01",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111802_drinking_water_0009.mp4",
+        "frames_written": 30,
+        "capture_fps": 10.769,
+        "playback_speed": 0.975
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.050000000000000044,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111808_drinking_water_0010.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "257518"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 10,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9432,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 32,
+        "fps": 17.0,
+        "duration_seconds": 2.0,
+        "trigger_stream_time": 1791976688.675,
+        "first_event": {
+          "frame_index": 349,
+          "timestamp": 68.234,
+          "label": "Drinking water",
+          "confidence": 0.9432,
+          "topk": [
+            [
+              "Drinking water",
+              0.9432
+            ],
+            [
+              "Other",
+              0.0102
+            ],
+            [
+              "Chasing",
+              0.0064
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:18:07",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111808_drinking_water_0010.mp4",
+        "frames_written": 35,
+        "capture_fps": 16.0,
+        "playback_speed": 0.971
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.05900000000000016,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111835_drinking_water_0012.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "1.941176",
+            "nb_frames": "33",
+            "nb_read_frames": "33"
+          }
+        ],
+        "format": {
+          "duration": "1.942000",
+          "size": "193764"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 12,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9428,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 32,
+        "fps": 17.0,
+        "duration_seconds": 1.915,
+        "trigger_stream_time": 1791976715.442,
+        "first_event": {
+          "frame_index": 623,
+          "timestamp": 95.149,
+          "label": "Drinking water",
+          "confidence": 0.9428,
+          "topk": [
+            [
+              "Drinking water",
+              0.9428
+            ],
+            [
+              "Other",
+              0.011
+            ],
+            [
+              "Talking",
+              0.0063
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:18:34",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111835_drinking_water_0012.mp4",
+        "frames_written": 33,
+        "capture_fps": 16.71,
+        "playback_speed": 0.987
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.026999999999999913,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111843_drinking_water_0013.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "18/1",
+            "duration": "2.000000",
+            "nb_frames": "36",
+            "nb_read_frames": "36"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "214062"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 13,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8243,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 35,
+        "fps": 18.0,
+        "duration_seconds": 1.979,
+        "trigger_stream_time": 1791976723.041,
+        "first_event": {
+          "frame_index": 719,
+          "timestamp": 103.072,
+          "label": "Drinking water",
+          "confidence": 0.8243,
+          "topk": [
+            [
+              "Drinking water",
+              0.8243
+            ],
+            [
+              "Other",
+              0.057
+            ],
+            [
+              "Waving",
+              0.0327
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:18:42",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111843_drinking_water_0013.mp4",
+        "frames_written": 36,
+        "capture_fps": 17.686,
+        "playback_speed": 0.99
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.020999999999999908,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111852_drinking_water_0014.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.058824",
+            "nb_frames": "35",
+            "nb_read_frames": "35"
+          }
+        ],
+        "format": {
+          "duration": "2.059000",
+          "size": "225129"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 14,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9423,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 34,
+        "fps": 17.0,
+        "duration_seconds": 2.038,
+        "trigger_stream_time": 1791976732.49,
+        "first_event": {
+          "frame_index": 811,
+          "timestamp": 113.074,
+          "label": "Drinking water",
+          "confidence": 0.9423,
+          "topk": [
+            [
+              "Drinking water",
+              0.9423
+            ],
+            [
+              "Other",
+              0.0112
+            ],
+            [
+              "Talking",
+              0.0065
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:18:51",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111852_drinking_water_0014.mp4",
+        "frames_written": 35,
+        "capture_fps": 16.683,
+        "playback_speed": 0.99
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.02100000000000035,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111859_drinking_water_0015.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.000000",
+            "nb_frames": "32",
+            "nb_read_frames": "32"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "246987"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 15,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8632,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 32,
+        "fps": 16.0,
+        "duration_seconds": 1.947,
+        "trigger_stream_time": 1791976739.774,
+        "first_event": {
+          "frame_index": 899,
+          "timestamp": 120.315,
+          "label": "Drinking water",
+          "confidence": 0.8632,
+          "topk": [
+            [
+              "Drinking water",
+              0.8632
+            ],
+            [
+              "Shaking hands",
+              0.0345
+            ],
+            [
+              "Waving",
+              0.0342
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:18:58",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111859_drinking_water_0015.mp4",
+        "frames_written": 32,
+        "capture_fps": 16.436,
+        "playback_speed": 0.974
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.052999999999999936,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111910_drinking_water_0016.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.000000",
+            "nb_frames": "32",
+            "nb_read_frames": "32"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "241424"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 16,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.942,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 31,
+        "fps": 16.0,
+        "duration_seconds": 1.969,
+        "trigger_stream_time": 1791976750.598,
+        "first_event": {
+          "frame_index": 1026,
+          "timestamp": 130.95,
+          "label": "Drinking water",
+          "confidence": 0.942,
+          "topk": [
+            [
+              "Drinking water",
+              0.942
+            ],
+            [
+              "Other",
+              0.0116
+            ],
+            [
+              "Talking",
+              0.0068
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:19:09",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111910_drinking_water_0016.mp4",
+        "frames_written": 32,
+        "capture_fps": 15.744,
+        "playback_speed": 0.985
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.030999999999999917,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111912_drinking_water_0017.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.000000",
+            "nb_frames": "34",
+            "nb_read_frames": "34"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "162965"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 17,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8905,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 34,
+        "fps": 17.0,
+        "duration_seconds": 1.998,
+        "trigger_stream_time": 1791976752.355,
+        "first_event": {
+          "frame_index": 1043,
+          "timestamp": 132.387,
+          "label": "Drinking water",
+          "confidence": 0.8905,
+          "topk": [
+            [
+              "Drinking water",
+              0.8905
+            ],
+            [
+              "Waving",
+              0.0214
+            ],
+            [
+              "Other",
+              0.0199
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:19:11",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111912_drinking_water_0017.mp4",
+        "frames_written": 34,
+        "capture_fps": 17.017,
+        "playback_speed": 0.999
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0020000000000000018,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111919_drinking_water_0018.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.062500",
+            "nb_frames": "33",
+            "nb_read_frames": "33"
+          }
+        ],
+        "format": {
+          "duration": "2.063000",
+          "size": "214199"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_111653_1",
+        "seq": 18,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9408,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 35,
+        "fps": 16.0,
+        "duration_seconds": 2.002,
+        "trigger_stream_time": 1791976759.107,
+        "first_event": {
+          "frame_index": 1136,
+          "timestamp": 139.672,
+          "label": "Drinking water",
+          "confidence": 0.9408,
+          "topk": [
+            [
+              "Drinking water",
+              0.9408
+            ],
+            [
+              "Other",
+              0.0107
+            ],
+            [
+              "Talking",
+              0.0073
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:19:18",
+        "video": "/audit/live-quality/clips/127.0.0.1/20261014_111653_1/drinking_water/20261014_111919_drinking_water_0018.mp4",
+        "frames_written": 33,
+        "capture_fps": 17.483,
+        "playback_speed": 0.971
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.06100000000000039,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality/sample.flv",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "nb_read_frames": "150"
+          }
+        ],
+        "format": {
+          "duration": "9.999000",
+          "size": "3924349"
+        }
+      }
+    },
+    {
+      "file": "live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112857_drinking_water_0001.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "13/1",
+            "duration": "1.538462",
+            "nb_frames": "20",
+            "nb_read_frames": "20"
+          }
+        ],
+        "format": {
+          "duration": "1.539000",
+          "size": "175263"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112837_1",
+        "seq": 1,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9495,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 14,
+        "fps": 13.0,
+        "duration_seconds": 1.533,
+        "trigger_stream_time": 1791977337.679,
+        "first_event": {
+          "frame_index": 1,
+          "timestamp": 17.692,
+          "label": "Drinking water",
+          "confidence": 0.9495,
+          "topk": [
+            [
+              "Drinking water",
+              0.9495
+            ],
+            [
+              "Other",
+              0.0082
+            ],
+            [
+              "Chasing",
+              0.0061
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:28:57",
+        "video": "/audit/live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112857_drinking_water_0001.mp4",
+        "frames_written": 20,
+        "capture_fps": 9.132,
+        "playback_speed": 0.996
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.006000000000000005,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112901_drinking_water_0002.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "16/1",
+            "duration": "2.000000",
+            "nb_frames": "32",
+            "nb_read_frames": "32"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "198228"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112837_1",
+        "seq": 2,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9119,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 24,
+        "fps": 16.0,
+        "duration_seconds": 1.95,
+        "trigger_stream_time": 1791977341.026,
+        "first_event": {
+          "frame_index": 36,
+          "timestamp": 21.459,
+          "label": "Drinking water",
+          "confidence": 0.9119,
+          "topk": [
+            [
+              "Drinking water",
+              0.9119
+            ],
+            [
+              "Other",
+              0.0169
+            ],
+            [
+              "Shaking hands",
+              0.0148
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:29:00",
+        "video": "/audit/live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112901_drinking_water_0002.mp4",
+        "frames_written": 32,
+        "capture_fps": 12.308,
+        "playback_speed": 0.975
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.050000000000000044,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112903_drinking_water_0003.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "duration": "2.000000",
+            "nb_frames": "30",
+            "nb_read_frames": "30"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "190279"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112837_1",
+        "seq": 3,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9417,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 18,
+        "fps": 15.0,
+        "duration_seconds": 1.99,
+        "trigger_stream_time": 1791977343.169,
+        "first_event": {
+          "frame_index": 53,
+          "timestamp": 23.26,
+          "label": "Drinking water",
+          "confidence": 0.9417,
+          "topk": [
+            [
+              "Drinking water",
+              0.9417
+            ],
+            [
+              "Other",
+              0.0103
+            ],
+            [
+              "Talking",
+              0.0069
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:29:02",
+        "video": "/audit/live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112903_drinking_water_0003.mp4",
+        "frames_written": 30,
+        "capture_fps": 9.045,
+        "playback_speed": 0.995
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.010000000000000009,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112908_drinking_water_0004.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "18/1",
+            "duration": "2.000000",
+            "nb_frames": "36",
+            "nb_read_frames": "36"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "245912"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112837_1",
+        "seq": 4,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9452,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 33,
+        "fps": 18.0,
+        "duration_seconds": 1.978,
+        "trigger_stream_time": 1791977348.734,
+        "first_event": {
+          "frame_index": 100,
+          "timestamp": 29.34,
+          "label": "Drinking water",
+          "confidence": 0.9452,
+          "topk": [
+            [
+              "Drinking water",
+              0.9452
+            ],
+            [
+              "Other",
+              0.0091
+            ],
+            [
+              "Talking",
+              0.0066
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:29:07",
+        "video": "/audit/live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112908_drinking_water_0004.mp4",
+        "frames_written": 36,
+        "capture_fps": 16.684,
+        "playback_speed": 0.989
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.02200000000000002,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112910_drinking_water_0005.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.529412",
+            "nb_frames": "43",
+            "nb_read_frames": "43"
+          }
+        ],
+        "format": {
+          "duration": "2.530000",
+          "size": "226453"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112837_1",
+        "seq": 5,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.8471,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 26,
+        "fps": 17.0,
+        "duration_seconds": 2.517,
+        "trigger_stream_time": 1791977350.966,
+        "first_event": {
+          "frame_index": 128,
+          "timestamp": 31.099,
+          "label": "Drinking water",
+          "confidence": 0.8471,
+          "topk": [
+            [
+              "Drinking water",
+              0.8471
+            ],
+            [
+              "Other",
+              0.0428
+            ],
+            [
+              "Waving",
+              0.0275
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:29:10",
+        "video": "/audit/live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112910_drinking_water_0005.mp4",
+        "frames_written": 43,
+        "capture_fps": 10.33,
+        "playback_speed": 0.995
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0129999999999999,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112927_drinking_water_0007.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "17/1",
+            "duration": "2.000000",
+            "nb_frames": "34",
+            "nb_read_frames": "34"
+          }
+        ],
+        "format": {
+          "duration": "2.000000",
+          "size": "224712"
+        }
+      },
+      "metadata": {
+        "session": "127.0.0.1/20261014_112837_1",
+        "seq": 7,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9447,
+        "labels_in_clip": {
+          "Drinking water": 1
+        },
+        "frames": 28,
+        "fps": 17.0,
+        "duration_seconds": 1.944,
+        "trigger_stream_time": 1791977367.95,
+        "first_event": {
+          "frame_index": 314,
+          "timestamp": 48.093,
+          "label": "Drinking water",
+          "confidence": 0.9447,
+          "topk": [
+            [
+              "Drinking water",
+              0.9447
+            ],
+            [
+              "Other",
+              0.0085
+            ],
+            [
+              "Talking",
+              0.0075
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-14 11:29:27",
+        "video": "/audit/live-quality-capped-ort/clips/127.0.0.1/20261014_112837_1/drinking_water/20261014_112927_drinking_water_0007.mp4",
+        "frames_written": 34,
+        "capture_fps": 14.403,
+        "playback_speed": 0.972
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.05600000000000005,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "live-quality-capped-ort/sample.flv",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "15/1",
+            "nb_read_frames": "150"
+          }
+        ],
+        "format": {
+          "duration": "9.999000",
+          "size": "3930058"
+        }
+      }
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.960000",
+            "nb_frames": "74",
+            "nb_read_frames": "74"
+          }
+        ],
+        "format": {
+          "duration": "2.960000",
+          "size": "298081"
+        }
+      },
+      "metadata": {
+        "session": "offline-input/20261014_113224_1/喝水16",
+        "seq": 1,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9491,
+        "labels_in_clip": {
+          "Drinking water": 4
+        },
+        "frames": 75,
+        "fps": 25.0,
+        "duration_seconds": 2.96,
+        "trigger_stream_time": 0.96,
+        "first_event": {
+          "frame_index": 24,
+          "timestamp": 0.96,
+          "label": "Drinking water",
+          "confidence": 0.8594,
+          "topk": [
+            [
+              "Drinking water",
+              0.8594
+            ],
+            [
+              "Other",
+              0.0404
+            ],
+            [
+              "Waving",
+              0.0261
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "服务停止",
+        "start_seconds": 0.0,
+        "end_seconds": 2.96,
+        "video": "/tmp/darkserve_6m66wght/clips/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+        "frames_written": 74,
+        "capture_fps": 25.338,
+        "playback_speed": 1.0
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "3.000000",
+            "nb_frames": "75",
+            "nb_read_frames": "75"
+          }
+        ],
+        "format": {
+          "duration": "3.000000",
+          "size": "256997"
+        }
+      }
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.120000",
+            "nb_frames": "53",
+            "nb_read_frames": "53"
+          }
+        ],
+        "format": {
+          "duration": "2.120000",
+          "size": "259661"
+        }
+      },
+      "metadata": {
+        "session": "offline-input/20261014_113224_1/挥手22",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9253,
+        "labels_in_clip": {
+          "Waving": 2
+        },
+        "frames": 54,
+        "fps": 25.0,
+        "duration_seconds": 2.12,
+        "trigger_stream_time": 0.96,
+        "first_event": {
+          "frame_index": 24,
+          "timestamp": 0.96,
+          "label": "Waving",
+          "confidence": 0.9253,
+          "topk": [
+            [
+              "Waving",
+              0.9253
+            ],
+            [
+              "Shaking hands",
+              0.0205
+            ],
+            [
+              "Drinking water",
+              0.0081
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "服务停止",
+        "start_seconds": 0.0,
+        "end_seconds": 2.12,
+        "video": "/tmp/darkserve_6m66wght/clips/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+        "frames_written": 53,
+        "capture_fps": 25.472,
+        "playback_speed": 1.0
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.160000",
+            "nb_frames": "54",
+            "nb_read_frames": "54"
+          }
+        ],
+        "format": {
+          "duration": "2.160000",
+          "size": "226461"
+        }
+      }
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.800000",
+            "nb_frames": "70",
+            "nb_read_frames": "70"
+          }
+        ],
+        "format": {
+          "duration": "2.800000",
+          "size": "293009"
+        }
+      },
+      "metadata": {
+        "session": "offline-input/20261014_113224_1/捡东西2",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9153,
+        "labels_in_clip": {
+          "Picking up object": 3
+        },
+        "frames": 71,
+        "fps": 25.0,
+        "duration_seconds": 2.8,
+        "trigger_stream_time": 0.96,
+        "first_event": {
+          "frame_index": 24,
+          "timestamp": 0.96,
+          "label": "Picking up object",
+          "confidence": 0.9153,
+          "topk": [
+            [
+              "Picking up object",
+              0.9153
+            ],
+            [
+              "Other",
+              0.0137
+            ],
+            [
+              "Fighting",
+              0.0131
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "服务停止",
+        "start_seconds": 0.0,
+        "end_seconds": 2.8,
+        "video": "/tmp/darkserve_6m66wght/clips/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+        "frames_written": 70,
+        "capture_fps": 25.357,
+        "playback_speed": 1.0
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.840000",
+            "nb_frames": "71",
+            "nb_read_frames": "71"
+          }
+        ],
+        "format": {
+          "duration": "2.840000",
+          "size": "255937"
+        }
+      }
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "1.760000",
+            "nb_frames": "44",
+            "nb_read_frames": "44"
+          }
+        ],
+        "format": {
+          "duration": "1.760000",
+          "size": "269510"
+        }
+      },
+      "metadata": {
+        "session": "offline-input/20261014_113224_1/追逐16",
+        "seq": 1,
+        "label": "Chasing",
+        "label_key": "chasing",
+        "confidence": 0.9209,
+        "labels_in_clip": {
+          "Chasing": 2
+        },
+        "frames": 45,
+        "fps": 25.0,
+        "duration_seconds": 1.76,
+        "trigger_stream_time": 0.96,
+        "first_event": {
+          "frame_index": 24,
+          "timestamp": 0.96,
+          "label": "Chasing",
+          "confidence": 0.9209,
+          "topk": [
+            [
+              "Chasing",
+              0.9209
+            ],
+            [
+              "Throwing object",
+              0.0134
+            ],
+            [
+              "Other",
+              0.0119
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "服务停止",
+        "start_seconds": 0.0,
+        "end_seconds": 1.76,
+        "video": "/tmp/darkserve_6m66wght/clips/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+        "frames_written": 44,
+        "capture_fps": 25.568,
+        "playback_speed": 1.0
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "offline-batch/output/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "1.800000",
+            "nb_frames": "45",
+            "nb_read_frames": "45"
+          }
+        ],
+        "format": {
+          "duration": "1.800000",
+          "size": "251120"
+        }
+      }
+    },
+    {
+      "file": "offline-dark/output/追逐19/20261014_113541_1/0-3s-追逐.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.920000",
+            "nb_frames": "73",
+            "nb_read_frames": "73"
+          }
+        ],
+        "format": {
+          "duration": "2.920000",
+          "size": "565155"
+        }
+      },
+      "metadata": {
+        "session": "追逐19/20261014_113541_1",
+        "seq": 1,
+        "label": "Chasing",
+        "label_key": "chasing",
+        "confidence": 0.9152,
+        "labels_in_clip": {
+          "Chasing": 4
+        },
+        "frames": 74,
+        "fps": 25.0,
+        "duration_seconds": 2.92,
+        "trigger_stream_time": 0.96,
+        "first_event": {
+          "frame_index": 24,
+          "timestamp": 0.96,
+          "label": "Chasing",
+          "confidence": 0.9111,
+          "topk": [
+            [
+              "Chasing",
+              0.9111
+            ],
+            [
+              "Waving",
+              0.0187
+            ],
+            [
+              "Other",
+              0.0173
+            ]
+          ],
+          "model": "behavior",
+          "window": 32
+        },
+        "closed_because": "服务停止",
+        "start_seconds": 0.0,
+        "end_seconds": 2.92,
+        "video": "/tmp/darkserve_siyyk8s0/clips/追逐19/20261014_113541_1/0-3s-追逐.mp4",
+        "frames_written": 73,
+        "capture_fps": 25.342,
+        "playback_speed": 1.0
+      },
+      "metadata_frames_match": true,
+      "metadata_duration_error": 0.0,
+      "duration_within_one_frame": true
+    },
+    {
+      "file": "offline-dark/output/追逐19/20261014_113541_1/追逐19-处理后.mp4",
+      "ffprobe_exit": 0,
+      "decode_exit": 0,
+      "decode_error": "",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1680,
+            "height": 1020,
+            "avg_frame_rate": "25/1",
+            "duration": "2.960000",
+            "nb_frames": "74",
+            "nb_read_frames": "74"
+          }
+        ],
+        "format": {
+          "duration": "2.960000",
+          "size": "568409"
+        }
+      }
+    }
+  ]
+}

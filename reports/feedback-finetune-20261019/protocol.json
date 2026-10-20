@@ -1,0 +1,51 @@
+{
+  "primary_question": "Does adding newly reported negatives suppress false actions without degrading the existing deployment regression?",
+  "selection_split": "ABCP and Qtrain only; Qholdout sealed until selection",
+  "thresholds": [
+    0.65,
+    0.7,
+    0.75,
+    0.8
+  ],
+  "primary_threshold": 0.75,
+  "acceptance": {
+    "A_correct_at_least_baseline": true,
+    "C_correct_at_least_baseline": true,
+    "B_fired_at_most_baseline": true,
+    "P_fired_at_most_baseline": true
+  },
+  "ranking": [
+    "Qtrain fused false fires ascending",
+    "Qtrain RGB false fires ascending",
+    "A plus C correct descending",
+    "Qtrain mean maximum named probability ascending",
+    "earlier epoch"
+  ],
+  "training_epochs": 4,
+  "seeds": [
+    19
+  ],
+  "heldout_sessions": [
+    "20261015_163555_77",
+    "20261019_092255_83"
+  ],
+  "processed_replay_note": "P/Q have burned-in labels removed and are not re-enhanced; raw-scene gate cannot be reconstructed. P differs from the earlier threshold sweep preprocessing. Fresh paired baseline only.",
+  "cache_interpolation_note": "New training windows resize cropped delivery frames directly to 400x224; replay downsizes to 720 first to approximate native recognition resolution. Neither can recover pre-SR/denoise/encoding pixels.",
+  "inference_limit": "Overlapping windows are correlated; 2 heldout sessions, 9 videos, one training seed; no population-level significance or real-time throughput claim.",
+  "available_regression_labels": [
+    "wave",
+    "chase",
+    "drink",
+    "pick_up",
+    "other"
+  ],
+  "uncovered_classes": [
+    "throw",
+    "fall",
+    "fight",
+    "talk",
+    "shake_hands"
+  ],
+  "coverage_note": "The on-site training cache and A/B/C/P regression do not contain positive examples of the five uncovered classes; no nine-action retention claim is possible.",
+  "fallback_if_no_epoch_passes": "Before opening holdout, evaluate original/candidate weight interpolation at new-weight fractions 0.25, 0.5, 0.75; apply the same regression gates. If no improvement passes, preserve deployed model and deliver candidates/report without claiming a production upgrade."
+}

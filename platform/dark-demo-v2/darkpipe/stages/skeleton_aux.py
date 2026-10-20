@@ -235,6 +235,7 @@ class SkeletonAux:
         self.pose_ms = 0.0
         self.pose = None
         self.net = None
+        self.last_analysis = None
 
     def load(self):
         """-> "" on success, else a reason string (already phrased for the startup log)."""
@@ -316,6 +317,10 @@ class SkeletonAux:
         with torch.no_grad():
             lg = torch.stack([self.net(xt[:, m]) for m in range(xt.shape[1])], 1)[0]
         p = merge_persons(lg, torch.tensor(pres).unsqueeze(0).to(self.device))[0].softmax(0)
+        # Preserve observations for display without changing the merged logits or running
+        # RTMO/ST-GCN again. Slots are confidence ranks, not persistent person identities.
+        self.last_analysis = dict(sk=sk, presence=pres,
+                                  slot_p=lg.softmax(-1).float().cpu().numpy())
         return p.float().cpu().numpy(), float(pres.max())
 
     def analyze(self, frames_bgr):
@@ -345,7 +350,52 @@ class SkeletonAux:
             cand = np.flatnonzero(valid)
             out["best"] = int(cand[np.argmax(slot_p[cand].max(1))])
             out["p"] = slot_p[out["best"]]
+        self.last_analysis = dict(sk=sk, presence=pres, slot_p=slot_p, valid=valid)
         return out
+
+    def action_poses(self, label):
+        """Current-frame candidate actors agreeing with the final named action.
+
+        A full-frame RGB head cannot localize an actor. Do not invent one when the
+        per-slot skeleton classifier disagrees, is absent, or only reports other.
+        This is display metadata and never feeds back into the recognition decision.
+        """
+        info = self.last_analysis
+        if info is None or label == 'other' or label not in BEHAVIORS:
+            return []
+        index = BEHAVIORS.index(label)
+        result = []
+        kept = []
+        for slot, prob in enumerate(info['slot_p']):
+            if info['presence'][slot] < TAU or int(prob.argmax()) != index:
+                continue
+            if 'valid' in info and not info['valid'][slot]:
+                continue
+            pose = info['sk'][-1, slot]
+            if pose[:, 2].mean() < TAU or (pose[:, 2] > POSE_SCORE_THR).sum() < COMP_MIN_VIS:
+                continue
+            # RTMO can emit two almost-identical detections of one bent-over person.
+            # Suppress duplicates for display only; retain both original votes in fusion.
+            duplicate = False
+            for previous in kept:
+                common = (pose[:, 2] > POSE_SCORE_THR) & (previous[:, 2] > POSE_SCORE_THR)
+                if common.sum() < COMP_MIN_VIS:
+                    continue
+                a, b = pose[common, :2], previous[common, :2]
+                lo_a, hi_a, lo_b, hi_b = a.min(0), a.max(0), b.min(0), b.max(0)
+                intersection = np.maximum(0, np.minimum(hi_a, hi_b) - np.maximum(lo_a, lo_b)).prod()
+                union = (hi_a-lo_a).prod() + (hi_b-lo_b).prod() - intersection
+                extent = min(np.linalg.norm(hi_a-lo_a), np.linalg.norm(hi_b-lo_b))
+                if (intersection / max(float(union), 1e-8) > .65
+                        and np.median(np.linalg.norm(a-b, axis=1)) < .1 * extent):
+                    duplicate = True
+                    break
+            if duplicate:
+                continue
+            kept.append(pose)
+            result.append(dict(slot=int(slot), label=label, confidence=float(prob[index]),
+                               keypoints=pose.tolist()))
+        return result
 
     def fuse(self, pr, ps, pres):
         """No-person policy (see NO_PERSON_MODES) + weighted blend. `ps` is only meaningful

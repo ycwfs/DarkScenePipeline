@@ -1,0 +1,42 @@
+{
+  "defaults": {
+    "proc_max_side": 720,
+    "sr": "bicubic",
+    "sr_scale": 2,
+    "label_bar": true,
+    "clip_pre_sec": 2.0,
+    "clip_post_sec": 2.0,
+    "clip_denoise": "quality",
+    "reco_min_conf": 0.65
+  },
+  "input_wh": [
+    1920,
+    1080
+  ],
+  "processing_wh": [
+    720,
+    404
+  ],
+  "sr_wh": [
+    1440,
+    808
+  ],
+  "output_wh": [
+    1440,
+    874
+  ],
+  "ffprobe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "pix_fmt": "yuv420p",
+        "nb_read_frames": "15"
+      }
+    ]
+  },
+  "decode": "passed",
+  "scope": "CPU sizing and real H.264 encoding; no model or throughput benchmark"
+}

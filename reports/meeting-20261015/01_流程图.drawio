@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17"><diagram id="alpha-with-luma" name="当前默认方案：照度门 + 加权融合">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="当前默认方案：照度门 + 加权融合" vertex="1" parent="1" style="text;html=0;whiteSpace=wrap;fontFamily=Noto Sans CJK SC;fontSize=34;align=left;fontColor=#172B43;">
+          <mxGeometry x="64" y="45" width="1450" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="暗场仅用 RGB；亮场融合 RGB 与骨架，再统一判定动作" vertex="1" parent="1" style="text;html=0;whiteSpace=wrap;fontFamily=Noto Sans CJK SC;fontSize=19;align=left;fontColor=#172B43;">
+          <mxGeometry x="64" y="104" width="1450" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="L 是增强前原图的窗口平均像素亮度（0–255），不是 lux；骨架无人时按 soft 策略投「其他」票。" vertex="1" parent="1" style="text;html=0;whiteSpace=wrap;fontFamily=Noto Sans CJK SC;fontSize=17;align=left;fontColor=#172B43;">
+          <mxGeometry x="64" y="818" width="1472" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="input" value="视频输入" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#F4F6F9;strokeColor=#58697D;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="64" y="355" width="145" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="prep" value="长边 ≤720&#10;记录原图亮度&#10;低照度增强" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#F4F6F9;strokeColor=#58697D;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="255" y="335" width="230" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb" value="RGB 动作识别&#10;VideoMamba" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#EBF2FB;strokeColor=#2463B6;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="530" y="350" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" value="原图亮度&#10;L &lt; 75？" vertex="1" parent="1" style="shape=rhombus;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#FBF3E3;strokeColor=#AB701C;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="765" y="325" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dark" value="仅用 RGB 结果" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#EBF2FB;strokeColor=#2463B6;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="1030" y="210" width="255" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="skel" value="骨架动作识别&#10;RTMO-s + ST-GCN" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#E9F5F2;strokeColor=#00867B;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="1030" y="440" width="255" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fuse" value="加权融合&#10;0.7 RGB + 0.3 骨架" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=21.6;fillColor=#E9F5F2;strokeColor=#00867B;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="1030" y="590" width="255" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="result" value="取最高分结果&#10;具名动作 ≥0.65&#10;否则输出「其他」" vertex="1" parent="1" style="shape=rectangle;rounded=1;arcSize=10;whiteSpace=wrap;html=0;fontFamily=Noto Sans CJK SC;fontSize=20.2;fillColor=#F4F6F9;strokeColor=#58697D;fontColor=#172B43;strokeWidth=2;">
+          <mxGeometry x="1340" y="340" width="205" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="input" target="prep" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="prep" target="rgb" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="rgb" target="gate" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="gate" target="dark" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#2463B6;exitX=0.5;exitY=0.0;exitPerimeter=0;entryX=0.0;entryY=0.49473684210526314;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="257" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label3" value="是 · 暗场" vertex="1" parent="1" style="text;html=0;align=center;fontSize=16;fontColor=#2463B6;fillColor=#ffffff;">
+          <mxGeometry x="865" y="225" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="gate" target="skel" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#00867B;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label4" value="否 · 亮场" vertex="1" parent="1" style="text;html=0;align=center;fontSize=16;fontColor=#00867B;fillColor=#ffffff;">
+          <mxGeometry x="865" y="457" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="skel" target="fuse" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#00867B;exitX=0.4980392156862745;exitY=1.0;exitPerimeter=0;entryX=0.4980392156862745;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="dark" target="result" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#2463B6;exitX=1.0;exitY=0.49473684210526314;exitPerimeter=0;entryX=0.0;entryY=0.34615384615384615;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1310" y="257" />
+              <mxPoint x="1310" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="fuse" target="result" style="edgeStyle=none;rounded=0;html=0;endArrow=block;endFill=1;strokeWidth=2;fontSize=16;fontFamily=Noto Sans CJK SC;labelBackgroundColor=#ffffff;strokeColor=#00867B;exitX=1.0;exitY=0.49473684210526314;exitPerimeter=0;entryX=0.0;entryY=0.6923076923076923;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1310" y="637" />
+              <mxPoint x="1310" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  </mxfile>

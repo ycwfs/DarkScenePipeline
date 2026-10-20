@@ -1,0 +1,650 @@
+{
+  "cases": 3,
+  "cycles": 63,
+  "clips_saved": 93,
+  "switches": 30,
+  "all_videos_decoded": true,
+  "push_max_ms": 0.708254985511303,
+  "frames_dropped": 279,
+  "clips_abandoned": 0,
+  "clips_forced": 0,
+  "write_errors": 0,
+  "cases_detail": [
+    {
+      "queue_limit": 4,
+      "cycles": 21,
+      "switches": 10,
+      "stats": {
+        "session": "clips",
+        "clips_saved": 31,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 93,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "all_videos_decoded": true,
+      "push_max_ms": 0.708254985511303,
+      "videos": [
+        {
+          "file": "20261019_121147_drinking_water_0001.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 10
+        },
+        {
+          "file": "20261019_121148_drinking_water_0002.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121148_drinking_water_0004.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121148_drinking_water_0005.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121148_drinking_water_0007.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121148_drinking_water_0008.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121149_drinking_water_0010.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121149_drinking_water_0011.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121149_drinking_water_0013.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121149_drinking_water_0014.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121149_drinking_water_0016.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121149_drinking_water_0017.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121150_drinking_water_0019.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121150_drinking_water_0020.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121150_drinking_water_0022.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121150_drinking_water_0023.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121150_drinking_water_0025.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121150_drinking_water_0026.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121151_drinking_water_0028.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121151_drinking_water_0029.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121151_drinking_water_0031.mp4",
+          "label": "Drinking water",
+          "closed_because": "服务停止",
+          "frames": 1
+        },
+        {
+          "file": "20261019_121148_waving_0003.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121148_waving_0006.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121148_waving_0009.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121149_waving_0012.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121149_waving_0015.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121149_waving_0018.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121150_waving_0021.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121150_waving_0024.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121150_waving_0027.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121151_waving_0030.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        }
+      ],
+      "scope": "Real H.264, 64x48 synthetic frames, injected writer pauses; not a model or full-size quality throughput test."
+    },
+    {
+      "queue_limit": 8,
+      "cycles": 21,
+      "switches": 10,
+      "stats": {
+        "session": "clips",
+        "clips_saved": 31,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 93,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "all_videos_decoded": true,
+      "push_max_ms": 0.6533218547701836,
+      "videos": [
+        {
+          "file": "20261019_121154_drinking_water_0001.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 10
+        },
+        {
+          "file": "20261019_121154_drinking_water_0002.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121154_drinking_water_0004.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121155_drinking_water_0005.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121155_drinking_water_0007.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121155_drinking_water_0008.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121155_drinking_water_0010.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121155_drinking_water_0011.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121155_drinking_water_0013.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121155_drinking_water_0014.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121156_drinking_water_0016.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121156_drinking_water_0017.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121156_drinking_water_0019.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121156_drinking_water_0020.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121156_drinking_water_0022.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121156_drinking_water_0023.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121157_drinking_water_0025.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121157_drinking_water_0026.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121157_drinking_water_0028.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121157_drinking_water_0029.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121157_drinking_water_0031.mp4",
+          "label": "Drinking water",
+          "closed_because": "服务停止",
+          "frames": 1
+        },
+        {
+          "file": "20261019_121154_waving_0003.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121155_waving_0006.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121155_waving_0009.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121155_waving_0012.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121155_waving_0015.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121156_waving_0018.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121156_waving_0021.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121156_waving_0024.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121157_waving_0027.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121157_waving_0030.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        }
+      ],
+      "scope": "Real H.264, 64x48 synthetic frames, injected writer pauses; not a model or full-size quality throughput test."
+    },
+    {
+      "queue_limit": 64,
+      "cycles": 21,
+      "switches": 10,
+      "stats": {
+        "session": "clips",
+        "clips_saved": 31,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 93,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "all_videos_decoded": true,
+      "push_max_ms": 0.6706402637064457,
+      "videos": [
+        {
+          "file": "20261019_121200_drinking_water_0001.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 10
+        },
+        {
+          "file": "20261019_121201_drinking_water_0002.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121201_drinking_water_0004.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121201_drinking_water_0005.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121201_drinking_water_0007.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121201_drinking_water_0008.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121201_drinking_water_0010.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121201_drinking_water_0011.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121202_drinking_water_0013.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121202_drinking_water_0014.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121202_drinking_water_0016.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121202_drinking_water_0017.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 13
+        },
+        {
+          "file": "20261019_121202_drinking_water_0019.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 19
+        },
+        {
+          "file": "20261019_121202_drinking_water_0020.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121203_drinking_water_0022.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121203_drinking_water_0023.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121203_drinking_water_0025.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121203_drinking_water_0026.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121203_drinking_water_0028.mp4",
+          "label": "Drinking water",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121203_drinking_water_0029.mp4",
+          "label": "Drinking water",
+          "closed_because": "行为切换 -> Waving",
+          "frames": 12
+        },
+        {
+          "file": "20261019_121203_drinking_water_0031.mp4",
+          "label": "Drinking water",
+          "closed_because": "服务停止",
+          "frames": 3
+        },
+        {
+          "file": "20261019_121201_waving_0003.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121201_waving_0006.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121201_waving_0009.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121201_waving_0012.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121202_waving_0015.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121202_waving_0018.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121202_waving_0021.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121203_waving_0024.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121203_waving_0027.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        },
+        {
+          "file": "20261019_121203_waving_0030.mp4",
+          "label": "Waving",
+          "closed_because": "post 静默期结束",
+          "frames": 18
+        }
+      ],
+      "scope": "Real H.264, 64x48 synthetic frames, injected writer pauses; not a model or full-size quality throughput test."
+    }
+  ]
+}

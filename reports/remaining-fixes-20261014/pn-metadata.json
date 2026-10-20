@@ -1,0 +1,31 @@
+{
+  "labels": [
+    "wave",
+    "throw",
+    "chase",
+    "fall",
+    "fight",
+    "talk",
+    "drink",
+    "pick_up",
+    "shake_hands",
+    "other"
+  ],
+  "epoch": 12,
+  "enhance": "retinexformer",
+  "init": "videomamba_t_behavior_32f_realactall_full.pth",
+  "preprocess": "fullfov224x400",
+  "source": "real-actiondata",
+  "seen": [
+    "wave",
+    "chase",
+    "drink",
+    "pick_up",
+    "other"
+  ],
+  "realact_top1": 0.9698757763975155,
+  "realact_macro_f1": 0.9615158625832153,
+  "arid_top1": 0.49,
+  "arid_macro_f1": 0.45440557068866727,
+  "lwf": 0.2
+}

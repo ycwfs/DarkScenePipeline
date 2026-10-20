@@ -1,0 +1,105 @@
+{
+  "live-quality": {
+    "measurement": "20<=uptime or event timestamp<=75 seconds; HTTP health snapshots 1 Hz",
+    "health_samples": 53,
+    "sse_delay_samples": 12,
+    "fps_proc": {
+      "min": 1.44,
+      "p50": 9.8,
+      "p95": 15.91,
+      "max": 16.19
+    },
+    "frame_latency_ms": {
+      "min": 88.1,
+      "p50": 125.3,
+      "p95": 935.7999999999989,
+      "max": 2028.2
+    },
+    "event_age_ms": {
+      "min": 718.415081024169,
+      "p50": 1261.4751091003386,
+      "p95": 3099.9566039085375,
+      "max": 3442.6150035858145
+    },
+    "samples_at_least_15fps": 9,
+    "samples_event_age_over_1000ms": 8,
+    "exit_code": 137,
+    "session_status": "running",
+    "session_clips": null,
+    "output_mp4": 17
+  },
+  "live-off-capped": {
+    "measurement": "20<=uptime or event timestamp<=75 seconds; HTTP health snapshots 1 Hz",
+    "health_samples": 45,
+    "sse_delay_samples": 13,
+    "fps_proc": {
+      "min": 0.43,
+      "p50": 14.24,
+      "p95": 17.03,
+      "max": 17.39
+    },
+    "frame_latency_ms": {
+      "min": 90.2,
+      "p50": 116.0,
+      "p95": 713.8,
+      "max": 3548.6
+    },
+    "event_age_ms": {
+      "min": 734.6343669891339,
+      "p50": 954.661968231207,
+      "p95": 1577.7229915618886,
+      "max": 1651.5324478149437
+    },
+    "samples_at_least_15fps": 15,
+    "samples_event_age_over_1000ms": 6,
+    "exit_code": 0,
+    "session_status": "stopped",
+    "session_clips": {
+      "session": "127.0.0.1/20261014_112158_1",
+      "clips_saved": 18,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "uploads_dropped": 0,
+      "stage_orphans_cleaned": 0
+    },
+    "output_mp4": 18
+  },
+  "live-quality-capped-ort": {
+    "measurement": "20<=uptime or event timestamp<=75 seconds; HTTP health snapshots 1 Hz",
+    "health_samples": 55,
+    "sse_delay_samples": 12,
+    "fps_proc": {
+      "min": 2.17,
+      "p50": 11.92,
+      "p95": 16.936,
+      "max": 17.51
+    },
+    "frame_latency_ms": {
+      "min": 94.8,
+      "p50": 118.8,
+      "p95": 332.9399999999998,
+      "max": 1157.1
+    },
+    "event_age_ms": {
+      "min": 689.5767784118653,
+      "p50": 974.1880340576153,
+      "p95": 1607.6539359092699,
+      "max": 1719.4511280059785
+    },
+    "samples_at_least_15fps": 17,
+    "samples_event_age_over_1000ms": 5,
+    "exit_code": 0,
+    "session_status": "stopped",
+    "session_clips": {
+      "session": "127.0.0.1/20261014_112837_1",
+      "clips_saved": 6,
+      "clips_abandoned": 2,
+      "clips_forced": 0,
+      "frames_dropped": 21,
+      "uploads_dropped": 0,
+      "stage_orphans_cleaned": 0
+    },
+    "output_mp4": 6
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "input_size": 640,
+  "conf_threshold": 0.25,
+  "provider": "CPUExecutionProvider",
+  "model": "yolo26m_detect.onnx",
+  "scope": "One saved JPEG per case, raw and enhanced diagnostic; not a sequence/accuracy benchmark",
+  "records": [
+    {
+      "name": "喝水16",
+      "kind": "raw",
+      "path": "sources/喝水16-raw.jpg",
+      "shape": [
+        472,
+        840,
+        3
+      ],
+      "detections": [
+        [
+          345.64385986328125,
+          110.05941772460938,
+          457.4608459472656,
+          341.4145812988281,
+          0.9389973878860474,
+          0.0
+        ]
+      ],
+      "containers": 0,
+      "non_person": 0
+    },
+    {
+      "name": "喝水16",
+      "kind": "enhanced",
+      "path": "sources/喝水16-enhanced.jpg",
+      "shape": [
+        472,
+        840,
+        3
+      ],
+      "detections": [
+        [
+          345.7904052734375,
+          109.88794708251953,
+          457.5850830078125,
+          341.49176025390625,
+          0.9339216947555542,
+          0.0
+        ]
+      ],
+      "containers": 0,
+      "non_person": 0
+    },
+    {
+      "name": "捡东西2",
+      "kind": "raw",
+      "path": "sources/捡东西2-raw.jpg",
+      "shape": [
+        472,
+        840,
+        3
+      ],
+      "detections": [
+        [
+          422.0798034667969,
+          191.10885620117188,
+          494.5020751953125,
+          308.0423278808594,
+          0.940382719039917,
+          0.0
+        ]
+      ],
+      "containers": 0,
+      "non_person": 0
+    },
+    {
+      "name": "捡东西2",
+      "kind": "enhanced",
+      "path": "sources/捡东西2-enhanced.jpg",
+      "shape": [
+        472,
+        840,
+        3
+      ],
+      "detections": [
+        [
+          422.19537353515625,
+          191.34605407714844,
+          495.0484619140625,
+          308.1261901855469,
+          0.9358011484146118,
+          0.0
+        ]
+      ],
+      "containers": 0,
+      "non_person": 0
+    }
+  ]
+}

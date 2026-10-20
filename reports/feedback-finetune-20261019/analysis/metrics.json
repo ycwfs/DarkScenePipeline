@@ -1,0 +1,44 @@
+{
+  "A": {
+    "n": 177,
+    "old_correct": 175,
+    "new_correct": 175,
+    "old_false": null,
+    "new_false": null
+  },
+  "B": {
+    "n": 365,
+    "old_correct": 360,
+    "new_correct": 360,
+    "old_false": 5,
+    "new_false": 5
+  },
+  "C": {
+    "n": 18,
+    "old_correct": 17,
+    "new_correct": 17,
+    "old_false": null,
+    "new_false": null
+  },
+  "P": {
+    "n": 460,
+    "old_correct": 460,
+    "new_correct": 460,
+    "old_false": 0,
+    "new_false": 0
+  },
+  "Qtrain": {
+    "n": 175,
+    "old_correct": 172,
+    "new_correct": 175,
+    "old_false": 3,
+    "new_false": 0
+  },
+  "Qholdout": {
+    "n": 68,
+    "old_correct": 66,
+    "new_correct": 67,
+    "old_false": 2,
+    "new_false": 1
+  }
+}

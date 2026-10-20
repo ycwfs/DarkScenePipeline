@@ -1,0 +1,95 @@
+[
+  {
+    "case": "test_connections_waiting_for_f0",
+    "status": "stopped",
+    "events_total": 0,
+    "clips_saved": 0,
+    "error": null,
+    "operator_seconds": 3.650541597045958,
+    "decoded_h264_clips": []
+  },
+  {
+    "case": "test_early_failure_or_timer_in0",
+    "status": "failed",
+    "events_total": 0,
+    "clips_saved": 0,
+    "error": "ProcessingFailed: 实时处理失败：process_loop: RuntimeError: probe model load failure",
+    "operator_seconds": 0.6791197671554983,
+    "decoded_h264_clips": []
+  },
+  {
+    "case": "test_early_failure_or_timer_in1",
+    "status": "stopped",
+    "events_total": 0,
+    "clips_saved": 0,
+    "error": null,
+    "operator_seconds": 1.0892285509034991,
+    "decoded_h264_clips": []
+  },
+  {
+    "case": "test_nonreading_client_has_bou0",
+    "status": "stopped",
+    "events_total": 10,
+    "clips_saved": 1,
+    "error": null,
+    "operator_seconds": 7.66831378871575,
+    "decoded_h264_clips": [
+      "image-evidence/pytest/test_nonreading_client_has_bou0/clips/probe/20261014_144804_1352/wave/20261014_144804_wave_0001.mp4"
+    ]
+  },
+  {
+    "case": "test_real_http_connections_clo0",
+    "status": "stopped",
+    "events_total": 15,
+    "clips_saved": 1,
+    "error": null,
+    "operator_seconds": 3.752538663800806,
+    "decoded_h264_clips": [
+      "image-evidence/pytest/test_real_http_connections_clo0/clips/probe/20261014_144725_137/wave/20261014_144725_wave_0001.mp4"
+    ]
+  },
+  {
+    "case": "test_real_http_connections_clo1",
+    "status": "failed",
+    "events_total": 1,
+    "clips_saved": 1,
+    "error": "ProcessingFailed: 实时处理失败：enhance_loop: RuntimeError: probe enhancement failure",
+    "operator_seconds": 1.0372331580147147,
+    "decoded_h264_clips": [
+      "image-evidence/pytest/test_real_http_connections_clo1/clips/probe/20261014_144732_331/wave/20261014_144732_wave_0001.mp4"
+    ]
+  },
+  {
+    "case": "test_real_http_connections_clo2",
+    "status": "failed",
+    "events_total": 1,
+    "clips_saved": 1,
+    "error": "ProcessingFailed: 实时处理失败：enhance_loop: RuntimeError: probe recognition failure",
+    "operator_seconds": 0.9029846042394638,
+    "decoded_h264_clips": [
+      "image-evidence/pytest/test_real_http_connections_clo2/clips/probe/20261014_144736_525/wave/20261014_144737_wave_0001.mp4"
+    ]
+  },
+  {
+    "case": "test_signal_ends_sse_and_write0",
+    "status": "stopped",
+    "events_total": 1,
+    "clips_saved": 1,
+    "error": null,
+    "operator_seconds": 0.8266207380220294,
+    "decoded_h264_clips": [
+      "image-evidence/pytest/test_signal_ends_sse_and_write0/clips/probe/20261014_144740_719/wave/20261014_144741_wave_0001.mp4"
+    ]
+  },
+  {
+    "case": "test_signal_ends_sse_and_write1",
+    "status": "stopped",
+    "events_total": 1,
+    "clips_saved": 1,
+    "error": null,
+    "operator_seconds": 0.8530023931525648,
+    "decoded_h264_clips": [
+      "image-evidence/pytest/test_signal_ends_sse_and_write1/clips/probe/20261014_144744_851/wave/20261014_144745_wave_0001.mp4"
+    ]
+  }
+]

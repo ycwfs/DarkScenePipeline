@@ -1,0 +1,1725 @@
+{
+  "annotation": "All supplied sessions are provisionally treated as other, per user; no new training performed.",
+  "source_sha256": "24b3e223c0b1457c4925d5b94ef05f2dbae28bbe6c29875d8c99ed1af04caf87",
+  "sessions": [
+    {
+      "session_id": "20261015_161630_77",
+      "status": "failed",
+      "started_at": "2026-10-15 16:16:33",
+      "stopped_at": "2026-10-15 16:28:16",
+      "events": 771,
+      "action_events": 6,
+      "action_labels": {
+        "Drinking water": 6
+      },
+      "max_action_confidence": 0.7655,
+      "clips": {
+        "session": "10.18.31.51_ch1/20261015_161630_77",
+        "clips_saved": 3,
+        "clips_abandoned": 1,
+        "clips_forced": 1,
+        "frames_dropped": 9,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 1,
+        "write_errors": 1,
+        "write_error": "片段 /mnt/nfs/args/41/10.18.31.51_ch1/20261015_161630_77/drinking_water/20261015_162546_drinking_water_0003.mp4 未收到收尾消息",
+        "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+        "writer_alive": false,
+        "uploads_pending": 0
+      }
+    },
+    {
+      "session_id": "20261015_163555_77",
+      "status": "failed",
+      "started_at": "2026-10-15 16:35:57",
+      "stopped_at": "2026-10-15 18:13:34",
+      "events": 6919,
+      "action_events": 12,
+      "action_labels": {
+        "Waving": 3,
+        "Drinking water": 9
+      },
+      "max_action_confidence": 0.8844,
+      "clips": {
+        "session": "10.18.31.51_ch1/20261015_163555_77",
+        "clips_saved": 4,
+        "clips_abandoned": 1,
+        "clips_forced": 1,
+        "frames_dropped": 166,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 1,
+        "write_errors": 1,
+        "write_error": "片段 /mnt/nfs/args/41/10.18.31.51_ch1/20261015_163555_77/drinking_water/20261015_174335_drinking_water_0004.mp4 未收到收尾消息",
+        "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+        "writer_alive": false,
+        "uploads_pending": 0
+      }
+    },
+    {
+      "session_id": "20261017_211044_82",
+      "status": "failed",
+      "started_at": "2026-10-17 21:10:46",
+      "stopped_at": "2026-10-17 21:15:40",
+      "events": 374,
+      "action_events": 12,
+      "action_labels": {
+        "Drinking water": 11,
+        "Waving": 1
+      },
+      "max_action_confidence": 0.7868,
+      "clips": {
+        "session": "10.18.31.51_ch1/20261017_211044_82",
+        "clips_saved": 11,
+        "clips_abandoned": 1,
+        "clips_forced": 1,
+        "frames_dropped": 90,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 1,
+        "write_errors": 1,
+        "write_error": "片段 /mnt/nfs/args/41/10.18.31.51_ch1/20261017_211044_82/waving/20261017_211407_waving_0011.mp4 未收到收尾消息",
+        "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+        "writer_alive": false,
+        "uploads_pending": 0
+      }
+    },
+    {
+      "session_id": "20261019_092255_83",
+      "status": "failed",
+      "started_at": "2026-10-19 09:22:58",
+      "stopped_at": "2026-10-19 09:26:15",
+      "events": 192,
+      "action_events": 8,
+      "action_labels": {
+        "Waving": 8
+      },
+      "max_action_confidence": 0.7226,
+      "clips": {
+        "session": "10.18.31.51_ch1/20261019_092255_83",
+        "clips_saved": 5,
+        "clips_abandoned": 1,
+        "clips_forced": 1,
+        "frames_dropped": 67,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 1,
+        "write_errors": 1,
+        "write_error": "片段 /mnt/nfs/args/41/10.18.31.51_ch1/20261019_092255_83/waving/20261019_092503_waving_0005.mp4 未收到收尾消息",
+        "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+        "writer_alive": false,
+        "uploads_pending": 0
+      }
+    },
+    {
+      "session_id": "20261019_104926_85",
+      "status": "failed",
+      "started_at": "2026-10-19 10:49:28",
+      "stopped_at": "2026-10-19 11:17:27",
+      "events": 1788,
+      "action_events": 7,
+      "action_labels": {
+        "Waving": 7
+      },
+      "max_action_confidence": 0.7249,
+      "clips": {
+        "session": "10.18.31.51_ch1/20261019_104926_85",
+        "clips_saved": 1,
+        "clips_abandoned": 1,
+        "clips_forced": 1,
+        "frames_dropped": 93,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 1,
+        "write_errors": 1,
+        "write_error": "片段 /mnt/nfs/args/41/10.18.31.51_ch1/20261019_104926_85/waving/20261019_105421_waving_0001.mp4 未收到收尾消息",
+        "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+        "writer_alive": false,
+        "uploads_pending": 0
+      }
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "status": "failed",
+      "started_at": "2026-10-19 11:18:51",
+      "stopped_at": "2026-10-19 11:44:06",
+      "events": 1549,
+      "action_events": 27,
+      "action_labels": {
+        "Drinking water": 21,
+        "Waving": 6
+      },
+      "max_action_confidence": 0.8804,
+      "clips": {
+        "session": "10.18.31.51_ch1/20261019_111849_80",
+        "clips_saved": 8,
+        "clips_abandoned": 1,
+        "clips_forced": 1,
+        "frames_dropped": 303,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 1,
+        "write_errors": 1,
+        "write_error": "片段 /mnt/nfs/args/41/10.18.31.51_ch1/20261019_111849_80/drinking_water/20261019_114310_drinking_water_0008.mp4 未收到收尾消息",
+        "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+        "writer_alive": false,
+        "uploads_pending": 0
+      }
+    }
+  ],
+  "events": 11593,
+  "named_events": 72,
+  "videos": 32,
+  "threshold_parameter": "reco_min_conf (act_tau is only for max_prior)",
+  "score_precision": "Production JSON rounds confidence to 4 decimals; these are logged-event counts.",
+  "sweep": [
+    {
+      "threshold": 0.65,
+      "false_events_assuming_all_other": 72,
+      "removed": 0,
+      "reduction_fraction": 0.0,
+      "by_label": {
+        "Drinking water": 47,
+        "Waving": 25
+      },
+      "by_session": {
+        "20261015_161630_77": 6,
+        "20261015_163555_77": 12,
+        "20261017_211044_82": 12,
+        "20261019_092255_83": 8,
+        "20261019_104926_85": 7,
+        "20261019_111849_80": 27
+      },
+      "rounding_boundary_events": 0
+    },
+    {
+      "threshold": 0.7,
+      "false_events_assuming_all_other": 39,
+      "removed": 33,
+      "reduction_fraction": 0.4583333333333333,
+      "by_label": {
+        "Drinking water": 33,
+        "Waving": 6
+      },
+      "by_session": {
+        "20261015_161630_77": 5,
+        "20261015_163555_77": 11,
+        "20261017_211044_82": 6,
+        "20261019_092255_83": 2,
+        "20261019_104926_85": 2,
+        "20261019_111849_80": 13
+      },
+      "rounding_boundary_events": 0
+    },
+    {
+      "threshold": 0.75,
+      "false_events_assuming_all_other": 23,
+      "removed": 49,
+      "reduction_fraction": 0.6805555555555556,
+      "by_label": {
+        "Drinking water": 21,
+        "Waving": 2
+      },
+      "by_session": {
+        "20261015_161630_77": 3,
+        "20261015_163555_77": 9,
+        "20261017_211044_82": 3,
+        "20261019_111849_80": 8
+      },
+      "rounding_boundary_events": 0
+    },
+    {
+      "threshold": 0.8,
+      "false_events_assuming_all_other": 13,
+      "removed": 59,
+      "reduction_fraction": 0.8194444444444444,
+      "by_label": {
+        "Waving": 2,
+        "Drinking water": 11
+      },
+      "by_session": {
+        "20261015_163555_77": 7,
+        "20261019_111849_80": 6
+      },
+      "rounding_boundary_events": 0
+    },
+    {
+      "threshold": 0.85,
+      "false_events_assuming_all_other": 4,
+      "removed": 68,
+      "reduction_fraction": 0.9444444444444444,
+      "by_label": {
+        "Drinking water": 4
+      },
+      "by_session": {
+        "20261015_163555_77": 1,
+        "20261019_111849_80": 3
+      },
+      "rounding_boundary_events": 0
+    },
+    {
+      "threshold": 0.89,
+      "false_events_assuming_all_other": 0,
+      "removed": 72,
+      "reduction_fraction": 1.0,
+      "by_label": {},
+      "by_session": {},
+      "rounding_boundary_events": 0
+    },
+    {
+      "threshold": 0.9,
+      "false_events_assuming_all_other": 0,
+      "removed": 72,
+      "reduction_fraction": 1.0,
+      "by_label": {},
+      "by_session": {},
+      "rounding_boundary_events": 0
+    }
+  ],
+  "clips": [
+    {
+      "path": "input/20261015_161630_77/drinking_water/20261015_162326_drinking_water_0001.mp4",
+      "filename": "20261015_162326_drinking_water_0001.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7054,
+      "width": 1440,
+      "height": 874,
+      "frames": 113,
+      "fps": 28.0,
+      "video_seconds": 4.035714285714286,
+      "recorded_duration": 4.004,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 8354,
+        "timestamp": 411.902,
+        "label": "Drinking water",
+        "confidence": 0.7054,
+        "topk": [
+          [
+            "Drinking water",
+            0.7054
+          ],
+          [
+            "Other",
+            0.1983
+          ],
+          [
+            "Talking",
+            0.041
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 88,
+        "Drinking water": 25
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 3272.521240234375,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261015_161630_77/drinking_water/20261015_162356_drinking_water_0002.mp4",
+      "filename": "20261015_162356_drinking_water_0002.mp4",
+      "label": "Drinking water",
+      "confidence": 0.6897,
+      "width": 1440,
+      "height": 874,
+      "frames": 121,
+      "fps": 30.0,
+      "video_seconds": 4.033333333333333,
+      "recorded_duration": 4.033,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 8946,
+        "timestamp": 442.522,
+        "label": "Drinking water",
+        "confidence": 0.6897,
+        "topk": [
+          [
+            "Drinking water",
+            0.6897
+          ],
+          [
+            "Other",
+            0.0852
+          ],
+          [
+            "Talking",
+            0.0678
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 101,
+        "Drinking water": 20
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 3735.704345703125,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261015_161630_77/drinking_water/20261015_162806_drinking_water_0004.mp4",
+      "filename": "20261015_162806_drinking_water_0004.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7345,
+      "width": 1440,
+      "height": 874,
+      "frames": 52,
+      "fps": 26.0,
+      "video_seconds": 2.0,
+      "recorded_duration": 1.994,
+      "closed_because": "服务停止",
+      "first_event": {
+        "frame_index": 14064,
+        "timestamp": 692.752,
+        "label": "Drinking water",
+        "confidence": 0.7345,
+        "topk": [
+          [
+            "Drinking water",
+            0.7345
+          ],
+          [
+            "Other",
+            0.1609
+          ],
+          [
+            "Talking",
+            0.0312
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 51,
+        "Drinking water": 1
+      },
+      "label_first": "Other",
+      "label_last": "Drinking water",
+      "template_mse_max": 3726.145263671875,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4",
+      "filename": "20261015_181324_drinking_water_0005.mp4",
+      "label": "Drinking water",
+      "confidence": 0.8844,
+      "width": 1440,
+      "height": 874,
+      "frames": 50,
+      "fps": 25.0,
+      "video_seconds": 2.0,
+      "recorded_duration": 1.988,
+      "closed_because": "服务停止",
+      "first_event": {
+        "frame_index": 126175,
+        "timestamp": 5846.621,
+        "label": "Drinking water",
+        "confidence": 0.8844,
+        "topk": [
+          [
+            "Drinking water",
+            0.8844
+          ],
+          [
+            "Other",
+            0.0496
+          ],
+          [
+            "Waving",
+            0.0141
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 50
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 3337.22900390625,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261015_163555_77/waving/20261015_164733_waving_0001.mp4",
+      "filename": "20261015_164733_waving_0001.mp4",
+      "label": "Waving",
+      "confidence": 0.6903,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.027,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 14777,
+        "timestamp": 694.32,
+        "label": "Waving",
+        "confidence": 0.6903,
+        "topk": [
+          [
+            "Waving",
+            0.6903
+          ],
+          [
+            "Other",
+            0.1802
+          ],
+          [
+            "Chasing",
+            0.0262
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 79,
+        "Waving": 22
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 248.94528198242188,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261015_163555_77/waving/20261015_164746_waving_0002.mp4",
+      "filename": "20261015_164746_waving_0002.mp4",
+      "label": "Waving",
+      "confidence": 0.817,
+      "width": 1440,
+      "height": 874,
+      "frames": 96,
+      "fps": 24.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.969,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 15053,
+        "timestamp": 708.043,
+        "label": "Waving",
+        "confidence": 0.817,
+        "topk": [
+          [
+            "Waving",
+            0.817
+          ],
+          [
+            "Drinking water",
+            0.0817
+          ],
+          [
+            "Other",
+            0.0529
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 71,
+        "Waving": 25
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 247.98406982421875,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261015_163555_77/waving/20261015_165117_waving_0003.mp4",
+      "filename": "20261015_165117_waving_0003.mp4",
+      "label": "Waving",
+      "confidence": 0.8118,
+      "width": 1440,
+      "height": 874,
+      "frames": 108,
+      "fps": 27.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.972,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 19557,
+        "timestamp": 919.078,
+        "label": "Waving",
+        "confidence": 0.8118,
+        "topk": [
+          [
+            "Waving",
+            0.8118
+          ],
+          [
+            "Other",
+            0.0917
+          ],
+          [
+            "Drinking water",
+            0.0399
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 85,
+        "Waving": 23
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 3484.768310546875,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211107_drinking_water_0001.mp4",
+      "filename": "20261017_211107_drinking_water_0001.mp4",
+      "label": "Drinking water",
+      "confidence": 0.757,
+      "width": 1440,
+      "height": 874,
+      "frames": 104,
+      "fps": 26.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.982,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 227,
+        "timestamp": 19.748,
+        "label": "Drinking water",
+        "confidence": 0.757,
+        "topk": [
+          [
+            "Drinking water",
+            0.757
+          ],
+          [
+            "Picking up object",
+            0.0685
+          ],
+          [
+            "Other",
+            0.0548
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 86,
+        "Drinking water": 18
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 254.74754333496094,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211125_drinking_water_0002.mp4",
+      "filename": "20261017_211125_drinking_water_0002.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7262,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.007,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 698,
+        "timestamp": 38.63,
+        "label": "Drinking water",
+        "confidence": 0.7262,
+        "topk": [
+          [
+            "Drinking water",
+            0.7262
+          ],
+          [
+            "Picking up object",
+            0.0971
+          ],
+          [
+            "Other",
+            0.0527
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 84,
+        "Drinking water": 17
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 249.3463134765625,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211130_drinking_water_0003.mp4",
+      "filename": "20261017_211130_drinking_water_0003.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7868,
+      "width": 1440,
+      "height": 874,
+      "frames": 100,
+      "fps": 25.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.976,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 814,
+        "timestamp": 43.278,
+        "label": "Drinking water",
+        "confidence": 0.7868,
+        "topk": [
+          [
+            "Drinking water",
+            0.7868
+          ],
+          [
+            "Picking up object",
+            0.0694
+          ],
+          [
+            "Other",
+            0.0394
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 84,
+        "Drinking water": 16
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 252.01950073242188,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211206_drinking_water_0004.mp4",
+      "filename": "20261017_211206_drinking_water_0004.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7083,
+      "width": 1440,
+      "height": 874,
+      "frames": 100,
+      "fps": 25.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.984,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 1696,
+        "timestamp": 78.748,
+        "label": "Drinking water",
+        "confidence": 0.7083,
+        "topk": [
+          [
+            "Drinking water",
+            0.7083
+          ],
+          [
+            "Picking up object",
+            0.0923
+          ],
+          [
+            "Other",
+            0.065
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 79,
+        "Drinking water": 21
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 250.71408081054688,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211234_drinking_water_0005.mp4",
+      "filename": "20261017_211234_drinking_water_0005.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7178,
+      "width": 1440,
+      "height": 874,
+      "frames": 100,
+      "fps": 25.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.978,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 2400,
+        "timestamp": 106.968,
+        "label": "Drinking water",
+        "confidence": 0.7178,
+        "topk": [
+          [
+            "Drinking water",
+            0.7178
+          ],
+          [
+            "Picking up object",
+            0.0763
+          ],
+          [
+            "Other",
+            0.0657
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 82,
+        "Drinking water": 18
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 254.60263061523438,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211300_drinking_water_0006.mp4",
+      "filename": "20261017_211300_drinking_water_0006.mp4",
+      "label": "Drinking water",
+      "confidence": 0.6522,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.012,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 3046,
+        "timestamp": 132.869,
+        "label": "Drinking water",
+        "confidence": 0.6522,
+        "topk": [
+          [
+            "Drinking water",
+            0.6522
+          ],
+          [
+            "Picking up object",
+            0.1259
+          ],
+          [
+            "Other",
+            0.0717
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 85,
+        "Drinking water": 16
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 252.9829559326172,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211319_drinking_water_0007.mp4",
+      "filename": "20261017_211319_drinking_water_0007.mp4",
+      "label": "Drinking water",
+      "confidence": 0.6606,
+      "width": 1440,
+      "height": 874,
+      "frames": 96,
+      "fps": 24.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.98,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 3518,
+        "timestamp": 151.827,
+        "label": "Drinking water",
+        "confidence": 0.6606,
+        "topk": [
+          [
+            "Drinking water",
+            0.6606
+          ],
+          [
+            "Picking up object",
+            0.1195
+          ],
+          [
+            "Other",
+            0.0721
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 78,
+        "Drinking water": 18
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 248.93722534179688,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211345_drinking_water_0008.mp4",
+      "filename": "20261017_211345_drinking_water_0008.mp4",
+      "label": "Drinking water",
+      "confidence": 0.6757,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.006,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 4169,
+        "timestamp": 177.915,
+        "label": "Drinking water",
+        "confidence": 0.6757,
+        "topk": [
+          [
+            "Drinking water",
+            0.6757
+          ],
+          [
+            "Picking up object",
+            0.098
+          ],
+          [
+            "Other",
+            0.0726
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 81,
+        "Drinking water": 20
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 250.53675842285156,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211352_drinking_water_0009.mp4",
+      "filename": "20261017_211352_drinking_water_0009.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7784,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.018,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 4345,
+        "timestamp": 184.977,
+        "label": "Drinking water",
+        "confidence": 0.7784,
+        "topk": [
+          [
+            "Drinking water",
+            0.7784
+          ],
+          [
+            "Picking up object",
+            0.0602
+          ],
+          [
+            "Other",
+            0.0468
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 85,
+        "Drinking water": 16
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 256.57244873046875,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211404_drinking_water_0010.mp4",
+      "filename": "20261017_211404_drinking_water_0010.mp4",
+      "label": "Drinking water",
+      "confidence": 0.6743,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.002,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 4639,
+        "timestamp": 196.798,
+        "label": "Drinking water",
+        "confidence": 0.6743,
+        "topk": [
+          [
+            "Drinking water",
+            0.6743
+          ],
+          [
+            "Picking up object",
+            0.1146
+          ],
+          [
+            "Other",
+            0.0724
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 81,
+        "Drinking water": 20
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 250.7002716064453,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261017_211044_82/drinking_water/20261017_211533_drinking_water_0012.mp4",
+      "filename": "20261017_211533_drinking_water_0012.mp4",
+      "label": "Drinking water",
+      "confidence": 0.6921,
+      "width": 1440,
+      "height": 874,
+      "frames": 50,
+      "fps": 25.0,
+      "video_seconds": 2.0,
+      "recorded_duration": 1.962,
+      "closed_because": "服务停止",
+      "first_event": {
+        "frame_index": 6871,
+        "timestamp": 286.467,
+        "label": "Drinking water",
+        "confidence": 0.6921,
+        "topk": [
+          [
+            "Drinking water",
+            0.6921
+          ],
+          [
+            "Picking up object",
+            0.1101
+          ],
+          [
+            "Other",
+            0.0705
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 49,
+        "Drinking water": 1
+      },
+      "label_first": "Other",
+      "label_last": "Drinking water",
+      "template_mse_max": 296.7051086425781,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_092255_83/waving/20261019_092318_waving_0001.mp4",
+      "filename": "20261019_092318_waving_0001.mp4",
+      "label": "Waving",
+      "confidence": 0.6556,
+      "width": 1440,
+      "height": 874,
+      "frames": 89,
+      "fps": 24.0,
+      "video_seconds": 3.7083333333333335,
+      "recorded_duration": 3.695,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 37,
+        "timestamp": 18.695,
+        "label": "Waving",
+        "confidence": 0.6556,
+        "topk": [
+          [
+            "Waving",
+            0.6556
+          ],
+          [
+            "Other",
+            0.2108
+          ],
+          [
+            "Drinking water",
+            0.034
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Fighting": 23,
+        "Other": 47,
+        "Waving": 19
+      },
+      "label_first": "Fighting",
+      "label_last": "Other",
+      "template_mse_max": 3582.23291015625,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_092255_83/waving/20261019_092351_waving_0002.mp4",
+      "filename": "20261019_092351_waving_0002.mp4",
+      "label": "Waving",
+      "confidence": 0.7226,
+      "width": 1440,
+      "height": 874,
+      "frames": 105,
+      "fps": 26.0,
+      "video_seconds": 4.038461538461538,
+      "recorded_duration": 4.01,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 751,
+        "timestamp": 51.676,
+        "label": "Waving",
+        "confidence": 0.7226,
+        "topk": [
+          [
+            "Waving",
+            0.7226
+          ],
+          [
+            "Other",
+            0.16
+          ],
+          [
+            "Drinking water",
+            0.0365
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 85,
+        "Waving": 20
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 254.67837524414062,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_092255_83/waving/20261019_092403_waving_0003.mp4",
+      "filename": "20261019_092403_waving_0003.mp4",
+      "label": "Waving",
+      "confidence": 0.6844,
+      "width": 1440,
+      "height": 874,
+      "frames": 131,
+      "fps": 26.0,
+      "video_seconds": 5.038461538461538,
+      "recorded_duration": 5.031,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 1017,
+        "timestamp": 63.66,
+        "label": "Waving",
+        "confidence": 0.6615,
+        "topk": [
+          [
+            "Waving",
+            0.6615
+          ],
+          [
+            "Other",
+            0.2008
+          ],
+          [
+            "Picking up object",
+            0.0335
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 50,
+        "Waving": 81
+      },
+      "label_first": "Other",
+      "label_last": "Waving",
+      "template_mse_max": 238.0497283935547,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_092255_83/waving/20261019_092458_waving_0004.mp4",
+      "filename": "20261019_092458_waving_0004.mp4",
+      "label": "Waving",
+      "confidence": 0.6547,
+      "width": 1440,
+      "height": 874,
+      "frames": 121,
+      "fps": 30.0,
+      "video_seconds": 4.033333333333333,
+      "recorded_duration": 4.005,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 2242,
+        "timestamp": 119.343,
+        "label": "Waving",
+        "confidence": 0.6547,
+        "topk": [
+          [
+            "Waving",
+            0.6547
+          ],
+          [
+            "Other",
+            0.1922
+          ],
+          [
+            "Picking up object",
+            0.0546
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 100,
+        "Waving": 21
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 255.57638549804688,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_092255_83/waving/20261019_092534_waving_0006.mp4",
+      "filename": "20261019_092534_waving_0006.mp4",
+      "label": "Waving",
+      "confidence": 0.6553,
+      "width": 1440,
+      "height": 874,
+      "frames": 120,
+      "fps": 30.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.999,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 3119,
+        "timestamp": 154.854,
+        "label": "Waving",
+        "confidence": 0.6553,
+        "topk": [
+          [
+            "Waving",
+            0.6553
+          ],
+          [
+            "Other",
+            0.2004
+          ],
+          [
+            "Picking up object",
+            0.0409
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 101,
+        "Waving": 19
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 255.03872680664062,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_104926_85/waving/20261019_111718_waving_0002.mp4",
+      "filename": "20261019_111718_waving_0002.mp4",
+      "label": "Waving",
+      "confidence": 0.6509,
+      "width": 1440,
+      "height": 874,
+      "frames": 48,
+      "fps": 24.0,
+      "video_seconds": 2.0,
+      "recorded_duration": 1.981,
+      "closed_because": "服务停止",
+      "first_event": {
+        "frame_index": 33527,
+        "timestamp": 1668.346,
+        "label": "Waving",
+        "confidence": 0.6509,
+        "topk": [
+          [
+            "Waving",
+            0.6509
+          ],
+          [
+            "Other",
+            0.2621
+          ],
+          [
+            "Drinking water",
+            0.0467
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 48
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 234.75497436523438,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/drinking_water/20261019_112641_drinking_water_0001.mp4",
+      "filename": "20261019_112641_drinking_water_0001.mp4",
+      "label": "Drinking water",
+      "confidence": 0.668,
+      "width": 1440,
+      "height": 874,
+      "frames": 97,
+      "fps": 24.0,
+      "video_seconds": 4.041666666666667,
+      "recorded_duration": 4.026,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 9064,
+        "timestamp": 469.103,
+        "label": "Drinking water",
+        "confidence": 0.668,
+        "topk": [
+          [
+            "Drinking water",
+            0.668
+          ],
+          [
+            "Other",
+            0.1332
+          ],
+          [
+            "Waving",
+            0.059
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 70,
+        "Drinking water": 27
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 248.25953674316406,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/drinking_water/20261019_114127_drinking_water_0007.mp4",
+      "filename": "20261019_114127_drinking_water_0007.mp4",
+      "label": "Drinking water",
+      "confidence": 0.7023,
+      "width": 1440,
+      "height": 874,
+      "frames": 97,
+      "fps": 24.0,
+      "video_seconds": 4.041666666666667,
+      "recorded_duration": 4.01,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 26388,
+        "timestamp": 1354.745,
+        "label": "Drinking water",
+        "confidence": 0.7023,
+        "topk": [
+          [
+            "Drinking water",
+            0.7023
+          ],
+          [
+            "Throwing object",
+            0.1149
+          ],
+          [
+            "Fighting",
+            0.0476
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 78,
+        "Drinking water": 19
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 242.28598022460938,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/drinking_water/20261019_114334_drinking_water_0009.mp4",
+      "filename": "20261019_114334_drinking_water_0009.mp4",
+      "label": "Drinking water",
+      "confidence": 0.686,
+      "width": 1440,
+      "height": 874,
+      "frames": 22,
+      "fps": 5.0,
+      "video_seconds": 4.4,
+      "recorded_duration": 4.205,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 28798,
+        "timestamp": 1478.807,
+        "label": "Drinking water",
+        "confidence": 0.686,
+        "topk": [
+          [
+            "Drinking water",
+            0.686
+          ],
+          [
+            "Waving",
+            0.2392
+          ],
+          [
+            "Other",
+            0.0288
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Drinking water": 16,
+        "Other": 6
+      },
+      "label_first": "Drinking water",
+      "label_last": "Other",
+      "template_mse_max": 233.6852569580078,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/waving/20261019_112709_waving_0002.mp4",
+      "filename": "20261019_112709_waving_0002.mp4",
+      "label": "Waving",
+      "confidence": 0.698,
+      "width": 1440,
+      "height": 874,
+      "frames": 101,
+      "fps": 25.0,
+      "video_seconds": 4.04,
+      "recorded_duration": 4.018,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 9538,
+        "timestamp": 496.4,
+        "label": "Waving",
+        "confidence": 0.698,
+        "topk": [
+          [
+            "Waving",
+            0.698
+          ],
+          [
+            "Other",
+            0.158
+          ],
+          [
+            "Chasing",
+            0.0382
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 70,
+        "Waving": 31
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 3748.707275390625,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/waving/20261019_112739_waving_0003.mp4",
+      "filename": "20261019_112739_waving_0003.mp4",
+      "label": "Waving",
+      "confidence": 0.6991,
+      "width": 1440,
+      "height": 874,
+      "frames": 97,
+      "fps": 24.0,
+      "video_seconds": 4.041666666666667,
+      "recorded_duration": 4.027,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 10100,
+        "timestamp": 527.59,
+        "label": "Waving",
+        "confidence": 0.6991,
+        "topk": [
+          [
+            "Waving",
+            0.6991
+          ],
+          [
+            "Drinking water",
+            0.1048
+          ],
+          [
+            "Other",
+            0.0895
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 69,
+        "Waving": 28
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 3365.8984375,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/waving/20261019_113653_waving_0004.mp4",
+      "filename": "20261019_113653_waving_0004.mp4",
+      "label": "Waving",
+      "confidence": 0.6715,
+      "width": 1440,
+      "height": 874,
+      "frames": 111,
+      "fps": 28.0,
+      "video_seconds": 3.9642857142857144,
+      "recorded_duration": 3.955,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 20963,
+        "timestamp": 1081.525,
+        "label": "Waving",
+        "confidence": 0.6715,
+        "topk": [
+          [
+            "Waving",
+            0.6715
+          ],
+          [
+            "Other",
+            0.0868
+          ],
+          [
+            "Drinking water",
+            0.0685
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 86,
+        "Waving": 25
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 256.54559326171875,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/waving/20261019_113708_waving_0005.mp4",
+      "filename": "20261019_113708_waving_0005.mp4",
+      "label": "Waving",
+      "confidence": 0.6697,
+      "width": 1440,
+      "height": 874,
+      "frames": 121,
+      "fps": 25.0,
+      "video_seconds": 4.84,
+      "recorded_duration": 4.808,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 21257,
+        "timestamp": 1096.277,
+        "label": "Waving",
+        "confidence": 0.6697,
+        "topk": [
+          [
+            "Waving",
+            0.6697
+          ],
+          [
+            "Other",
+            0.1177
+          ],
+          [
+            "Drinking water",
+            0.1054
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 49,
+        "Waving": 72
+      },
+      "label_first": "Other",
+      "label_last": "Waving",
+      "template_mse_max": 235.60879516601562,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    },
+    {
+      "path": "input/20261019_111849_80/waving/20261019_113717_waving_0006.mp4",
+      "filename": "20261019_113717_waving_0006.mp4",
+      "label": "Waving",
+      "confidence": 0.6704,
+      "width": 1440,
+      "height": 874,
+      "frames": 24,
+      "fps": 6.0,
+      "video_seconds": 4.0,
+      "recorded_duration": 3.991,
+      "closed_because": "post 静默期结束",
+      "first_event": {
+        "frame_index": 21421,
+        "timestamp": 1104.735,
+        "label": "Waving",
+        "confidence": 0.6704,
+        "topk": [
+          [
+            "Waving",
+            0.6704
+          ],
+          [
+            "Other",
+            0.1128
+          ],
+          [
+            "Drinking water",
+            0.0839
+          ]
+        ],
+        "model": "behavior",
+        "window": 32
+      },
+      "label_frames": {
+        "Other": 20,
+        "Waving": 4
+      },
+      "label_first": "Other",
+      "label_last": "Other",
+      "template_mse_max": 229.91246032714844,
+      "template_method": "Nearest shipped-font RGB template of first two label characters; diagnostic, not human ground truth."
+    }
+  ],
+  "top_false_events": [
+    {
+      "session_id": "20261015_163555_77",
+      "wall_time": "2026-10-15 18:13:24",
+      "label": "Drinking water",
+      "confidence": 0.8844
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "wall_time": "2026-10-19 11:43:14",
+      "label": "Drinking water",
+      "confidence": 0.8804
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "wall_time": "2026-10-19 11:43:18",
+      "label": "Drinking water",
+      "confidence": 0.8766
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "wall_time": "2026-10-19 11:43:15",
+      "label": "Drinking water",
+      "confidence": 0.8706
+    },
+    {
+      "session_id": "20261015_163555_77",
+      "wall_time": "2026-10-15 17:43:38",
+      "label": "Drinking water",
+      "confidence": 0.8434
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "wall_time": "2026-10-19 11:43:13",
+      "label": "Drinking water",
+      "confidence": 0.8357
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "wall_time": "2026-10-19 11:43:16",
+      "label": "Drinking water",
+      "confidence": 0.8347
+    },
+    {
+      "session_id": "20261019_111849_80",
+      "wall_time": "2026-10-19 11:43:17",
+      "label": "Drinking water",
+      "confidence": 0.8338
+    },
+    {
+      "session_id": "20261015_163555_77",
+      "wall_time": "2026-10-15 17:43:38",
+      "label": "Drinking water",
+      "confidence": 0.8325
+    },
+    {
+      "session_id": "20261015_163555_77",
+      "wall_time": "2026-10-15 16:47:46",
+      "label": "Waving",
+      "confidence": 0.817
+    }
+  ]
+}

@@ -1,0 +1,1887 @@
+{
+  "package": "/opt/darkpipe/op",
+  "checkpoint": "videomamba_t_behavior_32f_realactall_full_pn.pth",
+  "skeleton_active": true,
+  "fov": [
+    224,
+    400
+  ],
+  "alpha": 0.7,
+  "no_person": "soft",
+  "lum_gate": 75,
+  "elapsed_seconds": 1488.8840324170887,
+  "platform_threshold_065": {
+    "A": {
+      "windows": 177,
+      "correct": 177,
+      "top1": 1.0,
+      "macro_f1": 1.0,
+      "fired": 108,
+      "fires": [
+        {
+          "name": "追逐17_00000",
+          "label": "chase",
+          "confidence": 0.8302223682403564,
+          "raw_luma": 112.74549746164686
+        },
+        {
+          "name": "追逐17_00008",
+          "label": "chase",
+          "confidence": 0.8530765771865845,
+          "raw_luma": 112.63214671539234
+        },
+        {
+          "name": "追逐17_00016",
+          "label": "chase",
+          "confidence": 0.9248071908950806,
+          "raw_luma": 112.45541985164763
+        },
+        {
+          "name": "追逐17_00024",
+          "label": "chase",
+          "confidence": 0.8777023553848267,
+          "raw_luma": 112.30229161377939
+        },
+        {
+          "name": "追逐17_00032",
+          "label": "chase",
+          "confidence": 0.8868012428283691,
+          "raw_luma": 112.30740543674966
+        },
+        {
+          "name": "追逐18_00000",
+          "label": "chase",
+          "confidence": 0.9030845761299133,
+          "raw_luma": 41.5648349634597
+        },
+        {
+          "name": "追逐18_00008",
+          "label": "chase",
+          "confidence": 0.8958117365837097,
+          "raw_luma": 42.55961997090017
+        },
+        {
+          "name": "追逐18_00016",
+          "label": "chase",
+          "confidence": 0.9040461182594299,
+          "raw_luma": 43.69307854163514
+        },
+        {
+          "name": "追逐18_00024",
+          "label": "chase",
+          "confidence": 0.8989389538764954,
+          "raw_luma": 44.23954079690338
+        },
+        {
+          "name": "追逐19_00000",
+          "label": "chase",
+          "confidence": 0.9109018445014954,
+          "raw_luma": 23.89409697423262
+        },
+        {
+          "name": "追逐19_00008",
+          "label": "chase",
+          "confidence": 0.9145967960357666,
+          "raw_luma": 24.097777029657863
+        },
+        {
+          "name": "追逐19_00016",
+          "label": "chase",
+          "confidence": 0.91841059923172,
+          "raw_luma": 24.29233678259307
+        },
+        {
+          "name": "追逐19_00024",
+          "label": "chase",
+          "confidence": 0.9178386330604553,
+          "raw_luma": 24.68339395989394
+        },
+        {
+          "name": "追逐19_00032",
+          "label": "chase",
+          "confidence": 0.9166877865791321,
+          "raw_luma": 24.971648285222457
+        },
+        {
+          "name": "追逐19_00040",
+          "label": "chase",
+          "confidence": 0.9214562773704529,
+          "raw_luma": 24.879194384883853
+        },
+        {
+          "name": "追逐20_00000",
+          "label": "chase",
+          "confidence": 0.9225358963012695,
+          "raw_luma": 40.20824512057669
+        },
+        {
+          "name": "追逐20_00008",
+          "label": "chase",
+          "confidence": 0.9177207350730896,
+          "raw_luma": 40.051175430034306
+        },
+        {
+          "name": "追逐20_00016",
+          "label": "chase",
+          "confidence": 0.9184755682945251,
+          "raw_luma": 40.09503293498411
+        },
+        {
+          "name": "追逐20_00024",
+          "label": "chase",
+          "confidence": 0.9203875064849854,
+          "raw_luma": 40.18713404348895
+        },
+        {
+          "name": "追逐20_00032",
+          "label": "chase",
+          "confidence": 0.9053513407707214,
+          "raw_luma": 40.25367859893626
+        },
+        {
+          "name": "追逐20_00040",
+          "label": "chase",
+          "confidence": 0.8920189738273621,
+          "raw_luma": 40.262522630870414
+        },
+        {
+          "name": "追逐20_00048",
+          "label": "chase",
+          "confidence": 0.8816288113594055,
+          "raw_luma": 40.29657470955345
+        },
+        {
+          "name": "追逐20_00056",
+          "label": "chase",
+          "confidence": 0.8777893781661987,
+          "raw_luma": 40.489332006106864
+        },
+        {
+          "name": "追逐21_00000",
+          "label": "chase",
+          "confidence": 0.9201876521110535,
+          "raw_luma": 56.17649164128708
+        },
+        {
+          "name": "追逐21_00008",
+          "label": "chase",
+          "confidence": 0.9246717095375061,
+          "raw_luma": 56.32004954994578
+        },
+        {
+          "name": "追逐21_00016",
+          "label": "chase",
+          "confidence": 0.9135268926620483,
+          "raw_luma": 56.49366792122238
+        },
+        {
+          "name": "追逐21_00024",
+          "label": "chase",
+          "confidence": 0.9080047011375427,
+          "raw_luma": 56.747637528374696
+        },
+        {
+          "name": "追逐21_00032",
+          "label": "chase",
+          "confidence": 0.9127228260040283,
+          "raw_luma": 56.95991940072639
+        },
+        {
+          "name": "追逐21_00040",
+          "label": "chase",
+          "confidence": 0.908069372177124,
+          "raw_luma": 57.10030853219268
+        },
+        {
+          "name": "追逐21_00048",
+          "label": "chase",
+          "confidence": 0.9089524149894714,
+          "raw_luma": 57.12729140971802
+        },
+        {
+          "name": "喝水16_00000",
+          "label": "drink",
+          "confidence": 0.9118298292160034,
+          "raw_luma": 139.16701379491082
+        },
+        {
+          "name": "喝水16_00008",
+          "label": "drink",
+          "confidence": 0.9392037391662598,
+          "raw_luma": 139.04403761539044
+        },
+        {
+          "name": "喝水16_00016",
+          "label": "drink",
+          "confidence": 0.9430878162384033,
+          "raw_luma": 138.96060654422985
+        },
+        {
+          "name": "喝水16_00024",
+          "label": "drink",
+          "confidence": 0.9448270201683044,
+          "raw_luma": 138.95155531127045
+        },
+        {
+          "name": "喝水16_00032",
+          "label": "drink",
+          "confidence": 0.9482226371765137,
+          "raw_luma": 138.9541167198692
+        },
+        {
+          "name": "喝水16_00040",
+          "label": "drink",
+          "confidence": 0.9493621587753296,
+          "raw_luma": 139.00406767814582
+        },
+        {
+          "name": "喝水17_00000",
+          "label": "drink",
+          "confidence": 0.9251431226730347,
+          "raw_luma": 112.45236418892503
+        },
+        {
+          "name": "喝水17_00008",
+          "label": "drink",
+          "confidence": 0.9425514936447144,
+          "raw_luma": 112.38704068025184
+        },
+        {
+          "name": "喝水17_00016",
+          "label": "drink",
+          "confidence": 0.9416744709014893,
+          "raw_luma": 112.35110080000882
+        },
+        {
+          "name": "喝水17_00024",
+          "label": "drink",
+          "confidence": 0.937606155872345,
+          "raw_luma": 112.31211527488776
+        },
+        {
+          "name": "喝水18_00000",
+          "label": "drink",
+          "confidence": 0.9436416625976562,
+          "raw_luma": 89.40475070038212
+        },
+        {
+          "name": "喝水18_00008",
+          "label": "drink",
+          "confidence": 0.9461038112640381,
+          "raw_luma": 89.40958374657927
+        },
+        {
+          "name": "喝水18_00016",
+          "label": "drink",
+          "confidence": 0.9183878898620605,
+          "raw_luma": 89.37996144485535
+        },
+        {
+          "name": "喝水18_00024",
+          "label": "drink",
+          "confidence": 0.8940579295158386,
+          "raw_luma": 89.32522705953012
+        },
+        {
+          "name": "喝水18_00032",
+          "label": "drink",
+          "confidence": 0.8023396730422974,
+          "raw_luma": 89.23631415976214
+        },
+        {
+          "name": "喝水18_00040",
+          "label": "drink",
+          "confidence": 0.6671398878097534,
+          "raw_luma": 89.03356976526243
+        },
+        {
+          "name": "喝水19_00000",
+          "label": "drink",
+          "confidence": 0.9425061345100403,
+          "raw_luma": 126.99433489386287
+        },
+        {
+          "name": "喝水19_00008",
+          "label": "drink",
+          "confidence": 0.9444587230682373,
+          "raw_luma": 126.97828719016407
+        },
+        {
+          "name": "喝水19_00016",
+          "label": "drink",
+          "confidence": 0.9430856704711914,
+          "raw_luma": 127.01819564937072
+        },
+        {
+          "name": "喝水19_00024",
+          "label": "drink",
+          "confidence": 0.7963272333145142,
+          "raw_luma": 127.11720478807253
+        },
+        {
+          "name": "喝水19_00032",
+          "label": "drink",
+          "confidence": 0.7225695252418518,
+          "raw_luma": 127.23749494961915
+        },
+        {
+          "name": "喝水20_00000",
+          "label": "drink",
+          "confidence": 0.9086305499076843,
+          "raw_luma": 23.97781392748373
+        },
+        {
+          "name": "喝水20_00008",
+          "label": "drink",
+          "confidence": 0.9012373089790344,
+          "raw_luma": 23.989617705338226
+        },
+        {
+          "name": "喝水20_00016",
+          "label": "drink",
+          "confidence": 0.8959869742393494,
+          "raw_luma": 24.024791032728636
+        },
+        {
+          "name": "喝水20_00024",
+          "label": "drink",
+          "confidence": 0.9105669260025024,
+          "raw_luma": 24.106047632525602
+        },
+        {
+          "name": "喝水20_00032",
+          "label": "drink",
+          "confidence": 0.9193416237831116,
+          "raw_luma": 24.163074971940574
+        },
+        {
+          "name": "喝水20_00040",
+          "label": "drink",
+          "confidence": 0.9253033995628357,
+          "raw_luma": 24.205309411571832
+        },
+        {
+          "name": "喝水20_00048",
+          "label": "drink",
+          "confidence": 0.9188442826271057,
+          "raw_luma": 24.22707423687828
+        },
+        {
+          "name": "喝水20_00056",
+          "label": "drink",
+          "confidence": 0.9153187274932861,
+          "raw_luma": 24.213610167363424
+        },
+        {
+          "name": "喝水20_00064",
+          "label": "drink",
+          "confidence": 0.8922781944274902,
+          "raw_luma": 24.196252310646187
+        },
+        {
+          "name": "喝水20_00072",
+          "label": "drink",
+          "confidence": 0.8978562355041504,
+          "raw_luma": 24.203926097627875
+        },
+        {
+          "name": "喝水21_00000",
+          "label": "drink",
+          "confidence": 0.9093278646469116,
+          "raw_luma": 57.65085604664801
+        },
+        {
+          "name": "喝水21_00008",
+          "label": "drink",
+          "confidence": 0.9236936569213867,
+          "raw_luma": 57.683997880488924
+        },
+        {
+          "name": "喝水21_00016",
+          "label": "drink",
+          "confidence": 0.92758709192276,
+          "raw_luma": 57.69171147646161
+        },
+        {
+          "name": "喝水21_00024",
+          "label": "drink",
+          "confidence": 0.9275123476982117,
+          "raw_luma": 57.72281307080433
+        },
+        {
+          "name": "喝水21_00032",
+          "label": "drink",
+          "confidence": 0.9294663667678833,
+          "raw_luma": 57.74725141416339
+        },
+        {
+          "name": "喝水21_00040",
+          "label": "drink",
+          "confidence": 0.928417444229126,
+          "raw_luma": 57.74288140077999
+        },
+        {
+          "name": "喝水21_00048",
+          "label": "drink",
+          "confidence": 0.9291192293167114,
+          "raw_luma": 57.73441499571227
+        },
+        {
+          "name": "喝水21_00056",
+          "label": "drink",
+          "confidence": 0.9211731553077698,
+          "raw_luma": 57.69876846861759
+        },
+        {
+          "name": "捡东西10_00000",
+          "label": "pick_up",
+          "confidence": 0.8963194489479065,
+          "raw_luma": 47.921510244605656
+        },
+        {
+          "name": "捡东西10_00008",
+          "label": "pick_up",
+          "confidence": 0.9104201197624207,
+          "raw_luma": 48.063604323594504
+        },
+        {
+          "name": "捡东西10_00016",
+          "label": "pick_up",
+          "confidence": 0.9073364734649658,
+          "raw_luma": 48.15886062246204
+        },
+        {
+          "name": "捡东西10_00024",
+          "label": "pick_up",
+          "confidence": 0.9130298495292664,
+          "raw_luma": 48.18604961591694
+        },
+        {
+          "name": "捡东西10_00032",
+          "label": "pick_up",
+          "confidence": 0.9166808724403381,
+          "raw_luma": 48.11183877709784
+        },
+        {
+          "name": "捡东西10_00040",
+          "label": "pick_up",
+          "confidence": 0.9163514375686646,
+          "raw_luma": 48.02226070679795
+        },
+        {
+          "name": "捡东西11_00000",
+          "label": "pick_up",
+          "confidence": 0.9230914115905762,
+          "raw_luma": 43.03980132959103
+        },
+        {
+          "name": "捡东西11_00008",
+          "label": "pick_up",
+          "confidence": 0.9256948828697205,
+          "raw_luma": 43.09705477246646
+        },
+        {
+          "name": "捡东西11_00016",
+          "label": "pick_up",
+          "confidence": 0.9222625494003296,
+          "raw_luma": 43.029381232423454
+        },
+        {
+          "name": "捡东西11_00024",
+          "label": "pick_up",
+          "confidence": 0.9279616475105286,
+          "raw_luma": 42.82010762246835
+        },
+        {
+          "name": "捡东西11_00032",
+          "label": "pick_up",
+          "confidence": 0.9334498047828674,
+          "raw_luma": 42.586355647116505
+        },
+        {
+          "name": "捡东西11_00040",
+          "label": "pick_up",
+          "confidence": 0.9432143568992615,
+          "raw_luma": 42.37583661344834
+        },
+        {
+          "name": "捡东西11_00048",
+          "label": "pick_up",
+          "confidence": 0.8334097266197205,
+          "raw_luma": 42.354477907381835
+        },
+        {
+          "name": "捡东西9_00000",
+          "label": "pick_up",
+          "confidence": 0.908759593963623,
+          "raw_luma": 61.15087681495599
+        },
+        {
+          "name": "捡东西9_00008",
+          "label": "pick_up",
+          "confidence": 0.9009319543838501,
+          "raw_luma": 61.01433624166099
+        },
+        {
+          "name": "捡东西9_00016",
+          "label": "pick_up",
+          "confidence": 0.9033104777336121,
+          "raw_luma": 60.910047003553146
+        },
+        {
+          "name": "捡东西9_00024",
+          "label": "pick_up",
+          "confidence": 0.9061420559883118,
+          "raw_luma": 60.862207154995204
+        },
+        {
+          "name": "挥手20_00000",
+          "label": "wave",
+          "confidence": 0.9122259020805359,
+          "raw_luma": 113.20417950653248
+        },
+        {
+          "name": "挥手20_00008",
+          "label": "wave",
+          "confidence": 0.8127448558807373,
+          "raw_luma": 113.10667070280972
+        },
+        {
+          "name": "挥手20_00016",
+          "label": "wave",
+          "confidence": 0.8204405903816223,
+          "raw_luma": 113.03838161366905
+        },
+        {
+          "name": "挥手21_00000",
+          "label": "wave",
+          "confidence": 0.8676720857620239,
+          "raw_luma": 93.4517860319247
+        },
+        {
+          "name": "挥手21_00008",
+          "label": "wave",
+          "confidence": 0.7462930083274841,
+          "raw_luma": 93.33169054602376
+        },
+        {
+          "name": "挥手22_00000",
+          "label": "wave",
+          "confidence": 0.8447493314743042,
+          "raw_luma": 154.10046707597166
+        },
+        {
+          "name": "挥手22_00008",
+          "label": "wave",
+          "confidence": 0.7803924083709717,
+          "raw_luma": 154.06921191146148
+        },
+        {
+          "name": "挥手22_00016",
+          "label": "wave",
+          "confidence": 0.7544170022010803,
+          "raw_luma": 154.04079470189228
+        },
+        {
+          "name": "挥手23_00000",
+          "label": "wave",
+          "confidence": 0.8793407082557678,
+          "raw_luma": 50.88447073220907
+        },
+        {
+          "name": "挥手23_00008",
+          "label": "wave",
+          "confidence": 0.9017558097839355,
+          "raw_luma": 50.89508589667196
+        },
+        {
+          "name": "挥手23_00016",
+          "label": "wave",
+          "confidence": 0.9062322974205017,
+          "raw_luma": 50.92674685190615
+        },
+        {
+          "name": "挥手23_00024",
+          "label": "wave",
+          "confidence": 0.9065714478492737,
+          "raw_luma": 50.94644041258387
+        },
+        {
+          "name": "挥手23_00032",
+          "label": "wave",
+          "confidence": 0.9090924859046936,
+          "raw_luma": 50.99214439079525
+        },
+        {
+          "name": "挥手24_00000",
+          "label": "wave",
+          "confidence": 0.909767210483551,
+          "raw_luma": 33.91199559285777
+        },
+        {
+          "name": "挥手24_00008",
+          "label": "wave",
+          "confidence": 0.9142920970916748,
+          "raw_luma": 34.05853090524742
+        },
+        {
+          "name": "挥手24_00016",
+          "label": "wave",
+          "confidence": 0.9141048789024353,
+          "raw_luma": 34.019078418284025
+        },
+        {
+          "name": "挥手24_00024",
+          "label": "wave",
+          "confidence": 0.9124979972839355,
+          "raw_luma": 34.02700817167638
+        },
+        {
+          "name": "挥手25_00000",
+          "label": "wave",
+          "confidence": 0.9087665677070618,
+          "raw_luma": 53.1652897204777
+        },
+        {
+          "name": "挥手25_00008",
+          "label": "wave",
+          "confidence": 0.9077621102333069,
+          "raw_luma": 53.12722858112326
+        },
+        {
+          "name": "挥手25_00016",
+          "label": "wave",
+          "confidence": 0.9078346490859985,
+          "raw_luma": 53.10036257125202
+        },
+        {
+          "name": "挥手25_00024",
+          "label": "wave",
+          "confidence": 0.9039437770843506,
+          "raw_luma": 53.11133168909844
+        },
+        {
+          "name": "挥手25_00032",
+          "label": "wave",
+          "confidence": 0.901271402835846,
+          "raw_luma": 53.09693090508979
+        }
+      ],
+      "incorrect": [],
+      "below_gate": 105
+    },
+    "B": {
+      "windows": 365,
+      "correct": 360,
+      "top1": 0.9863013698630136,
+      "macro_f1": 0.993103448275862,
+      "fired": 5,
+      "fires": [
+        {
+          "name": "other87@whole",
+          "label": "chase",
+          "confidence": 0.8601543307304382,
+          "raw_luma": 31.368865731405116
+        },
+        {
+          "name": "other74@whole",
+          "label": "chase",
+          "confidence": 0.8823754191398621,
+          "raw_luma": 41.39691657815337
+        },
+        {
+          "name": "other76@whole",
+          "label": "chase",
+          "confidence": 0.9012479782104492,
+          "raw_luma": 62.98766383897044
+        },
+        {
+          "name": "other78@whole",
+          "label": "chase",
+          "confidence": 0.7878676652908325,
+          "raw_luma": 35.018965402022175
+        },
+        {
+          "name": "other79@whole",
+          "label": "chase",
+          "confidence": 0.7937931418418884,
+          "raw_luma": 35.43244697265625
+        }
+      ],
+      "incorrect": [
+        "other87@whole",
+        "other74@whole",
+        "other76@whole",
+        "other78@whole",
+        "other79@whole"
+      ],
+      "below_gate": 204
+    },
+    "C": {
+      "windows": 18,
+      "correct": 18,
+      "top1": 1.0,
+      "macro_f1": 1.0,
+      "fired": 18,
+      "fires": [
+        {
+          "name": "喝水16@whole",
+          "label": "drink",
+          "confidence": 0.9283952713012695,
+          "raw_luma": 139.06941530365654
+        },
+        {
+          "name": "喝水16@t0.0",
+          "label": "drink",
+          "confidence": 0.8603094816207886,
+          "raw_luma": 139.21336089241578
+        },
+        {
+          "name": "喝水16@t0.5",
+          "label": "drink",
+          "confidence": 0.9422557353973389,
+          "raw_luma": 139.0113080361872
+        },
+        {
+          "name": "喝水16@t1.0",
+          "label": "drink",
+          "confidence": 0.9425665140151978,
+          "raw_luma": 138.93809175912088
+        },
+        {
+          "name": "喝水16@t1.4",
+          "label": "drink",
+          "confidence": 0.9476481080055237,
+          "raw_luma": 138.96433157386565
+        },
+        {
+          "name": "喝水16@t1.9",
+          "label": "drink",
+          "confidence": 0.9499115943908691,
+          "raw_luma": 139.03292676057114
+        },
+        {
+          "name": "挥手22@whole",
+          "label": "wave",
+          "confidence": 0.8017536401748657,
+          "raw_luma": 154.06518346362049
+        },
+        {
+          "name": "挥手22@t0.0",
+          "label": "wave",
+          "confidence": 0.9262717962265015,
+          "raw_luma": 154.1135965882579
+        },
+        {
+          "name": "挥手22@t0.5",
+          "label": "wave",
+          "confidence": 0.8030601739883423,
+          "raw_luma": 154.0541197002371
+        },
+        {
+          "name": "挥手22@t1.0",
+          "label": "wave",
+          "confidence": 0.7521917223930359,
+          "raw_luma": 154.0411281321725
+        },
+        {
+          "name": "捡东西2@whole",
+          "label": "pick_up",
+          "confidence": 0.8321851491928101,
+          "raw_luma": 150.14456446723352
+        },
+        {
+          "name": "捡东西2@t0.0",
+          "label": "pick_up",
+          "confidence": 0.915225625038147,
+          "raw_luma": 150.1118000970257
+        },
+        {
+          "name": "捡东西2@t0.5",
+          "label": "pick_up",
+          "confidence": 0.9130692481994629,
+          "raw_luma": 150.31422673613739
+        },
+        {
+          "name": "捡东西2@t1.0",
+          "label": "pick_up",
+          "confidence": 0.9140198230743408,
+          "raw_luma": 150.25122733965142
+        },
+        {
+          "name": "捡东西2@t1.4",
+          "label": "pick_up",
+          "confidence": 0.8177812695503235,
+          "raw_luma": 150.12147279457668
+        },
+        {
+          "name": "追逐16@whole",
+          "label": "chase",
+          "confidence": 0.9072784185409546,
+          "raw_luma": 135.30620313083259
+        },
+        {
+          "name": "追逐16@t0.0",
+          "label": "chase",
+          "confidence": 0.9208268523216248,
+          "raw_luma": 135.31902762552653
+        },
+        {
+          "name": "追逐16@t0.5",
+          "label": "chase",
+          "confidence": 0.8986882567405701,
+          "raw_luma": 135.04261777186113
+        }
+      ],
+      "incorrect": [],
+      "below_gate": 0
+    },
+    "P": {
+      "windows": 460,
+      "correct": 458,
+      "top1": 0.9956521739130435,
+      "macro_f1": 0.9978213507625272,
+      "fired": 2,
+      "fires": [
+        {
+          "name": "20261012_101308_drinking_water_0104@t0.0",
+          "label": "drink",
+          "confidence": 0.8607484102249146,
+          "raw_luma": 142.57182592378615
+        },
+        {
+          "name": "20261012_101308_drinking_water_0104@t0.5",
+          "label": "drink",
+          "confidence": 0.6509650945663452,
+          "raw_luma": 142.48058599753443
+        }
+      ],
+      "incorrect": [
+        "20261012_101308_drinking_water_0104@t0.0",
+        "20261012_101308_drinking_water_0104@t0.5"
+      ],
+      "below_gate": 0
+    }
+  },
+  "local_cli_threshold_050": {
+    "A": {
+      "windows": 177,
+      "correct": 177,
+      "top1": 1.0,
+      "macro_f1": 1.0,
+      "fired": 108,
+      "fires": [
+        {
+          "name": "追逐17_00000",
+          "label": "chase",
+          "confidence": 0.8302223682403564,
+          "raw_luma": 112.74549746164686
+        },
+        {
+          "name": "追逐17_00008",
+          "label": "chase",
+          "confidence": 0.8530765771865845,
+          "raw_luma": 112.63214671539234
+        },
+        {
+          "name": "追逐17_00016",
+          "label": "chase",
+          "confidence": 0.9248071908950806,
+          "raw_luma": 112.45541985164763
+        },
+        {
+          "name": "追逐17_00024",
+          "label": "chase",
+          "confidence": 0.8777023553848267,
+          "raw_luma": 112.30229161377939
+        },
+        {
+          "name": "追逐17_00032",
+          "label": "chase",
+          "confidence": 0.8868012428283691,
+          "raw_luma": 112.30740543674966
+        },
+        {
+          "name": "追逐18_00000",
+          "label": "chase",
+          "confidence": 0.9030845761299133,
+          "raw_luma": 41.5648349634597
+        },
+        {
+          "name": "追逐18_00008",
+          "label": "chase",
+          "confidence": 0.8958117365837097,
+          "raw_luma": 42.55961997090017
+        },
+        {
+          "name": "追逐18_00016",
+          "label": "chase",
+          "confidence": 0.9040461182594299,
+          "raw_luma": 43.69307854163514
+        },
+        {
+          "name": "追逐18_00024",
+          "label": "chase",
+          "confidence": 0.8989389538764954,
+          "raw_luma": 44.23954079690338
+        },
+        {
+          "name": "追逐19_00000",
+          "label": "chase",
+          "confidence": 0.9109018445014954,
+          "raw_luma": 23.89409697423262
+        },
+        {
+          "name": "追逐19_00008",
+          "label": "chase",
+          "confidence": 0.9145967960357666,
+          "raw_luma": 24.097777029657863
+        },
+        {
+          "name": "追逐19_00016",
+          "label": "chase",
+          "confidence": 0.91841059923172,
+          "raw_luma": 24.29233678259307
+        },
+        {
+          "name": "追逐19_00024",
+          "label": "chase",
+          "confidence": 0.9178386330604553,
+          "raw_luma": 24.68339395989394
+        },
+        {
+          "name": "追逐19_00032",
+          "label": "chase",
+          "confidence": 0.9166877865791321,
+          "raw_luma": 24.971648285222457
+        },
+        {
+          "name": "追逐19_00040",
+          "label": "chase",
+          "confidence": 0.9214562773704529,
+          "raw_luma": 24.879194384883853
+        },
+        {
+          "name": "追逐20_00000",
+          "label": "chase",
+          "confidence": 0.9225358963012695,
+          "raw_luma": 40.20824512057669
+        },
+        {
+          "name": "追逐20_00008",
+          "label": "chase",
+          "confidence": 0.9177207350730896,
+          "raw_luma": 40.051175430034306
+        },
+        {
+          "name": "追逐20_00016",
+          "label": "chase",
+          "confidence": 0.9184755682945251,
+          "raw_luma": 40.09503293498411
+        },
+        {
+          "name": "追逐20_00024",
+          "label": "chase",
+          "confidence": 0.9203875064849854,
+          "raw_luma": 40.18713404348895
+        },
+        {
+          "name": "追逐20_00032",
+          "label": "chase",
+          "confidence": 0.9053513407707214,
+          "raw_luma": 40.25367859893626
+        },
+        {
+          "name": "追逐20_00040",
+          "label": "chase",
+          "confidence": 0.8920189738273621,
+          "raw_luma": 40.262522630870414
+        },
+        {
+          "name": "追逐20_00048",
+          "label": "chase",
+          "confidence": 0.8816288113594055,
+          "raw_luma": 40.29657470955345
+        },
+        {
+          "name": "追逐20_00056",
+          "label": "chase",
+          "confidence": 0.8777893781661987,
+          "raw_luma": 40.489332006106864
+        },
+        {
+          "name": "追逐21_00000",
+          "label": "chase",
+          "confidence": 0.9201876521110535,
+          "raw_luma": 56.17649164128708
+        },
+        {
+          "name": "追逐21_00008",
+          "label": "chase",
+          "confidence": 0.9246717095375061,
+          "raw_luma": 56.32004954994578
+        },
+        {
+          "name": "追逐21_00016",
+          "label": "chase",
+          "confidence": 0.9135268926620483,
+          "raw_luma": 56.49366792122238
+        },
+        {
+          "name": "追逐21_00024",
+          "label": "chase",
+          "confidence": 0.9080047011375427,
+          "raw_luma": 56.747637528374696
+        },
+        {
+          "name": "追逐21_00032",
+          "label": "chase",
+          "confidence": 0.9127228260040283,
+          "raw_luma": 56.95991940072639
+        },
+        {
+          "name": "追逐21_00040",
+          "label": "chase",
+          "confidence": 0.908069372177124,
+          "raw_luma": 57.10030853219268
+        },
+        {
+          "name": "追逐21_00048",
+          "label": "chase",
+          "confidence": 0.9089524149894714,
+          "raw_luma": 57.12729140971802
+        },
+        {
+          "name": "喝水16_00000",
+          "label": "drink",
+          "confidence": 0.9118298292160034,
+          "raw_luma": 139.16701379491082
+        },
+        {
+          "name": "喝水16_00008",
+          "label": "drink",
+          "confidence": 0.9392037391662598,
+          "raw_luma": 139.04403761539044
+        },
+        {
+          "name": "喝水16_00016",
+          "label": "drink",
+          "confidence": 0.9430878162384033,
+          "raw_luma": 138.96060654422985
+        },
+        {
+          "name": "喝水16_00024",
+          "label": "drink",
+          "confidence": 0.9448270201683044,
+          "raw_luma": 138.95155531127045
+        },
+        {
+          "name": "喝水16_00032",
+          "label": "drink",
+          "confidence": 0.9482226371765137,
+          "raw_luma": 138.9541167198692
+        },
+        {
+          "name": "喝水16_00040",
+          "label": "drink",
+          "confidence": 0.9493621587753296,
+          "raw_luma": 139.00406767814582
+        },
+        {
+          "name": "喝水17_00000",
+          "label": "drink",
+          "confidence": 0.9251431226730347,
+          "raw_luma": 112.45236418892503
+        },
+        {
+          "name": "喝水17_00008",
+          "label": "drink",
+          "confidence": 0.9425514936447144,
+          "raw_luma": 112.38704068025184
+        },
+        {
+          "name": "喝水17_00016",
+          "label": "drink",
+          "confidence": 0.9416744709014893,
+          "raw_luma": 112.35110080000882
+        },
+        {
+          "name": "喝水17_00024",
+          "label": "drink",
+          "confidence": 0.937606155872345,
+          "raw_luma": 112.31211527488776
+        },
+        {
+          "name": "喝水18_00000",
+          "label": "drink",
+          "confidence": 0.9436416625976562,
+          "raw_luma": 89.40475070038212
+        },
+        {
+          "name": "喝水18_00008",
+          "label": "drink",
+          "confidence": 0.9461038112640381,
+          "raw_luma": 89.40958374657927
+        },
+        {
+          "name": "喝水18_00016",
+          "label": "drink",
+          "confidence": 0.9183878898620605,
+          "raw_luma": 89.37996144485535
+        },
+        {
+          "name": "喝水18_00024",
+          "label": "drink",
+          "confidence": 0.8940579295158386,
+          "raw_luma": 89.32522705953012
+        },
+        {
+          "name": "喝水18_00032",
+          "label": "drink",
+          "confidence": 0.8023396730422974,
+          "raw_luma": 89.23631415976214
+        },
+        {
+          "name": "喝水18_00040",
+          "label": "drink",
+          "confidence": 0.6671398878097534,
+          "raw_luma": 89.03356976526243
+        },
+        {
+          "name": "喝水19_00000",
+          "label": "drink",
+          "confidence": 0.9425061345100403,
+          "raw_luma": 126.99433489386287
+        },
+        {
+          "name": "喝水19_00008",
+          "label": "drink",
+          "confidence": 0.9444587230682373,
+          "raw_luma": 126.97828719016407
+        },
+        {
+          "name": "喝水19_00016",
+          "label": "drink",
+          "confidence": 0.9430856704711914,
+          "raw_luma": 127.01819564937072
+        },
+        {
+          "name": "喝水19_00024",
+          "label": "drink",
+          "confidence": 0.7963272333145142,
+          "raw_luma": 127.11720478807253
+        },
+        {
+          "name": "喝水19_00032",
+          "label": "drink",
+          "confidence": 0.7225695252418518,
+          "raw_luma": 127.23749494961915
+        },
+        {
+          "name": "喝水20_00000",
+          "label": "drink",
+          "confidence": 0.9086305499076843,
+          "raw_luma": 23.97781392748373
+        },
+        {
+          "name": "喝水20_00008",
+          "label": "drink",
+          "confidence": 0.9012373089790344,
+          "raw_luma": 23.989617705338226
+        },
+        {
+          "name": "喝水20_00016",
+          "label": "drink",
+          "confidence": 0.8959869742393494,
+          "raw_luma": 24.024791032728636
+        },
+        {
+          "name": "喝水20_00024",
+          "label": "drink",
+          "confidence": 0.9105669260025024,
+          "raw_luma": 24.106047632525602
+        },
+        {
+          "name": "喝水20_00032",
+          "label": "drink",
+          "confidence": 0.9193416237831116,
+          "raw_luma": 24.163074971940574
+        },
+        {
+          "name": "喝水20_00040",
+          "label": "drink",
+          "confidence": 0.9253033995628357,
+          "raw_luma": 24.205309411571832
+        },
+        {
+          "name": "喝水20_00048",
+          "label": "drink",
+          "confidence": 0.9188442826271057,
+          "raw_luma": 24.22707423687828
+        },
+        {
+          "name": "喝水20_00056",
+          "label": "drink",
+          "confidence": 0.9153187274932861,
+          "raw_luma": 24.213610167363424
+        },
+        {
+          "name": "喝水20_00064",
+          "label": "drink",
+          "confidence": 0.8922781944274902,
+          "raw_luma": 24.196252310646187
+        },
+        {
+          "name": "喝水20_00072",
+          "label": "drink",
+          "confidence": 0.8978562355041504,
+          "raw_luma": 24.203926097627875
+        },
+        {
+          "name": "喝水21_00000",
+          "label": "drink",
+          "confidence": 0.9093278646469116,
+          "raw_luma": 57.65085604664801
+        },
+        {
+          "name": "喝水21_00008",
+          "label": "drink",
+          "confidence": 0.9236936569213867,
+          "raw_luma": 57.683997880488924
+        },
+        {
+          "name": "喝水21_00016",
+          "label": "drink",
+          "confidence": 0.92758709192276,
+          "raw_luma": 57.69171147646161
+        },
+        {
+          "name": "喝水21_00024",
+          "label": "drink",
+          "confidence": 0.9275123476982117,
+          "raw_luma": 57.72281307080433
+        },
+        {
+          "name": "喝水21_00032",
+          "label": "drink",
+          "confidence": 0.9294663667678833,
+          "raw_luma": 57.74725141416339
+        },
+        {
+          "name": "喝水21_00040",
+          "label": "drink",
+          "confidence": 0.928417444229126,
+          "raw_luma": 57.74288140077999
+        },
+        {
+          "name": "喝水21_00048",
+          "label": "drink",
+          "confidence": 0.9291192293167114,
+          "raw_luma": 57.73441499571227
+        },
+        {
+          "name": "喝水21_00056",
+          "label": "drink",
+          "confidence": 0.9211731553077698,
+          "raw_luma": 57.69876846861759
+        },
+        {
+          "name": "捡东西10_00000",
+          "label": "pick_up",
+          "confidence": 0.8963194489479065,
+          "raw_luma": 47.921510244605656
+        },
+        {
+          "name": "捡东西10_00008",
+          "label": "pick_up",
+          "confidence": 0.9104201197624207,
+          "raw_luma": 48.063604323594504
+        },
+        {
+          "name": "捡东西10_00016",
+          "label": "pick_up",
+          "confidence": 0.9073364734649658,
+          "raw_luma": 48.15886062246204
+        },
+        {
+          "name": "捡东西10_00024",
+          "label": "pick_up",
+          "confidence": 0.9130298495292664,
+          "raw_luma": 48.18604961591694
+        },
+        {
+          "name": "捡东西10_00032",
+          "label": "pick_up",
+          "confidence": 0.9166808724403381,
+          "raw_luma": 48.11183877709784
+        },
+        {
+          "name": "捡东西10_00040",
+          "label": "pick_up",
+          "confidence": 0.9163514375686646,
+          "raw_luma": 48.02226070679795
+        },
+        {
+          "name": "捡东西11_00000",
+          "label": "pick_up",
+          "confidence": 0.9230914115905762,
+          "raw_luma": 43.03980132959103
+        },
+        {
+          "name": "捡东西11_00008",
+          "label": "pick_up",
+          "confidence": 0.9256948828697205,
+          "raw_luma": 43.09705477246646
+        },
+        {
+          "name": "捡东西11_00016",
+          "label": "pick_up",
+          "confidence": 0.9222625494003296,
+          "raw_luma": 43.029381232423454
+        },
+        {
+          "name": "捡东西11_00024",
+          "label": "pick_up",
+          "confidence": 0.9279616475105286,
+          "raw_luma": 42.82010762246835
+        },
+        {
+          "name": "捡东西11_00032",
+          "label": "pick_up",
+          "confidence": 0.9334498047828674,
+          "raw_luma": 42.586355647116505
+        },
+        {
+          "name": "捡东西11_00040",
+          "label": "pick_up",
+          "confidence": 0.9432143568992615,
+          "raw_luma": 42.37583661344834
+        },
+        {
+          "name": "捡东西11_00048",
+          "label": "pick_up",
+          "confidence": 0.8334097266197205,
+          "raw_luma": 42.354477907381835
+        },
+        {
+          "name": "捡东西9_00000",
+          "label": "pick_up",
+          "confidence": 0.908759593963623,
+          "raw_luma": 61.15087681495599
+        },
+        {
+          "name": "捡东西9_00008",
+          "label": "pick_up",
+          "confidence": 0.9009319543838501,
+          "raw_luma": 61.01433624166099
+        },
+        {
+          "name": "捡东西9_00016",
+          "label": "pick_up",
+          "confidence": 0.9033104777336121,
+          "raw_luma": 60.910047003553146
+        },
+        {
+          "name": "捡东西9_00024",
+          "label": "pick_up",
+          "confidence": 0.9061420559883118,
+          "raw_luma": 60.862207154995204
+        },
+        {
+          "name": "挥手20_00000",
+          "label": "wave",
+          "confidence": 0.9122259020805359,
+          "raw_luma": 113.20417950653248
+        },
+        {
+          "name": "挥手20_00008",
+          "label": "wave",
+          "confidence": 0.8127448558807373,
+          "raw_luma": 113.10667070280972
+        },
+        {
+          "name": "挥手20_00016",
+          "label": "wave",
+          "confidence": 0.8204405903816223,
+          "raw_luma": 113.03838161366905
+        },
+        {
+          "name": "挥手21_00000",
+          "label": "wave",
+          "confidence": 0.8676720857620239,
+          "raw_luma": 93.4517860319247
+        },
+        {
+          "name": "挥手21_00008",
+          "label": "wave",
+          "confidence": 0.7462930083274841,
+          "raw_luma": 93.33169054602376
+        },
+        {
+          "name": "挥手22_00000",
+          "label": "wave",
+          "confidence": 0.8447493314743042,
+          "raw_luma": 154.10046707597166
+        },
+        {
+          "name": "挥手22_00008",
+          "label": "wave",
+          "confidence": 0.7803924083709717,
+          "raw_luma": 154.06921191146148
+        },
+        {
+          "name": "挥手22_00016",
+          "label": "wave",
+          "confidence": 0.7544170022010803,
+          "raw_luma": 154.04079470189228
+        },
+        {
+          "name": "挥手23_00000",
+          "label": "wave",
+          "confidence": 0.8793407082557678,
+          "raw_luma": 50.88447073220907
+        },
+        {
+          "name": "挥手23_00008",
+          "label": "wave",
+          "confidence": 0.9017558097839355,
+          "raw_luma": 50.89508589667196
+        },
+        {
+          "name": "挥手23_00016",
+          "label": "wave",
+          "confidence": 0.9062322974205017,
+          "raw_luma": 50.92674685190615
+        },
+        {
+          "name": "挥手23_00024",
+          "label": "wave",
+          "confidence": 0.9065714478492737,
+          "raw_luma": 50.94644041258387
+        },
+        {
+          "name": "挥手23_00032",
+          "label": "wave",
+          "confidence": 0.9090924859046936,
+          "raw_luma": 50.99214439079525
+        },
+        {
+          "name": "挥手24_00000",
+          "label": "wave",
+          "confidence": 0.909767210483551,
+          "raw_luma": 33.91199559285777
+        },
+        {
+          "name": "挥手24_00008",
+          "label": "wave",
+          "confidence": 0.9142920970916748,
+          "raw_luma": 34.05853090524742
+        },
+        {
+          "name": "挥手24_00016",
+          "label": "wave",
+          "confidence": 0.9141048789024353,
+          "raw_luma": 34.019078418284025
+        },
+        {
+          "name": "挥手24_00024",
+          "label": "wave",
+          "confidence": 0.9124979972839355,
+          "raw_luma": 34.02700817167638
+        },
+        {
+          "name": "挥手25_00000",
+          "label": "wave",
+          "confidence": 0.9087665677070618,
+          "raw_luma": 53.1652897204777
+        },
+        {
+          "name": "挥手25_00008",
+          "label": "wave",
+          "confidence": 0.9077621102333069,
+          "raw_luma": 53.12722858112326
+        },
+        {
+          "name": "挥手25_00016",
+          "label": "wave",
+          "confidence": 0.9078346490859985,
+          "raw_luma": 53.10036257125202
+        },
+        {
+          "name": "挥手25_00024",
+          "label": "wave",
+          "confidence": 0.9039437770843506,
+          "raw_luma": 53.11133168909844
+        },
+        {
+          "name": "挥手25_00032",
+          "label": "wave",
+          "confidence": 0.901271402835846,
+          "raw_luma": 53.09693090508979
+        }
+      ],
+      "incorrect": [],
+      "below_gate": 105
+    },
+    "B": {
+      "windows": 365,
+      "correct": 359,
+      "top1": 0.9835616438356164,
+      "macro_f1": 0.9917127071823204,
+      "fired": 6,
+      "fires": [
+        {
+          "name": "other87@whole",
+          "label": "chase",
+          "confidence": 0.8601543307304382,
+          "raw_luma": 31.368865731405116
+        },
+        {
+          "name": "other73@whole",
+          "label": "chase",
+          "confidence": 0.5634247660636902,
+          "raw_luma": 42.04934015066965
+        },
+        {
+          "name": "other74@whole",
+          "label": "chase",
+          "confidence": 0.8823754191398621,
+          "raw_luma": 41.39691657815337
+        },
+        {
+          "name": "other76@whole",
+          "label": "chase",
+          "confidence": 0.9012479782104492,
+          "raw_luma": 62.98766383897044
+        },
+        {
+          "name": "other78@whole",
+          "label": "chase",
+          "confidence": 0.7878676652908325,
+          "raw_luma": 35.018965402022175
+        },
+        {
+          "name": "other79@whole",
+          "label": "chase",
+          "confidence": 0.7937931418418884,
+          "raw_luma": 35.43244697265625
+        }
+      ],
+      "incorrect": [
+        "other87@whole",
+        "other73@whole",
+        "other74@whole",
+        "other76@whole",
+        "other78@whole",
+        "other79@whole"
+      ],
+      "below_gate": 204
+    },
+    "C": {
+      "windows": 18,
+      "correct": 18,
+      "top1": 1.0,
+      "macro_f1": 1.0,
+      "fired": 18,
+      "fires": [
+        {
+          "name": "喝水16@whole",
+          "label": "drink",
+          "confidence": 0.9283952713012695,
+          "raw_luma": 139.06941530365654
+        },
+        {
+          "name": "喝水16@t0.0",
+          "label": "drink",
+          "confidence": 0.8603094816207886,
+          "raw_luma": 139.21336089241578
+        },
+        {
+          "name": "喝水16@t0.5",
+          "label": "drink",
+          "confidence": 0.9422557353973389,
+          "raw_luma": 139.0113080361872
+        },
+        {
+          "name": "喝水16@t1.0",
+          "label": "drink",
+          "confidence": 0.9425665140151978,
+          "raw_luma": 138.93809175912088
+        },
+        {
+          "name": "喝水16@t1.4",
+          "label": "drink",
+          "confidence": 0.9476481080055237,
+          "raw_luma": 138.96433157386565
+        },
+        {
+          "name": "喝水16@t1.9",
+          "label": "drink",
+          "confidence": 0.9499115943908691,
+          "raw_luma": 139.03292676057114
+        },
+        {
+          "name": "挥手22@whole",
+          "label": "wave",
+          "confidence": 0.8017536401748657,
+          "raw_luma": 154.06518346362049
+        },
+        {
+          "name": "挥手22@t0.0",
+          "label": "wave",
+          "confidence": 0.9262717962265015,
+          "raw_luma": 154.1135965882579
+        },
+        {
+          "name": "挥手22@t0.5",
+          "label": "wave",
+          "confidence": 0.8030601739883423,
+          "raw_luma": 154.0541197002371
+        },
+        {
+          "name": "挥手22@t1.0",
+          "label": "wave",
+          "confidence": 0.7521917223930359,
+          "raw_luma": 154.0411281321725
+        },
+        {
+          "name": "捡东西2@whole",
+          "label": "pick_up",
+          "confidence": 0.8321851491928101,
+          "raw_luma": 150.14456446723352
+        },
+        {
+          "name": "捡东西2@t0.0",
+          "label": "pick_up",
+          "confidence": 0.915225625038147,
+          "raw_luma": 150.1118000970257
+        },
+        {
+          "name": "捡东西2@t0.5",
+          "label": "pick_up",
+          "confidence": 0.9130692481994629,
+          "raw_luma": 150.31422673613739
+        },
+        {
+          "name": "捡东西2@t1.0",
+          "label": "pick_up",
+          "confidence": 0.9140198230743408,
+          "raw_luma": 150.25122733965142
+        },
+        {
+          "name": "捡东西2@t1.4",
+          "label": "pick_up",
+          "confidence": 0.8177812695503235,
+          "raw_luma": 150.12147279457668
+        },
+        {
+          "name": "追逐16@whole",
+          "label": "chase",
+          "confidence": 0.9072784185409546,
+          "raw_luma": 135.30620313083259
+        },
+        {
+          "name": "追逐16@t0.0",
+          "label": "chase",
+          "confidence": 0.9208268523216248,
+          "raw_luma": 135.31902762552653
+        },
+        {
+          "name": "追逐16@t0.5",
+          "label": "chase",
+          "confidence": 0.8986882567405701,
+          "raw_luma": 135.04261777186113
+        }
+      ],
+      "incorrect": [],
+      "below_gate": 0
+    },
+    "P": {
+      "windows": 460,
+      "correct": 435,
+      "top1": 0.9456521739130435,
+      "macro_f1": 0.9720670391061452,
+      "fired": 25,
+      "fires": [
+        {
+          "name": "20261012_091756_drinking_water_0009@t1.0",
+          "label": "drink",
+          "confidence": 0.6041015386581421,
+          "raw_luma": 147.58537908876048
+        },
+        {
+          "name": "20261012_100424_drinking_water_0077@t0.0",
+          "label": "drink",
+          "confidence": 0.5911905765533447,
+          "raw_luma": 146.89555518455296
+        },
+        {
+          "name": "20261012_100653_drinking_water_0083@t0.0",
+          "label": "drink",
+          "confidence": 0.5109400749206543,
+          "raw_luma": 147.42461032781858
+        },
+        {
+          "name": "20261012_101212_drinking_water_0101@whole",
+          "label": "drink",
+          "confidence": 0.5655177235603333,
+          "raw_luma": 141.82691293687265
+        },
+        {
+          "name": "20261012_101212_drinking_water_0101@t0.0",
+          "label": "drink",
+          "confidence": 0.6388131380081177,
+          "raw_luma": 141.90162647314133
+        },
+        {
+          "name": "20261012_101212_drinking_water_0101@t0.5",
+          "label": "drink",
+          "confidence": 0.5908565521240234,
+          "raw_luma": 142.05384020125757
+        },
+        {
+          "name": "20261012_101212_drinking_water_0101@t1.5",
+          "label": "drink",
+          "confidence": 0.573964536190033,
+          "raw_luma": 141.8030054496382
+        },
+        {
+          "name": "20261012_101212_drinking_water_0101@t2.0",
+          "label": "drink",
+          "confidence": 0.6109128594398499,
+          "raw_luma": 141.7163821505894
+        },
+        {
+          "name": "20261012_101212_drinking_water_0101@t2.5",
+          "label": "drink",
+          "confidence": 0.6108304858207703,
+          "raw_luma": 141.7158010700426
+        },
+        {
+          "name": "20261012_101308_drinking_water_0104@whole",
+          "label": "drink",
+          "confidence": 0.5071613192558289,
+          "raw_luma": 142.40685787333683
+        },
+        {
+          "name": "20261012_101308_drinking_water_0104@t0.0",
+          "label": "drink",
+          "confidence": 0.8607484102249146,
+          "raw_luma": 142.57182592378615
+        },
+        {
+          "name": "20261012_101308_drinking_water_0104@t0.5",
+          "label": "drink",
+          "confidence": 0.6509650945663452,
+          "raw_luma": 142.48058599753443
+        },
+        {
+          "name": "20261012_101624_drinking_water_0117@t2.1",
+          "label": "drink",
+          "confidence": 0.5285376310348511,
+          "raw_luma": 149.53659193350256
+        },
+        {
+          "name": "20261012_101624_drinking_water_0117@t2.6",
+          "label": "drink",
+          "confidence": 0.5453253388404846,
+          "raw_luma": 149.54766987708624
+        },
+        {
+          "name": "20261012_101624_drinking_water_0117@t3.1",
+          "label": "drink",
+          "confidence": 0.5512063503265381,
+          "raw_luma": 149.54707189133987
+        },
+        {
+          "name": "20261012_101624_drinking_water_0117@t3.6",
+          "label": "drink",
+          "confidence": 0.5515468716621399,
+          "raw_luma": 149.5471131864204
+        },
+        {
+          "name": "20261012_102131_drinking_water_0127@t0.5",
+          "label": "wave",
+          "confidence": 0.5765883922576904,
+          "raw_luma": 147.34365902310924
+        },
+        {
+          "name": "20261012_102131_drinking_water_0127@t1.5",
+          "label": "drink",
+          "confidence": 0.5546585917472839,
+          "raw_luma": 147.66150833479225
+        },
+        {
+          "name": "20261012_102131_drinking_water_0127@t2.0",
+          "label": "drink",
+          "confidence": 0.5580365657806396,
+          "raw_luma": 147.65635922188665
+        },
+        {
+          "name": "20261012_103353_drinking_water_0158@t0.0",
+          "label": "wave",
+          "confidence": 0.5161727070808411,
+          "raw_luma": 145.85775151275092
+        },
+        {
+          "name": "20261012_091409_waving_0006@t0.5",
+          "label": "drink",
+          "confidence": 0.5060853958129883,
+          "raw_luma": 146.52031601679212
+        },
+        {
+          "name": "20261012_091409_waving_0006@t1.0",
+          "label": "drink",
+          "confidence": 0.6138588786125183,
+          "raw_luma": 146.4116444146096
+        },
+        {
+          "name": "20261012_102548_waving_0141@whole",
+          "label": "wave",
+          "confidence": 0.5785772800445557,
+          "raw_luma": 147.55724866946775
+        },
+        {
+          "name": "20261012_102548_waving_0141@t1.0",
+          "label": "wave",
+          "confidence": 0.612087070941925,
+          "raw_luma": 147.53058698062557
+        },
+        {
+          "name": "20261012_102606_waving_0143@t0.0",
+          "label": "drink",
+          "confidence": 0.522706925868988,
+          "raw_luma": 148.0773142676237
+        }
+      ],
+      "incorrect": [
+        "20261012_091756_drinking_water_0009@t1.0",
+        "20261012_100424_drinking_water_0077@t0.0",
+        "20261012_100653_drinking_water_0083@t0.0",
+        "20261012_101212_drinking_water_0101@whole",
+        "20261012_101212_drinking_water_0101@t0.0",
+        "20261012_101212_drinking_water_0101@t0.5",
+        "20261012_101212_drinking_water_0101@t1.5",
+        "20261012_101212_drinking_water_0101@t2.0",
+        "20261012_101212_drinking_water_0101@t2.5",
+        "20261012_101308_drinking_water_0104@whole",
+        "20261012_101308_drinking_water_0104@t0.0",
+        "20261012_101308_drinking_water_0104@t0.5",
+        "20261012_101624_drinking_water_0117@t2.1",
+        "20261012_101624_drinking_water_0117@t2.6",
+        "20261012_101624_drinking_water_0117@t3.1",
+        "20261012_101624_drinking_water_0117@t3.6",
+        "20261012_102131_drinking_water_0127@t0.5",
+        "20261012_102131_drinking_water_0127@t1.5",
+        "20261012_102131_drinking_water_0127@t2.0",
+        "20261012_103353_drinking_water_0158@t0.0",
+        "20261012_091409_waving_0006@t0.5",
+        "20261012_091409_waving_0006@t1.0",
+        "20261012_102548_waving_0141@whole",
+        "20261012_102548_waving_0141@t1.0",
+        "20261012_102606_waving_0143@t0.0"
+      ],
+      "below_gate": 0
+    }
+  }
+}

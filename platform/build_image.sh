@@ -3,7 +3,7 @@
 #
 # 用法：
 #   bash platform/build_image.sh                       # 只构建
-#   bash platform/build_image.sh --save                 # 构建并导出 darkpipe-operator-0.2.0.tar.gz
+#   bash platform/build_image.sh --save                 # 构建并导出 darkpipe-operator-0.3.0.tar.gz
 #   GH_PREFIX=https://ghfast.top/ bash platform/build_image.sh   # GitHub 不通时走镜像
 #   PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple bash platform/build_image.sh
 #   CONDA_CHANNEL=https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge bash ...
@@ -11,7 +11,7 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(dirname "$HERE")"
-IMAGE="${IMAGE:-darkpipe-operator:0.2.0}"
+IMAGE="${IMAGE:-darkpipe-operator:0.3.0}"
 CTX="$HERE/.build_ctx"
 
 # 平台部署只暴露 off/retinexformer + off/bicubic + off/behavior，缺一不可；

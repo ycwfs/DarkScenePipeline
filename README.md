@@ -1,5 +1,21 @@
 # DarkScenePipeline
 
+当前平台交付为 [dark-demo-v2](platform/dark-demo-v2/README.md)。2026-10-19 已用本次回传负样本
+继续微调 VideoMamba，默认权重为 **pn2**，阈值保持 **0.75**；720 尺寸、动作骨架显示与录制修复均保留。
+
+- 最新算子：[tar.gz](platform/dark-demo-v2_pn2_20261019.tar.gz) / [平台 ZIP](platform/dark-demo-v2_pn2_20261019.zip)；默认 `platform/dark-demo-v2.tar.gz` 和 `.zip` 同步。
+- 独立模型包：[NVIDIA-Box_20261019.zip](NVIDIA-Box_20261019.zip)，默认 `NVIDIA-Box.zip` 同步。
+- [训练、留出测试与交付验证报告](reports/feedback-finetune-20261019.md)：新训练负样本融合误报3→0/175，未参与本轮训练的留出误报2→1/68；已有回归指标保持。
+
+原 `darkpipe-operator:0.3.0` 镜像 ID 及归档 SHA256 未变，无需重新上传镜像。留出仅两个同摄像机会话，
+仍有误报；本轮不构成跨场景泛化、长期无中断或实时速度验收。旧 pn 权重及此前日期包保留回滚。
+使用 `python3 platform/package_v2.py` 构建当前包；旧 `make_operator_zip.sh` 仅维护 `op_*`，根 `darkpipe/` 是开发/旧版管线。
+
+Git 保存源码、测试、实验报告和交付哈希清单；模型、视频、数据缓存及大型归档保留在本地交付目录，
+上面的包链接不是 GitHub Release 下载地址。新检出仓库需从对应交付包恢复模型与示例，具体见
+[记录索引与复现说明](reports/README.md)。`NVIDIA-Box/` 的模型加载代码现已纳入版本管理。
+默认 `python -m pytest` 只收集 `tests/`；报告目录下的独立 GPU 评估和盒子合约检查需显式运行。
+
 The **dark complex scene algorithm** as one deployable project: low-illumination enhancement,
 video super-resolution, and human action recognition — each function independently
 enable/disable-able and freely combinable — with offline file processing and an online

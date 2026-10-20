@@ -1,0 +1,102 @@
+[
+  {
+    "file": "videos/01_喝水16_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "3.000000",
+    "nb_frames": "75"
+  },
+  {
+    "file": "videos/02_喝水17_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "2.480000",
+    "nb_frames": "62"
+  },
+  {
+    "file": "videos/03_喝水18_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "3.120000",
+    "nb_frames": "78"
+  },
+  {
+    "file": "videos/04_挥手20_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "2.200000",
+    "nb_frames": "55"
+  },
+  {
+    "file": "videos/05_挥手21_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "1.600000",
+    "nb_frames": "40"
+  },
+  {
+    "file": "videos/06_挥手22_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "2.160000",
+    "nb_frames": "54"
+  },
+  {
+    "file": "videos/07_捡东西2_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "2.840000",
+    "nb_frames": "71"
+  },
+  {
+    "file": "videos/08_追逐16_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "1.800000",
+    "nb_frames": "45"
+  },
+  {
+    "file": "videos/09_追逐19_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "25/1",
+    "duration": "2.960000",
+    "nb_frames": "74"
+  },
+  {
+    "file": "videos/10_other1_pose.mp4",
+    "fully_decoded": true,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 874,
+    "avg_frame_rate": "95/4",
+    "duration": "2.484211",
+    "nb_frames": "59"
+  }
+]

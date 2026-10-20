@@ -13,6 +13,7 @@ single-consumer, so frame order is preserved without any sequence bookkeeping.
 import json
 import os
 import queue
+import sys
 import threading
 import time
 
@@ -111,6 +112,8 @@ def run_offline(cfg, on_ready=None):
               f"不丢帧、不弃段）-> {clipper.root}")
 
     events, current = [], None
+    from .pose_overlay import ActionPoseOverlay
+    pose_overlay = ActionPoseOverlay() if cfg.pose_overlay else None
     t0 = time.time()
     n_in = 0
     frame_idx = 0
@@ -150,6 +153,7 @@ def run_offline(cfg, on_ready=None):
         for s in enh_stages:
             chunk = s(chunk)
         chunk_events = []
+        chunk_labels, chunk_times = [], []
         if recognizer:
             for i, f in enumerate(chunk):
                 ts = frame_idx / reader.fps
@@ -158,16 +162,21 @@ def run_offline(cfg, on_ready=None):
                 if ev:
                     current = ev
                     events.append(ev)
+                chunk_labels.append(current)
+                chunk_times.append(ts)
                 if clipper is not None:
                     chunk_events.append((ev, ts))
         else:
             frame_idx += len(chunk)
+        enhanced_frames = list(chunk)
         for s in sr_stages:
             chunk = s(chunk)
+        if recognizer and pose_overlay is not None:
+            chunk = [pose_overlay.draw(f, raw, ev, ts) for f, raw, ev, ts in
+                     zip(chunk, enhanced_frames, chunk_labels, chunk_times)]
         if recognizer and not cfg.no_label_bar:
-            # NOTE: the bar shows the newest event for the whole chunk, matching the previous
-            # serial behaviour (`current` was likewise only advanced between pushes).
-            chunk = [append_label_bar(f, current) for f in chunk]
+            # Keep each frame's own event, including frames preceding a decision in this chunk.
+            chunk = [append_label_bar(f, ev) for f, ev in zip(chunk, chunk_labels)]
         if clipper is not None:
             # Same frames the output video gets -- label bar burned in, if any -- so a saved
             # clip matches what the full processed video shows at that timestamp.
@@ -175,58 +184,64 @@ def run_offline(cfg, on_ready=None):
                 clipper.push(f, ev, ts)
         return chunk
 
-    if whole:  # RealRestorer: two-pass (restore entire video first), no overlap to be had
-        frames = reader.read_all()
-        n_in = len(frames)
-        for s in whole:
-            frames = s(frames)
-        for i in range(0, len(frames), cfg.enhance_chunk):
-            for f in process_chunk(frames[i:i + cfg.enhance_chunk]):
-                writer.write(f)
-            progress(min(i + cfg.enhance_chunk, n_in))
-    else:
-        in_q, out_q, err = queue.Queue(maxsize=2), queue.Queue(maxsize=2), []
-        dec = threading.Thread(target=_decode_thread, args=(reader, in_q, err), daemon=True)
-        enc = threading.Thread(target=_encode_thread, args=(writer, out_q, err), daemon=True)
-        dec.start()
-        enc.start()
-        drained = False
-        try:
-            while True:
-                chunk = in_q.get()
-                if chunk is _STOP:
-                    drained = True
-                    break
-                n_in += len(chunk)
-                out_q.put(process_chunk(chunk))
-                progress(n_in)
-        finally:
-            out_q.put(_STOP)
-            enc.join()
-            # If the loop exited early -- process_chunk raised -- the decode thread is still
-            # blocked on `in_q.put()` against a bounded queue with no consumer left, so
-            # `dec.join()` would never return and a crashed run would present as a hung one.
-            # (Measured: a CUDA OOM at --sr-chunk 8 held the process for 17 minutes at 0% GPU
-            # before it was killed.) Drain until the decoder's own `finally` sentinel arrives.
-            while not drained:
-                drained = in_q.get() is _STOP
-            dec.join()
-        if err:
-            raise err[0]
+    try:
+        if whole:  # RealRestorer: two-pass (restore entire video first), no overlap to be had
+            frames = reader.read_all()
+            n_in = len(frames)
+            for s in whole:
+                frames = s(frames)
+            for i in range(0, len(frames), cfg.enhance_chunk):
+                for f in process_chunk(frames[i:i + cfg.enhance_chunk]):
+                    writer.write(f)
+                progress(min(i + cfg.enhance_chunk, n_in))
+        else:
+            in_q, out_q, err = queue.Queue(maxsize=2), queue.Queue(maxsize=2), []
+            dec = threading.Thread(target=_decode_thread, args=(reader, in_q, err), daemon=True)
+            enc = threading.Thread(target=_encode_thread, args=(writer, out_q, err), daemon=True)
+            dec.start()
+            enc.start()
+            drained = False
+            try:
+                while True:
+                    chunk = in_q.get()
+                    if chunk is _STOP:
+                        drained = True
+                        break
+                    n_in += len(chunk)
+                    out_q.put(process_chunk(chunk))
+                    progress(n_in)
+            finally:
+                out_q.put(_STOP)
+                enc.join()
+                # If the loop exited early -- process_chunk raised -- the decode thread is still
+                # blocked on `in_q.put()` against a bounded queue with no consumer left, so
+                # `dec.join()` would never return and a crashed run would present as a hung one.
+                # (Measured: a CUDA OOM at --sr-chunk 8 held the process for 17 minutes at 0% GPU
+                # before it was killed.) Drain until the decoder's own `finally` sentinel arrives.
+                while not drained:
+                    drained = in_q.get() is _STOP
+                dec.join()
+            if err:
+                raise err[0]
 
-    writer.close()
-    for s in frame_stages:
-        s.close()
-    if recognizer:
-        recognizer.close()
-    if clipper is not None:
-        clipper.close()
-        print(f"[clip] {clipper.stats()}")
+    finally:
+        primary_error = sys.exc_info()[1]
+        close_errors = []
+        for resource in [writer, clipper, *frame_stages, recognizer]:
+            if resource is None:
+                continue
+            try:
+                resource.close()
+            except BaseException as exc:
+                close_errors.append(exc)
+                print(f"[close] {type(resource).__name__}: {exc}")
+        dt = time.time() - t0
+        cfg.stats = dict(frames=n_in, seconds=round(dt, 3), fps=round(n_in / max(dt, 1e-9), 2),
+                         frames_written=writer.count, events=len(events), gpus=1,
+                         clips=(clipper.stats() if clipper else None))
+        if close_errors and primary_error is None:
+            raise close_errors[0]
 
-    dt = time.time() - t0
-    cfg.stats = dict(frames=n_in, seconds=round(dt, 3), fps=round(n_in / max(dt, 1e-9), 2),
-                     frames_written=writer.count, events=len(events), gpus=1,
-                     clips=(clipper.stats() if clipper else None))
     print(f"[done] {n_in} frames in {dt:.1f}s = {n_in / max(dt, 1e-9):.1f} fps "
           f"-> {cfg.output} ({writer.count} frames written)")
     if recognizer:

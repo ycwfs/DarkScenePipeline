@@ -1,0 +1,310 @@
+{
+  "baseline": {
+    "0.65": {
+      "A": {
+        "windows": 177,
+        "correct": 177,
+        "fired": 108,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 18,
+        "fired": 18,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 459,
+        "fired": 1,
+        "rgb_fired": 8
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 158,
+        "fired": 17,
+        "rgb_fired": 65
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 62,
+        "fired": 6,
+        "rgb_fired": 24
+      }
+    },
+    "0.7": {
+      "A": {
+        "windows": 177,
+        "correct": 176,
+        "fired": 107,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 18,
+        "fired": 18,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 6
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 167,
+        "fired": 8,
+        "rgb_fired": 58
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 63,
+        "fired": 5,
+        "rgb_fired": 15
+      }
+    },
+    "0.75": {
+      "A": {
+        "windows": 177,
+        "correct": 175,
+        "fired": 106,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 17,
+        "fired": 17,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 3
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 172,
+        "fired": 3,
+        "rgb_fired": 54
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 66,
+        "fired": 2,
+        "rgb_fired": 10
+      }
+    },
+    "0.8": {
+      "A": {
+        "windows": 177,
+        "correct": 171,
+        "fired": 102,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 17,
+        "fired": 17,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 3
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 173,
+        "fired": 2,
+        "rgb_fired": 34
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 68,
+        "fired": 0,
+        "rgb_fired": 8
+      }
+    }
+  },
+  "epoch-04": {
+    "0.65": {
+      "A": {
+        "windows": 177,
+        "correct": 177,
+        "fired": 108,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 6
+      },
+      "C": {
+        "windows": 18,
+        "correct": 18,
+        "fired": 18,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 175,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 65,
+        "fired": 3,
+        "rgb_fired": 6
+      }
+    },
+    "0.7": {
+      "A": {
+        "windows": 177,
+        "correct": 176,
+        "fired": 107,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 18,
+        "fired": 18,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 175,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 65,
+        "fired": 3,
+        "rgb_fired": 5
+      }
+    },
+    "0.75": {
+      "A": {
+        "windows": 177,
+        "correct": 175,
+        "fired": 106,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 17,
+        "fired": 17,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 175,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 67,
+        "fired": 1,
+        "rgb_fired": 5
+      }
+    },
+    "0.8": {
+      "A": {
+        "windows": 177,
+        "correct": 172,
+        "fired": 103,
+        "rgb_fired": 108
+      },
+      "B": {
+        "windows": 365,
+        "correct": 360,
+        "fired": 5,
+        "rgb_fired": 5
+      },
+      "C": {
+        "windows": 18,
+        "correct": 17,
+        "fired": 17,
+        "rgb_fired": 18
+      },
+      "P": {
+        "windows": 460,
+        "correct": 460,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qtrain": {
+        "windows": 175,
+        "correct": 175,
+        "fired": 0,
+        "rgb_fired": 0
+      },
+      "Qholdout": {
+        "windows": 68,
+        "correct": 68,
+        "fired": 0,
+        "rgb_fired": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  ".gitignore": {
+    "size": 37,
+    "sha256": "343b07e0f2e82c517fa099c6951e7e5fa611c177c730d3a6f1f52a3dc25d0057"
+  },
+  "01_流程图.drawio": {
+    "size": 8924,
+    "sha256": "fb81d313666b4a0b88a1b85f15aadf424cfe963467fd31d101bfb22da45a80cb"
+  },
+  "02_流程图.drawio": {
+    "size": 11146,
+    "sha256": "20e351f4ff66557acde48b8f88f7f9172f65afb4ad27b90b8ec20cf14763dd51"
+  },
+  "README.md": {
+    "size": 5475,
+    "sha256": "bd0056970ff10c2eae107f70ab8713bd41f881fbd5213d4b5ee45b5a4e1490b9"
+  },
+  "evidence/chart-data.csv": {
+    "size": 72174,
+    "sha256": "11424882346ef310ab9676af675ad9ec7791d2c56d359fbe04bd867934cf16db"
+  },
+  "evidence/chart-summary.json": {
+    "size": 1651,
+    "sha256": "2dd5d838eb82d7b0c246cbf55e969ecccc1878e0e651859e75887560fb2479de"
+  },
+  "evidence/editable-qa.json": {
+    "size": 1876,
+    "sha256": "59940434b46c8224b11790ff5747ab074a06fb20ab0678c90fc99ce6dccdcc5c"
+  },
+  "evidence/editable-render.log": {
+    "size": 410,
+    "sha256": "7ceb1903e08e58cb431e26f70bc19ebeef145541c9080d446998e126cdc10ec5"
+  },
+  "evidence/object-detections.json": {
+    "size": 1957,
+    "sha256": "d6447042202e48fd79df9c0386df9e7630ea1537ec233757cc4145fde1bc5d2c"
+  },
+  "evidence/pdfinfo.txt": {
+    "size": 407,
+    "sha256": "f5953abfdb129d61119a4394cfc86cae269b05c1796a1d7e6e95d0186614a09a"
+  },
+  "evidence/ppt-render.log": {
+    "size": 582,
+    "sha256": "25d21c3a9ad3a5b1406830fc168474bcaa27b4b2c879d4ef622e772efb77b7b9"
+  },
+  "evidence/qa.json": {
+    "size": 686,
+    "sha256": "437857ef823f8a06c9c3bfd5727b35a4308983930c789a3c9c0ef2825244b295"
+  },
+  "pdf/01_照度门与加权融合.pdf": {
+    "size": 52855,
+    "sha256": "302cb33758dd017a54c8e2ab8fc3f1b133acff3d506c096cd13c974f4b44c852"
+  },
+  "pdf/02_三部曲方案.pdf": {
+    "size": 62823,
+    "sha256": "8106b261462512dfab3684622b3d2f3fdc86d1cc4562d73d6e63b087736e6079"
+  },
+  "pdf/03_两方案效果对比.pdf": {
+    "size": 65477,
+    "sha256": "dc466055c28c0984f1cec5d3f689a1207555c0b8f813ca4862b43d53fd634439"
+  },
+  "pdf/04_物体漏检现场图.pdf": {
+    "size": 481918,
+    "sha256": "47af02d31f85b473d4a670b5267bc885d53bdd7901fde2b10ba29c26d08937af"
+  },
+  "pdf/05_取高分与先验失效.pdf": {
+    "size": 71152,
+    "sha256": "493e6fb6c07c9ad1b715d54bf734ae5de968d5b596396df4aa7e54991132156d"
+  },
+  "pdf/06_照度门作用边界.pdf": {
+    "size": 71522,
+    "sha256": "e0ef189debf9e375468593f0bd683ed8abbd6c8c1795e405db7798e787279b5d"
+  },
+  "png/01_照度门与加权融合.png": {
+    "size": 281035,
+    "sha256": "fdc6ef76127187c3b12a8f3578965791a1b8507a7da878fc5b935ce989275c78"
+  },
+  "png/02_三部曲方案.png": {
+    "size": 339853,
+    "sha256": "1d7a777be272abf8d4d30ff63143fd41b2857f31e211f0cd0ca1655954a07833"
+  },
+  "png/03_两方案效果对比.png": {
+    "size": 275943,
+    "sha256": "f4778abac5fe03e53bfcc76f2f514a92db57dcae697aa60a0139082da01f2d79"
+  },
+  "png/04_物体漏检现场图.png": {
+    "size": 1209705,
+    "sha256": "063cb06a98dd5d92ed43ad6038db168b987b8c2ebe0c43eff429050ed69015e4"
+  },
+  "png/05_取高分与先验失效.png": {
+    "size": 332078,
+    "sha256": "b9c0d64cd91c837766dbd2247e16911191df17d010b2734874f5ab0aea50e615"
+  },
+  "png/06_照度门作用边界.png": {
+    "size": 286872,
+    "sha256": "e60cebbef98e60b61b630cbd6663e36d81faf8c1d011097253b796168c2665fe"
+  },
+  "scripts/build_assets.py": {
+    "size": 25670,
+    "sha256": "e8ef31a6d6af5f30e5c8b34b3cb0ec02c559ac9fcd35eaaeb7160013b23c5c1d"
+  },
+  "scripts/build_editable_pptx.py": {
+    "size": 23082,
+    "sha256": "7f270122fed32a69824deb44fbcfa3a7235685b152267e3000fcde8d525eda55"
+  },
+  "scripts/probe_objects.py": {
+    "size": 1743,
+    "sha256": "3ad869abf3a5ed9a9a433e5e66aaa250c52910e8a68d07ad3f251dfb98f52930"
+  },
+  "sources/historical-pn-840.jsonl": {
+    "size": 752524,
+    "sha256": "68f2a78de375c0c309da3c3e792c50c1e08b707d72930498378a991877e29eb3"
+  },
+  "sources/historical-pn-lum-sweep.txt": {
+    "size": 3393,
+    "sha256": "42646f162eb2019e816109af361f85eb148757583b8913a191faa43b66f7f7fa"
+  },
+  "sources/previous-flowchart.drawio": {
+    "size": 5802,
+    "sha256": "f5e70d438445fada5d83aaceb58475020af672c84fc462999333e545124effe5"
+  },
+  "sources/provenance.json": {
+    "size": 1655,
+    "sha256": "9c0bc7f2c8d02b9fac25457c1357c9e54376e79104f6f2e1f9d37d7fa45a9eb3"
+  },
+  "sources/喝水16-enhanced.jpg": {
+    "size": 71149,
+    "sha256": "8794e4065710b9fc41f7d916254d27cb1b3d133ae1dffeb97957ad10b01a060d"
+  },
+  "sources/喝水16-raw.jpg": {
+    "size": 71346,
+    "sha256": "5720b180b6ade32b6a127ff398717bd1b93aeb4658cd3969b5b91bfc7c2fccd1"
+  },
+  "sources/捡东西2-enhanced.jpg": {
+    "size": 69006,
+    "sha256": "6dc3bb8baedeabb2220e83ba93b683ce0637f0b1f36fdc62a1e8824f7a9ca509"
+  },
+  "sources/捡东西2-raw.jpg": {
+    "size": 68580,
+    "sha256": "03ca4514f0c0db4f952053010f96b3eb575e33c5c9d81ff0e6c52820f41b026c"
+  },
+  "svg/01_照度门与加权融合.svg": {
+    "size": 14116,
+    "sha256": "ffd2188c1dc3d0b5a30bbe436f0dc97b47bda06c39b9ae477f021ab75e67064b"
+  },
+  "svg/02_三部曲方案.svg": {
+    "size": 16289,
+    "sha256": "877e8659f4f1936f8afc17cfce08e41e64de9ec09d62a953573117eec3a781e0"
+  },
+  "svg/03_两方案效果对比.svg": {
+    "size": 18687,
+    "sha256": "b495b71d3dac43e7ed0abcd75ef1bda931481cd944ba6a2356a6ba257b70622a"
+  },
+  "svg/04_物体漏检现场图.svg": {
+    "size": 648640,
+    "sha256": "b55c487bceedfd5c232228d700e9bed151153ad1f9a1d1bfcb438dc3fff94f93"
+  },
+  "svg/05_取高分与先验失效.svg": {
+    "size": 16742,
+    "sha256": "e75427556973316e521743d4102d5dea026de3764a87cb18c8ab9393e0d358d6"
+  },
+  "svg/06_照度门作用边界.svg": {
+    "size": 87483,
+    "sha256": "b6400fe851d40171131af180f7dbb2277108985a70c6975e3612390192ea20a9"
+  },
+  "可编辑版总览.jpg": {
+    "size": 349095,
+    "sha256": "233c6571208a1677662bc3cba600b3f1a9c015d4af1974720057366e2b1ffa6b"
+  },
+  "总览.jpg": {
+    "size": 333403,
+    "sha256": "45308725c591fd572fecea937f196c93ce82d97e7a8dcd5fff8eea77d9adc1ff"
+  },
+  "暗光行为识别_方案与三部曲问题_20261015.pptx": {
+    "size": 225491,
+    "sha256": "b8de71e8d0923c538dc0ddc03f42c62e03f1221ffbf4558562321d929340ebb3"
+  },
+  "暗光行为识别_方案与三部曲问题_20261015_可编辑.pptx": {
+    "size": 225491,
+    "sha256": "b8de71e8d0923c538dc0ddc03f42c62e03f1221ffbf4558562321d929340ebb3"
+  },
+  "模型运行流程_最新双方案.drawio": {
+    "size": 19975,
+    "sha256": "7e2e1ea90eb0004953fd9da8c2bea005da314c1b2d6129fb8bab1282facb7273"
+  },
+  "汇报图集.pdf": {
+    "size": 269431,
+    "sha256": "e34ea0179f4e13888ffa311cbdbdfaddd6dcd14356be98b88d3b3ea39cfb9d46"
+  },
+  "讲解备注.md": {
+    "size": 3258,
+    "sha256": "98a784f4e5487c7579124b316fe90a3a6b362b147bd5da05231d52c6540c1fb5"
+  }
+}

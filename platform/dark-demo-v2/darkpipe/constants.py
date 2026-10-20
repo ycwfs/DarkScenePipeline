@@ -143,16 +143,14 @@ CKPT_FILES = {
     "catanet_x2": "catanet_x2.pth",
     "r3d": "r2plus1d_arid.pth",
     "videomamba": "videomamba_t_arid_32f.pth",
-    # 2026-10-14 swap (user ruling "换上最好的模型"): the _pn head = realactall_full
-    # continued (lr 2e-5, 8 epochs, lwf 2.0, best ep12) on the 96 platform round-trip
-    # false-positive clips replayed as negative windows (cache realact_all_rf_v1_all_pn,
-    # 5868->6440 windows). Measured: 96-clip replay FP clips 21->3 at alpha 0.8 (-86%) and
-    # 7->1 at alpha 0.7; suites A bit-identical, B +1 window at alpha 0.7 only, C 18/18 --
-    # no regression anywhere else. Whole-frame 400x224 like its init. Rollbacks kept in
-    # ckpts/ and reachable by reverting this one line:
-    #   videomamba_t_behavior_32f_realactall_full.pth  pre-pn full-dataset head (10-02..14)
-    #   videomamba_t_behavior_32f.pth                  09-15 crop-chain head (md5 eed5c06a)
-    "behavior": "videomamba_t_behavior_32f_realactall_full_pn.pth",
+    # 2026-10-19 pn2: continue pn on 3,220 unique old windows plus 175 new
+    # Other windows (23 clips). Four epochs, head/backbone LR 2e-5/2e-6,
+    # LwF 0.2 on old replay only. Select epoch 4 before opening session holdout.
+    # At tau=0.75: Qtrain false actions 3->0/175; held-out Q 2->1/68.
+    # ABCP regression unchanged (A175/177, B5/365 false, C17/18, P0/460).
+    # P/Q are cropped processed-video replays, not original live inputs.
+    # Keep pn/full/crop checkpoints for rollback; see the experiment report.
+    "behavior": "videomamba_t_behavior_32f_realactall_full_pn2.pth",
     "xclip": "xclip-base-patch16-zero-shot",  # HF snapshot directory
     "realrestorer": "realrestorer",  # HF bundle directory
 }

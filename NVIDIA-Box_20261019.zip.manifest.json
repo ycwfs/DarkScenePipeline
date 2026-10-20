@@ -1,0 +1,114 @@
+{
+  "archive": "NVIDIA-Box_20261019.zip",
+  "sha256": "364d2eba78f77d74711296b649d29963bdf3753499b463dca379bce5e5bfcd25",
+  "size": 154044057,
+  "contents": {
+    "version": "20261019-pn2",
+    "default_config": {
+      "proc_max_side": 720,
+      "skel_alpha": 0.7,
+      "lum_gate": 75,
+      "reco_min_conf": 0.75,
+      "fuse_mode": "alpha"
+    },
+    "model": "weights/videomamba_t_behavior_32f_realactall_full_pn2.pth",
+    "files": {
+      "README.md": {
+        "bytes": 18936,
+        "sha256": "31988563c8cc82ebb9963c79608e276e3b5fa7daaa9b7513020427ff5922ab74"
+      },
+      "VERIFICATION.md": {
+        "bytes": 3773,
+        "sha256": "d806be926e63a8134707adaf87b38e65abfad1d1447f1f0a946fe7125c160242"
+      },
+      "behavior_infer.py": {
+        "bytes": 21363,
+        "sha256": "9cf8933c802932d442dba38d00755f24632b3beab594d5c5658967d4d176630c"
+      },
+      "check_env.py": {
+        "bytes": 7844,
+        "sha256": "b2d3630f619976fe93e40e5394016f9efe04ba872d3043f8ca7ed9ada3c8895a"
+      },
+      "lowlight_infer.py": {
+        "bytes": 6877,
+        "sha256": "9ef1ac94ddfb4db83911b707c4758bad090a6d31e93406d4f371e3d92eaf505a"
+      },
+      "models/__init__.py": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "models/retinexformer_arch.py": {
+        "bytes": 12312,
+        "sha256": "1567c89d55285a3c1a4d4ca33f288b1fd98dc6b6bbdf971eda02d745f9087631"
+      },
+      "models/videomamba/__init__.py": {
+        "bytes": 54,
+        "sha256": "361e0060939b7e6df25f0c86738a895e9e5033c9b3e82d5220f5e09032550ef2"
+      },
+      "models/videomamba/bimamba_interface.py": {
+        "bytes": 1848,
+        "sha256": "d2377cd2a66d0357021041218f193a403ec264cb82faa84b3c81f7d108572118"
+      },
+      "models/videomamba/mamba_simple.py": {
+        "bytes": 16739,
+        "sha256": "ebf2dc05191e4fae6ea7f1e65a2b22653120c9fe13ef522f7fe1ad8fd34e4af1"
+      },
+      "models/videomamba/videomamba.py": {
+        "bytes": 17482,
+        "sha256": "4dcd35fd71794df8c346c88ae45a0191aba1c27ec5ae90c49b35ca51dc330179"
+      },
+      "requirements.txt": {
+        "bytes": 1364,
+        "sha256": "f2b178e1f3d8bb8419913d5d503ef1b269b62569b6b5948783265ac4bbefa4a1"
+      },
+      "sample_data/dark_frame.png": {
+        "bytes": 97322,
+        "sha256": "054083c6712f1128db844486ce49cb9eb665b6e4eddd0613407761a0995f2508"
+      },
+      "sample_data/sample_drink.mp4": {
+        "bytes": 3182746,
+        "sha256": "18aa3b9c66a39d1639a3ba7912aa06454d9134f33c1a55c1575aaa1366171385"
+      },
+      "sample_data/sample_wave.mp4": {
+        "bytes": 3141107,
+        "sha256": "cc2a2d5e08c242e12268af8083b5b27c6c7176297150429d770b0544c0cb42db"
+      },
+      "skeleton_aux.py": {
+        "bytes": 15866,
+        "sha256": "13929ec32855ed5bcf6c04ac3a5b6bd3b0dd3d487bee36c925ce070e7ebd67c7"
+      },
+      "video_io.py": {
+        "bytes": 2573,
+        "sha256": "663f74fd8a7628ed8c1b8557f5e740e3949a183804d12ed8f4bb9f2f32ce736d"
+      },
+      "weights/NTIRE.pth": {
+        "bytes": 6476406,
+        "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+      },
+      "weights/rtmo-s_end2end.onnx": {
+        "bytes": 39617685,
+        "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8"
+      },
+      "weights/stgcn_behavior_32f_realactall_full.pth": {
+        "bytes": 1178385,
+        "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+      },
+      "weights/videomamba_t_behavior_32f_realact10_all.pth": {
+        "bytes": 28012991,
+        "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44"
+      },
+      "weights/videomamba_t_behavior_32f_realactall_full.pth": {
+        "bytes": 28132107,
+        "sha256": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79"
+      },
+      "weights/videomamba_t_behavior_32f_realactall_full_pn.pth": {
+        "bytes": 28133373,
+        "sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04"
+      },
+      "weights/videomamba_t_behavior_32f_realactall_full_pn2.pth": {
+        "bytes": 28099109,
+        "sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362"
+      }
+    }
+  }
+}

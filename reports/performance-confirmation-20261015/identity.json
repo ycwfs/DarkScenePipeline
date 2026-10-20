@@ -1,0 +1,10 @@
+{
+  "operator": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/dark-demo-v2_fixed_20261014.tar.gz",
+  "operator_sha256": "78018a678d7c3a3ba5901eac164cf6546cc74574e21efad630706d7d93c864ce",
+  "operator_files": 45,
+  "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "prior_image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "same_image_id": true,
+  "same_rootfs": true,
+  "image_archive_bytes": 6796727259
+}

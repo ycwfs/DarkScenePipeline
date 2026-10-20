@@ -1,0 +1,20 @@
+{
+  "epochs": 4,
+  "head_lr": 2e-05,
+  "backbone_lr": 2.0000000000000003e-06,
+  "batch": 8,
+  "seed": 19,
+  "old_count": 3220,
+  "new_count": 175,
+  "new_sampling_mass": 0.2,
+  "lwf_old_only": 0.2,
+  "label_smoothing": 0.1,
+  "steps_per_epoch": 424,
+  "init_sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04",
+  "heldout_sessions": [
+    "20261015_163555_77",
+    "20261019_092255_83"
+  ],
+  "holdout_used_for_training": false,
+  "selection": "ABCP regression and training negatives; sealed session holdout only after selection"
+}

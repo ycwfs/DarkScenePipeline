@@ -1,0 +1,24 @@
+{
+  "physical_gpu": 1,
+  "CUDA_VISIBLE_DEVICES": "1",
+  "commands": [
+    [
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline/.venv/bin/python",
+      "-u",
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-verification-20261018/extracted/NVIDIA-Box/check_env.py"
+    ],
+    [
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline/.venv/bin/python",
+      "-u",
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-verification-20261018/scripts/verify_models_gpu.py",
+      "--box",
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-verification-20261018/extracted/NVIDIA-Box",
+      "--repo",
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline",
+      "--output",
+      "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-verification-20261018/evidence/gpu",
+      "--device",
+      "cuda:0"
+    ]
+  ]
+}

@@ -1,0 +1,61 @@
+# Keep reports/reproduction code and reviewed compact evidence; local runs stay on disk.
+*
+!*/
+!.gitignore
+!/*.md
+!/*/README.md
+!/*/RUNBOOK.md
+!/*/STATUS.md
+!/*/*.py
+!/*/*.json
+!/*/*.csv
+!/*/*.xml
+!/*/scripts/*.py
+!/*/scripts/*.sh
+!/*/scripts/*.md
+
+# Aggregate evidence; do not include nested sessions, events or container environments.
+!/*/evidence/*.json
+!/*/evidence/*.csv
+!/*/evidence/*.xml
+**/image-inspect.json
+
+# Paired probability outputs preserve reproducibility without cached image tensors.
+!/feedback-finetune-20261019/analysis/*.md
+!/feedback-finetune-20261019/analysis/*.json
+!/feedback-finetune-20261019/analysis/*.csv
+!/feedback-finetune-20261019/analysis/figures/*.png
+!/feedback-finetune-20261019/analysis/figures/*.pdf
+!/feedback-finetune-20261019/evaluation/*/*.json
+!/feedback-finetune-20261019/evaluation/*/*.jsonl
+!/feedback-finetune-20261019/delivery-verification/result.json
+!/feedback-finetune-20261019/real-offline/verification.json
+!/platform-feedback-20261019/fine-threshold/*.json
+!/platform-feedback-20261019/fine-threshold/*.csv
+
+# Editable meeting materials and their small chart sources.
+!/meeting-20261015/*.drawio
+!/meeting-20261015/*_可编辑.pptx
+!/meeting-20261015/讲解备注.md
+!/meeting-20261015/sources/provenance.json
+!/meeting-20261015/sources/historical-pn-840.jsonl
+!/meeting-20261015/sources/*.jpg
+!/meeting-20261015/svg/*.svg
+!/meeting-20261015/png/*.png
+!/meeting-20261015/pdf/*.pdf
+
+# Explicit guardrails for snapshots, raw data and test-generated operator trees.
+**/before/
+**/staging/
+**/unpacked/
+**/extracted/
+**/delivery-extracted/
+**/candidates/
+**/checkpoints/
+**/data/
+**/input/
+**/inputs/
+**/.tools/
+**/render-check/
+**/*pytest*/
+**/__pycache__/

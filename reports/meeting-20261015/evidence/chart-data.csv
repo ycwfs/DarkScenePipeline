@@ -1,0 +1,1021 @@
+suite,name,expected,raw_luma,alpha_luma75,three_step_luma75,winning_branch,prior_note
+A,追逐17_00000,chase,112.7,chase,chase,skel,
+A,追逐17_00008,chase,112.6,chase,chase,skel,
+A,追逐17_00016,chase,112.5,chase,chase,skel,
+A,追逐17_00024,chase,112.3,chase,chase,skel,
+A,追逐17_00032,chase,112.3,chase,chase,skel,
+A,追逐18_00000,chase,41.6,chase,chase,rgb,
+A,追逐18_00008,chase,42.6,chase,chase,rgb,
+A,追逐18_00016,chase,43.7,chase,chase,skel,
+A,追逐18_00024,chase,44.2,chase,chase,skel,
+A,追逐19_00000,chase,23.9,chase,chase,rgb,
+A,追逐19_00008,chase,24.1,chase,chase,rgb,
+A,追逐19_00016,chase,24.3,chase,chase,skel,
+A,追逐19_00024,chase,24.7,chase,chase,skel,
+A,追逐19_00032,chase,25.0,chase,chase,skel,
+A,追逐19_00040,chase,24.9,chase,chase,skel,
+A,追逐20_00000,chase,40.2,chase,chase,rgb,
+A,追逐20_00008,chase,40.1,chase,chase,rgb,
+A,追逐20_00016,chase,40.1,chase,chase,rgb,
+A,追逐20_00024,chase,40.2,chase,chase,rgb,
+A,追逐20_00032,chase,40.3,chase,chase,rgb,
+A,追逐20_00040,chase,40.3,chase,chase,rgb,
+A,追逐20_00048,chase,40.3,chase,chase,rgb,
+A,追逐20_00056,chase,40.5,chase,chase,rgb,
+A,追逐21_00000,chase,56.2,chase,chase,rgb,
+A,追逐21_00008,chase,56.3,chase,chase,skel,
+A,追逐21_00016,chase,56.5,chase,chase,skel,
+A,追逐21_00024,chase,56.7,chase,chase,rgb,
+A,追逐21_00032,chase,57.0,chase,chase,rgb,
+A,追逐21_00040,chase,57.1,chase,chase,rgb,
+A,追逐21_00048,chase,57.1,chase,chase,rgb,
+A,喝水16_00000,drink,139.2,drink,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水16_00008,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水16_00016,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水16_00024,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水16_00032,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水16_00040,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水17_00000,drink,112.5,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水17_00008,drink,112.4,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水17_00016,drink,112.4,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水17_00024,drink,112.3,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水18_00000,drink,89.4,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水18_00008,drink,89.4,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水18_00016,drink,89.4,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水18_00024,drink,89.3,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水18_00032,drink,89.2,drink,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水18_00040,drink,89.0,drink,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水19_00000,drink,127.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水19_00008,drink,127.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水19_00016,drink,127.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水19_00024,drink,127.1,drink,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水19_00032,drink,127.2,drink,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00000,drink,24.0,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00008,drink,24.0,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00016,drink,24.0,drink,drink,skel,
+A,喝水20_00024,drink,24.1,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00032,drink,24.2,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00040,drink,24.2,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00048,drink,24.2,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00056,drink,24.2,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00064,drink,24.2,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水20_00072,drink,24.2,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00000,drink,57.6,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00008,drink,57.7,drink,drink,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00016,drink,57.7,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00024,drink,57.7,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00032,drink,57.7,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00040,drink,57.7,drink,drink,rgb,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00048,drink,57.7,drink,drink,skel,先验否决 drink: 手部附近没有杯子/容器
+A,喝水21_00056,drink,57.7,drink,drink,skel,先验否决 drink: 手部附近没有杯子/容器
+A,other43_00000,other,110.8,other,other,rgb,
+A,other43_00008,other,110.8,other,other,rgb,
+A,other43_00016,other,110.8,other,other,rgb,
+A,other44_00000,other,129.3,other,other,rgb,
+A,other44_00008,other,129.3,other,other,rgb,
+A,other44_00016,other,129.3,other,other,rgb,
+A,other44_00024,other,129.3,other,other,rgb,
+A,other46_00000,other,115.4,other,other,rgb,
+A,other46_00008,other,115.4,other,other,rgb,
+A,other46_00016,other,115.5,other,other,rgb,
+A,other46_00024,other,115.5,other,other,rgb,
+A,other48_00000,other,129.2,other,other,rgb,
+A,other48_00008,other,129.3,other,other,rgb,
+A,other48_00016,other,129.3,other,other,rgb,
+A,other48_00024,other,129.3,other,other,rgb,
+A,other49_00000,other,115.5,other,other,rgb,
+A,other49_00008,other,115.5,other,other,rgb,
+A,other49_00016,other,115.5,other,other,rgb,
+A,other49_00024,other,115.4,other,other,rgb,
+A,other50_00000,other,129.3,other,other,rgb,
+A,other50_00008,other,129.3,other,other,rgb,
+A,other50_00016,other,129.3,other,other,rgb,
+A,other50_00024,other,129.2,other,other,rgb,
+A,other51_00000,other,115.4,other,other,rgb,
+A,other51_00008,other,115.4,other,other,rgb,
+A,other51_00016,other,115.4,other,other,rgb,
+A,other51_00024,other,115.5,other,other,rgb,
+A,other52_00000,other,115.5,other,other,rgb,
+A,other52_00008,other,115.5,other,other,rgb,
+A,other52_00016,other,115.6,other,other,rgb,
+A,other52_00024,other,115.6,other,other,rgb,
+A,other53_00000,other,115.5,other,other,rgb,
+A,other53_00008,other,115.5,other,other,rgb,
+A,other53_00016,other,115.5,other,other,rgb,
+A,other53_00024,other,115.5,other,other,rgb,
+A,other54_00000,other,115.5,other,other,rgb,
+A,other54_00008,other,115.5,other,other,rgb,
+A,other54_00016,other,115.5,other,other,rgb,
+A,other84_00000,other,67.5,other,other,rgb,
+A,other84_00008,other,67.8,other,other,rgb,
+A,other84_00016,other,68.0,other,other,rgb,
+A,other84_00024,other,68.1,other,other,rgb,
+A,other84_00032,other,68.2,other,other,skel,先验否决 pick_up: 脚边地面没有物体
+A,other84_00040,other,68.2,other,other,rgb,
+A,other84_00048,other,68.2,other,other,rgb,
+A,other84_00056,other,68.2,other,other,rgb,
+A,other84_00064,other,68.2,other,other,rgb,
+A,other84_00072,other,68.2,other,other,rgb,
+A,other84_00080,other,68.1,other,other,rgb,
+A,other85_00000,other,68.5,other,other,rgb,
+A,other85_00008,other,68.3,other,other,rgb,
+A,other85_00016,other,68.1,other,other,rgb,
+A,other85_00024,other,68.0,other,other,rgb,
+A,other85_00032,other,68.0,other,other,rgb,
+A,other85_00040,other,68.0,other,other,rgb,
+A,other85_00048,other,68.0,other,other,rgb,
+A,other85_00056,other,68.1,other,other,rgb,
+A,other85_00064,other,68.3,other,other,rgb,
+A,other85_00072,other,68.4,other,other,rgb,
+A,other85_00080,other,68.6,other,other,rgb,
+A,other87_00000,other,30.8,other,other,rgb,
+A,other87_00008,other,30.9,other,other,rgb,
+A,other87_00016,other,31.1,other,other,rgb,
+A,other87_00024,other,31.4,other,other,rgb,
+A,other87_00032,other,31.6,other,other,rgb,
+A,other87_00040,other,31.7,other,other,rgb,
+A,other87_00048,other,31.8,other,other,rgb,
+A,other87_00056,other,31.8,other,other,rgb,
+A,other87_00064,other,31.7,other,other,rgb,
+A,捡东西10_00000,pick_up,47.9,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西10_00008,pick_up,48.1,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西10_00016,pick_up,48.2,pick_up,pick_up,skel,先验否决 pick_up: 脚边地面没有物体
+A,捡东西10_00024,pick_up,48.2,pick_up,pick_up,skel,先验否决 pick_up: 脚边地面没有物体
+A,捡东西10_00032,pick_up,48.1,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西10_00040,pick_up,48.0,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00000,pick_up,43.0,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00008,pick_up,43.1,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00016,pick_up,43.0,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00024,pick_up,42.8,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00032,pick_up,42.6,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00040,pick_up,42.4,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西11_00048,pick_up,42.4,pick_up,pick_up,rgb,先验否决 pick_up: 脚边地面没有物体
+A,捡东西9_00000,pick_up,61.2,pick_up,pick_up,rgb,"先验通过 pick_up: pickup ok (物体距脚踝 0.78 躯干长, 贴地)"
+A,捡东西9_00008,pick_up,61.0,pick_up,pick_up,rgb,"先验通过 pick_up: pickup ok (物体距脚踝 0.79 躯干长, 贴地)"
+A,捡东西9_00016,pick_up,60.9,pick_up,pick_up,rgb,"先验通过 pick_up: pickup ok (物体距脚踝 0.75 躯干长, 贴地)"
+A,捡东西9_00024,pick_up,60.9,pick_up,pick_up,rgb,"先验通过 pick_up: pickup ok (物体距脚踝 0.73 躯干长, 贴地)"
+A,挥手20_00000,wave,113.2,wave,wave,skel,先验通过 wave: wave ok (30/32 帧手臂过躯干中线)
+A,挥手20_00008,wave,113.1,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手20_00016,wave,113.0,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手21_00000,wave,93.5,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手21_00008,wave,93.3,wave,other,skel,先验否决 pick_up: 脚边地面没有物体
+A,挥手22_00000,wave,154.1,wave,wave,skel,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手22_00008,wave,154.1,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手22_00016,wave,154.0,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手23_00000,wave,50.9,wave,wave,rgb,先验通过 wave: wave ok (16/32 帧手臂过躯干中线)
+A,挥手23_00008,wave,50.9,wave,wave,rgb,先验通过 wave: wave ok (22/32 帧手臂过躯干中线)
+A,挥手23_00016,wave,50.9,wave,wave,rgb,先验通过 wave: wave ok (29/32 帧手臂过躯干中线)
+A,挥手23_00024,wave,50.9,wave,wave,rgb,先验通过 wave: wave ok (26/32 帧手臂过躯干中线)
+A,挥手23_00032,wave,51.0,wave,wave,skel,先验通过 wave: wave ok (22/32 帧手臂过躯干中线)
+A,挥手24_00000,wave,33.9,wave,wave,skel,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手24_00008,wave,34.1,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手24_00016,wave,34.0,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手24_00024,wave,34.0,wave,wave,rgb,先验通过 wave: wave ok (32/32 帧手臂过躯干中线)
+A,挥手25_00000,wave,53.2,wave,wave,rgb,先验通过 wave: wave ok (10/13 帧手臂过躯干中线)
+A,挥手25_00008,wave,53.1,wave,wave,rgb,先验通过 wave: wave ok (17/20 帧手臂过躯干中线)
+A,挥手25_00016,wave,53.1,wave,wave,rgb,先验通过 wave: wave ok (21/22 帧手臂过躯干中线)
+A,挥手25_00024,wave,53.1,wave,wave,rgb,先验通过 wave: wave ok (21/21 帧手臂过躯干中线)
+A,挥手25_00032,wave,53.1,wave,wave,rgb,先验通过 wave: wave ok (20/20 帧手臂过躯干中线)
+B,other1@whole,other,115.4,other,other,rgb,
+B,other1@t0.0,other,115.4,other,other,rgb,
+B,other1@t0.5,other,115.5,other,other,rgb,
+B,other1@t1.0,other,115.5,other,other,rgb,
+B,other10@whole,other,51.9,other,other,rgb,
+B,other10@t0.0,other,51.9,other,other,rgb,
+B,other10@t0.5,other,51.8,other,other,rgb,
+B,other10@t1.0,other,51.9,other,other,rgb,
+B,other10@t1.5,other,51.9,other,other,rgb,
+B,other11@whole,other,129.3,other,other,rgb,
+B,other11@t0.0,other,129.3,other,other,rgb,
+B,other11@t0.5,other,129.4,other,other,rgb,
+B,other11@t1.0,other,129.3,other,other,rgb,
+B,other11@t1.4,other,129.3,other,other,rgb,
+B,other12@whole,other,68.4,other,other,rgb,
+B,other12@t0.0,other,68.4,other,other,rgb,
+B,other12@t0.5,other,68.4,other,other,rgb,
+B,other12@t1.0,other,68.4,other,other,rgb,
+B,other12@t1.4,other,68.4,other,other,rgb,
+B,other13@whole,other,115.5,other,other,rgb,
+B,other13@t0.0,other,115.6,other,other,rgb,
+B,other13@t0.5,other,115.5,other,other,rgb,
+B,other13@t1.0,other,115.4,other,other,rgb,
+B,other14@whole,other,26.9,other,other,rgb,
+B,other14@t0.0,other,26.9,other,other,rgb,
+B,other14@t0.5,other,26.9,other,other,rgb,
+B,other14@t1.0,other,26.9,other,other,rgb,
+B,other14@t1.4,other,26.9,other,other,rgb,
+B,other15@whole,other,110.9,other,other,rgb,
+B,other15@t0.0,other,111.1,other,other,rgb,
+B,other15@t0.5,other,110.9,other,other,rgb,
+B,other15@t1.0,other,110.7,other,other,rgb,
+B,other15@t1.5,other,110.7,other,other,rgb,
+B,other16@whole,other,51.8,other,other,rgb,
+B,other16@t0.0,other,51.8,other,other,rgb,
+B,other16@t0.5,other,51.9,other,other,rgb,
+B,other16@t1.0,other,51.9,other,other,rgb,
+B,other16@t1.5,other,51.8,other,other,rgb,
+B,other17@whole,other,129.3,other,other,rgb,
+B,other17@t0.0,other,129.4,other,other,rgb,
+B,other17@t0.5,other,129.3,other,other,rgb,
+B,other17@t1.0,other,129.3,other,other,rgb,
+B,other17@t1.4,other,129.3,other,other,rgb,
+B,other18@whole,other,68.4,other,other,rgb,
+B,other18@t0.0,other,68.4,other,other,rgb,
+B,other18@t0.5,other,68.4,other,other,rgb,
+B,other18@t1.0,other,68.4,other,other,rgb,
+B,other18@t1.4,other,68.4,other,other,rgb,
+B,other2@whole,other,26.9,other,other,rgb,
+B,other2@t0.0,other,26.9,other,other,rgb,
+B,other2@t0.5,other,26.9,other,other,rgb,
+B,other2@t1.0,other,26.9,other,other,rgb,
+B,other2@t1.4,other,26.9,other,other,rgb,
+B,other20@whole,other,26.9,other,other,rgb,
+B,other20@t0.0,other,26.9,other,other,rgb,
+B,other20@t0.5,other,26.9,other,other,rgb,
+B,other20@t1.0,other,26.9,other,other,rgb,
+B,other20@t1.4,other,26.9,other,other,rgb,
+B,other21@whole,other,110.9,other,other,rgb,
+B,other21@t0.0,other,110.8,other,other,rgb,
+B,other21@t0.5,other,110.9,other,other,rgb,
+B,other21@t1.0,other,111.0,other,other,rgb,
+B,other21@t1.5,other,111.0,other,other,rgb,
+B,other22@whole,other,51.9,other,other,rgb,
+B,other22@t0.0,other,51.9,other,other,rgb,
+B,other22@t0.5,other,51.9,other,other,rgb,
+B,other22@t1.0,other,51.9,other,other,rgb,
+B,other22@t1.5,other,51.9,other,other,rgb,
+B,other23@whole,other,129.3,other,other,rgb,
+B,other23@t0.0,other,129.3,other,other,rgb,
+B,other23@t0.5,other,129.3,other,other,rgb,
+B,other23@t1.0,other,129.3,other,other,rgb,
+B,other23@t1.4,other,129.4,other,other,rgb,
+B,other24@whole,other,68.4,other,other,rgb,
+B,other24@t0.0,other,68.4,other,other,rgb,
+B,other24@t0.5,other,68.4,other,other,rgb,
+B,other24@t1.0,other,68.4,other,other,rgb,
+B,other24@t1.4,other,68.5,other,other,rgb,
+B,other25@whole,other,115.4,other,other,rgb,
+B,other25@t0.0,other,115.3,other,other,rgb,
+B,other25@t0.5,other,115.4,other,other,rgb,
+B,other25@t1.0,other,115.4,other,other,rgb,
+B,other26@whole,other,26.9,other,other,rgb,
+B,other26@t0.0,other,26.9,other,other,rgb,
+B,other26@t0.5,other,26.9,other,other,rgb,
+B,other26@t1.0,other,27.0,other,other,rgb,
+B,other26@t1.4,other,27.0,other,other,rgb,
+B,other27@whole,other,111.3,other,other,rgb,
+B,other27@t0.0,other,111.2,other,other,rgb,
+B,other27@t0.5,other,111.2,other,other,rgb,
+B,other27@t1.0,other,111.3,other,other,rgb,
+B,other27@t1.5,other,111.3,other,other,rgb,
+B,other29@whole,other,129.3,other,other,rgb,
+B,other29@t0.0,other,129.3,other,other,rgb,
+B,other29@t0.5,other,129.4,other,other,rgb,
+B,other29@t1.0,other,129.4,other,other,rgb,
+B,other29@t1.4,other,129.4,other,other,rgb,
+B,other3@whole,other,110.8,other,other,rgb,
+B,other3@t0.0,other,110.7,other,other,rgb,
+B,other3@t0.5,other,110.8,other,other,rgb,
+B,other3@t1.0,other,110.8,other,other,rgb,
+B,other3@t1.5,other,110.8,other,other,rgb,
+B,other30@whole,other,68.4,other,other,rgb,
+B,other30@t0.0,other,68.4,other,other,rgb,
+B,other30@t0.5,other,68.4,other,other,rgb,
+B,other30@t1.0,other,68.4,other,other,rgb,
+B,other30@t1.4,other,68.4,other,other,rgb,
+B,other31@whole,other,115.5,other,other,rgb,
+B,other31@t0.0,other,115.5,other,other,rgb,
+B,other31@t0.5,other,115.5,other,other,rgb,
+B,other31@t1.0,other,115.5,other,other,rgb,
+B,other32@whole,other,27.0,other,other,rgb,
+B,other32@t0.0,other,27.0,other,other,rgb,
+B,other32@t0.5,other,27.0,other,other,rgb,
+B,other32@t1.0,other,26.9,other,other,rgb,
+B,other32@t1.4,other,26.9,other,other,rgb,
+B,other33@whole,other,111.7,other,other,rgb,
+B,other33@t0.0,other,111.6,other,other,rgb,
+B,other33@t0.5,other,111.6,other,other,rgb,
+B,other33@t1.0,other,111.7,other,other,rgb,
+B,other33@t1.5,other,111.8,other,other,rgb,
+B,other34@whole,other,129.3,other,other,rgb,
+B,other34@t0.0,other,129.4,other,other,rgb,
+B,other34@t0.5,other,129.4,other,other,rgb,
+B,other34@t1.0,other,129.3,other,other,rgb,
+B,other34@t1.4,other,129.3,other,other,rgb,
+B,other35@whole,other,68.4,other,other,rgb,
+B,other35@t0.0,other,68.4,other,other,rgb,
+B,other35@t0.5,other,68.4,other,other,rgb,
+B,other35@t1.0,other,68.4,other,other,rgb,
+B,other35@t1.4,other,68.4,other,other,rgb,
+B,other36@whole,other,115.5,other,other,rgb,
+B,other36@t0.0,other,115.5,other,other,rgb,
+B,other36@t0.5,other,115.5,other,other,rgb,
+B,other36@t1.0,other,115.5,other,other,rgb,
+B,other37@whole,other,26.9,other,other,rgb,
+B,other37@t0.0,other,27.0,other,other,rgb,
+B,other37@t0.5,other,26.9,other,other,rgb,
+B,other37@t1.0,other,26.9,other,other,rgb,
+B,other37@t1.4,other,26.9,other,other,rgb,
+B,other38@whole,other,111.2,other,other,rgb,
+B,other38@t0.0,other,112.0,other,other,rgb,
+B,other38@t0.5,other,111.3,other,other,rgb,
+B,other38@t1.0,other,110.8,other,other,rgb,
+B,other38@t1.5,other,110.8,other,other,rgb,
+B,other39@whole,other,129.3,other,other,rgb,
+B,other39@t0.0,other,129.4,other,other,rgb,
+B,other39@t0.5,other,129.3,other,other,rgb,
+B,other39@t1.0,other,129.3,other,other,rgb,
+B,other39@t1.4,other,129.3,other,other,rgb,
+B,other4@whole,other,51.8,other,other,rgb,
+B,other4@t0.0,other,51.8,other,other,rgb,
+B,other4@t0.5,other,51.8,other,other,rgb,
+B,other4@t1.0,other,51.8,other,other,rgb,
+B,other4@t1.5,other,51.9,other,other,rgb,
+B,other40@whole,other,68.3,other,other,rgb,
+B,other40@t0.0,other,68.3,other,other,rgb,
+B,other40@t0.5,other,68.3,other,other,rgb,
+B,other40@t1.0,other,68.3,other,other,rgb,
+B,other40@t1.4,other,68.3,other,other,rgb,
+B,other41@whole,other,115.5,other,other,rgb,
+B,other41@t0.0,other,115.5,other,other,rgb,
+B,other41@t0.5,other,115.5,other,other,rgb,
+B,other41@t1.0,other,115.5,other,other,rgb,
+B,other43@whole,other,110.8,other,other,rgb,
+B,other43@t0.0,other,110.8,other,other,rgb,
+B,other43@t0.5,other,110.7,other,other,rgb,
+B,other43@t1.0,other,110.8,other,other,rgb,
+B,other43@t1.5,other,110.8,other,other,rgb,
+B,other44@whole,other,129.3,other,other,rgb,
+B,other44@t0.0,other,129.3,other,other,rgb,
+B,other44@t0.5,other,129.2,other,other,rgb,
+B,other44@t1.0,other,129.3,other,other,rgb,
+B,other44@t1.4,other,129.3,other,other,rgb,
+B,other46@whole,other,115.4,other,other,rgb,
+B,other46@t0.0,other,115.4,other,other,rgb,
+B,other46@t0.5,other,115.4,other,other,rgb,
+B,other46@t1.0,other,115.5,other,other,rgb,
+B,other46@t1.5,other,115.5,other,other,rgb,
+B,other48@whole,other,129.2,other,other,rgb,
+B,other48@t0.0,other,129.2,other,other,rgb,
+B,other48@t0.5,other,129.3,other,other,rgb,
+B,other48@t1.0,other,129.3,other,other,rgb,
+B,other48@t1.4,other,129.3,other,other,rgb,
+B,other49@whole,other,115.4,other,other,rgb,
+B,other49@t0.0,other,115.5,other,other,rgb,
+B,other49@t0.5,other,115.5,other,other,rgb,
+B,other49@t1.0,other,115.4,other,other,rgb,
+B,other5@whole,other,129.3,other,other,rgb,
+B,other5@t0.0,other,129.3,other,other,rgb,
+B,other5@t0.5,other,129.3,other,other,rgb,
+B,other5@t1.0,other,129.4,other,other,rgb,
+B,other5@t1.4,other,129.3,other,other,rgb,
+B,other50@whole,other,129.3,other,other,rgb,
+B,other50@t0.0,other,129.3,other,other,rgb,
+B,other50@t0.5,other,129.3,other,other,rgb,
+B,other50@t1.0,other,129.3,other,other,rgb,
+B,other51@whole,other,115.4,other,other,rgb,
+B,other51@t0.0,other,115.4,other,other,rgb,
+B,other51@t0.5,other,115.4,other,other,rgb,
+B,other51@t1.0,other,115.5,other,other,rgb,
+B,other52@whole,other,115.5,other,other,rgb,
+B,other52@t0.0,other,115.5,other,other,rgb,
+B,other52@t0.5,other,115.5,other,other,rgb,
+B,other52@t1.0,other,115.6,other,other,rgb,
+B,other53@whole,other,115.5,other,other,rgb,
+B,other53@t0.0,other,115.5,other,other,rgb,
+B,other53@t0.5,other,115.5,other,other,rgb,
+B,other53@t1.0,other,115.5,other,other,rgb,
+B,other54@whole,other,115.5,other,other,rgb,
+B,other54@t0.0,other,115.5,other,other,rgb,
+B,other54@t0.5,other,115.5,other,other,rgb,
+B,other54@t1.0,other,115.5,other,other,rgb,
+B,other6@whole,other,68.4,other,other,rgb,
+B,other6@t0.0,other,68.4,other,other,rgb,
+B,other6@t0.5,other,68.4,other,other,rgb,
+B,other6@t1.0,other,68.4,other,other,rgb,
+B,other6@t1.4,other,68.4,other,other,rgb,
+B,other7@whole,other,115.5,other,other,rgb,
+B,other7@t0.0,other,115.5,other,other,rgb,
+B,other7@t0.5,other,115.5,other,other,rgb,
+B,other7@t1.0,other,115.5,other,other,rgb,
+B,other72@whole,other,41.8,other,other,rgb,
+B,other72@t0.0,other,41.8,other,other,rgb,
+B,other72@t0.5,other,41.7,other,other,rgb,
+B,other72@t1.0,other,41.7,other,other,rgb,
+B,other72@t1.4,other,41.7,other,other,rgb,
+B,other72@t1.9,other,41.7,other,other,rgb,
+B,other72@t2.4,other,41.7,other,other,rgb,
+B,other72@t2.9,other,41.8,other,other,rgb,
+B,other72@t3.4,other,41.7,other,other,rgb,
+B,other72@t3.8,other,41.7,other,other,rgb,
+B,other72@t4.3,other,41.7,other,other,rgb,
+B,other72@t4.8,other,41.8,other,other,rgb,
+B,other72@t5.3,other,41.9,other,other,rgb,
+B,other73@whole,other,42.0,other,other,rgb,置信度 0.57 < 启动阈值 0.65，直接判为other
+B,other73@t0.0,other,42.3,other,other,rgb,
+B,other73@t0.5,other,42.3,other,other,rgb,
+B,other73@t1.0,other,42.2,other,other,rgb,
+B,other73@t1.4,other,42.0,other,other,rgb,
+B,other73@t1.9,other,41.9,other,other,rgb,
+B,other73@t2.4,other,41.7,other,other,skel,先验否决 shake_hands: 没有两个人骨架的手部交互
+B,other74@whole,other,41.4,chase,chase,rgb,
+B,other74@t0.0,other,41.7,other,other,rgb,
+B,other74@t0.5,other,41.7,other,other,rgb,
+B,other74@t1.0,other,41.6,other,other,rgb,
+B,other74@t1.4,other,41.6,other,other,rgb,
+B,other74@t1.9,other,41.5,other,other,rgb,
+B,other74@t2.4,other,41.4,other,other,rgb,
+B,other74@t2.9,other,41.4,other,other,rgb,
+B,other74@t3.4,other,41.4,other,other,rgb,
+B,other74@t3.8,other,41.4,other,other,skel,
+B,other74@t4.3,other,41.3,other,other,rgb,
+B,other75@whole,other,65.9,other,other,rgb,
+B,other75@t0.0,other,65.5,other,other,rgb,
+B,other75@t0.5,other,65.9,other,other,rgb,
+B,other75@t1.0,other,66.2,other,other,rgb,
+B,other75@t1.4,other,66.4,other,other,rgb,
+B,other75@t1.9,other,66.4,other,other,rgb,
+B,other76@whole,other,63.0,chase,chase,rgb,
+B,other76@t0.0,other,62.9,other,other,rgb,
+B,other76@t0.5,other,62.8,other,other,rgb,
+B,other76@t1.0,other,62.8,other,other,skel,
+B,other76@t1.4,other,63.0,other,other,rgb,
+B,other76@t1.9,other,63.1,other,other,rgb,
+B,other76@t2.4,other,63.2,other,other,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 8/8 帧)"
+B,other76@t2.9,other,63.2,other,other,skel,先验否决 pick_up: 脚边地面没有物体
+B,other76@t3.4,other,63.1,other,other,rgb,
+B,other76@t3.8,other,63.0,other,other,rgb,
+B,other77@whole,other,63.1,other,other,rgb,置信度 0.58 < 启动阈值 0.65，直接判为other
+B,other77@t0.0,other,63.4,other,other,rgb,
+B,other77@t0.5,other,63.3,other,other,rgb,
+B,other77@t1.0,other,63.1,other,other,rgb,
+B,other77@t1.4,other,63.0,other,other,rgb,
+B,other77@t1.9,other,62.9,other,other,rgb,
+B,other77@t2.4,other,63.0,other,other,skel,
+B,other77@t2.9,other,63.1,other,other,rgb,
+B,other77@t3.4,other,63.1,other,other,rgb,
+B,other77@t3.8,other,63.1,other,other,rgb,
+B,other77@t4.3,other,63.0,other,other,rgb,
+B,other77@t4.8,other,62.9,other,other,rgb,
+B,other78@whole,other,35.0,chase,chase,rgb,
+B,other78@t0.0,other,35.0,other,other,rgb,置信度 0.47 < 启动阈值 0.65，直接判为other
+B,other78@t0.5,other,35.0,other,other,rgb,
+B,other78@t1.0,other,35.1,other,other,rgb,
+B,other78@t1.4,other,35.1,other,other,rgb,
+B,other78@t1.9,other,34.9,other,other,rgb,
+B,other78@t2.4,other,34.7,other,other,rgb,
+B,other78@t2.9,other,34.8,other,other,rgb,
+B,other78@t3.4,other,34.9,other,other,rgb,
+B,other78@t3.8,other,35.0,other,other,rgb,
+B,other78@t4.3,other,35.2,other,other,rgb,
+B,other78@t4.8,other,35.2,other,other,rgb,
+B,other79@whole,other,35.4,chase,chase,rgb,
+B,other79@t0.0,other,35.5,other,other,rgb,
+B,other79@t0.5,other,35.5,other,other,rgb,
+B,other79@t1.0,other,35.4,other,other,rgb,
+B,other79@t1.4,other,35.3,other,other,rgb,
+B,other79@t1.9,other,35.4,other,other,rgb,
+B,other8@whole,other,26.9,other,other,rgb,
+B,other8@t0.0,other,26.9,other,other,rgb,
+B,other8@t0.5,other,26.9,other,other,rgb,
+B,other8@t1.0,other,26.9,other,other,rgb,
+B,other8@t1.4,other,26.9,other,other,rgb,
+B,other80@whole,other,125.9,other,other,rgb,置信度 0.58 < 启动阈值 0.65，直接判为other
+B,other80@t0.0,other,126.3,other,other,rgb,
+B,other80@t0.5,other,126.2,other,other,rgb,
+B,other80@t1.0,other,126.1,other,other,rgb,
+B,other80@t1.4,other,125.9,other,other,rgb,
+B,other80@t1.9,other,125.6,other,other,rgb,
+B,other80@t2.4,other,125.3,other,other,rgb,
+B,other81@whole,other,113.3,other,other,rgb,
+B,other81@t0.0,other,113.4,other,other,rgb,
+B,other81@t0.5,other,113.4,other,other,rgb,
+B,other81@t1.0,other,113.2,other,other,rgb,
+B,other81@t1.4,other,113.1,other,other,rgb,
+B,other82@whole,other,113.2,other,other,rgb,置信度 0.53 < 启动阈值 0.65，直接判为other
+B,other82@t0.0,other,113.1,other,other,rgb,
+B,other82@t0.5,other,113.0,other,other,rgb,
+B,other82@t1.0,other,113.1,other,other,rgb,
+B,other82@t1.4,other,113.1,other,other,rgb,
+B,other82@t1.9,other,113.2,other,other,rgb,
+B,other82@t2.4,other,113.3,other,chase,skel,
+B,other83@whole,other,67.7,other,other,rgb,置信度 0.64 < 启动阈值 0.65，直接判为other
+B,other83@t0.0,other,67.6,other,other,skel,
+B,other83@t0.5,other,67.5,other,other,rgb,
+B,other83@t1.0,other,67.4,other,other,rgb,
+B,other83@t1.4,other,67.3,other,other,rgb,
+B,other83@t1.9,other,67.4,other,other,rgb,
+B,other83@t2.4,other,67.5,other,other,rgb,
+B,other83@t2.9,other,67.6,other,other,rgb,
+B,other83@t3.4,other,67.8,other,other,rgb,
+B,other83@t3.8,other,68.1,other,other,rgb,
+B,other83@t4.3,other,68.4,other,other,rgb,
+B,other84@whole,other,67.9,other,other,rgb,置信度 0.44 < 启动阈值 0.65，直接判为other
+B,other84@t0.0,other,67.4,other,other,rgb,
+B,other84@t0.5,other,67.8,other,other,rgb,
+B,other84@t1.0,other,68.1,other,other,rgb,
+B,other84@t1.4,other,68.2,other,other,rgb,
+B,other84@t1.9,other,68.2,other,other,rgb,
+B,other84@t2.4,other,68.2,other,other,rgb,
+B,other84@t2.9,other,68.2,other,other,rgb,
+B,other84@t3.4,other,68.1,other,other,rgb,
+B,other85@whole,other,68.3,other,other,rgb,
+B,other85@t0.0,other,68.6,other,other,rgb,
+B,other85@t0.5,other,68.3,other,other,rgb,
+B,other85@t1.0,other,68.0,other,other,rgb,
+B,other85@t1.4,other,68.0,other,other,rgb,
+B,other85@t1.9,other,68.0,other,other,rgb,
+B,other85@t2.4,other,68.1,other,other,rgb,
+B,other85@t2.9,other,68.4,other,other,rgb,
+B,other85@t3.4,other,68.6,other,other,rgb,
+B,other87@whole,other,31.4,chase,chase,rgb,
+B,other87@t0.0,other,30.7,other,other,rgb,置信度 0.54 < 启动阈值 0.65，直接判为other
+B,other87@t0.5,other,30.9,other,other,rgb,
+B,other87@t1.0,other,31.3,other,other,rgb,
+B,other87@t1.4,other,31.6,other,other,rgb,
+B,other87@t1.9,other,31.8,other,other,rgb,
+B,other87@t2.4,other,31.8,other,other,rgb,
+B,other87@t2.9,other,31.7,other,other,rgb,
+B,other9@whole,other,110.9,other,other,rgb,
+B,other9@t0.0,other,110.8,other,other,rgb,
+B,other9@t0.5,other,110.8,other,other,rgb,
+B,other9@t1.0,other,110.9,other,other,rgb,
+B,other9@t1.5,other,111.0,other,other,rgb,
+C,挥手22@whole,wave,154.1,wave,wave,rgb,先验通过 wave: wave ok (54/54 帧手臂过躯干中线)
+C,挥手22@t0.0,wave,154.1,wave,wave,rgb,先验通过 wave: wave ok (25/25 帧手臂过躯干中线)
+C,挥手22@t0.5,wave,154.1,wave,wave,skel,先验通过 wave: wave ok (25/25 帧手臂过躯干中线)
+C,挥手22@t1.0,wave,154.0,wave,wave,rgb,先验通过 wave: wave ok (25/25 帧手臂过躯干中线)
+C,捡东西2@whole,pick_up,150.1,pick_up,other,rgb,先验否决 pick_up: 脚边地面没有物体
+C,捡东西2@t0.0,pick_up,150.1,pick_up,other,skel,先验否决 pick_up: 脚边地面没有物体
+C,捡东西2@t0.5,pick_up,150.3,pick_up,other,skel,先验否决 pick_up: 脚边地面没有物体
+C,捡东西2@t1.0,pick_up,150.3,pick_up,other,skel,先验否决 pick_up: 脚边地面没有物体
+C,捡东西2@t1.4,pick_up,150.1,pick_up,other,skel,先验否决 pick_up: 脚边地面没有物体
+C,追逐16@whole,chase,135.3,chase,chase,skel,
+C,追逐16@t0.0,chase,135.3,chase,chase,skel,
+C,追逐16@t0.5,chase,135.0,chase,chase,skel,
+C,喝水16@whole,drink,139.1,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+C,喝水16@t0.0,drink,139.2,drink,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+C,喝水16@t0.5,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+C,喝水16@t1.0,drink,138.9,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+C,喝水16@t1.4,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+C,喝水16@t1.9,drink,139.0,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_083425_drinking_water_0002@whole,other,136.5,other,other,rgb,
+P,20261012_083425_drinking_water_0002@t0.0,other,135.8,other,other,rgb,置信度 0.59 < 启动阈值 0.65，直接判为other
+P,20261012_083425_drinking_water_0002@t0.5,other,138.1,other,other,rgb,
+P,20261012_083425_drinking_water_0002@t1.0,other,138.4,other,other,rgb,
+P,20261012_083425_drinking_water_0002@t1.5,other,136.1,other,other,rgb,
+P,20261012_091406_drinking_water_0005@whole,other,147.3,other,other,rgb,
+P,20261012_091406_drinking_water_0005@t0.0,other,147.5,other,other,rgb,
+P,20261012_091406_drinking_water_0005@t0.5,other,147.5,other,other,rgb,
+P,20261012_091406_drinking_water_0005@t1.0,other,147.3,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 16/21 帧)"
+P,20261012_091406_drinking_water_0005@t1.4,other,147.1,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_091756_drinking_water_0009@whole,other,147.4,other,other,rgb,
+P,20261012_091756_drinking_water_0009@t0.0,other,147.2,other,other,rgb,
+P,20261012_091756_drinking_water_0009@t0.5,other,147.5,other,other,rgb,置信度 0.63 < 启动阈值 0.65，直接判为other
+P,20261012_091756_drinking_water_0009@t1.0,other,147.5,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_091756_drinking_water_0009@t1.5,other,147.5,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 23/26 帧)"
+P,20261012_091922_drinking_water_0010@whole,other,145.7,other,other,rgb,
+P,20261012_091922_drinking_water_0010@t0.0,other,145.9,other,other,rgb,
+P,20261012_091922_drinking_water_0010@t0.5,other,145.5,other,other,rgb,
+P,20261012_091922_drinking_water_0010@t1.0,other,145.5,other,other,rgb,
+P,20261012_091927_drinking_water_0011@whole,other,147.3,other,other,rgb,
+P,20261012_091927_drinking_water_0011@t0.0,other,147.2,other,other,rgb,
+P,20261012_091927_drinking_water_0011@t0.5,other,147.4,other,other,rgb,
+P,20261012_091927_drinking_water_0011@t1.0,other,147.4,other,other,rgb,
+P,20261012_091930_drinking_water_0012@whole,other,148.0,other,chase,skel,
+P,20261012_091930_drinking_water_0012@t0.0,other,148.1,other,fall,skel,
+P,20261012_091930_drinking_water_0012@t0.5,other,148.0,other,throw,skel,
+P,20261012_091930_drinking_water_0012@t1.0,other,147.9,other,other,rgb,
+P,20261012_092839_drinking_water_0014@whole,other,147.0,other,other,rgb,
+P,20261012_092839_drinking_water_0014@t0.0,other,147.1,other,other,rgb,
+P,20261012_092839_drinking_water_0014@t0.5,other,147.1,other,other,rgb,
+P,20261012_092839_drinking_water_0014@t1.0,other,146.8,other,other,rgb,
+P,20261012_093135_drinking_water_0016@whole,other,146.1,other,wave,skel,先验通过 wave: wave ok (47/85 帧手臂过躯干中线)
+P,20261012_093135_drinking_water_0016@t0.0,other,146.4,other,wave,skel,先验通过 wave: wave ok (14/30 帧手臂过躯干中线)
+P,20261012_093135_drinking_water_0016@t0.5,other,146.3,other,wave,skel,先验通过 wave: wave ok (23/30 帧手臂过躯干中线)
+P,20261012_093135_drinking_water_0016@t1.0,other,146.2,other,wave,skel,先验通过 wave: wave ok (21/30 帧手臂过躯干中线)
+P,20261012_093135_drinking_water_0016@t1.5,other,146.0,other,other,rgb,
+P,20261012_094227_drinking_water_0018@whole,other,147.2,other,other,rgb,置信度 0.49 < 启动阈值 0.65，直接判为other
+P,20261012_094227_drinking_water_0018@t0.0,other,147.1,other,other,rgb,置信度 0.59 < 启动阈值 0.65，直接判为other
+P,20261012_094227_drinking_water_0018@t0.5,other,147.3,other,other,rgb,置信度 0.56 < 启动阈值 0.65，直接判为other
+P,20261012_094227_drinking_water_0018@t1.0,other,147.3,other,other,rgb,
+P,20261012_094227_drinking_water_0018@t1.6,other,147.3,other,other,rgb,
+P,20261012_094245_drinking_water_0019@whole,other,146.3,other,other,rgb,
+P,20261012_094245_drinking_water_0019@t0.0,other,146.0,other,other,rgb,
+P,20261012_094245_drinking_water_0019@t0.5,other,146.4,other,other,rgb,
+P,20261012_094245_drinking_water_0019@t1.0,other,146.4,other,other,rgb,
+P,20261012_094245_drinking_water_0019@t1.5,other,146.3,other,other,rgb,
+P,20261012_094436_drinking_water_0021@whole,other,146.3,other,other,rgb,
+P,20261012_094436_drinking_water_0021@t0.0,other,146.2,other,other,rgb,
+P,20261012_094436_drinking_water_0021@t0.5,other,146.3,other,other,skel,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_094436_drinking_water_0021@t1.0,other,146.4,other,other,rgb,
+P,20261012_094525_drinking_water_0022@whole,other,145.9,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t0.0,other,145.7,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t0.5,other,145.5,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t1.0,other,145.6,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t1.5,other,145.8,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t2.0,other,146.0,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t2.5,other,146.1,other,other,rgb,
+P,20261012_094525_drinking_water_0022@t3.0,other,146.4,other,other,rgb,
+P,20261012_094714_drinking_water_0024@whole,other,145.6,other,other,rgb,
+P,20261012_094714_drinking_water_0024@t0.0,other,145.9,other,chase,skel,
+P,20261012_094714_drinking_water_0024@t0.5,other,145.6,other,other,rgb,
+P,20261012_094714_drinking_water_0024@t1.0,other,145.6,other,other,rgb,
+P,20261012_094714_drinking_water_0024@t1.5,other,145.4,other,other,rgb,
+P,20261012_094721_drinking_water_0025@whole,other,145.0,other,chase,skel,
+P,20261012_094721_drinking_water_0025@t0.0,other,144.8,other,chase,skel,
+P,20261012_094721_drinking_water_0025@t0.5,other,144.9,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.97 躯干长, 贴地)"
+P,20261012_094721_drinking_water_0025@t1.0,other,145.3,other,other,rgb,
+P,20261012_094817_drinking_water_0028@whole,other,143.1,other,chase,skel,
+P,20261012_094817_drinking_water_0028@t0.0,other,143.0,other,chase,skel,
+P,20261012_094817_drinking_water_0028@t0.5,other,143.1,other,chase,skel,
+P,20261012_094817_drinking_water_0028@t1.0,other,143.3,other,chase,skel,
+P,20261012_094823_drinking_water_0029@whole,other,144.0,other,chase,skel,
+P,20261012_094823_drinking_water_0029@t0.0,other,144.0,other,chase,skel,
+P,20261012_094823_drinking_water_0029@t0.5,other,144.1,other,chase,skel,
+P,20261012_094900_drinking_water_0032@whole,other,140.7,other,chase,skel,
+P,20261012_094900_drinking_water_0032@t0.0,other,140.5,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 15/30 帧)"
+P,20261012_094900_drinking_water_0032@t0.5,other,140.5,other,chase,skel,
+P,20261012_094900_drinking_water_0032@t1.0,other,140.9,other,throw,skel,
+P,20261012_094943_drinking_water_0035@whole,other,136.5,other,chase,skel,
+P,20261012_094943_drinking_water_0035@t0.0,other,137.8,other,chase,skel,
+P,20261012_094943_drinking_water_0035@t0.5,other,137.3,other,chase,skel,
+P,20261012_094943_drinking_water_0035@t1.0,other,135.7,other,chase,skel,
+P,20261012_095430_drinking_water_0045@whole,other,145.5,other,chase,skel,
+P,20261012_095430_drinking_water_0045@t0.0,other,145.2,other,chase,skel,
+P,20261012_095430_drinking_water_0045@t0.5,other,145.4,other,throw,skel,
+P,20261012_095430_drinking_water_0045@t1.0,other,145.9,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 28/28 帧)"
+P,20261012_095642_drinking_water_0050@whole,other,142.4,other,other,rgb,
+P,20261012_095642_drinking_water_0050@t0.0,other,142.2,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 16/25 帧)"
+P,20261012_095642_drinking_water_0050@t0.5,other,141.8,other,other,rgb,
+P,20261012_095642_drinking_water_0050@t1.0,other,141.7,other,chase,skel,
+P,20261012_095642_drinking_water_0050@t1.4,other,142.7,other,chase,skel,
+P,20261012_095735_drinking_water_0053@whole,other,142.1,other,chase,skel,
+P,20261012_095735_drinking_water_0053@t0.0,other,142.0,other,other,rgb,置信度 0.52 < 启动阈值 0.65，直接判为other
+P,20261012_095735_drinking_water_0053@t0.5,other,142.1,other,other,rgb,置信度 0.62 < 启动阈值 0.65，直接判为other
+P,20261012_095735_drinking_water_0053@t1.0,other,142.3,other,chase,skel,
+P,20261012_095756_drinking_water_0054@whole,other,142.5,other,chase,skel,
+P,20261012_095756_drinking_water_0054@t0.0,other,142.6,other,chase,skel,
+P,20261012_095756_drinking_water_0054@t0.5,other,142.7,other,chase,skel,
+P,20261012_095756_drinking_water_0054@t1.0,other,142.3,other,other,rgb,
+P,20261012_095808_drinking_water_0055@whole,other,143.1,other,other,rgb,
+P,20261012_095808_drinking_water_0055@t0.0,other,143.1,other,chase,skel,
+P,20261012_095808_drinking_water_0055@t0.5,other,143.4,other,other,rgb,
+P,20261012_095808_drinking_water_0055@t1.0,other,143.6,other,chase,skel,
+P,20261012_095808_drinking_water_0055@t1.5,other,143.3,other,chase,skel,
+P,20261012_095808_drinking_water_0055@t2.0,other,142.9,other,other,rgb,置信度 0.52 < 启动阈值 0.65，直接判为other
+P,20261012_095808_drinking_water_0055@t2.5,other,142.8,other,other,rgb,置信度 0.44 < 启动阈值 0.65，直接判为other
+P,20261012_095808_drinking_water_0055@t3.0,other,142.7,other,other,rgb,置信度 0.64 < 启动阈值 0.65，直接判为other
+P,20261012_095832_drinking_water_0056@whole,other,143.0,other,other,rgb,
+P,20261012_095832_drinking_water_0056@t0.0,other,144.3,other,other,rgb,
+P,20261012_095832_drinking_water_0056@t0.5,other,144.4,other,other,rgb,
+P,20261012_095832_drinking_water_0056@t1.0,other,143.6,other,other,rgb,
+P,20261012_095832_drinking_water_0056@t1.5,other,141.7,other,other,rgb,
+P,20261012_095918_drinking_water_0060@whole,other,144.7,other,chase,skel,
+P,20261012_095918_drinking_water_0060@t0.0,other,144.6,other,chase,skel,
+P,20261012_095918_drinking_water_0060@t0.5,other,144.7,other,chase,skel,
+P,20261012_095918_drinking_water_0060@t1.0,other,144.8,other,chase,skel,
+P,20261012_095923_drinking_water_0061@whole,other,143.4,other,other,rgb,置信度 0.54 < 启动阈值 0.65，直接判为other
+P,20261012_095923_drinking_water_0061@t0.0,other,143.3,other,chase,skel,
+P,20261012_095923_drinking_water_0061@t0.5,other,143.3,other,other,rgb,置信度 0.45 < 启动阈值 0.65，直接判为other
+P,20261012_095923_drinking_water_0061@t1.0,other,143.4,other,other,rgb,置信度 0.49 < 启动阈值 0.65，直接判为other
+P,20261012_100139_drinking_water_0070@whole,other,143.8,other,other,rgb,
+P,20261012_100139_drinking_water_0070@t0.0,other,143.9,other,other,rgb,
+P,20261012_100139_drinking_water_0070@t0.5,other,144.2,other,other,rgb,
+P,20261012_100139_drinking_water_0070@t1.0,other,143.7,other,other,rgb,
+P,20261012_100217_drinking_water_0071@whole,other,145.5,other,other,rgb,置信度 0.60 < 启动阈值 0.65，直接判为other
+P,20261012_100217_drinking_water_0071@t0.0,other,145.5,other,throw,skel,
+P,20261012_100217_drinking_water_0071@t0.5,other,145.4,other,throw,skel,
+P,20261012_100217_drinking_water_0071@t1.0,other,145.6,other,other,rgb,置信度 0.45 < 启动阈值 0.65，直接判为other
+P,20261012_100217_drinking_water_0071@t1.5,other,145.8,other,other,rgb,置信度 0.51 < 启动阈值 0.65，直接判为other
+P,20261012_100217_drinking_water_0071@t2.0,other,145.7,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 15/16 帧)"
+P,20261012_100217_drinking_water_0071@t2.5,other,145.5,other,other,rgb,
+P,20261012_100217_drinking_water_0071@t3.0,other,145.4,other,other,rgb,
+P,20261012_100217_drinking_water_0071@t3.5,other,145.3,other,other,rgb,
+P,20261012_100217_drinking_water_0071@t4.0,other,145.3,other,other,rgb,
+P,20261012_100401_drinking_water_0075@whole,other,146.1,other,other,rgb,
+P,20261012_100401_drinking_water_0075@t0.0,other,146.3,other,other,rgb,
+P,20261012_100401_drinking_water_0075@t0.5,other,145.7,other,other,rgb,
+P,20261012_100424_drinking_water_0077@whole,other,147.3,other,other,rgb,
+P,20261012_100424_drinking_water_0077@t0.0,other,146.8,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100424_drinking_water_0077@t0.5,other,146.9,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 9/27 帧)"
+P,20261012_100424_drinking_water_0077@t1.0,other,147.3,other,other,rgb,
+P,20261012_100424_drinking_water_0077@t1.6,other,147.8,other,other,rgb,
+P,20261012_100450_drinking_water_0079@whole,other,147.6,other,other,rgb,
+P,20261012_100450_drinking_water_0079@t0.0,other,147.7,other,other,rgb,
+P,20261012_100450_drinking_water_0079@t0.5,other,147.7,other,other,rgb,
+P,20261012_100450_drinking_water_0079@t1.0,other,147.5,other,other,rgb,
+P,20261012_100521_drinking_water_0080@whole,other,147.4,other,other,rgb,置信度 0.57 < 启动阈值 0.65，直接判为other
+P,20261012_100521_drinking_water_0080@t0.0,other,147.4,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 25/30 帧)"
+P,20261012_100521_drinking_water_0080@t0.5,other,147.3,other,other,rgb,置信度 0.53 < 启动阈值 0.65，直接判为other
+P,20261012_100538_drinking_water_0081@whole,other,147.4,other,other,rgb,
+P,20261012_100538_drinking_water_0081@t0.0,other,147.3,other,other,rgb,
+P,20261012_100538_drinking_water_0081@t0.5,other,147.4,other,other,rgb,
+P,20261012_100538_drinking_water_0081@t1.0,other,147.5,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 22/30 帧)"
+P,20261012_100538_drinking_water_0081@t1.5,other,147.6,other,other,rgb,
+P,20261012_100540_drinking_water_0082@whole,other,147.3,other,other,rgb,
+P,20261012_100540_drinking_water_0082@t0.0,other,147.2,other,chase,skel,
+P,20261012_100540_drinking_water_0082@t0.5,other,147.3,other,other,rgb,
+P,20261012_100540_drinking_water_0082@t1.0,other,147.3,other,other,rgb,
+P,20261012_100540_drinking_water_0082@t1.5,other,147.3,other,other,rgb,
+P,20261012_100653_drinking_water_0083@whole,other,147.0,other,other,rgb,
+P,20261012_100653_drinking_water_0083@t0.0,other,147.3,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100653_drinking_water_0083@t0.5,other,147.0,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.95 躯干长, 贴地)"
+P,20261012_100653_drinking_water_0083@t1.0,other,146.6,other,other,rgb,
+P,20261012_100755_drinking_water_0085@whole,other,144.6,other,other,rgb,
+P,20261012_100755_drinking_water_0085@t0.0,other,143.9,other,chase,skel,
+P,20261012_100755_drinking_water_0085@t0.5,other,144.0,other,other,rgb,
+P,20261012_100755_drinking_water_0085@t1.0,other,144.8,other,other,rgb,
+P,20261012_100755_drinking_water_0085@t1.4,other,145.3,other,other,rgb,
+P,20261012_101141_drinking_water_0098@whole,other,141.0,other,other,rgb,
+P,20261012_101141_drinking_water_0098@t0.0,other,141.1,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 10/30 帧)"
+P,20261012_101141_drinking_water_0098@t0.5,other,140.9,other,other,rgb,置信度 0.65 < 启动阈值 0.65，直接判为other
+P,20261012_101141_drinking_water_0098@t1.0,other,140.9,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101150_drinking_water_0099@whole,other,141.2,other,wave,skel,先验通过 wave: wave ok (21/60 帧手臂过躯干中线)
+P,20261012_101150_drinking_water_0099@t0.0,other,141.0,other,chase,skel,
+P,20261012_101150_drinking_water_0099@t0.5,other,141.0,other,other,rgb,置信度 0.56 < 启动阈值 0.65，直接判为other
+P,20261012_101150_drinking_water_0099@t1.0,other,141.4,other,chase,skel,
+P,20261012_101212_drinking_water_0101@whole,other,141.7,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101212_drinking_water_0101@t0.0,other,141.8,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101212_drinking_water_0101@t0.5,other,142.0,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101212_drinking_water_0101@t1.0,other,141.9,other,chase,skel,
+P,20261012_101212_drinking_water_0101@t1.5,other,141.7,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101212_drinking_water_0101@t2.0,other,141.6,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101212_drinking_water_0101@t2.5,other,141.6,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101308_drinking_water_0104@whole,other,142.3,other,chase,skel,
+P,20261012_101308_drinking_water_0104@t0.0,other,142.5,drink,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101308_drinking_water_0104@t0.5,other,142.4,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101308_drinking_water_0104@t1.0,other,142.2,other,chase,skel,
+P,20261012_101332_drinking_water_0106@whole,other,147.0,other,chase,skel,
+P,20261012_101332_drinking_water_0106@t0.0,other,146.8,other,chase,skel,
+P,20261012_101332_drinking_water_0106@t0.5,other,146.9,other,chase,skel,
+P,20261012_101332_drinking_water_0106@t1.0,other,147.2,other,other,rgb,置信度 0.54 < 启动阈值 0.65，直接判为other
+P,20261012_101431_drinking_water_0110@whole,other,146.7,other,other,rgb,
+P,20261012_101431_drinking_water_0110@t0.0,other,146.4,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.56 躯干长, 贴地)"
+P,20261012_101431_drinking_water_0110@t0.5,other,146.6,other,throw,skel,
+P,20261012_101431_drinking_water_0110@t1.0,other,146.8,other,chase,skel,
+P,20261012_101431_drinking_water_0110@t1.4,other,146.9,other,other,rgb,
+P,20261012_101431_drinking_water_0110@t1.9,other,146.9,other,other,rgb,
+P,20261012_101431_drinking_water_0110@t2.4,other,146.9,other,other,rgb,
+P,20261012_101507_drinking_water_0112@whole,other,147.3,other,other,rgb,
+P,20261012_101507_drinking_water_0112@t0.0,other,147.2,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 7/23 帧)"
+P,20261012_101507_drinking_water_0112@t0.5,other,147.2,other,other,rgb,
+P,20261012_101507_drinking_water_0112@t1.0,other,147.1,other,other,rgb,
+P,20261012_101507_drinking_water_0112@t1.6,other,147.4,other,other,rgb,
+P,20261012_101507_drinking_water_0112@t2.1,other,147.4,other,other,rgb,
+P,20261012_101507_drinking_water_0112@t2.6,other,147.4,other,other,rgb,
+P,20261012_101538_drinking_water_0114@whole,other,149.0,other,other,rgb,
+P,20261012_101538_drinking_water_0114@t0.0,other,149.1,other,other,rgb,
+P,20261012_101538_drinking_water_0114@t0.5,other,149.1,other,other,rgb,
+P,20261012_101538_drinking_water_0114@t1.0,other,149.0,other,chase,skel,
+P,20261012_101609_drinking_water_0116@whole,other,149.1,other,other,rgb,
+P,20261012_101609_drinking_water_0116@t0.0,other,148.9,other,other,rgb,
+P,20261012_101609_drinking_water_0116@t0.5,other,149.0,other,other,rgb,
+P,20261012_101609_drinking_water_0116@t1.0,other,149.0,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 20/29 帧)"
+P,20261012_101609_drinking_water_0116@t1.4,other,149.1,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 28/29 帧)"
+P,20261012_101609_drinking_water_0116@t1.9,other,149.2,other,other,rgb,
+P,20261012_101609_drinking_water_0116@t2.4,other,149.3,other,other,rgb,
+P,20261012_101609_drinking_water_0116@t2.9,other,149.3,other,other,rgb,
+P,20261012_101609_drinking_water_0116@t3.4,other,149.3,other,other,rgb,
+P,20261012_101624_drinking_water_0117@whole,other,149.3,other,other,rgb,置信度 0.62 < 启动阈值 0.65，直接判为other
+P,20261012_101624_drinking_water_0117@t0.0,other,149.1,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 11/27 帧)"
+P,20261012_101624_drinking_water_0117@t0.5,other,148.9,other,other,rgb,置信度 0.45 < 启动阈值 0.65，直接判为other
+P,20261012_101624_drinking_water_0117@t1.0,other,149.1,other,other,rgb,置信度 0.43 < 启动阈值 0.65，直接判为other
+P,20261012_101624_drinking_water_0117@t1.6,other,149.3,other,other,rgb,置信度 0.59 < 启动阈值 0.65，直接判为other
+P,20261012_101624_drinking_water_0117@t2.1,other,149.4,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101624_drinking_water_0117@t2.6,other,149.5,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101624_drinking_water_0117@t3.1,other,149.5,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101624_drinking_water_0117@t3.6,other,149.5,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_101642_drinking_water_0118@whole,other,149.1,other,other,rgb,置信度 0.64 < 启动阈值 0.65，直接判为other
+P,20261012_101642_drinking_water_0118@t0.0,other,149.1,other,chase,skel,
+P,20261012_101642_drinking_water_0118@t0.5,other,149.1,other,chase,skel,
+P,20261012_101642_drinking_water_0118@t1.0,other,148.9,other,chase,skel,
+P,20261012_101642_drinking_water_0118@t1.5,other,148.9,other,other,rgb,置信度 0.64 < 启动阈值 0.65，直接判为other
+P,20261012_101642_drinking_water_0118@t2.0,other,149.1,other,other,rgb,置信度 0.65 < 启动阈值 0.65，直接判为other
+P,20261012_101642_drinking_water_0118@t2.5,other,149.2,other,chase,skel,
+P,20261012_101642_drinking_water_0118@t3.0,other,149.2,other,other,rgb,置信度 0.65 < 启动阈值 0.65，直接判为other
+P,20261012_101642_drinking_water_0118@t3.5,other,149.2,other,other,rgb,
+P,20261012_101642_drinking_water_0118@t4.0,other,149.2,other,other,rgb,
+P,20261012_101745_drinking_water_0119@whole,other,148.2,other,other,rgb,置信度 0.58 < 启动阈值 0.65，直接判为other
+P,20261012_101745_drinking_water_0119@t0.0,other,148.3,other,other,rgb,
+P,20261012_101745_drinking_water_0119@t0.5,other,148.3,other,other,rgb,置信度 0.54 < 启动阈值 0.65，直接判为other
+P,20261012_101745_drinking_water_0119@t1.0,other,148.2,other,other,rgb,置信度 0.59 < 启动阈值 0.65，直接判为other
+P,20261012_102035_drinking_water_0122@whole,other,146.3,other,chase,skel,
+P,20261012_102035_drinking_water_0122@t0.0,other,145.9,other,throw,skel,
+P,20261012_102035_drinking_water_0122@t0.5,other,146.1,other,chase,skel,
+P,20261012_102035_drinking_water_0122@t1.0,other,146.6,other,chase,skel,
+P,20261012_102035_drinking_water_0122@t1.6,other,146.6,other,chase,skel,
+P,20261012_102128_drinking_water_0126@whole,other,147.1,other,chase,skel,
+P,20261012_102128_drinking_water_0126@t0.0,other,146.6,other,chase,skel,
+P,20261012_102128_drinking_water_0126@t0.5,other,146.9,other,chase,skel,
+P,20261012_102128_drinking_water_0126@t1.0,other,147.6,other,chase,skel,
+P,20261012_102131_drinking_water_0127@whole,other,147.5,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_102131_drinking_water_0127@t0.0,other,147.3,other,chase,skel,
+P,20261012_102131_drinking_water_0127@t0.5,other,147.2,other,other,rgb,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_102131_drinking_water_0127@t1.0,other,147.5,other,chase,skel,
+P,20261012_102131_drinking_water_0127@t1.5,other,147.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_102131_drinking_water_0127@t2.0,other,147.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_102443_drinking_water_0137@whole,other,147.6,other,other,rgb,
+P,20261012_102443_drinking_water_0137@t0.0,other,147.7,other,chase,skel,
+P,20261012_102443_drinking_water_0137@t0.5,other,147.7,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_102443_drinking_water_0137@t1.0,other,147.5,other,other,rgb,
+P,20261012_102628_drinking_water_0144@whole,other,147.9,other,wave,skel,先验通过 wave: wave ok (45/116 帧手臂过躯干中线)
+P,20261012_102628_drinking_water_0144@t0.0,other,148.0,other,other,rgb,置信度 0.40 < 启动阈值 0.65，直接判为other
+P,20261012_102628_drinking_water_0144@t0.5,other,147.9,other,wave,skel,先验通过 wave: wave ok (20/30 帧手臂过躯干中线)
+P,20261012_102628_drinking_water_0144@t1.0,other,147.9,other,chase,skel,
+P,20261012_102628_drinking_water_0144@t1.5,other,147.9,other,wave,skel,先验通过 wave: wave ok (11/30 帧手臂过躯干中线)
+P,20261012_102628_drinking_water_0144@t2.0,other,147.9,other,other,skel,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_102628_drinking_water_0144@t2.5,other,147.9,other,other,skel,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_102926_drinking_water_0150@whole,other,148.5,other,other,rgb,
+P,20261012_102926_drinking_water_0150@t0.0,other,148.7,other,other,rgb,
+P,20261012_102926_drinking_water_0150@t0.5,other,148.6,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.96 躯干长, 贴地)"
+P,20261012_102926_drinking_water_0150@t1.0,other,148.4,other,other,rgb,
+P,20261012_102926_drinking_water_0150@t1.5,other,148.3,other,other,rgb,
+P,20261012_103130_drinking_water_0151@whole,other,149.2,other,other,rgb,
+P,20261012_103130_drinking_water_0151@t0.0,other,149.2,other,other,rgb,
+P,20261012_103130_drinking_water_0151@t0.5,other,149.1,other,other,rgb,
+P,20261012_103130_drinking_water_0151@t1.0,other,149.1,other,other,rgb,
+P,20261012_103137_drinking_water_0152@whole,other,149.2,other,other,rgb,
+P,20261012_103137_drinking_water_0152@t0.0,other,149.2,other,other,rgb,
+P,20261012_103137_drinking_water_0152@t0.5,other,149.1,other,other,rgb,
+P,20261012_103137_drinking_water_0152@t1.0,other,149.0,other,other,rgb,
+P,20261012_103137_drinking_water_0152@t1.4,other,149.2,other,other,rgb,
+P,20261012_103137_drinking_water_0152@t1.9,other,149.4,other,other,rgb,
+P,20261012_103151_drinking_water_0153@whole,other,149.1,other,other,rgb,
+P,20261012_103151_drinking_water_0153@t0.0,other,149.1,other,throw,skel,
+P,20261012_103151_drinking_water_0153@t0.5,other,149.0,other,other,rgb,
+P,20261012_103151_drinking_water_0153@t1.0,other,149.0,other,other,rgb,
+P,20261012_103200_drinking_water_0154@whole,other,149.2,other,other,rgb,
+P,20261012_103200_drinking_water_0154@t0.0,other,149.3,other,other,rgb,
+P,20261012_103200_drinking_water_0154@t0.5,other,149.1,other,other,rgb,
+P,20261012_103200_drinking_water_0154@t1.0,other,149.1,other,other,rgb,
+P,20261012_103200_drinking_water_0154@t1.5,other,149.2,other,other,rgb,
+P,20261012_103200_drinking_water_0154@t2.0,other,149.3,other,other,rgb,
+P,20261012_103200_drinking_water_0154@t2.5,other,149.3,other,other,rgb,
+P,20261012_103212_drinking_water_0155@whole,other,149.4,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t0.0,other,149.4,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t0.5,other,149.2,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t1.0,other,149.2,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t1.5,other,149.4,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t2.0,other,149.5,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t2.5,other,149.6,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t3.0,other,149.6,other,other,rgb,
+P,20261012_103212_drinking_water_0155@t3.5,other,149.6,other,other,rgb,
+P,20261012_103353_drinking_water_0158@whole,other,145.7,other,other,rgb,置信度 0.46 < 启动阈值 0.65，直接判为other
+P,20261012_103353_drinking_water_0158@t0.0,other,145.8,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_103353_drinking_water_0158@t0.5,other,145.7,other,other,rgb,置信度 0.55 < 启动阈值 0.65，直接判为other
+P,20261012_103353_drinking_water_0158@t1.0,other,145.7,other,chase,skel,
+P,20261012_103613_drinking_water_0160@whole,other,148.1,other,other,rgb,
+P,20261012_103613_drinking_water_0160@t0.0,other,148.2,other,chase,skel,
+P,20261012_103613_drinking_water_0160@t0.5,other,148.1,other,other,skel,先验否决 pick_up: 脚边地面没有物体
+P,20261012_104045_drinking_water_0163@whole,other,148.3,other,other,rgb,
+P,20261012_104045_drinking_water_0163@t0.0,other,148.3,other,other,rgb,
+P,20261012_104045_drinking_water_0163@t0.5,other,148.3,other,chase,skel,
+P,20261012_104045_drinking_water_0163@t1.0,other,148.4,other,other,rgb,
+P,20261012_104051_drinking_water_0164@whole,other,147.4,other,other,rgb,
+P,20261012_104051_drinking_water_0164@t0.0,other,147.7,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.93 躯干长, 贴地)"
+P,20261012_104051_drinking_water_0164@t0.5,other,147.5,other,other,rgb,
+P,20261012_104051_drinking_water_0164@t1.0,other,147.3,other,other,rgb,
+P,20261012_104051_drinking_water_0164@t1.5,other,147.2,other,other,rgb,
+P,20261012_104130_drinking_water_0166@whole,other,147.7,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_104130_drinking_water_0166@t0.0,other,147.9,other,other,rgb,
+P,20261012_104130_drinking_water_0166@t0.5,other,147.7,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_104130_drinking_water_0166@t1.0,other,147.5,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_083334_picking_up_object_0001@whole,other,136.8,other,other,rgb,置信度 0.51 < 启动阈值 0.65，直接判为other
+P,20261012_083334_picking_up_object_0001@t0.0,other,138.0,other,other,rgb,置信度 0.53 < 启动阈值 0.65，直接判为other
+P,20261012_083334_picking_up_object_0001@t0.5,other,135.9,other,other,rgb,置信度 0.63 < 启动阈值 0.65，直接判为other
+P,20261012_083334_picking_up_object_0001@t1.0,other,135.5,other,other,rgb,置信度 0.60 < 启动阈值 0.65，直接判为other
+P,20261012_091013_picking_up_object_0003@whole,other,147.7,other,other,rgb,
+P,20261012_091013_picking_up_object_0003@t0.0,other,147.7,other,other,rgb,
+P,20261012_091013_picking_up_object_0003@t0.5,other,147.8,other,wave,skel,先验通过 wave: wave ok (11/15 帧手臂过躯干中线)
+P,20261012_091013_picking_up_object_0003@t1.0,other,147.7,other,other,rgb,
+P,20261012_091020_picking_up_object_0004@whole,other,147.6,other,other,skel,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_091020_picking_up_object_0004@t0.0,other,147.6,other,other,rgb,
+P,20261012_091020_picking_up_object_0004@t0.5,other,147.6,other,other,skel,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_091020_picking_up_object_0004@t1.0,other,147.6,other,other,skel,先验否决 wave: 没有骨架的手臂过躯干中部
+P,20261012_091608_picking_up_object_0008@whole,other,144.9,other,other,rgb,
+P,20261012_091608_picking_up_object_0008@t0.0,other,146.3,other,other,rgb,
+P,20261012_091608_picking_up_object_0008@t0.5,other,144.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_091608_picking_up_object_0008@t1.0,other,143.8,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 11/26 帧)"
+P,20261012_091608_picking_up_object_0008@t1.5,other,144.1,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 11/26 帧)"
+P,20261012_092821_picking_up_object_0013@whole,other,147.6,other,other,rgb,
+P,20261012_092821_picking_up_object_0013@t0.0,other,147.7,other,other,rgb,
+P,20261012_092821_picking_up_object_0013@t0.5,other,147.4,other,other,rgb,
+P,20261012_092821_picking_up_object_0013@t1.0,other,147.4,other,other,rgb,
+P,20261012_094005_picking_up_object_0017@whole,other,145.1,other,other,rgb,
+P,20261012_094005_picking_up_object_0017@t0.0,other,145.1,other,other,rgb,
+P,20261012_094005_picking_up_object_0017@t0.5,other,145.1,other,other,rgb,
+P,20261012_094005_picking_up_object_0017@t1.0,other,145.0,other,other,rgb,
+P,20261012_095139_picking_up_object_0040@whole,other,144.7,other,other,rgb,
+P,20261012_095139_picking_up_object_0040@t0.0,other,144.8,other,other,rgb,
+P,20261012_095139_picking_up_object_0040@t0.5,other,144.9,other,other,rgb,
+P,20261012_095139_picking_up_object_0040@t1.0,other,144.7,other,other,rgb,置信度 0.61 < 启动阈值 0.65，直接判为other
+P,20261012_095504_picking_up_object_0047@whole,other,144.3,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t0.0,other,144.0,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t0.5,other,144.0,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t1.0,other,144.1,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t1.6,other,144.3,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t2.1,other,144.5,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t2.6,other,144.5,other,other,rgb,
+P,20261012_095504_picking_up_object_0047@t3.1,other,144.5,other,other,rgb,
+P,20261012_095546_picking_up_object_0049@whole,other,147.4,other,other,rgb,
+P,20261012_095546_picking_up_object_0049@t0.0,other,147.2,other,other,rgb,
+P,20261012_095546_picking_up_object_0049@t0.5,other,147.4,other,other,rgb,
+P,20261012_095546_picking_up_object_0049@t1.0,other,147.6,other,chase,skel,
+P,20261012_100837_picking_up_object_0088@whole,other,143.9,other,other,rgb,
+P,20261012_100837_picking_up_object_0088@t0.0,other,143.6,other,other,rgb,
+P,20261012_100837_picking_up_object_0088@t0.5,other,143.7,other,other,rgb,
+P,20261012_100837_picking_up_object_0088@t1.0,other,144.2,other,throw,skel,
+P,20261012_104127_picking_up_object_0165@whole,other,148.2,other,other,rgb,
+P,20261012_104127_picking_up_object_0165@t0.0,other,148.1,other,chase,skel,
+P,20261012_104127_picking_up_object_0165@t0.5,other,148.0,other,chase,skel,
+P,20261012_104127_picking_up_object_0165@t1.0,other,148.2,other,other,rgb,
+P,20261012_104127_picking_up_object_0165@t1.5,other,148.3,other,throw,skel,
+P,20261012_104149_picking_up_object_0167@whole,other,147.0,other,other,rgb,
+P,20261012_104149_picking_up_object_0167@t0.0,other,147.2,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_104149_picking_up_object_0167@t0.5,other,147.2,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.89 躯干长, 贴地)"
+P,20261012_104149_picking_up_object_0167@t1.0,other,147.0,other,other,rgb,
+P,20261012_104149_picking_up_object_0167@t1.5,other,146.8,other,other,rgb,
+P,20261012_091409_waving_0006@whole,other,146.5,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_091409_waving_0006@t0.0,other,146.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_091409_waving_0006@t0.5,other,146.4,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_091409_waving_0006@t1.0,other,146.3,other,other,rgb,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_094619_waving_0023@whole,other,147.9,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.98 躯干长, 贴地)"
+P,20261012_094619_waving_0023@t0.0,other,147.9,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.98 躯干长, 贴地)"
+P,20261012_094619_waving_0023@t0.5,other,147.8,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.99 躯干长, 贴地)"
+P,20261012_094619_waving_0023@t1.0,other,147.9,other,pick_up,skel,"先验通过 pick_up: pickup ok (物体距脚踝 0.92 躯干长, 贴地)"
+P,20261012_095647_waving_0051@whole,other,143.0,other,other,rgb,
+P,20261012_095647_waving_0051@t0.0,other,142.7,other,throw,skel,
+P,20261012_095647_waving_0051@t0.5,other,142.9,other,other,rgb,
+P,20261012_095647_waving_0051@t1.0,other,143.2,other,chase,skel,
+P,20261012_095850_waving_0058@whole,other,140.0,other,other,rgb,
+P,20261012_095850_waving_0058@t0.0,other,140.7,other,other,rgb,
+P,20261012_095850_waving_0058@t0.5,other,140.0,other,other,rgb,
+P,20261012_095850_waving_0058@t1.0,other,139.3,other,other,rgb,
+P,20261012_100001_waving_0063@whole,other,145.0,other,chase,skel,
+P,20261012_100001_waving_0063@t0.0,other,144.9,other,chase,skel,
+P,20261012_100001_waving_0063@t0.5,other,145.1,other,chase,skel,
+P,20261012_100001_waving_0063@t1.0,other,145.1,other,chase,skel,
+P,20261012_100004_waving_0064@whole,other,144.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100004_waving_0064@t0.0,other,144.6,other,other,skel,先验否决 shake_hands: 没有两个人骨架的手部交互
+P,20261012_100004_waving_0064@t0.5,other,144.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100004_waving_0064@t1.0,other,144.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100004_waving_0064@t1.5,other,144.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100004_waving_0064@t2.0,other,144.6,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100028_waving_0066@whole,other,145.1,other,chase,skel,
+P,20261012_100028_waving_0066@t0.0,other,145.3,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100028_waving_0066@t0.5,other,145.1,other,other,skel,先验否决 drink: 手部附近没有杯子/容器
+P,20261012_100028_waving_0066@t1.0,other,144.8,other,chase,skel,
+P,20261012_100040_waving_0067@whole,other,142.4,other,other,rgb,
+P,20261012_100040_waving_0067@t0.0,other,141.0,other,other,rgb,
+P,20261012_100040_waving_0067@t0.5,other,142.5,other,throw,skel,
+P,20261012_100040_waving_0067@t1.0,other,143.2,other,other,rgb,
+P,20261012_100040_waving_0067@t1.5,other,143.3,other,other,rgb,
+P,20261012_100047_waving_0068@whole,other,144.2,other,other,rgb,
+P,20261012_100047_waving_0068@t0.0,other,144.1,other,chase,skel,
+P,20261012_100047_waving_0068@t0.5,other,144.2,other,other,rgb,
+P,20261012_100047_waving_0068@t1.0,other,144.2,other,other,rgb,
+P,20261012_100047_waving_0068@t1.5,other,144.2,other,other,rgb,
+P,20261012_100422_waving_0076@whole,other,146.5,other,other,rgb,
+P,20261012_100422_waving_0076@t0.0,other,146.4,other,other,rgb,置信度 0.56 < 启动阈值 0.65，直接判为other
+P,20261012_100422_waving_0076@t0.5,other,146.3,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 10/30 帧)"
+P,20261012_100422_waving_0076@t1.0,other,146.7,other,chase,skel,
+P,20261012_101019_waving_0093@whole,other,145.4,other,chase,skel,
+P,20261012_101019_waving_0093@t0.0,other,145.2,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 19/30 帧)"
+P,20261012_101019_waving_0093@t0.5,other,145.2,other,chase,skel,
+P,20261012_101019_waving_0093@t1.0,other,145.6,other,chase,skel,
+P,20261012_101047_waving_0094@whole,other,141.9,other,throw,skel,
+P,20261012_101047_waving_0094@t0.0,other,142.2,other,throw,skel,
+P,20261012_101047_waving_0094@t0.5,other,141.7,other,throw,skel,
+P,20261012_101047_waving_0094@t1.0,other,141.6,other,chase,skel,
+P,20261012_101047_waving_0094@t1.5,other,141.7,other,throw,skel,
+P,20261012_101130_waving_0097@whole,other,141.5,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 18/54 帧)"
+P,20261012_101130_waving_0097@t0.0,other,141.5,other,throw,skel,
+P,20261012_101130_waving_0097@t0.5,other,141.6,other,other,rgb,置信度 0.64 < 启动阈值 0.65，直接判为other
+P,20261012_101422_waving_0109@whole,other,144.1,other,chase,skel,
+P,20261012_101422_waving_0109@t0.0,other,144.0,other,chase,skel,
+P,20261012_101422_waving_0109@t0.5,other,143.9,other,other,rgb,
+P,20261012_102056_waving_0124@whole,other,146.1,other,chase,skel,
+P,20261012_102056_waving_0124@t0.0,other,146.0,other,chase,skel,
+P,20261012_102056_waving_0124@t0.5,other,146.0,other,chase,skel,
+P,20261012_102056_waving_0124@t1.0,other,146.3,other,chase,skel,
+P,20261012_102548_waving_0141@whole,other,147.5,other,chase,skel,
+P,20261012_102548_waving_0141@t0.0,other,147.5,other,chase,skel,
+P,20261012_102548_waving_0141@t0.5,other,147.4,other,chase,skel,
+P,20261012_102548_waving_0141@t1.0,other,147.4,other,wave,rgb,先验通过 wave: wave ok (13/30 帧手臂过躯干中线)
+P,20261012_102606_waving_0143@whole,other,147.9,other,other,rgb,置信度 0.38 < 启动阈值 0.65，直接判为other
+P,20261012_102606_waving_0143@t0.0,other,148.0,other,chase,skel,
+P,20261012_102606_waving_0143@t0.5,other,148.0,other,other,rgb,置信度 0.56 < 启动阈值 0.65，直接判为other
+P,20261012_102606_waving_0143@t1.0,other,147.8,other,throw,skel,
+P,20261012_102753_waving_0148@whole,other,148.1,other,other,rgb,
+P,20261012_102753_waving_0148@t0.0,other,148.0,other,shake_hands,skel,"先验通过 shake_hands: shake ok (两人腕距 <0.8 躯干长, 16/30 帧)"
+P,20261012_102753_waving_0148@t0.5,other,148.0,other,other,rgb,
+P,20261012_102753_waving_0148@t1.0,other,148.3,other,other,rgb,
+P,20261012_102804_waving_0149@whole,other,148.6,other,other,rgb,
+P,20261012_102804_waving_0149@t0.0,other,148.7,other,other,rgb,
+P,20261012_102804_waving_0149@t0.5,other,148.6,other,other,rgb,
+P,20261012_104035_waving_0162@whole,other,148.9,other,other,rgb,
+P,20261012_104035_waving_0162@t0.0,other,148.5,other,other,rgb,
+P,20261012_104035_waving_0162@t0.5,other,148.7,other,other,rgb,
+P,20261012_104035_waving_0162@t1.0,other,148.9,other,other,rgb,
+P,20261012_104035_waving_0162@t1.5,other,149.1,other,other,rgb,

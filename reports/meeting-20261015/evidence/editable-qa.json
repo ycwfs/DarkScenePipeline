@@ -1,0 +1,74 @@
+{
+  "pptx_file": "暗光行为识别_方案与三部曲问题_20261015_可编辑.pptx",
+  "pptx_sha256": "b8de71e8d0923c538dc0ddc03f42c62e03f1221ffbf4558562321d929340ebb3",
+  "slides": [
+    {
+      "slide": 1,
+      "shapes": 33,
+      "text_objects": 16,
+      "photographs": 0,
+      "native_charts": 0,
+      "connectors": 15,
+      "notes_present": true
+    },
+    {
+      "slide": 2,
+      "shapes": 39,
+      "text_objects": 18,
+      "photographs": 0,
+      "native_charts": 0,
+      "connectors": 20,
+      "notes_present": true
+    },
+    {
+      "slide": 3,
+      "shapes": 19,
+      "text_objects": 12,
+      "photographs": 0,
+      "native_charts": 2,
+      "connectors": 1,
+      "notes_present": true
+    },
+    {
+      "slide": 4,
+      "shapes": 25,
+      "text_objects": 15,
+      "photographs": 4,
+      "native_charts": 0,
+      "connectors": 1,
+      "notes_present": true
+    },
+    {
+      "slide": 5,
+      "shapes": 24,
+      "text_objects": 17,
+      "photographs": 0,
+      "native_charts": 1,
+      "connectors": 1,
+      "notes_present": true
+    },
+    {
+      "slide": 6,
+      "shapes": 23,
+      "text_objects": 17,
+      "photographs": 0,
+      "native_charts": 1,
+      "connectors": 2,
+      "notes_present": true
+    }
+  ],
+  "native_chart_count": 4,
+  "embedded_excel_workbooks": 4,
+  "connector_node_links": 36,
+  "delivery_values_checked": true,
+  "edit_save_reopen": {
+    "text": true,
+    "shape_position": true,
+    "chart_data": true
+  },
+  "archive_integrity": "passed",
+  "libreoffice_pdf_export": "passed",
+  "visual_inspection": "All 6 rendered slides reviewed; no text or shape clipping. Both C/P brightness intervals are visible.",
+  "powerpoint_desktop_ui_test": "not run; checked with python-pptx roundtrip and LibreOffice rendering",
+  "source_data_scope": "Historical pn/840 records; not a new 720 package evaluation."
+}

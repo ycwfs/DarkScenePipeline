@@ -1,0 +1,540 @@
+{
+  "offline-batch": {
+    "exit_code": 0,
+    "source": "/audit/offline-input",
+    "session": {
+      "session": "offline-input/20261014_113224_1",
+      "mode": "offline",
+      "status": "finished",
+      "source": "/audit/offline-input",
+      "local_input": "/audit/offline-input",
+      "started_at": "2026-10-14 11:32:24",
+      "stopped_at": "2026-10-14 11:35:38",
+      "files_total": 4,
+      "files_ok": 4,
+      "files_failed": 0,
+      "output_video": [
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4"
+      ],
+      "events_json": [
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/喝水16/喝水16_events.json",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/喝水16/喝水16_events.json",
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/挥手22/挥手22_events.json",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/挥手22/挥手22_events.json",
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json",
+        "/audit/offline-batch/output/offline-input/20261014_113224_1/追逐16/追逐16_events.json",
+        "/audit/offline-batch/copy/offline-input/20261014_113224_1/追逐16/追逐16_events.json"
+      ],
+      "events_total": 11,
+      "label_counts": {
+        "Drinking water": 4,
+        "Waving": 2,
+        "Picking up object": 3,
+        "Chasing": 2
+      },
+      "clips": {
+        "session": "offline-input/20261014_113224_1",
+        "clips_saved": 4,
+        "clips_abandoned": 0,
+        "frames_dropped": 0,
+        "clips_forced": 0,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0
+      },
+      "clip_videos": [
+        [
+          "/audit/offline-batch/output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+          "/audit/offline-batch/copy/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4"
+        ],
+        [
+          "/audit/offline-batch/output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+          "/audit/offline-batch/copy/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4"
+        ],
+        [
+          "/audit/offline-batch/output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+          "/audit/offline-batch/copy/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4"
+        ],
+        [
+          "/audit/offline-batch/output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+          "/audit/offline-batch/copy/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4"
+        ]
+      ],
+      "stats": {
+        "frames": 245,
+        "seconds": 183.152,
+        "frames_written": 245,
+        "events": 11,
+        "wall_seconds": 193.13,
+        "fps": 1.34,
+        "files": 4
+      },
+      "items": [
+        {
+          "file": "/audit/offline-input/喝水16.mp4",
+          "stem": "喝水16",
+          "session": "offline-input/20261014_113224_1/喝水16",
+          "status": "finished",
+          "local_input": "/audit/offline-input/喝水16.mp4",
+          "clip_names": [
+            "0-3s-喝水"
+          ],
+          "started_at": "2026-10-14 11:32:25",
+          "stopped_at": "2026-10-14 11:33:10",
+          "output_video": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4"
+          ],
+          "events_json": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/喝水16/喝水16_events.json",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/喝水16/喝水16_events.json"
+          ],
+          "events_total": 4,
+          "label_counts": {
+            "Drinking water": 4
+          },
+          "clips": {
+            "session": "offline-input/20261014_113224_1/喝水16",
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "uploads_dropped": 0,
+            "stage_orphans_cleaned": 0
+          },
+          "clip_videos": [
+            [
+              "/audit/offline-batch/output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+              "/audit/offline-batch/copy/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4"
+            ]
+          ],
+          "stats": {
+            "frames": 75,
+            "seconds": 39.215,
+            "fps": 1.91,
+            "frames_written": 75,
+            "events": 4,
+            "gpus": 1,
+            "clips": {
+              "session": "offline-input/20261014_113224_1/喝水16",
+              "clips_saved": 1,
+              "clips_abandoned": 0,
+              "clips_forced": 0,
+              "frames_dropped": 0,
+              "uploads_dropped": 0,
+              "stage_orphans_cleaned": 0
+            },
+            "wall_seconds": 45.431
+          },
+          "config": {
+            "enhance": "retinexformer",
+            "sr": "bicubic_x2",
+            "sr_scale": 2,
+            "recognize": "behavior",
+            "gpu_ids": "0",
+            "reco_span_sec": 1.0,
+            "proc_max_side": 840
+          }
+        },
+        {
+          "file": "/audit/offline-input/挥手22.mp4",
+          "stem": "挥手22",
+          "session": "offline-input/20261014_113224_1/挥手22",
+          "status": "finished",
+          "local_input": "/audit/offline-input/挥手22.mp4",
+          "clip_names": [
+            "0-2s-挥手"
+          ],
+          "started_at": "2026-10-14 11:33:10",
+          "stopped_at": "2026-10-14 11:33:49",
+          "output_video": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4"
+          ],
+          "events_json": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/挥手22/挥手22_events.json",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/挥手22/挥手22_events.json"
+          ],
+          "events_total": 2,
+          "label_counts": {
+            "Waving": 2
+          },
+          "clips": {
+            "session": "offline-input/20261014_113224_1/挥手22",
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "uploads_dropped": 0,
+            "stage_orphans_cleaned": 0
+          },
+          "clip_videos": [
+            [
+              "/audit/offline-batch/output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+              "/audit/offline-batch/copy/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4"
+            ]
+          ],
+          "stats": {
+            "frames": 54,
+            "seconds": 38.117,
+            "fps": 1.42,
+            "frames_written": 54,
+            "events": 2,
+            "gpus": 1,
+            "clips": {
+              "session": "offline-input/20261014_113224_1/挥手22",
+              "clips_saved": 1,
+              "clips_abandoned": 0,
+              "clips_forced": 0,
+              "frames_dropped": 0,
+              "uploads_dropped": 0,
+              "stage_orphans_cleaned": 0
+            },
+            "wall_seconds": 39.311
+          },
+          "config": {
+            "enhance": "retinexformer",
+            "sr": "bicubic_x2",
+            "sr_scale": 2,
+            "recognize": "behavior",
+            "gpu_ids": "0",
+            "reco_span_sec": 1.0,
+            "proc_max_side": 840
+          }
+        },
+        {
+          "file": "/audit/offline-input/捡东西2.mp4",
+          "stem": "捡东西2",
+          "session": "offline-input/20261014_113224_1/捡东西2",
+          "status": "finished",
+          "local_input": "/audit/offline-input/捡东西2.mp4",
+          "clip_names": [
+            "0-3s-捡拾物品"
+          ],
+          "started_at": "2026-10-14 11:33:49",
+          "stopped_at": "2026-10-14 11:34:53",
+          "output_video": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4"
+          ],
+          "events_json": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json"
+          ],
+          "events_total": 3,
+          "label_counts": {
+            "Picking up object": 3
+          },
+          "clips": {
+            "session": "offline-input/20261014_113224_1/捡东西2",
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "uploads_dropped": 0,
+            "stage_orphans_cleaned": 0
+          },
+          "clip_videos": [
+            [
+              "/audit/offline-batch/output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+              "/audit/offline-batch/copy/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4"
+            ]
+          ],
+          "stats": {
+            "frames": 71,
+            "seconds": 61.862,
+            "fps": 1.15,
+            "frames_written": 71,
+            "events": 3,
+            "gpus": 1,
+            "clips": {
+              "session": "offline-input/20261014_113224_1/捡东西2",
+              "clips_saved": 1,
+              "clips_abandoned": 0,
+              "clips_forced": 0,
+              "frames_dropped": 0,
+              "uploads_dropped": 0,
+              "stage_orphans_cleaned": 0
+            },
+            "wall_seconds": 63.149
+          },
+          "config": {
+            "enhance": "retinexformer",
+            "sr": "bicubic_x2",
+            "sr_scale": 2,
+            "recognize": "behavior",
+            "gpu_ids": "0",
+            "reco_span_sec": 1.0,
+            "proc_max_side": 840
+          }
+        },
+        {
+          "file": "/audit/offline-input/追逐16.mp4",
+          "stem": "追逐16",
+          "session": "offline-input/20261014_113224_1/追逐16",
+          "status": "finished",
+          "local_input": "/audit/offline-input/追逐16.mp4",
+          "clip_names": [
+            "0-2s-追逐"
+          ],
+          "started_at": "2026-10-14 11:34:53",
+          "stopped_at": "2026-10-14 11:35:38",
+          "output_video": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4"
+          ],
+          "events_json": [
+            "/audit/offline-batch/output/offline-input/20261014_113224_1/追逐16/追逐16_events.json",
+            "/audit/offline-batch/copy/offline-input/20261014_113224_1/追逐16/追逐16_events.json"
+          ],
+          "events_total": 2,
+          "label_counts": {
+            "Chasing": 2
+          },
+          "clips": {
+            "session": "offline-input/20261014_113224_1/追逐16",
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "uploads_dropped": 0,
+            "stage_orphans_cleaned": 0
+          },
+          "clip_videos": [
+            [
+              "/audit/offline-batch/output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+              "/audit/offline-batch/copy/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4"
+            ]
+          ],
+          "stats": {
+            "frames": 45,
+            "seconds": 43.958,
+            "fps": 1.02,
+            "frames_written": 45,
+            "events": 2,
+            "gpus": 1,
+            "clips": {
+              "session": "offline-input/20261014_113224_1/追逐16",
+              "clips_saved": 1,
+              "clips_abandoned": 0,
+              "clips_forced": 0,
+              "frames_dropped": 0,
+              "uploads_dropped": 0,
+              "stage_orphans_cleaned": 0
+            },
+            "wall_seconds": 45.239
+          },
+          "config": {
+            "enhance": "retinexformer",
+            "sr": "bicubic_x2",
+            "sr_scale": 2,
+            "recognize": "behavior",
+            "gpu_ids": "0",
+            "reco_span_sec": 1.0,
+            "proc_max_side": 840
+          }
+        }
+      ],
+      "config": {
+        "enhance": "retinexformer",
+        "sr": "bicubic_x2",
+        "sr_scale": 2,
+        "recognize": "behavior",
+        "gpu_ids": "0",
+        "reco_span_sec": 1.0,
+        "proc_max_side": 840
+      }
+    },
+    "files": [
+      "session.json",
+      "container.log",
+      "command.json",
+      "output/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+      "output/offline-input/20261014_113224_1/挥手22/挥手22_events.json",
+      "output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.json",
+      "output/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+      "output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.json",
+      "output/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+      "output/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+      "output/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json",
+      "output/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+      "output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.json",
+      "output/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+      "output/offline-input/20261014_113224_1/追逐16/追逐16_events.json",
+      "output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.json",
+      "output/offline-input/20261014_113224_1/喝水16/喝水16_events.json",
+      "output/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+      "output/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4",
+      "copy/offline-input/20261014_113224_1/挥手22/挥手22-处理后.mp4",
+      "copy/offline-input/20261014_113224_1/挥手22/挥手22_events.json",
+      "copy/offline-input/20261014_113224_1/挥手22/0-2s-挥手.json",
+      "copy/offline-input/20261014_113224_1/挥手22/0-2s-挥手.mp4",
+      "copy/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.json",
+      "copy/offline-input/20261014_113224_1/捡东西2/捡东西2-处理后.mp4",
+      "copy/offline-input/20261014_113224_1/捡东西2/0-3s-捡拾物品.mp4",
+      "copy/offline-input/20261014_113224_1/捡东西2/捡东西2_events.json",
+      "copy/offline-input/20261014_113224_1/追逐16/追逐16-处理后.mp4",
+      "copy/offline-input/20261014_113224_1/追逐16/0-2s-追逐.json",
+      "copy/offline-input/20261014_113224_1/追逐16/0-2s-追逐.mp4",
+      "copy/offline-input/20261014_113224_1/追逐16/追逐16_events.json",
+      "copy/offline-input/20261014_113224_1/喝水16/0-3s-喝水.json",
+      "copy/offline-input/20261014_113224_1/喝水16/喝水16_events.json",
+      "copy/offline-input/20261014_113224_1/喝水16/0-3s-喝水.mp4",
+      "copy/offline-input/20261014_113224_1/喝水16/喝水16-处理后.mp4"
+    ]
+  },
+  "offline-dark": {
+    "exit_code": 0,
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/追逐19.mp4",
+    "session": {
+      "session": "追逐19/20261014_113541_1",
+      "mode": "offline",
+      "status": "finished",
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/追逐19.mp4",
+      "local_input": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/追逐19.mp4",
+      "started_at": "2026-10-14 11:35:43",
+      "stopped_at": "2026-10-14 11:36:26",
+      "output_video": [
+        "/audit/offline-dark/output/追逐19/20261014_113541_1/追逐19-处理后.mp4",
+        "/audit/offline-dark/copy/追逐19/20261014_113541_1/追逐19-处理后.mp4"
+      ],
+      "events_json": [
+        "/audit/offline-dark/output/追逐19/20261014_113541_1/追逐19_events.json",
+        "/audit/offline-dark/copy/追逐19/20261014_113541_1/追逐19_events.json"
+      ],
+      "events_total": 4,
+      "label_counts": {
+        "Chasing": 4
+      },
+      "clips": {
+        "session": "追逐19/20261014_113541_1",
+        "clips_saved": 1,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0
+      },
+      "clip_videos": [
+        [
+          "/audit/offline-dark/output/追逐19/20261014_113541_1/0-3s-追逐.mp4",
+          "/audit/offline-dark/copy/追逐19/20261014_113541_1/0-3s-追逐.mp4"
+        ]
+      ],
+      "stats": {
+        "frames": 74,
+        "seconds": 37.164,
+        "fps": 1.99,
+        "frames_written": 74,
+        "events": 4,
+        "gpus": 1,
+        "clips": {
+          "session": "追逐19/20261014_113541_1",
+          "clips_saved": 1,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "uploads_dropped": 0,
+          "stage_orphans_cleaned": 0
+        },
+        "wall_seconds": 43.007
+      },
+      "config": {
+        "enhance": "retinexformer",
+        "sr": "bicubic_x2",
+        "sr_scale": 2,
+        "recognize": "behavior",
+        "gpu_ids": "0",
+        "reco_span_sec": 1.0,
+        "proc_max_side": 840
+      }
+    },
+    "files": [
+      "session.json",
+      "container.log",
+      "command.json",
+      "output/追逐19/20261014_113541_1/0-3s-追逐.mp4",
+      "output/追逐19/20261014_113541_1/追逐19-处理后.mp4",
+      "output/追逐19/20261014_113541_1/0-3s-追逐.json",
+      "output/追逐19/20261014_113541_1/追逐19_events.json",
+      "copy/追逐19/20261014_113541_1/0-3s-追逐.mp4",
+      "copy/追逐19/20261014_113541_1/追逐19-处理后.mp4",
+      "copy/追逐19/20261014_113541_1/0-3s-追逐.json",
+      "copy/追逐19/20261014_113541_1/追逐19_events.json"
+    ]
+  },
+  "offline-shard": {
+    "exit_code": 0,
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/other/other78.mp4",
+    "session": {
+      "session": "other78/20261014_113629_1",
+      "mode": "offline",
+      "status": "finished",
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/other/other78.mp4",
+      "local_input": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/other/other78.mp4",
+      "started_at": "2026-10-14 11:36:31",
+      "stopped_at": "2026-10-14 11:37:18",
+      "output_video": [
+        "/audit/offline-shard/copy/other78/20261014_113629_1/other78-处理后.mp4"
+      ],
+      "events_json": [
+        "/audit/offline-shard/copy/other78/20261014_113629_1/other78_events.json"
+      ],
+      "events_total": 9,
+      "label_counts": {
+        "Other": 9
+      },
+      "clips": {
+        "session": "other78/20261014_113629_1",
+        "clips_saved": 0,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0
+      },
+      "clip_videos": [],
+      "stats": {
+        "frames": 154,
+        "seconds": 39.677,
+        "fps": 3.88,
+        "frames_written": 154,
+        "events": 9,
+        "gpus": 1,
+        "clips": {
+          "session": "other78/20261014_113629_1",
+          "clips_saved": 0,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "uploads_dropped": 0,
+          "stage_orphans_cleaned": 0
+        },
+        "wall_seconds": 46.497
+      },
+      "config": {
+        "enhance": "retinexformer",
+        "sr": "bicubic_x2",
+        "sr_scale": 2,
+        "recognize": "behavior",
+        "gpu_ids": "0,1",
+        "reco_span_sec": 1.0,
+        "proc_max_side": 840
+      }
+    },
+    "files": [
+      "session.json",
+      "container.log",
+      "command.json",
+      "copy/other78/20261014_113629_1/other78_events.json",
+      "copy/other78/20261014_113629_1/other78-处理后.mp4"
+    ]
+  }
+}

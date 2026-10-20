@@ -1,0 +1,19 @@
+{
+  "denoise": {
+    "input_frames": 50,
+    "open_after": 20,
+    "clean_calls": 21,
+    "frames_written": 49,
+    "saved": 1,
+    "writer_alive_after_close": false
+  },
+  "offline_close": {
+    "realtime": false,
+    "close_seconds": 30.000282029155642,
+    "writer_alive_after_close": true,
+    "queue_messages_after_close": 31,
+    "saved_at_return": 0,
+    "metadata_at_return": 0,
+    "saved_after_unblock": 1
+  }
+}

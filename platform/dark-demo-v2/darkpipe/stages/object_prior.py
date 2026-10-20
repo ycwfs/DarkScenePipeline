@@ -97,33 +97,35 @@ class YoloOnnxDetector:
         self.sess = None
         self.det_ms = 0.0
 
+    def _disable(self, reason):
+        self.sess = None
+        return (f"[recognize] 物体先验关闭：{reason}。"
+                "捡东西/喝水的检测先验改为不否决（骨架几何先验不受影响）")
+
     def load(self):
         if not os.path.exists(self.path):
-            return (f"[recognize] 物体先验关闭：检测权重缺失 {self.path}。"
-                    "捡东西/喝水的先验改为不否决（挥手先验不受影响）")
+            return self._disable(f"检测权重缺失 {self.path}")
         try:
             import onnxruntime as ort
-            prov = ["CUDAExecutionProvider"] if str(self.device).startswith("cuda") \
-                else ["CPUExecutionProvider"]
-            self.sess = ort.InferenceSession(self.path, providers=prov)
-        except Exception as e:                           # noqa: BLE001 -- fail-soft by contract
-            self.sess = None
-            return (f"[recognize] 物体先验关闭：检测模型不可用（{type(e).__name__}: {e}）。"
-                    "捡东西/喝水的先验改为不否决（挥手先验不受影响）")
-        dummy = np.zeros((472, 840, 3), np.uint8)
-        self._frames_to_dets([dummy, dummy])             # session init, untimed
-        self._frames_to_dets([dummy, dummy])             # clock/pool ramp, untimed
-        times = []
-        for _ in range(3):
-            t0 = time.perf_counter()
+            cuda = self.device.startswith("cuda")
+            providers = ([("CUDAExecutionProvider", {"device_id": int(self.device.split(":")[1])})]
+                         if cuda else ["CPUExecutionProvider"])
+            self.sess = ort.InferenceSession(self.path, providers=providers)
+            if cuda and "CUDAExecutionProvider" not in self.sess.get_providers():
+                return self._disable("CUDA provider 不可用，拒绝静默使用 CPU")
+            dummy = np.zeros((472, 840, 3), np.uint8)
             self._frames_to_dets([dummy, dummy])
-            times.append((time.perf_counter() - t0) * 1000 / 2)
-        self.det_ms = min(times)          # jitter only adds time; min = the card's real cost
-        if self.det_ms > DET_MS_BUDGET:
-            self.sess = None
-            return (f"[recognize] 物体先验关闭：检测推理实测 {self.det_ms:.0f} ms/帧，"
-                    f"超过 {DET_MS_BUDGET:.0f} ms 预算（onnxruntime 没用上 GPU？）。"
-                    "捡东西/喝水的先验改为不否决（挥手先验不受影响）")
+            self._frames_to_dets([dummy, dummy])
+            times = []
+            for _ in range(3):
+                t0 = time.perf_counter()
+                self._frames_to_dets([dummy, dummy])
+                times.append((time.perf_counter() - t0) * 1000 / 2)
+            self.det_ms = min(times)
+            if self.det_ms > DET_MS_BUDGET:
+                return self._disable(f"检测推理 {self.det_ms:.0f} ms/帧超过 {DET_MS_BUDGET:.0f} ms 预算")
+        except Exception as exc:
+            return self._disable(f"检测加载/预热失败（{type(exc).__name__}: {exc}）")
         return ""
 
     @staticmethod
@@ -165,7 +167,11 @@ class YoloOnnxDetector:
         """-> list of (n_i, 6) [x1 y1 x2 y2 conf cls] per frame, or None when unavailable."""
         if self.sess is None:
             return None
-        return self._frames_to_dets(frames)
+        try:
+            return self._frames_to_dets(frames)
+        except Exception as exc:
+            print(self._disable(f"检测运行失败（{type(exc).__name__}: {exc}）"))
+            return None
 
 
 class PriorGate:
@@ -180,7 +186,7 @@ class PriorGate:
 
     def warmup(self):
         if self.det.sess is not None:
-            self.det._frames_to_dets([np.zeros((472, 840, 3), np.uint8)])
+            self.det([np.zeros((472, 840, 3), np.uint8)])
 
     # ---- priors -------------------------------------------------------------
     def _wave(self, sk, valid):
@@ -286,6 +292,12 @@ class PriorGate:
         return False, "脚边地面没有物体"
 
     def check(self, label, sk, valid, frames):
+        try:
+            return self._check(label, sk, valid, frames)
+        except Exception as exc:
+            return True, f"先验不可用（{type(exc).__name__}: {exc}），跳过"
+
+    def _check(self, label, sk, valid, frames):
         """-> (passed: bool, reason: str). `sk` (T,M,17,3) normalized xy+conf from
         SkeletonAux.analyze, `valid` the per-slot qualification mask, `frames` the raw
         window. The detector only ever sees OBJ_SAMPLE_FRAMES evenly spaced frames of it."""

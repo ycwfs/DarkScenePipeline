@@ -1,0 +1,43 @@
+{
+  "A_labels": {
+    "pick_up": 17,
+    "chase": 30,
+    "wave": 22,
+    "other": 69,
+    "drink": 39
+  },
+  "pn_cache_dirs": [
+    "realact_all_rf_v1_all_pn"
+  ],
+  "realact_all_rf_v1_all_pn": {
+    "train_platform_windows": 286,
+    "unique_platform_stems": 96,
+    "example_names": [
+      "platneg_20261012_095139_picking_up_object_0040_00016.npy",
+      "platneg_20261012_102035_drinking_water_0122_00000.npy",
+      "platneg_20261012_094245_drinking_water_0019_00032.npy"
+    ]
+  },
+  "video_overlap_with_pn_train": {
+    "A": {
+      "suite_videos": 33,
+      "in_train": 33,
+      "missing": []
+    },
+    "B": {
+      "suite_videos": 64,
+      "in_train": 64,
+      "missing": []
+    },
+    "C": {
+      "suite_videos": 4,
+      "in_train": 4,
+      "missing": []
+    },
+    "P": {
+      "suite_videos": 96,
+      "in_train": 96,
+      "missing": []
+    }
+  }
+}

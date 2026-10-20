@@ -1,0 +1,26 @@
+{
+  "cpu-junit.xml": {
+    "tests": 356,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "shard-extra-junit.xml": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "image-junit.xml": {
+    "tests": 91,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "image-extra-junit.xml": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

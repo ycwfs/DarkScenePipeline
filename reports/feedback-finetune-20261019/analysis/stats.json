@@ -1,0 +1,28 @@
+{
+  "seed_count": 1,
+  "seed": 19,
+  "holdout_sessions": 2,
+  "holdout_videos": 9,
+  "session_stats": [
+    {
+      "session": "20261015_163555_77",
+      "windows": 27,
+      "before": 2,
+      "after": 1,
+      "rate_delta": -0.037037037037037035
+    },
+    {
+      "session": "20261019_092255_83",
+      "windows": 41,
+      "before": 0,
+      "after": 0,
+      "rate_delta": 0.0
+    }
+  ],
+  "mean_session_rate_delta": -0.018518518518518517,
+  "exploratory_two_sided_session_sign_flip_p": 1.0,
+  "assignments": 4,
+  "population_ci": null,
+  "ci_reason": "Only two same-camera sessions; insufficient independent clusters for a reliable population interval.",
+  "warning": "No window-level significance test: windows overlap. No across-seed variance estimate from one run."
+}

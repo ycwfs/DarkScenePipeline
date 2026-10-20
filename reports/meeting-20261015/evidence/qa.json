@@ -1,0 +1,22 @@
+{
+  "image_formats": [
+    "PNG 2880x1620",
+    "SVG",
+    "PDF"
+  ],
+  "figures": 6,
+  "drawio_pages": 2,
+  "pptx_slides": 6,
+  "aspect_ratio": "16:9",
+  "pptx_notes_present": true,
+  "libreoffice_pdf_export": "passed",
+  "source_hashes_verified": true,
+  "historical_counts_verified": true,
+  "object_model_sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c",
+  "scope": "Document and visual QA; historical chart data, CPU single-frame detector diagnostics",
+  "pptx_native_editable": true,
+  "native_charts": 4,
+  "embedded_excel_workbooks": 4,
+  "editable_qa": "evidence/editable-qa.json",
+  "pdf_source": "Native editable PPTX, exported with LibreOffice"
+}

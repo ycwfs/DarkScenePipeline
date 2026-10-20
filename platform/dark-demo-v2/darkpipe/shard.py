@@ -3,7 +3,7 @@
 The pipeline is embarrassingly parallel over time -- the only cross-frame state is the
 recognizer's ring buffer -- so the cheapest way to use N GPUs is N independent single-GPU
 runs over contiguous segments, concatenated afterwards. Each worker is the ordinary
-`darkpipe --mode offline` entry point, so a sharded run and a single-GPU run execute exactly
+`darkpipe.shard_worker` entry point, so a sharded run and a single-GPU run execute exactly
 the same code per frame; nothing here is a second implementation of the pipeline.
 
 Two costs are real and are not hidden in the reported throughput, which is measured
@@ -26,10 +26,13 @@ events straddling a boundary describe a shorter span. Splitting a 300-frame clip
 would be mostly boundary, so `min_seg_frames` refuses to use more GPUs than the video is
 long enough to justify.
 """
+from dataclasses import asdict
 import json
 import os
 import subprocess
 import sys
+import shutil
+import tempfile
 import time
 
 import cv2
@@ -60,111 +63,124 @@ def _segments(n_frames, n_gpus, min_seg_frames):
     return segs
 
 
-def _concat(parts, out, fps):
+def _concat(parts, out, fps, expected_counts):
     from .media import VideoWriter
     wr = VideoWriter(out, fps=fps)
-    for p in parts:
-        cap = cv2.VideoCapture(p)
-        while True:
-            ok, f = cap.read()
-            if not ok:
-                break
-            wr.write(f)
-        cap.release()
-    wr.close()
+    try:
+        for path, expected in zip(parts, expected_counts):
+            cap = cv2.VideoCapture(path)
+            count = 0
+            try:
+                if not cap.isOpened():
+                    raise RuntimeError(f"cannot open shard: {path}")
+                while True:
+                    ok, frame = cap.read()
+                    if not ok:
+                        break
+                    wr.write(frame)
+                    count += 1
+            finally:
+                cap.release()
+            if count != expected:
+                raise RuntimeError(f"shard {path}: expected {expected} frames, decoded {count}")
+    finally:
+        wr.close()
     return wr.count
 
 
+def worker_config(cfg, gpu, start, length, output, events):
+    """Serialize every PipelineConfig field; no hand-maintained CLI flag subset."""
+    data = asdict(cfg)
+    for key in ("input", "ckpt_dir", "reco_ckpt", "xclip_model", "rr_bundle"):
+        if data.get(key):
+            data[key] = os.path.abspath(data[key])
+    data.update(mode="offline", device=("cpu" if cfg.device == "cpu" else f"cuda:{gpu}"),
+                gpus="", start_frame=start, max_frames=length, output=output,
+                events_json=events, warnings=[], stats={})
+    return data
+
+
 def run_offline_sharded(cfg, gpus, min_seg_frames=120):
-    n_frames, fps = _frame_count(cfg.input, cfg.max_frames)
+    if cfg.clip_dir:
+        raise ValueError("clip recording requires a single continuous timeline; disable sharding")
+    if not gpus:
+        raise ValueError("sharding needs at least one GPU id")
+    total, fps = _frame_count(cfg.input)
+    n_frames = max(0, total - int(cfg.start_frame or 0))
+    if cfg.max_frames:
+        n_frames = min(n_frames, cfg.max_frames)
+    if n_frames <= 0:
+        raise ValueError("no frames in requested shard range")
     segs = _segments(n_frames, len(gpus), min_seg_frames)
-    if len(segs) < len(gpus):
-        print(f"[shard] {n_frames} frames is too short to split {len(gpus)} ways "
-              f"(min {min_seg_frames}/segment) -- using {len(segs)} GPU(s)")
     if len(segs) == 1:
         from .pipeline import run_offline
         return run_offline(cfg)
 
-    work = os.path.join(os.path.dirname(os.path.abspath(cfg.output)) or ".",
-                        f".shard_{os.getpid()}")
-    os.makedirs(work, exist_ok=True)
-    # The workers must be able to import darkpipe, and a subprocess inherits the environment
-    # but NOT sys.path. In the repo that difference is invisible -- `-m` puts the cwd first
-    # and the cwd is the repo root -- but in the operator container darkpipe is not installed
-    # into the conda env: it sits next to main.py in the unpacked zip and is reachable only
-    # because main.py inserted its own directory into sys.path. The children then died with
-    # "No module named darkpipe.cli", and only on a 2-GPU host, because a single GPU never
-    # takes this path. Pass the package's parent explicitly; it is right whichever way the
-    # parent was started.
+    parent = os.path.dirname(os.path.abspath(cfg.output))
+    os.makedirs(parent, exist_ok=True)
+    work = tempfile.mkdtemp(prefix=".shard_", dir=parent)
     env = dict(os.environ)
     pkg_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    env["PYTHONPATH"] = os.pathsep.join([pkg_parent, env["PYTHONPATH"]]) \
-        if env.get("PYTHONPATH") else pkg_parent
-    base = [sys.executable, "-m", "darkpipe.cli", "--mode", "offline",
-            "--input", cfg.input, "--enhance", cfg.enhance, "--sr", cfg.sr,
-            "--recognize", cfg.recognize, "--ckpt-dir", cfg.ckpt_dir,
-            "--enhance-chunk", str(cfg.enhance_chunk), "--sr-chunk", str(cfg.sr_chunk)]
-    for flag, val in (("--sr-scale", cfg.sr_scale),
-                      ("--reco-stride", cfg.reco_stride), ("--reco-span-sec", cfg.reco_span_sec),
-                      ("--reco-ckpt", cfg.reco_ckpt), ("--labels", cfg.labels),
-                      ("--xclip-model", cfg.xclip_model),
-                      ("--xclip-reject-tau", cfg.xclip_reject_tau)):
-        if val not in ("", None):
-            base += [flag, str(val)]
-    if cfg.sr_fp32:
-        base.append("--sr-fp32")
-    if cfg.no_label_bar:
-        base.append("--no-label-bar")
+    env["PYTHONPATH"] = os.pathsep.join(filter(None, [pkg_parent, env.get("PYTHONPATH")]))
+    # The worker cwd is private, so an unrelated root-level darkpipe cannot shadow v2.
+    t0 = time.monotonic()
+    procs, logs, parts, evs = [], [], [], []
+    try:
+        for i, (relative_start, length) in enumerate(segs):
+            part = os.path.join(work, f"part{i:02d}.mp4")
+            ev = os.path.join(work, f"part{i:02d}.json") if cfg.events_json else ""
+            config_path = os.path.join(work, f"config{i:02d}.json")
+            data = worker_config(cfg, gpus[i], int(cfg.start_frame or 0) + relative_start,
+                                 length, part, ev)
+            with open(config_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False)
+            parts.append(part)
+            evs.append(ev)
+            log_path = os.path.join(work, f"worker{i:02d}.log")
+            logs.append(log_path)
+            print(f"[shard] {data['device']}: frames {data['start_frame']}.."
+                  f"{data['start_frame'] + length - 1}")
+            # A file avoids PIPE backpressure when another worker is being waited on.
+            with open(log_path, "w", encoding="utf-8") as log:
+                procs.append(subprocess.Popen(
+                    [sys.executable, "-m", "darkpipe.shard_worker", config_path],
+                    stdout=log, stderr=subprocess.STDOUT, env=env, cwd=work))
+        for i, proc in enumerate(procs):
+            if proc.wait() != 0:
+                with open(logs[i], encoding="utf-8", errors="replace") as log:
+                    detail = log.read()[-2000:]
+                raise RuntimeError(f"[shard] segment {i} exited {proc.returncode}:\n{detail}")
 
-    t0 = time.time()
-    procs, parts, evs = [], [], []
-    for i, (start, ln) in enumerate(segs):
-        part = os.path.join(work, f"part{i:02d}.mp4")
-        ev = os.path.join(work, f"part{i:02d}.json")
-        parts.append(part)
-        evs.append(ev)
-        cmd = base + ["--output", part, "--device", f"cuda:{gpus[i]}",
-                      "--start-frame", str(start), "--max-frames", str(ln)]
+        events = []
         if cfg.events_json:
-            cmd += ["--events-json", ev]
-        print(f"[shard] gpu {gpus[i]}: frames {start}..{start + ln - 1} -> {part}")
-        procs.append(subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                      text=True, env=env))
-    fail = []
-    for i, p in enumerate(procs):
-        out = p.communicate()[0]
-        if p.returncode != 0:
-            fail.append(f"segment {i} (gpu {gpus[i]}) exited {p.returncode}:\n"
-                        f"{(out or '').strip()[-800:]}")
-    if fail:
-        raise RuntimeError("[shard] " + "\n".join(fail))
-
-    n_written = _concat(parts, cfg.output, fps)
-    dt = time.time() - t0
-    # Unlike the single-GPU path this DOES include model loading: each worker is a fresh
-    # process, so its startup is part of what a sharded run actually costs.
-    cfg.stats = dict(frames=n_frames, seconds=round(dt, 3),
-                     fps=round(n_frames / max(dt, 1e-9), 2), frames_written=n_written,
-                     gpus=len(segs))
-    print(f"[done] {n_frames} frames in {dt:.1f}s = {n_frames / max(dt, 1e-9):.1f} fps "
-          f"-> {cfg.output} ({n_written} frames written, {len(segs)} GPUs)")
-
-    events = []
-    if cfg.events_json:
-        for (start, _), ev in zip(segs, evs):
-            if not os.path.exists(ev):
-                continue
-            for e in json.load(open(ev)):
-                e["frame_index"] += start          # worker indices are segment-relative
-                e["timestamp"] += start / fps
-                events.append(e)
-        events.sort(key=lambda e: e["frame_index"])
-        with open(cfg.events_json, "w") as f:
-            json.dump(events, f, indent=2)
-        print(f"[done] {len(events)} recognition events -> {cfg.events_json}")
-    cfg.stats["events"] = len(events)
-    for p in parts + evs:
-        if os.path.exists(p):
-            os.remove(p)
-    os.rmdir(work)
-    return events
+            for (start, _), ev in zip(segs, evs):
+                with open(ev, encoding="utf-8") as f:
+                    segment_events = json.load(f)
+                for event in segment_events:
+                    event["frame_index"] += start
+                    event["timestamp"] += start / fps
+                    events.append(event)
+            events.sort(key=lambda event: event["frame_index"])
+        merged = os.path.join(work, "merged.mp4")
+        n_written = _concat(parts, merged, fps, [length for _, length in segs])
+        os.replace(merged, cfg.output)
+        if cfg.events_json:
+            with open(cfg.events_json, "w", encoding="utf-8") as f:
+                json.dump(events, f, ensure_ascii=False, indent=2)
+        dt = time.monotonic() - t0
+        cfg.stats = dict(frames=n_frames, seconds=round(dt, 3),
+                         fps=round(n_frames / max(dt, 1e-9), 2), frames_written=n_written,
+                         gpus=len(segs), events=len(events))
+        print(f"[done] {n_written} frames, {len(segs)} shards -> {cfg.output}")
+        return events
+    finally:
+        for proc in procs:
+            if proc.poll() is None:
+                proc.terminate()
+        for proc in procs:
+            try:
+                proc.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+                proc.wait()
+        shutil.rmtree(work, ignore_errors=True)

@@ -1,0 +1,50 @@
+{
+  "archive": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/dark-demo-v2_fixed_20261014.tar.gz",
+  "bytes": 190636069,
+  "md5": "c1083152a6ae8f5f84656634ba64354c",
+  "sha256": "78018a678d7c3a3ba5901eac164cf6546cc74574e21efad630706d7d93c864ce",
+  "files": 45,
+  "reproducible": true,
+  "unchanged": {
+    "darkpipe/stages/skeleton_aux.py": {
+      "sha256": "dc2efeb54ce314443c4d1a0bc7d06ff51d135f4b0b656cf6d050706801959bf8",
+      "unchanged_from_original": true
+    },
+    "darkpipe/stages/enhance_retinexformer.py": {
+      "sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67",
+      "unchanged_from_original": true
+    },
+    "darkpipe/stages/recognize.py": {
+      "sha256": "b30bb25a41bdf6c50c1716cd6997778ee7682d4456203df584d809ed93bc2674",
+      "unchanged_from_original": true
+    },
+    "ckpts/videomamba_t_behavior_32f_realactall_full.pth": {
+      "sha256": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79",
+      "unchanged_from_original": true
+    },
+    "ckpts/rtmo-s_end2end.onnx": {
+      "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+      "unchanged_from_original": true
+    },
+    "ckpts/stgcn_behavior_32f_realactall_full.pth": {
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+      "unchanged_from_original": true
+    },
+    "ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth": {
+      "sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04",
+      "unchanged_from_original": true
+    },
+    "ckpts/yolo26m_detect.onnx": {
+      "sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c",
+      "unchanged_from_original": true
+    },
+    "ckpts/NTIRE.pth": {
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+      "unchanged_from_original": true
+    },
+    "ckpts/videomamba_t_behavior_32f.pth": {
+      "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44",
+      "unchanged_from_original": true
+    }
+  }
+}

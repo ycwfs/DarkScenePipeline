@@ -1,0 +1,18 @@
+[
+  {
+    "archive": "platform/dark-demo-v2_pose_20261019.tar.gz",
+    "sha256": "0c4cf737e187a1e7921492ae8d23002f65b93ce01c39977ba9e78d2817a67b34",
+    "size": 190641992,
+    "files_verified": 46,
+    "all_files_match_source": true,
+    "unchanged_weights": 7
+  },
+  {
+    "archive": "platform/dark-demo-v2_pose_20261019.zip",
+    "sha256": "b4bebd1e01d033a6c53433ec0303d66ab594f79a955b7b4eb61c04c3c731d32a",
+    "size": 190662721,
+    "files_verified": 46,
+    "all_files_match_source": true,
+    "unchanged_weights": 7
+  }
+]

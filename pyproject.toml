@@ -36,3 +36,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["darkpipe"]
+
+[tool.pytest.ini_options]
+# Experiment folders contain copied operator trees and standalone GPU evaluation scripts.
+# Collect the maintained suite by default; run report-specific checks explicitly.
+testpaths = ["tests"]

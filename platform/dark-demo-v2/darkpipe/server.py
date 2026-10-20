@@ -24,9 +24,11 @@ import asyncio
 import json
 import os
 import queue
+import signal
 import tempfile
 import threading
 import time
+import traceback
 from contextlib import asynccontextmanager
 from dataclasses import asdict
 
@@ -95,33 +97,58 @@ def _sum_snaps(snaps):
     return (sum(s[0] for s in snaps), sum(s[1] for s in snaps))
 
 
+_BUS_CLOSED = object()
+PROCESS_STALE_SECONDS = 5.0
+
+
 class EventBus:
     def __init__(self):
         self._lock = threading.Lock()
         self._subs = []
+        self._closed = False
 
     def subscribe(self):
         q = queue.Queue(maxsize=64)
         with self._lock:
-            self._subs.append(q)
+            if self._closed:
+                q.put_nowait(_BUS_CLOSED)
+            else:
+                self._subs.append(q)
         return q
 
     def unsubscribe(self, q):
         with self._lock:
             if q in self._subs:
                 self._subs.remove(q)
+            # Cancellation does not cancel a q.get already running in asyncio.to_thread.
+            # Wake it as well, so disconnected SSE clients cannot delay executor shutdown.
+            self._offer(q, _BUS_CLOSED)
+
+    @staticmethod
+    def _offer(q, item):
+        try:
+            q.put_nowait(item)
+        except queue.Full:
+            try:
+                q.get_nowait()
+            except queue.Empty:
+                pass
+            q.put_nowait(item)
+
+    def close(self):
+        with self._lock:
+            if self._closed:
+                return
+            self._closed = True
+            for q in self._subs:
+                self._offer(q, _BUS_CLOSED)
 
     def publish(self, ev):
         with self._lock:
+            if self._closed:
+                return
             for q in self._subs:
-                try:
-                    q.put_nowait(ev)
-                except queue.Full:
-                    try:
-                        q.get_nowait()
-                        q.put_nowait(ev)
-                    except queue.Empty:
-                        pass
+                self._offer(q, ev)
 
 
 class _FlvViewer:
@@ -171,6 +198,11 @@ class ServerState:
         self.fps_proc = 0.0
         self.latency_ms = 0.0
         self.capture_alive = False
+        self.processing_alive = False
+        self.processing_ready = False
+        self.processing_error = None
+        self.last_frame_at = None
+        self._failure_lock = threading.Lock()
         # Frame rate the source itself reports, 0.0 when it reports nothing. Published by
         # capture_loop because that is the only place the stream is open, and consumed by
         # stream_fps_for_source before any output ffmpeg spawns -- see the wait in lifespan.
@@ -206,6 +238,31 @@ class ServerState:
         self.flv_rejected = 0           # connections refused by max_flv_clients
         self.flv_seq = 0                # per-connection id, for correlating the two log lines
         self.flv_live = {}              # seq -> _FlvViewer, guarded by flv_lock
+
+    def request_stop(self):
+        """Stop producers and wake consumers before Uvicorn waits for HTTP requests."""
+        self.stop.set()
+        self.bus.close()
+        self.src_fps_known.set()        # also release the bounded startup wait
+
+    def fail_processing(self, where, exc):
+        """Keep the first failure; teardown errors must not replace its cause."""
+        with self._failure_lock:
+            first = self.processing_error is None
+            if first:
+                self.processing_error = f"{where}: {type(exc).__name__}: {exc}"
+        self.request_stop()
+        if first:
+            print(f"[process] 处理失败，停止服务：{self.processing_error}")
+            traceback.print_exception(type(exc), exc, exc.__traceback__)
+
+
+class ProcessingFailed(RuntimeError):
+    """A fatal processing failure, with final counters for the operator session."""
+
+    def __init__(self, state):
+        self.state = state
+        super().__init__(f"实时处理失败：{state.processing_error}")
 
 
 _FINITE_SUFFIXES = (".mp4", ".mov", ".mkv", ".avi", ".m4v", ".webm")
@@ -413,6 +470,31 @@ def serve_devices(cfg):
 
 
 def process_loop(st: ServerState):
+    """Publish lifecycle and failures from initialization through final model cleanup."""
+    resources, workers = [], []
+    st.processing_alive = True
+    try:
+        _process_loop(st, resources, workers)
+    except BaseException as exc:             # thread-local SystemExit must also be fatal
+        st.fail_processing("process_loop", exc)
+    finally:
+        if not st.stop.is_set():
+            st.fail_processing("process_loop", RuntimeError("处理循环意外结束"))
+        live = [t.name for t in workers if t.is_alive()]
+        if live:
+            # Do not unload weights while a timed-out worker is still using them.
+            st.fail_processing("process_loop", RuntimeError("处理线程未退出：" + ",".join(live)))
+        else:
+            for resource in reversed(resources):
+                try:
+                    resource.close()
+                except BaseException as exc:     # preserve the original processing failure
+                    st.fail_processing("close", exc)
+        st.processing_ready = False
+        st.processing_alive = False
+
+
+def _process_loop(st: ServerState, resources, workers):
     """Load the models, then run the pipeline as two concurrent threads.
 
     The four stages used to run back to back on one thread, so throughput was their SUM.
@@ -551,22 +633,23 @@ def process_loop(st: ServerState):
     # stays single-instance on enh_devices[0]: the output thread is single and CPU-bound, so a
     # second copy would only cost memory. build_stages hands back a recognizer each time too,
     # but only one is ever load()ed -- the extras cost a constructor and no weights.
-    enh_sets, srs, recognizer, frame_stages = [], [], None, []
+    enh_sets, srs, recognizer = [], [], None
     for i, dev in enumerate(enh_devices):
         stages, rec = build_stages(cfg)
         # Split on the stage's own declaration, not on its name. Recognition sees the
         # enhanced pre-SR frame; anything flagged post_recognition only changes the picture.
         enh_sets.append([s for s in stages if not getattr(s, "post_recognition", False)])
         for s in enh_sets[i]:
+            resources.append(s)       # include partially initialized stages in cleanup
             s.load(dev)
-        frame_stages.extend(enh_sets[i])
         if i == 0:
             srs = [s for s in stages if getattr(s, "post_recognition", False)]
             for s in srs:
+                resources.append(s)
                 s.load(dev)
-            frame_stages.extend(srs)
             recognizer = rec
     if recognizer:
+        resources.append(recognizer)
         recognizer.load(reco_dev)
         t0 = time.time()
         recognizer.warmup()
@@ -576,6 +659,7 @@ def process_loop(st: ServerState):
           f"{'（按帧轮询）' if n_gpu > 1 else ''}；"
           f"识别 {reco_dev}{'（独立线程）' if reco_async else '（与增强同线程）'}")
     enh = enh_sets[0]
+    st.processing_ready = True
 
     # One slot, because the encoder is the only consumer and one frame in flight is all the
     # overlap the split needs: while the encoder works on frame N the GPU builds N+1. A
@@ -627,11 +711,11 @@ def process_loop(st: ServerState):
         def run():
             try:
                 fn()
-            except Exception as e:                      # noqa: BLE001 - logged, then fatal
-                import traceback
-                print(f"[process] {fn.__name__} died: {e}")
-                traceback.print_exc()
+            except BaseException as exc:                # fatal even for thread-local exit
+                st.fail_processing(fn.__name__, exc)
             finally:
+                if running():
+                    st.fail_processing(fn.__name__, RuntimeError("处理线程意外结束"))
                 done.set()
         return threading.Thread(target=run, daemon=True, name=f"darkpipe-{fn.__name__}")
 
@@ -662,10 +746,9 @@ def process_loop(st: ServerState):
     def hand_to_recognizer(frame, t_cap, raw_frame=None):
         """Recognize this frame, or queue it for the card that does. Returns the event or None.
 
-        Returning None in the async case is not a loss of information: the label bar reads
-        st.last_event (which `recognize` sets from whichever thread ran it) and the clipper is
-        served by ev_q instead. Only the clipper needs each event exactly once, which is what
-        the queue guarantees and a shared "latest event" variable would not.
+        Returning None in the async case is not a loss of information: output_loop consumes
+        ev_q once and uses that same event for both the label bar and the clipper. A shared
+        "latest event" can change during rendering/JPEG encoding and mismatch the clip trigger.
 
         Sharing the frame with another thread is safe because nothing downstream mutates it in
         place: the recognizer preprocesses into a new array on entry (`_preprocess`), the SR
@@ -710,6 +793,9 @@ def process_loop(st: ServerState):
         """CPU: SR -> label bar -> JPEG. Owns the clip recorder and the end-to-end counters."""
         bind_thread_device(enh_devices[0])
         recorder = None
+        display_event = None  # owned by output_loop, never changed by recognition mid-frame
+        from .pose_overlay import ActionPoseOverlay
+        pose_overlay = ActionPoseOverlay() if cfg.pose_overlay else None
         n, t_win = 0, time.time()
         p_rec, p_fire, p_sr, p_enc = (s.snap() for s in (s_rec, s_fire, s_sr, s_enc))
         p_gpu = [s.snap() for s in s_gpu]
@@ -748,6 +834,18 @@ def process_loop(st: ServerState):
                 chunk = s(chunk)
             t1 = time.time()
             out = chunk[0]
+            if reco_async:
+                # Consume exactly once BEFORE rendering. If a new event arrives during JPEG
+                # encoding, both its displayed label and clip trigger wait for the next frame.
+                # st.last_event remains the latest recognition result for health/telemetry.
+                try:
+                    ev = ev_q.get_nowait()
+                except queue.Empty:
+                    ev = None
+            if ev is not None:
+                display_event = ev
+            if pose_overlay is not None:
+                out = pose_overlay.draw(out, frame, display_event, t_cap - st.t_start)
             if recognizer and not cfg.no_label_bar:
                 # The configured stream rate, not the measured processing rate. These are
                 # different quantities and the burnt-in one should be the viewer's: the feeder
@@ -755,23 +853,15 @@ def process_loop(st: ServerState):
                 # last frame when the pipeline is slower), so that is genuinely the rate the
                 # stream is delivered at. The processing rate stays reported, but in /health
                 # as fps_proc, where it is a diagnostic rather than a number on a wall.
-                out = append_label_bar(out, st.last_event,
+                out = append_label_bar(out, display_event,
                                        extra=f"{cfg.max_stream_fps:g} fps")
             ok, buf = cv2.imencode(".jpg", out, [cv2.IMWRITE_JPEG_QUALITY, cfg.jpeg_quality])
             if ok:
                 st.jpeg.put(buf.tobytes())
+                st.last_frame_at = time.time()
             t2 = time.time()
             s_sr.add(t1 - t0)
             s_enc.add(t2 - t1)
-            if reco_async:
-                # Recognition runs on its own device now, so the event cannot travel with the
-                # frame that produced it; it arrives here up to one stride late. Taken exactly
-                # once, because the recorder decides clip boundaries by counting consecutive
-                # events (`switch_after`) and a repeated event would forge a confirmation.
-                try:
-                    ev = ev_q.get_nowait()
-                except queue.Empty:
-                    ev = None
             # In the single-device path `ev` travelled with the frame that produced it rather
             # than in a side channel, so the recorder gets the exact pairing the serial loop
             # gave it. The frame handed to the recorder is the one the demo stream shows --
@@ -1183,10 +1273,11 @@ def process_loop(st: ServerState):
             next_out += 1
 
     if n_gpu == 1:
-        workers, main_loop = [worker(output_loop)], enhance_loop
+        workers.append(worker(output_loop))
+        main_loop = enhance_loop
     else:
-        workers = ([worker(output_loop), worker(dealer)]
-                   + [worker(gpu_worker(k)) for k in range(1, n_gpu)])
+        workers.extend([worker(output_loop), worker(dealer)]
+                       + [worker(gpu_worker(k)) for k in range(1, n_gpu)])
         main_loop = sequencer
     if reco_async:
         workers.append(worker(reco_loop))
@@ -1194,6 +1285,9 @@ def process_loop(st: ServerState):
         t.start()
     try:
         main_loop()
+    except BaseException as exc:
+        st.fail_processing(main_loop.__name__, exc)
+        raise
     finally:
         # `done` rather than `st.stop`: the workers have to stop before the stages they are
         # calling into get closed underneath them, whether this is a real shutdown or the
@@ -1201,10 +1295,6 @@ def process_loop(st: ServerState):
         done.set()
         for t in workers:
             t.join(timeout=5)
-        for s in frame_stages:
-            s.close()
-        if recognizer:
-            recognizer.close()
 
 
 def _encode_ceiling_probe(st: ServerState, cfg):
@@ -1261,6 +1351,15 @@ def _encode_ceiling_probe(st: ServerState, cfg):
         print(f"[selftest] 编码上限自测异常，已忽略: {e}")
 
 
+def _close_flv_viewers(st):
+    # read1() on FFmpeg stdout cannot notice a Python stop flag. Terminating its producer
+    # releases that read before Uvicorn waits for the corresponding response to finish.
+    with st.flv_lock:
+        viewers = list(st.flv_live.values())
+    for viewer in viewers:
+        viewer.out.close()
+
+
 def build_app(cfg, on_clip=None, on_ready=None):
     from fastapi import FastAPI, Request
     from fastapi.responses import JSONResponse, StreamingResponse
@@ -1287,10 +1386,10 @@ def build_app(cfg, on_clip=None, on_ready=None):
 
     @asynccontextmanager
     async def lifespan(app):
-        threads = [threading.Thread(target=capture_loop, args=(st,), daemon=True),
-                   threading.Thread(target=process_loop, args=(st,), daemon=True)]
-        for t in threads:
-            t.start()
+        threads = [threading.Thread(target=capture_loop, args=(st,), daemon=True,
+                                    name="darkpipe-capture"),
+                   threading.Thread(target=process_loop, args=(st,), daemon=True,
+                                    name="darkpipe-process")]
         # Started after the workers so the first JPEG is usually there by the time ffmpeg
         # asks for one; an empty slot only costs a repeated frame, not a failure.
         #
@@ -1300,64 +1399,82 @@ def build_app(cfg, on_clip=None, on_ready=None):
         # wait is announced BEFORE it starts, because an RTSP source that never answers stalls
         # right here and that line is the difference between "hung" and "waiting for the camera".
         # Timing out is not fatal: the requested cadence is then used uncalibrated.
-        if not st.src_fps_known.is_set():
-            print("[serve] 等待读到源帧率以校准出流节拍（最多 8 秒）")
-            st.src_fps_known.wait(8.0)
-        fps, note = stream_fps_for_source(cfg.max_stream_fps, st.src_fps)
-        if abs(fps - cfg.max_stream_fps) > 1e-9:
-            print(f"[warn] 出流节拍 {cfg.max_stream_fps:g} -> {fps:g} fps：{note}")
-            # Mutated once, here, so /stream, /live.flv, HLS, the push and the encode-ceiling
-            # self-test all read the same corrected value from cfg rather than each growing its
-            # own copy of this rule.
-            cfg.max_stream_fps = fps
-        else:
-            print(f"[serve] 出流节拍 {fps:g} fps：{note}")
-        if "hls" in st.formats:
-            st.hls_dir = cfg.hls_dir or os.path.join(tempfile.gettempdir(), "darkpipe_hls")
-            st.hls = streams.hls_writer(st.jpeg, cfg.max_stream_fps, st.hls_dir,
-                                        cfg.stream_bitrate)
-            print(f"[serve] HLS 分片目录 {st.hls_dir}")
-        if cfg.rtmp_push_url:
-            st.push = streams.rtmp_push(st.jpeg, cfg.max_stream_fps, cfg.rtmp_push_url,
-                                        cfg.stream_bitrate)
-            print(f"[serve] 推流到 {cfg.rtmp_push_url}")
-            # The exact command, so the same push can be reproduced by hand from a shell on
-            # the host when the platform side and this side disagree about who dropped it.
-            # stdin_pipe is the size F_SETPIPE_SZ actually granted: 65536 means the request
-            # silently failed, 0 means the platform has no F_GETPIPE_SZ at all (macOS), and in
-            # both cases only the ring in _write_loop is providing slack. It is printed because
-            # a whole deployment round could not tell "did not help" from "never ran" -- see
-            # streams.FFmpegOut._widen_stdin.
-            print(f"[push] {' '.join(st.push._cmd)}")
-            print(f"[push] stdin_pipe={st.push.pipe_bytes}B"
-                  + (f"（{st.push.pipe_note}）" if st.push.pipe_note else "")
-                  + f"  ring={streams.RING_FRAMES}帧")
-        # Unconditional: /stream and FLV go through the same encoder settings, so the ceiling
-        # is worth having even with no push configured. One 60-frame burst, then the thread ends.
-        threading.Thread(target=_encode_ceiling_probe, args=(st, cfg), daemon=True,
-                         name="probe-encode").start()
-        yield
-        for out in (st.hls, st.push):
-            if out is not None:
-                out.close()
-        st.stop.set()
-        for t in threads:
-            t.join(timeout=5)
-        if st.clipper is not None:
-            st.clipper.close()                 # flush the in-flight clip before exiting
-            print(f"[serve] 片段统计 {st.clipper.stats()}")
-        if st.eventlog is not None:
-            st.eventlog.close()
-            print(f"[serve] 事件日志统计 {st.eventlog.stats()}")
+        try:
+            for t in threads:
+                t.start()
+            if not st.src_fps_known.is_set():
+                print("[serve] 等待读到源帧率以校准出流节拍（最多 8 秒）")
+                await asyncio.to_thread(st.src_fps_known.wait, 8.0)
+            fps, note = stream_fps_for_source(cfg.max_stream_fps, st.src_fps)
+            if abs(fps - cfg.max_stream_fps) > 1e-9:
+                print(f"[warn] 出流节拍 {cfg.max_stream_fps:g} -> {fps:g} fps：{note}")
+                # Set once before any FFmpeg starts; all outputs share this cadence.
+                cfg.max_stream_fps = fps
+            else:
+                print(f"[serve] 出流节拍 {fps:g} fps：{note}")
+            if not st.stop.is_set():
+                if "hls" in st.formats:
+                    st.hls_dir = cfg.hls_dir or os.path.join(tempfile.gettempdir(), "darkpipe_hls")
+                    st.hls = streams.hls_writer(st.jpeg, cfg.max_stream_fps, st.hls_dir,
+                                                cfg.stream_bitrate)
+                    print(f"[serve] HLS 分片目录 {st.hls_dir}")
+                if cfg.rtmp_push_url:
+                    st.push = streams.rtmp_push(st.jpeg, cfg.max_stream_fps, cfg.rtmp_push_url,
+                                                cfg.stream_bitrate)
+                    print(f"[serve] 推流到 {cfg.rtmp_push_url}")
+                    # Print the command and actual pipe capacity so deployment-side network
+                    # diagnosis can reproduce the push and distinguish OS pipe limits from
+                    # the user-space ring. A denied F_SETPIPE_SZ request leaves 65536 here.
+                    print(f"[push] {' '.join(st.push._cmd)}")
+                    print(f"[push] stdin_pipe={st.push.pipe_bytes}B"
+                          + (f"（{st.push.pipe_note}）" if st.push.pipe_note else "")
+                          + f"  ring={streams.RING_FRAMES}帧")
+                # /stream and FLV share these encoder settings, so keep the ceiling probe
+                # even without a push. It is diagnostic only: one 60-frame burst, then exit.
+                threading.Thread(target=_encode_ceiling_probe, args=(st, cfg), daemon=True,
+                                 name="probe-encode").start()
+            yield
+        finally:
+            st.request_stop()
+            await asyncio.to_thread(_close_flv_viewers, st)
+            for out in (st.hls, st.push):
+                if out is not None:
+                    out.close()
+            for t in threads:
+                if t.ident is not None:
+                    await asyncio.to_thread(t.join, 5.0)
+            if threads[1].is_alive():
+                st.fail_processing("shutdown", RuntimeError("处理线程未在停止后 5 秒内退出"))
+            if st.clipper is not None:
+                try:
+                    await asyncio.to_thread(st.clipper.close)
+                except Exception as exc:
+                    st.fail_processing("clip-close", exc)
+                print(f"[serve] 片段统计 {st.clipper.stats()}")
+            if st.eventlog is not None:
+                st.eventlog.close()
+                print(f"[serve] 事件日志统计 {st.eventlog.stats()}")
 
     app = FastAPI(title="darkpipe", lifespan=lifespan)
     app.state.dark = st
 
     @app.get("/health")
     def health():
-        body = dict(status="ok" if st.capture_alive else "degraded",
+        frame_age = (max(0.0, time.time() - st.last_frame_at)
+                     if st.last_frame_at is not None else None)
+        healthy = (st.capture_alive and st.processing_alive and st.processing_ready
+                   and not st.processing_error and not st.stop.is_set()
+                   and frame_age is not None and frame_age <= PROCESS_STALE_SECONDS)
+        processing_status = ("failed" if st.processing_error else
+                             "stopping" if st.stop.is_set() else
+                             "starting" if not st.processing_ready else "running")
+        body = dict(status="ok" if healthy else "degraded",
                     uptime_s=round(time.time() - st.t_start, 1),
                     capture_alive=st.capture_alive, source=str(cfg.input),
+                    processing_alive=st.processing_alive,
+                    processing_status=processing_status,
+                    processing_error=st.processing_error,
+                    frame_age_s=(round(frame_age, 2) if frame_age is not None else None),
                     reconnects=st.reconnects, fps_in=round(st.fps_in, 2),
                     fps_proc=round(st.fps_proc, 2),
                     frames_dropped=max(0, st.frames_in - st.frames_proc),
@@ -1409,14 +1526,13 @@ def build_app(cfg, on_clip=None, on_ready=None):
                 if err:
                     body[f"{key}_error"] = err
         # Degrade on a wedged or dead output. The status field is what an orchestrator polls, so
-        # a stream nobody can watch must not read as ok here -- that gap is why the freeze was
-        # only ever noticed by someone looking at the picture. The HTTP code stays tied to
-        # capture_alive: losing one output format is a degradation, not a dead service, and
-        # flipping to 503 would make a platform restart the container over a transient reconnect.
+        # a stream nobody can watch must not read as ok here. Losing one output format alone
+        # keeps HTTP 200 during its transient reconnect; capture/processing failure, startup
+        # and stale frames return 503 independently of individual output formats.
         if wedged and body["status"] == "ok":
             body["status"] = "degraded"
             body["degraded_reason"] = "出流阻塞或已退出：" + ",".join(wedged)
-        return JSONResponse(body, status_code=200 if st.capture_alive else 503)
+        return JSONResponse(body, status_code=200 if healthy else 503)
 
     @app.get("/config")
     def config():
@@ -1429,7 +1545,7 @@ def build_app(cfg, on_clip=None, on_ready=None):
         async def gen():
             last = 0
             interval = 1.0 / cfg.max_stream_fps
-            while True:
+            while not st.stop.is_set():
                 jpg, seq = st.jpeg.get()
                 if jpg is not None and seq != last:
                     last = seq
@@ -1453,6 +1569,9 @@ def build_app(cfg, on_clip=None, on_ready=None):
         sat there quietly. See ServerState.flv_total.
         """
         from fastapi.responses import Response
+        if st.stop.is_set():
+            return Response("服务正在停止", status_code=503,
+                            media_type="text/plain; charset=utf-8")
         if "flv" not in st.formats:
             return Response("flv 未在 stream_formats 中启用", status_code=404,
                             media_type="text/plain; charset=utf-8")
@@ -1492,7 +1611,7 @@ def build_app(cfg, on_clip=None, on_ready=None):
             # because that is the path that does not go through the break below.
             reason = "客户端断开"
             try:
-                while True:
+                while not st.stop.is_set():
                     # read1, not read: read(n) waits for the full n bytes, which holds finished
                     # frames back until the buffer fills. read1 forwards whatever ffmpeg has
                     # already produced -- the difference is latency, which is the whole point
@@ -1508,6 +1627,8 @@ def build_app(cfg, on_clip=None, on_ready=None):
                     viewer.sent += len(chunk)
                     yield chunk
             finally:
+                if st.stop.is_set():
+                    reason = "服务停止"
                 c = out.snap()
                 out.close()
                 with st.flv_lock:
@@ -1562,12 +1683,15 @@ def build_app(cfg, on_clip=None, on_ready=None):
         async def gen():
             q = st.bus.subscribe()
             try:
-                while True:
+                while not st.stop.is_set():
                     try:
                         ev = await asyncio.to_thread(q.get, True, 15.0)
+                        if ev is _BUS_CLOSED or st.stop.is_set():
+                            break
                         yield f"event: recognition\ndata: {json.dumps(ev.to_dict())}\n\n"
                     except queue.Empty:
-                        yield ": ping\n\n"
+                        if not st.stop.is_set():
+                            yield ": ping\n\n"
             finally:
                 st.bus.unsubscribe(q)
         return StreamingResponse(gen(), media_type="text/event-stream")
@@ -1586,18 +1710,58 @@ def run_server(cfg, on_clip=None, stop_after=0.0, on_ready=None):
     # on_ready fires from the processing loop, not from here: uvicorn is listening long before
     # the weights are loaded and the camera is open, so "the port answers" is not "it works".
     app = build_app(cfg, on_clip=on_clip, on_ready=on_ready)
+    st = app.state.dark
     print(f"[serve] http://{cfg.host}:{cfg.port}  endpoints: /stream /events /health /config")
-    server = uvicorn.Server(uvicorn.Config(app, host=cfg.host, port=cfg.port,
-                                           log_level="warning"))
+
+    class OperatorServer(uvicorn.Server):
+        def handle_exit(self, sig, frame):
+            # Uvicorn otherwise re-raises captured signals before run_server returns, killing
+            # the operator before it can write its final session. Keep its graceful/second
+            # Ctrl-C behaviour, but let the caller finish its own artifact cleanup first.
+            if self.should_exit and sig == signal.SIGINT:
+                self.force_exit = True
+            else:
+                self.should_exit = True
+
+    server = OperatorServer(uvicorn.Config(app, host=cfg.host, port=cfg.port,
+                                          log_level="warning",
+                                          timeout_graceful_shutdown=5))
+    monitor_done = threading.Event()
+
+    def monitor_stop():
+        # Uvicorn's signal handler sets should_exit before lifespan shutdown. Bridge that
+        # signal to the generators here; waiting for lifespan would deadlock on those requests.
+        # Processing failures travel in the opposite direction through the same stop flag.
+        while not monitor_done.is_set():
+            if server.should_exit or st.stop.is_set():
+                st.request_stop()
+                server.should_exit = True
+                _close_flv_viewers(st)
+                return
+            monitor_done.wait(0.05)
+
+    monitor = threading.Thread(target=monitor_stop, daemon=True, name="darkpipe-stop")
+    monitor.start()
+    timer = None
     if stop_after and stop_after > 0:
         print(f"[serve] run_seconds={stop_after:g}，到期后自动退出")
 
         def _bell():
             print(f"[serve] 运行时长已达 {stop_after:g}s，开始收尾退出")
+            st.request_stop()
             server.should_exit = True
 
-        t = threading.Timer(stop_after, _bell)
-        t.daemon = True
-        t.start()
-    server.run()
-    return app.state.dark
+        timer = threading.Timer(stop_after, _bell)
+        timer.daemon = True
+        timer.start()
+    try:
+        server.run()
+    finally:
+        if timer is not None:
+            timer.cancel()
+        st.request_stop()
+        monitor_done.set()
+        monitor.join(timeout=6)
+    if st.processing_error:
+        raise ProcessingFailed(st)
+    return st

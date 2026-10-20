@@ -1,0 +1,13 @@
+{
+  "tar_sha256": "58d66f678c2997b9e5a86708e55dbbfa4188077d05eb1eec211363825b4e61c7",
+  "default_tar_identical": true,
+  "tests": 96,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 64.701,
+  "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "default_reco_min_conf": 0.65,
+  "default_clip_pre_sec": 2,
+  "default_clip_post_sec": 2,
+  "default_proc_max_side": 720
+}

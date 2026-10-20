@@ -1,0 +1,61 @@
+{
+  "model": "videomamba_t_behavior_32f_realactall_full_pn2.pth",
+  "model_sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+  "selected": "epoch-04",
+  "defaults": {
+    "reco_min_conf": 0.75,
+    "proc_max_side": 720,
+    "pose_overlay": true,
+    "clip_pre_sec": 2,
+    "clip_post_sec": 2
+  },
+  "packages": [
+    {
+      "archive": "platform/dark-demo-v2_pn2_20261019.tar.gz",
+      "size": 216685550,
+      "sha256": "3f3c37c5679d3e8c779571cb6a7f365e6aacef5f9ccb492410dcd7c80b2aa78f",
+      "md5": "f62156d6b94b111477ca039508d3bc3f",
+      "files": 47,
+      "weights": 8,
+      "runtime_identical_to_tested_extraction": true
+    },
+    {
+      "archive": "platform/dark-demo-v2_pn2_20261019.zip",
+      "size": 216706041,
+      "sha256": "0cd06112bc60d589fe8540d02093b98d36362deddaee50b82e0c0e71541dfa59",
+      "md5": "024eb2401bd40712a906f7dcdcdafb5d",
+      "files": 47,
+      "weights": 8,
+      "runtime_identical_to_tested_extraction": true
+    },
+    {
+      "archive": "NVIDIA-Box_20261019.zip",
+      "size": 154044057,
+      "sha256": "364d2eba78f77d74711296b649d29963bdf3753499b463dca379bce5e5bfcd25",
+      "md5": "d821d56b491e7d8a2f3dbc5da2189ddb",
+      "files": 24,
+      "weights": 7,
+      "runtime_identical_to_tested_extraction": true
+    }
+  ],
+  "aliases": {
+    "platform/dark-demo-v2.tar.gz": "platform/dark-demo-v2_pn2_20261019.tar.gz",
+    "platform/dark-demo-v2.zip": "platform/dark-demo-v2_pn2_20261019.zip",
+    "NVIDIA-Box.zip": "NVIDIA-Box_20261019.zip"
+  },
+  "image": {
+    "image": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+    "archive": "platform/darkpipe-operator-0.3.0.tar.gz",
+    "size": 6796727259,
+    "sha256": "a562d53d7bc588aded2d146939a634cf3e0a78afd6dfb8c5f53692c6afec2b77",
+    "unchanged_from_20261015": true
+  },
+  "validation": {
+    "operator_cpu": 108,
+    "box_cpu": 31,
+    "box_environment": 8,
+    "gpu_matched_samples": 10,
+    "offline": "real-offline/verification.json"
+  },
+  "no_platform_upload": true
+}

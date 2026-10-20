@@ -1,0 +1,116 @@
+{
+  "single-default-r1-persistent-sse": {
+    "exit_code": 1,
+    "session_status": "failed",
+    "measurement_window": [
+      20,
+      120
+    ],
+    "health_samples": 94,
+    "recognition_samples": 24,
+    "processing_fps": {
+      "min": 0.89,
+      "p50": 8.36,
+      "p95": 14.8,
+      "max": 15.7
+    },
+    "recognition_delay_ms": {
+      "min": 576.913318634027,
+      "p50": 949.0219841003445,
+      "p95": 2290.816064834589,
+      "max": 2612.558607101434
+    },
+    "frame_latency_ms": {
+      "min": 78.1,
+      "p50": 124.25,
+      "p95": 473.8,
+      "max": 947.6
+    },
+    "fps_ge_15_samples": 2,
+    "recognition_le_1000ms": 14,
+    "clips": {
+      "session": "127.0.0.1/20261014_160702_1",
+      "clips_saved": 10,
+      "clips_abandoned": 2,
+      "clips_forced": 0,
+      "frames_dropped": 70,
+      "uploads_dropped": 0,
+      "stage_orphans_cleaned": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 1,
+      "write_errors": 1,
+      "write_error": "片段 /audit/single-default-r1-persistent-sse/clips/127.0.0.1/20261014_160702_1/drinking_water/20261014_160835_drinking_water_0009.mp4 未收到收尾消息",
+      "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+      "writer_alive": false,
+      "uploads_pending": 0
+    },
+    "wall_seconds": 153.375419144053,
+    "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+    "gpu_physical": [
+      1
+    ],
+    "cpu_limit": 8,
+    "memory_limit_gib": 12,
+    "clip_denoise": "quality",
+    "skeleton_enabled": true,
+    "skeleton_disabled": false,
+    "oom_killed": false
+  },
+  "single-fast-diagnostic-persistent-sse": {
+    "exit_code": 0,
+    "session_status": "stopped",
+    "measurement_window": [
+      20,
+      120
+    ],
+    "health_samples": 96,
+    "recognition_samples": 19,
+    "processing_fps": {
+      "min": 0.5,
+      "p50": 6.42,
+      "p95": 15.43,
+      "max": 16.04
+    },
+    "recognition_delay_ms": {
+      "min": 650.0534191131565,
+      "p50": 1360.2196159362734,
+      "p95": 5240.876756668092,
+      "max": 6019.243049621579
+    },
+    "frame_latency_ms": {
+      "min": 92.6,
+      "p50": 120.15,
+      "p95": 198.675,
+      "max": 2110.7
+    },
+    "fps_ge_15_samples": 8,
+    "recognition_le_1000ms": 5,
+    "clips": {
+      "session": "127.0.0.1/20261014_161032_1",
+      "clips_saved": 14,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "uploads_dropped": 0,
+      "stage_orphans_cleaned": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "write_error": null,
+      "recovery_stage_dir": null,
+      "writer_alive": false,
+      "uploads_pending": 0
+    },
+    "wall_seconds": 142.23630653321743,
+    "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+    "gpu_physical": [
+      1
+    ],
+    "cpu_limit": 8,
+    "memory_limit_gib": 12,
+    "clip_denoise": "fast",
+    "skeleton_enabled": true,
+    "skeleton_disabled": false,
+    "oom_killed": false
+  }
+}

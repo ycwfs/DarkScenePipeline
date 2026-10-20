@@ -1,0 +1,161 @@
+{
+  "time": "2026-10-18T11:10:59.343801+08:00",
+  "archive_sha256": "25702ecfe7517033ba2ffec3381f039268485fd5d331b60406ee4899b2f28bac",
+  "archive_integrity": "passed",
+  "directory_comparison": [
+    {
+      "file": "NVIDIA-Box/README.md",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/requirements.txt",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/video_io.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/behavior_infer.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/lowlight_infer.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/skeleton_aux.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/weights/videomamba_t_behavior_32f_realactall_full.pth",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/weights/videomamba_t_behavior_32f_realact10_all.pth",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/weights/rtmo-s_end2end.onnx",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/weights/stgcn_behavior_32f_realactall_full.pth",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/weights/videomamba_t_behavior_32f_realactall_full_pn.pth",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/weights/NTIRE.pth",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/check_env.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/models/videomamba/mamba_simple.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/models/videomamba/videomamba.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/models/videomamba/bimamba_interface.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/models/videomamba/__init__.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/models/retinexformer_arch.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/models/__init__.py",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/sample_data/dark_frame.png",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/sample_data/sample_wave.mp4",
+      "present_in_directory": true,
+      "same": true
+    },
+    {
+      "file": "NVIDIA-Box/sample_data/sample_drink.mp4",
+      "present_in_directory": true,
+      "same": true
+    }
+  ],
+  "weights": [
+    {
+      "file": "NTIRE.pth",
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+      "platform_file": "platform/dark-demo-v2/ckpts/NTIRE.pth",
+      "platform_exists": true,
+      "same_as_platform": true
+    },
+    {
+      "file": "rtmo-s_end2end.onnx",
+      "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+      "platform_file": "platform/dark-demo-v2/ckpts/rtmo-s_end2end.onnx",
+      "platform_exists": true,
+      "same_as_platform": true
+    },
+    {
+      "file": "stgcn_behavior_32f_realactall_full.pth",
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+      "platform_file": "platform/dark-demo-v2/ckpts/stgcn_behavior_32f_realactall_full.pth",
+      "platform_exists": true,
+      "same_as_platform": true
+    },
+    {
+      "file": "videomamba_t_behavior_32f_realact10_all.pth",
+      "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44",
+      "platform_file": "platform/dark-demo-v2/ckpts/videomamba_t_behavior_32f.pth",
+      "platform_exists": true,
+      "same_as_platform": true
+    },
+    {
+      "file": "videomamba_t_behavior_32f_realactall_full.pth",
+      "sha256": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79",
+      "platform_file": "platform/dark-demo-v2/ckpts/videomamba_t_behavior_32f_realactall_full.pth",
+      "platform_exists": true,
+      "same_as_platform": true
+    },
+    {
+      "file": "videomamba_t_behavior_32f_realactall_full_pn.pth",
+      "sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04",
+      "platform_file": "platform/dark-demo-v2/ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth",
+      "platform_exists": true,
+      "same_as_platform": true
+    }
+  ]
+}

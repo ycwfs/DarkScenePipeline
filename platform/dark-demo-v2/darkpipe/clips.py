@@ -50,15 +50,19 @@ FPS_RANGE = (5, 30)              # nominal output rates worth choosing between
 MAX_DUP = 60                     # frames one stalled input frame may be stretched into
 # How long a clip that could not be opened keeps trying. See _start.
 START_RETRY_SEC = 3.0
-# How long a clip that could not be *closed* keeps trying. See _finish/_flush_pending_end.
-# Longer than START_RETRY_SEC because a lost `end` costs the whole file rather than its lead-in,
-# and equal to the 10 s the close used to spend *blocking* the processing thread for -- the
-# tolerance is unchanged, only who waits.
+# Warning interval for a deferred close, also used when draining the upload queue.
+# Closing messages never expire: slow per-frame denoising can keep a healthy writer busy
+# longer than 10 s, and discarding `end` would corrupt the next clip's protocol.
 END_RETRY_SEC = 10.0
 # How old a file in stage_dir must be before startup treats it as an orphan. See _clean_stage:
 # the point is not the exact value but that it is far longer than any staged clip's real
 # lifetime (seconds, or minutes behind a wedged NFS move), so a concurrent run is never robbed.
 STAGE_ORPHAN_AGE = 3600.0
+CLOSE_STALL_SEC = 60.0          # no writer progress, NOT total time allowed to drain
+
+
+class ClipWriteError(RuntimeError):
+    """Clip output is incomplete; callers must not report a successful delivery."""
 
 
 def measure_fps(times, fallback=15.0):
@@ -204,6 +208,14 @@ class ClipRecorder:
         # age-gated rather than a clean sweep, because the dir may be shared with a live process
         # -- see _clean_stage.
         self.stage_orphans = self._clean_stage()
+        self._writer_progress = time.monotonic()
+        self._writer_error = None
+        self._write_errors = 0
+        self._unfinished = set()
+        self._failed_clips = set()
+        self._abort = threading.Event()
+        self._closing = False
+        self._closed = False
         # Sized to cover the writer's longest single stint: closing a clip means releasing the
         # encoder and moving two files to NFS, during which nothing is dequeued. 64 frames is
         # ~4 s of slack at the 15 fps cap, against ~2 s for the 32 it used to be; the cost is
@@ -211,12 +223,14 @@ class ClipRecorder:
         # part of that stint too and no longer is (see _up_q below), so the 64 now covers only
         # work with a bounded cost -- it is left as it is because an NFS move has no ceiling
         # either, and 4 s of slack is what keeps a hiccup from costing the clip.
+        # A start/frame producer leaves one slot reserved for the active clip's `end`.
+        # Only this producer adds messages, so a concurrent consumer can only free capacity.
         # realtime=False (offline): maxsize=0 makes this queue unlimited, so put_nowait()/
         # put() below can never raise queue.Full -- the abandon/drop branches in _start(),
         # _flush_pending_end() and _send_frame() simply never fire. A slow writer just backs the
         # queue up; it always drains once the source file finishes feeding frames.
         self._q = queue.Queue(maxsize=max(4, int(queue_frames)) if self.realtime else 0)
-        self._thread = threading.Thread(target=self._writer_loop, daemon=True,
+        self._thread = threading.Thread(target=self._writer_main, daemon=True,
                                         name="clip-writer")
         self._thread.start()
         # on_saved (an HDFS upload) used to run on the writer thread, right where the queue is
@@ -304,6 +318,10 @@ class ClipRecorder:
 
     def push(self, frame, event, ts):
         """Called from the processing thread, once per processed frame. Never blocks."""
+        if self._writer_error:
+            raise ClipWriteError(self._writer_error)
+        if self._closing:
+            return
         if self._last_ts is not None:
             gap = ts - self._last_ts
             if 0 < gap <= 1.0:     # > 1 s is a stall (model warmup, reconnect), not a rate
@@ -366,40 +384,64 @@ class ClipRecorder:
         elif ts - act["t_last_event"] > self.post_sec:
             self._finish(ts, "post 静默期结束")
 
+    def _write_failed(self, reason):
+        self._write_errors += 1
+        if self._writer_error is None:
+            self._writer_error = str(reason)
+        print(f"[clip] 写入失败: {reason}")
+
+    def _writer_main(self):
+        try:
+            self._writer_loop()
+        except BaseException as exc:
+            self._write_failed(f"写线程退出：{type(exc).__name__}: {exc}")
+
     def close(self):
-        """Flush an in-flight clip and stop the writer thread. Safe to call twice."""
+        """Drain while progress continues; a stalled or failed writer is an explicit error."""
+        if self._closed:
+            if self._writer_error:
+                raise ClipWriteError(self._writer_error)
+            return
+        self._closing = True
+        started = time.monotonic()
+
+        def check_progress():
+            if time.monotonic() - max(started, self._writer_progress) > CLOSE_STALL_SEC:
+                self._abort.set()
+                self._write_failed(f"写盘连续 {CLOSE_STALL_SEC:g} 秒无进展，"
+                                   f"未完成 {len(self._unfinished)} 段；暂存目录 {self.stage_dir}")
+                raise ClipWriteError(self._writer_error)
+
+        def enqueue(message):
+            while self._thread.is_alive():
+                try:
+                    self._q.put(message, timeout=0.1)
+                    return
+                except queue.Full:
+                    check_progress()
+            self._write_failed("写线程提前退出，未能提交收尾消息")
+            raise ClipWriteError(self._writer_error)
+
         if self._active is not None:
-            # The last real frame, not t_last_event + post_sec: the stream stopped here, and
-            # claiming a duration that runs past the final frame would pad the clip with a
-            # frozen image to match.
             self._finish(self._last_ts, "服务停止")
+        if self._pending_start is not None:
+            self._pending_start = None
+            self.abandoned += 1
+            self._write_failed("停止时仍有未能开始保存的动作片段")
         if self._pending_end is not None:
-            # Shutdown is the one place where blocking is the right answer: there is no later
-            # frame to retry on, and the alternative is a truncated file. Nothing downstream of
-            # here is holding the pipeline open any more.
-            msg, _, name, report = self._pending_end
+            msg, _, _, report = self._pending_end
+            enqueue(msg)
             self._pending_end = None
-            try:
-                self._q.put(msg, timeout=END_RETRY_SEC)
-                print(report)
-            except queue.Full:
-                self.abandoned += 1
-                print(f"[clip] 写入队列持续阻塞，片段 {name} 可能不完整")
+            print(report)
         if self._thread.is_alive():
-            # Bounded, for the same reason as above: on a wedged writer an unbounded put here
-            # never returns, and this runs on the shutdown path -- serve mode still has to write
-            # session_json with status=stopped after it, so hanging here turns a lost clip into a
-            # lost session record. The thread is a daemon and the join below is already bounded,
-            # so a `stop` that cannot be delivered costs nothing beyond an unclean exit.
-            try:
-                self._q.put(("stop",), timeout=END_RETRY_SEC)
-            except queue.Full:
-                print("[clip] 写入线程无响应，跳过停止信号")
-            self._thread.join(timeout=30)
+            enqueue(("stop",))
+            while self._thread.is_alive():
+                self._thread.join(timeout=0.1)
+                if self._thread.is_alive():
+                    check_progress()
+        if self._unfinished and not self._writer_error:
+            self._write_failed(f"写线程结束后仍有 {len(self._unfinished)} 段未完成")
         if self._up_thread is not None and self._up_thread.is_alive():
-            # Uploads outlive the clips they belong to, so shutdown gives them a chance to
-            # finish -- bounded for the same reason as above (session_json still has to be
-            # written). Whatever is left is missing from HDFS only; the local clips are on disk.
             try:
                 self._up_q.put(None, timeout=END_RETRY_SEC)
             except queue.Full:
@@ -407,18 +449,26 @@ class ClipRecorder:
             self._up_thread.join(timeout=30)
             if self._up_thread.is_alive():
                 print("[clip] 上传线程仍未结束，剩余片段仅保留在本地")
+        self._closed = True
+        if self._writer_error:
+            raise ClipWriteError(self._writer_error)
 
     def stats(self):
         return {"session": self.session, "clips_saved": self.saved,
                 "clips_abandoned": self.abandoned,
-                # An `end` that never reached the writer, so the clip was dropped and its
-                # encoder force-released instead of leaking. Tracks clips_abandoned but only
-                # counts the ones that had actually opened a file; non-zero means the writer
-                # thread went unresponsive for END_RETRY_SEC at a time.
+                # An unexpected missing close/abort required releasing an incomplete encoder.
+                # Normal backpressure drops frames, never the mandatory closing message.
                 "clips_forced": self.forced_close,
                 "frames_dropped": self.dropped_frames,
                 "uploads_dropped": self.upload_dropped,
-                "stage_orphans_cleaned": self.stage_orphans}
+                "stage_orphans_cleaned": self.stage_orphans,
+                "clips_unfinished": len(self._unfinished),
+                "clips_failed": len(self._failed_clips),
+                "write_errors": self._write_errors,
+                "write_error": self._writer_error,
+                "recovery_stage_dir": self.stage_dir if self._writer_error else None,
+                "writer_alive": self._thread.is_alive(),
+                "uploads_pending": self._up_q.unfinished_tasks if self._up_q else 0}
 
     # ---------------------------------------------------------------- clip lifecycle
 
@@ -465,7 +515,10 @@ class ClipRecorder:
             "pending": None, "pending_n": 0,     # 待确认的行为切换，见 _confirm_switch
         }
         path = os.path.join(self.root, rel_dir, name + ".mp4")
+        self._unfinished.add(path)
         try:
+            if self._q.maxsize and self._q.qsize() >= self._q.maxsize - 1:
+                raise queue.Full
             self._q.put_nowait(("start", path, fps, pre))
         except queue.Full:
             # Dropping the opening message would leave every later frame unanchored, so the
@@ -474,8 +527,10 @@ class ClipRecorder:
             # behaviour switch starts the next clip while the writer is still closing and
             # uploading the previous one. So it is retried on the following frames instead.
             # The pre-roll is re-snapshotted each attempt, so a clip that opens 200 ms late
-            # still contains its lead-in; only a queue that stays full for START_RETRY_SEC
-            # (the writer is wedged, not merely busy) counts as an abandoned clip.
+            # still contains its lead-in. If capacity stays unavailable for START_RETRY_SEC,
+            # the live producer abandons this unopened clip, even if the writer is healthy
+            # but overloaded. This limit never applies to an already-open clip's `end`.
+            self._unfinished.discard(path)
             self._seq -= 1                       # 这次没算数，序号留给下一次，保持连号
             self._active = None
             if self._pending_start is None:
@@ -526,13 +581,14 @@ class ClipRecorder:
         # re-sending the last JPEG up to 174 times (~7 s of frozen picture at 25 fps) so that
         # timestamps, DTS and bitrate all stayed perfect while nothing moved.
         #
-        # So it is deferred instead, exactly as _start defers an opening it cannot enqueue: keep
-        # the message, retry it on the following frames, and only give up after END_RETRY_SEC of
-        # a queue that never drains (a wedged writer, not a busy one). The close is still
-        # delivered before anything else -- push() returns early while one is pending and _start
-        # refuses -- so the writer never sees a `start` while a file is open.
+        # Start/frame messages reserve a queue slot for this close. Retain a fallback retry
+        # for an already-full queue, but NEVER discard the control message: a healthy writer
+        # can spend more than 10 s denoising its buffered frames. The old deadline abandoned
+        # `end`, then the next `start` force-closed the previous file and killed the service.
+        # Pending closes stay ahead of every later start; close() drains them or reports a
+        # real writer failure/stall. Live push() remains non-blocking.
         self._pending_end = (("end", meta, ts, final_path, final_rel_dir),
-                             ts + END_RETRY_SEC, act["name"],
+                             time.monotonic() + END_RETRY_SEC, act["name"],
                              f"[clip] 结束录制 {act['name']} 帧数={act['frames']} "
                              f"时长={duration:.1f}s（{why}）")
         self._flush_pending_end(ts)
@@ -540,8 +596,8 @@ class ClipRecorder:
     def _flush_pending_end(self, ts):
         """Try to hand the deferred close to the writer. -> True when nothing is pending.
 
-        Returns True on the give-up path too: a close that can never be delivered must not wedge
-        the recorder forever, so the clip is written off and later behaviours can still record.
+        A busy writer may delay delivery, but a later start must never overtake this close.
+        The deadline controls warning frequency, not the lifetime of the message.
         """
         if self._pending_end is None:
             return True
@@ -549,13 +605,11 @@ class ClipRecorder:
         try:
             self._q.put_nowait(msg)
         except queue.Full:
-            if ts <= deadline:
-                return False
-            self._pending_end = None
-            self.abandoned += 1
-            print(f"[clip] 写入队列持续满 {END_RETRY_SEC:.0f}s，片段 {name} 可能不完整"
-                  f"（累计放弃 {self.abandoned}）")
-            return True
+            now = time.monotonic()
+            if now > deadline:
+                self._pending_end = (msg, now + END_RETRY_SEC, name, report)
+                print(f"[clip] 写入队列繁忙，继续等待片段 {name} 收尾（收尾消息已保留）")
+            return False
         self._pending_end = None
         print(report)
         return True
@@ -573,6 +627,8 @@ class ClipRecorder:
 
     def _send_frame(self, frame, ts):
         try:
+            if self._q.maxsize and self._q.qsize() >= self._q.maxsize - 1:
+                raise queue.Full
             self._q.put_nowait(("frame", frame, ts))
         except queue.Full:
             self.dropped_frames += 1
@@ -605,6 +661,7 @@ class ClipRecorder:
         """
         writer, meta_path, mp4_path, rel_dir = None, None, None, None
         stage_mp4 = None
+        clip_id = None
         pending, pre_times, post_times, hint, used_fps = [], [], [], 15.0, 15.0
         next_due, stretched, last_frame = None, 0, None
 
@@ -623,40 +680,41 @@ class ClipRecorder:
             In the field the trigger fired ~1.2 times a minute, i.e. ~250 stuck processes per
             shift. clip_leak5.py is the regression case: run it against HEAD and this tree.
 
-            The staged file is deleted rather than delivered even though it would play: its
-            tail is missing and its metadata went with the abandoned `end`, while clip_dir's
-            contract is that a file there is a complete clip with a json beside it.
+            Keep the staged file for recovery, without delivering or counting it as saved:
+            its tail and metadata are incomplete. A final JSON is the completion marker.
             """
             nonlocal writer
+            if clip_id is not None and clip_id in self._unfinished:
+                self._unfinished.discard(clip_id)
+                self._failed_clips.add(clip_id)
+                if not self._writer_error:
+                    self._write_failed(f"片段 {clip_id} {reason}")
             if writer is None:
                 return
             self.forced_close += 1
             print(f"[clip] 片段 {os.path.basename(stage_mp4)} {reason}，"
-                  f"已强制释放编码器并丢弃（累计强制释放 {self.forced_close}）")
+                  f"已强制释放编码器，暂存文件保留（累计强制释放 {self.forced_close}）")
             try:
                 writer.close()
             except Exception as e:                        # noqa: BLE001
                 print(f"[clip] 强制释放编码器失败: {e}")
             writer = None
-            # stage_mp4 is always set when a writer is open (open_now built it from it), so no
-            # None-handling here -- and none on purpose: a str(None) fallback would build the
-            # relative path "None.json" and hand it to os.remove.
-            for p in (stage_mp4, os.path.splitext(stage_mp4)[0] + ".json"):
-                try:
-                    if os.path.exists(p):
-                        os.remove(p)
-                except OSError:
-                    pass
+            # Keep staged data for recovery. A failed clip has no completion marker and
+            # is never counted as saved or handed to the upload callback.
 
         def emit(frame, ts):
             """Write `frame` for every grid slot up to ts (>=0 times)."""
             nonlocal next_due, stretched, last_frame
+            if self._abort.is_set():
+                raise ClipWriteError("收尾已中止，保留暂存片段")
             if next_due is None:
                 next_due = ts
             last_frame = frame
+            self._writer_progress = time.monotonic()
             step, n = 1.0 / used_fps, 0
             while next_due <= ts and n < MAX_DUP:
                 writer.write(frame)
+                self._writer_progress = time.monotonic()
                 next_due += step
                 n += 1
             if n >= MAX_DUP:                 # a stall longer than MAX_DUP/used_fps
@@ -670,11 +728,16 @@ class ClipRecorder:
             writer = VideoWriter(stage_mp4, used_fps)
             next_due = None
             for f, t in pending:
+                if self._abort.is_set():
+                    raise ClipWriteError("收尾已中止，保留暂存片段")
                 emit(self._clean(f), t)
             pending.clear()
 
-        while True:
-            item = self._q.get()
+        while not self._abort.is_set():
+            try:
+                item = self._q.get(timeout=0.1)
+            except queue.Empty:
+                continue
             kind = item[0]
             try:
                 if kind == "stop":
@@ -684,6 +747,7 @@ class ClipRecorder:
                     # Must precede every rebinding below: force_close reads the *previous*
                     # clip's mp4_path/stage_mp4.
                     force_close("未收到收尾消息")
+                    clip_id = path
                     mp4_path, rel_dir = path, os.path.basename(os.path.dirname(path))
                     meta_path = os.path.splitext(path)[0] + ".json"
                     os.makedirs(self.stage_dir, exist_ok=True)
@@ -692,7 +756,9 @@ class ClipRecorder:
                     pre_times, post_times, last_frame = [t for _, t in pre], [], None
                 elif kind == "frame":
                     if writer is not None:
-                        emit(item[1], item[2])
+                        # Clean each new source frame once, before resampling. emit() also
+                        # repeats already-clean frames for gaps and the final tail.
+                        emit(self._clean(item[1]), item[2])
                     elif mp4_path is not None:
                         pending.append((item[1], item[2]))
                         post_times.append(item[2])
@@ -716,7 +782,7 @@ class ClipRecorder:
                         emit(last_frame, item[2])
                     writer.close()
                     meta = item[1]
-                    meta["video"] = mp4_path
+                    meta["video"] = os.path.basename(mp4_path)
                     meta["frames_written"] = writer.count
                     meta["fps"] = round(used_fps, 3)   # what the header actually says
                     # Resampling should make these come out at 1.0; they are recorded anyway
@@ -735,12 +801,16 @@ class ClipRecorder:
                     shutil.move(stage_mp4, mp4_path)      # mp4 first: the json is the marker
                     shutil.move(stage_meta, meta_path)    # that says the clip is complete
                     self.saved += 1
+                    self._unfinished.discard(clip_id)
                     print(f"[clip] 已保存 {mp4_path}（{writer.count} 帧）")
                     if self.on_saved:
                         self._queue_upload([mp4_path, meta_path], rel_dir, meta)
                     writer, mp4_path = None, None      # stray frames must not reopen a clip
             except Exception as e:                        # noqa: BLE001
-                print(f"[clip] 写入失败: {e}")
+                self._write_failed(f"{type(e).__name__}: {e}")
+                self._unfinished.discard(clip_id)
+                if clip_id is not None:
+                    self._failed_clips.add(clip_id)
                 if writer is not None:
                     try:
                         writer.close()
@@ -748,8 +818,8 @@ class ClipRecorder:
                         pass
                 writer, mp4_path, pending = None, None, []
             finally:
+                self._writer_progress = time.monotonic()
                 self._q.task_done()
         # Reached only on `stop` with a file still open, i.e. an `end` lost at shutdown. Same
-        # treatment as mid-run: release the child and take the staged file with it, rather than
-        # leaving an orphan behind for the next run's _clean_stage to find.
+        # treatment as mid-run: release the child, mark failure, and retain recovery data.
         force_close("服务停止时仍未收尾")

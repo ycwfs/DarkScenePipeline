@@ -554,6 +554,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         self.t_parts["window"] += time.perf_counter() - t0
         prob = self._infer(arr)
         self.prior_note = ""
+        skeleton_active = False
         if self.skel is not None and len(self.rawbuf) == len(self.buf):
             raw = self._raw_window()
             lums = self._luma_window()
@@ -566,6 +567,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
                 self.prior_note = (f"照度 {lum:.0f}（提亮前原图）< 门限 "
                                    f"{self.lum_gate:.0f}，仅用RGB结果")
             else:
+                skeleton_active = True
                 t0 = time.perf_counter()
                 if self.fuse_mode == "max_prior":
                     info = self.skel.analyze(raw)
@@ -577,11 +579,19 @@ class BehaviorRecognizer(VideoMambaRecognizer):
                     prob = self.skel.fuse(prob, ps, pres)
         prob = reject_probs(prob, self.labels, self.reject_tau)
         order = prob.argsort()[::-1][:min(3, len(self.labels))]
+        label = self.labels[int(order[0])]
+        actors, reference = [], None
+        if skeleton_active and hasattr(self.skel, 'action_poses'):
+            actors = self.skel.action_poses(label)
+            if actors:
+                from ..pose_overlay import tracking_gray
+                reference = tracking_gray(frame_bgr)
         return RecognitionEvent(
             frame_index=frame_index, timestamp=timestamp,
-            label=self.display(self.labels[int(order[0])]), confidence=float(prob[order[0]]),
+            label=self.display(label), confidence=float(prob[order[0]]),
             topk=[(self.display(self.labels[int(i)]), float(prob[i])) for i in order],
-            model=self.kind, window=self.window)
+            model=self.kind, window=self.window, skeleton_active=skeleton_active,
+            actor_poses=actors, pose_reference=reference)
 
     def reset(self) -> None:
         super().reset()

@@ -43,7 +43,7 @@ check.sh
 # 权重不进 git（GitHub 单文件 100MB 上限）：部署权重走 ckpts/ 白名单 + 算子 zip /
 # NVIDIA-Box 交付；models/ 是 RTMO-s onnx 等姿态权重，随算子包交付，解包即得；
 # platform/dark-demo-v2/ckpts/ 是打包时从仓库 ckpts/ + models/ 拷出的，可重建。
-models/
+/models/
 platform/dark-demo-v2/ckpts/
 *.zip
 *.filepart
@@ -59,5 +59,12 @@ darkpose_teacher_test/
 real-actiondata-0909/
 lowlight-skeleton-detection/
 replay_ckpt_pn/
-NVIDIA-Box/
+# Standalone Box source is versioned; weights/examples stay in the delivery ZIP.
+/NVIDIA-Box/weights/
+/NVIDIA-Box/sample_data/
+/NVIDIA-Box/out/
+/NVIDIA-Box/outputs/
+# Raw platform feedback may include private stream/session configuration.
+/realdata-10-09/
+.pytest_cache/
 assets/demo_5actions/

@@ -1,0 +1,34 @@
+[
+  {
+    "path": "image-extra-pytest/test_real_shards_rebase_recogn0/out.mp4",
+    "codec": "h264",
+    "frames": "300",
+    "fps": "20/1",
+    "duration": "15.000000",
+    "decode_exit": 0
+  },
+  {
+    "path": "image-pytest/test_default_clip_covers_two_s0/20261014_155418_1/1-5s-挥手.mp4",
+    "codec": "h264",
+    "frames": "42",
+    "fps": "10/1",
+    "duration": "4.200000",
+    "decode_exit": 0
+  },
+  {
+    "path": "image-pytest/test_real_multishard_worker_an0/out.mp4",
+    "codec": "h264",
+    "frames": "300",
+    "fps": "20/1",
+    "duration": "15.000000",
+    "decode_exit": 0
+  },
+  {
+    "path": "quality/clips/waving/20261014_155636_waving_0001.mp4",
+    "codec": "h264",
+    "frames": "60",
+    "fps": "15/1",
+    "duration": "4.000000",
+    "decode_exit": 0
+  }
+]

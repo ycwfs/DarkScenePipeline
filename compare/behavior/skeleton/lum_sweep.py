@@ -1,10 +1,8 @@
 """Gate sweep + luma analysis over a prior_eval.py JSONL.
 
-The run must have been executed with --lum-gate 0 (gate off) so every window carries its
-raw three-step outcome; the step-1 gate is then swept OFFLINE: for a candidate threshold
-t, windows with lum < t replay as RGB-only (p_rgb + reject_tau -- exactly the deployed
-below-gate path), windows with lum >= t keep their recorded max_prior vector. The gate
-changes nothing above it, so the mix is exact.
+Requires schema_version=2 from prior_eval.py: full precision probabilities and luma,
+with explicit ungated vectors. Old rounded files cannot reproduce threshold decisions
+exactly and must be regenerated. The original run may use any lum_gate.
 
 Prints:
   1. per-suite luma distribution (the field-data picture the meeting asked for);
@@ -19,9 +17,13 @@ Usage: python lum_sweep.py [runs.jsonl]
 """
 import json
 import sys
-from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
+
+PKG = Path(__file__).resolve().parents[3] / "platform/dark-demo-v2"
+sys.path.insert(0, str(PKG))
+from darkpipe.stages.recognize import reject_probs
 
 LABELS = ["wave", "throw", "chase", "fall", "fight", "talk", "drink", "pick_up",
           "shake_hands", "other"]
@@ -33,33 +35,35 @@ def fired(p):
     return LABELS[int(np.argmax(p))] != "other" and float(np.max(p)) >= REJECT
 
 
+def validate_row(row):
+    if (row.get("schema_version") != 2 or row.get("probability_dtype") != "float32"
+            or not all(k in row for k in ("rgb", "mp_ungated", "a0.70_ungated",
+                                         "a0.80_ungated", "lum", "reject_tau", "no_person"))):
+        raise ValueError("旧版/不完整 JSONL 无法精确回放；请用新版 prior_eval.py 重新导出")
+    if row["reject_tau"] != REJECT:
+        raise ValueError("当前报表仅支持生产阈值 0.65；请以此阈值重新导出")
+
+
 def rgb_only(row):
-    """The deployed below-gate path: the RGB vector + the open-set reject, reproducing
-    recognize.reject_probs exactly (kept: named entries, other = max(1-named, named+eps))."""
-    p = np.array(row["rgb"], float)
-    named = np.delete(p, OTHER)
-    nm = float(named.max())
-    if nm < REJECT and int(np.argmax(p)) != OTHER:
-        q = p.copy()
-        q[OTHER] = max(1.0 - nm, nm + 1e-6)
-        return q
-    return p
+    return reject_probs(np.asarray(row["rgb"], dtype=np.float32), LABELS, row["reject_tau"])
 
 
 def outcome(row, t):
-    return rgb_only(row) if row["lum"] < t else np.array(row["mp"])
+    validate_row(row)
+    return rgb_only(row) if row["lum"] < t else np.asarray(row["mp_ungated"], np.float32)
 
 
 def alpha_outcome(row, t, key):
-    """The meeting "两部曲" (2026-10-14 instruction.md revision): below the gate pure RGB,
-    above it the RECORDED alpha blend (a0.80 / a0.70). Exact offline mix, same argument as
-    `outcome`: the gate changes nothing at or above it, and the blend is per-window."""
-    return rgb_only(row) if row["lum"] < t else np.array(row[key])
+    validate_row(row)
+    return rgb_only(row) if row["lum"] < t else np.asarray(row[key + "_ungated"], np.float32)
 
 
 def main(path):
     rows = [json.loads(line) for line in open(path, encoding="utf-8")]
+    for row in rows:
+        validate_row(row)
     print(f"{len(rows)} windows from {path}\n")
+    print("no_person policies:", sorted({r["no_person"] for r in rows}))
 
     print("== 1. luma distribution (RAW pre-enhance window mean luma, 0-255) ==")
     for suite in "ABCP":

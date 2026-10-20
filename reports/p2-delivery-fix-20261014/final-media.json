@@ -1,0 +1,121 @@
+[
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_nonreading_client_has_bou0/clips/probe/20261014_152510_1410/wave/20261014_152510_wave_0001.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 64,
+          "height": 48
+        }
+      ],
+      "format": {
+        "duration": "1.960000"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_real_http_connections_clo2/clips/probe/20261014_152443_583/wave/20261014_152443_wave_0001.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 64,
+          "height": 48
+        }
+      ],
+      "format": {
+        "duration": "0.084000"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_real_http_connections_clo1/clips/probe/20261014_152438_389/wave/20261014_152439_wave_0001.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 64,
+          "height": 48
+        }
+      ],
+      "format": {
+        "duration": "0.160000"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_default_clip_covers_two_s0/20261014_152416_1/1-5s-挥手.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "format": {
+        "duration": "4.200000"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_real_http_connections_clo0/clips/probe/20261014_152430_194/wave/20261014_152432_wave_0001.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 64,
+          "height": 48
+        }
+      ],
+      "format": {
+        "duration": "2.920000"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_signal_ends_sse_and_write0/clips/probe/20261014_152447_777/wave/20261014_152448_wave_0001.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 64,
+          "height": 48
+        }
+      ],
+      "format": {
+        "duration": "0.067000"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "reports/p2-delivery-fix-20261014/final-pytest/test_signal_ends_sse_and_write1/clips/probe/20261014_152451_909/wave/20261014_152452_wave_0001.mp4",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 64,
+          "height": 48
+        }
+      ],
+      "format": {
+        "duration": "0.067000"
+      }
+    },
+    "decode_exit": 0
+  }
+]

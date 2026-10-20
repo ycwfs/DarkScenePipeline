@@ -1,0 +1,10 @@
+{
+  "NTIRE.pth": {
+    "bytes": 6476406,
+    "md5": "23f9e875f95901cd07aeb37dc0d5eac3"
+  },
+  "videomamba_t_behavior_32f.pth": {
+    "bytes": 28012991,
+    "md5": "eed5c06a9dbc674194e79ee4984065f1"
+  }
+}

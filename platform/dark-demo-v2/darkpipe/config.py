@@ -33,7 +33,8 @@ class PipelineConfig:
     reco_stride: int | None = None
     reco_span_sec: float | None = None
     # Report `other` unless the top named behaviour reaches this probability. 0 disables.
-    reco_min_conf: float = 0.0
+    reco_min_conf: float = 0.75
+    pose_overlay: bool = True        # draw action-compatible skeletons after recognition
     reco_ckpt: str = ""              # override the r3d/videomamba/behavior weights
     # Skeleton-branch fusion weight: p = a*p_rgb + (1-a)*p_skel, after the no-person policy.
     # a >= 0.999 runs the RGB branch only (the skeleton branch is not even loaded).

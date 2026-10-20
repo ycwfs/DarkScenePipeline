@@ -68,15 +68,17 @@ def build_parser():
                    help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     # 不提供 off：本算子靠事件流切片段，没有识别器就既没有事件也没有片段
     p.add_argument("--recognize", default="behavior", choices=["behavior"])
-    p.add_argument("--proc_max_side", type=int, default=840,
-                   help="处理前把画面长边缩到不超过该值，0=按原分辨率。增强耗时与像素量成正比，而识别内部固定缩到 224，所以缩放不损识别精度。默认 840 是双卡下画质与帧率的折中(23.8 fps/p95 289 ms)；只分到 1 张卡时 840 只有 12.9 fps，达不到 15 fps，需改填 720")
+    p.add_argument("--proc_max_side", type=int, default=720,
+                   help="处理前把画面长边缩到不超过该值，0=按原分辨率，默认720。缩小可降低增强负载，也会影响画面细节与姿态可见性；当前完整栈性能需按实际配置测量")
     p.add_argument("--reco_span_sec", type=float, default=1.0)
-    p.add_argument("--reco_min_conf", type=float, default=0.5,
+    p.add_argument("--reco_min_conf", type=float, default=0.75,
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
+    p.add_argument("--pose_overlay", type=parse_bool, default=True,
+                   help="绘制与最终动作类别一致的候选人物骨架；仅在骨架分支参与时显示，不改变识别结果")
     p.add_argument("--skel_fusion_alpha", type=float, default=0.7,
                    help="骨架分支融合权重(0-1)：p=α·RGB+(1-α)·骨架；α≥0.999 完全关闭骨架分支按纯 RGB 运行。0.70 为现场三套件实测推荐档")
     p.add_argument("--skel_no_person", default="soft", choices=["other", "soft", "rgb"],
-                   help="识别窗内骨架检测不到人时的处理：other=直接报 other(压误报最狠，但姿态漏检真行为时会被误杀)；soft=骨架以(1-α)权重投 other 票，RGB 证据足够强(RGB置信≥0.65/α)仍可报出行为，兼顾漏报与误报，默认；rgb=骨架弃权，该窗按纯 RGB 识别(误报回到 v1 水平)。仅 fuse_mode=alpha 时生效")
+                   help="识别窗内骨架检测不到人时的处理：other=直接报 other(压误报最狠，但姿态漏检真行为时会被误杀)；soft=骨架以(1-α)权重投 other 票，触发需RGB置信≥reco_min_conf/α；默认0.75/0.7>1，无人窗不触发，默认；rgb=骨架弃权，该窗按纯 RGB 识别(误报回到 v1 水平)。仅 fuse_mode=alpha 时生效")
     p.add_argument("--fuse_mode", default="alpha", choices=["alpha", "max_prior"],
                    help="双分支决策模式：alpha=加权融合 p=α·RGB+(1-α)·骨架，四套件实测最优，默认；配合 --lum_gate 即两部曲(照度低于门限的窗仅用RGB，不低于才做加权融合)。max_prior=会议三部曲(v2)——画面提亮前的原图照度低于 --lum_gate 时仅用 RGB；否则 RGB 与骨架(窗内最多6个合格骨架中非other且置信度>--skel_tau 者为骨架结果，无人合格则骨架弃权)分别分类取置信度高者为初步结果，置信度<--act_tau 直接报 other，捡东西/挥手/喝水/握手再过先验二次判断(不满足直接报 other)。注意三部曲四套件实测误报明显更多，仅作可选档保留")
     p.add_argument("--lum_gate", type=float, default=75.0,
@@ -108,8 +110,8 @@ def build_parser():
     p.add_argument("--clip_dir", default="/opt/darkpipe/clips",
                    help="片段保存目录（容器内路径，建议挂载 NFS 后本地浏览）；"
                         "离线模式下整段处理结果也落在这里")
-    p.add_argument("--clip_pre_sec", type=float, default=1.0)
-    p.add_argument("--clip_post_sec", type=float, default=1.0)
+    p.add_argument("--clip_pre_sec", type=float, default=2.0)
+    p.add_argument("--clip_post_sec", type=float, default=2.0)
     p.add_argument("--clip_max_sec", type=float, default=15.0)
     p.add_argument("--clip_skip_labels", default="other")
     p.add_argument("--clip_denoise", default="quality",
@@ -287,7 +289,10 @@ def run(args):
         print("[mode] 实时服务：输入是实时流，常驻运行并按动作切片")
         return run_serve_mode(args, payload, session)
     finally:
-        shutil.rmtree(workdir, ignore_errors=True)
+        if getattr(args, "_recovery_dir", None) == workdir:
+            print(f"[recovery] 片段未完整交付，保留工作目录 {workdir}")
+        else:
+            shutil.rmtree(workdir, ignore_errors=True)
 
 
 def _offline_gpus(args):
@@ -333,12 +338,12 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
         proc_max_side=args.proc_max_side, color_saturation=args.color_saturation,
         denoise=args.denoise,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
-        no_label_bar=(not args.label_bar),
+        no_label_bar=(not args.label_bar), pose_overlay=args.pose_overlay,
         skel_fusion_alpha=args.skel_fusion_alpha,
         skel_no_person=args.skel_no_person,
         fuse_mode=args.fuse_mode, lum_gate=args.lum_gate,
         act_tau=args.act_tau, skel_tau=args.skel_tau,
-        clip_dir=clip_dir_local, clip_pre_sec=args.clip_pre_sec,
+        clip_dir=(clip_dir_local if (args.clip_dir or "").strip() else ""), clip_pre_sec=args.clip_pre_sec,
         clip_post_sec=args.clip_post_sec, clip_max_sec=args.clip_max_sec,
         clip_skip_labels=args.clip_skip_labels, clip_denoise=args.clip_denoise,
         clip_session=session))
@@ -348,7 +353,7 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
             print(f"[warn] {w}")
         print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
               f"device={cfg.device} gpu_ids={','.join(gpus)} span={cfg.reco_span_sec}"
-              f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
+              f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side} pose_overlay={cfg.pose_overlay}"
               f" fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
         print("[config] 离线模式：保存整段处理后的视频，并按动作切分保存片段"
               "（clip_* 系列参数生效）")
@@ -365,12 +370,21 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
     # 卡住在打点之前都只是「日志停在 [config]」。离线跑完就退，所以打点之后不会再有停留。
     if verbose:
         _BOOT.mark("离线处理（加载权重 -> 预热 -> 解码/处理/编码）")
-    if len(gpus) > 1:
-        from darkpipe.shard import run_offline_sharded
-        events = run_offline_sharded(cfg, gpus)
-    else:
-        from darkpipe.pipeline import run_offline
-        events = run_offline(cfg, on_ready=_BOOT.done)
+    try:
+        if len(gpus) > 1:
+            from darkpipe.shard import run_offline_sharded
+            events = run_offline_sharded(cfg, gpus)
+        else:
+            from darkpipe.pipeline import run_offline
+            events = run_offline(cfg, on_ready=_BOOT.done)
+    except BaseException:
+        clips = getattr(cfg, "stats", {}).get("clips") or {}
+        if clips.get("writer_alive") or clips.get("write_errors") or clips.get("clips_unfinished"):
+            args._recovery_dir = workdir
+            args._failure_details = {"clips": clips, "recovery_dir": workdir}
+            write_failed_session(args, "片段写入未完成，工作目录已保留")
+            raise _FatalBatchError(f"片段写入失败：{clips.get('write_error') or clips}；保留 {workdir}")
+        raise
     dt = time.time() - t0
 
     events = [e if isinstance(e, dict) else e.to_dict() for e in events]
@@ -646,9 +660,9 @@ def run_offline_batch(args, paths, workdir):
 
 
 def run_serve_mode(args, src, session):
-    """常驻拉流服务：三条对外流 + 按动作切片。这条路径的行为与本次改动前逐字一致。"""
+    """常驻拉流服务：三条对外流 + 按动作切片，停止或失败后保存最终统计。"""
     from darkpipe.config import PipelineConfig, validate
-    from darkpipe.server import run_server
+    from darkpipe.server import ProcessingFailed, run_server
 
     gpus = parse_gpu_ids(args.gpu_ids)
     # 多卡时最后一张卡专供行为识别，其余卡做增强（≥2 张增强卡时按帧轮询分发，第 1 帧给卡 A、
@@ -674,7 +688,7 @@ def run_serve_mode(args, src, session):
         gpus=(",".join(gpus) if len(gpus) > 1 else ""),
         ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, denoise=args.denoise,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
-        no_label_bar=(not args.label_bar),
+        no_label_bar=(not args.label_bar), pose_overlay=args.pose_overlay,
         skel_fusion_alpha=args.skel_fusion_alpha,
         skel_no_person=args.skel_no_person,
         fuse_mode=args.fuse_mode, lum_gate=args.lum_gate,
@@ -693,7 +707,7 @@ def run_serve_mode(args, src, session):
         print(f"[warn] {w}")
     print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
           f"device={cfg.device} span={cfg.reco_span_sec} port={cfg.port}"
-          f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side}"
+          f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side} pose_overlay={cfg.pose_overlay}"
           f" fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
     # The output path's own knobs, on their own line because they are the ones that decide what
     # a viewer actually receives, and because none of them used to be printed at all. That cost a
@@ -738,6 +752,14 @@ def run_serve_mode(args, src, session):
         "clip_skip_labels": args.clip_skip_labels,
         "config": {"enhance": cfg.enhance, "sr": cfg.sr_name(), "recognize": cfg.recognize,
                    "gpu_ids": ",".join(gpus), "reco_span_sec": cfg.reco_span_sec,
+                   "reco_min_conf": cfg.reco_min_conf, "proc_max_side": cfg.proc_max_side,
+                   "pose_overlay": cfg.pose_overlay,
+                   "fuse_mode": cfg.fuse_mode, "lum_gate": cfg.lum_gate,
+                   "skel_fusion_alpha": cfg.skel_fusion_alpha,
+                   "skel_no_person": cfg.skel_no_person,
+                   "act_tau": cfg.act_tau, "skel_tau": cfg.skel_tau,
+                   "clip_pre_sec": cfg.clip_pre_sec, "clip_post_sec": cfg.clip_post_sec,
+                   "clip_max_sec": cfg.clip_max_sec, "clip_denoise": cfg.clip_denoise,
                    "serve_port": args.serve_port, "run_seconds": args.run_seconds},
     }
     # 先写一份「运行中」：框架给的 outputPath 必须存在，而常驻服务可能被直接杀掉，
@@ -750,14 +772,21 @@ def run_serve_mode(args, src, session):
     # 阻塞），在打点之前都只表现为「日志停在 [done] 会话信息」。看护由 on_ready 撤销——首帧产出
     # 时——而不是等 run_server 返回：它常驻，永远不返回（见 _BootWatch.done）。
     _BOOT.mark("启动服务（加载权重 -> 预热 -> 开线程 -> uvicorn）")
-    st = run_server(cfg, on_clip=sink, stop_after=args.run_seconds, on_ready=_BOOT.done)
+    failure = None
+    try:
+        st = run_server(cfg, on_clip=sink, stop_after=args.run_seconds, on_ready=_BOOT.done)
+    except ProcessingFailed as exc:
+        st, failure = exc.state, exc
     stats = st.clipper.stats() if st is not None and st.clipper else {}
     log_stats = st.eventlog.stats() if st is not None and st.eventlog else {}
-    payload.update(status="stopped", stopped_at=time.strftime("%Y-%m-%d %H:%M:%S"),
+    payload.update(status="failed" if failure else "stopped",
+                   stopped_at=time.strftime("%Y-%m-%d %H:%M:%S"),
                    clips=stats, event_log_stats=log_stats,
                    events_total=(st.events_total if st is not None else 0),
                    hdfs_uploaded=(sink.uploaded if sink else 0),
                    hdfs_failed=(sink.failed if sink else 0))
+    if failure:
+        payload["error"] = str(failure)
 
     # events.jsonl is appended to for the whole run, so it can only be uploaded once at the
     # end — unlike clips, which go up as each one completes. A container killed outright
@@ -783,6 +812,8 @@ def run_serve_mode(args, src, session):
         write_session(os.path.join(clip_root, "session.json"), payload)
     except OSError as e:
         print(f"[warn] 会话信息副本写入 {clip_root} 失败: {e}")
+    if failure:
+        raise failure                  # main() writes failed status and exits nonzero
 
 
 def write_failed_session(args, reason):
@@ -815,6 +846,7 @@ def write_failed_session(args, reason):
             "source": getattr(args, "video_path", ""),
             "stopped_at": time.strftime("%Y-%m-%d %H:%M:%S"),
         })
+        payload.update(getattr(args, "_failure_details", {}))
         write_session(path, payload)
         print(f"[failed] 失败原因已写入 {path}")
     except BaseException as e:                        # noqa: BLE001 - 收尾不能盖住真错误

@@ -33,12 +33,17 @@ class RecognitionEvent:
     topk: list = field(default_factory=list)  # [(label, prob), ...] top-3
     model: str = ""
     window: int = 0
+    skeleton_active: bool = False
+    actor_poses: list = field(default_factory=list)
+    # Internal grayscale reference for output-thread tracking; never serialize image data.
+    pose_reference: object = field(default=None, repr=False, compare=False)
 
     def to_dict(self):
         return dict(frame_index=self.frame_index, timestamp=round(self.timestamp, 3),
                     label=self.label, confidence=round(self.confidence, 4),
                     topk=[[l, round(p, 4)] for l, p in self.topk],
-                    model=self.model, window=self.window)
+                    model=self.model, window=self.window,
+                    skeleton_active=self.skeleton_active, actor_poses=self.actor_poses)
 
 
 class Recognizer:

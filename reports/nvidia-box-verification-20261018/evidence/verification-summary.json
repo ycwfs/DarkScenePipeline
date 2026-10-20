@@ -1,0 +1,19 @@
+{
+  "status": "package_verified_on_development_gpu",
+  "physical_box_verified": false,
+  "cpu_unique_tests": 31,
+  "gpu_environment_checks": 8,
+  "paired_windows": 23,
+  "labels_agree": 23,
+  "maximum_confidence_difference": 0.00016868114471435547,
+  "C_correct": 18,
+  "C_windows": 18,
+  "P_subset_correct_other": 3,
+  "P_subset_windows": 3,
+  "native_cli_checks": 4,
+  "enhancement_pixel_exact_vs_platform": true,
+  "realtime_fps_latency_verified": false,
+  "independent_generalization_verified": false,
+  "release": "NVIDIA-Box_20261018.zip",
+  "release_sha256": "92ba6c246887ad5bb1496f160d87c96d19cf0392f39f55585c9a8a406fde381f"
+}

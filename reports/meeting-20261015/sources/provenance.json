@@ -1,0 +1,37 @@
+[
+  {
+    "original": "/tmp/prior_eval_ABCP_pn.jsonl",
+    "copy": "sources/historical-pn-840.jsonl",
+    "sha256": "68f2a78de375c0c309da3c3e792c50c1e08b707d72930498378a991877e29eb3"
+  },
+  {
+    "original": "/tmp/lumsweep_pn_twostep.txt",
+    "copy": "sources/historical-pn-lum-sweep.txt",
+    "sha256": "42646f162eb2019e816109af361f85eb148757583b8913a191faa43b66f7f7fa"
+  },
+  {
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/模型运行流程_v2.drawio",
+    "copy": "sources/previous-flowchart.drawio",
+    "sha256": "f5e70d438445fada5d83aaceb58475020af672c84fc462999333e545124effe5"
+  },
+  {
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/submission-audit-20261014/visual/喝水16-raw.jpg",
+    "copy": "sources/喝水16-raw.jpg",
+    "sha256": "5720b180b6ade32b6a127ff398717bd1b93aeb4658cd3969b5b91bfc7c2fccd1"
+  },
+  {
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/submission-audit-20261014/visual/喝水16-enhanced.jpg",
+    "copy": "sources/喝水16-enhanced.jpg",
+    "sha256": "8794e4065710b9fc41f7d916254d27cb1b3d133ae1dffeb97957ad10b01a060d"
+  },
+  {
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/submission-audit-20261014/visual/捡东西2-raw.jpg",
+    "copy": "sources/捡东西2-raw.jpg",
+    "sha256": "03ca4514f0c0db4f952053010f96b3eb575e33c5c9d81ff0e6c52820f41b026c"
+  },
+  {
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/submission-audit-20261014/visual/捡东西2-enhanced.jpg",
+    "copy": "sources/捡东西2-enhanced.jpg",
+    "sha256": "6dc3bb8baedeabb2220e83ba93b683ce0637f0b1f36fdc62a1e8824f7a9ca509"
+  }
+]

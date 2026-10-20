@@ -1,0 +1,90 @@
+{
+  "weights": {
+    "NTIRE.pth": {},
+    "stgcn_behavior_32f_realactall_full.pth": {
+      "epoch": 58,
+      "val_top1": 0.7815040650406504,
+      "val_macro_f1": 0.5640977371998188
+    },
+    "videomamba_t_behavior_32f_realact10_all.pth": {
+      "epoch": 10,
+      "enhance": "retinexformer",
+      "init": "videomamba_t_behavior_32f_realact8_all.pth",
+      "preprocess": "resize256_centercrop224",
+      "source": "real-actiondata",
+      "realact_top1": 0.9774011299435028,
+      "realact_macro_f1": 0.9668783068783068,
+      "arid_top1": 0.706,
+      "arid_macro_f1": 0.6398937332453911,
+      "lwf": 0.2
+    },
+    "videomamba_t_behavior_32f_realactall_full.pth": {
+      "epoch": 15,
+      "enhance": "retinexformer",
+      "init": "videomamba_t_behavior_32f_realact11_fov.pth",
+      "preprocess": "fullfov224x400",
+      "source": "real-actiondata",
+      "realact_top1": 0.9154737559645535,
+      "realact_macro_f1": 0.9021475707509057,
+      "arid_top1": 0.0,
+      "arid_macro_f1": 0.0,
+      "lwf": 0.2
+    },
+    "videomamba_t_behavior_32f_realactall_full_pn.pth": {
+      "epoch": 12,
+      "enhance": "retinexformer",
+      "init": "videomamba_t_behavior_32f_realactall_full.pth",
+      "preprocess": "fullfov224x400",
+      "source": "real-actiondata",
+      "realact_top1": 0.9698757763975155,
+      "realact_macro_f1": 0.9615158625832153,
+      "arid_top1": 0.49,
+      "arid_macro_f1": 0.45440557068866727,
+      "lwf": 0.2
+    }
+  },
+  "model_sources": [
+    {
+      "file": "__init__.py",
+      "byte_equal": false,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "retinexformer_arch.py",
+      "byte_equal": true,
+      "sha256": "1567c89d55285a3c1a4d4ca33f288b1fd98dc6b6bbdf971eda02d745f9087631"
+    },
+    {
+      "file": "videomamba/__init__.py",
+      "byte_equal": true,
+      "sha256": "361e0060939b7e6df25f0c86738a895e9e5033c9b3e82d5220f5e09032550ef2"
+    },
+    {
+      "file": "videomamba/bimamba_interface.py",
+      "byte_equal": true,
+      "sha256": "d2377cd2a66d0357021041218f193a403ec264cb82faa84b3c81f7d108572118"
+    },
+    {
+      "file": "videomamba/mamba_simple.py",
+      "byte_equal": true,
+      "sha256": "ebf2dc05191e4fae6ea7f1e65a2b22653120c9fe13ef522f7fe1ad8fd34e4af1"
+    },
+    {
+      "file": "videomamba/videomamba.py",
+      "byte_equal": false,
+      "sha256": "4dcd35fd71794df8c346c88ae45a0191aba1c27ec5ae90c49b35ca51dc330179"
+    }
+  ],
+  "cpu_enhancement": {
+    "shape": [
+      240,
+      426,
+      3
+    ],
+    "input_pixel_mean": 9.65252673448096,
+    "output_pixel_mean": 77.19011476264997,
+    "input_luma": 9.504787881455398,
+    "output_luma": 76.98862149843505,
+    "white_pixel_fraction": 0.000655320813771518
+  }
+}

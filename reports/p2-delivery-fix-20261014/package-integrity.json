@@ -1,0 +1,37 @@
+{
+  "work_dir": "/tmp/darkpipe-p2fix-20261014-b0cgnwlo/final",
+  "files": 44,
+  "weights_unchanged": [
+    "dark-demo-v2/ckpts/NTIRE.pth",
+    "dark-demo-v2/ckpts/rtmo-s_end2end.onnx",
+    "dark-demo-v2/ckpts/stgcn_behavior_32f_realactall_full.pth",
+    "dark-demo-v2/ckpts/videomamba_t_behavior_32f.pth",
+    "dark-demo-v2/ckpts/videomamba_t_behavior_32f_realactall_full.pth",
+    "dark-demo-v2/ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth",
+    "dark-demo-v2/ckpts/yolo26m_detect.onnx"
+  ],
+  "changed_from_p1": [
+    "dark-demo-v2/CLAUDE.md",
+    "dark-demo-v2/README.md",
+    "dark-demo-v2/darkpipe/clips.py",
+    "dark-demo-v2/main.py",
+    "dark-demo-v2/suanzi.json"
+  ],
+  "archives": {
+    "dark-demo-v2.tar.gz": {
+      "bytes": 190529109,
+      "md5": "75c14464a47e28c45b547563b7c8a846",
+      "sha256": "74b30d21ea0367a34df60f2ebb807337baa4cbb219c35fe288f187c68adc9e91"
+    },
+    "dark-demo-v2_p1fix_20261014.tar.gz": {
+      "bytes": 190640920,
+      "md5": "e9825754d94f82f33ecd8d26dfa469b2",
+      "sha256": "f365ce0e49c5ac40667a6663663acf9a84fa6608ec6aa3767d2ff5af2fcda389"
+    },
+    "dark-demo-v2_p1p2fix_20261014.tar.gz": {
+      "bytes": 190634724,
+      "md5": "bace63a86d7b79e66489a4c0932cf067",
+      "sha256": "9b4fe380dd38afbf44d1949ace0ce8cf72db8613dbdcb90a47c5179b18065894"
+    }
+  }
+}

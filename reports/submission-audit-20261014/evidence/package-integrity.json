@@ -1,0 +1,231 @@
+{
+  "root": "/tmp/darkpipe-audit-20261014-9muj2fz3",
+  "package_md5": "75c14464a47e28c45b547563b7c8a846",
+  "package_sha256": "74b30d21ea0367a34df60f2ebb807337baa4cbb219c35fe288f187c68adc9e91",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 65803,
+      "sha256": "7312b18d6c135288c48809da2acf6bae975a01d34ae6d124c17a00e3ba644c95"
+    },
+    {
+      "path": ".gitignore",
+      "size": 41,
+      "sha256": "d1a8e352ebdb3f2503c9a8d2875819e60622b1d6799c9d4cbdff03dbd3df10c3"
+    },
+    {
+      "path": "requirements-skeleton.txt",
+      "size": 739,
+      "sha256": "aa1a2ecf6aaa6b286d5c76d3680d56714bab198398252676a1c43f09bdc9a809"
+    },
+    {
+      "path": "suanzi.json",
+      "size": 31443,
+      "sha256": "38d22ce2abb2a1efc0fc06dc5b5ce349a243046e279dabe5a7e86320a0b5fa23"
+    },
+    {
+      "path": "darkpipe/stages/downscale.py",
+      "size": 2240,
+      "sha256": "7621720efc5b35147908495d52562467ce6eaccb14f136e8431c8be4ec68e179"
+    },
+    {
+      "path": "darkpipe/stages/sr_bicubic.py",
+      "size": 2430,
+      "sha256": "a58fdabd6d5cc7e613f29370b3fcc67b1c50437192d815f2e9f6b574136d3752"
+    },
+    {
+      "path": "darkpipe/stages/skeleton_aux.py",
+      "size": 18684,
+      "sha256": "dc2efeb54ce314443c4d1a0bc7d06ff51d135f4b0b656cf6d050706801959bf8"
+    },
+    {
+      "path": "darkpipe/stages/enhance_retinexformer.py",
+      "size": 1408,
+      "sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67"
+    },
+    {
+      "path": "darkpipe/stages/__init__.py",
+      "size": 4677,
+      "sha256": "92da2c85808b995098f2c335bf3f5ac4f8af003bbe4bd145ebde3dab28bd9817"
+    },
+    {
+      "path": "darkpipe/stages/object_prior.py",
+      "size": 15672,
+      "sha256": "ab551129d51fdd1f9327fdb73ea754b813958833c4b8ae95088d9abbe8a062fb"
+    },
+    {
+      "path": "darkpipe/stages/denoise.py",
+      "size": 2319,
+      "sha256": "da980f76d11f8db5ec891c15b934b3d0ec28c562aa4563240ce8f7d328075623"
+    },
+    {
+      "path": "darkpipe/stages/recognize.py",
+      "size": 31934,
+      "sha256": "b30bb25a41bdf6c50c1716cd6997778ee7682d4456203df584d809ed93bc2674"
+    },
+    {
+      "path": "darkpipe/stages/base.py",
+      "size": 3185,
+      "sha256": "b2d7f86d0ce488c231225d1be2bd451d9a8a5aec5797e855a01eaea97983c9b2"
+    },
+    {
+      "path": "darkpipe/stages/saturation.py",
+      "size": 3648,
+      "sha256": "22e4bbca7d01835fd32d462758a245eacd87525b7a128b95c6e85e3d30260185"
+    },
+    {
+      "path": "darkpipe/render.py",
+      "size": 4429,
+      "sha256": "47cf9afa16d02a227826840e37e225d516e08d26e79caefae1e5da092190e74d"
+    },
+    {
+      "path": "darkpipe/shard.py",
+      "size": 7969,
+      "sha256": "ff929a3871b5ffafbfae812dfe9c23b41ccbe8fa22055943bef17f636c5e7b03"
+    },
+    {
+      "path": "darkpipe/pipeline.py",
+      "size": 10493,
+      "sha256": "beaac0616bfdd488af1a1338f2fa14cb18917456c71d73ce1bbb75796d88a125"
+    },
+    {
+      "path": "darkpipe/server.py",
+      "size": 91159,
+      "sha256": "bd743a4615aacb0933c746ed7ddd413b27044d401a227b1ec6378aeff7bf27f9"
+    },
+    {
+      "path": "darkpipe/streams.py",
+      "size": 53922,
+      "sha256": "24658068254193b33a2752ad00915d601fe06b819f3b4a13221a86908e8c06ac"
+    },
+    {
+      "path": "darkpipe/assets/NotoSansCJK-LICENSE.txt",
+      "size": 14716,
+      "sha256": "5bb218343ded506b258d86186d460fc47d9b6b28f0e642cf32676c396b7df763"
+    },
+    {
+      "path": "darkpipe/assets/NotoSansCJK-subset.ttf",
+      "size": 15448,
+      "sha256": "5c4df08fbe603b20d5b60e9f4cbfeb6b21327f324eadd409f2e27c26e9c164b0"
+    },
+    {
+      "path": "darkpipe/clips.py",
+      "size": 41668,
+      "sha256": "f47427739394180528eae334f041611e43fe1cee1e7c939ddcdf7700809604ea"
+    },
+    {
+      "path": "darkpipe/denoise_util.py",
+      "size": 337,
+      "sha256": "d03721b21cfe758b3b8d2b412cdd4c59f03d98f2a9464f91698c79a2a50b96fc"
+    },
+    {
+      "path": "darkpipe/utils.py",
+      "size": 4580,
+      "sha256": "43fae97edbd20920e008c6e9b0430bd6aeb739cfeba226f665a0878bfec1f9a1"
+    },
+    {
+      "path": "darkpipe/config.py",
+      "size": 23833,
+      "sha256": "3f498c24c313e9d7dd2ec7a2f76fc7e50ddcc2a9d72eab8a6de3bf21cec94233"
+    },
+    {
+      "path": "darkpipe/__init__.py",
+      "size": 22,
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
+    },
+    {
+      "path": "darkpipe/constants.py",
+      "size": 9791,
+      "sha256": "98b4fd4ca65a97ba111b8b336caf313a08d8f5329ef05940a433a6577745d784"
+    },
+    {
+      "path": "darkpipe/vendor/videomamba/mamba_simple.py",
+      "size": 16739,
+      "sha256": "ebf2dc05191e4fae6ea7f1e65a2b22653120c9fe13ef522f7fe1ad8fd34e4af1"
+    },
+    {
+      "path": "darkpipe/vendor/videomamba/videomamba.py",
+      "size": 17304,
+      "sha256": "c828fd573255c7c53b61677b9ec009f4a5f31ac3f711f8d13a9eccc7ecbadefb"
+    },
+    {
+      "path": "darkpipe/vendor/videomamba/bimamba_interface.py",
+      "size": 1848,
+      "sha256": "d2377cd2a66d0357021041218f193a403ec264cb82faa84b3c81f7d108572118"
+    },
+    {
+      "path": "darkpipe/vendor/videomamba/__init__.py",
+      "size": 54,
+      "sha256": "361e0060939b7e6df25f0c86738a895e9e5033c9b3e82d5220f5e09032550ef2"
+    },
+    {
+      "path": "darkpipe/vendor/retinexformer_arch.py",
+      "size": 12312,
+      "sha256": "1567c89d55285a3c1a4d4ca33f288b1fd98dc6b6bbdf971eda02d745f9087631"
+    },
+    {
+      "path": "darkpipe/vendor/__init__.py",
+      "size": 83,
+      "sha256": "57e827078711325f719cea9b70e4366e84919743de258837b9b4965d372b9434"
+    },
+    {
+      "path": "darkpipe/media.py",
+      "size": 10395,
+      "sha256": "0d920154fb0b333445a50c4f31fd091ca60fdb353c10b36d0a139bf232f24afc"
+    },
+    {
+      "path": "CLAUDE.md",
+      "size": 19509,
+      "sha256": "b27e7c393432a7e8f8bfabbfac80ff4b6c6695da13d37cbb0b1d85d4aedf86eb"
+    },
+    {
+      "path": "oputil.py",
+      "size": 37069,
+      "sha256": "d270f2cbc93f9eb74c7e683674575fe0ad25fb883893378c699363c46e9afe91"
+    },
+    {
+      "path": "main.py",
+      "size": 55908,
+      "sha256": "490d3db0038ef5dd759dece9d0b4dc75c43d759b03ecf31c8c63e1f72338905e"
+    },
+    {
+      "path": "ckpts/videomamba_t_behavior_32f_realactall_full.pth",
+      "size": 28132107,
+      "sha256": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79"
+    },
+    {
+      "path": "ckpts/rtmo-s_end2end.onnx",
+      "size": 39617685,
+      "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8"
+    },
+    {
+      "path": "ckpts/stgcn_behavior_32f_realactall_full.pth",
+      "size": 1178385,
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+    },
+    {
+      "path": "ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth",
+      "size": 28133373,
+      "sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04"
+    },
+    {
+      "path": "ckpts/yolo26m_detect.onnx",
+      "size": 81963235,
+      "sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c"
+    },
+    {
+      "path": "ckpts/NTIRE.pth",
+      "size": 6476406,
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+    },
+    {
+      "path": "ckpts/videomamba_t_behavior_32f.pth",
+      "size": 28012991,
+      "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44"
+    }
+  ],
+  "unsafe": [],
+  "tree_mismatches": [
+    "README.md"
+  ]
+}

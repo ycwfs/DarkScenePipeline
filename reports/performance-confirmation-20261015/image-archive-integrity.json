@@ -1,0 +1,12 @@
+{
+  "archive": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/darkpipe-operator-0.3.0.tar.gz",
+  "bytes": 6796727259,
+  "sha256": "a562d53d7bc588aded2d146939a634cf3e0a78afd6dfb8c5f53692c6afec2b77",
+  "md5": "106ff7b1b309345acca0ddab1c502a65",
+  "verified_oci_blobs": 26,
+  "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "matches_loaded_image": true,
+  "matching_configs": [
+    "sha256:d4aac07945d13131bbb401eb903eb1933732d8d6c5c2addcbb802b90bd142fc3"
+  ]
+}

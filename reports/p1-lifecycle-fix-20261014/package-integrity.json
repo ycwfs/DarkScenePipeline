@@ -1,0 +1,29 @@
+{
+  "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/dark-demo-v2.tar.gz",
+  "original_sha256": "74b30d21ea0367a34df60f2ebb807337baa4cbb219c35fe288f187c68adc9e91",
+  "fixed": "/ssd1/wfs/project/lowlight/DarkScenePipeline/platform/dark-demo-v2_p1fix_20261014.tar.gz",
+  "fixed_sha256": "f365ce0e49c5ac40667a6663663acf9a84fa6608ec6aa3767d2ff5af2fcda389",
+  "fixed_bytes": 190640920,
+  "files": 44,
+  "changed_files": [
+    "dark-demo-v2/README.md",
+    "dark-demo-v2/darkpipe/server.py",
+    "dark-demo-v2/main.py"
+  ],
+  "unchanged_weight_count": 7,
+  "weight_hashes": {
+    "dark-demo-v2/ckpts/videomamba_t_behavior_32f_realactall_full.pth": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79",
+    "dark-demo-v2/ckpts/rtmo-s_end2end.onnx": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+    "dark-demo-v2/ckpts/stgcn_behavior_32f_realactall_full.pth": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+    "dark-demo-v2/ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04",
+    "dark-demo-v2/ckpts/yolo26m_detect.onnx": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c",
+    "dark-demo-v2/ckpts/NTIRE.pth": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+    "dark-demo-v2/ckpts/videomamba_t_behavior_32f.pth": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44"
+  },
+  "source_hashes": {
+    "dark-demo-v2/README.md": "531488dde9309c2ec06683def5d88d07368efc8428e3416cd2c6a40fe103a54d",
+    "dark-demo-v2/darkpipe/server.py": "03d3fb3d260264d70a0eaf6dca24f8b591db88d08c8ade24f3141d58ab4793b0",
+    "dark-demo-v2/main.py": "6b13e1cbca958e481bb33de881353f50a83c087b8a3a9fdf8457548db6593546"
+  },
+  "fixed_md5": "e9825754d94f82f33ecd8d26dfa469b2"
+}

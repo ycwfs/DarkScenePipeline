@@ -1,0 +1,6 @@
+{
+  "path": "/ssd1/wfs/project/lowlight/compare/behavior/cache/realact_all_rf_v1_all_pn2_20261019",
+  "train": 3395,
+  "holdout": 68,
+  "immutable_hardlinks": true
+}

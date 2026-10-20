@@ -1,0 +1,18 @@
+{
+  "manifest_choices_mismatches": [],
+  "manifest_parameter_reference_issues": [],
+  "report_broken_links": [],
+  "native_complete": true,
+  "audit_scripts_compile": "passed",
+  "source_edits": "none; reports only",
+  "report_trailing_whitespace": "none",
+  "package_sha256": "74b30d21ea0367a34df60f2ebb807337baa4cbb219c35fe288f187c68adc9e91",
+  "suite_counts": {
+    "A": 177,
+    "B": 365,
+    "C": 18,
+    "P": 460
+  },
+  "runtime_image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "validation_containers_remaining": 0
+}
