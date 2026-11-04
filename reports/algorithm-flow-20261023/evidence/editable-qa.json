@@ -1,0 +1,28 @@
+{
+  "slides": 1,
+  "picture_objects": 0,
+  "text_objects": 20,
+  "connector_segments": 23,
+  "drawio_edges": 12,
+  "native_edit_roundtrip": true,
+  "files": {
+    "逐人动作识别_整体算法流程_20261023_可编辑.pptx": "7ebb00b651d2dabe86c0688c68249429b6afb8425452393cb9546bfd0622bb80",
+    "逐人动作识别_整体算法流程_20261023.drawio": "e615afe1e3543a03b0359e670e8b8c1772f1be92a607265214c9e08dfc88147c",
+    "逐人动作识别_整体算法流程_20261023.pdf": "e96634236b3cd84fbcebbd2343a17cdae5bc954ed9f981e868d581241439279d",
+    "逐人动作识别_整体算法流程_20261023.png": "7e288c41b1dfd6ad16464ac2c7713ae3364b08aace7987a53a2103b2b22a45b8"
+  },
+  "libreoffice_pdf_export": "passed",
+  "pdf_pages": 1,
+  "rendered_preview_review": "passed",
+  "rendered_png_size": [
+    2400,
+    1350
+  ],
+  "main_drawio_matches": true,
+  "readme_links_exist": true,
+  "algorithm_sources": {
+    "reports/person-action-20261023/scripts/person_core.py": "906702c5981ae47d3c596846d4db48e7ab20f860771f85a9f1c366f1a8481c0c",
+    "reports/person-optimization-20261023/scripts/runtime.py": "05e37db6800cc1543b02583376dcd6f8d8675ac4d030605a3300d4add880e8b3",
+    "reports/person-stream-audit-20261023/scripts/person_clips.py": "fdc73deac39d37f192abd0579ee3fcd87fd675b851c46cc53e76a30a95a88210"
+  }
+}

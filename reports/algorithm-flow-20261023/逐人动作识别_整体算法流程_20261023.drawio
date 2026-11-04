@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="person-action-20261023" name="逐人动作识别 · 当前候选">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="scope" value="" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#FAFBFD;strokeColor=#D9E1EB;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="64" y="335" width="1472" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="decision" target="record" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.475;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1560" y="407.5" />
+              <mxPoint x="1560" y="675" />
+              <mxPoint x="1185" y="675" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="decision" target="display" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.475;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1560" y="407.5" />
+              <mxPoint x="1560" y="675" />
+              <mxPoint x="415" y="675" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="fusion" target="decision" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#00867B;exitX=0.5;exitY=0.0;exitPerimeter=0;entryX=0.5;entryY=1.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="rgb_only" target="decision" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#2463B6;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.475;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="skeleton" target="fusion" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#00867B;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="gate" target="skeleton" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#00867B;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="565" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="gate" target="rgb_only" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#2463B6;exitX=0.5;exitY=0.0;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="407.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="rgb" target="gate" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="window" target="rgb" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1348" y="300" />
+              <mxPoint x="100" y="300" />
+              <mxPoint x="100" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="people" target="window" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="enhance" target="people" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="input" target="enhance" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title" value="逐人动作识别 · 整体算法流程" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=40.278;fontColor=#172B43;fontStyle=1;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="64" y="37" width="1472" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="照度门 → 同人双分支融合 → 逐人显示与并发保存" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#58697D;fontStyle=0;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="64" y="101" width="1110" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="version" value="2026.10.23 · 独立候选方案" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=18.056;fontColor=#00867B;fontStyle=0;align=right;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="101" width="346" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="input" value="视频输入&#10;文件 / 实时流" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="64" y="175" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="enhance" value="保留原图亮度 L&#10;Retinexformer 画面增强" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="340" y="175" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="people" value="YOLO 人体检测＋跟踪&#10;分配人物 ID" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="750" y="175" width="350" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="window" value="建立逐人时序窗口&#10;最近 1 秒 / 32 帧" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="175" width="376" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="scope_label" value="逐人执行 · 两条分支对应同一人物 ID" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#2463B6;fontStyle=1;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="150" y="346" width="625" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb" value="逐人 ROI 裁剪&#10;VideoMamba-Tiny&#10;RGB 概率 P_RGB" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#EBF2FB;strokeColor=#2463B6;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="150" y="430" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" value="" style="shape=rhombus;html=0;whiteSpace=wrap;fillColor=#FBF3E3;strokeColor=#AB701C;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=26.389;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="535" y="425" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="gate_text" value="原图亮度&#10;L &lt; 75？" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="540" y="450" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb_only" value="仅用本人的 RGB&#10;P = P_RGB" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#EBF2FB;strokeColor=#2463B6;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="835" y="365" width="290" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="skeleton" value="同人骨架动作识别&#10;RTMO-s → ST-GCN" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#E9F5F2;strokeColor=#00867B;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="835" y="520" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fusion" value="同人加权融合&#10;0.7 P_RGB + 0.3 P_pose" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#E9F5F2;strokeColor=#00867B;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="520" width="285" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" value="取最高类别&#10;动作 ≥ 0.75 → 保留&#10;否则显示「其他」" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="360" width="285" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="yes" value="是 · 暗场" style="text;html=0;whiteSpace=wrap;fillColor=#FAFBFD;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=19.444;fontColor=#2463B6;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="665" y="385" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="no" value="否 · 亮场" style="text;html=0;whiteSpace=wrap;fillColor=#FAFBFD;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=19.444;fontColor=#00867B;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="665" y="542" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="display" value="逐人可视化 → 实时输出&#10;人物框＋框下动作；骨架分支激活时绘制骨架" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#EBF2FB;strokeColor=#2463B6;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="90" y="725" width="650" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="record" value="按人物 ID＋动作保存完整画面&#10;前后各 2 秒 · 15 秒分段 · 多人片段允许重叠" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#E9F5F2;strokeColor=#00867B;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="860" y="725" width="650" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="record_label" value="仅非「其他」动作触发" style="text;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=18.056;fontColor=#00867B;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="682" width="270" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="footnote" value="L：增强前原图窗口平均亮度（0–255）；骨架缺失时使用 soft「其他」票。YOLO 仅用于人体定位。" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=16.667;fontColor=#58697D;fontStyle=0;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="64" y="842" width="1472" height="39" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

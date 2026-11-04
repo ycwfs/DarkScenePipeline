@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="person-action-20261023" name="当前算法与默认参数">
+    <mxGraphModel grid="0" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="scope" value="" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#FAFBFD;strokeColor=#D9E1EB;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="315" width="1490" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="1" source="running" target="output" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.8422818791946308;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="wave" target="output" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5033557046979866;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="objects" target="output" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.1610738255033557;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="decision" target="running" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1570" y="377" />
+              <mxPoint x="1570" y="637" />
+              <mxPoint x="1310" y="637" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="decision" target="wave" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1570" y="377" />
+              <mxPoint x="1570" y="637" />
+              <mxPoint x="805" y="637" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="decision" target="objects" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1570" y="377" />
+              <mxPoint x="1570" y="637" />
+              <mxPoint x="295" y="637" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="fusion" target="decision" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#00867B;exitX=0.5;exitY=0.0;exitPerimeter=0;entryX=0.5;entryY=1.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="rgb_only" target="decision" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#2463B6;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.4166666666666667;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="skeleton" target="fusion" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#00867B;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="gate" target="skeleton" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#00867B;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="557.5" y="517" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="gate" target="rgb_only" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#2463B6;exitX=0.5;exitY=0.0;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="557.5" y="369.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="rgb" target="gate" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="window" target="rgb" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1345" y="292" />
+              <mxPoint x="245" y="292" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="people" target="window" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="enhance" target="people" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="input" target="enhance" style="edgeStyle=none;html=0;rounded=0;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#58697D;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title" value="逐人动作识别 · 完整先验方案" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=38.889;fontColor=#172B43;fontStyle=1;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="28" width="1490" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="defaults" value="默认：RGB 0.972 ／ 骨架 0.028    ·    原图照度门 35    ·    动作阈值 0.925    ·    物体阈值 0.581" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#00867B;fontStyle=0;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="102" width="1490" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="input" value="视频输入&#10;文件 / 实时流" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=25.000;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="177" width="215" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="enhance" value="保留增强前亮度 L → 增强&#10;Retinexformer · 公开预训练&#10;处理长边 720" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=20.833;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="325" y="177" width="345" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="people" value="YOLO26m 人体检测＋跟踪&#10;现场微调 · 每人独立 ID" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="725" y="177" width="365" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="window" value="逐人时序窗口&#10;最近 1 秒 / 32 帧 · 每 0.5 秒判断" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="177" width="400" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb" value="逐人 ROI · 现场微调&#10;VideoMamba-Tiny&#10;RGB 概率 P_RGB" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#EBF2FB;strokeColor=#2463B6;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="385" width="290" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" value="" style="shape=rhombus;html=0;whiteSpace=wrap;fillColor=#FBF3E3;strokeColor=#AB701C;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="465" y="385" width="185" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="gate_text" value="原图亮度&#10;L &lt; 35？" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="465" y="398" width="185" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rgb_only" value="只用本人的 RGB&#10;跳过骨架与三类先验" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#EBF2FB;strokeColor=#2463B6;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="755" y="332" width="290" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="skeleton" value="RTMO-s → 同人 ST-GCN&#10;现场姿态 / 骨架动作微调" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#E9F5F2;strokeColor=#00867B;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=21.528;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="755" y="472" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fusion" value="同人融合&#10;0.972 P_RGB + 0.028 P_pose&#10;无合格骨架：soft 投「其他」票" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#E9F5F2;strokeColor=#00867B;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=20.833;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="472" width="385" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" value="最高类别动作分数 ≥ 0.925：保留&#10;低于阈值：其他" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=23.611;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="332" width="385" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="yes" value="是 · 暗场" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=18.056;fontColor=#2463B6;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="640" y="340" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="no" value="否" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=18.056;fontColor=#00867B;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="640" y="514" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="prior_title" value="亮场按动作检查先验 · 低亮 / 原图亮度未知：跳过" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=1;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="602" width="1490" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="objects" value="喝水 / 捡物 · 现场七类 YOLO26m&#10;720 增强图裁剪 · 5 帧中任一兼容物体 ≥ 0.581&#10;有效观测无支持：其他；观测不可用：保留" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#EBF2FB;strokeColor=#2463B6;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=20.833;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="653" width="480" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="wave" value="挥手 · 同一只腕高于双肩&#10;1 秒窗口累计 ≥ 3 个不同源帧&#10;不足：其他（腕 / 双肩置信度 ≥ 0.5）" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#E9F5F2;strokeColor=#00867B;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="565" y="653" width="480" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="running" value="跑动 · 共同可靠关节平均移动速度&#10;≥ 0.35 人体框高 / 秒：保留&#10;低于：其他；可靠姿态不足：保留" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#FBF3E3;strokeColor=#AB701C;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="653" width="470" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="output" value="人体框＋骨架＋青色物体框（类别/置信度/人物 ID）→ 实时输出&#10;非其他按人物 ID＋动作保存完整画面 · 前后各 2 秒 · 最长 15 秒 · 多人可重叠" style="rounded=1;arcSize=10;html=0;whiteSpace=wrap;fillColor=#F4F6F9;strokeColor=#58697D;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=22.222;fontColor=#172B43;fontStyle=0;align=center;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="802" width="1490" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="L 为增强前原图亮度（0–255），不是 lux。骨架与物体逐帧也受照度门约束；不做推理平滑。挥手 / 跑动不新增模型推理；模型来源见第 2 页。" style="text;html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;strokeWidth=1.875;fontFamily=Noto Sans CJK SC;fontSize=15.278;fontColor=#58697D;fontStyle=0;align=left;verticalAlign=middle;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="55" y="875" width="1490" height="22" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="training-20261027" name="模型训练与数据来源">
+    <mxGraphModel page="1" pageWidth="1600" pageHeight="900">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title2" value="模型训练状态与数据来源" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=none;strokeColor=none;fontSize=38.8889;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="55" y="30" width="1490" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="sub2" value="模型不变；本轮正式启用挥手 / 跑动几何先验，无新增训练；四参数与权重保持。" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=none;strokeColor=none;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#58697D;align=left;">
+          <mxGeometry x="55" y="100" width="1490" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="m0" value="Retinexformer · 增强" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#EBF2FB;strokeColor=#2463B6;fontSize=23.6111;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="55" y="160" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="s0" value="公开 NTIRE 预训练" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E9F5F2;strokeColor=#00867B;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="438" y="160" width="370" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="d0" value="未采用此前效果退化的现场增强微调；保留公开权重" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F4F6F9;strokeColor=#D9E1EB;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="831" y="160" width="714" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="YOLO26m · 人体检测" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#EBF2FB;strokeColor=#2463B6;fontSize=23.6111;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="55" y="262" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="现场微调 · 已剔除展品误标" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E9F5F2;strokeColor=#00867B;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="438" y="262" width="370" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="1626 暗场帧 / 1741 人体框＋72 亮场帧 / 89 真人框；原图与增强视图" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F4F6F9;strokeColor=#D9E1EB;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="831" y="262" width="714" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" value="RTMO-s · 17 点姿态" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#EBF2FB;strokeColor=#2463B6;fontSize=23.6111;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="55" y="364" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="现场暗场微调 · 推理不平滑" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E9F5F2;strokeColor=#00867B;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="438" y="364" width="370" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="现场暗场人体框＋辅助 COCO17 骨架序列；训练前质量筛选，非独立人工精标" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F4F6F9;strokeColor=#D9E1EB;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="831" y="364" width="714" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" value="VideoMamba-Tiny · RGB" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#EBF2FB;strokeColor=#2463B6;fontSize=23.6111;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="55" y="466" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="现场逐人 ROI 微调" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E9F5F2;strokeColor=#00867B;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="438" y="466" width="370" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="全部旧现场＋两批线上 other；535 去重来源，人物 / 时间段审核；按来源组划分" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F4F6F9;strokeColor=#D9E1EB;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="831" y="466" width="714" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" value="ST-GCN · 骨架动作" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#EBF2FB;strokeColor=#2463B6;fontSize=23.6111;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="55" y="568" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="历史现场微调权重" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E9F5F2;strokeColor=#00867B;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="438" y="568" width="370" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="real-actiondata-all 骨架缓存；新逐人适配已比较，验证选择保留历史模型" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F4F6F9;strokeColor=#D9E1EB;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="831" y="568" width="714" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" value="YOLO26m · 七类物体" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#EBF2FB;strokeColor=#2463B6;fontSize=23.6111;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="55" y="670" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="现场物体 ROI 微调 · 独立权重" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#E9F5F2;strokeColor=#00867B;fontSize=22.2222;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=center;">
+          <mxGeometry x="438" y="670" width="370" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" value="瓶 / 杯 / 手机 / 相机 / 纸 / 便携物 / 展品；319 训练图、31 验证、47 测试；杯无标注，相机仅 3 个训练框" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#F4F6F9;strokeColor=#D9E1EB;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#172B43;align=left;">
+          <mxGeometry x="831" y="670" width="714" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="footer2" value="10 月 25 日新 9 段多人录像未参与模型训练，后续用于误报反馈及阈值校准。&#10;本组默认优先减少误报，存在召回损失；并非独立新场景泛化成绩。现场包六个主模型的文件及哈希见 models.json。" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=none;strokeColor=none;fontSize=20.8333;fontFamily=Noto Sans CJK SC;fontColor=#58697D;align=left;">
+          <mxGeometry x="55" y="790" width="1490" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,20 @@
+{
+  "slides": 2,
+  "picture_objects": 0,
+  "native_shapes": true,
+  "defaults": {
+    "lum_gate": 35.0,
+    "reco_min_conf": 0.925,
+    "skel_fusion_alpha": 0.972,
+    "skel_no_person": "soft",
+    "object_min_conf": 0.581,
+    "person_object_prior": true,
+    "wave_pose_min_frames": 3,
+    "running_pose_min_speed": 0.35
+  },
+  "models_sha256": "b3c250b7c8fd3d8b5a46a1b1563d733d78cd585a55758a6555c512aab0a0f5b1",
+  "synchronized": "2026-10-28",
+  "platform_release": "dark-demo-v2_full_priors_20261027",
+  "box_release": "NVIDIA-Box_Orin4GB_candidate_20261028",
+  "physical_orin_tested": false
+}

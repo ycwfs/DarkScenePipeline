@@ -1,0 +1,13 @@
+{
+  "slides": 2,
+  "picture_objects": 0,
+  "native_shapes": true,
+  "config": {
+    "model": "old",
+    "alpha": 0.95,
+    "threshold": 0.91,
+    "no_pose": "soft",
+    "lum_gate": 30.0
+  },
+  "selection_lock_sha256": "037bb464d9a6c734451de99ed80b88c33af2c1c4ead202e80f6ad7aa765801ed"
+}

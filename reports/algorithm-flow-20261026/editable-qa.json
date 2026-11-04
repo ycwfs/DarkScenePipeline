@@ -1,0 +1,16 @@
+{
+  "slides": 2,
+  "picture_objects": 0,
+  "native_shapes": true,
+  "defaults": {
+    "lum_gate": 35.0,
+    "reco_min_conf": 0.925,
+    "skel_fusion_alpha": 0.972,
+    "skel_no_person": "soft",
+    "object_min_conf": 0.581,
+    "person_object_prior": true
+  },
+  "models_sha256": "4969e07a53bb3912749b48b44af23e6e02329cf19e1c0d2cb14fadbd64ce2f0a",
+  "native_edit_roundtrip": true,
+  "rendered_and_visually_reviewed": true
+}

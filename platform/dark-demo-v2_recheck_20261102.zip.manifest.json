@@ -1,0 +1,288 @@
+{
+  "archive": "dark-demo-v2_recheck_20261102.zip",
+  "sha256": "47022fd54875dbb2fd820b120379ac1d368fcb7507c65482dbb00b216e0a34a9",
+  "size": 417936746,
+  "image": "darkpipe-operator:0.3.0",
+  "files": {
+    ".gitignore": {
+      "size": 41,
+      "sha256": "d1a8e352ebdb3f2503c9a8d2875819e60622b1d6799c9d4cbdff03dbd3df10c3"
+    },
+    "CLAUDE.md": {
+      "size": 28586,
+      "sha256": "6e8f69df487b226c7f0f96339cc710063047ebc92fe353e0232b03604ac49bc9"
+    },
+    "README.md": {
+      "size": 13449,
+      "sha256": "9f12ac7845d846f3cf3bf76a3680405bb91b5f03a7a4ee00fdddb9fee432392f"
+    },
+    "README_legacy_20261022.md": {
+      "size": 76937,
+      "sha256": "985a1127eee134c73d78fa3babb455e280d380f135dbf69ebd8916ad0f89dc47"
+    },
+    "ckpts/NTIRE.pth": {
+      "size": 6476406,
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+    },
+    "ckpts/rtmo-s_end2end.onnx": {
+      "size": 39617685,
+      "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8"
+    },
+    "ckpts/rtmo-s_person_20261024.onnx": {
+      "size": 39693236,
+      "sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2"
+    },
+    "ckpts/stgcn_behavior_32f_realactall_full.pth": {
+      "size": 1178385,
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+    },
+    "ckpts/stgcn_person_20261024.pth": {
+      "size": 1178385,
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+    },
+    "ckpts/videomamba_t_behavior_32f.pth": {
+      "size": 28012991,
+      "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44"
+    },
+    "ckpts/videomamba_t_behavior_32f_person_roi_20261023.pth": {
+      "size": 28104357,
+      "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf"
+    },
+    "ckpts/videomamba_t_behavior_32f_realactall_full.pth": {
+      "size": 28132107,
+      "sha256": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79"
+    },
+    "ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth": {
+      "size": 28133373,
+      "sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04"
+    },
+    "ckpts/videomamba_t_behavior_32f_realactall_full_pn2.pth": {
+      "size": 28099109,
+      "sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362"
+    },
+    "ckpts/yolo26m_detect.onnx": {
+      "size": 81963235,
+      "sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c"
+    },
+    "ckpts/yolo26m_objects_20261026.onnx": {
+      "size": 81683975,
+      "sha256": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5"
+    },
+    "ckpts/yolo26m_person_20261024.onnx": {
+      "size": 81910190,
+      "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9"
+    },
+    "darkpipe/__init__.py": {
+      "size": 22,
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
+    },
+    "darkpipe/assets/NotoSansCJK-LICENSE.txt": {
+      "size": 14716,
+      "sha256": "5bb218343ded506b258d86186d460fc47d9b6b28f0e642cf32676c396b7df763"
+    },
+    "darkpipe/assets/NotoSansCJK-subset.ttf": {
+      "size": 28100,
+      "sha256": "f0e9f95f5c567d110b7878bd02bb856589a77944f17cd15227c179d57c383965"
+    },
+    "darkpipe/clips.py": {
+      "size": 44918,
+      "sha256": "6c8877afeddff0328a5d0c36ba5ec2b1acb7dd485c98824bb740dcad96c10053"
+    },
+    "darkpipe/config.py": {
+      "size": 26230,
+      "sha256": "8a292bef695a02d30fbdbc90afc29d5595af1877b4f3ba83526e6fa9648b608a"
+    },
+    "darkpipe/constants.py": {
+      "size": 9784,
+      "sha256": "93da348ed2c8d6dc2191a6e40724f5e0297dabd3e71e888a0f81a818f57664f7"
+    },
+    "darkpipe/denoise_util.py": {
+      "size": 337,
+      "sha256": "d03721b21cfe758b3b8d2b412cdd4c59f03d98f2a9464f91698c79a2a50b96fc"
+    },
+    "darkpipe/media.py": {
+      "size": 10395,
+      "sha256": "0d920154fb0b333445a50c4f31fd091ca60fdb353c10b36d0a139bf232f24afc"
+    },
+    "darkpipe/person/__init__.py": {
+      "size": 77,
+      "sha256": "ac634c423c9b1da33bcaf56fc78183cdc7355dfcf99a5ea02b8b56c98f41725d"
+    },
+    "darkpipe/person/action_engine.py": {
+      "size": 13845,
+      "sha256": "6b0b186e76c6aa6bae60d2b5b6617b743b6f15e067e49b18312541a59ec0201b"
+    },
+    "darkpipe/person/assignment.py": {
+      "size": 1508,
+      "sha256": "c1d31431feda9bbf159bd4a61756a220d9095ecc21f597cdb72ab63b80a8ab88"
+    },
+    "darkpipe/person/clips.py": {
+      "size": 15997,
+      "sha256": "9aa0ec6e86355ea5961cf60e556786662a7112c91f2262bb9c74706b8a85f483"
+    },
+    "darkpipe/person/core.py": {
+      "size": 14646,
+      "sha256": "e2471f70f943c36b0a5fc6b3ce103471ca0ea313228d26c6e99251cd18d63801"
+    },
+    "darkpipe/person/frontend_process.py": {
+      "size": 5657,
+      "sha256": "296d682b192f5e05322e3e8876bbeda1408fea039d903b73a7bd8bbf5dd65b69"
+    },
+    "darkpipe/person/object_overlay.py": {
+      "size": 6578,
+      "sha256": "0b44b7ac14a80ce82ff19d876baba331405b070b4667ce900a80e9915637ae90"
+    },
+    "darkpipe/person/object_prior.py": {
+      "size": 2941,
+      "sha256": "41fa0436a726a84ab63b6cbd390ad5edb0697e60f49183236e9bce9c88b40269"
+    },
+    "darkpipe/person/object_runtime.py": {
+      "size": 8227,
+      "sha256": "8bb75c46135711cfaf8d38bdfda2ffddb517c8ea8df48fc66ba83f07c55f50d7"
+    },
+    "darkpipe/person/process_pool.py": {
+      "size": 4854,
+      "sha256": "8bc08280526af6a418378dc023bf181514b3859c3c2a79287fbcc469d8a022e7"
+    },
+    "darkpipe/person/recheck.py": {
+      "size": 5358,
+      "sha256": "b479a4b755d24ba252c3037a89a2bb44317fb8206190fc06c14fbb69477e35c0"
+    },
+    "darkpipe/person/running_prior.py": {
+      "size": 5458,
+      "sha256": "29d209e612e2332d224fc96aff2e9b1a3a1362fbdacca2ff075391b570e295c8"
+    },
+    "darkpipe/person/runtime.py": {
+      "size": 13436,
+      "sha256": "a7cbe357e6c72d8d8ed62ab91f12260db50905b14dcd102ebfcbbb5fc4a7d58c"
+    },
+    "darkpipe/person/scheduling.py": {
+      "size": 7702,
+      "sha256": "c04f60e63910d09d44b52475d361b6704eaa77912cd20b384a82bfbab4de506d"
+    },
+    "darkpipe/person/service.py": {
+      "size": 12397,
+      "sha256": "848356f26eb1c58ccc465421b1c1fb5b00c70b77be5d3de9bc3c917dd2dacf9e"
+    },
+    "darkpipe/person/wave_prior.py": {
+      "size": 5160,
+      "sha256": "3d5225466661bf5db24ecf7260096b6e3fb5c1d762dbe6d1d91870f8441c6885"
+    },
+    "darkpipe/pipeline.py": {
+      "size": 11391,
+      "sha256": "0e5f503db00a27fbfe825aa8e8e01a59baa12a22c8d427d021657cf0f6b0f02d"
+    },
+    "darkpipe/pose_overlay.py": {
+      "size": 7984,
+      "sha256": "38f0f618b4bcb4c454e00b8797bddbbd5336b5d8d43deaa437819c88a2a45367"
+    },
+    "darkpipe/render.py": {
+      "size": 4429,
+      "sha256": "47cf9afa16d02a227826840e37e225d516e08d26e79caefae1e5da092190e74d"
+    },
+    "darkpipe/server.py": {
+      "size": 98999,
+      "sha256": "f1ce2820506d866a5f5b0e9afd44794ad35efe34e31859babd25dd26c77da5f7"
+    },
+    "darkpipe/shard.py": {
+      "size": 8484,
+      "sha256": "8afc7fb2fd1d360292a5a6254be5861849f0acbd40d29edf892117b42fa8004d"
+    },
+    "darkpipe/shard_worker.py": {
+      "size": 681,
+      "sha256": "5ed07edc57ca3445444275cf97374f40f6073af40c38c88a0329ada02736ce1d"
+    },
+    "darkpipe/stages/__init__.py": {
+      "size": 4772,
+      "sha256": "98ca9b79eae96585e1e5bef17c2e00e1fe1118bdb93fc74b595b9881a0da4114"
+    },
+    "darkpipe/stages/base.py": {
+      "size": 3683,
+      "sha256": "2a3f63ee89cfc9b34f3594633675f431b8f19cee0dffb86652fc74ef106d9811"
+    },
+    "darkpipe/stages/denoise.py": {
+      "size": 2319,
+      "sha256": "da980f76d11f8db5ec891c15b934b3d0ec28c562aa4563240ce8f7d328075623"
+    },
+    "darkpipe/stages/downscale.py": {
+      "size": 2240,
+      "sha256": "7621720efc5b35147908495d52562467ce6eaccb14f136e8431c8be4ec68e179"
+    },
+    "darkpipe/stages/enhance_retinexformer.py": {
+      "size": 1408,
+      "sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67"
+    },
+    "darkpipe/stages/object_prior.py": {
+      "size": 16162,
+      "sha256": "cfb7dd85d5c3495c405cac3e9bbd50dfc89719384b23fde449a261d7d8d90f8f"
+    },
+    "darkpipe/stages/recognize.py": {
+      "size": 33178,
+      "sha256": "2f80e0f91cbdb8807fe9b7b1f34cabcad23a5fe2df5ab78237c5df1ea3c40132"
+    },
+    "darkpipe/stages/saturation.py": {
+      "size": 3648,
+      "sha256": "22e4bbca7d01835fd32d462758a245eacd87525b7a128b95c6e85e3d30260185"
+    },
+    "darkpipe/stages/skeleton_aux.py": {
+      "size": 22176,
+      "sha256": "26a471b75a165e7224fbd589020f4734942a44d7781cbf24b384f33bce9e4b5f"
+    },
+    "darkpipe/stages/sr_bicubic.py": {
+      "size": 2430,
+      "sha256": "a58fdabd6d5cc7e613f29370b3fcc67b1c50437192d815f2e9f6b574136d3752"
+    },
+    "darkpipe/streams.py": {
+      "size": 53922,
+      "sha256": "24658068254193b33a2752ad00915d601fe06b819f3b4a13221a86908e8c06ac"
+    },
+    "darkpipe/utils.py": {
+      "size": 4580,
+      "sha256": "43fae97edbd20920e008c6e9b0430bd6aeb739cfeba226f665a0878bfec1f9a1"
+    },
+    "darkpipe/vendor/__init__.py": {
+      "size": 83,
+      "sha256": "57e827078711325f719cea9b70e4366e84919743de258837b9b4965d372b9434"
+    },
+    "darkpipe/vendor/retinexformer_arch.py": {
+      "size": 12312,
+      "sha256": "1567c89d55285a3c1a4d4ca33f288b1fd98dc6b6bbdf971eda02d745f9087631"
+    },
+    "darkpipe/vendor/videomamba/__init__.py": {
+      "size": 54,
+      "sha256": "361e0060939b7e6df25f0c86738a895e9e5033c9b3e82d5220f5e09032550ef2"
+    },
+    "darkpipe/vendor/videomamba/bimamba_interface.py": {
+      "size": 1848,
+      "sha256": "d2377cd2a66d0357021041218f193a403ec264cb82faa84b3c81f7d108572118"
+    },
+    "darkpipe/vendor/videomamba/mamba_simple.py": {
+      "size": 16739,
+      "sha256": "ebf2dc05191e4fae6ea7f1e65a2b22653120c9fe13ef522f7fe1ad8fd34e4af1"
+    },
+    "darkpipe/vendor/videomamba/videomamba.py": {
+      "size": 17304,
+      "sha256": "c828fd573255c7c53b61677b9ec009f4a5f31ac3f711f8d13a9eccc7ecbadefb"
+    },
+    "main.py": {
+      "size": 61942,
+      "sha256": "50246faaa324524a327739495ea8cd58af744dc68ca3bdd246aef856387c85ed"
+    },
+    "models.json": {
+      "size": 5518,
+      "sha256": "b3c250b7c8fd3d8b5a46a1b1563d733d78cd585a55758a6555c512aab0a0f5b1"
+    },
+    "oputil.py": {
+      "size": 37069,
+      "sha256": "d270f2cbc93f9eb74c7e683674575fe0ad25fb883893378c699363c46e9afe91"
+    },
+    "requirements-skeleton.txt": {
+      "size": 739,
+      "sha256": "aa1a2ecf6aaa6b286d5c76d3680d56714bab198398252676a1c43f09bdc9a809"
+    },
+    "suanzi.json": {
+      "size": 30875,
+      "sha256": "8ecffc97a8d2637fa3f4bf1f3a0708db66c1ec1428ce13ff7fa1c55fe2898082"
+    }
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "archive": "NVIDIA-Box_tau075_20261024.zip",
+  "sha256": "e544c7fab0bd4509de0342483c38628721dfc5096cf3c3a831746c3547ab7221",
+  "size": 381542889,
+  "contents": {
+    "version": "20261024-person-gate30-tau075",
+    "platform_source": "platform/dark-demo-v2",
+    "default_config": {
+      "proc_max_side": 720,
+      "reco_min_conf": 0.75,
+      "lum_gate": 30,
+      "fuse_mode": "alpha",
+      "person_mode": true,
+      "clip_denoise": "off",
+      "skel_fusion_alpha": 0.95,
+      "pose_overlay": true,
+      "clip_pre_sec": 2,
+      "clip_post_sec": 2,
+      "gpu_ids": "0"
+    },
+    "model": "weights/videomamba_t_behavior_32f_person_roi_20261023.pth",
+    "files": {
+      "MODEL_TOOLS.md": {
+        "bytes": 19136,
+        "sha256": "219dce7754e67dd048ae4658be400eafb527b9c42421080de788472a8f734a51"
+      },
+      "README.md": {
+        "bytes": 3920,
+        "sha256": "9f12a09ff18e71f846ebbc22664782b5213a7ff87073131b9ecfce32a04de3c8"
+      },
+      "README_legacy_20261022.md": {
+        "bytes": 9017,
+        "sha256": "eab34050aa57f36b28466ba93ec173ad15a0b1cacbd8c33cf446e31e27fb4ac8"
+      },
+      "VERIFICATION.md": {
+        "bytes": 5027,
+        "sha256": "6c1ac32269cde820ab4e6609bfbd19ccc471d51d0215983a7b80983eb5306d07"
+      },
+      "behavior_infer.py": {
+        "bytes": 21363,
+        "sha256": "9cf8933c802932d442dba38d00755f24632b3beab594d5c5658967d4d176630c"
+      },
+      "check_env.py": {
+        "bytes": 5826,
+        "sha256": "0725063cad4be0b31bce7e8f336668a987b23a80599f6b466e473997a1beb2e3"
+      },
+      "check_models.py": {
+        "bytes": 7844,
+        "sha256": "b2d3630f619976fe93e40e5394016f9efe04ba872d3043f8ca7ed9ada3c8895a"
+      },
+      "constraints.txt": {
+        "bytes": 1505,
+        "sha256": "f611e1adf7243cfc8605a7283df1d33b198666cb3d2599dd4b4384a49ad6b74a"
+      },
+      "lowlight_infer.py": {
+        "bytes": 6877,
+        "sha256": "9ef1ac94ddfb4db83911b707c4758bad090a6d31e93406d4f371e3d92eaf505a"
+      },
+      "models/__init__.py": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "models/retinexformer_arch.py": {
+        "bytes": 12312,
+        "sha256": "1567c89d55285a3c1a4d4ca33f288b1fd98dc6b6bbdf971eda02d745f9087631"
+      },
+      "models/videomamba/__init__.py": {
+        "bytes": 54,
+        "sha256": "361e0060939b7e6df25f0c86738a895e9e5033c9b3e82d5220f5e09032550ef2"
+      },
+      "models/videomamba/bimamba_interface.py": {
+        "bytes": 1848,
+        "sha256": "d2377cd2a66d0357021041218f193a403ec264cb82faa84b3c81f7d108572118"
+      },
+      "models/videomamba/mamba_simple.py": {
+        "bytes": 16739,
+        "sha256": "ebf2dc05191e4fae6ea7f1e65a2b22653120c9fe13ef522f7fe1ad8fd34e4af1"
+      },
+      "models/videomamba/videomamba.py": {
+        "bytes": 17482,
+        "sha256": "4dcd35fd71794df8c346c88ae45a0191aba1c27ec5ae90c49b35ca51dc330179"
+      },
+      "models.json": {
+        "bytes": 3065,
+        "sha256": "63d9f8b42546a069c402fd887e2833e25b7147d378d40c5aa2562ef73a3640fa",
+        "platform_source": "models.json"
+      },
+      "requirements.txt": {
+        "bytes": 434,
+        "sha256": "bc8e90d8408a71b20d7114c3edf050efabbcac3012383a37ad46deca03df57ba"
+      },
+      "run.py": {
+        "bytes": 4095,
+        "sha256": "216a440d6c424de0572f15e9ca78980772967d1f21e1989bce0db86fee57afe6"
+      },
+      "run.sh": {
+        "bytes": 393,
+        "sha256": "99219e1dff12a318de196ff4301f557999bcffb16916f94f3c9dec8426580b61"
+      },
+      "runtime/darkpipe/__init__.py": {
+        "bytes": 22,
+        "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+        "platform_source": "darkpipe/__init__.py"
+      },
+      "runtime/darkpipe/assets/NotoSansCJK-LICENSE.txt": {
+        "bytes": 14716,
+        "sha256": "5bb218343ded506b258d86186d460fc47d9b6b28f0e642cf32676c396b7df763",
+        "platform_source": "darkpipe/assets/NotoSansCJK-LICENSE.txt"
+      },
+      "runtime/darkpipe/assets/NotoSansCJK-subset.ttf": {
+        "bytes": 15448,
+        "sha256": "5c4df08fbe603b20d5b60e9f4cbfeb6b21327f324eadd409f2e27c26e9c164b0",
+        "platform_source": "darkpipe/assets/NotoSansCJK-subset.ttf"
+      },
+      "runtime/darkpipe/clips.py": {
+        "bytes": 44918,
+        "sha256": "6c8877afeddff0328a5d0c36ba5ec2b1acb7dd485c98824bb740dcad96c10053",
+        "platform_source": "darkpipe/clips.py"
+      },
+      "runtime/darkpipe/config.py": {
+        "bytes": 24422,
+        "sha256": "0473b37fc30f8ccd1b6287a10279b660bd35535df09e262168469551f950ad95",
+        "platform_source": "darkpipe/config.py"
+      },
+      "runtime/darkpipe/constants.py": {
+        "bytes": 9539,
+        "sha256": "4b450a125a10f8e29dbadba0444305a5206de0b266438cf9416535e05d309958",
+        "platform_source": "darkpipe/constants.py"
+      },
+      "runtime/darkpipe/denoise_util.py": {
+        "bytes": 337,
+        "sha256": "d03721b21cfe758b3b8d2b412cdd4c59f03d98f2a9464f91698c79a2a50b96fc",
+        "platform_source": "darkpipe/denoise_util.py"
+      },
+      "runtime/darkpipe/media.py": {
+        "bytes": 10395,
+        "sha256": "0d920154fb0b333445a50c4f31fd091ca60fdb353c10b36d0a139bf232f24afc",
+        "platform_source": "darkpipe/media.py"
+      },
+      "runtime/darkpipe/person/__init__.py": {
+        "bytes": 77,
+        "sha256": "ac634c423c9b1da33bcaf56fc78183cdc7355dfcf99a5ea02b8b56c98f41725d",
+        "platform_source": "darkpipe/person/__init__.py"
+      },
+      "runtime/darkpipe/person/action_engine.py": {
+        "bytes": 8937,
+        "sha256": "65ecaeaf2ba25439319c2e82c185f9f9c3923c5082199f4d7211518549301a03",
+        "platform_source": "darkpipe/person/action_engine.py"
+      },
+      "runtime/darkpipe/person/assignment.py": {
+        "bytes": 1508,
+        "sha256": "c1d31431feda9bbf159bd4a61756a220d9095ecc21f597cdb72ab63b80a8ab88",
+        "platform_source": "darkpipe/person/assignment.py"
+      },
+      "runtime/darkpipe/person/clips.py": {
+        "bytes": 15724,
+        "sha256": "7698afde4289d22de1995b5c20a1aaef60180c22fbe97a5c3876f4e27f8dfa4d",
+        "platform_source": "darkpipe/person/clips.py"
+      },
+      "runtime/darkpipe/person/core.py": {
+        "bytes": 13420,
+        "sha256": "40c42b2f41cf7b6c330dfd259bdb8976b29101504613250806527cdcee1da3d8",
+        "platform_source": "darkpipe/person/core.py"
+      },
+      "runtime/darkpipe/person/frontend_process.py": {
+        "bytes": 5558,
+        "sha256": "9673d021798dc3935fd741cce2c9a2acc33ff67ffa2d97677b0b5b6ca8873810",
+        "platform_source": "darkpipe/person/frontend_process.py"
+      },
+      "runtime/darkpipe/person/process_pool.py": {
+        "bytes": 4854,
+        "sha256": "8bc08280526af6a418378dc023bf181514b3859c3c2a79287fbcc469d8a022e7",
+        "platform_source": "darkpipe/person/process_pool.py"
+      },
+      "runtime/darkpipe/person/runtime.py": {
+        "bytes": 11202,
+        "sha256": "1a2a797a1d264cd9fe31bb5d0abe0835c9f8e4e8a1678e210c36541880525d40",
+        "platform_source": "darkpipe/person/runtime.py"
+      },
+      "runtime/darkpipe/person/scheduling.py": {
+        "bytes": 7702,
+        "sha256": "c04f60e63910d09d44b52475d361b6704eaa77912cd20b384a82bfbab4de506d",
+        "platform_source": "darkpipe/person/scheduling.py"
+      },
+      "runtime/darkpipe/person/service.py": {
+        "bytes": 10994,
+        "sha256": "d865423a38c268f7ee65b54993407a0e0c51cc6dc075c8c5ccfe9158221df1a2",
+        "platform_source": "darkpipe/person/service.py"
+      },
+      "runtime/darkpipe/pipeline.py": {
+        "bytes": 11391,
+        "sha256": "0e5f503db00a27fbfe825aa8e8e01a59baa12a22c8d427d021657cf0f6b0f02d",
+        "platform_source": "darkpipe/pipeline.py"
+      },
+      "runtime/darkpipe/pose_overlay.py": {
+        "bytes": 7984,
+        "sha256": "38f0f618b4bcb4c454e00b8797bddbbd5336b5d8d43deaa437819c88a2a45367",
+        "platform_source": "darkpipe/pose_overlay.py"
+      },
+      "runtime/darkpipe/render.py": {
+        "bytes": 4429,
+        "sha256": "47cf9afa16d02a227826840e37e225d516e08d26e79caefae1e5da092190e74d",
+        "platform_source": "darkpipe/render.py"
+      },
+      "runtime/darkpipe/server.py": {
+        "bytes": 98999,
+        "sha256": "f1ce2820506d866a5f5b0e9afd44794ad35efe34e31859babd25dd26c77da5f7",
+        "platform_source": "darkpipe/server.py"
+      },
+      "runtime/darkpipe/shard.py": {
+        "bytes": 8484,
+        "sha256": "8afc7fb2fd1d360292a5a6254be5861849f0acbd40d29edf892117b42fa8004d",
+        "platform_source": "darkpipe/shard.py"
+      },
+      "runtime/darkpipe/shard_worker.py": {
+        "bytes": 681,
+        "sha256": "5ed07edc57ca3445444275cf97374f40f6073af40c38c88a0329ada02736ce1d",
+        "platform_source": "darkpipe/shard_worker.py"
+      },
+      "runtime/darkpipe/stages/__init__.py": {
+        "bytes": 4677,
+        "sha256": "92da2c85808b995098f2c335bf3f5ac4f8af003bbe4bd145ebde3dab28bd9817",
+        "platform_source": "darkpipe/stages/__init__.py"
+      },
+      "runtime/darkpipe/stages/base.py": {
+        "bytes": 3683,
+        "sha256": "2a3f63ee89cfc9b34f3594633675f431b8f19cee0dffb86652fc74ef106d9811",
+        "platform_source": "darkpipe/stages/base.py"
+      },
+      "runtime/darkpipe/stages/denoise.py": {
+        "bytes": 2319,
+        "sha256": "da980f76d11f8db5ec891c15b934b3d0ec28c562aa4563240ce8f7d328075623",
+        "platform_source": "darkpipe/stages/denoise.py"
+      },
+      "runtime/darkpipe/stages/downscale.py": {
+        "bytes": 2240,
+        "sha256": "7621720efc5b35147908495d52562467ce6eaccb14f136e8431c8be4ec68e179",
+        "platform_source": "darkpipe/stages/downscale.py"
+      },
+      "runtime/darkpipe/stages/enhance_retinexformer.py": {
+        "bytes": 1408,
+        "sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67",
+        "platform_source": "darkpipe/stages/enhance_retinexformer.py"
+      },
+      "runtime/darkpipe/stages/object_prior.py": {
+        "bytes": 15918,
+        "sha256": "99f61470dbe5b5f3145375c40b2825a998a656fa43a060d939e61c65860f7a5c",
+        "platform_source": "darkpipe/stages/object_prior.py"
+      },
+      "runtime/darkpipe/stages/recognize.py": {
+        "bytes": 33010,
+        "sha256": "6b5a899667061cf8a5c9b9ce6e39af13bf7d8781e3ad3383b2bb8eec9b61e932",
+        "platform_source": "darkpipe/stages/recognize.py"
+      },
+      "runtime/darkpipe/stages/saturation.py": {
+        "bytes": 3648,
+        "sha256": "22e4bbca7d01835fd32d462758a245eacd87525b7a128b95c6e85e3d30260185",
+        "platform_source": "darkpipe/stages/saturation.py"
+      },
+      "runtime/darkpipe/stages/skeleton_aux.py": {
+        "bytes": 22176,
+        "sha256": "26a471b75a165e7224fbd589020f4734942a44d7781cbf24b384f33bce9e4b5f",
+        "platform_source": "darkpipe/stages/skeleton_aux.py"
+      },
+      "runtime/darkpipe/stages/sr_bicubic.py": {
+        "bytes": 2430,
+        "sha256": "a58fdabd6d5cc7e613f29370b3fcc67b1c50437192d815f2e9f6b574136d3752",
+        "platform_source": "darkpipe/stages/sr_bicubic.py"
+      },
+      "runtime/darkpipe/streams.py": {
+        "bytes": 53922,
+        "sha256": "24658068254193b33a2752ad00915d601fe06b819f3b4a13221a86908e8c06ac",
+        "platform_source": "darkpipe/streams.py"
+      },
+      "runtime/darkpipe/utils.py": {
+        "bytes": 4580,
+        "sha256": "43fae97edbd20920e008c6e9b0430bd6aeb739cfeba226f665a0878bfec1f9a1",
+        "platform_source": "darkpipe/utils.py"
+      },
+      "runtime/darkpipe/vendor/__init__.py": {
+        "bytes": 83,
+        "sha256": "57e827078711325f719cea9b70e4366e84919743de258837b9b4965d372b9434",
+        "platform_source": "darkpipe/vendor/__init__.py"
+      },
+      "runtime/darkpipe/vendor/retinexformer_arch.py": {
+        "bytes": 12312,
+        "sha256": "1567c89d55285a3c1a4d4ca33f288b1fd98dc6b6bbdf971eda02d745f9087631",
+        "platform_source": "darkpipe/vendor/retinexformer_arch.py"
+      },
+      "runtime/darkpipe/vendor/videomamba/__init__.py": {
+        "bytes": 54,
+        "sha256": "361e0060939b7e6df25f0c86738a895e9e5033c9b3e82d5220f5e09032550ef2",
+        "platform_source": "darkpipe/vendor/videomamba/__init__.py"
+      },
+      "runtime/darkpipe/vendor/videomamba/bimamba_interface.py": {
+        "bytes": 1848,
+        "sha256": "d2377cd2a66d0357021041218f193a403ec264cb82faa84b3c81f7d108572118",
+        "platform_source": "darkpipe/vendor/videomamba/bimamba_interface.py"
+      },
+      "runtime/darkpipe/vendor/videomamba/mamba_simple.py": {
+        "bytes": 16739,
+        "sha256": "ebf2dc05191e4fae6ea7f1e65a2b22653120c9fe13ef522f7fe1ad8fd34e4af1",
+        "platform_source": "darkpipe/vendor/videomamba/mamba_simple.py"
+      },
+      "runtime/darkpipe/vendor/videomamba/videomamba.py": {
+        "bytes": 17304,
+        "sha256": "c828fd573255c7c53b61677b9ec009f4a5f31ac3f711f8d13a9eccc7ecbadefb",
+        "platform_source": "darkpipe/vendor/videomamba/videomamba.py"
+      },
+      "runtime/main.py": {
+        "bytes": 58508,
+        "sha256": "67a68806c4de21e9fc357ea0f247b39fbef934486b3d02819cf4f0a80230c702",
+        "platform_source": "main.py"
+      },
+      "runtime/oputil.py": {
+        "bytes": 37069,
+        "sha256": "d270f2cbc93f9eb74c7e683674575fe0ad25fb883893378c699363c46e9afe91",
+        "platform_source": "oputil.py"
+      },
+      "sample_data/dark_frame.png": {
+        "bytes": 97322,
+        "sha256": "054083c6712f1128db844486ce49cb9eb665b6e4eddd0613407761a0995f2508"
+      },
+      "sample_data/sample_drink.mp4": {
+        "bytes": 3182746,
+        "sha256": "18aa3b9c66a39d1639a3ba7912aa06454d9134f33c1a55c1575aaa1366171385"
+      },
+      "sample_data/sample_wave.mp4": {
+        "bytes": 3141107,
+        "sha256": "cc2a2d5e08c242e12268af8083b5b27c6c7176297150429d770b0544c0cb42db"
+      },
+      "setup_env.sh": {
+        "bytes": 1626,
+        "sha256": "4a4121e34948c4e98136da86fa964df3c250972ece8a3d01a4be0197bf3b1bda"
+      },
+      "skeleton_aux.py": {
+        "bytes": 557,
+        "sha256": "1fa2b9033a8638f924939e9b3ff4af7ccb7f01f5e49a323e43aa6cf5311792dd"
+      },
+      "video_io.py": {
+        "bytes": 2573,
+        "sha256": "663f74fd8a7628ed8c1b8557f5e740e3949a183804d12ed8f4bb9f2f32ce736d"
+      },
+      "weights/NTIRE.pth": {
+        "bytes": 6476406,
+        "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+        "platform_source": "ckpts/NTIRE.pth"
+      },
+      "weights/rtmo-s_end2end.onnx": {
+        "bytes": 39617685,
+        "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+        "platform_source": "ckpts/rtmo-s_end2end.onnx"
+      },
+      "weights/rtmo-s_person_20261024.onnx": {
+        "bytes": 39693236,
+        "sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2",
+        "platform_source": "ckpts/rtmo-s_person_20261024.onnx"
+      },
+      "weights/stgcn_behavior_32f_realactall_full.pth": {
+        "bytes": 1178385,
+        "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+        "platform_source": "ckpts/stgcn_behavior_32f_realactall_full.pth"
+      },
+      "weights/stgcn_person_20261024.pth": {
+        "bytes": 1178385,
+        "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+        "platform_source": "ckpts/stgcn_person_20261024.pth"
+      },
+      "weights/videomamba_t_behavior_32f.pth": {
+        "bytes": 28012991,
+        "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44",
+        "platform_source": "ckpts/videomamba_t_behavior_32f.pth"
+      },
+      "weights/videomamba_t_behavior_32f_person_roi_20261023.pth": {
+        "bytes": 28104357,
+        "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf",
+        "platform_source": "ckpts/videomamba_t_behavior_32f_person_roi_20261023.pth"
+      },
+      "weights/videomamba_t_behavior_32f_realact10_all.pth": {
+        "bytes": 28012991,
+        "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44",
+        "platform_source": "ckpts/videomamba_t_behavior_32f.pth"
+      },
+      "weights/videomamba_t_behavior_32f_realactall_full.pth": {
+        "bytes": 28132107,
+        "sha256": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79",
+        "platform_source": "ckpts/videomamba_t_behavior_32f_realactall_full.pth"
+      },
+      "weights/videomamba_t_behavior_32f_realactall_full_pn.pth": {
+        "bytes": 28133373,
+        "sha256": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04",
+        "platform_source": "ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth"
+      },
+      "weights/videomamba_t_behavior_32f_realactall_full_pn2.pth": {
+        "bytes": 28099109,
+        "sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+        "platform_source": "ckpts/videomamba_t_behavior_32f_realactall_full_pn2.pth"
+      },
+      "weights/yolo26m_detect.onnx": {
+        "bytes": 81963235,
+        "sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c",
+        "platform_source": "ckpts/yolo26m_detect.onnx"
+      },
+      "weights/yolo26m_person_20261024.onnx": {
+        "bytes": 81910190,
+        "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9",
+        "platform_source": "ckpts/yolo26m_person_20261024.onnx"
+      }
+    }
+  }
+}

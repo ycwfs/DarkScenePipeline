@@ -223,7 +223,7 @@ def flows():
     ET.indent(mxfile,space="  ")
     raw=ET.tostring(mxfile,encoding="utf-8",xml_declaration=True)
     (OUT/"模型运行流程_最新双方案.drawio").write_bytes(raw)
-    (REPO/"platform/模型运行流程_v2.drawio").write_bytes(raw)
+    # Historical meeting materials must not overwrite the current per-person diagram.
     for i,page in enumerate(mxfile.findall('diagram'),1):
         single=ET.Element('mxfile',host='app.diagrams.net',version='24.7.17')
         single.append(page)
