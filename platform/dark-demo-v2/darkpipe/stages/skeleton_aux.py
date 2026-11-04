@@ -12,10 +12,11 @@ p = alpha*p_rgb + (1-alpha)*p_skel, evaluated per fusion weight across three fie
 alpha=0.70: 1/365 false positives, 18/18 positives, old-val top1 0.9831 -- the same operating
 point the RGB-only model needs alpha 1.0 for, with the skeleton branch holding the gate.
 
-Ported verbatim (network, adjacency, normalization, person merge, gate threshold) from the
-evaluation code in compare/behavior/skeleton/ so the served numbers ARE the measured numbers:
-stgcn.py (STGCN/coco_adjacency/merge_persons/normalize_window), skeleton_cache.py (RTMO
-wrapper), fusion_eval.py (TAU=0.5 gate, per-window protocol). The pose model runs on the
+The network and normalization retain the trained ST-GCN convention. Since 2026-10-22,
+alpha uses the complete probability vector of the highest-confidence valid person,
+including other, instead of averaging person logits. Historical accuracy numbers above
+describe the previous merge and must not be claimed for this selection rule.
+The pose model runs on the
 ENHANCED frame as this stage receives it -- the same frames, at proc_max_side resolution, the
 field suites were measured on.
 
@@ -50,15 +51,9 @@ POSE_SCORE_THR = 0.3
 # measurements: real person windows sit at 0.5+ while the RTMO "ghost person" false
 # detections on empty scenes score below it (compare/behavior/skeleton probe_pose_ab.py).
 TAU = 0.5
-# max_prior decision mode ("meeting three-step"): per-frame up to MAX_PERSONS skeletons are
-# recognized INDIVIDUALLY and the skeleton branch's result is the highest-probability
-# person's -- replacing the presence-weighted merge of merge_persons, which the meeting
-# replaced by "take the higher score". A person qualifies for that contest only if its
-# window presence clears TAU AND its skeleton is complete: meeting wording "置信度高于阈值
-# 且骨骼完整" operationalized as >= COMP_MIN_VIS of 17 keypoints above POSE_SCORE_THR on at
-# least COMP_FRAC of the frames where the person appears. Slot identity is per frame (no
-# tracker), so a slot may mix persons over time; the best-of-slots selection is what makes
-# that harmless -- the meeting rule itself picks the best person.
+# Both decision modes classify up to six people. Associate poses within each window;
+# slot numbers are local to that window, not persistent identities. A valid person must
+# also be visible at the window endpoint, where the overlay and decision are reported.
 MAX_PERSONS = 6
 COMP_MIN_VIS = 10
 COMP_FRAC = 0.5
@@ -157,6 +152,20 @@ def merge_persons(logits, presence):
     """logits (N, M, C), presence (N, M) in [0,1] -> presence-weighted sum over M."""
     w = presence / presence.sum(1, keepdim=True).clamp_min(1e-6)
     return (logits * w.unsqueeze(-1)).sum(1)
+
+
+def duplicate_pose(pose, previous):
+    """Suppress nearly identical RTMO detections without merging nearby distinct people."""
+    common = (pose[:, 2] > POSE_SCORE_THR) & (previous[:, 2] > POSE_SCORE_THR)
+    if common.sum() < COMP_MIN_VIS:
+        return False
+    a, b = pose[common, :2], previous[common, :2]
+    lo_a, hi_a, lo_b, hi_b = a.min(0), a.max(0), b.min(0), b.max(0)
+    intersection = np.maximum(0, np.minimum(hi_a, hi_b) - np.maximum(lo_a, lo_b)).prod()
+    union = (hi_a-lo_a).prod() + (hi_b-lo_b).prod() - intersection
+    extent = min(np.linalg.norm(hi_a-lo_a), np.linalg.norm(hi_b-lo_b))
+    return (intersection / max(float(union), 1e-8) > .65
+            and np.median(np.linalg.norm(a-b, axis=1)) < .1 * extent)
 
 
 def completeness(sk, conf_thr=POSE_SCORE_THR, min_vis=COMP_MIN_VIS):
@@ -291,37 +300,74 @@ class SkeletonAux:
         self.probs([np.zeros((472, 840, 3), np.uint8)] * 32)
 
     def _fill_slots(self, frames_bgr, m_max):
-        """Per-frame top-`m_max` persons (by mean keypoint score) -> sk (T, m_max, 17, 3)
-        normalized xy+conf. No tracker: slot m holds DIFFERENT persons on different frames;
-        callers handle that (merge_persons weights it away, analyze picks best-of-slots)."""
+        """Associate normalized poses backwards from the current frame within a window.
+
+        Spatial joint matching keeps confidence-order changes from swapping people.
+        Short occlusions are tolerated; long/ambiguous crossings are not identity ReID.
+        Latest-frame people get slot priority, and vacated slots are never recycled into
+        another person's temporal sequence inside this window.
+        """
         T = len(frames_bgr)
         sk = np.zeros((T, m_max, 17, 3), np.float32)
+        if not T:
+            return sk
         H, W = frames_bgr[0].shape[:2]
-        for t in range(T):
+        last, seen = {}, {}
+        for t in range(T - 1, -1, -1):
             kpts, scores = self.pose(frames_bgr[t])
             if len(kpts) == 0:
                 continue
-            per = scores.mean(1)                          # person-level score
-            for m, i in enumerate(np.argsort(per)[::-1][:m_max]):
-                sk[t, m, :, :2] = kpts[i] / np.array([W, H], np.float32)
-                sk[t, m, :, 2] = scores[i]
+            candidates = []
+            for i in np.argsort(scores.mean(1))[::-1]:
+                pose = np.column_stack((kpts[i] / np.array([W, H], np.float32), scores[i]))
+                if not np.isfinite(pose).all() or (pose[:, 2] > POSE_SCORE_THR).sum() < 3:
+                    continue
+                if any(duplicate_pose(pose, previous) for previous in candidates):
+                    continue
+                candidates.append(pose)
+                if len(candidates) == m_max:
+                    break
+            pairs = []
+            for m, previous in last.items():
+                if seen[m] - t > 4:
+                    continue
+                for i, pose in enumerate(candidates):
+                    common = (pose[:, 2] > POSE_SCORE_THR) & (previous[:, 2] > POSE_SCORE_THR)
+                    if common.sum() < 5:
+                        continue
+                    a, b = pose[common, :2], previous[common, :2]
+                    extent = max(float(np.linalg.norm(np.ptp(a, axis=0))),
+                                 float(np.linalg.norm(np.ptp(b, axis=0))), .05)
+                    distance = float(np.median(np.linalg.norm(a - b, axis=1)))
+                    if distance < min(.18, .6 * extent):
+                        pairs.append((distance / extent, m, i))
+            assigned, used = {}, set()
+            for _, m, i in sorted(pairs):
+                if m not in assigned and i not in used:
+                    assigned[m] = i
+                    used.add(i)
+            for i in range(len(candidates)):
+                if i in used:
+                    continue
+                free = next((m for m in range(m_max) if m not in last and m not in assigned), None)
+                if free is not None:
+                    assigned[free] = i
+            for m, i in assigned.items():
+                sk[t, m] = candidates[i]
+                last[m], seen[m] = candidates[i], t
         return sk
 
     def probs(self, frames_bgr):
         """frames (enhanced BGR uint8) -> (p_skel (10,) float32, presence float in [0,1]).
-        The fuse_mode="alpha" path: presence-weighted person merge, byte-identical to the
-        v2.0 weighted-fusion behaviour."""
-        sk = self._fill_slots(frames_bgr, 2)
-        x, pres = normalize_window(sk)
-        xt = torch.from_numpy(x).unsqueeze(0).to(self.device)
-        with torch.no_grad():
-            lg = torch.stack([self.net(xt[:, m]) for m in range(xt.shape[1])], 1)[0]
-        p = merge_persons(lg, torch.tensor(pres).unsqueeze(0).to(self.device))[0].softmax(0)
-        # Preserve observations for display without changing the merged logits or running
-        # RTMO/ST-GCN again. Slots are confidence ranks, not persistent person identities.
-        self.last_analysis = dict(sk=sk, presence=pres,
-                                  slot_p=lg.softmax(-1).float().cpu().numpy())
-        return p.float().cpu().numpy(), float(pres.max())
+        Select argmax_person(max_class_probability), INCLUDING other. Keep that person's
+        whole distribution for alpha fusion; never take a per-class maximum across people.
+        """
+        info = self.analyze(frames_bgr)
+        if info['best'] >= 0:
+            return info['p'], float(info['presence'][info['best']])
+        p = np.zeros(len(BEHAVIORS), np.float32)
+        p[BEHAVIORS.index('other')] = 1.0
+        return p, 0.0  # no qualifying current person: use the existing no-person policy
 
     def analyze(self, frames_bgr):
         """The max_prior path ("meeting three-step" step 1): up to MAX_PERSONS skeletons
@@ -339,61 +385,47 @@ class SkeletonAux:
         sk = self._fill_slots(frames_bgr, MAX_PERSONS)
         x, pres = normalize_window(sk)
         comp = completeness(sk)
-        xt = torch.from_numpy(x).unsqueeze(0).to(self.device)
+        xt = torch.from_numpy(x).to(self.device)
         with torch.no_grad():
-            lg = torch.stack([self.net(xt[:, m]) for m in range(xt.shape[1])], 0)[:, 0]
+            lg = self.net(xt)  # batch people in one small ST-GCN call
         slot_p = lg.softmax(1).float().cpu().numpy()
         valid = (pres >= TAU) & (comp >= COMP_FRAC)
+        valid &= ((sk[-1, :, :, 2].mean(1) >= TAU)
+                  & ((sk[-1, :, :, 2] > POSE_SCORE_THR).sum(1) >= COMP_MIN_VIS))
         out = dict(p=None, pres=float(pres.max()), sk=sk, valid=valid, slot_p=slot_p,
-                   best=-1)
+                   presence=pres, best=-1)
         if valid.any():
             cand = np.flatnonzero(valid)
             out["best"] = int(cand[np.argmax(slot_p[cand].max(1))])
             out["p"] = slot_p[out["best"]]
-        self.last_analysis = dict(sk=sk, presence=pres, slot_p=slot_p, valid=valid)
+        self.last_analysis = out
         return out
 
-    def action_poses(self, label):
-        """Current-frame candidate actors agreeing with the final named action.
+    def action_poses(self, label=None):
+        """Every valid current person's OWN class, independently of the final video label.
 
-        A full-frame RGB head cannot localize an actor. Do not invent one when the
-        per-slot skeleton classifier disagrees, is absent, or only reports other.
-        This is display metadata and never feeds back into the recognition decision.
+        `label` remains accepted for callers of the previous display API; it no longer
+        filters people. Other is a real class and is displayed and eligible for fusion.
         """
         info = self.last_analysis
-        if info is None or label == 'other' or label not in BEHAVIORS:
+        if info is None:
             return []
-        index = BEHAVIORS.index(label)
         result = []
         kept = []
         for slot, prob in enumerate(info['slot_p']):
-            if info['presence'][slot] < TAU or int(prob.argmax()) != index:
+            if info['presence'][slot] < TAU:
                 continue
             if 'valid' in info and not info['valid'][slot]:
                 continue
             pose = info['sk'][-1, slot]
             if pose[:, 2].mean() < TAU or (pose[:, 2] > POSE_SCORE_THR).sum() < COMP_MIN_VIS:
                 continue
-            # RTMO can emit two almost-identical detections of one bent-over person.
-            # Suppress duplicates for display only; retain both original votes in fusion.
-            duplicate = False
-            for previous in kept:
-                common = (pose[:, 2] > POSE_SCORE_THR) & (previous[:, 2] > POSE_SCORE_THR)
-                if common.sum() < COMP_MIN_VIS:
-                    continue
-                a, b = pose[common, :2], previous[common, :2]
-                lo_a, hi_a, lo_b, hi_b = a.min(0), a.max(0), b.min(0), b.max(0)
-                intersection = np.maximum(0, np.minimum(hi_a, hi_b) - np.maximum(lo_a, lo_b)).prod()
-                union = (hi_a-lo_a).prod() + (hi_b-lo_b).prod() - intersection
-                extent = min(np.linalg.norm(hi_a-lo_a), np.linalg.norm(hi_b-lo_b))
-                if (intersection / max(float(union), 1e-8) > .65
-                        and np.median(np.linalg.norm(a-b, axis=1)) < .1 * extent):
-                    duplicate = True
-                    break
-            if duplicate:
+            if any(duplicate_pose(pose, previous) for previous in kept):
                 continue
             kept.append(pose)
-            result.append(dict(slot=int(slot), label=label, confidence=float(prob[index]),
+            index = int(prob.argmax())
+            result.append(dict(slot=int(slot), label=BEHAVIORS[index], confidence=float(prob[index]),
+                               selected_for_fusion=slot == info.get('selected', info.get('best', -1)),
                                keypoints=pose.tolist()))
         return result
 

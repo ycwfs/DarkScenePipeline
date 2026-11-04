@@ -1,174 +1,137 @@
-"""环境自检：确认这台 NVIDIA 盒子能跑包内两个模型（v2 含骨架分支）。
-
-    python check_env.py
-
-检查项：Python 版本、torch/CUDA、mamba_ssm 与 causal_conv1d 的 CUDA 扩展、其余依赖、
-权重文件齐全、两个模型 dummy 前向、骨架分支（onnxruntime 的 CUDA EP + RTMO-s 时延探针 +
-ST-GCN 前向 + 融合通路）、照度门（两部曲：暗窗纯 RGB / 亮窗融合）。全部通过会打印 [OK]。
-"""
+#!/usr/bin/env python3
+"""Verify the delivered files and native production runtime, including real CUDA forwards."""
+import argparse
+import hashlib
+import json
 import os
+import platform
+import shutil
+import subprocess
 import sys
+from pathlib import Path
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-os.chdir(HERE)
-
-fail = []
+from run import ROOT, runtime_environment
 
 
-def check(name, fn):
-    try:
-        info = fn()
-        print(f"[OK] {name}: {info}")
-    except Exception as e:  # noqa: BLE001
-        fail.append(name)
-        print(f"[FAIL] {name}: {e}")
+def verify_files() -> str:
+    manifest = json.loads((ROOT / 'manifest.json').read_text())
+    for name, record in manifest['files'].items():
+        path = ROOT / name
+        if not path.is_file():
+            raise RuntimeError(f'缺少文件: {name}')
+        if path.stat().st_size != record['bytes'] or hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
+            raise RuntimeError(f'文件被修改或损坏: {name}')
+    return f"{manifest['version']}: {len(manifest['files'])} 份文件 SHA256 一致"
 
 
-def c_python():
-    v = sys.version_info
-    assert v[:2] == (3, 10), f"需要 Python 3.10（mamba_ssm 预编译 wheel 只发 cp310），当前 {v.major}.{v.minor}"
-    return sys.version.split()[0]
+def check_system() -> str:
+    assert sys.version_info[:2] == (3, 10), '需要 Python 3.10'
+    assert platform.system() == 'Linux' and platform.machine() in ('x86_64', 'aarch64'), '需要 Linux x86_64 或 Jetson ARM64'
+    for name in ('ffmpeg', 'ffprobe', 'gcc'):
+        assert shutil.which(name), f'缺少 {name}'
+    for flag, names in (('-encoders', ('libx264',)), ('-muxers', ('flv', 'hls'))):
+        result = subprocess.run(['ffmpeg', '-hide_banner', flag], capture_output=True, text=True, check=True)
+        assert all(name in result.stdout for name in names), f'FFmpeg 缺少 {names}'
+    return f'{platform.machine()}, Python {platform.python_version()}, FFmpeg H.264/FLV/HLS'
 
 
-def c_torch():
+def check_dependencies() -> str:
+    from importlib.metadata import PackageNotFoundError, version
+
+    import causal_conv1d  # noqa: F401
+    import cv2
+    import fastapi
+    import mamba_ssm  # noqa: F401
     import torch
-    assert torch.cuda.is_available(), "torch 检测不到 CUDA"
-    name = torch.cuda.get_device_name(0)
-    return f"{torch.__version__} (cuda {torch.version.cuda}) / GPU {name}"
+    import uvicorn  # noqa: F401
+    assert torch.cuda.is_available(), 'torch 检测不到 CUDA'
+    sys.path.insert(0, str(ROOT / 'runtime'))
+    from darkpipe.box_onnx import backend
+    if backend() == 'tensorrt':
+        import tensorrt
+        assert int(tensorrt.__version__.split('.')[0]) >= 10, '需要 TensorRT 10+'
+    else:
+        import onnxruntime as ort
+        assert 'CUDAExecutionProvider' in ort.get_available_providers(), 'ORT 未提供 CUDA EP'
+        try:
+            version('onnxruntime')
+        except PackageNotFoundError:
+            pass
+        else:
+            raise RuntimeError('环境同时装了 CPU onnxruntime，请移除并重新安装 onnxruntime-gpu')
+    return f'torch {torch.__version__}, GPU {torch.cuda.get_device_name(0)}, cv2 {cv2.__version__}, fastapi {fastapi.__version__}'
 
 
-def c_cuda_ext():
-    from mamba_ssm.ops.selective_scan_interface import selective_scan_fn  # noqa: F401
-    from mamba_ssm.ops.triton.selective_state_update import selective_state_update  # noqa: F401
-    return "mamba_ssm CUDA 扩展可加载（执行在「两个模型 dummy 前向」里验证）"
-
-
-def c_deps():
-    import cv2
-    import einops  # noqa: F401
-    import numpy
-    import timm  # noqa: F401
-    extra = []
-    try:
-        import onnxruntime
-        provs = onnxruntime.get_available_providers()
-        extra.append(f"onnxruntime {onnxruntime.__version__} providers={provs}")
-    except Exception as e:  # noqa: BLE001
-        extra.append(f"onnxruntime 不可用（{e}）")
-    try:
-        import rtmlib  # noqa: F401
-        extra.append("rtmlib 可用")
-    except Exception as e:  # noqa: BLE001
-        extra.append(f"rtmlib 不可用（{e}）")
-    return f"opencv {cv2.__version__} / numpy {numpy.__version__}; " + "; ".join(extra)
-
-
-def c_weights():
-    need = [os.path.join("weights", "NTIRE.pth"),
-            os.path.join("weights", "videomamba_t_behavior_32f_realactall_full_pn2.pth"),
-            os.path.join("weights", "videomamba_t_behavior_32f_realactall_full_pn.pth"),
-            os.path.join("weights", "stgcn_behavior_32f_realactall_full.pth"),
-            os.path.join("weights", "rtmo-s_end2end.onnx"),
-            os.path.join("weights", "videomamba_t_behavior_32f_realactall_full.pth"),
-            os.path.join("weights", "videomamba_t_behavior_32f_realact10_all.pth")]
-    for p in need:
-        assert os.path.isfile(p), f"缺权重 {p}"
-    return ", ".join(f"{os.path.basename(p)} ({os.path.getsize(p) / 2**20:.1f}MB)" for p in need)
-
-
-def _frames_for_skel():
-    """骨架检查的输入：优先用包内样例视频（真人，走 presence>=0.5 的常规通路）；
-    没有样例就用随机噪声（无人，走 soft 策略通路）。两条通路都要能出合法概率。"""
+def check_pipeline() -> str:
+    sys.path.insert(0, str(ROOT / 'runtime'))
+    import time
     import cv2
     import numpy as np
-    sample = os.path.join("sample_data", "sample_drink.mp4")
-    if os.path.isfile(sample):
-        cap = cv2.VideoCapture(sample)
-        frames = []
-        while len(frames) < 32:
-            ok, f = cap.read()
-            if not ok:
-                break
-            frames.append(f)
-        cap.release()
-        if len(frames) >= 32:
-            return frames[:32], f"样例 {os.path.basename(sample)}"
-    return [np.random.RandomState(2).randint(0, 255, (270, 480, 3), dtype=np.uint8)
-            for _ in range(32)], "随机噪声（无样例视频）"
+    import torch
+    from darkpipe.config import PipelineConfig
+    from darkpipe.person.runtime import PersonEngine
+    from darkpipe.person.core import Sample, fuse_person
+    from darkpipe.person.action_engine import ActionTask
+    torch.set_num_threads(2)
+    cv2.setNumThreads(2)
+    cfg = PipelineConfig(person_mode=True, recognize='behavior', gpus='0',
+        device='cuda:0', ckpt_dir=str(ROOT / 'weights'), proc_max_side=720,
+        skel_fusion_alpha=.972, reco_min_conf=.925, lum_gate=35.)
+    engine = None
+    try:
+        engine = PersonEngine(cfg, time.monotonic(), lambda row: None, realtime=False)
+        dark = cv2.imread(str(ROOT / 'sample_data/dark_frame.png'))
+        assert dark is not None
+        enhanced, luma = engine.prepare(dark)
+        assert enhanced.mean() > dark.mean(), '增强前向异常'
+        engine.front(enhanced, True)  # Real new YOLO + RTMO inference, even if no person.
+        crop = np.full((224, 400, 3), 128, np.uint8)
+        pose = np.zeros((17, 3), np.float32)
+        pose[:, 0] = np.linspace(.3, .7, 17)
+        pose[:, 1] = np.linspace(.1, .9, 17)
+        pose[:, 2] = .95
+        rows = []
+        for j, brightness in enumerate((20., 60.)):
+            window = tuple(Sample(i/31, i, crop, np.array([0,0,400,224]), pose, brightness)
+                           for i in range(32))
+            task = ActionTask((1,j,0), window, (0,0,400,224), .95, time.monotonic(), time.monotonic()-1)
+            rows.extend(engine.pool.engines[0].predict([task]))
+        assert rows[0]['mode'] == 'rgb_low_luma'
+        assert rows[1]['mode'] == 'rgb_skeleton' and rows[1]['pose_valid']
+        assert all(np.isfinite(row['fused_probs']).all() for row in rows)
+        detector = engine.pool.engines[0].object_prior
+        assert detector is not None
+        detections = detector.detector._frames_to_dets([enhanced])[0]
+        assert detections.shape[1] == 6 and np.isfinite(detections).all()
+        return '实际交付的 Retinexformer / YOLO26m / RTMO-s / ROI VideoMamba / ST-GCN / 七类物体YOLO26m 前向通过；门35分支通过（合成骨架只作接口检查）'
+    finally:
+        if engine is not None:
+            engine.close()
 
 
-def c_forward():
-    """RGB 主模型 dummy 前向（骨架关掉，纯查 VideoMamba/mamba_ssm 链路）。"""
-    import numpy as np
-    from behavior_infer import BehaviorRecognizer, WINDOW_T
-    from lowlight_infer import LowLightEnhancer
-    enh = LowLightEnhancer()
-    dark = (np.random.RandomState(0).rand(270, 480, 3) * 30).astype(np.uint8)
-    lit = enh.enhance([dark])[0]
-    assert lit.shape == dark.shape and lit.mean() > dark.mean(), "增强结果异常"
-    rec = BehaviorRecognizer(skel_alpha=1.0)
-    assert rec.fov == (224, 400), f"默认权重的 fullfov 元数据未识别: {rec.fov}"
-    frames = [np.random.RandomState(1).randint(0, 255, (270, 480, 3), dtype=np.uint8)
-              for _ in range(WINDOW_T)]
-    r = rec.predict(frames)
-    assert abs(sum(r["probs"].values()) - 1.0) < 1e-3, "概率和不为 1"
-    return (f"增强 270x480 平均亮度 {dark.mean():.0f}->{lit.mean():.0f}; "
-            f"识别(整帧 400x224 输入) top1={r['label']}({r['confidence']:.3f})")
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--files-only', action='store_true', help='仅校验交付文件哈希，无需 GPU 依赖')
+    parser.add_argument('--prepared-env', action='store_true', help=argparse.SUPPRESS)
+    args = parser.parse_args()
+    if not args.files_only and not args.prepared_env:
+        os.execve(sys.executable, [sys.executable, '-u', str(Path(__file__).resolve()),
+                                  *sys.argv[1:], '--prepared-env'], runtime_environment())
+    checks = [('交付完整性', verify_files)]
+    if not args.files_only:
+        checks += [('系统与编码器', check_system), ('CUDA 与服务依赖', check_dependencies),
+                   ('平台完整模型链', check_pipeline)]
+    failures = []
+    for name, check in checks:
+        try:
+            print(f'[OK] {name}: {check()}', flush=True)
+        except Exception as exc:  # noqa: BLE001 -- report each independent environment check
+            failures.append(name)
+            print(f'[FAIL] {name}: {type(exc).__name__}: {exc}', flush=True)
+    if failures:
+        raise SystemExit(f'自检失败: {failures}')
+    print('全部通过。完整离线/流式流程请使用 bash run.sh --video_path ...')
 
 
-def c_skeleton():
-    """骨架分支端到端：ORT CUDA EP -> RTMO-s 时延探针 -> ST-GCN -> 融合 -> 阈值规则。"""
-    import onnxruntime
-    provs = onnxruntime.get_available_providers()
-    assert "CUDAExecutionProvider" in provs, f"onnxruntime 没有 CUDA EP（装成 CPU 版了？）: {provs}"
-    from behavior_infer import BehaviorRecognizer
-    rec = BehaviorRecognizer()          # 默认 α=0.7，默认权重（pn2）
-    if rec.aux is None:
-        raise RuntimeError(rec.aux_reason or "骨架分支未启用")
-    frames, src = _frames_for_skel()
-    # lum_gate=0：这一项验的就是骨架通路本身，不让照度门挡它（ARID 暗样例的提亮前
-    # 亮度低于门限 75，默认门下会按两部曲走纯 RGB，骨架根本不跑）。
-    r = rec.predict(frames, lum_gate=0.0)
-    assert r["presence"] is not None and abs(sum(r["probs_final"].values()) - 1.0) < 1e-3, \
-        "融合后概率异常"
-    gate = f"presence={r['presence']:.2f}({src})"
-    return (f"姿态 {rec.aux.pose_ms:.1f} ms/帧, {gate}, "
-            f"最终判定 {r['label_reco']}({r['confidence_reco']:.3f})")
-
-
-def c_gate():
-    """照度门（两部曲第一步）端到端：暗窗被挡（纯 RGB，骨架不跑），亮窗融合照常。"""
-    import numpy as np
-    from behavior_infer import BehaviorRecognizer, WINDOW_T
-    rec = BehaviorRecognizer()          # 默认权重 + α=0.7 + 门限 75
-    if rec.aux is None:
-        raise RuntimeError(rec.aux_reason or "骨架分支未启用，照度门无从验证")
-    dark = [(np.random.RandomState(3).rand(270, 480, 3) * 40).astype(np.uint8)
-            for _ in range(WINDOW_T)]   # 平均亮度约 20，远低于门限 75
-    rd = rec.predict(dark)
-    assert rd["gate_blocked"] and rd["presence"] is None, \
-        f"暗窗未被照度门挡下: lum={rd['lum']:.1f} blocked={rd['gate_blocked']}"
-    bright = [np.full((270, 480, 3), 150, np.uint8) for _ in range(WINDOW_T)]  # 均值 150
-    rb = rec.predict(bright)
-    assert not rb["gate_blocked"], f"亮窗被照度门误挡: lum={rb['lum']:.1f}"
-    return (f"暗窗 lum={rd['lum']:.1f} 被挡(纯RGB, {rd['label_reco']})；"
-            f"亮窗 lum={rb['lum']:.1f} 融合照常(presence={rb['presence']:.2f})")
-
-
-if __name__ == "__main__":
-    check("Python", c_python)
-    check("torch/CUDA", c_torch)
-    check("mamba_ssm CUDA 扩展", c_cuda_ext)
-    check("其余依赖", c_deps)
-    check("权重文件", c_weights)
-    check("两个模型 dummy 前向", c_forward)
-    check("骨架分支（RTMO-s+ST-GCN+融合）", c_skeleton)
-    check("照度门（两部曲：暗窗纯RGB/亮窗融合）", c_gate)
-    if fail:
-        print(f"\n{len(fail)} 项未通过: {fail} —— 处理建议见 README.md「环境要求」")
-        sys.exit(1)
-    print("\n全部通过，可以运行:")
-    print("  python lowlight_infer.py --input sample_data/dark_frame.png")
-    print("  python behavior_infer.py --input sample_data/sample_drink.mp4")
-    print("  # 关骨架分支做纯 RGB 对比：加 --skel-alpha 1.0")
-    print("  # 关照度门退回纯加权融合：加 --lum-gate 0")
+if __name__ == '__main__':
+    main()

@@ -294,7 +294,8 @@ def test_label_bar_fps_is_the_configured_stream_rate():
     import inspect
 
     from darkpipe import server
-    src = inspect.getsource(server.process_loop)
+    # The deployed v2 entry wraps lifecycle/error handling around the legacy renderer.
+    src = inspect.getsource(getattr(server, '_process_loop', server.process_loop))
     assert "max_stream_fps:g} fps" in src, "label bar should show the configured rate"
     assert "fps_proc:.1f} fps" not in src, "measured rate must not be burnt into the picture"
 
@@ -563,12 +564,21 @@ class _FixedSlot:
 
 @pytest.fixture
 def fake_ffmpeg(monkeypatch):
+    # Cadence/backpressure tests fake the process, but pipe sizing requires a real fd.
+    # Supply an actual pipe for fcntl without changing the simulated write delay.
+    import os
+    descriptors = []
     def install(block=0.0, err=b""):
         proc = _FakeProc(block, err)
+        read_fd, write_fd = os.pipe()
+        descriptors.extend((read_fd, write_fd))
+        proc.stdin.fileno = lambda: write_fd
         monkeypatch.setattr(streams, "ffmpeg_path", lambda: "/bin/true")
         monkeypatch.setattr(streams.subprocess, "Popen", lambda *a, **k: proc)
         return proc
-    return install
+    yield install
+    for fd in descriptors:
+        os.close(fd)
 
 
 def test_snap_measures_time_blocked_writing_to_ffmpeg(fake_ffmpeg):
@@ -612,9 +622,13 @@ def test_the_cadence_debt_a_long_write_leaves_is_dropped_not_repaid(fake_ffmpeg)
     out.close()
     # Bounded by one step (10 ms) plus the write that overran it (50 ms), never accumulating.
     assert c["lag"] < 0.1, f"debt was repaid instead of dropped: {c}"
-    # And the shortfall is reported rather than silently absorbed: writes take 5x the step,
-    # so ~80% of the timeline has to go.
-    assert c["skipped"] > 0.2, f"dropped timeline not reported: {c}"
+    # The original inline writer reports cadence skips. Current v2 uses a bounded
+    # asynchronous ring: the cadence stays on time and the full ring reports the loss.
+    if hasattr(out, '_ring'):
+        assert c['ring_full'] > 20, f'writer backpressure was not reported: {c}'
+        assert out._ring.qsize() <= streams.RING_FRAMES
+    else:
+        assert c["skipped"] > 0.2, f"dropped timeline not reported: {c}"
 
 
 def test_a_feeder_that_keeps_up_drops_nothing(fake_ffmpeg):

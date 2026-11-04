@@ -115,12 +115,12 @@ def test_default_threshold_rejects_between_old_cli_and_platform_values(clips):
     probs = np.full(10, 0.4 / 9)
     probs[0] = 0.6
     assert model.labels[int(recognize.reject_probs(probs, model.labels, model.reject_tau).argmax())] == "other"
-    assert args.reco_min_conf == 0.75
-    probs = np.full(10, 0.3 / 9)
-    probs[0] = 0.7
+    assert args.reco_min_conf == 0.925
+    probs = np.full(10, 0.16 / 9)
+    probs[0] = 0.84
     assert model.labels[int(recognize.reject_probs(probs, model.labels, model.reject_tau).argmax())] == "other"
-    probs = np.full(10, 0.25 / 9)
-    probs[0] = 0.75
+    probs = np.full(10, (1-args.reco_min_conf) / 9)
+    probs[0] = args.reco_min_conf
     assert model.labels[int(recognize.reject_probs(probs, model.labels, model.reject_tau).argmax())] == "wave"
 
 
@@ -178,6 +178,9 @@ def test_archives_are_reproducible_and_exclude_runtime_files(source, tmp_path, s
         os.utime(source / rel, (123456, 123456))
     b = delivery.build(source, second)
     assert a["sha256"] == b["sha256"]
+    for path, report in ((first, a), (second, b)):
+        assert Path(str(path) + ".sha256").read_text() == (
+            f"{report['sha256']}  {path.name}\n")
     assert a["files"] == b["files"]
     assert {name.removeprefix("ckpts/") for name in a["files"] if name.startswith("ckpts/")} == set(delivery.WEIGHTS)
     if suffix == ".zip":

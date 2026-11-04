@@ -67,29 +67,48 @@ def build_parser():
     p.add_argument("--color_saturation", type=float, default=1.0,
                    help="画面色彩饱和度倍数，1.0=不处理；增强会把画面拉灰，2.0-2.6 可恢复色彩。在 Lab 空间缩放色度，色相不变；识别之后进行，不影响识别")
     # 不提供 off：本算子靠事件流切片段，没有识别器就既没有事件也没有片段
+    p.add_argument("--person_mode", type=parse_bool, default=True,
+                   help="逐人ROI与同人骨架融合；false仅用于历史整帧流程回滚")
+    p.add_argument("--input_processed", type=parse_bool, default=False,
+                   help="历史平台回传的已增强带底栏切片：裁除旧底栏、不重复增强，原图亮度记为未知")
     p.add_argument("--recognize", default="behavior", choices=["behavior"])
     p.add_argument("--proc_max_side", type=int, default=720,
                    help="处理前把画面长边缩到不超过该值，0=按原分辨率，默认720。缩小可降低增强负载，也会影响画面细节与姿态可见性；当前完整栈性能需按实际配置测量")
     p.add_argument("--reco_span_sec", type=float, default=1.0)
-    p.add_argument("--reco_min_conf", type=float, default=0.75,
+    p.add_argument("--reco_min_conf", type=float, default=0.925,
                    help="行为判定阈值(0-1)：最高分的具名行为达不到该值时报为 other，既不显示也不存片段；0=关闭")
+    p.add_argument("--candidate_recheck_enabled", type=parse_bool, default=True,
+                   help="是否启用低置信度候选复核；仅对下限至行为阈值之间的候选生效")
+    p.add_argument("--candidate_recheck_lower", type=float, default=0.85,
+                   help="低置信度复核下限；启用时必须满足 0.5 < 下限 < 行为判定阈值")
+    p.add_argument("--action_display_hold_sec", type=float, default=0.8,
+                   help="动作标签在下一窗口报为其他/暂时无结果时继续显示的秒数；仅影响画面，不改变事件和片段")
+    p.add_argument("--person_object_prior", type=parse_bool, default=True,
+                   help="逐人喝水/捡物启用现场七类YOLO26m裁剪物体先验；低亮/原图亮度未知时跳过")
+    p.add_argument("--object_min_conf", type=float, default=0.581,
+                   help="物体先验检测置信度(0-1)，默认0.581，独立于人体与动作阈值；"
+                        "逐人喝水/捡物在照度门以上需一帧同人裁剪物体支持；旧max_prior也消费此阈值")
+    p.add_argument("--running_pose_min_speed", type=float, default=0.35,
+                   help="跑动骨架平均速度下限，单位人体框高度/秒；0关闭，受照度门约束")
+    p.add_argument("--wave_pose_min_frames", type=int, default=3,
+                   help="逐人挥手需要同一腕关节高于双肩的独立源帧数，默认3，0关闭；关键点置信度至少0.5，低亮或原亮度未知时跳过")
     p.add_argument("--pose_overlay", type=parse_bool, default=True,
-                   help="绘制与最终动作类别一致的候选人物骨架；仅在骨架分支参与时显示，不改变识别结果")
-    p.add_argument("--skel_fusion_alpha", type=float, default=0.7,
-                   help="骨架分支融合权重(0-1)：p=α·RGB+(1-α)·骨架；α≥0.999 完全关闭骨架分支按纯 RGB 运行。0.70 为现场三套件实测推荐档")
-    p.add_argument("--skel_no_person", default="soft", choices=["other", "soft", "rgb"],
-                   help="识别窗内骨架检测不到人时的处理：other=直接报 other(压误报最狠，但姿态漏检真行为时会被误杀)；soft=骨架以(1-α)权重投 other 票，触发需RGB置信≥reco_min_conf/α；默认0.75/0.7>1，无人窗不触发，默认；rgb=骨架弃权，该窗按纯 RGB 识别(误报回到 v1 水平)。仅 fuse_mode=alpha 时生效")
+                   help="骨架可视化开关；控制实时画面和保存片段中的骨架绘制，不改变识别")
+    p.add_argument("--skel_fusion_alpha", type=float, default=0.972,
+                   help="每人RGB权重α：p=α·该人RGB+(1-α)·该人骨架；α>=0.999为纯RGB")
+    p.add_argument("--skel_no_person", default='soft', choices=["other", "soft", "rgb"],
+                   help="该人无合格骨架时：soft按骨架权重投其他；rgb退到该人RGB；other拒识")
     p.add_argument("--fuse_mode", default="alpha", choices=["alpha", "max_prior"],
-                   help="双分支决策模式：alpha=加权融合 p=α·RGB+(1-α)·骨架，四套件实测最优，默认；配合 --lum_gate 即两部曲(照度低于门限的窗仅用RGB，不低于才做加权融合)。max_prior=会议三部曲(v2)——画面提亮前的原图照度低于 --lum_gate 时仅用 RGB；否则 RGB 与骨架(窗内最多6个合格骨架中非other且置信度>--skel_tau 者为骨架结果，无人合格则骨架弃权)分别分类取置信度高者为初步结果，置信度<--act_tau 直接报 other，捡东西/挥手/喝水/握手再过先验二次判断(不满足直接报 other)。注意三部曲四套件实测误报明显更多，仅作可选档保留")
-    p.add_argument("--lum_gate", type=float, default=75.0,
-                   help="照度门(0-255，量的是画面提亮之前的原图平均亮度，不是提亮之后的；0=关闭)，两种决策模式共用：低于该值说明场景真的太暗，姿态和检测本来就不可靠，只跑 RGB 识别(两种模式下都跳过骨架)。默认 75=现场全部视频实测的姿态/检测性能开始明显下降的亮度拐点，作为保险留用")
+                   help="逐人方案使用alpha，物体先验由person_object_prior独立控制；max_prior仅允许person_mode=false的历史回滚")
+    p.add_argument("--lum_gate", type=float, default=35.0,
+                   help="提亮前原图0-255平均亮度门，默认35；低于门限仅逐人RGB并跳过物体先验，达到门限可启用骨架和物体先验。不是lux")
     p.add_argument("--act_tau", type=float, default=0.65,
                    help="三部曲步骤2的启动阈值(0-1)：初步结果(两分支中置信度高者)的置信度低于该值时直接报 other，不再做先验二次判断")
     p.add_argument("--skel_tau", type=float, default=0.65,
                    help="三部曲步骤2的骨架识别阈值(0-1)：合格骨架中仅有非other且置信度高于该值的人可当选骨架结果；无人合格则骨架弃权、采用 RGB 结果")
-    p.add_argument("--label_bar", type=parse_bool, default=True)
+    p.add_argument("--label_bar", type=parse_bool, default=False)
     p.add_argument("--gpu_ids", default="0,1,2",
-                   help="容器内 GPU 卡号(从 0 起编，与宿主机序号无关)，逗号分隔。填多张时最后一张专供行为识别，其余卡按帧轮询做增强(定序在第一张增强卡上)；填一张时增强与识别共用该卡。实际可见的卡少于填写的会自动降级并告警，真正决定给几张卡的是 suanzi.json 里的 metadata.gpu.count")
+                   help="容器内 GPU 卡号(从 0 起编，与宿主机序号无关)，逗号分隔。逐人实时>=3卡前两张交替做增强/人体/姿态，其余卡独立动作进程；双卡一前端一动作；离线第一张前端、其余动作；填一张时增强与识别共用该卡。实际可见的卡少于填写的会自动降级并告警，真正决定给几张卡的是 suanzi.json 里的 metadata.gpu.count")
     p.add_argument("--ckpt_dir", default="ckpts",
                    help="权重目录。默认 ckpts 指算子包内随包发布的那一份；也可填绝对路径改用镜像内或挂载进来的权重")
     p.add_argument("--serve_port", type=int, default=8000)
@@ -114,7 +133,7 @@ def build_parser():
     p.add_argument("--clip_post_sec", type=float, default=2.0)
     p.add_argument("--clip_max_sec", type=float, default=15.0)
     p.add_argument("--clip_skip_labels", default="other")
-    p.add_argument("--clip_denoise", default="quality",
+    p.add_argument("--clip_denoise", default="off",
                    choices=["off","fast","quality","quality_high"],
                    help="仅对保存的片段去噪，在写盘线程执行，不占 GPU；取值同 denoise。注意 quality(NLM) 是纯 CPU 重活，事件密集时会和管线抢 CPU 把端到端时延顶到秒级，要守 1 秒指标就填 off 或 fast")
 
@@ -298,7 +317,7 @@ def run(args):
 def _offline_gpus(args):
     """离线这一路实际能用的卡。切片与多卡分片不兼容，此时只留第一张。"""
     gpus = parse_gpu_ids(args.gpu_ids)
-    if (args.clip_dir or "").strip() and len(gpus) > 1:
+    if (args.clip_dir or "").strip() and len(gpus) > 1 and not getattr(args, "person_mode", False):
         # Clips are cut from one continuous timeline by a single ClipRecorder/writer thread;
         # --gpus sharding hands each GPU an independent, non-overlapping frame range with no
         # cross-shard coordination, so the two cannot be reconciled. clip_dir has a non-empty
@@ -329,12 +348,16 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
     # leaves each clip's local basename equal to its final <start>-<end>s-<中文动作>.mp4 name.
     clip_dir_local = os.path.join(workdir, "clips")
     cfg = validate(PipelineConfig(
+        person_mode=getattr(args, "person_mode", False), input_processed=getattr(args, "input_processed", False),
         mode="offline", input=src, output=out_video, events_json=out_events,
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
         gpus=(",".join(gpus) if len(gpus) > 1 else ""),
         ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf,
+        candidate_recheck_enabled=getattr(args, "candidate_recheck_enabled", True),
+        candidate_recheck_lower=getattr(args, "candidate_recheck_lower", 0.85),
+        action_display_hold_sec=getattr(args, "action_display_hold_sec", 0.8),
         proc_max_side=args.proc_max_side, color_saturation=args.color_saturation,
         denoise=args.denoise,
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
@@ -343,6 +366,10 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
         skel_no_person=args.skel_no_person,
         fuse_mode=args.fuse_mode, lum_gate=args.lum_gate,
         act_tau=args.act_tau, skel_tau=args.skel_tau,
+        object_min_conf=getattr(args, "object_min_conf", 0.581),
+        person_object_prior=getattr(args, "person_object_prior", True),
+        wave_pose_min_frames=getattr(args, "wave_pose_min_frames", 3),
+        running_pose_min_speed=getattr(args, "running_pose_min_speed", 0.35),
         clip_dir=(clip_dir_local if (args.clip_dir or "").strip() else ""), clip_pre_sec=args.clip_pre_sec,
         clip_post_sec=args.clip_post_sec, clip_max_sec=args.clip_max_sec,
         clip_skip_labels=args.clip_skip_labels, clip_denoise=args.clip_denoise,
@@ -353,10 +380,14 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
             print(f"[warn] {w}")
         print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
               f"device={cfg.device} gpu_ids={','.join(gpus)} span={cfg.reco_span_sec}"
-              f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side} pose_overlay={cfg.pose_overlay}"
-              f" fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
+              f" reco_min_conf={cfg.reco_min_conf} candidate_recheck={cfg.candidate_recheck_enabled}"
+              f" candidate_recheck_lower={cfg.candidate_recheck_lower} action_display_hold_sec={cfg.action_display_hold_sec:g}"
+              f" proc_max_side={cfg.proc_max_side} pose_overlay={cfg.pose_overlay}"
+              f" person_mode={cfg.person_mode} input_processed={cfg.input_processed} alpha={cfg.skel_fusion_alpha} fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
         print("[config] 离线模式：保存整段处理后的视频，并按动作切分保存片段"
               "（clip_* 系列参数生效）")
+        print(f"[config] object_min_conf={cfg.object_min_conf:g} "
+              f"object_prior={'person_crop_single_frame' if cfg.person_mode and cfg.person_object_prior else 'legacy_max_prior' if not cfg.person_mode and cfg.fuse_mode == 'max_prior' else 'off'}")
         # Same reason as the serve-mode line below: these are manifest-settable and had no
         # printed trace, so "the default I changed did not take effect" was undiagnosable.
         print(f"[config] clip_pre_sec={cfg.clip_pre_sec:g} clip_post_sec={cfg.clip_post_sec:g}"
@@ -371,7 +402,10 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
     if verbose:
         _BOOT.mark("离线处理（加载权重 -> 预热 -> 解码/处理/编码）")
     try:
-        if len(gpus) > 1:
+        if cfg.person_mode:
+            from darkpipe.person.service import run_offline
+            events = run_offline(cfg, on_ready=_BOOT.done)
+        elif len(gpus) > 1:
             from darkpipe.shard import run_offline_sharded
             events = run_offline_sharded(cfg, gpus)
         else:
@@ -410,13 +444,19 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
     files = {"output_video": out_video, "events_json": out_events}
     labels = {"output_video": "整段处理结果", "events_json": "识别事件"}
     clip_names = []
-    for mp4 in sorted(glob.glob(os.path.join(clip_dir_local, session, "*.mp4"))):
+    for mp4 in sorted(glob.glob(os.path.join(clip_dir_local, session, "**", "*.mp4"), recursive=True)):
         base = os.path.splitext(os.path.basename(mp4))[0]
         clip_names.append(base)
         files[f"clip_video_{base}"] = (mp4, os.path.basename(mp4))
         labels[f"clip_video_{base}"] = f"动作片段：{base}"
-        meta = os.path.join(clip_dir_local, session, base + ".json")
+        meta = os.path.splitext(mp4)[0] + ".json"
         if os.path.exists(meta):
+            if cfg.person_mode:
+                with open(meta, encoding='utf-8') as f:
+                    clip_metadata = json.load(f)
+                clip_metadata['video'] = os.path.basename(mp4)
+                with open(meta, 'w', encoding='utf-8') as f:
+                    json.dump(clip_metadata, f, ensure_ascii=False, indent=2)
             files[f"clip_meta_{base}"] = (meta, os.path.basename(meta))
             labels[f"clip_meta_{base}"] = f"动作片段元数据：{base}"
     if clip_names:
@@ -441,7 +481,9 @@ def run_offline_one(args, src, session, workdir, stem, gpus, verbose=True):
         "clip_videos": [landed[f"clip_video_{n}"] for n in clip_names
                         if f"clip_video_{n}" in landed],
         "stats": dict(st, wall_seconds=round(dt, 3)),
-        "config": {"enhance": cfg.enhance, "sr": cfg.sr_name(), "sr_scale": cfg.sr_scale,
+        "config": {"person_mode": cfg.person_mode, "input_processed": cfg.input_processed,
+                   "action_display_hold_sec": cfg.action_display_hold_sec,
+                   "enhance": cfg.enhance, "sr": cfg.sr_name(), "sr_scale": cfg.sr_scale,
                    "recognize": cfg.recognize, "gpu_ids": ",".join(gpus),
                    "reco_span_sec": cfg.reco_span_sec,
                    "proc_max_side": cfg.proc_max_side},
@@ -670,7 +712,11 @@ def run_serve_mode(args, src, session):
     # 识别独占一张卡是为了守住「一张卡上只有一个提交 CUDA 任务的线程」：同卡两个提交线程会互相
     # 时间片切分，实测推理从 73ms 涨到 250ms。此前识别与增强同线程，每次推理都会把整条出流路径
     # 卡住 242ms，实测出流时延在 74ms 与 327ms 之间反复跳变、20% 推出去的帧是重复帧。
-    if len(gpus) > 1:
+    if len(gpus) > 1 and getattr(args, 'person_mode', False):
+        nfront = min(2, len(gpus)-1)
+        print(f"[serve] 逐人前端 GPU={','.join(gpus[:nfront])}（按帧交替）；"
+              f"动作 GPU={','.join(gpus[nfront:])}（独立进程）")
+    elif len(gpus) > 1:
         print(f"[serve] 增强 {', '.join('cuda:' + g for g in gpus[:-1])}"
               f"{'（按帧轮询）' if len(gpus) > 2 else ''}；"
               f"识别独占 cuda:{gpus[-1]}")
@@ -681,18 +727,26 @@ def run_serve_mode(args, src, session):
     ensure_parent(args.session_json)
 
     cfg = validate(PipelineConfig(
+        person_mode=getattr(args, "person_mode", False), input_processed=getattr(args, "input_processed", False),
         mode="serve", input=src,
         enhance=args.enhance, sr=args.sr,
         sr_scale=(args.sr_scale if args.sr != "off" else None),
         recognize=args.recognize, device=f"cuda:{gpus[0]}",
         gpus=(",".join(gpus) if len(gpus) > 1 else ""),
         ckpt_dir=resolve_ckpt_dir(args.ckpt_dir, _HERE), reco_min_conf=args.reco_min_conf, proc_max_side=args.proc_max_side, color_saturation=args.color_saturation, denoise=args.denoise,
+        candidate_recheck_enabled=getattr(args, "candidate_recheck_enabled", True),
+        candidate_recheck_lower=getattr(args, "candidate_recheck_lower", 0.85),
+        action_display_hold_sec=getattr(args, "action_display_hold_sec", 0.8),
         reco_span_sec=(args.reco_span_sec if args.reco_span_sec > 0 else None),
         no_label_bar=(not args.label_bar), pose_overlay=args.pose_overlay,
         skel_fusion_alpha=args.skel_fusion_alpha,
         skel_no_person=args.skel_no_person,
         fuse_mode=args.fuse_mode, lum_gate=args.lum_gate,
         act_tau=args.act_tau, skel_tau=args.skel_tau,
+        object_min_conf=getattr(args, "object_min_conf", 0.581),
+        person_object_prior=getattr(args, "person_object_prior", True),
+        wave_pose_min_frames=getattr(args, "wave_pose_min_frames", 3),
+        running_pose_min_speed=getattr(args, "running_pose_min_speed", 0.35),
         host="0.0.0.0", port=args.serve_port, jpeg_quality=args.jpeg_quality,
         max_stream_fps=args.max_stream_fps,
         stream_formats=args.stream_formats, rtmp_push_url=args.rtmp_push_url,
@@ -707,8 +761,12 @@ def run_serve_mode(args, src, session):
         print(f"[warn] {w}")
     print(f"[config] enhance={cfg.enhance} sr={cfg.sr_name()} recognize={cfg.recognize} "
           f"device={cfg.device} span={cfg.reco_span_sec} port={cfg.port}"
-          f" reco_min_conf={cfg.reco_min_conf} proc_max_side={cfg.proc_max_side} pose_overlay={cfg.pose_overlay}"
-          f" fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
+          f" reco_min_conf={cfg.reco_min_conf} candidate_recheck={cfg.candidate_recheck_enabled}"
+          f" candidate_recheck_lower={cfg.candidate_recheck_lower} action_display_hold_sec={cfg.action_display_hold_sec:g}"
+          f" proc_max_side={cfg.proc_max_side} pose_overlay={cfg.pose_overlay}"
+          f" person_mode={cfg.person_mode} input_processed={cfg.input_processed} alpha={cfg.skel_fusion_alpha} fuse_mode={cfg.fuse_mode} lum_gate={cfg.lum_gate} act_tau={cfg.act_tau} skel_tau={cfg.skel_tau} color_saturation={cfg.color_saturation}")
+    print(f"[config] object_min_conf={cfg.object_min_conf:g} "
+          f"object_prior={'person_crop_single_frame' if cfg.person_mode and cfg.person_object_prior else 'legacy_max_prior' if not cfg.person_mode and cfg.fuse_mode == 'max_prior' else 'off'}")
     # The output path's own knobs, on their own line because they are the ones that decide what
     # a viewer actually receives, and because none of them used to be printed at all. That cost a
     # deployment ~10% of its stream cadence: jpeg_quality was 100 everywhere, 598 KB JPEGs were
@@ -750,10 +808,15 @@ def run_serve_mode(args, src, session):
         "event_log": os.path.join(clip_root, "events.jsonl"),
         "hdfs_clip_dir": (sink.root if sink else ""),
         "clip_skip_labels": args.clip_skip_labels,
-        "config": {"enhance": cfg.enhance, "sr": cfg.sr_name(), "recognize": cfg.recognize,
+        "config": {"person_mode": cfg.person_mode, "input_processed": cfg.input_processed, "enhance": cfg.enhance, "sr": cfg.sr_name(), "recognize": cfg.recognize,
                    "gpu_ids": ",".join(gpus), "reco_span_sec": cfg.reco_span_sec,
-                   "reco_min_conf": cfg.reco_min_conf, "proc_max_side": cfg.proc_max_side,
-                   "pose_overlay": cfg.pose_overlay,
+                   "reco_min_conf": cfg.reco_min_conf,
+                   "candidate_recheck_enabled": cfg.candidate_recheck_enabled,
+                   "candidate_recheck_lower": cfg.candidate_recheck_lower,
+                   "action_display_hold_sec": cfg.action_display_hold_sec,
+                   "proc_max_side": cfg.proc_max_side,
+                   "object_min_conf": cfg.object_min_conf, "person_object_prior": cfg.person_object_prior,
+                   "pose_overlay": cfg.pose_overlay, "wave_pose_min_frames": cfg.wave_pose_min_frames, "running_pose_min_speed": cfg.running_pose_min_speed,
                    "fuse_mode": cfg.fuse_mode, "lum_gate": cfg.lum_gate,
                    "skel_fusion_alpha": cfg.skel_fusion_alpha,
                    "skel_no_person": cfg.skel_no_person,
@@ -783,6 +846,7 @@ def run_serve_mode(args, src, session):
                    stopped_at=time.strftime("%Y-%m-%d %H:%M:%S"),
                    clips=stats, event_log_stats=log_stats,
                    events_total=(st.events_total if st is not None else 0),
+                   person=getattr(st, "person_stats", {}),
                    hdfs_uploaded=(sink.uploaded if sink else 0),
                    hdfs_failed=(sink.failed if sink else 0))
     if failure:

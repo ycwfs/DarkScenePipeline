@@ -385,3 +385,46 @@ def test_nonreading_client_has_bounded_graceful_shutdown(tmp_path):
     finally:
         client.close()
         _finish(process, log)
+
+
+@pytest.mark.parametrize('stalled', [False, True])
+def test_shutdown_allows_slow_model_cleanup_but_bounds_a_stall(v2, monkeypatch, stalled):
+    release, exited = threading.Event(), threading.Event()
+    monkeypatch.setattr(v2, 'PROCESS_STOP_TIMEOUT', .05 if stalled else 6.5, raising=False)
+
+    def capture(st):
+        st.src_fps_known.set()
+        st.stop.wait()
+
+    def process(st):
+        try:
+            st.stop.wait()
+            if stalled:
+                release.wait(10)
+            else:
+                # Model cleanup plus worker joins can legitimately exceed the old outer 5 s.
+                time.sleep(5.2)
+        finally:
+            exited.set()
+
+    monkeypatch.setattr(v2, 'capture_loop', capture)
+    monkeypatch.setattr(v2, 'process_loop', process)
+    monkeypatch.setattr(v2, '_encode_ceiling_probe', lambda *args: None)
+    app = v2.build_app(config(v2, stream_formats='mjpeg'))
+    state = app.state.dark
+
+    async def run():
+        async with app.router.lifespan_context(app):
+            assert not state.processing_error
+
+    try:
+        asyncio.run(run())
+        if stalled:
+            assert state.processing_error and 'shutdown' in state.processing_error
+            assert not exited.is_set()
+        else:
+            assert exited.is_set()
+            assert state.processing_error is None
+    finally:
+        release.set()
+        assert exited.wait(7)

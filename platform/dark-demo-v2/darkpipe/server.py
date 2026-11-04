@@ -39,6 +39,11 @@ from .render import append_label_bar
 from .stages import build_stages
 from .utils import bind_thread_device
 
+# Includes an in-flight recognition, worker joins and model/CUDA cleanup. The former
+# outer 5 s limit was as short as a single inner join, and falsely failed a healthy
+# native GPU shutdown under CPU/recording load. Keep a finite bound for real stalls.
+PROCESS_STOP_TIMEOUT = 30.0
+
 
 class LatestSlot:
     def __init__(self):
@@ -191,6 +196,8 @@ class ServerState:
         self.bus = EventBus()
         self.stop = threading.Event()
         self.t_start = time.time()
+        self.person_origin = time.monotonic()
+        self.person_stats = {}
         self.reconnects = 0
         self.frames_in = 0
         self.frames_proc = 0
@@ -1331,24 +1338,27 @@ def _encode_ceiling_probe(st: ServerState, cfg):
                 break
             time.sleep(0.5)
         if not jpeg or st.stop.is_set():
-            print("[selftest] 跳过编码上限自测：启动 20 秒内没有取到画面")
+            print("[selftest] 跳过编码突发能力测试：启动 20 秒内没有取到画面")
             return
         time.sleep(5.0)
         jpeg, _ = st.jpeg.get()
         fps = streams.encode_ceiling(jpeg, cfg.max_stream_fps, cfg.stream_bitrate)
         if fps <= 0:
-            print("[selftest] 编码上限自测未能运行（ffmpeg 不可用或被超时杀掉）")
+            print("[selftest] 编码突发能力测试未能运行（ffmpeg 不可用或被超时杀掉）")
             return
         ratio = fps / max(1e-6, float(cfg.max_stream_fps))
         # Deliberately not "so the stutter is in the output path": headroom here only rules out
         # the encoder. A stutter with plenty of headroom is most often the resampling ratio, not
         # the link -- see stream_fps_for_source and the [push] adv/missed counters.
-        verdict = ("编码有余量，卡顿另有原因（先看 [push] 的 adv/missed 与出流节拍）" if ratio >= 2.0 else
-                   "编码勉强够，余量不足" if ratio >= 1.2 else "编码本身就是瓶颈")
-        print(f"[selftest] 编码上限 {fps:.1f} fps（帧 {len(jpeg) / 1024:.0f}KB，"
-              f"目标 {cfg.max_stream_fps:g} fps，{ratio:.1f}x）-> {verdict}")
+        verdict = ("这次突发测试未显示编码器余量不足；仍需结合 [push] 的 adv/missed、"
+                   "ring_full、写阻塞和出流节拍判断端到端卡顿" if ratio >= 2.0 else
+                   "编码余量偏小，需同时观察 [push] 写阻塞与 ring_full" if ratio >= 1.2 else
+                   "编码突发能力不足，编码链可能成为瓶颈")
+        print(f"[selftest] 编码突发能力 {fps:.1f} fps（JPEG {len(jpeg) / 1024:.0f}KB，"
+              f"目标节拍 {cfg.max_stream_fps:g} fps，{ratio:.1f}x；仅覆盖 JPEG→ffmpeg，"
+              f"不代表端到端出流）-> {verdict}")
     except Exception as e:                              # noqa: BLE001
-        print(f"[selftest] 编码上限自测异常，已忽略: {e}")
+        print(f"[selftest] 编码突发能力测试异常，已忽略: {e}")
 
 
 def _close_flv_viewers(st):
@@ -1368,12 +1378,16 @@ def build_app(cfg, on_clip=None, on_ready=None):
     st.on_ready = on_ready
     if cfg.clip_dir:
         from .clips import ClipRecorder, EventLog
-        st.clipper = ClipRecorder(
-            cfg.clip_dir, pre_sec=cfg.clip_pre_sec, post_sec=cfg.clip_post_sec,
-            max_sec=cfg.clip_max_sec,
-            skip_labels=[s.strip() for s in cfg.clip_skip_labels.split(",") if s.strip()],
-            min_confidence=cfg.clip_min_conf, on_saved=on_clip,
-            session=(cfg.clip_session or None), denoise=cfg.clip_denoise)
+        if cfg.person_mode:
+            from .person.service import make_clips
+            st.clipper = make_clips(cfg, st.person_origin, on_saved=on_clip)
+        else:
+            st.clipper = ClipRecorder(
+                cfg.clip_dir, pre_sec=cfg.clip_pre_sec, post_sec=cfg.clip_post_sec,
+                max_sec=cfg.clip_max_sec,
+                skip_labels=[s.strip() for s in cfg.clip_skip_labels.split(",") if s.strip()],
+                min_confidence=cfg.clip_min_conf, on_saved=on_clip,
+                session=(cfg.clip_session or None), denoise=cfg.clip_denoise)
         print(f"[serve] 片段保存已开启 -> {st.clipper.root} "
               f"(跳过 {sorted(st.clipper.skip) or '无'})")
         # Every event, including the ones no clip is cut for -- this is the record that
@@ -1386,9 +1400,12 @@ def build_app(cfg, on_clip=None, on_ready=None):
 
     @asynccontextmanager
     async def lifespan(app):
-        threads = [threading.Thread(target=capture_loop, args=(st,), daemon=True,
+        capture_target, process_target = capture_loop, process_loop
+        if cfg.person_mode:
+            from .person.service import capture_loop as capture_target, process_loop as process_target
+        threads = [threading.Thread(target=capture_target, args=(st,), daemon=True,
                                     name="darkpipe-capture"),
-                   threading.Thread(target=process_loop, args=(st,), daemon=True,
+                   threading.Thread(target=process_target, args=(st,), daemon=True,
                                     name="darkpipe-process")]
         # Started after the workers so the first JPEG is usually there by the time ffmpeg
         # asks for one; an empty slot only costs a repeated frame, not a failure.
@@ -1442,9 +1459,11 @@ def build_app(cfg, on_clip=None, on_ready=None):
                     out.close()
             for t in threads:
                 if t.ident is not None:
-                    await asyncio.to_thread(t.join, 5.0)
+                    await asyncio.to_thread(t.join,
+                                            PROCESS_STOP_TIMEOUT if t is threads[1] else 8.0)
             if threads[1].is_alive():
-                st.fail_processing("shutdown", RuntimeError("处理线程未在停止后 5 秒内退出"))
+                st.fail_processing("shutdown", RuntimeError(
+                    f"处理线程未在停止后 {PROCESS_STOP_TIMEOUT:g} 秒内退出"))
             if st.clipper is not None:
                 try:
                     await asyncio.to_thread(st.clipper.close)
@@ -1483,7 +1502,8 @@ def build_app(cfg, on_clip=None, on_ready=None):
                     last_label=(st.last_event.label if st.last_event else None))
         if st.clipper is not None:
             body["clips"] = st.clipper.stats()
-            body["clip_dir"] = st.clipper.root
+            body["clip_dir"] = str(st.clipper.root)
+        body["person"] = st.person_stats
         if st.eventlog is not None:
             body["event_log"] = st.eventlog.stats()
         body["stream_formats"] = st.formats

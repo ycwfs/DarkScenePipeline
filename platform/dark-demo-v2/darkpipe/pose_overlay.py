@@ -1,4 +1,4 @@
-"""Draw action-compatible pose observations without adding pose-model inference.
+"""Draw each person's own pose/class without adding pose-model inference.
 
 Owned by the output thread. Sparse recognition observations are transported with their
 reference frame, then followed by forward/backward optical flow on clean enhanced frames.
@@ -7,6 +7,10 @@ who has moved away. The classifier never consumes the rendered result.
 """
 import cv2
 import numpy as np
+from functools import lru_cache
+
+from .constants import BEHAVIOR_DISPLAY, BEHAVIOR_ZH
+from .render import _cjk_font
 
 # Kept here so importing the renderer does not import torch or the skeleton model.
 EDGES = ((15, 13), (13, 11), (16, 14), (14, 12), (11, 12), (5, 11), (6, 12),
@@ -25,6 +29,27 @@ def tracking_gray(frame):
     return gray
 
 
+@lru_cache(maxsize=256)
+def _label_patch(label, percent, selected, size):
+    """Cache small text tiles instead of converting the entire video frame per person."""
+    font = _cjk_font(size)
+    name = BEHAVIOR_ZH.get(label, label) if font else BEHAVIOR_DISPLAY.get(label, label)
+    text = f"{'* ' if selected else ''}{name} {percent}%"
+    color = (0, 210, 255) if selected else (40, 230, 60)
+    if font is None:
+        scale = size / 30.0
+        (width, height), baseline = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, scale, 1)
+        patch = np.full((height + baseline + 10, width + 12, 3), 24, np.uint8)
+        cv2.putText(patch, text, (6, height + 4), cv2.FONT_HERSHEY_SIMPLEX, scale, color, 1, cv2.LINE_AA)
+    else:
+        from PIL import Image, ImageDraw
+        box = font.getbbox(text)
+        tile = Image.new('RGB', (box[2] - box[0] + 12, box[3] - box[1] + 10), (24, 24, 24))
+        ImageDraw.Draw(tile).text((6-box[0], 5-box[1]), text, font=font, fill=color[::-1])
+        patch = np.asarray(tile)[:, :, ::-1].copy()
+    return patch
+
+
 class ActionPoseOverlay:
     def __init__(self, max_age=1.0):
         self.max_age = float(max_age)
@@ -33,6 +58,7 @@ class ActionPoseOverlay:
         self._points = None
         self._valid = None
         self.last_drawn = 0
+        self.last_labels = []
 
     def _clear(self):
         self._gray = self._points = self._valid = None
@@ -44,10 +70,11 @@ class ActionPoseOverlay:
         have different dimensions. Never track over our own overlay or the label bar.
         """
         self.last_drawn = 0
+        self.last_labels = []
         actors = getattr(event, 'actor_poses', None)
         reference = getattr(event, 'pose_reference', None)
         if (event is None or not getattr(event, 'skeleton_active', False) or not actors
-                or reference is None or str(event.label).lower() == 'other'
+                or reference is None
                 or not 0 <= timestamp - event.timestamp <= self.max_age):
             self._clear()
             self._event = None
@@ -98,17 +125,40 @@ class ActionPoseOverlay:
         rendered = None
         scale = np.array([w / gw, h / gh], np.float32)
         thickness = max(2, round(w / 600))
-        for points, visible in zip(self._points, self._valid):
+        placed = []
+        for actor, points, visible in zip(actors, self._points, self._valid):
             if visible.sum() < 5:
                 continue
             if rendered is None:
                 rendered = output.copy()
             self.last_drawn += 1
             coords = np.rint(np.nan_to_num(points * scale)).astype(int)
+            selected = bool(actor.get('selected_for_fusion', False))
+            color = (0, 210, 255) if selected else (40, 230, 60)
             for a, b in EDGES:
                 if visible[a] and visible[b]:
-                    cv2.line(rendered, tuple(coords[a]), tuple(coords[b]), (40, 230, 60),
-                             thickness, cv2.LINE_AA)
+                    cv2.line(rendered, tuple(coords[a]), tuple(coords[b]), color,
+                             thickness + int(selected), cv2.LINE_AA)
             for point in coords[visible]:
                 cv2.circle(rendered, tuple(point), thickness + 1, (0, 210, 255), -1, cv2.LINE_AA)
+            label = actor.get('label', 'other')
+            percent = round(float(actor.get('confidence', 0)) * 100)
+            patch = _label_patch(label, percent, selected, max(14, min(28, round(w / 52))))
+            patch = patch[:h, :w]
+            ph, pw = patch.shape[:2]
+            low, high = coords[visible].min(0), coords[visible].max(0)
+            right = int(high[0]) + 8
+            left = int(low[0]) - pw - 8
+            x = min(max(0, right if right + pw <= w else left), w - pw)
+            y = min(max(0, int(low[1])), h - ph)
+            for _ in range(len(placed) + 1):
+                overlap = next((r for r in placed if x < r[2] and x+pw > r[0]
+                                and y < r[3] and y+ph > r[1]), None)
+                if overlap is None:
+                    break
+                y = min(h - ph, overlap[3] + 3)
+            rendered[y:y+ph, x:x+pw] = patch
+            placed.append((x, y, x+pw, y+ph))
+            self.last_labels.append(dict(slot=actor.get('slot'), label=label,
+                                         confidence=actor.get('confidence', 0), selected=selected))
         return output if rendered is None else rendered

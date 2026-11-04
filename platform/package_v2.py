@@ -15,11 +15,14 @@ from validate_suanzi import check
 
 HERE = Path(__file__).resolve().parent
 ROOT_FILES = ("main.py", "oputil.py", "suanzi.json", "README.md", "CLAUDE.md",
-              "requirements-skeleton.txt", ".gitignore")
+              "requirements-skeleton.txt", ".gitignore", "models.json", "README_legacy_20261022.md")
 WEIGHTS = (
     "NTIRE.pth", "videomamba_t_behavior_32f_realactall_full_pn2.pth",
     "videomamba_t_behavior_32f_realactall_full_pn.pth",
     "videomamba_t_behavior_32f_realactall_full.pth", "videomamba_t_behavior_32f.pth",
+    "videomamba_t_behavior_32f_person_roi_20261023.pth", "stgcn_person_20261024.pth",
+    "yolo26m_objects_20261026.onnx",
+    "yolo26m_person_20261024.onnx", "rtmo-s_person_20261024.onnx",
     "rtmo-s_end2end.onnx", "stgcn_behavior_32f_realactall_full.pth", "yolo26m_detect.onnx",
 )
 ASSETS = ("darkpipe/assets/NotoSansCJK-subset.ttf", "darkpipe/assets/NotoSansCJK-LICENSE.txt")
@@ -29,6 +32,10 @@ REQUIRED_CODE = (
     "darkpipe/streams.py", "darkpipe/shard.py", "darkpipe/shard_worker.py",
     "darkpipe/stages/recognize.py",
     "darkpipe/stages/skeleton_aux.py", "darkpipe/stages/object_prior.py",
+    "darkpipe/person/runtime.py", "darkpipe/person/action_engine.py",
+    "darkpipe/person/recheck.py",
+    "darkpipe/person/object_prior.py", "darkpipe/person/object_runtime.py", "darkpipe/person/object_overlay.py",
+    "darkpipe/person/wave_prior.py", "darkpipe/person/running_prior.py",
 )
 
 
@@ -171,8 +178,11 @@ def build(source: Path, output: Path) -> dict:
                   "image": doc["implementation"]["container"]["image"], "files": records}
         sidecar = stage / "manifest.json"
         sidecar.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        checksum = stage / "sha256"
+        checksum.write_text(f"{report['sha256']}  {output.name}\n", encoding="utf-8")
         archive.replace(output)
         sidecar.replace(Path(str(output) + ".manifest.json"))
+        checksum.replace(Path(str(output) + ".sha256"))
     return report
 
 

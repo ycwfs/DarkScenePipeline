@@ -39,37 +39,82 @@ def observation(package, frame, timestamp=0):
                  pose_reference=overlay.tracking_gray(frame))
 
 
-def test_only_current_supported_actors_are_selected(package):
+def test_all_current_people_show_their_own_class_including_other(package):
     skel = importlib.import_module(package + '.stages.skeleton_aux')
     aux = skel.SkeletonAux('unused', 'cpu', .7)
     sk = np.tile(pose()[None, None], (2, 3, 1, 1))
+    sk[:, 1, :, 0] += .3
     probs = np.zeros((3, 10), np.float32)
     probs[0, 0] = probs[2, 0] = probs[1, 9] = 1
     sk[-1, 2, :, 2] = 0  # This slot existed earlier but has left the current frame.
     aux.last_analysis = dict(sk=sk, slot_p=probs, presence=np.ones(3))
-    assert [p['slot'] for p in aux.action_poses('wave')] == [0]
-    assert aux.action_poses('other') == aux.action_poses('drink') == []
+    actors = aux.action_poses('wave')
+    assert [(p['slot'], p['label']) for p in actors] == [(0, 'wave'), (1, 'other')]
+    assert aux.action_poses('other') == aux.action_poses('drink') == actors
 
 
-def test_skeleton_metadata_does_not_change_weighted_prediction(package, monkeypatch):
+def test_highest_person_probability_selects_whole_vector_for_alpha(package, monkeypatch):
     import torch
     skel = importlib.import_module(package + '.stages.skeleton_aux')
     aux = skel.SkeletonAux('unused', 'cpu', .7)
     sk = np.tile(pose()[None, None], (2, 2, 1, 1))
     sk[:, 1, :, 2] = .6
+    sk[:, 1, :, 0] += .3
     monkeypatch.setattr(aux, '_fill_slots', lambda frames, count: sk)
     logits = torch.tensor([[3., 1., 0., 0., 0., 0., 0., 0., 0., 0.],
                            [1., 4., 0., 0., 0., 0., 0., 0., 0., 0.]])
     calls = []
     def net(x):
-        calls.append(1)
-        return logits[len(calls)-1:len(calls)]
+        calls.append(tuple(x.shape))
+        return logits
     aux.net = net
     p, presence = aux.probs([None, None])
-    expected = (.6 * logits[0] + .4 * logits[1]).softmax(0).numpy()
+    expected = logits[1].softmax(0).numpy()  # class confidence wins, not pose quality .9 vs .6
     np.testing.assert_allclose(p, expected, atol=1e-7)
-    assert len(calls) == 2 and presence == pytest.approx(.9)
-    assert len(aux.action_poses('wave')) == 1
+    assert calls == [(2, 3, 2, 17)] and presence == pytest.approx(.6)
+    actors = aux.action_poses()
+    assert [(a['label'], a['selected_for_fusion']) for a in actors] == [('wave', False), ('throw', True)]
+    rgb = np.zeros(10, np.float32); rgb[0] = 1
+    np.testing.assert_allclose(aux.fuse(rgb, p, presence), .7*rgb + .3*expected)
+
+
+def test_other_can_win_and_departed_person_cannot(package, monkeypatch):
+    import torch
+    skel = importlib.import_module(package + '.stages.skeleton_aux')
+    aux = skel.SkeletonAux('unused', 'cpu', .7)
+    sk = np.tile(pose()[None, None], (4, 3, 1, 1))
+    sk[:, 1, :, 0] += .2
+    sk[:, 2, :, 0] -= .2
+    sk[-1, 2, :, 2] = 0
+    logits = torch.zeros(3, 10)
+    logits[0, 0], logits[1, 9], logits[2, 6] = 3, 5, 10
+    aux.net = lambda x: logits
+    monkeypatch.setattr(aux, '_fill_slots', lambda frames, count: sk)
+    p, _ = aux.probs([None]*4)
+    assert p.argmax() == 9 and aux.last_analysis['best'] == 1
+    assert aux.last_analysis['valid'].tolist() == [True, True, False]
+    sk[-1, :, :, 2] = 0
+    p, presence = aux.probs([None]*4)
+    assert presence == 0 and aux.last_analysis['best'] == -1 and p[9] == 1
+
+
+def test_pose_association_survives_confidence_rank_swap(package):
+    skel = importlib.import_module(package + '.stages.skeleton_aux')
+    aux = skel.SkeletonAux('unused', 'cpu', .7)
+    base = pose()
+    left, right = base.copy(), base.copy()
+    left[:, 0] -= .2
+    right[:, 0] += .2
+    def detect(frame):
+        # End frame: right has higher quality; earlier frame: left has higher quality.
+        scores = np.stack([np.full(17, .95 if frame[0, 0, 0] == 0 else .7),
+                           np.full(17, .7 if frame[0, 0, 0] == 0 else .95)])
+        return np.stack([left[:, :2], right[:, :2]]) * [200, 100], scores
+    aux.pose = detect
+    frames = [np.full((100, 200, 3), i, np.uint8) for i in range(2)]
+    result = aux._fill_slots(frames, 6)
+    np.testing.assert_allclose(result[:, 0, :, 0], np.tile(right[:, 0], (2, 1)))
+    np.testing.assert_allclose(result[:, 1, :, 0], np.tile(left[:, 0], (2, 1)))
 
 
 def test_duplicate_pose_is_hidden_but_distinct_person_is_kept(package):
@@ -100,13 +145,12 @@ def test_overlay_scales_without_mutating_model_input_or_serializing_image(packag
     json.dumps(serialized)
 
 
-@pytest.mark.parametrize('condition', ['other', 'inactive', 'expired', 'future', 'no_actor'])
+@pytest.mark.parametrize('condition', ['inactive', 'expired', 'future', 'no_actor'])
 def test_unsupported_or_stale_overlay_is_cleared(package, condition):
     overlay = importlib.import_module(package + '.pose_overlay')
     frame = np.zeros((100, 160, 3), np.uint8)
     event = observation(package, frame)
     ts = 0
-    if condition == 'other': event.label = 'Other'
     if condition == 'inactive': event.skeleton_active = False
     if condition == 'expired': ts = 1.1
     if condition == 'future': ts = -.1
@@ -114,6 +158,20 @@ def test_unsupported_or_stale_overlay_is_cleared(package, condition):
     drawer = overlay.ActionPoseOverlay()
     assert drawer.draw(frame, frame, event, ts) is frame
     assert drawer.last_drawn == 0
+
+
+def test_other_video_label_keeps_all_person_labels_and_selected_marker(package):
+    overlay = importlib.import_module(package + '.pose_overlay')
+    frame = np.zeros((200, 400, 3), np.uint8)
+    event = observation(package, frame)
+    event.label = 'Other'
+    other_pose = pose(); other_pose[:, 0] += .3
+    event.actor_poses.append(dict(slot=1, label='other', confidence=.97,
+                                 selected_for_fusion=True, keypoints=other_pose.tolist()))
+    drawer = overlay.ActionPoseOverlay()
+    painted = drawer.draw(frame, frame, event, 0)
+    assert drawer.last_drawn == 2 and painted.any() and not frame.any()
+    assert [(p['label'], p['selected']) for p in drawer.last_labels] == [('wave', False), ('other', True)]
 
 
 def test_pose_follows_translation_instead_of_freezing(package):

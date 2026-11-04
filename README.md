@@ -1,10 +1,77 @@
+# 当前交付 · 2026-11-04
+
+逐人实时动作显示保持默认0.8秒，保持期间标签末尾显示 `*`（例如 `T01 喝水 94% *`）。
+保持只影响实时显示，不修改模型判断、事件或动作片段触发；设置 `action_display_hold_sec=0` 可关闭。
+`pose_overlay=false` 同时关闭实时画面与保存视频的骨架绘制，识别与融合照常运行。
+处理日志使用 `proc_fps`，编码自检仅表示短时编码能力，不代表端到端推流流畅度。
+
+当前包：[平台 TAR](platform/dark-demo-v2.tar.gz)、[平台 ZIP](platform/dark-demo-v2.zip)、
+[NVIDIA-Box ZIP](NVIDIA-Box.zip)。见[提交说明与验证范围](platform/提交说明_20261104.md)。
+默认包已包含11月2日候选复核、显示修复和本次显示控制，不再与10月27日历史包相同。
+历史实验、人工审核、脚本、图表及交付清单一并归档；保存实验记录不表示采用实验候选模型。
+
+# 历史交付 · 2026-10-28 核对
+
+10月29日平台复核：[15分钟真实流、23段同输入复跑和断流恢复](reports/platform-recheck-20261029/README.md) / [完整视频与片段](reports/platform-recheck-20261029/index.html)。平台包仍与10月27日报告逐字节一致，2399个相同人物窗口最终标签0变化；本轮有限测试无写入故障。长期人物ID调度元数据回收仍有缺口，高密度多人速度仍未全部达15FPS，详见报告。
+
+挥手与跑动几何先验已正式加入逐人动作流程，优先压低误报：挥手至少3个不同源帧腕高于双肩，跑动至少0.35个人体框高/秒；原图门35时低亮跳过。默认RGB .972、动作 .925、物体 .581不变。
+
+- [完整先验交付、分场景视频与流式验收](reports/full-prior-release-20261027/README.md) / [演示索引](reports/full-prior-release-20261027/index.html)
+- [平台 TAR](platform/dark-demo-v2_full_priors_20261027.tar.gz) / [平台 ZIP](platform/dark-demo-v2_full_priors_20261027.zip)：10月27日完整先验正式版；默认dark-demo-v2.tar.gz/.zip与其一致。
+- [NVIDIA-Box单卡优化候选](NVIDIA-Box_Orin4GB_candidate_20261028.zip)：默认NVIDIA-Box.zip与其一致；原10月27日Box包保留回滚。
+- [当前提交文件与默认参数](platform/提交说明_20261028.md) / [逐文件及流程图一致性核对](reports/delivery-consistency-20261028/README.md)
+- [完整先验可编辑流程图](reports/algorithm-flow-20261027/README.md)
+
+三卡300秒真实流低人数段达到15 FPS以上，高密度19人场景最低约9.6 FPS；推流输出和片段保存无写入错误，但不能宣称所有多人密度满足实时目标。原0.3.0镜像ID不变，无需重新上传。
+
+Box候选保留六模型及判断规则，采用单卡异步调度/uint8缓存/ARM TensorRT和720直接输出；平台默认3卡/ORT/1440显示放大，模型输入均720。单RTX3090实测平均12.78FPS，Orin Nano 4GB真机尚未验收，不能把RTX3090帧率当作Box真机性能。后端与调度会造成个别窗口结果差异，详见[Box实测报告](reports/box-single-gpu-20261028/analysis-report.md)。本次核对仅修正文档与图，交付归档和模型字节保持不变。
+
+以下均为历史记录，旧参数、旧包名和当时“当前/最新”的表述不覆盖以上提交入口。
+
+# 历史交付 · 2026-10-27 物体框可视化
+
+逐人画面新增青色物体框（人物ID、类别、置信度），与人体框、骨架共同显示；离线/片段按原采集帧补绘，实时使用经校验的短时位置跟随。六模型与默认参数不变：RGB .972、原图门35、动作 .925、物体 .581。
+
+- [12段现场视频、片段与验证](reports/object-overlay-20261027/README.md) / [视频检查页](reports/object-overlay-20261027/index.html)
+- [平台TAR](platform/dark-demo-v2_object_overlay_20261027.tar.gz) / [平台ZIP](platform/dark-demo-v2_object_overlay_20261027.zip) / [Box ZIP](NVIDIA-Box_object_overlay_20261027.zip)
+- [提交说明](platform/提交说明_20261027.md) / [可编辑流程图与模型训练来源](reports/algorithm-flow-20261027/README.md)
+
+原0.3.0镜像不变，无需重新上传。模型仍有手机/相机误认瓶子及真实喝水漏检，可视化保留这些结果。以下是历史版本记录，当前交付以上述链接为准。
+
+# 历史交付 · 2026-10-26
+
+逐人融合后接入现场七类 YOLO26m 物体先验，喝水／捡物采用单帧同人裁剪支持。默认 RGB **0.972**（骨架 **0.028**）、原图照度门 **35**、动作阈值 **0.925**、物体阈值 **0.581**。
+
+- [平台说明](platform/dark-demo-v2/README.md)；[本轮验证与交付](reports/person-object-release-20261026/README.md)
+- [平台 TAR](platform/dark-demo-v2_person_object_20261026.tar.gz)／[平台 ZIP](platform/dark-demo-v2_person_object_20261026.zip)；[NVIDIA Box ZIP](NVIDIA-Box_person_object_20261026.zip)
+- [整体算法＋模型训练来源：可编辑 PPT / draw.io](reports/algorithm-flow-20261026/README.md)
+
+原 0.3.0 镜像沿用，新增模型随代码包交付；平台需重新导入清单。四参数优先压误报，保留实测漏报代价，详见[联合校准](reports/four-parameter-tuning-20261026/README.md)。以下为历史项目记录，以本节链接的当前交付为准。
+
+# 历史交付：逐人双分支动作识别（2026-10-25）
+
+默认原图亮度门30，RGB权重0.95，动作阈值0.85（10-25用户决定）；“追逐”显示改为“跑动”，内部模型类别chase不变。人体检测、姿态和逐人RGB使用现场微调权重，ST-GCN保留验证胜出的历史现场模型；增强保留公开NTIRE权重。物体先验微调实验已完成：手机／相机识别不足，严格规则漏检明显，当前正式包尚未启用。
+
+- [最新0.85阈值包与提交说明](platform/提交说明_20261025.md)
+- [物体标注、微调、9段反馈验证及8段对照](reports/object-prior-finetune-20261025/README.md)
+- [当前算子说明](platform/dark-demo-v2/README.md)
+- [实验、demo与最终交付验收](reports/person-release-20261024/README.md)
+- [可编辑算法流程图](reports/algorithm-flow-20261024/README.md)
+- [NVIDIA Box使用说明](NVIDIA-Box/README.md)
+
+以下为历史项目说明；与当前默认冲突时以上述交付文档为准。
+
 # DarkScenePipeline
 
-当前平台交付为 [dark-demo-v2](platform/dark-demo-v2/README.md)。2026-10-19 已用本次回传负样本
-继续微调 VideoMamba，默认权重为 **pn2**，阈值保持 **0.75**；720 尺寸、动作骨架显示与录制修复均保留。
+以下是截至10月22日的项目背景和旧入口说明；现行逐人完整先验方案及交付见本文首节。
 
-- 最新算子：[tar.gz](platform/dark-demo-v2_pn2_20261019.tar.gz) / [平台 ZIP](platform/dark-demo-v2_pn2_20261019.zip)；默认 `platform/dark-demo-v2.tar.gz` 和 `.zip` 同步。
-- 独立模型包：[NVIDIA-Box_20261019.zip](NVIDIA-Box_20261019.zip)，默认 `NVIDIA-Box.zip` 同步。
+当前平台交付为 [dark-demo-v2](platform/dark-demo-v2/README.md)。2026-10-19 已用本次回传负样本
+继续微调 VideoMamba，默认权重为 **pn2**，阈值保持 **0.75**。10-22更新多人骨架：
+逐人展示动作类别，alpha只融合最高分有效人物的完整分类概率（含其他）；处理长边720、录制修复保留。
+
+- 最新算子：[tar.gz](platform/dark-demo-v2_multiperson_20261022.tar.gz) / [平台 ZIP](platform/dark-demo-v2_multiperson_20261022.zip)；默认 `platform/dark-demo-v2.tar.gz` 和 `.zip` 同步，pn2模型权重未变。
+- 盒子完整本地部署：[NVIDIA-Box_20261022.zip](NVIDIA-Box_20261022.zip)，默认 `NVIDIA-Box.zip` 同步。按 [部署说明](NVIDIA-Box/README.md) 配置环境，支持实时输入输出、离线视频/目录和本地动作片段，无需容器。
+- [多人骨架与融合验证](reports/multiperson-pose-20261022/README.md)：逐人动作标签、所选人物、真实视频可视化与交付校验。旧人物平均融合的准确率不代表本次最高分选择规则。
 - [训练、留出测试与交付验证报告](reports/feedback-finetune-20261019.md)：新训练负样本融合误报3→0/175，未参与本轮训练的留出误报2→1/68；已有回归指标保持。
 
 原 `darkpipe-operator:0.3.0` 镜像 ID 及归档 SHA256 未变，无需重新上传镜像。留出仅两个同摄像机会话，
@@ -14,6 +81,8 @@
 Git 保存源码、测试、实验报告和交付哈希清单；模型、视频、数据缓存及大型归档保留在本地交付目录，
 上面的包链接不是 GitHub Release 下载地址。新检出仓库需从对应交付包恢复模型与示例，具体见
 [记录索引与复现说明](reports/README.md)。`NVIDIA-Box/` 的模型加载代码现已纳入版本管理。
+盒子原生部署验证见 [10-21 报告](reports/nvidia-box-native-20261021.md)；同步打包使用
+`python3 scripts/package_nvidia_box.py --sync --output NVIDIA-Box.zip`。
 默认 `python -m pytest` 只收集 `tests/`；报告目录下的独立 GPU 评估和盒子合约检查需显式运行。
 
 The **dark complex scene algorithm** as one deployable project: low-illumination enhancement,

@@ -158,6 +158,36 @@ def test_detector_provider_uses_requested_device(pkg, monkeypatch, tmp_path, dev
                      [('CUDAExecutionProvider', {'device_id': expected})])]
 
 
+def test_object_threshold_filters_boxes_without_changing_person_detector(pkg):
+    prior = mod(pkg, 'stages.object_prior')
+    rows = np.array([[10, 10, 20, 20, .30, 0],
+                     [30, 30, 40, 40, .40, 39],
+                     [50, 50, 60, 60, .60, 41]], dtype=np.float32)
+    session = SimpleNamespace(get_inputs=lambda: [SimpleNamespace(name='images')],
+                              run=lambda *args: [rows[None].copy()])
+    person = prior.YoloOnnxDetector('.', 'cpu')
+    gate = prior.PriorGate('.', 'cpu', min_conf=.35)
+    stricter = prior.PriorGate('.', 'cpu', min_conf=.50)
+    image = np.zeros((640, 640, 3), np.uint8)
+    outputs = []
+    for detector in (person, gate.det, stricter.det):
+        detector.sess = session
+        outputs.append(detector._frames_to_dets([image])[0][:, 5].tolist())
+    assert outputs == [[0., 39., 41.], [39., 41.], [41.]]
+    assert person.min_conf == .25  # Shared ONNX wrapper must keep person filtering independent.
+
+
+@pytest.mark.parametrize('value', [-.01, 1.01, float('nan'), float('inf')])
+def test_object_threshold_rejects_invalid_config_and_direct_detector(pkg, value):
+    config = mod(pkg, 'config')
+    cfg = config.PipelineConfig(input='probe', enhance='off', sr='off', recognize='off',
+                                object_min_conf=value)
+    with pytest.raises(SystemExit, match='object_min_conf'):
+        config.validate(cfg)
+    with pytest.raises(ValueError, match='min_conf'):
+        mod(pkg, 'stages.object_prior').YoloOnnxDetector('.', 'cpu', min_conf=value)
+
+
 @pytest.mark.parametrize('fault', ['create', 'fallback', 'warmup', 'timing', 'runtime', 'gate_warmup'])
 def test_detector_errors_fail_soft(pkg, monkeypatch, tmp_path, fault):
     prior = mod(pkg, 'stages.object_prior')
@@ -372,7 +402,9 @@ def test_service_clip_close_error_fails_session(tmp_path):
         port = sock.getsockname()[1]
     proc = subprocess.run([sys.executable, str(ROOT / 'tests/v2_serve_probe.py'),
         '--op-dir', str(OP), '--port', str(port), '--work-dir', str(tmp_path),
-        '--seconds', '1', '--fault', 'clip_close'],
+        # Allow startup to complete under concurrent CPU/encoding load; the intended
+        # fault is clip cleanup, not Uvicorn cancelling an unfinished lifespan startup.
+        '--seconds', '3', '--fault', 'clip_close'],
         env=dict(os.environ, CUDA_VISIBLE_DEVICES=''), capture_output=True, text=True, timeout=30)
     assert proc.returncode != 0, proc.stdout + proc.stderr
     session = json.loads((tmp_path / 'session.json').read_text())

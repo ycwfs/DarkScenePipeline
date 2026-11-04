@@ -1,0 +1,102 @@
+{
+  "version": "20261027-full-person-priors",
+  "defaults": {
+    "lum_gate": 35.0,
+    "reco_min_conf": 0.925,
+    "skel_fusion_alpha": 0.972,
+    "skel_no_person": "soft",
+    "object_min_conf": 0.581,
+    "person_object_prior": true,
+    "wave_pose_min_frames": 3,
+    "running_pose_min_speed": 0.35,
+    "action_display_hold_sec": 0.8
+  },
+  "person_mode": true,
+  "models": {
+    "enhancer": {
+      "file": "NTIRE.pth",
+      "architecture": "Retinexformer",
+      "onsite_finetuned": false,
+      "training_data": "Public NTIRE low-light pretrained checkpoint; previous onsite enhancement fine-tuning rejected after action degradation",
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+    },
+    "detector": {
+      "file": "yolo26m_person_20261024.onnx",
+      "architecture": "YOLO26m",
+      "onsite_finetuned": true,
+      "training_data": "1626 onsite dark frames/1741 person boxes plus72 bright frames/89 real-person boxes after excluding human-shaped exhibits; raw/enhanced views",
+      "source": "reports/detector-clean-finetune-20261024/models/yolo26m_clean_candidate.onnx",
+      "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9"
+    },
+    "pose": {
+      "file": "rtmo-s_person_20261024.onnx",
+      "architecture": "RTMO-s COCO17",
+      "onsite_finetuned": true,
+      "training_data": "Onsite dark auxiliary person/COCO17 sequence labels, quality-filtered for training; no inference smoothing; not independent human GT",
+      "source": "reports/dark-finetune-20261024/models/rtmo-s_dark_candidate.onnx",
+      "sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2"
+    },
+    "rgb": {
+      "file": "videomamba_t_behavior_32f_person_roi_20261023.pth",
+      "architecture": "VideoMamba-Tiny32f personROI",
+      "onsite_finetuned": true,
+      "training_data": "All onsite video plus two online other batches;535 unique sources, reviewed person/time labels;3789 train windows in the10-23 fixed input dataset",
+      "source": "reports/person-finetune-20261023/models/videomamba_t_behavior_32f_person_roi_20261023.pth",
+      "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf"
+    },
+    "skeleton": {
+      "file": "stgcn_person_20261024.pth",
+      "architecture": "ST-GCN COCO17",
+      "onsite_finetuned": true,
+      "training_data": "Historical onsite real-actiondata-all skeleton cache; old fitting line used video labels and merged person logits; applied per person at inference",
+      "source": "platform/dark-demo-v2/ckpts/stgcn_behavior_32f_realactall_full.pth",
+      "selection": "New2507-window person adaptation trained20epochs/val-selected13; full validation fusion comparison preferred the historical onsite model; retained honestly",
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+    },
+    "object": {
+      "file": "yolo26m_objects_20261026.onnx",
+      "architecture": "YOLO26m seven-class end-to-end",
+      "onsite_finetuned": true,
+      "training_data": "Old onsite and historical returned clips:319 train images(258 unique views),31 validation,47 test;831 assisted review records,407 usable ROIs. New9 manypeople recordings excluded from model training, later used for threshold feedback calibration. Cup0 boxes;camera3 training boxes.",
+      "source": "reports/object-prior-finetune-20261025/models/yolo26m_objects_candidate.onnx",
+      "sha256": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5"
+    }
+  },
+  "selection_lock_sha256": "037bb464d9a6c734451de99ed80b88c33af2c1c4ead202e80f6ad7aa765801ed",
+  "deployment_threshold_note": "User accepted joint calibration on2026-10-26:alpha.972,gate35,action.925,object.581; false-positive priority with measured recall losses. See reports/four-parameter-tuning-20261026. Object prior now connected to the production per-person pipeline; runtime verification in reports/person-object-release-20261026. User explicitly adopted wave3 and running.35 priors on2026-10-27; integrated release verification: reports/full-prior-release-20261027. Original six models unchanged.",
+  "action_display_aliases": {
+    "chase": {
+      "en": "Running",
+      "zh": "跑动",
+      "class_index": 2,
+      "previous_display": "Chasing"
+    }
+  },
+  "smoothing": false,
+  "object_prior": {
+    "enabled": true,
+    "model": "yolo26m_objects_20261026.onnx",
+    "policy": "one compatible detection in any of five same-person 720-enhanced sampled frames; drink=[bottle,cup], pick_up=[bottle,cup,phone,camera,paper,portable_object]; low/unknown raw luma and unavailable/ambiguous observations abstain",
+    "margin": 0.3,
+    "sample_positions": [
+      0,
+      8,
+      16,
+      23,
+      31
+    ]
+  },
+  "threshold_selection_lock_sha256": "5bff477b7fc4308545a31d55a23985a6880d2a6a80f2206d5f5f869f515bd841",
+  "wave_prior": {
+    "enabled": true,
+    "min_frames": 3,
+    "keypoint_conf": 0.5,
+    "policy": "Same wrist above both shoulders on at least three unique source frames within existing one-second window; no continuity requirement; low/unknown raw luma and disabled skeleton bypass; bright insufficient pose rejects."
+  },
+  "running_prior": {
+    "enabled": true,
+    "min_speed": 0.35,
+    "units": "person_box_heights_per_second",
+    "policy": "Mean displacement speed of common reliable joints over about .2s pairs in the existing one-second window; min5 joints/min3 pairs/span.3s; no coordinate smoothing; low/unknown raw luma, disabled skeleton or insufficient reliable speed bypass."
+  }
+}

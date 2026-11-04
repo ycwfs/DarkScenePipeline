@@ -35,6 +35,62 @@ def wait_for(predicate, seconds=3):
         time.sleep(.005)
 
 
+@pytest.mark.parametrize('writer_fails', [False, True])
+def test_stop_with_unopened_clip_is_overload_but_writer_failure_stays_fatal(
+        package, monkeypatch, tmp_path, writer_fails):
+    clips = importlib.import_module(package + '.clips')
+    Event = importlib.import_module(package + '.stages.base').RecognitionEvent
+    entered, resume = threading.Event(), threading.Event()
+    monkeypatch.setattr(clips, 'OPEN_AFTER', 1)
+    rec = clips.ClipRecorder(str(tmp_path / 'clips'), pre_sec=0, post_sec=10,
+                             queue_frames=4, stage_dir=str(tmp_path / 'stage'))
+    errors = []
+
+    def clean(frame):
+        entered.set()
+        assert resume.wait(10)
+        if writer_fails:
+            raise OSError('simulated storage failure')
+        return frame
+
+    def close():
+        try:
+            rec.close()
+        except clips.ClipWriteError as exc:
+            errors.append(str(exc))
+
+    rec._clean = clean
+    frame = np.zeros((48, 64, 3), np.uint8)
+    try:
+        rec.push(frame, Event(0, 0, 'Drinking water', .95), 0)
+        rec.push(frame, None, .01)
+        assert entered.wait(5)
+        for ts in (.02, .03, .04):
+            rec.push(frame, None, ts)
+        for ts in (.1, .2):
+            rec.push(frame, Event(1, ts, 'Waving', .95), ts)
+        assert rec._pending_start is not None and rec._active is None
+        closer = threading.Thread(target=close)
+        closer.start()
+        wait_for(lambda: rec._closing)
+        resume.set()
+        closer.join(15)
+        assert not closer.is_alive()
+        assert rec.abandoned == 1 and rec._pending_start is None
+        if writer_fails:
+            assert errors and rec.stats()['write_errors'] > 0
+        else:
+            assert not errors
+            stats = rec.stats()
+            assert stats['clips_saved'] == 1
+            assert stats['clips_failed'] == stats['clips_forced'] == stats['clips_unfinished'] == 0
+            assert stats['write_errors'] == 0 and stats['write_error'] is None
+            rec.close()  # idempotent after the warning
+    finally:
+        resume.set()
+        close()
+
+
 @pytest.mark.parametrize('force_full', [False, True])
 def test_congested_writer_keeps_end_and_next_clip_survives(package, monkeypatch, tmp_path,
                                                         force_full):

@@ -9,8 +9,10 @@ CLASSES = ["Drink", "Jump", "Pick", "Pour", "Push", "Run", "Sit", "Stand", "Turn
 BEHAVIORS = ["wave", "throw", "chase", "fall", "fight", "talk", "drink", "pick_up",
              "shake_hands", "other"]
 
+# Keep the trained `chase` key and class index for checkpoint/event compatibility.
+# The user-facing action is Running (跑动), including a person running alone.
 BEHAVIOR_DISPLAY = {
-    "wave": "Waving", "throw": "Throwing object", "chase": "Chasing", "fall": "Falling",
+    "wave": "Waving", "throw": "Throwing object", "chase": "Running", "fall": "Falling",
     "fight": "Fighting", "talk": "Talking", "drink": "Drinking water",
     "pick_up": "Picking up object", "shake_hands": "Shaking hands", "other": "Other",
 }
@@ -21,12 +23,13 @@ BEHAVIOR_DISPLAY = {
 # through label_key(), which strips non-ASCII and would turn every one of these into
 # "unknown". So this map is display-only, and the raw key stays the identity.
 BEHAVIOR_ZH = {
-    "wave": "挥手", "throw": "投掷物品", "chase": "追逐", "fall": "跌倒",
+    "wave": "挥手", "throw": "投掷物品", "chase": "跑动", "fall": "跌倒",
     "fight": "打斗", "talk": "交谈", "drink": "喝水",
     "pick_up": "捡拾物品", "shake_hands": "握手", "other": "其他",
 }
 # Reverse lookup: events carry the English display name, and the renderer only sees that.
 DISPLAY_TO_ZH = {BEHAVIOR_DISPLAY[k]: v for k, v in BEHAVIOR_ZH.items()}
+DISPLAY_TO_ZH["Chasing"] = BEHAVIOR_ZH["chase"]  # historical event display alias
 ZH_RECOGNIZING = "识别中..."
 
 # Prompt ensemble for the open-vocabulary recognizer: several phrasings per behavior, scored

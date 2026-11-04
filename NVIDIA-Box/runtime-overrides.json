@@ -1,0 +1,24 @@
+{
+  "purpose": "Box-only optimizations. --sync must preserve these files and reject changed base hashes.",
+  "modified": {
+    "darkpipe/stages/enhance_retinexformer.py": {
+      "platform_sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67"
+    },
+    "darkpipe/person/action_engine.py": {
+      "platform_sha256": "2d0ec859f97b98926e80069d0627a3dd44423a92659a58482c014808014ee071"
+    },
+    "darkpipe/person/runtime.py": {
+      "platform_sha256": "671c3ff64220e7b817e2e196c2644e50d484e4629f5f734d9108f72411b4406b"
+    },
+    "darkpipe/person/object_runtime.py": {
+      "platform_sha256": "8bb75c46135711cfaf8d38bdfda2ffddb517c8ea8df48fc66ba83f07c55f50d7"
+    },
+    "darkpipe/person/core.py": {
+      "platform_sha256": "64796626a60bf43dc2f484d13aa6ece318dde9039262e49362b62262634773e5"
+    }
+  },
+  "added": [
+    "darkpipe/box_accel.py",
+    "darkpipe/box_onnx.py"
+  ]
+}

@@ -349,9 +349,10 @@ class BehaviorRecognizer(VideoMambaRecognizer):
     v2: optionally fused with a COCO-17 skeleton branch (RTMO-s pose + ST-GCN, see
     skeleton_aux.py). Two decision modes:
 
-      fuse_mode="alpha" (DEFAULT -- every field suite prefers it: max_prior loses on all
-        four, val top1 0.70 vs 0.98 and platform replay 141-177 vs 10 false fires): the
-        v2.0 weighted blend p = alpha*p_rgb + (1-alpha)*p_skel with the no-person policy.
+      fuse_mode="alpha" (DEFAULT): p = alpha*p_rgb + (1-alpha)*p_skel, where p_skel is
+        the full distribution of the highest-confidence valid current person (including
+        other). Since 2026-10-22 people are associated within each window and displayed
+        separately. Historical multi-person averaging scores do not describe this rule.
         2026-10-14 "两部曲" (instruction.md revision): the illuminance gate below now runs
         ahead of the blend as well, so the shipped default (alpha + lum_gate=75) IS the
         meeting's two-step -- pure RGB in genuinely dark scenes (where pose availability
@@ -381,7 +382,8 @@ class BehaviorRecognizer(VideoMambaRecognizer):
                  span_sec: float | None = None, reject_tau: float = 0.0,
                  skel_fusion_alpha: float = 0.7, skel_no_person: str = "soft",
                  fuse_mode: str = "alpha", lum_gate: float = 75.0,
-                 act_tau: float = 0.65, skel_tau: float = 0.65):
+                 act_tau: float = 0.65, skel_tau: float = 0.65,
+                 object_min_conf: float = 0.35):
         super().__init__(ckpt_dir, stride=stride, span_sec=span_sec, reject_tau=reject_tau)
         self.skel_alpha = float(skel_fusion_alpha)
         self.skel_no_person = skel_no_person
@@ -398,6 +400,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         self.lum_gate = float(lum_gate)
         self.act_tau = float(act_tau)
         self.skel_tau = float(skel_tau)
+        self.object_min_conf = float(object_min_conf)
         self.skel = None               # skeleton_aux.SkeletonAux once load() succeeds
         self.prior = None              # object_prior.PriorGate in max_prior mode
         self.prior_note = ""           # why the last firing window was vetoed/passed, if any
@@ -426,7 +429,8 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         self.skel = aux
         if self.fuse_mode == "max_prior":
             from .object_prior import PriorGate
-            self.prior = PriorGate(os.path.dirname(self.ckpt), device)
+            self.prior = PriorGate(os.path.dirname(self.ckpt), device,
+                                   min_conf=self.object_min_conf)
             reason = self.prior.load()      # never fatal: object priors fail open, wave
             if reason:                      # (geometry) keeps working without the detector
                 print(f"[recognize] [warn] {reason}")
@@ -445,6 +449,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         gate = (f"，照度门 {self.lum_gate:.0f}（量提亮前原图亮度，低于门限的窗仅用RGB"
                 f"、不做骨架融合，两部曲）" if self.lum_gate > 0 else "，照度门关")
         print(f"[recognize] 骨架分支已启用 RTMO-s+ST-GCN 融合 α={self.skel_alpha:g} "
+              "（最多6人分别分类，取最高分类概率人物的完整向量，含other）"
               f"(无人窗策略={NO_PERSON_ZH.get(self.skel_no_person, self.skel_no_person)}"
               f"，TAU={TAU:g}，姿态 {aux.pose_ms:.1f} ms/帧){gate}")
 
@@ -505,6 +510,8 @@ class BehaviorRecognizer(VideoMambaRecognizer):
             return p_rgb, (f"照度 {lum:.0f}（提亮前原图）< 门限 "
                            f"{self.lum_gate:.0f}，仅用RGB结果")
         skel_p = None
+        if 'best' in info:
+            info['selected'] = -1
         if info["p"] is not None:
             cand = [m for m in np.flatnonzero(info["valid"])
                     if int(info["slot_p"][m].argmax()) != o
@@ -512,6 +519,7 @@ class BehaviorRecognizer(VideoMambaRecognizer):
             if cand:
                 m = cand[int(np.argmax(info["slot_p"][cand].max(1)))]
                 skel_p = info["slot_p"][m]
+                info['selected'] = int(m)
         if skel_p is None or float(p_rgb.max()) >= float(skel_p.max()):
             init, init_label = p_rgb, self.labels[int(p_rgb.argmax())]
         else:
@@ -581,8 +589,12 @@ class BehaviorRecognizer(VideoMambaRecognizer):
         order = prob.argsort()[::-1][:min(3, len(self.labels))]
         label = self.labels[int(order[0])]
         actors, reference = [], None
+        selected_slot = -1
         if skeleton_active and hasattr(self.skel, 'action_poses'):
             actors = self.skel.action_poses(label)
+            info = getattr(self.skel, 'last_analysis', None)
+            if info is not None:
+                selected_slot = int(info.get('selected', info.get('best', -1)))
             if actors:
                 from ..pose_overlay import tracking_gray
                 reference = tracking_gray(frame_bgr)
@@ -591,12 +603,14 @@ class BehaviorRecognizer(VideoMambaRecognizer):
             label=self.display(label), confidence=float(prob[order[0]]),
             topk=[(self.display(self.labels[int(i)]), float(prob[i])) for i in order],
             model=self.kind, window=self.window, skeleton_active=skeleton_active,
-            actor_poses=actors, pose_reference=reference)
+            actor_poses=actors, pose_reference=reference, skeleton_selected_slot=selected_slot)
 
     def reset(self) -> None:
         super().reset()
         self.rawbuf.clear()
         self.lumbuf.clear()
+        if self.skel is not None:
+            self.skel.last_analysis = None
 
     def warmup(self) -> None:
         super().warmup()

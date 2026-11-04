@@ -1,6 +1,7 @@
 """PipelineConfig + validation rules (every toggle combination is legal except where noted)."""
 import os
 import sys
+import math
 from dataclasses import dataclass, field
 
 from .constants import (CKPT_FILES, EXPECTED_FPS, RECO_CFG, SR_ALIASES, SR_SCALES,
@@ -9,6 +10,8 @@ from .constants import (CKPT_FILES, EXPECTED_FPS, RECO_CFG, SR_ALIASES, SR_SCALE
 
 @dataclass
 class PipelineConfig:
+    person_mode: bool = False  # main.py explicitly defaults to the deployed person pipeline
+    input_processed: bool = False  # legacy returned clips: remove label bar, skip enhancement
     mode: str = "offline"
     input: str = ""
     output: str = ""
@@ -33,19 +36,35 @@ class PipelineConfig:
     reco_stride: int | None = None
     reco_span_sec: float | None = None
     # Report `other` unless the top named behaviour reaches this probability. 0 disables.
-    reco_min_conf: float = 0.75
-    pose_overlay: bool = True        # draw action-compatible skeletons after recognition
+    reco_min_conf: float = 0.925
+    # Recover only temporally supported candidates in the validated band below the final
+    # action threshold. The lower bound is user configurable but must be > 0.5 when enabled.
+    candidate_recheck_enabled: bool = True
+    candidate_recheck_lower: float = 0.85
+    # Keep a just-confirmed named action visible briefly when the next asynchronous
+    # window falls back to `other`; this affects the overlay only, not events or clips.
+    action_display_hold_sec: float = 0.8
+    # Object-prior confidence, separate from person detection and action recognition.
+    # Seven-class same-person crop prior; legacy max_prior also consumes this threshold.
+    person_object_prior: bool = True
+    object_min_conf: float = 0.581
+    running_pose_min_speed: float = 0.35  # body-box heights/sec; zero disables
+    wave_pose_min_frames: int = 3  # distinct source frames; 0 disables only wave prior
+    pose_overlay: bool = True        # draw skeletons in live output and saved clips
     reco_ckpt: str = ""              # override the r3d/videomamba/behavior weights
-    # Skeleton-branch fusion weight: p = a*p_rgb + (1-a)*p_skel, after the no-person policy.
+    # Person mode fuses the SAME person's RGB and skeleton full vectors.
+    # Legacy whole-frame mode uses the highest-confidence person's skeleton vector.
     # a >= 0.999 runs the RGB branch only (the skeleton branch is not even loaded).
-    skel_fusion_alpha: float = 0.7
+    skel_fusion_alpha: float = 0.972
     # What a window in which the pose model found no person reports. "other" forces it
     # (strongest FP brake, but a pose MISS on a real behaviour is killed too); "soft" lets
     # the absent skeleton vote `other` with weight (1-a) so a confident RGB window still
     # survives; "rgb" lets the skeleton abstain (pure v1 behaviour on those windows).
-    skel_no_person: str = "soft"
+    skel_no_person: str = 'soft'
     # Skeleton+RGB decision mode. "alpha" (DEFAULT, the deployed v2.0 weighted blend
     # p = a*p_rgb + (1-a)*p_skel, with skel_no_person): every field suite prefers it --
+    # Historical full-frame comparison (current per-person defaults are selected in
+    # reports/person-release-20261024; person mode supports alpha only).
     # max_prior loses on all four (val top1 0.70 vs 0.98, platform replay 141-177 vs 10
     # false fires) because the object priors are blind on IR footage and "higher confidence
     # wins" removes the alpha damping that IS the false-fire suppression.
@@ -62,15 +81,9 @@ class PipelineConfig:
     # the enhanced frame cannot see darkness -- the 10-14 sweep over 1020 windows proved
     # no enhanced-luma threshold does anything); 0 disables it. It gates BOTH decision
     # modes (the 2026-10-14 "两部曲": alpha + this gate -- below it pure RGB, above it the
-    # blend; max_prior runs it as its step 1). Default 75 is the field-measured
-    # degradation knee (compare/behavior/skeleton/lum_curve.py, all field takes: pose
-    # availability 0.28-0.71 below 75, a flat 1.000 plateau at and above it). Kept as a
-    # safety net rather than a fix: the actual trouble windows sit at raw luma 135-154,
-    # far above the gate, and the误报压制 mechanism is the alpha fusion itself.
-    # act_tau/skel_tau follow the meeting's two-threshold wording; no setting of either
-    # separates the true positives (conf >= 0.91) from the platform false fires (70 of
-    # them >= 0.9).
-    lum_gate: float = 75.0
+    # blend; max_prior runs it as its step 1). Current onsite-finetuned person models
+    # use the user-accepted calibrated raw-luma gate35; old gate75 results describe old models.
+    lum_gate: float = 35.0
     act_tau: float = 0.65
     skel_tau: float = 0.65
     labels: str = ""                 # comma-separated, xclip only (open vocabulary)
@@ -245,6 +258,28 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
     if cfg.reco_min_conf < 0.0:
         _die(f"--reco-min-conf must be >= 0 (got {cfg.reco_min_conf})")
 
+    if not math.isfinite(cfg.candidate_recheck_lower):
+        _die("--candidate_recheck_lower must be finite")
+    if cfg.candidate_recheck_enabled and not (
+            cfg.reco_min_conf > .5 and .5 < cfg.candidate_recheck_lower < cfg.reco_min_conf):
+        _die("--candidate_recheck_lower requires reco_min_conf > 0.5 and "
+             "0.5 < candidate_recheck_lower < reco_min_conf")
+    if not 0.0 <= cfg.candidate_recheck_lower <= 1.0:
+        _die("--candidate_recheck_lower must be within [0, 1]")
+
+    if (not math.isfinite(cfg.action_display_hold_sec)
+            or not 0.0 <= cfg.action_display_hold_sec <= 3.0):
+        _die("--action_display_hold_sec must be finite and within [0, 3]")
+
+    if not math.isfinite(cfg.running_pose_min_speed) or cfg.running_pose_min_speed < 0:
+        _die("--running_pose_min_speed must be finite and nonnegative")
+
+    if isinstance(cfg.wave_pose_min_frames, bool) or not isinstance(cfg.wave_pose_min_frames, int) or not 0 <= cfg.wave_pose_min_frames <= 32:
+        _die("--wave_pose_min_frames must be an integer within [0, 32]")
+
+    if not 0.0 <= cfg.object_min_conf <= 1.0:
+        _die(f"--object_min_conf must be a finite probability in [0, 1] (got {cfg.object_min_conf})")
+
     if not 0.0 <= cfg.skel_fusion_alpha <= 1.0:
         _die(f"--skel-fusion-alpha must be within [0, 1] (got {cfg.skel_fusion_alpha})")
     from .stages.skeleton_aux import NO_PERSON_MODES
@@ -316,6 +351,16 @@ def validate(cfg: PipelineConfig) -> PipelineConfig:
     elif cfg.reco_ckpt:
         cfg.warnings.append(f"--reco-ckpt ignored for recognize={cfg.recognize} "
                             f"(use --xclip-model for X-CLIP snapshots)")
+    if cfg.person_mode:
+        if cfg.recognize != 'behavior' or cfg.fuse_mode != 'alpha':
+            _die('person_mode requires recognize=behavior and fuse_mode=alpha')
+        if cfg.reco_span_sec not in (None, 1.0):
+            _die('person_mode uses the trained 1-second, 32-frame window')
+        cfg.reco_span_sec = 1.0
+        need.extend(['yolo26m_person_20261024.onnx', 'rtmo-s_person_20261024.onnx',
+                     'videomamba_t_behavior_32f_person_roi_20261023.pth', 'stgcn_person_20261024.pth'])
+        if cfg.person_object_prior:
+            need.append('yolo26m_objects_20261026.onnx')
     for f in need:
         p = os.path.join(cfg.ckpt_dir, f)
         if not os.path.exists(p):

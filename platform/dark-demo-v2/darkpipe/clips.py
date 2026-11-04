@@ -425,9 +425,18 @@ class ClipRecorder:
         if self._active is not None:
             self._finish(self._last_ts, "服务停止")
         if self._pending_start is not None:
+            event, _ = self._pending_start
             self._pending_start = None
             self.abandoned += 1
-            self._write_failed("停止时仍有未能开始保存的动作片段")
+            if self.realtime:
+                # The bounded live queue may already abandon an unopened clip after 3 s.
+                # Stopping during that retry is the same overload, not a failed encoder:
+                # no start was accepted and no file exists. Still drain every accepted
+                # clip below; real write errors/stalls remain fatal. Offline never drops.
+                print(f"[clip] 停止时放弃尚未开始写入的片段 {label_key(event.label)}"
+                      f"（写入队列繁忙，累计放弃 {self.abandoned}）")
+            else:
+                self._write_failed("停止时仍有未能开始保存的动作片段")
         if self._pending_end is not None:
             msg, _, _, report = self._pending_end
             enqueue(msg)

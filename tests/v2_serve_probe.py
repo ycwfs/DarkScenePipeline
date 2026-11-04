@@ -108,6 +108,7 @@ def main():
     started = time.monotonic()
     try:
         operator.main([
+            "--person_mode", "false", "--reco_min_conf", "0.75",  # exercise legacy worker fault injection separately
             "--video_path", "http://probe/live", "--gpu_ids", "0",
             "--enhance", "off", "--sr", "off", "--denoise", "off",
             "--clip_denoise", "off", "--label_bar", "false",

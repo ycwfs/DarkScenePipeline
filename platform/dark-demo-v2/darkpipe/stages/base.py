@@ -37,13 +37,15 @@ class RecognitionEvent:
     actor_poses: list = field(default_factory=list)
     # Internal grayscale reference for output-thread tracking; never serialize image data.
     pose_reference: object = field(default=None, repr=False, compare=False)
+    skeleton_selected_slot: int = -1  # window-local slot; not a persistent identity
 
     def to_dict(self):
         return dict(frame_index=self.frame_index, timestamp=round(self.timestamp, 3),
                     label=self.label, confidence=round(self.confidence, 4),
                     topk=[[l, round(p, 4)] for l, p in self.topk],
                     model=self.model, window=self.window,
-                    skeleton_active=self.skeleton_active, actor_poses=self.actor_poses)
+                    skeleton_active=self.skeleton_active, actor_poses=self.actor_poses,
+                    skeleton_selected_slot=self.skeleton_selected_slot)
 
 
 class Recognizer:

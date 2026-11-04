@@ -45,6 +45,7 @@ def main():
     operator._print_gpu_inventory = lambda gpus: None
     operator.apply_extra_hosts = lambda spec: 0
     operator.main(['--video_path', args.input, '--session_json', args.out,
+                   '--person_mode', 'false', '--reco_min_conf', '0.75',  # this probe substitutes the legacy model interface
                    '--clip_dir', str(Path(args.out).parent / 'delivered'),
                    '--enhance', 'off', '--sr', 'off', '--denoise', 'off',
                    '--clip_denoise', 'off', '--label_bar', 'false'])

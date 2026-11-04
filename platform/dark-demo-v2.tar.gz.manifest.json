@@ -1,7 +1,7 @@
 {
   "archive": "dark-demo-v2.tar.gz",
-  "sha256": "3f3c37c5679d3e8c779571cb6a7f365e6aacef5f9ccb492410dcd7c80b2aa78f",
-  "size": 216685550,
+  "sha256": "ca3c14ed50f08577cf0a53818d54af9ec218d463781adb46d430f8c8e7dfc721",
+  "size": 417904345,
   "image": "darkpipe-operator:0.3.0",
   "files": {
     ".gitignore": {
@@ -9,12 +9,16 @@
       "sha256": "d1a8e352ebdb3f2503c9a8d2875819e60622b1d6799c9d4cbdff03dbd3df10c3"
     },
     "CLAUDE.md": {
-      "size": 21220,
-      "sha256": "bc8fd8677a1df16e9366ef406aa343721894a534d010329a18d2b8754188a84d"
+      "size": 28586,
+      "sha256": "6e8f69df487b226c7f0f96339cc710063047ebc92fe353e0232b03604ac49bc9"
     },
     "README.md": {
-      "size": 75582,
-      "sha256": "8d33273d3b7b928d44df381deb822c5613bbb0858b17be0751cf424597faaa62"
+      "size": 14527,
+      "sha256": "c4091da933ba9c0044a648530380cd4bf5d0a223752a43987fcdd2787ce6724b"
+    },
+    "README_legacy_20261022.md": {
+      "size": 76937,
+      "sha256": "985a1127eee134c73d78fa3babb455e280d380f135dbf69ebd8916ad0f89dc47"
     },
     "ckpts/NTIRE.pth": {
       "size": 6476406,
@@ -24,13 +28,25 @@
       "size": 39617685,
       "sha256": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8"
     },
+    "ckpts/rtmo-s_person_20261024.onnx": {
+      "size": 39693236,
+      "sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2"
+    },
     "ckpts/stgcn_behavior_32f_realactall_full.pth": {
+      "size": 1178385,
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+    },
+    "ckpts/stgcn_person_20261024.pth": {
       "size": 1178385,
       "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
     },
     "ckpts/videomamba_t_behavior_32f.pth": {
       "size": 28012991,
       "sha256": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44"
+    },
+    "ckpts/videomamba_t_behavior_32f_person_roi_20261023.pth": {
+      "size": 28104357,
+      "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf"
     },
     "ckpts/videomamba_t_behavior_32f_realactall_full.pth": {
       "size": 28132107,
@@ -48,6 +64,14 @@
       "size": 81963235,
       "sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c"
     },
+    "ckpts/yolo26m_objects_20261026.onnx": {
+      "size": 81683975,
+      "sha256": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5"
+    },
+    "ckpts/yolo26m_person_20261024.onnx": {
+      "size": 81910190,
+      "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9"
+    },
     "darkpipe/__init__.py": {
       "size": 22,
       "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
@@ -57,20 +81,20 @@
       "sha256": "5bb218343ded506b258d86186d460fc47d9b6b28f0e642cf32676c396b7df763"
     },
     "darkpipe/assets/NotoSansCJK-subset.ttf": {
-      "size": 15448,
-      "sha256": "5c4df08fbe603b20d5b60e9f4cbfeb6b21327f324eadd409f2e27c26e9c164b0"
+      "size": 28100,
+      "sha256": "f0e9f95f5c567d110b7878bd02bb856589a77944f17cd15227c179d57c383965"
     },
     "darkpipe/clips.py": {
-      "size": 44285,
-      "sha256": "803fdc7cbe3cfc1e3762ba9407eb0c39508834307c15834bdbcddf54d29b2f18"
+      "size": 44918,
+      "sha256": "6c8877afeddff0328a5d0c36ba5ec2b1acb7dd485c98824bb740dcad96c10053"
     },
     "darkpipe/config.py": {
-      "size": 23924,
-      "sha256": "fb4bc4785aaec809ff933dcb675ea5a5c4f2c6a0b7365898f0bf4247189a4332"
+      "size": 26638,
+      "sha256": "214a445499529d72103d8ff4d93502aa3b57bd3820c0ff564695f56f1a370101"
     },
     "darkpipe/constants.py": {
-      "size": 9539,
-      "sha256": "4b450a125a10f8e29dbadba0444305a5206de0b266438cf9416535e05d309958"
+      "size": 9784,
+      "sha256": "93da348ed2c8d6dc2191a6e40724f5e0297dabd3e71e888a0f81a818f57664f7"
     },
     "darkpipe/denoise_util.py": {
       "size": 337,
@@ -80,21 +104,85 @@
       "size": 10395,
       "sha256": "0d920154fb0b333445a50c4f31fd091ca60fdb353c10b36d0a139bf232f24afc"
     },
+    "darkpipe/person/__init__.py": {
+      "size": 77,
+      "sha256": "ac634c423c9b1da33bcaf56fc78183cdc7355dfcf99a5ea02b8b56c98f41725d"
+    },
+    "darkpipe/person/action_engine.py": {
+      "size": 14359,
+      "sha256": "2d0ec859f97b98926e80069d0627a3dd44423a92659a58482c014808014ee071"
+    },
+    "darkpipe/person/assignment.py": {
+      "size": 1508,
+      "sha256": "c1d31431feda9bbf159bd4a61756a220d9095ecc21f597cdb72ab63b80a8ab88"
+    },
+    "darkpipe/person/clips.py": {
+      "size": 15997,
+      "sha256": "9aa0ec6e86355ea5961cf60e556786662a7112c91f2262bb9c74706b8a85f483"
+    },
+    "darkpipe/person/core.py": {
+      "size": 16696,
+      "sha256": "64796626a60bf43dc2f484d13aa6ece318dde9039262e49362b62262634773e5"
+    },
+    "darkpipe/person/frontend_process.py": {
+      "size": 5657,
+      "sha256": "296d682b192f5e05322e3e8876bbeda1408fea039d903b73a7bd8bbf5dd65b69"
+    },
+    "darkpipe/person/object_overlay.py": {
+      "size": 6578,
+      "sha256": "0b44b7ac14a80ce82ff19d876baba331405b070b4667ce900a80e9915637ae90"
+    },
+    "darkpipe/person/object_prior.py": {
+      "size": 2941,
+      "sha256": "41fa0436a726a84ab63b6cbd390ad5edb0697e60f49183236e9bce9c88b40269"
+    },
+    "darkpipe/person/object_runtime.py": {
+      "size": 8227,
+      "sha256": "8bb75c46135711cfaf8d38bdfda2ffddb517c8ea8df48fc66ba83f07c55f50d7"
+    },
+    "darkpipe/person/process_pool.py": {
+      "size": 4854,
+      "sha256": "8bc08280526af6a418378dc023bf181514b3859c3c2a79287fbcc469d8a022e7"
+    },
+    "darkpipe/person/recheck.py": {
+      "size": 5358,
+      "sha256": "b479a4b755d24ba252c3037a89a2bb44317fb8206190fc06c14fbb69477e35c0"
+    },
+    "darkpipe/person/running_prior.py": {
+      "size": 5458,
+      "sha256": "29d209e612e2332d224fc96aff2e9b1a3a1362fbdacca2ff075391b570e295c8"
+    },
+    "darkpipe/person/runtime.py": {
+      "size": 14225,
+      "sha256": "671c3ff64220e7b817e2e196c2644e50d484e4629f5f734d9108f72411b4406b"
+    },
+    "darkpipe/person/scheduling.py": {
+      "size": 7702,
+      "sha256": "c04f60e63910d09d44b52475d361b6704eaa77912cd20b384a82bfbab4de506d"
+    },
+    "darkpipe/person/service.py": {
+      "size": 12402,
+      "sha256": "0f5f322ec3f0195d051fceceffaf0067a6b6905a4c1d788c02c7df7ff8659f0e"
+    },
+    "darkpipe/person/wave_prior.py": {
+      "size": 5160,
+      "sha256": "3d5225466661bf5db24ecf7260096b6e3fb5c1d762dbe6d1d91870f8441c6885"
+    },
     "darkpipe/pipeline.py": {
       "size": 11391,
       "sha256": "0e5f503db00a27fbfe825aa8e8e01a59baa12a22c8d427d021657cf0f6b0f02d"
     },
     "darkpipe/pose_overlay.py": {
-      "size": 5496,
-      "sha256": "834d1990ec7fc33d839106e7a1b02fe8fe16b49a57c26b8db17e1b047c505d2a"
+      "size": 7984,
+      "sha256": "38f0f618b4bcb4c454e00b8797bddbbd5336b5d8d43deaa437819c88a2a45367"
     },
     "darkpipe/render.py": {
       "size": 4429,
       "sha256": "47cf9afa16d02a227826840e37e225d516e08d26e79caefae1e5da092190e74d"
     },
     "darkpipe/server.py": {
-      "size": 98062,
-      "sha256": "f2017c5f3dc3e42d6b27d5a4159728ca3457b1ab19cab4755bb32b74c6d20e76"
+      "size": 99267,
+      "sha256": "2304cf8fd52aeb827c55742229f2e9b47946b69c6367c5fca21b78a4bc1abdc4"
     },
     "darkpipe/shard.py": {
       "size": 8484,
@@ -105,12 +193,12 @@
       "sha256": "5ed07edc57ca3445444275cf97374f40f6073af40c38c88a0329ada02736ce1d"
     },
     "darkpipe/stages/__init__.py": {
-      "size": 4677,
-      "sha256": "92da2c85808b995098f2c335bf3f5ac4f8af003bbe4bd145ebde3dab28bd9817"
+      "size": 4772,
+      "sha256": "98ca9b79eae96585e1e5bef17c2e00e1fe1118bdb93fc74b595b9881a0da4114"
     },
     "darkpipe/stages/base.py": {
-      "size": 3526,
-      "sha256": "2cb765e4851090a574239358dc61f352e95396d37f5d49338731d7b209cc6abe"
+      "size": 3683,
+      "sha256": "2a3f63ee89cfc9b34f3594633675f431b8f19cee0dffb86652fc74ef106d9811"
     },
     "darkpipe/stages/denoise.py": {
       "size": 2319,
@@ -125,20 +213,20 @@
       "sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67"
     },
     "darkpipe/stages/object_prior.py": {
-      "size": 15918,
-      "sha256": "99f61470dbe5b5f3145375c40b2825a998a656fa43a060d939e61c65860f7a5c"
+      "size": 16162,
+      "sha256": "cfb7dd85d5c3495c405cac3e9bbd50dfc89719384b23fde449a261d7d8d90f8f"
     },
     "darkpipe/stages/recognize.py": {
-      "size": 32406,
-      "sha256": "a72fc6f551edbf3593f7af7f85dbd38e78a0c94937b44972af2bcd88d0d5e704"
+      "size": 33178,
+      "sha256": "2f80e0f91cbdb8807fe9b7b1f34cabcad23a5fe2df5ab78237c5df1ea3c40132"
     },
     "darkpipe/stages/saturation.py": {
       "size": 3648,
       "sha256": "22e4bbca7d01835fd32d462758a245eacd87525b7a128b95c6e85e3d30260185"
     },
     "darkpipe/stages/skeleton_aux.py": {
-      "size": 21373,
-      "sha256": "6dc4a9d7902e91690be9c3aa0acecb2b16ad14b22a5cc081a2012d4a5519f106"
+      "size": 22176,
+      "sha256": "26a471b75a165e7224fbd589020f4734942a44d7781cbf24b384f33bce9e4b5f"
     },
     "darkpipe/stages/sr_bicubic.py": {
       "size": 2430,
@@ -177,8 +265,12 @@
       "sha256": "c828fd573255c7c53b61677b9ec009f4a5f31ac3f711f8d13a9eccc7ecbadefb"
     },
     "main.py": {
-      "size": 57842,
-      "sha256": "a30927aefdbb57aa2fd2cfdfa0857798d239d92eb33f50ca09dd6de3e3691e54"
+      "size": 62617,
+      "sha256": "53d9bc3175376cd306db761b7bd9e16177d7b92462a834a52f18c481281e7f9a"
+    },
+    "models.json": {
+      "size": 5554,
+      "sha256": "8e60fecc3c1e2477f07ca7ad5c0f1f6d0f82f8411625ce47303ef49eadaada58"
     },
     "oputil.py": {
       "size": 37069,
@@ -189,8 +281,8 @@
       "sha256": "aa1a2ecf6aaa6b286d5c76d3680d56714bab198398252676a1c43f09bdc9a809"
     },
     "suanzi.json": {
-      "size": 30365,
-      "sha256": "83bd39969fc53b812963f62fc6c0e9fa1dc10a4964f2766437101520e765ff4d"
+      "size": 31523,
+      "sha256": "92cd7cee11876bfdfbcb2344bc07432f290c42ccb9539121549ea74d5949cb06"
     }
   }
 }

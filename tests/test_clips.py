@@ -155,14 +155,26 @@ def test_a_clip_that_cannot_open_is_retried_rather_than_lost(tmp_path):
     assert rec.abandoned == 0
 
     rec._q.get_nowait()                                 # writer catches up by one slot
+    if hasattr(rec, '_pending_end'):
+        # Current v2 reserves one slot for `end`; a single free slot cannot admit start.
+        t += 0.1
+        rec.push(frame(), None, t)
+        assert rec._active is None, 'start consumed the reserved end-message slot'
+        rec._q.get_nowait()                             # now both start and end fit
     t += 0.1
     rec.push(frame(), None, t)
     assert rec._active is not None, "the retry never opened the clip"
     kind, _path, _fps, pre = [i for i in rec._q.queue if i[0] == "start"][0]
     assert len(pre) >= 6, \
         f"the retried clip lost its lead-in: {len(pre)} pre-roll frames"
+    # Do not discard the accepted start while restoring the real writer queue.
+    # Current v2 correctly treats losing it as an unfinished clip at shutdown.
+    accepted = list(rec._q.queue)
     rec._q = real
+    for message in accepted:
+        real.put_nowait(message)
     rec.close()
+    assert len(clips_in(str(tmp_path))) == 1
 
 
 def test_a_wedged_writer_eventually_gives_up_instead_of_retrying_forever(tmp_path):

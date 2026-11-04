@@ -68,3 +68,8 @@ replay_ckpt_pn/
 /realdata-10-09/
 .pytest_cache/
 assets/demo_5actions/
+/NVIDIA-Box/.cache/
+# Raw feedback and downloaded baseline weights stay local; retain their provenance.
+/data-10-25-manypeople/*.7z
+/data-10-25-manypeople/extracted/
+/weights/*.pt

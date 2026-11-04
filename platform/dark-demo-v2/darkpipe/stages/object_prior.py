@@ -91,7 +91,10 @@ class YoloOnnxDetector:
     SkeletonAux: load() -> "" or a reason; a failed detector just leaves the object
     priors fail-open."""
 
-    def __init__(self, ckpt_dir, device):
+    def __init__(self, ckpt_dir, device, min_conf: float = DET_CONF):
+        self.min_conf = float(min_conf)
+        if not 0.0 <= self.min_conf <= 1.0:
+            raise ValueError('min_conf must be a finite probability in [0, 1]')
         self.path = os.path.join(ckpt_dir, YOLO_ONNX)
         self.device = "cuda:0" if str(device) == "cuda" else str(device)
         self.sess = None
@@ -153,7 +156,7 @@ class YoloOnnxDetector:
             x = canvas[:, :, ::-1].transpose(2, 0, 1)[None].astype(np.float32) / 255.0
             row_all = self.sess.run(
                 None, {self.sess.get_inputs()[0].name: np.ascontiguousarray(x)})[0][0]
-            row_all = row_all[row_all[:, 4] > DET_CONF]
+            row_all = row_all[row_all[:, 4] > self.min_conf]
             if len(row_all):
                 box = row_all[:, :4]
                 box[:, [0, 2]] = (box[:, [0, 2]] - left) / r
@@ -178,8 +181,8 @@ class PriorGate:
     """Step-3 checker. `check()` never raises and never rejects on missing evidence: no
     detector, no visible keypoints of the kind the prior needs -> pass with a reason."""
 
-    def __init__(self, ckpt_dir, device):
-        self.det = YoloOnnxDetector(ckpt_dir, device)
+    def __init__(self, ckpt_dir, device, min_conf: float = DET_CONF):
+        self.det = YoloOnnxDetector(ckpt_dir, device, min_conf=min_conf)
 
     def load(self):
         return self.det.load()
