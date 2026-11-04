@@ -1,0 +1,35 @@
+{
+  "checked_models": [
+    {
+      "model": "rgb",
+      "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf",
+      "unchanged": true
+    },
+    {
+      "model": "skeleton",
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+      "unchanged": true
+    },
+    {
+      "model": "detector",
+      "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9",
+      "unchanged": true
+    },
+    {
+      "model": "pose",
+      "sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2",
+      "unchanged": true
+    },
+    {
+      "model": "enhancer",
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+      "unchanged": true
+    },
+    {
+      "model": "object",
+      "sha256": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5",
+      "unchanged": true
+    }
+  ],
+  "production_models_modified": false
+}

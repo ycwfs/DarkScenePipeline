@@ -1,0 +1,6 @@
+{
+  "frames": 9876,
+  "matched": 10,
+  "elapsed": 773.1186854280531,
+  "method": "Exact sequential enhancer/detector/pose/tracker replay. No new RGB or skeleton-action inference; historical full probabilities reused."
+}

@@ -1,0 +1,71 @@
+{
+  "videos": [
+    {
+      "video": "final-image-offline/挥手3/20261024_073600_1/挥手3-处理后.mp4",
+      "codec": "h264",
+      "frames": 160,
+      "width": 1440,
+      "height": 808
+    },
+    {
+      "video": "final-image-offline/挥手3/20261024_073600_1/E000_T002_G000_R00001_20261024_073623_waving_0001.mp4",
+      "codec": "h264",
+      "frames": 159,
+      "width": 1440,
+      "height": 808
+    }
+  ],
+  "clips": [
+    {
+      "session": "E000_T002_G000/R00001",
+      "seq": 1,
+      "label": "Waving",
+      "label_key": "waving",
+      "confidence": 0.9619,
+      "labels_in_clip": {
+        "Waving": 10
+      },
+      "frames": 160,
+      "fps": 25.0,
+      "duration_seconds": 6.36,
+      "trigger_stream_time": 0.96,
+      "first_event": {
+        "frame_index": 24,
+        "timestamp": 0.96,
+        "label": "Waving",
+        "confidence": 0.9521,
+        "topk": [],
+        "model": "",
+        "window": 0,
+        "skeleton_active": false,
+        "actor_poses": [],
+        "skeleton_selected_slot": -1,
+        "clip_start_source_time": 0.0,
+        "writer_drop_start": 0,
+        "last_action_source_time": 5.64,
+        "writer_frames_dropped": 0
+      },
+      "closed_because": "服务停止，尾部上下文可能不完整",
+      "started_at": "2026-10-24 07:36:03",
+      "video": "E000_T002_G000_R00001_20261024_073623_waving_0001.mp4",
+      "frames_written": 159,
+      "capture_fps": 25.157,
+      "playback_speed": 1.0,
+      "person_id": 2,
+      "history_generation": 0,
+      "capture_epoch": 0,
+      "action_key": "waving",
+      "recording_id": 1,
+      "start_source_time": 0.0,
+      "end_source_time": 6.36,
+      "pre_context_available": 0.96,
+      "post_context_available": 0.7200000000000006,
+      "requested_pre": 2.0,
+      "requested_post": 2.0,
+      "recording_policy": "full frame per person and action; overlapping files allowed",
+      "writer_frames_dropped": 0,
+      "context_complete": false
+    }
+  ],
+  "full_decode": true
+}

@@ -1,0 +1,1 @@
+{"rgb_epochs":[0,1,2,3,4,5,6],"skeleton_epochs":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"grid_count":147,"fixed_parameters":{"alpha":0.972,"gate":35.0,"action":0.925,"object":0.581},"selection_sources":"old canonical validation only","tie_break":"earliest RGB then earliest skeleton"}

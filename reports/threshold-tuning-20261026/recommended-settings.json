@@ -1,0 +1,1 @@
+{"reco_min_conf":0.905,"object_min_conf":0.358,"skel_fusion_alpha":0.95,"lum_gate":30.0,"skel_no_person":"soft","algorithm":"unchanged onsite-finetuned seven-class YOLO26m +720enhanced personROI single-frame prior","selection_lock":"class-guard-selection-lock.json","state":"Offline candidate preset; platform object prior not integrated"}

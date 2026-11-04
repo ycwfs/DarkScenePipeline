@@ -1,0 +1,883 @@
+{
+  "passed": true,
+  "seconds": 900.008374302648,
+  "cycles": [
+    {
+      "cycle": 1,
+      "frames": 5840,
+      "average_processed_fps": 19.466666666666665,
+      "people_max": 19,
+      "health_fps": {
+        "count": 241,
+        "minimum": 9.68,
+        "median": 22.18,
+        "p95": 25.0,
+        "maximum": 25.52
+      },
+      "action_age": {
+        "count": 1898,
+        "minimum": 0.14233073079958558,
+        "median": 0.3674205970019102,
+        "p95": 0.763520258013159,
+        "maximum": 1.0587093671783805
+      },
+      "parent_rss_mib": {
+        "count": 5840,
+        "minimum": 1000.8203125,
+        "median": 2137.7109375,
+        "p95": 2588.19140625,
+        "maximum": 2730.859375
+      },
+      "parent_rss_final_scene_mib": {
+        "count": 351,
+        "minimum": 2465.71484375,
+        "median": 2466.98828125,
+        "p95": 2488.4921875,
+        "maximum": 2493.82421875
+      },
+      "output_interval": {
+        "count": 5839,
+        "minimum": 0.018322905991226435,
+        "median": 0.04620929295197129,
+        "p95": 0.09808014649897813,
+        "maximum": 0.45321981562301517
+      },
+      "labels": {
+        "other": 1776,
+        "wave": 54,
+        "drink": 39,
+        "chase": 7,
+        "pick_up": 12,
+        "throw": 10
+      },
+      "events": 1898
+    },
+    {
+      "cycle": 2,
+      "frames": 5915,
+      "average_processed_fps": 19.716666666666665,
+      "people_max": 19,
+      "health_fps": {
+        "count": 132,
+        "minimum": 10.49,
+        "median": 22.314999999999998,
+        "p95": 24.958000000000002,
+        "maximum": 25.23
+      },
+      "action_age": {
+        "count": 2005,
+        "minimum": 0.14954321598634124,
+        "median": 0.3597226501442492,
+        "p95": 0.7709765969775617,
+        "maximum": 1.2416050587780774
+      },
+      "parent_rss_mib": {
+        "count": 5915,
+        "minimum": 2468.09375,
+        "median": 2840.55859375,
+        "p95": 3048.868359375,
+        "maximum": 3111.015625
+      },
+      "parent_rss_final_scene_mib": {
+        "count": 358,
+        "minimum": 3023.85546875,
+        "median": 3025.02734375,
+        "p95": 3050.371484375,
+        "maximum": 3056.86328125
+      },
+      "output_interval": {
+        "count": 5914,
+        "minimum": 0.019397572614252567,
+        "median": 0.046118513913825154,
+        "p95": 0.0949825527844949,
+        "maximum": 0.2385655422694981
+      },
+      "labels": {
+        "other": 1882,
+        "wave": 54,
+        "drink": 38,
+        "chase": 6,
+        "pick_up": 14,
+        "throw": 11
+      },
+      "events": 2005
+    },
+    {
+      "cycle": 3,
+      "frames": 5906,
+      "average_processed_fps": 19.686666666666667,
+      "people_max": 20,
+      "health_fps": {
+        "count": 81,
+        "minimum": 9.41,
+        "median": 22.49,
+        "p95": 24.97,
+        "maximum": 25.49
+      },
+      "action_age": {
+        "count": 1952,
+        "minimum": 0.15178776672109962,
+        "median": 0.35682763950899243,
+        "p95": 0.8529671188443899,
+        "maximum": 1.2312132767401636
+      },
+      "parent_rss_mib": {
+        "count": 5906,
+        "minimum": 3029.72265625,
+        "median": 3031.07421875,
+        "p95": 3257.01171875,
+        "maximum": 3305.9609375
+      },
+      "parent_rss_final_scene_mib": {
+        "count": 335,
+        "minimum": 3254.234375,
+        "median": 3255.53515625,
+        "p95": 3279.1640625,
+        "maximum": 3282.55859375
+      },
+      "output_interval": {
+        "count": 5905,
+        "minimum": 0.01973807578906417,
+        "median": 0.04595472011715174,
+        "p95": 0.09603239847347142,
+        "maximum": 0.22669550403952599
+      },
+      "labels": {
+        "other": 1826,
+        "wave": 57,
+        "drink": 37,
+        "chase": 7,
+        "pick_up": 15,
+        "throw": 10
+      },
+      "events": 1952
+    }
+  ],
+  "gpu_memory_mib": {
+    "0": {
+      "count": 100,
+      "minimum": 15.0,
+      "median": 1617.0,
+      "p95": 1617.0,
+      "maximum": 1617.0
+    },
+    "1": {
+      "count": 100,
+      "minimum": 15.0,
+      "median": 1355.0,
+      "p95": 1355.0,
+      "maximum": 1355.0
+    },
+    "2": {
+      "count": 100,
+      "minimum": 15.0,
+      "median": 2483.0,
+      "p95": 2483.0,
+      "maximum": 2483.0
+    }
+  },
+  "final_zero_clip_counters": {
+    "clips_failed": 0,
+    "clips_forced": 0,
+    "clips_abandoned": 0,
+    "clips_unfinished": 0,
+    "write_errors": 0,
+    "frames_dropped": 0,
+    "dispatcher_frames_dropped": 0,
+    "events_queue_dropped": 0,
+    "late_action_events": 0,
+    "person_uploads_dropped": 0
+  },
+  "late_events": 4,
+  "events_without_output_frame": 0,
+  "event_log": {
+    "path": "/evidence/live/clips/input/20261029_021824_1/events.jsonl",
+    "events_written": 5855,
+    "events_dropped": 0
+  },
+  "clips": 85,
+  "complete_clips": 82,
+  "overlapping_pairs": 31,
+  "different_action_overlapping_pairs": 27,
+  "degraded_details": [
+    {
+      "time": 20.468424345832318,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 75.06993816187605,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.0,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 89.33630439592525,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.04,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 97.20026562176645,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.03,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 126.13884033961222,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.01,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 129.60354431159794,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.01,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 145.13730085268617,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 161.00551814073697,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 163.47751619666815,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.05,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 193.55541784362867,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.2,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 198.92828371794894,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.12,
+      "degraded_reason": "出流阻塞或已退出：hls,push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 220.07359621999785,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.06,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 269.38013726565987,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.07,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 302.9124597320333,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 380.7124613416381,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 407.246984413825,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 448.31345255486667,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.06,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 600.9831697847694,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 606.992404918652,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.05,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 640.6473101619631,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.03,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 713.0497373286635,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.02,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 798.4504436748102,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.07,
+      "degraded_reason": "出流阻塞或已退出：push",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    },
+    {
+      "time": 855.1752376710065,
+      "http_status": 200,
+      "status": "degraded",
+      "processing": "running",
+      "frame_age": 0.01,
+      "degraded_reason": "出流阻塞或已退出：hls",
+      "output": {
+        "capture_alive": true,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0,
+        "hls_kills": 0,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "push_kills": 0,
+        "push_error": "[mjpeg @ 0x5a3e2dc40a00] EOI missing, emulating"
+      }
+    }
+  ],
+  "http_clients": {
+    "viewer-10-mjpeg.mkv": 0,
+    "viewer-10-flv.mkv": 0,
+    "viewer-10-hls.mkv": 0,
+    "viewer-120-mjpeg.mkv": 0,
+    "viewer-120-flv.mkv": 0,
+    "viewer-120-hls.mkv": 0,
+    "viewer-250-mjpeg.mkv": 0,
+    "viewer-250-flv.mkv": 0,
+    "viewer-250-hls.mkv": 0,
+    "viewer-410-mjpeg.mkv": 0,
+    "viewer-410-flv.mkv": 0,
+    "viewer-410-hls.mkv": 0,
+    "viewer-610-mjpeg.mkv": 0,
+    "viewer-610-flv.mkv": 0,
+    "viewer-610-hls.mkv": 0,
+    "viewer-850-mjpeg.mkv": 0,
+    "viewer-850-flv.mkv": 0,
+    "viewer-850-hls.mkv": 0
+  },
+  "sse": {
+    "events": 5855,
+    "errors": [
+      {
+        "time": 3968742.425270078,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968742.657347008,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968742.85838943,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968743.05946297,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968743.262105291,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968743.46319251,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968743.684459545,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968743.885557274,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968744.086460829,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968744.287340512,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968744.488108291,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968744.709360355,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968744.910566901,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968745.142729079,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968745.343869393,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968745.566569231,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968745.767660101,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968745.968680293,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968746.169277253,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968746.369844934,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968746.597717351,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968746.798878448,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968746.999939359,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968747.227148185,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968747.428641817,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968747.629290206,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968747.856200142,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968748.056927444,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3968748.258073806,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      }
+    ],
+    "thread_stopped": true
+  },
+  "bounded_object_history_bytes": 27051840,
+  "concurrent_test_commands": {
+    "cpu": {
+      "stage": "cpu",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--name",
+        "darkpipe-platform-recheck-cpu-2820460",
+        "--network",
+        "host",
+        "--ipc=host",
+        "--entrypoint",
+        "/opt/conda/envs/darkpipe/bin/python",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/release-extracted/dark-demo-v2:/app:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline:/repo:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/release-extracted/dark-demo-v2:/repo/platform/dark-demo-v2:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/release-extracted/dark-demo-v2/oputil.py:/repo/platform/oputil.py:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029:/evidence:rw",
+        "-w",
+        "/app",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/person-object-release-20261026/test-tools:/test-tools:ro",
+        "-e",
+        "DARKPIPE_V2_OPERATOR_DIR=/app",
+        "darkpipe-operator:0.3.0",
+        "-u",
+        "/evidence/scripts/archive_cpu.py"
+      ],
+      "started_unix": 1793240786.2751338,
+      "returncode": 0,
+      "elapsed_seconds": 121.48392391204834
+    },
+    "demos": {
+      "stage": "demos",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--name",
+        "darkpipe-platform-recheck-demos-2802165",
+        "--network",
+        "host",
+        "--ipc=host",
+        "--entrypoint",
+        "/opt/conda/envs/darkpipe/bin/python",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/release-extracted/dark-demo-v2:/app:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline:/repo:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/release-extracted/dark-demo-v2:/repo/platform/dark-demo-v2:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/release-extracted/dark-demo-v2/oputil.py:/repo/platform/oputil.py:ro",
+        "-v",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029:/evidence:rw",
+        "-w",
+        "/app",
+        "--gpus",
+        "device=4",
+        "darkpipe-operator:0.3.0",
+        "-u",
+        "/evidence/scripts/demo.py"
+      ],
+      "started_unix": 1793240562.4492135,
+      "returncode": 0,
+      "elapsed_seconds": 688.5095269680023
+    }
+  },
+  "shared_host_limitation": "Live uses GPU0/1/2, offline sample regression GPU4. CPU regression and offline inference may share CPU/RAM/IO with live; this is a stability rerun, not an isolated throughput comparison.",
+  "memory_limitation": "RSS covers parent only; CUDA allocation statistics include caches. Three finite cycles cannot prove absence of a slow leak."
+}

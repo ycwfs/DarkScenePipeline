@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "inputs": 23,
+  "frames": 5207,
+  "events": 2399,
+  "clips": 19,
+  "decoded_videos": 42,
+  "matched_windows": 2399,
+  "changed_matched_labels": 0,
+  "limitation": "Historical data, not an independent accuracy test. Exact-input window matches only for per-window comparison."
+}

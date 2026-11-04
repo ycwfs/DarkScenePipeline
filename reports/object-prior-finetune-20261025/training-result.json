@@ -1,0 +1,12 @@
+{
+  "metrics": {
+    "metrics/precision(B)": 0.833191192063983,
+    "metrics/recall(B)": 0.4360789517587763,
+    "metrics/mAP50(B)": 0.47973851484838026,
+    "metrics/mAP50-95(B)": 0.2949929866656934,
+    "fitness": 0.2949929866656934
+  },
+  "automatic_best": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-prior-finetune-20261025/runs/objects/weights/best.pt",
+  "last": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-prior-finetune-20261025/runs/objects/weights/last.pt",
+  "note": "Final selection separately evaluates every epoch with the deployed one-to-one head."
+}

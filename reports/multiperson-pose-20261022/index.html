@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>多人骨架与动作 · 2026-10-22</title><style>
+body{margin:0;background:#10171f;color:#e8eef3;font:16px/1.65 system-ui,sans-serif}main{max-width:1400px;margin:auto;padding:28px}
+h1{font-size:30px}h2{margin:0;font-size:22px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+article{padding:18px;background:#1b2632;border:1px solid #3a4858;border-radius:10px}video{width:100%;background:black}
+p{color:#c4d0dc}.mode{color:#ffda6a}a{color:#9acaff}ul{columns:2}@media(max-width:750px){.grid{grid-template-columns:1fr}ul{columns:1}}
+</style><main><h1>多人骨架与动作 · 2026-10-22</h1>
+<p>逐人显示骨架分类；黄色骨架与“*”表示最高分人物，其完整概率向量参与 0.7×RGB + 0.3×骨架融合。
+绿色表示其他有效人物。人物标签含“其他”，底栏使用融合概率与0.75阈值。</p>
+<p>视频开头约1秒积累窗口。关闭照度门的两段展示与默认75的样例已分开标注；生产默认值保持75。
+模型未重训，类别、姿态和展品误检仍可能出错。<a href="README.md">查看完整说明</a></p><div class="grid"><article><h2>挥手3</h2><p class="mode">双人功能展示：照度门关闭</p>
+<video controls preload="metadata" poster="gate-off-demo/stills/挥手3.jpg" src="gate-off-demo/videos/挥手3_多人骨架.mp4"></video>
+<p>本片源图低于默认亮度门，仅此展示显式设lum_gate=0；左上与右下为真实同框两人。</p><p>160帧 · 同时显示多个骨架 136帧 · 全部9条事件融合公式核验通过</p>
+<a href="gate-off-demo/videos/挥手3_多人骨架.mp4" download>下载视频</a></article><article><h2>挥手4</h2><p class="mode">双人功能展示：照度门关闭</p>
+<video controls preload="metadata" poster="gate-off-demo/stills/挥手4.jpg" src="gate-off-demo/videos/挥手4_多人骨架.mp4"></video>
+<p>本片源图低于默认亮度门，仅此展示显式设lum_gate=0；左上与右下为真实同框两人。</p><p>169帧 · 同时显示多个骨架 145帧 · 全部10条事件融合公式核验通过</p>
+<a href="gate-off-demo/videos/挥手4_多人骨架.mp4" download>下载视频</a></article><article><h2>追逐24</h2><p class="mode">默认照度门75：含人形展品</p>
+<video controls preload="metadata" poster="default-multi/stills/追逐24.jpg" src="default-multi/videos/追逐24_多人骨架.mp4"></video>
+<p>左侧固定人形展品被RTMO当成人，本片展示真实模型局限，不能把它计作真实人员。</p><p>137帧 · 同时显示多个骨架 102帧 · 全部7条事件融合公式核验通过</p>
+<a href="default-multi/videos/追逐24_多人骨架.mp4" download>下载视频</a></article><article><h2>追逐25</h2><p class="mode">默认照度门75：含人形展品</p>
+<video controls preload="metadata" poster="default-multi/stills/追逐25.jpg" src="default-multi/videos/追逐25_多人骨架.mp4"></video>
+<p>左侧固定人形展品被RTMO当成人，本片展示真实模型局限，不能把它计作真实人员。</p><p>141帧 · 同时显示多个骨架 112帧 · 全部7条事件融合公式核验通过</p>
+<a href="default-multi/videos/追逐25_多人骨架.mp4" download>下载视频</a></article><article><h2>喝水16</h2><p class="mode">默认照度门75</p>
+<video controls preload="metadata" poster="stills/喝水16.jpg" src="videos/喝水16_多人骨架.mp4"></video>
+<p>人物边上为骨架模型自己的类别，底栏为融合后的结果，二者可以不同。</p><p>75帧 · 同时显示多个骨架 0帧 · 全部4条事件融合公式核验通过</p>
+<a href="videos/喝水16_多人骨架.mp4" download>下载视频</a></article><article><h2>other80</h2><p class="mode">默认照度门75</p>
+<video controls preload="metadata" poster="stills/other80.jpg" src="videos/other80_多人骨架.mp4"></video>
+<p>人物边上为骨架模型自己的类别，底栏为融合后的结果，二者可以不同。</p><p>88帧 · 同时显示多个骨架 0帧 · 全部4条事件融合公式核验通过</p>
+<a href="videos/other80_多人骨架.mp4" download>下载视频</a></article></div><h2>全部测试视频</h2><ul><li><a href="videos/挥手3_多人骨架.mp4">挥手3 · 默认照度门75</a></li><li><a href="videos/挥手4_多人骨架.mp4">挥手4 · 默认照度门75</a></li><li><a href="videos/挥手5_多人骨架.mp4">挥手5 · 默认照度门75</a></li><li><a href="videos/挥手20_多人骨架.mp4">挥手20 · 默认照度门75</a></li><li><a href="videos/追逐16_多人骨架.mp4">追逐16 · 默认照度门75</a></li><li><a href="videos/喝水16_多人骨架.mp4">喝水16 · 默认照度门75</a></li><li><a href="videos/捡东西2_多人骨架.mp4">捡东西2 · 默认照度门75</a></li><li><a href="videos/挥手18_多人骨架.mp4">挥手18 · 默认照度门75</a></li><li><a href="videos/other80_多人骨架.mp4">other80 · 默认照度门75</a></li><li><a href="videos/other1_多人骨架.mp4">other1 · 默认照度门75</a></li><li><a href="default-multi/videos/追逐15_多人骨架.mp4">追逐15 · 默认照度门75：含人形展品</a></li><li><a href="default-multi/videos/追逐24_多人骨架.mp4">追逐24 · 默认照度门75：含人形展品</a></li><li><a href="default-multi/videos/追逐25_多人骨架.mp4">追逐25 · 默认照度门75：含人形展品</a></li><li><a href="default-multi/videos/追逐26_多人骨架.mp4">追逐26 · 默认照度门75：含人形展品</a></li><li><a href="gate-off-demo/videos/挥手3_多人骨架.mp4">挥手3 · 双人功能展示：照度门关闭</a></li><li><a href="gate-off-demo/videos/挥手4_多人骨架.mp4">挥手4 · 双人功能展示：照度门关闭</a></li></ul></main></html>

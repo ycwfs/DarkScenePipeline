@@ -1,0 +1,1553 @@
+{
+  "passed": true,
+  "integrated_sources": [
+    {
+      "directory": "long-videos/new-01",
+      "source": {
+        "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+        "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+        "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "bytes": 214371254,
+        "sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "duration": 395.04,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 9876,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 1
+      },
+      "frames": 9876,
+      "events": 5565,
+      "actions": {
+        "other": 5558,
+        "chase": 6,
+        "wave": 1
+      },
+      "running_before": 10,
+      "running_after": 6,
+      "speed_vetoes": 4,
+      "clips": 6,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "long-videos/new-07",
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "bytes": 166479314,
+        "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "duration": 540.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 13500,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 7
+      },
+      "frames": 13500,
+      "events": 6312,
+      "actions": {
+        "other": 6310,
+        "drink": 1,
+        "wave": 1
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 2,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "long-videos/new-09",
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "bytes": 131077996,
+        "sha256": "ef0658fe87e45bc8a43f608057f5fc26b2810aa307a56a7e2f017c5b747d974d",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "duration": 242.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 6050,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 9
+      },
+      "frames": 6050,
+      "events": 5036,
+      "actions": {
+        "other": 5035,
+        "wave": 1
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/220255c6344fa810",
+      "source": {
+        "source": "real-actiondata-all/追逐38.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "220255c6344fa81010f84a421800fccf49c7296033930c8b8c51e93e8c1ec338",
+        "bytes": 441007,
+        "frames": 62,
+        "fps": 30.0,
+        "width": 968,
+        "height": 544,
+        "seconds": 2.066666666666667,
+        "validation": "container metadata only; full decode pending",
+        "id": "220255c6344fa810",
+        "aliases": [
+          "real-actiondata-all/追逐38.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "220255c6344fa810",
+        "raw_mean_luma": 104.42485239268382,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/220255c6344fa810/result.json",
+        "cache_sha256": "667cdb50ac9001aeea3344099fb92270dd4e38b736258fcbd9bc9797e0aeb04c",
+        "scope": "onsite",
+        "windows": 2,
+        "box_frames": 58,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 62,
+      "events": 2,
+      "actions": {
+        "chase": 2
+      },
+      "running_before": 2,
+      "running_after": 2,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/8ac476f8fb995f97",
+      "source": {
+        "source": "real-actiondata-all/追逐24.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "8ac476f8fb995f9770fb1acfeb80d259b87cb896ea26d6043b24fd562a3d62b0",
+        "bytes": 3246399,
+        "frames": 137,
+        "fps": 30.0,
+        "width": 1920,
+        "height": 1080,
+        "seconds": 4.566666666666666,
+        "validation": "container metadata only; full decode pending",
+        "id": "8ac476f8fb995f97",
+        "aliases": [
+          "real-actiondata-all/追逐24.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "test",
+        "group": "8ac476f8fb995f97",
+        "raw_mean_luma": 120.72777125576151,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/8ac476f8fb995f97/result.json",
+        "cache_sha256": "93f42e7f1c8ffd7eec7eb31d754cf38fb4432818e01463d038d9fa4c44690b35",
+        "scope": "onsite",
+        "windows": 8,
+        "box_frames": 137,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 137,
+      "events": 8,
+      "actions": {
+        "other": 2,
+        "chase": 6
+      },
+      "running_before": 6,
+      "running_after": 6,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/adult-walk",
+      "source": {
+        "id": "adult-walk",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/adult-walk.mkv",
+        "start": 190,
+        "seconds": 12,
+        "frames": 300,
+        "processed": false,
+        "sha256": "680c9ed3cd4b78c2a00f7cf37053c4af1d3c7a81836ea3fdad25878747482b04",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 300,
+      "events": 190,
+      "actions": {
+        "other": 190
+      },
+      "running_before": 2,
+      "running_after": 0,
+      "speed_vetoes": 2,
+      "clips": 0,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/c4ebf78868c388a0",
+      "source": {
+        "source": "real-actiondata-all/other/other186.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "other",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "c4ebf78868c388a01c1d586097a264ff1216e66a9a93d22e885fb8d9b0d70ccc",
+        "bytes": 476773,
+        "frames": 71,
+        "fps": 30.0,
+        "width": 968,
+        "height": 544,
+        "seconds": 2.3666666666666667,
+        "validation": "container metadata only; full decode pending",
+        "id": "c4ebf78868c388a0",
+        "aliases": [
+          "real-actiondata-all/other/other186.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "c4ebf78868c388a0",
+        "raw_mean_luma": 104.31459946461634,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/c4ebf78868c388a0/result.json",
+        "cache_sha256": "0267bd73e89f10a2abc38d9726b69f7ed0b0f5d588b5dfb804eec6593c565aa5",
+        "scope": "onsite",
+        "windows": 3,
+        "box_frames": 71,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 71,
+      "events": 3,
+      "actions": {
+        "chase": 1,
+        "other": 2
+      },
+      "running_before": 1,
+      "running_after": 1,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/child-across",
+      "source": {
+        "id": "child-across",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/child-across.mkv",
+        "start": 294,
+        "seconds": 12,
+        "frames": 300,
+        "processed": false,
+        "sha256": "d1d02e85a265748541a4431c4d229ef987978ad642b08568493008bf28fc5b3d",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 300,
+      "events": 140,
+      "actions": {
+        "other": 138,
+        "chase": 2
+      },
+      "running_before": 2,
+      "running_after": 2,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/child-away",
+      "source": {
+        "id": "child-away",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/child-away.mkv",
+        "start": 18,
+        "seconds": 10,
+        "frames": 250,
+        "processed": false,
+        "sha256": "6f5c339ef2900dc948c311d4b3346cebb43ddcee4e078a9a795fca9907a091cd",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 250,
+      "events": 137,
+      "actions": {
+        "other": 136,
+        "wave": 1
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/de33753bf592c4cc",
+      "source": {
+        "source": "real-actiondata-all/追逐30.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "de33753bf592c4ccc5420868e80ee9f8e70ebe7b7edb87e1ad115f965137e4bc",
+        "bytes": 5002074,
+        "frames": 54,
+        "fps": 25.0,
+        "width": 1920,
+        "height": 1080,
+        "seconds": 2.16,
+        "validation": "container metadata only; full decode pending",
+        "id": "de33753bf592c4cc",
+        "aliases": [
+          "real-actiondata-all/追逐30.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "de33753bf592c4cc",
+        "raw_mean_luma": 31.338647954291947,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/de33753bf592c4cc/result.json",
+        "cache_sha256": "455d48fe64287dce6efe6f675bc44fc32046967bbb58dc4973258bebcf7f284b",
+        "scope": "onsite",
+        "windows": 3,
+        "box_frames": 52,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 54,
+      "events": 3,
+      "actions": {
+        "other": 3
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 0,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/de7f71c723b0f8d2",
+      "source": {
+        "source": "real-actiondata-all/追逐40.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "de7f71c723b0f8d272a7a5d73075b388e02662dc0eb298ea1223b1af5896576d",
+        "bytes": 1556544,
+        "frames": 122,
+        "fps": 30.0,
+        "width": 968,
+        "height": 544,
+        "seconds": 4.066666666666666,
+        "validation": "container metadata only; full decode pending",
+        "id": "de7f71c723b0f8d2",
+        "aliases": [
+          "real-actiondata-all/追逐40.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "de7f71c723b0f8d2",
+        "raw_mean_luma": 103.84576465225926,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/de7f71c723b0f8d2/result.json",
+        "cache_sha256": "6d48c4fc4291014e7d1b7695764e530020d19a5b9a7cb49bdf637055464797e4",
+        "scope": "onsite",
+        "windows": 7,
+        "box_frames": 122,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 122,
+      "events": 7,
+      "actions": {
+        "other": 1,
+        "chase": 6
+      },
+      "running_before": 6,
+      "running_after": 6,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/overlap-walk",
+      "source": {
+        "id": "overlap-walk",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/overlap-walk.mkv",
+        "start": 225,
+        "seconds": 12,
+        "frames": 300,
+        "processed": false,
+        "sha256": "0a6b321566f8f6f8bf8d26c5c49fcef07a512adde04d68c09f85a4719547b1b8",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 300,
+      "events": 185,
+      "actions": {
+        "other": 184,
+        "chase": 1
+      },
+      "running_before": 1,
+      "running_after": 1,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/slow-walk",
+      "source": {
+        "id": "slow-walk",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/slow-walk.mkv",
+        "start": 348,
+        "seconds": 10,
+        "frames": 250,
+        "processed": false,
+        "sha256": "4b10ed6baa6018f226843ee2e4ecd6e6e1fd1fb4d97649d380f6609aad1b7e85",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 250,
+      "events": 88,
+      "actions": {
+        "other": 88
+      },
+      "running_before": 1,
+      "running_after": 0,
+      "speed_vetoes": 1,
+      "clips": 0,
+      "clip_context_incomplete": 0
+    }
+  ],
+  "independent_comparison": [
+    {
+      "source": "new-01",
+      "reference_events": 5565,
+      "current_events": 5565,
+      "same_geometry": true,
+      "max_probability_difference": {
+        "rgb_probs": 0.0037341415882110596,
+        "skeleton_probs": 0.0,
+        "fused_probs": 0.0036295652389526367
+      },
+      "label_changes": [
+        {
+          "frame": 4878,
+          "track_id": 460,
+          "before": "chase",
+          "after": "other",
+          "running_prior": {
+            "applied": true,
+            "supported": false,
+            "min_speed": 0.35,
+            "speed": 0.1766639458674049,
+            "units": "person_box_heights_per_second",
+            "lag_seconds": 0.2,
+            "min_joints": 5,
+            "min_pairs": 3,
+            "keypoint_conf": 0.5,
+            "pairs": [
+              {
+                "start_frame": 4856,
+                "end_frame": 4861,
+                "start_time": 194.24,
+                "end_time": 194.44,
+                "joints": 13,
+                "speed": 0.37114450080682765
+              },
+              {
+                "start_frame": 4859,
+                "end_frame": 4863,
+                "start_time": 194.36,
+                "end_time": 194.52,
+                "joints": 13,
+                "speed": 0.28788527100136657
+              },
+              {
+                "start_frame": 4859,
+                "end_frame": 4864,
+                "start_time": 194.36,
+                "end_time": 194.56,
+                "joints": 13,
+                "speed": 0.251033369424005
+              },
+              {
+                "start_frame": 4860,
+                "end_frame": 4865,
+                "start_time": 194.4,
+                "end_time": 194.6,
+                "joints": 15,
+                "speed": 0.15471593594369468
+              },
+              {
+                "start_frame": 4861,
+                "end_frame": 4866,
+                "start_time": 194.44,
+                "end_time": 194.64,
+                "joints": 15,
+                "speed": 0.12934604833555408
+              },
+              {
+                "start_frame": 4863,
+                "end_frame": 4867,
+                "start_time": 194.52,
+                "end_time": 194.68,
+                "joints": 15,
+                "speed": 0.17195940901986445
+              },
+              {
+                "start_frame": 4863,
+                "end_frame": 4868,
+                "start_time": 194.52,
+                "end_time": 194.72,
+                "joints": 15,
+                "speed": 0.12969341080067573
+              },
+              {
+                "start_frame": 4864,
+                "end_frame": 4869,
+                "start_time": 194.56,
+                "end_time": 194.76,
+                "joints": 15,
+                "speed": 0.12064185394954993
+              },
+              {
+                "start_frame": 4865,
+                "end_frame": 4870,
+                "start_time": 194.6,
+                "end_time": 194.8,
+                "joints": 15,
+                "speed": 0.13149895332027942
+              },
+              {
+                "start_frame": 4866,
+                "end_frame": 4871,
+                "start_time": 194.64,
+                "end_time": 194.84,
+                "joints": 15,
+                "speed": 0.12718595488559453
+              },
+              {
+                "start_frame": 4867,
+                "end_frame": 4872,
+                "start_time": 194.68,
+                "end_time": 194.88,
+                "joints": 15,
+                "speed": 0.15178955729259308
+              },
+              {
+                "start_frame": 4868,
+                "end_frame": 4873,
+                "start_time": 194.72,
+                "end_time": 194.92,
+                "joints": 15,
+                "speed": 0.1326513052061117
+              },
+              {
+                "start_frame": 4869,
+                "end_frame": 4874,
+                "start_time": 194.76,
+                "end_time": 194.96,
+                "joints": 15,
+                "speed": 0.1583990672871805
+              },
+              {
+                "start_frame": 4870,
+                "end_frame": 4875,
+                "start_time": 194.8,
+                "end_time": 195.0,
+                "joints": 15,
+                "speed": 0.15056900482331648
+              },
+              {
+                "start_frame": 4871,
+                "end_frame": 4876,
+                "start_time": 194.84,
+                "end_time": 195.04,
+                "joints": 15,
+                "speed": 0.17899826876068525
+              },
+              {
+                "start_frame": 4872,
+                "end_frame": 4877,
+                "start_time": 194.88,
+                "end_time": 195.08,
+                "joints": 16,
+                "speed": 0.15281636996679354
+              },
+              {
+                "start_frame": 4873,
+                "end_frame": 4878,
+                "start_time": 194.92,
+                "end_time": 195.12,
+                "joints": 15,
+                "speed": 0.2029587989217907
+              }
+            ],
+            "reason": "below_speed_threshold",
+            "missing_policy": "bypass",
+            "unique_frames": 22,
+            "valid_pairs": 17,
+            "label": "other"
+          }
+        },
+        {
+          "frame": 4951,
+          "track_id": 470,
+          "before": "chase",
+          "after": "other",
+          "running_prior": {
+            "applied": true,
+            "supported": false,
+            "min_speed": 0.35,
+            "speed": 0.18249401644209495,
+            "units": "person_box_heights_per_second",
+            "lag_seconds": 0.2,
+            "min_joints": 5,
+            "min_pairs": 3,
+            "keypoint_conf": 0.5,
+            "pairs": [
+              {
+                "start_frame": 4933,
+                "end_frame": 4937,
+                "start_time": 197.32,
+                "end_time": 197.48,
+                "joints": 15,
+                "speed": 0.286725811981675
+              },
+              {
+                "start_frame": 4933,
+                "end_frame": 4938,
+                "start_time": 197.32,
+                "end_time": 197.52,
+                "joints": 15,
+                "speed": 0.2503537871129681
+              },
+              {
+                "start_frame": 4934,
+                "end_frame": 4939,
+                "start_time": 197.36,
+                "end_time": 197.56,
+                "joints": 15,
+                "speed": 0.25098060786271664
+              },
+              {
+                "start_frame": 4935,
+                "end_frame": 4940,
+                "start_time": 197.4,
+                "end_time": 197.6,
+                "joints": 15,
+                "speed": 0.22815490360029625
+              },
+              {
+                "start_frame": 4936,
+                "end_frame": 4941,
+                "start_time": 197.44,
+                "end_time": 197.64,
+                "joints": 15,
+                "speed": 0.24760596195320939
+              },
+              {
+                "start_frame": 4937,
+                "end_frame": 4942,
+                "start_time": 197.48,
+                "end_time": 197.68,
+                "joints": 15,
+                "speed": 0.19866030391917483
+              },
+              {
+                "start_frame": 4938,
+                "end_frame": 4943,
+                "start_time": 197.52,
+                "end_time": 197.72,
+                "joints": 15,
+                "speed": 0.1994655624800121
+              },
+              {
+                "start_frame": 4939,
+                "end_frame": 4944,
+                "start_time": 197.56,
+                "end_time": 197.76,
+                "joints": 15,
+                "speed": 0.22690609426422859
+              },
+              {
+                "start_frame": 4940,
+                "end_frame": 4945,
+                "start_time": 197.6,
+                "end_time": 197.8,
+                "joints": 15,
+                "speed": 0.20023946944212825
+              },
+              {
+                "start_frame": 4941,
+                "end_frame": 4946,
+                "start_time": 197.64,
+                "end_time": 197.84,
+                "joints": 15,
+                "speed": 0.11014421723632888
+              },
+              {
+                "start_frame": 4942,
+                "end_frame": 4947,
+                "start_time": 197.68,
+                "end_time": 197.88,
+                "joints": 15,
+                "speed": 0.11618200247843921
+              },
+              {
+                "start_frame": 4943,
+                "end_frame": 4948,
+                "start_time": 197.72,
+                "end_time": 197.92,
+                "joints": 15,
+                "speed": 0.11798845723114702
+              },
+              {
+                "start_frame": 4944,
+                "end_frame": 4949,
+                "start_time": 197.76,
+                "end_time": 197.96,
+                "joints": 15,
+                "speed": 0.12598472625768964
+              },
+              {
+                "start_frame": 4945,
+                "end_frame": 4950,
+                "start_time": 197.8,
+                "end_time": 198.0,
+                "joints": 15,
+                "speed": 0.09795136230133258
+              },
+              {
+                "start_frame": 4946,
+                "end_frame": 4951,
+                "start_time": 197.84,
+                "end_time": 198.04,
+                "joints": 15,
+                "speed": 0.08006697851007741
+              }
+            ],
+            "reason": "below_speed_threshold",
+            "missing_policy": "bypass",
+            "unique_frames": 22,
+            "valid_pairs": 15,
+            "label": "other"
+          }
+        },
+        {
+          "frame": 8120,
+          "track_id": 795,
+          "before": "chase",
+          "after": "other",
+          "running_prior": {
+            "applied": true,
+            "supported": false,
+            "min_speed": 0.35,
+            "speed": 0.29082835308025107,
+            "units": "person_box_heights_per_second",
+            "lag_seconds": 0.2,
+            "min_joints": 5,
+            "min_pairs": 3,
+            "keypoint_conf": 0.5,
+            "pairs": [
+              {
+                "start_frame": 8095,
+                "end_frame": 8099,
+                "start_time": 323.8,
+                "end_time": 323.96,
+                "joints": 12,
+                "speed": 0.32820738973289404
+              },
+              {
+                "start_frame": 8095,
+                "end_frame": 8100,
+                "start_time": 323.8,
+                "end_time": 324.0,
+                "joints": 12,
+                "speed": 0.3223842177217593
+              },
+              {
+                "start_frame": 8096,
+                "end_frame": 8101,
+                "start_time": 323.84,
+                "end_time": 324.04,
+                "joints": 13,
+                "speed": 0.2714139637293538
+              },
+              {
+                "start_frame": 8097,
+                "end_frame": 8102,
+                "start_time": 323.88,
+                "end_time": 324.08,
+                "joints": 13,
+                "speed": 0.25082998678952934
+              },
+              {
+                "start_frame": 8098,
+                "end_frame": 8103,
+                "start_time": 323.92,
+                "end_time": 324.12,
+                "joints": 13,
+                "speed": 0.2952153548616012
+              },
+              {
+                "start_frame": 8099,
+                "end_frame": 8104,
+                "start_time": 323.96,
+                "end_time": 324.16,
+                "joints": 13,
+                "speed": 0.3086202125762491
+              },
+              {
+                "start_frame": 8100,
+                "end_frame": 8105,
+                "start_time": 324.0,
+                "end_time": 324.2,
+                "joints": 12,
+                "speed": 0.2714614058114821
+              },
+              {
+                "start_frame": 8101,
+                "end_frame": 8106,
+                "start_time": 324.04,
+                "end_time": 324.24,
+                "joints": 12,
+                "speed": 0.23833264718938366
+              },
+              {
+                "start_frame": 8102,
+                "end_frame": 8107,
+                "start_time": 324.08,
+                "end_time": 324.28,
+                "joints": 12,
+                "speed": 0.21222134704755516
+              },
+              {
+                "start_frame": 8103,
+                "end_frame": 8108,
+                "start_time": 324.12,
+                "end_time": 324.32,
+                "joints": 12,
+                "speed": 0.1785914956810071
+              },
+              {
+                "start_frame": 8104,
+                "end_frame": 8109,
+                "start_time": 324.16,
+                "end_time": 324.36,
+                "joints": 12,
+                "speed": 0.23780846286526677
+              },
+              {
+                "start_frame": 8105,
+                "end_frame": 8110,
+                "start_time": 324.2,
+                "end_time": 324.4,
+                "joints": 12,
+                "speed": 0.2950561035138162
+              },
+              {
+                "start_frame": 8106,
+                "end_frame": 8111,
+                "start_time": 324.24,
+                "end_time": 324.44,
+                "joints": 12,
+                "speed": 0.38011299819583966
+              },
+              {
+                "start_frame": 8107,
+                "end_frame": 8112,
+                "start_time": 324.28,
+                "end_time": 324.48,
+                "joints": 12,
+                "speed": 0.3651051422309457
+              },
+              {
+                "start_frame": 8108,
+                "end_frame": 8113,
+                "start_time": 324.32,
+                "end_time": 324.52,
+                "joints": 12,
+                "speed": 0.347533517101717
+              },
+              {
+                "start_frame": 8109,
+                "end_frame": 8114,
+                "start_time": 324.36,
+                "end_time": 324.56,
+                "joints": 12,
+                "speed": 0.3417395286735156
+              },
+              {
+                "start_frame": 8110,
+                "end_frame": 8115,
+                "start_time": 324.4,
+                "end_time": 324.6,
+                "joints": 12,
+                "speed": 0.3329875095909137
+              },
+              {
+                "start_frame": 8111,
+                "end_frame": 8116,
+                "start_time": 324.44,
+                "end_time": 324.64,
+                "joints": 12,
+                "speed": 0.30625629100271773
+              },
+              {
+                "start_frame": 8112,
+                "end_frame": 8117,
+                "start_time": 324.48,
+                "end_time": 324.68,
+                "joints": 12,
+                "speed": 0.32966249180307916
+              },
+              {
+                "start_frame": 8113,
+                "end_frame": 8118,
+                "start_time": 324.52,
+                "end_time": 324.72,
+                "joints": 12,
+                "speed": 0.30749023156582633
+              },
+              {
+                "start_frame": 8114,
+                "end_frame": 8119,
+                "start_time": 324.56,
+                "end_time": 324.76,
+                "joints": 12,
+                "speed": 0.2664436029465151
+              },
+              {
+                "start_frame": 8115,
+                "end_frame": 8120,
+                "start_time": 324.6,
+                "end_time": 324.8,
+                "joints": 12,
+                "speed": 0.2107498671345566
+              }
+            ],
+            "reason": "below_speed_threshold",
+            "missing_policy": "bypass",
+            "unique_frames": 26,
+            "valid_pairs": 22,
+            "label": "other"
+          }
+        },
+        {
+          "frame": 8828,
+          "track_id": 822,
+          "before": "chase",
+          "after": "other",
+          "running_prior": {
+            "applied": true,
+            "supported": false,
+            "min_speed": 0.35,
+            "speed": 0.31547210677651644,
+            "units": "person_box_heights_per_second",
+            "lag_seconds": 0.2,
+            "min_joints": 5,
+            "min_pairs": 3,
+            "keypoint_conf": 0.5,
+            "pairs": [
+              {
+                "start_frame": 8803,
+                "end_frame": 8807,
+                "start_time": 352.12,
+                "end_time": 352.28,
+                "joints": 14,
+                "speed": 0.3581910657448924
+              },
+              {
+                "start_frame": 8803,
+                "end_frame": 8808,
+                "start_time": 352.12,
+                "end_time": 352.32,
+                "joints": 13,
+                "speed": 0.31894961532639726
+              },
+              {
+                "start_frame": 8804,
+                "end_frame": 8809,
+                "start_time": 352.16,
+                "end_time": 352.36,
+                "joints": 12,
+                "speed": 0.30598573750858565
+              },
+              {
+                "start_frame": 8805,
+                "end_frame": 8810,
+                "start_time": 352.2,
+                "end_time": 352.4,
+                "joints": 12,
+                "speed": 0.26203977314879756
+              },
+              {
+                "start_frame": 8806,
+                "end_frame": 8811,
+                "start_time": 352.24,
+                "end_time": 352.44,
+                "joints": 12,
+                "speed": 0.2196989227179619
+              },
+              {
+                "start_frame": 8807,
+                "end_frame": 8812,
+                "start_time": 352.28,
+                "end_time": 352.48,
+                "joints": 12,
+                "speed": 0.2264079210682544
+              },
+              {
+                "start_frame": 8808,
+                "end_frame": 8813,
+                "start_time": 352.32,
+                "end_time": 352.52,
+                "joints": 12,
+                "speed": 0.1809989680336827
+              },
+              {
+                "start_frame": 8809,
+                "end_frame": 8814,
+                "start_time": 352.36,
+                "end_time": 352.56,
+                "joints": 11,
+                "speed": 0.17710375960600822
+              },
+              {
+                "start_frame": 8810,
+                "end_frame": 8815,
+                "start_time": 352.4,
+                "end_time": 352.6,
+                "joints": 11,
+                "speed": 0.21030868247703402
+              },
+              {
+                "start_frame": 8811,
+                "end_frame": 8816,
+                "start_time": 352.44,
+                "end_time": 352.64,
+                "joints": 11,
+                "speed": 0.247679962422262
+              },
+              {
+                "start_frame": 8812,
+                "end_frame": 8817,
+                "start_time": 352.48,
+                "end_time": 352.68,
+                "joints": 11,
+                "speed": 0.24184894628709033
+              },
+              {
+                "start_frame": 8813,
+                "end_frame": 8818,
+                "start_time": 352.52,
+                "end_time": 352.72,
+                "joints": 12,
+                "speed": 0.2024754788882355
+              },
+              {
+                "start_frame": 8815,
+                "end_frame": 8820,
+                "start_time": 352.6,
+                "end_time": 352.8,
+                "joints": 8,
+                "speed": 0.432655330658031
+              },
+              {
+                "start_frame": 8816,
+                "end_frame": 8821,
+                "start_time": 352.64,
+                "end_time": 352.84,
+                "joints": 8,
+                "speed": 0.4883159452206433
+              },
+              {
+                "start_frame": 8817,
+                "end_frame": 8822,
+                "start_time": 352.68,
+                "end_time": 352.88,
+                "joints": 8,
+                "speed": 0.4908329464002862
+              },
+              {
+                "start_frame": 8818,
+                "end_frame": 8823,
+                "start_time": 352.72,
+                "end_time": 352.92,
+                "joints": 9,
+                "speed": 0.39359712247022244
+              },
+              {
+                "start_frame": 8818,
+                "end_frame": 8824,
+                "start_time": 352.72,
+                "end_time": 352.96,
+                "joints": 10,
+                "speed": 0.39156788672060533
+              },
+              {
+                "start_frame": 8820,
+                "end_frame": 8825,
+                "start_time": 352.8,
+                "end_time": 353.0,
+                "joints": 9,
+                "speed": 0.35699521927535294
+              },
+              {
+                "start_frame": 8821,
+                "end_frame": 8826,
+                "start_time": 352.84,
+                "end_time": 353.04,
+                "joints": 9,
+                "speed": 0.36836193500543535
+              },
+              {
+                "start_frame": 8822,
+                "end_frame": 8827,
+                "start_time": 352.88,
+                "end_time": 353.08,
+                "joints": 8,
+                "speed": 0.38439936425380794
+              },
+              {
+                "start_frame": 8823,
+                "end_frame": 8828,
+                "start_time": 352.92,
+                "end_time": 353.12,
+                "joints": 8,
+                "speed": 0.3664996590732583
+              }
+            ],
+            "reason": "below_speed_threshold",
+            "missing_policy": "bypass",
+            "unique_frames": 25,
+            "valid_pairs": 21,
+            "label": "other"
+          }
+        }
+      ]
+    },
+    {
+      "source": "new-07",
+      "reference_events": 6312,
+      "current_events": 6312,
+      "same_geometry": true,
+      "max_probability_difference": {
+        "rgb_probs": 0.004636615514755249,
+        "skeleton_probs": 0.0,
+        "fused_probs": 0.0045067667961120605
+      },
+      "label_changes": []
+    },
+    {
+      "source": "new-09",
+      "reference_events": 5036,
+      "current_events": 5036,
+      "same_geometry": true,
+      "max_probability_difference": {
+        "rgb_probs": 0.00296097993850708,
+        "skeleton_probs": 0.0,
+        "fused_probs": 0.0028780698776245117
+      },
+      "label_changes": []
+    }
+  ],
+  "decoded_videos": [
+    {
+      "path": "long-videos/new-01/output.mp4",
+      "sha256": "0a8e1e80d4974015323cfa8c076d57242d7d6892a56ec4035695115ec2d94be2",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "395.040000",
+        "nb_frames": "9876"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/clips/review/E000_T037_G001/R00003/running/E000_T037_G001_R00003_20261027_073604_running_0001.mp4",
+      "sha256": "2a49a90712a68a1f3e236e17ab08275cf365c2c731713704c419eb7198df6b12",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/clips/review/E000_T037_G001/R00001/running/E000_T037_G001_R00001_20261027_073551_running_0001.mp4",
+      "sha256": "24e1c1c45e24aaf99a05ebdde5337500a6cfc696e0c70f5c2fff75ebe8498d4f",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/clips/review/E000_T558_G000/R00004/running/E000_T558_G000_R00004_20261027_074859_running_0001.mp4",
+      "sha256": "b3672b7522a06ec7ee86cc35b0809b0ef3074d85b56bc5e222ef6e15f37f557b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/clips/review/E000_T909_G001/R00006/running/E000_T909_G001_R00006_20261027_075742_running_0001.mp4",
+      "sha256": "f3ec70173ca3b86bfe36b2c47af7908646d952a3b9e7e441131171368e76fc31",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/clips/review/E000_T749_G000/R00005/running/E000_T749_G000_R00005_20261027_075320_running_0001.mp4",
+      "sha256": "e078e8aba53df0b967994871f99c87c11bad3b74e0f792741a522119a1447626",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/clips/review/E000_T044_G001/R00002/waving/E000_T044_G001_R00002_20261027_073559_waving_0001.mp4",
+      "sha256": "d6f23197100e431898b7af57242f52d7232481bf3ba4f1424299a5b57848a3ec",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/output.mp4",
+      "sha256": "a93f83b63f4aad723d0eb5d160fefe538cd466ea2cbd7df4feb1597cff5cb17c",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "540.000000",
+        "nb_frames": "13500"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/clips/review/E000_T992_G000/R00002/waving/E000_T992_G000_R00002_20261027_075911_waving_0001.mp4",
+      "sha256": "4db02b864fec3de33046f54d1f815ad9b4e3bf604e175020bfb74789049482b5",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/clips/review/E000_T026_G000/R00001/drinking_water/E000_T026_G000_R00001_20261027_073755_drinking_water_0001.mp4",
+      "sha256": "cfa0f84d2add9b5abc85379ba100bf791047642332c0417887c2f56317ae4928",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-09/output.mp4",
+      "sha256": "bfdc3277f8aa7b786bf5c3add8f0d784f6a36f5580ad0beb8ab421735f31733b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "242.000000",
+        "nb_frames": "6050"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-09/clips/review/E000_T607_G000/R00001/waving/E000_T607_G000_R00001_20261027_074545_waving_0001.mp4",
+      "sha256": "d551d74ac5cac0896041d60dd92421417339b4b02fba3a3aeda0657826733d43",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/220255c6344fa810/output.mp4",
+      "sha256": "90e78ebe6317574a3f4aec3ec47f4953eda988d99ae9a42d733f3fffda058ae4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.066667",
+        "nb_frames": "62"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/220255c6344fa810/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_074156_running_0001.mp4",
+      "sha256": "1d027573f9673bc78e2feb8b097bf576d1886c542dbabff3a67a9391b29d287b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.033333",
+        "nb_frames": "61"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/8ac476f8fb995f97/output.mp4",
+      "sha256": "ded871f97344a8f74627515267b0d50c0eb52c742843fd8b730103b3eb87680d",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.566667",
+        "nb_frames": "137"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/8ac476f8fb995f97/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_074246_running_0001.mp4",
+      "sha256": "23aa3d224c1f368bf8a7b9543a16109d23b1ac0d122ec44689b372ca5f574cdd",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.566667",
+        "nb_frames": "137"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/adult-walk/output.mp4",
+      "sha256": "fdc04f72104f0839c4c21e346863451a311022075f9b7c5bfef5687d8ec9e893",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/c4ebf78868c388a0/output.mp4",
+      "sha256": "75e78e3ac9c848d8559c853a25c40c21c8a1f73528399aafce79e504fb4c398e",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.366667",
+        "nb_frames": "71"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/c4ebf78868c388a0/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_074114_running_0001.mp4",
+      "sha256": "0beb6b1aa01c1b60d004b132ac74b6414f358ca2379e12670aa697aac7ea49c0",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.333333",
+        "nb_frames": "70"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/child-across/output.mp4",
+      "sha256": "985bc2e26a81fb26ac5b8639cc1650dd3f6b5954de1ebc5817e5342a0337ab89",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/child-across/clips/review/E000_T018_G000/R00001/running/E000_T018_G000_R00001_20261027_073952_running_0001.mp4",
+      "sha256": "c1a9a112cad52a5697e053db13099a4ed7a683f7ecad916589d9a257090271a4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/child-away/output.mp4",
+      "sha256": "bd010f2c2043120caa39f7221dd774c1523309d13ea190719dcfaa2ec07787f7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "10.000000",
+        "nb_frames": "250"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/child-away/clips/review/E000_T009_G001/R00001/waving/E000_T009_G001_R00001_20261027_073713_waving_0001.mp4",
+      "sha256": "eee70030174895e1daf56a8b6437bda79b349ba812b577e2749d51587eb82ae6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/de33753bf592c4cc/output.mp4",
+      "sha256": "5f5b0e09e58bd26f440a9f21c7b50f794c80a27f50cbb63936b94ea46372cbf5",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.160000",
+        "nb_frames": "54"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/de7f71c723b0f8d2/output.mp4",
+      "sha256": "3c3670df5c0b5dd086582f085349601141ccd538c71d54ef51de6922c4a0b30b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.066667",
+        "nb_frames": "122"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/de7f71c723b0f8d2/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_074219_running_0001.mp4",
+      "sha256": "fd33f530dd85cb2bb97cc886aafd894cec3407059b5f7fdccb4499980920d6d6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.066667",
+        "nb_frames": "122"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/overlap-walk/output.mp4",
+      "sha256": "0a02615bd966bad71040a9a4ce4a2fd4b95b15241c96777a10db128154410bbd",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/overlap-walk/clips/review/E000_T017_G000/R00001/running/E000_T017_G000_R00001_20261027_073902_running_0001.mp4",
+      "sha256": "014e70451346fcf950f6059c55569a6e3843f9ef5c89e76ee6cca5e9563a6105",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-videos/slow-walk/output.mp4",
+      "sha256": "e2053d182440ad65bdaf7d271b73e83f52a813502b2d562256a674b793cc8b88",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "10.000000",
+        "nb_frames": "250"
+      },
+      "decode_passed": true
+    }
+  ],
+  "video_count": 29,
+  "rules_tests": 15,
+  "old_replay_windows": 4234,
+  "exact_frontend_windows": 10,
+  "scope": "Finite offline files; no new real-time, NFS, infinite-stream or throughput guarantee."
+}

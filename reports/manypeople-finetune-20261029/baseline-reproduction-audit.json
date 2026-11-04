@@ -1,0 +1,19 @@
+{
+  "train_val_only": true,
+  "models_unchanged": true,
+  "comparisons": {
+    "old": {
+      "windows": 3495,
+      "max_abs_probability_difference": 0.0028122365474700928,
+      "mean_abs_probability_difference": 1.111542613169602e-05,
+      "argmax_disagreements": 0
+    },
+    "new": {
+      "windows": 873,
+      "max_abs_probability_difference": 0.002756476402282715,
+      "mean_abs_probability_difference": 2.8394591751351593e-05,
+      "argmax_disagreements": 0
+    }
+  },
+  "reason": "Same source pixels/frames, AMP batch/backend numeric variation is not assumed bitwise exact."
+}

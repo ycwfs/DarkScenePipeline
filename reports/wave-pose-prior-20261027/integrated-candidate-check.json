@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "source": "real-actiondata-all/挥手3.mp4",
+  "events": 22,
+  "stats": {
+    "frames": 160,
+    "seconds": 12.951700212899595,
+    "object_overlay": {
+      "max_history_bytes": 4654080,
+      "frames": 160,
+      "frames_with_objects": 0,
+      "boxes": 0,
+      "followed_boxes": 0
+    },
+    "fps": 12.353584676555046,
+    "clips": {
+      "events_received": 22,
+      "frames_recording_input": 160,
+      "max_recorders": 1,
+      "events_without_output_frame": 0,
+      "clips_saved": 1,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0,
+      "totals": {
+        "clips_saved": 1,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "uploads_dropped": 0
+      },
+      "clips": [
+        {
+          "session": "E000_T002_G000/R00001",
+          "seq": 1,
+          "label": "Waving",
+          "label_key": "waving",
+          "confidence": 0.9609,
+          "labels_in_clip": {
+            "Waving": 10
+          },
+          "frames": 160,
+          "fps": 25.0,
+          "duration_seconds": 6.36,
+          "trigger_stream_time": 0.96,
+          "first_event": {
+            "frame_index": 24,
+            "timestamp": 0.96,
+            "label": "Waving",
+            "confidence": 0.9529,
+            "topk": [],
+            "model": "",
+            "window": 0,
+            "skeleton_active": false,
+            "actor_poses": [],
+            "skeleton_selected_slot": -1,
+            "clip_start_source_time": 0.0,
+            "writer_drop_start": 0,
+            "last_action_source_time": 5.64,
+            "writer_frames_dropped": 0
+          },
+          "closed_because": "服务停止，尾部上下文可能不完整",
+          "started_at": "2026-10-27 05:14:29",
+          "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/wave-pose-prior-20261027/integrated-candidate/clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_051447_waving_0001.mp4",
+          "frames_written": 159,
+          "capture_fps": 25.157,
+          "playback_speed": 1.0,
+          "person_id": 2,
+          "history_generation": 0,
+          "capture_epoch": 0,
+          "action_key": "waving",
+          "recording_id": 1,
+          "start_source_time": 0.0,
+          "end_source_time": 6.36,
+          "pre_context_available": 0.96,
+          "post_context_available": 0.7200000000000006,
+          "requested_pre": 2.0,
+          "requested_post": 2.0,
+          "recording_policy": "full frame per person and action; overlapping files allowed",
+          "writer_frames_dropped": 0,
+          "context_complete": false
+        }
+      ],
+      "object_overlay": {
+        "max_history_bytes": 4654080,
+        "frames": 160,
+        "frames_with_objects": 0,
+        "boxes": 0,
+        "followed_boxes": 0
+      },
+      "writer_alive": false,
+      "recovery_stage_dir": "/tmp/darkpipe_person_clips_hay7vl4k",
+      "uploads_pending": 0,
+      "write_error": null,
+      "error": null
+    },
+    "person": {
+      "frames": 160,
+      "events": 22,
+      "submitted": 22,
+      "object_history_frames": 0,
+      "object_history_bytes": 0,
+      "max_decision_age": 19.03421604508534,
+      "decision_age_p95": 19.013165221837347,
+      "coalesced": 0,
+      "action_workers": [
+        {
+          "device": "cuda:0",
+          "stats": {
+            "wave_unaffected_action": 12,
+            "wave_below_luma_gate": 10,
+            "object_unaffected_action": 22,
+            "windows": 22,
+            "uploaded_frames": 310,
+            "reused_frames": 394,
+            "calls": 11
+          },
+          "queue": {
+            "submitted": 22,
+            "max_pending": 2
+          }
+        }
+      ]
+    }
+  },
+  "same_person_frames_labels_and_prior_evidence": true,
+  "caveat": "Actual candidate service.run_offline using the integrated ActionEngine; one short source, not a real-time test."
+}

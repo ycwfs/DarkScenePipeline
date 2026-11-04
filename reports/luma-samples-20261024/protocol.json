@@ -1,0 +1,234 @@
+{
+  "bins": [
+    {
+      "lo": 0,
+      "hi": 15,
+      "label": "0≤L<15",
+      "frames": 3730,
+      "sources": 39,
+      "train_sources": 28
+    },
+    {
+      "lo": 15,
+      "hi": 30,
+      "label": "15≤L<30",
+      "frames": 3820,
+      "sources": 58,
+      "train_sources": 45
+    },
+    {
+      "lo": 30,
+      "hi": 45,
+      "label": "30≤L<45",
+      "frames": 9471,
+      "sources": 71,
+      "train_sources": 61
+    },
+    {
+      "lo": 45,
+      "hi": 60,
+      "label": "45≤L<60",
+      "frames": 954,
+      "sources": 14,
+      "train_sources": 13
+    },
+    {
+      "lo": 60,
+      "hi": 75,
+      "label": "60≤L<75",
+      "frames": 1917,
+      "sources": 18,
+      "train_sources": 17
+    },
+    {
+      "lo": 75,
+      "hi": 256,
+      "label": "L≥75",
+      "frames": 22301,
+      "sources": 246,
+      "train_sources": 166
+    }
+  ],
+  "histogram_5": [
+    {
+      "lo": 0,
+      "hi": 5,
+      "frames": 115
+    },
+    {
+      "lo": 5,
+      "hi": 10,
+      "frames": 1566
+    },
+    {
+      "lo": 10,
+      "hi": 15,
+      "frames": 2049
+    },
+    {
+      "lo": 15,
+      "hi": 20,
+      "frames": 747
+    },
+    {
+      "lo": 20,
+      "hi": 25,
+      "frames": 1968
+    },
+    {
+      "lo": 25,
+      "hi": 30,
+      "frames": 1105
+    },
+    {
+      "lo": 30,
+      "hi": 35,
+      "frames": 5522
+    },
+    {
+      "lo": 35,
+      "hi": 40,
+      "frames": 1734
+    },
+    {
+      "lo": 40,
+      "hi": 45,
+      "frames": 2215
+    },
+    {
+      "lo": 45,
+      "hi": 50,
+      "frames": 84
+    },
+    {
+      "lo": 50,
+      "hi": 55,
+      "frames": 696
+    },
+    {
+      "lo": 55,
+      "hi": 60,
+      "frames": 174
+    },
+    {
+      "lo": 60,
+      "hi": 65,
+      "frames": 524
+    },
+    {
+      "lo": 65,
+      "hi": 70,
+      "frames": 1318
+    },
+    {
+      "lo": 70,
+      "hi": 75,
+      "frames": 75
+    },
+    {
+      "lo": 75,
+      "hi": 80,
+      "frames": 0
+    },
+    {
+      "lo": 80,
+      "hi": 85,
+      "frames": 0
+    },
+    {
+      "lo": 85,
+      "hi": 90,
+      "frames": 78
+    },
+    {
+      "lo": 90,
+      "hi": 95,
+      "frames": 40
+    },
+    {
+      "lo": 95,
+      "hi": 100,
+      "frames": 0
+    },
+    {
+      "lo": 100,
+      "hi": 105,
+      "frames": 7131
+    },
+    {
+      "lo": 105,
+      "hi": 110,
+      "frames": 234
+    },
+    {
+      "lo": 110,
+      "hi": 115,
+      "frames": 5293
+    },
+    {
+      "lo": 115,
+      "hi": 120,
+      "frames": 2999
+    },
+    {
+      "lo": 120,
+      "hi": 125,
+      "frames": 4823
+    },
+    {
+      "lo": 125,
+      "hi": 130,
+      "frames": 1399
+    },
+    {
+      "lo": 130,
+      "hi": 135,
+      "frames": 13
+    },
+    {
+      "lo": 135,
+      "hi": 140,
+      "frames": 107
+    },
+    {
+      "lo": 140,
+      "hi": 145,
+      "frames": 0
+    },
+    {
+      "lo": 145,
+      "hi": 150,
+      "frames": 67
+    },
+    {
+      "lo": 150,
+      "hi": 155,
+      "frames": 117
+    },
+    {
+      "lo": 155,
+      "hi": 160,
+      "frames": 0
+    }
+  ],
+  "source_count": 413,
+  "all_source_frames": 42193,
+  "luma_range": [
+    2.294765446232123,
+    154.2276325391914
+  ],
+  "selection": "18 visually checked real-actiondata-all train videos; 3 per bin, chosen for brightness spread and varied scenes; no test sample selection",
+  "grouping": "Poster raw-frame L determines bin; clip mean/min/max and crossing are displayed separately",
+  "preprocessing": "Decode original -> longest side720, even dimensions -> unenhanced BT.601 BGR mean; no crop, gamma, denoise or synthetic exposure",
+  "brightness": "L=0.114*mean(B)+0.587*mean(G)+0.299*mean(R), 0..255 image intensity, not lux",
+  "enhancer": {
+    "path": "platform/dark-demo-v2/ckpts/NTIRE.pth",
+    "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+  },
+  "clips": "Up to4s around source midpoint, original fps and consecutive frames; lossless PNG references, H264 preview crf18",
+  "no_detector_or_pose": true,
+  "purpose": "Visual brightness selection only; not action accuracy evaluation",
+  "production_lum_gate": 75,
+  "production_modified": false,
+  "excluded_processed": 128
+}

@@ -1,0 +1,17 @@
+{
+  "review": {
+    "archive": "object-prior-review_20261026.zip",
+    "sha256": "cd0f873b84bef906496c6b7c6b419376bd3be4524f2059d40d1c19342dec83ce",
+    "bytes": 21025299,
+    "production_operator": false,
+    "object_prior_promoted": false
+  },
+  "candidate": {
+    "archive": "object-prior-candidate_20261026.zip",
+    "sha256": "a879b37cc6969a9012885a73f6a7ebaa97efc557918a8754577a56a4ab41590b",
+    "bytes": 394217592,
+    "production_operator": false,
+    "object_prior_promoted": false
+  },
+  "production_release": "dark-demo-v2_person_tau085_20261025; no object prior; unchanged image"
+}

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_full_priors_20261027.tar.gz",
+      "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+      "unchanged": true
+    },
+    {
+      "path": "platform/dark-demo-v2_full_priors_20261027.zip",
+      "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+      "unchanged": true
+    },
+    {
+      "path": "platform/dark-demo-v2.tar.gz",
+      "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+      "unchanged": true
+    },
+    {
+      "path": "platform/dark-demo-v2.zip",
+      "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+      "unchanged": true
+    }
+  ],
+  "platform_files": 69,
+  "image": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212"
+}

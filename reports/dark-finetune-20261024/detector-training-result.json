@@ -1,0 +1,13 @@
+{
+  "metrics": {
+    "metrics/precision(B)": 1.0,
+    "metrics/recall(B)": 0.9977909880203214,
+    "metrics/mAP50(B)": 0.995,
+    "metrics/mAP50-95(B)": 0.8589487301660593,
+    "fitness": 0.8589487301660593
+  },
+  "best": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch5.pt",
+  "last": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/last.pt",
+  "selection": "detector-selection.json",
+  "recommended": "/ssd1/wfs/project/lowlight/yolo26m-detect.pt"
+}

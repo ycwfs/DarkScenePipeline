@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "scope": "Finite functional and streaming regression; long-session metadata risk remains open",
+  "package": {
+    "passed": true,
+    "archive": "platform/dark-demo-v2.tar.gz",
+    "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+    "files": 69,
+    "matches_historical_tested_extraction": true,
+    "matches_current_source": true,
+    "package_modified": false
+  },
+  "cpu": {
+    "passed": 319,
+    "skipped": 0,
+    "deselected": 1,
+    "optional_exclusion": "SciPy comparison only; production NumPy assignment covered by remaining tests"
+  },
+  "live": {
+    "seconds": 900,
+    "frames": 17661,
+    "fps": 19.623333333333335,
+    "clips": 85,
+    "clips_complete": 82,
+    "write_errors": 0
+  },
+  "fault_seconds": 110,
+  "demos": {
+    "passed": true,
+    "inputs": 23,
+    "frames": 5207,
+    "events": 2399,
+    "clips": 19,
+    "decoded_videos": 42,
+    "matched_windows": 2399,
+    "changed_matched_labels": 0,
+    "limitation": "Historical data, not an independent accuracy test. Exact-input window matches only for per-window comparison."
+  },
+  "production_modified": false,
+  "onsite_platform_tested": false,
+  "long_session_metadata_accumulates": true,
+  "unlimited_stream_stability_accepted": false
+}

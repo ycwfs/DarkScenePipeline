@@ -1,0 +1,570 @@
+[
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-07/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/new-07/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-09/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-06/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/new-01/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-01/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-08/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-02/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-04/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-03/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/new-09/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/diagnostic-latest-only/demos/old-05/events.json",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/live/clips/input/20261026_161708_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-07/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-09/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-06/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-08/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-02/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-04/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-03/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/old-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-09-smoke/baseline-events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-09-smoke/candidate-events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/1fa7b05d59e8d258/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/1fa7b05d59e8d258/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/56f605e0ad40c73a/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/56f605e0ad40c73a/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/92b9a42823e68e4e/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/92b9a42823e68e4e/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/220cc82202abab6e/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/220cc82202abab6e/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/c99b19d78b33d718/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/c99b19d78b33d718/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/d0ab8993eff23b00/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/d0ab8993eff23b00/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/b576f320195dfed9/baseline-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/old-videos/b576f320195dfed9/candidate-events.jsonl",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/integrated-bright-candidate/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/integrated-candidate/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/c4ebf78868c388a0/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/220255c6344fa810/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/8ac476f8fb995f97/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/de33753bf592c4cc/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/de7f71c723b0f8d2/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/live-4gpu/clips/input/20261027_120846_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/live/clips/input/20261027_120033_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-06/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-02/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-03/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/rule-追逐20/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-07/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-04/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-08/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-11/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/rule-挥手32/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-13/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-09/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/rule-挥手22/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-12/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/lighting-10/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/full-prior-release-20261027/faults/clips/input/20261027_115721_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-06/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-02/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-03/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/rule-追逐20/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-07/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-04/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-08/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-11/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/rule-挥手32/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-13/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-09/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/rule-挥手22/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-12/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/lighting-10/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/live-baseline/clips/input/20261028_204537_2508518/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/live-trt-balanced/clips/input/20261028_212030_2547411/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/live-final/clips/input/20261028_214613_2576798/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-pose-fp32-check/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-pose-fp32-check/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/baseline-probe/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/baseline-probe/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/baseline-probe/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/live-cuda-balanced/clips/input/20261028_205615_2518218/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-06/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-02/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-03/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/rule-追逐20/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-07/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-04/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-08/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-11/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/rule-挥手32/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-13/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-09/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/rule-挥手22/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-12/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/lighting-10/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/lowmem-probe/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/lowmem-probe/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/lowmem-probe/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/graph-fixed/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/graph-fixed/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/graph-fixed/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-probe/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-probe/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-probe/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/live/clips/input/20261029_021824_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-06/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-02/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-03/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/rule-追逐20/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-05/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-07/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-04/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-08/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/rule-喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-11/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/rule-挥手32/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-13/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-09/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/rule-挥手22/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-12/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-01/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/lighting-10/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/platform-recheck-20261029/faults/clips/input/20261029_023541_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/person-object-release-20261026/live/clips/input/20261026_144720_1/events.jsonl",
+    "reason": "stream/fault/partial diagnostic; not source-aligned offline inference"
+  },
+  {
+    "path": "reports/person-object-release-20261026/functional/捡东西16/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/person-object-release-20261026/functional/挥手30/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/person-object-release-20261026/functional/喝水4/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  },
+  {
+    "path": "reports/person-object-release-20261026/functional/喝水27/events.json",
+    "reason": "not one of the nine sources or no completed source mapping"
+  }
+]

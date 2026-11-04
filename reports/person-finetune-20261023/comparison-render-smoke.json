@@ -1,0 +1,22 @@
+{
+  "real_existing_videos_used": true,
+  "temporary_directory": "/tmp/person-compare-smoke-35sdfraw",
+  "tested_fps": [
+    25.0,
+    29.0
+  ],
+  "verified_outputs": [
+    {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "160"
+    },
+    {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 594,
+      "nb_read_frames": "59"
+    }
+  ]
+}

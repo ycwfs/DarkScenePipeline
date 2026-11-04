@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "archive": "platform/dark-demo-v2.tar.gz",
+  "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+  "files": 69,
+  "matches_historical_tested_extraction": true,
+  "matches_current_source": true,
+  "package_modified": false
+}

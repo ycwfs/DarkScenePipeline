@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "samples": 18,
+  "frames": 1372,
+  "checks": [
+    {
+      "sample_id": "1-1",
+      "source_sha256": "fec443198ddeccad295ec8a96c93a5a288c852a9ffa5371a16daafe98ae09f0c",
+      "luma": 2.446812094334433,
+      "raw_pixels_exact": true,
+      "frames": 69
+    },
+    {
+      "sample_id": "1-2",
+      "source_sha256": "0a18f29b730586c2eb6b2f41406d221bbe08e3e2c3992577d482e3162085d1e7",
+      "luma": 7.810375092821781,
+      "raw_pixels_exact": true,
+      "frames": 70
+    },
+    {
+      "sample_id": "1-3",
+      "source_sha256": "c586e7f67a9ed31d9fd9e1a01c21646fe186920472403918a0c8cf689fc05d88",
+      "luma": 14.890564603960396,
+      "raw_pixels_exact": true,
+      "frames": 88
+    },
+    {
+      "sample_id": "2-1",
+      "source_sha256": "4078760fdadd05f6a84b598b07facd6b404bb2482830e0e15f32573abd187da7",
+      "luma": 20.52854544141914,
+      "raw_pixels_exact": true,
+      "frames": 67
+    },
+    {
+      "sample_id": "2-2",
+      "source_sha256": "a10a2ba1533ca770e166a554841f6051117ef4cebdb41ed159458e9f472446bb",
+      "luma": 23.22885072882288,
+      "raw_pixels_exact": true,
+      "frames": 100
+    },
+    {
+      "sample_id": "2-3",
+      "source_sha256": "d31b9538458e5427513391b506e02086a2bfcdb9eb900ca01a9d97dcfb21cba0",
+      "luma": 26.973542337046204,
+      "raw_pixels_exact": true,
+      "frames": 62
+    },
+    {
+      "sample_id": "3-1",
+      "source_sha256": "2f8105910668ee6388013806bf531d5bc062fd525222667736939d754207f624",
+      "luma": 31.737175663503844,
+      "raw_pixels_exact": true,
+      "frames": 74
+    },
+    {
+      "sample_id": "3-2",
+      "source_sha256": "7e25914fdc94d0f7cbd76f18b1c86889e86a97fa4523b78d00d47c02f5b10068",
+      "luma": 36.963120355473045,
+      "raw_pixels_exact": true,
+      "frames": 67
+    },
+    {
+      "sample_id": "3-3",
+      "source_sha256": "59f61340c12266019a7d7d21cfc0102717cffe5cad1c7fa68fe41e93ebbcd0bd",
+      "luma": 42.827545107948296,
+      "raw_pixels_exact": true,
+      "frames": 84
+    },
+    {
+      "sample_id": "4-1",
+      "source_sha256": "d143b29383cdc52c9542014a348b6fd083179490962728e0a913caa12450e48f",
+      "luma": 48.16070575838833,
+      "raw_pixels_exact": true,
+      "frames": 77
+    },
+    {
+      "sample_id": "4-2",
+      "source_sha256": "6c9797473973ffee10cf49d41a4a46ba6b7956ef0eda93551763ba95a99cb696",
+      "luma": 53.065670290154,
+      "raw_pixels_exact": true,
+      "frames": 65
+    },
+    {
+      "sample_id": "4-3",
+      "source_sha256": "59679fde5a979f9856d0ca6522902a954c825574920504d75feb491f1ba06dab",
+      "luma": 57.735089132975794,
+      "raw_pixels_exact": true,
+      "frames": 89
+    },
+    {
+      "sample_id": "5-1",
+      "source_sha256": "5aa82626ac7ce644afb34367b6abb8c073e35ed3dccf32e3ac81638e00e65cce",
+      "luma": 60.82628120530803,
+      "raw_pixels_exact": true,
+      "frames": 58
+    },
+    {
+      "sample_id": "5-2",
+      "source_sha256": "abeb396181055bac23a88b0cc0ba34402f8ff0dbc703551ef015936c0aa25736",
+      "luma": 67.47102193344332,
+      "raw_pixels_exact": true,
+      "frames": 100
+    },
+    {
+      "sample_id": "5-3",
+      "source_sha256": "487a0afbadd709084025e11044b0f61b396ddf3daaaad3214ad797ccc25590b4",
+      "luma": 70.4079766261001,
+      "raw_pixels_exact": true,
+      "frames": 88
+    },
+    {
+      "sample_id": "6-1",
+      "source_sha256": "cbf7cf6bdebd686a32e700d370e9c4b784fc0bc615bcc9dcd7f71cfd1934eab7",
+      "luma": 89.35730348253576,
+      "raw_pixels_exact": true,
+      "frames": 78
+    },
+    {
+      "sample_id": "6-2",
+      "source_sha256": "8594e05e8a56819be0200a8e7fd7d78272c58d14634f1fa9d26b3b40644af2a5",
+      "luma": 103.12279298679867,
+      "raw_pixels_exact": true,
+      "frames": 61
+    },
+    {
+      "sample_id": "6-3",
+      "source_sha256": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+      "luma": 138.89120344128162,
+      "raw_pixels_exact": true,
+      "frames": 75
+    }
+  ],
+  "tests": [
+    "18 original source hashes",
+    "all sample asset hashes",
+    "lossless raw PNG equals decoded source resized pixels",
+    "same luma as production function",
+    "correct bins and contiguous source frames",
+    "fps, resolution and frame count",
+    "all H264 videos fully decoded during build",
+    "ZIP CRC and all members equal original files",
+    "scripts compile",
+    "enhancer unchanged"
+  ]
+}

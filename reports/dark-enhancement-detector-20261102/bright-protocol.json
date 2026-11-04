@@ -1,0 +1,154 @@
+{
+  "selection": "existing bright audit indices 1,27,29,30,37; exhibits and multiple real people",
+  "no_model_selection": true,
+  "samples": [
+    {
+      "index": 1,
+      "video_id": "6a3a561fbc6261c0",
+      "source": "real-actiondata-all/other/other106.mp4",
+      "frame": 36,
+      "person_boxes": [
+        [
+          472,
+          141,
+          544,
+          321
+        ]
+      ],
+      "ignore_regions": [],
+      "ignore_reason": null,
+      "known_nonperson_boxes": [
+        [
+          48,
+          160,
+          139,
+          384
+        ]
+      ],
+      "notes": "Foreground humanoid exhibit is not a real person"
+    },
+    {
+      "index": 27,
+      "video_id": "5da1038bd2222f4b",
+      "source": "real-actiondata-all/喝水36.mp4",
+      "frame": 45,
+      "person_boxes": [
+        [
+          477,
+          197,
+          542,
+          394
+        ]
+      ],
+      "ignore_regions": [],
+      "ignore_reason": null,
+      "known_nonperson_boxes": [],
+      "notes": ""
+    },
+    {
+      "index": 29,
+      "video_id": "56f605e0ad40c73a",
+      "source": "real-actiondata-all/挥手28.mp4",
+      "frame": 42,
+      "person_boxes": [
+        [
+          567,
+          57,
+          605,
+          163
+        ],
+        [
+          435,
+          16,
+          459,
+          73
+        ],
+        [
+          325,
+          31,
+          355,
+          61
+        ]
+      ],
+      "ignore_regions": [],
+      "ignore_reason": null,
+      "known_nonperson_boxes": [
+        [
+          48,
+          160,
+          139,
+          384
+        ]
+      ],
+      "notes": "Foreground humanoid exhibit is not a real person"
+    },
+    {
+      "index": 30,
+      "video_id": "92b9a42823e68e4e",
+      "source": "real-actiondata-all/挥手29.mp4",
+      "frame": 43,
+      "person_boxes": [
+        [
+          492,
+          56,
+          542,
+          172
+        ],
+        [
+          356,
+          13,
+          375,
+          62
+        ],
+        [
+          324,
+          31,
+          352,
+          60
+        ]
+      ],
+      "ignore_regions": [],
+      "ignore_reason": null,
+      "known_nonperson_boxes": [
+        [
+          48,
+          160,
+          139,
+          384
+        ]
+      ],
+      "notes": "Foreground humanoid exhibit is not a real person"
+    },
+    {
+      "index": 37,
+      "video_id": "92cb1dbf7394409d",
+      "source": "real-actiondata-all/追逐25.mp4",
+      "frame": 70,
+      "person_boxes": [
+        [
+          402,
+          62,
+          446,
+          177
+        ],
+        [
+          287,
+          30,
+          315,
+          77
+        ]
+      ],
+      "ignore_regions": [],
+      "ignore_reason": null,
+      "known_nonperson_boxes": [
+        [
+          48,
+          160,
+          139,
+          384
+        ]
+      ],
+      "notes": "Foreground humanoid exhibit is not a real person"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "checkpoint": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/person-finetune-20261023/models/videomamba_t_behavior_32f_person_roi_20261023.pth",
+  "samples": [
+    {
+      "name": "喝水16",
+      "source": "real-actiondata-all/喝水16.mp4",
+      "processed": false
+    },
+    {
+      "name": "挥手3",
+      "source": "real-actiondata-all/挥手3.mp4",
+      "processed": false
+    },
+    {
+      "name": "留出_挥手28",
+      "source": "real-actiondata-all/挥手28.mp4",
+      "processed": false
+    },
+    {
+      "name": "多人0060",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+      "processed": true
+    },
+    {
+      "name": "多人0054",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+      "processed": true
+    },
+    {
+      "name": "回传留出_181324",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4",
+      "processed": true
+    }
+  ],
+  "source_sha256": {
+    "real-actiondata-all/喝水16.mp4": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+    "real-actiondata-all/挥手3.mp4": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+    "real-actiondata-all/挥手28.mp4": "56f605e0ad40c73a2bf3bdb5360219283e55707b5a5feb2ddb5cadfa66ae5895",
+    "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4": "f43a2db9263f9bd3b7a12b793bc9c43c5aa794205b2d0d17265de39adb8acf7d"
+  },
+  "code_sha256": {
+    "reports/person-performance-20261023/scripts/benchmark.py": "52e8e2a1a86b91f6a5d5b3f85f7307cdd9bd724a35c7e595f162d084c611a457",
+    "reports/person-action-20261023/scripts/demo.py": "7714077bd2ae8bc5196761fb6924f06f34ac5dbdc2d17d6ddafbef414b1e656b",
+    "reports/person-action-20261023/scripts/person_core.py": "906702c5981ae47d3c596846d4db48e7ab20f860771f85a9f1c366f1a8481c0c"
+  },
+  "model_sha256": {
+    "reports/person-finetune-20261023/models/videomamba_t_behavior_32f_person_roi_20261023.pth": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf",
+    "platform/dark-demo-v2/ckpts/NTIRE.pth": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+    "platform/dark-demo-v2/ckpts/rtmo-s_end2end.onnx": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+    "platform/dark-demo-v2/ckpts/stgcn_behavior_32f_realactall_full.pth": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+    "platform/dark-demo-v2/ckpts/yolo26m_detect.onnx": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c"
+  },
+  "torch": "2.7.0+cu126",
+  "opencv": "5.0.0",
+  "python": "3.10.20",
+  "cpu": "x86_64",
+  "gpu": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 18 %, 59\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 18 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 24\n",
+  "cuda_visible_devices": "2",
+  "torch_threads": 4,
+  "opencv_threads": 2,
+  "alpha": 0.7,
+  "threshold": 0.75,
+  "luma_gate": 75,
+  "rgb_batch": 2,
+  "rgb_frames": 32,
+  "rgb_input_hw": [
+    224,
+    400
+  ],
+  "processing_max_side": 720,
+  "per_track_stride_seconds": 0.5,
+  "repetitions": 3,
+  "warmup_passes": 2,
+  "protocol": "Unmodified demo.run_sample; wrappers add timestamps only. All frames decoded and encoded. Two complete warmup passes over drink16 and crowd0060. Three interleaved timed repetitions. Paced replay at source fps, FIFO nominal arrivals, no drops, no RTSP/network latency included. Newest-frame age = decision completion minus nominal arrival of newest window frame. Oldest-frame age additionally includes the approximately one-second observation window. No object prior is used; YOLO remains the person-box detector. Single GPU serial demo only.",
+  "initialization_seconds": 9.799198844004422,
+  "detector_providers": [
+    "CUDAExecutionProvider",
+    "CPUExecutionProvider"
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/child.mkv",
+      "start": 0.0,
+      "seconds": 30.0,
+      "sha256": "3ea747a4793baeb00a209bfc4ab7e6a13434f817ce562e250441de43d0f47648"
+    },
+    "frames": 474,
+    "people_max": 12,
+    "fps": {
+      "count": 30,
+      "minimum": 12.62,
+      "median": 15.93,
+      "p95": 20.73,
+      "maximum": 25.26
+    },
+    "capture_to_output_ms": {
+      "count": 474,
+      "minimum": 79.84788808971643,
+      "median": 173.60922414809465,
+      "p95": 290.8912389539182,
+      "maximum": 532.8082330524921
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/walking.mkv",
+      "start": 30.0,
+      "seconds": 30.0,
+      "sha256": "563984d291214f330ae41d0ae372b9bb12a4e438fbe463352fe62d09c420ec17"
+    },
+    "frames": 469,
+    "people_max": 14,
+    "fps": {
+      "count": 28,
+      "minimum": 13.34,
+      "median": 15.515,
+      "p95": 17.355999999999998,
+      "maximum": 17.72
+    },
+    "capture_to_output_ms": {
+      "count": 469,
+      "minimum": 114.58522314205766,
+      "median": 185.46006875112653,
+      "p95": 286.18240887299174,
+      "maximum": 450.61978232115507
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/phone.mkv",
+      "start": 60.0,
+      "seconds": 30.0,
+      "sha256": "31e7676c6ade55fc26110f730414d8af5e99a13717801aeadb78749187acd490"
+    },
+    "frames": 475,
+    "people_max": 13,
+    "fps": {
+      "count": 28,
+      "minimum": 13.49,
+      "median": 15.79,
+      "p95": 17.758,
+      "maximum": 17.8
+    },
+    "capture_to_output_ms": {
+      "count": 475,
+      "minimum": 113.78415720537305,
+      "median": 181.94918660447001,
+      "p95": 257.6509120874106,
+      "maximum": 392.4451102502644
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "start": 90.0,
+      "seconds": 30.0,
+      "sha256": "eff6f33a47ce138c02ef4ef25bba5aaeec12797fb45e95fc941600c1df1d8f5a"
+    },
+    "frames": 345,
+    "people_max": 19,
+    "fps": {
+      "count": 27,
+      "minimum": 8.89,
+      "median": 11.63,
+      "p95": 15.854000000000001,
+      "maximum": 16.01
+    },
+    "capture_to_output_ms": {
+      "count": 345,
+      "minimum": 153.77597231417894,
+      "median": 323.86698201298714,
+      "p95": 581.2032599933445,
+      "maximum": 664.7627530619502
+    }
+  }
+]

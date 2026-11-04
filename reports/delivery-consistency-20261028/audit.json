@@ -1,0 +1,206 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-28T15:22:54.775372+00:00",
+  "scope": "Current platform release and Box candidate plus aliases; historical archives retained",
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_full_priors_20261027.tar.gz",
+      "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+      "bytes": 417898523,
+      "manifest_matches": true,
+      "checksum_sidecar_verified": false,
+      "payload_files_verified": 69
+    },
+    {
+      "path": "platform/dark-demo-v2.tar.gz",
+      "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+      "bytes": 417898523,
+      "manifest_matches": true,
+      "checksum_sidecar_verified": true,
+      "identical_to": "platform/dark-demo-v2_full_priors_20261027.tar.gz"
+    },
+    {
+      "path": "platform/dark-demo-v2_full_priors_20261027.zip",
+      "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+      "bytes": 417932498,
+      "manifest_matches": true,
+      "checksum_sidecar_verified": false,
+      "payload_files_verified": 69
+    },
+    {
+      "path": "platform/dark-demo-v2.zip",
+      "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+      "bytes": 417932498,
+      "manifest_matches": true,
+      "checksum_sidecar_verified": true,
+      "identical_to": "platform/dark-demo-v2_full_priors_20261027.zip"
+    },
+    {
+      "path": "NVIDIA-Box_Orin4GB_candidate_20261028.zip",
+      "sha256": "b39805ea3d5a5f43c40681eca3de122ee71064216c2e8ee2280600d8f73b5c2a",
+      "bytes": 486768347,
+      "manifest_matches": true,
+      "checksum_sidecar_verified": true,
+      "payload_files_verified": 98,
+      "archive_files_verified": 99
+    },
+    {
+      "path": "NVIDIA-Box.zip",
+      "sha256": "b39805ea3d5a5f43c40681eca3de122ee71064216c2e8ee2280600d8f73b5c2a",
+      "bytes": 486768347,
+      "manifest_matches": true,
+      "checksum_sidecar_verified": true,
+      "identical_to": "NVIDIA-Box_Orin4GB_candidate_20261028.zip"
+    }
+  ],
+  "platform_payload_files": 69,
+  "shared_original_weights": 13,
+  "models": {
+    "enhancer": {
+      "file": "NTIRE.pth",
+      "architecture": "Retinexformer",
+      "onsite_finetuned": false,
+      "training_data": "Public NTIRE low-light pretrained checkpoint; previous onsite enhancement fine-tuning rejected after action degradation",
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+    },
+    "detector": {
+      "file": "yolo26m_person_20261024.onnx",
+      "architecture": "YOLO26m",
+      "onsite_finetuned": true,
+      "training_data": "1626 onsite dark frames/1741 person boxes plus72 bright frames/89 real-person boxes after excluding human-shaped exhibits; raw/enhanced views",
+      "source": "reports/detector-clean-finetune-20261024/models/yolo26m_clean_candidate.onnx",
+      "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9"
+    },
+    "pose": {
+      "file": "rtmo-s_person_20261024.onnx",
+      "architecture": "RTMO-s COCO17",
+      "onsite_finetuned": true,
+      "training_data": "Onsite dark auxiliary person/COCO17 sequence labels, quality-filtered for training; no inference smoothing; not independent human GT",
+      "source": "reports/dark-finetune-20261024/models/rtmo-s_dark_candidate.onnx",
+      "sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2"
+    },
+    "rgb": {
+      "file": "videomamba_t_behavior_32f_person_roi_20261023.pth",
+      "architecture": "VideoMamba-Tiny32f personROI",
+      "onsite_finetuned": true,
+      "training_data": "All onsite video plus two online other batches;535 unique sources, reviewed person/time labels;3789 train windows in the10-23 fixed input dataset",
+      "source": "reports/person-finetune-20261023/models/videomamba_t_behavior_32f_person_roi_20261023.pth",
+      "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf"
+    },
+    "skeleton": {
+      "file": "stgcn_person_20261024.pth",
+      "architecture": "ST-GCN COCO17",
+      "onsite_finetuned": true,
+      "training_data": "Historical onsite real-actiondata-all skeleton cache; old fitting line used video labels and merged person logits; applied per person at inference",
+      "source": "platform/dark-demo-v2/ckpts/stgcn_behavior_32f_realactall_full.pth",
+      "selection": "New2507-window person adaptation trained20epochs/val-selected13; full validation fusion comparison preferred the historical onsite model; retained honestly",
+      "sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a"
+    },
+    "object": {
+      "file": "yolo26m_objects_20261026.onnx",
+      "architecture": "YOLO26m seven-class end-to-end",
+      "onsite_finetuned": true,
+      "training_data": "Old onsite and historical returned clips:319 train images(258 unique views),31 validation,47 test;831 assisted review records,407 usable ROIs. New9 manypeople recordings excluded from model training, later used for threshold feedback calibration. Cup0 boxes;camera3 training boxes.",
+      "source": "reports/object-prior-finetune-20261025/models/yolo26m_objects_candidate.onnx",
+      "sha256": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5"
+    }
+  },
+  "shared_defaults": {
+    "lum_gate": 35.0,
+    "reco_min_conf": 0.925,
+    "skel_fusion_alpha": 0.972,
+    "skel_no_person": "soft",
+    "object_min_conf": 0.581,
+    "person_object_prior": true,
+    "wave_pose_min_frames": 3,
+    "running_pose_min_speed": 0.35
+  },
+  "launcher_default_differences": {
+    "sr": {
+      "platform": "bicubic",
+      "box": "off"
+    },
+    "gpu_ids": {
+      "platform": "0,1,2",
+      "box": "0"
+    },
+    "ckpt_dir": {
+      "platform": "ckpts",
+      "box": "/ssd1/wfs/project/lowlight/DarkScenePipeline/NVIDIA-Box/weights"
+    },
+    "clip_dir": {
+      "platform": "/opt/darkpipe/clips",
+      "box": "/ssd1/wfs/project/lowlight/DarkScenePipeline/NVIDIA-Box/outputs"
+    },
+    "extra_hosts": {
+      "platform": "10.46.79.133 hdfs-datanode",
+      "box": ""
+    },
+    "session_json": {
+      "platform": "probe.json",
+      "box": null
+    }
+  },
+  "box_runtime_overrides": {
+    "purpose": "Box-only optimizations. --sync must preserve these files and reject changed base hashes.",
+    "modified": {
+      "darkpipe/stages/enhance_retinexformer.py": {
+        "platform_sha256": "30eccefa73014dcf9651b4b17b00b30b70711e587cb4cb4db9f82f404e575b67"
+      },
+      "darkpipe/person/action_engine.py": {
+        "platform_sha256": "a9258e06530e5d8bdcb449dfc7b252c686207e1972dc8c52d82d1acb57264bb2"
+      },
+      "darkpipe/person/runtime.py": {
+        "platform_sha256": "9fea006e0ef1f1537935f0c9ea54acc00c4cbca2aded5362d350fe9e7db0f898"
+      },
+      "darkpipe/person/object_runtime.py": {
+        "platform_sha256": "8bb75c46135711cfaf8d38bdfda2ffddb517c8ea8df48fc66ba83f07c55f50d7"
+      },
+      "darkpipe/person/core.py": {
+        "platform_sha256": "9476d9987d14b084fffa212c3dc51511f61cb7aabefcba31e36e1371a20b2e78"
+      }
+    },
+    "added": [
+      "darkpipe/box_accel.py",
+      "darkpipe/box_onnx.py"
+    ]
+  },
+  "box_derived_pose": {
+    "source": "rtmo-s_person_20261024.onnx",
+    "source_sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2",
+    "output": "rtmo-s_person_20261024_box.onnx",
+    "sha256": "a1f27b6ddb9d03cb0597dae214fde28d8c4ace09659050fc53a880aaa9a500d7",
+    "rewrites": [
+      "/ArgMax"
+    ],
+    "change": "Unsqueeze rank1 -> ArgMax axis1 -> Squeeze; original indices, values and external shapes preserved"
+  },
+  "flow": {
+    "slides": 2,
+    "native_editable": true,
+    "pdf_text_verified": true,
+    "artifacts": {
+      "逐人动作识别_完整先验方案_20261027_可编辑.pptx": "51986b461694102d70fa3c19cdd225761e4e500dde519d4e8b77c9a9d735533f",
+      "逐人动作识别_完整先验方案_20261027.drawio": "47862c1b00ccdd902e766ae858955e381e3753b8cfaebb419e8f8da8f1719cc7",
+      "逐人动作识别_完整先验方案_20261027_可编辑.pdf": "40fe72eb61b5f687f32200d276c7d2c798bfd27f19d979418269a79c0a29078b",
+      "preview-1.png": "8e19d6a8b59dafdf27b61415442a14e94b97c75b0505f807444f2234f120bfca",
+      "preview-2.png": "28c964475e61e3ced3344f19d3b06ffe20a8f2bb9515bada080c23f547fa6edc",
+      "讲解备注.md": "49ffc52b825d487b784d9b7032689984847bdf310c49a1e891de7214c224586b"
+    }
+  },
+  "cpu_checks": {
+    "passed": 13,
+    "log": "cpu-checks.log"
+  },
+  "image": {
+    "path": "platform/darkpipe-operator-0.3.0.tar.gz",
+    "bytes": 6796727259,
+    "sha256": "a562d53d7bc588aded2d146939a634cf3e0a78afd6dfb8c5f53692c6afec2b77",
+    "loaded_image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+    "id_source": "Current docker image inspect supplied by --image-id",
+    "unchanged": true
+  },
+  "matches_previous_inference_tested_archives": true,
+  "new_gpu_inference": false,
+  "physical_orin_tested": false
+}

@@ -1,0 +1,15 @@
+{
+  "reports/object-model-ablation-20261026/protocol.json": "63a3ba6576e5ff1949a3c293b2bedfa8139532c0702f3429bb1ae67e4d4c7967",
+  "reports/object-model-ablation-20261026/inputs.json": "d7200807fe4fa9ff7d5aa79c17734043a86d92e1dc578e2b1b1505414e278921",
+  "reports/object-model-ablation-20261026/action-results.json": "0ef6fbbb96d739df56c77650d7819d636256b6a401075784826246f760bd9c21",
+  "reports/object-model-ablation-20261026/object-results.json": "d01770881df91ed1971806a6cdfebd351b7782978a3a538c682cfba08bb19dab",
+  "reports/object-model-ablation-20261026/summary.json": "1e3140fd297e459f7b65194b29a32499fb87cb49770ecf6b8075abe8297a829f",
+  "reports/object-model-ablation-20261026/statistics.json": "e4d286f3f09f3408088a3ffd4aa3d62f0a9656575ac05aaf6ed10e2a174b7a87",
+  "reports/object-model-ablation-20261026/verification.json": "525f9ba1b4ecda2cabb4e73daea80984ef4ece43cfa60ee64aa3c5cff6998801",
+  "reports/object-model-ablation-20261026/scripts/check_default_head.py": "d112faf2a07287161d75d3850224d988240127588d33d92cf6503dd20916856d",
+  "reports/object-model-ablation-20261026/scripts/compare.py": "f816a4e07340b69669966a8d772f91609dd6d98b2482b597fede352a13bd292e",
+  "reports/object-model-ablation-20261026/scripts/report.py": "884f4c159983abcab47af18957afb1bd487116f036d26f5f8e885b5fec9cc996",
+  "reports/object-model-ablation-20261026/scripts/verify_predict_api.py": "8145b815dfff4a005426e0e8b1da8020be830ab20eb2f7f84566059cdc601c71",
+  "platform/dark-demo-v2/darkpipe/person/object_prior.py": "6029e7f4a86e4b52f02d8f59d80b9b3f6df5d3cb65cc83f8090df8c112162d82",
+  "tests/test_person_object_prior.py": "608987e5858b48dc71aab232d515c0789541da7e693cf7baa58da064f0b35afb"
+}

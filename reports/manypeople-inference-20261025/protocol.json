@@ -1,0 +1,9 @@
+{
+  "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "started_at": 1792930113.2453508,
+  "concurrency": 6,
+  "physical_frontend_gpu": 1,
+  "physical_action_gpu": 0,
+  "scheduler_updated_at": 1792933210.4529054,
+  "allocation": "Complete files on physical GPUs 0/1; existing jobs retained, remaining files balanced by frontend count"
+}

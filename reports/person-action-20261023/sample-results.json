@@ -1,0 +1,309 @@
+[
+  {
+    "name": "挥手3",
+    "source": "real-actiondata-all/挥手3.mp4",
+    "source_sha256": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+    "processed": false,
+    "frames": 160,
+    "fps": 25.0,
+    "duration": 6.4,
+    "video": "videos/挥手3_逐人融合.mp4",
+    "still": "stills/挥手3.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 22,
+    "labels": {
+      "drink": 11,
+      "wave": 10,
+      "other": 1
+    },
+    "modes": {
+      "rgb_low_luma": 22
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2
+    ],
+    "frames_with_at_least_two_classified": 136,
+    "elapsed": 15.342487148940563,
+    "timings": {
+      "preprocess": 7.199084026739001,
+      "detection_pose": 2.517969111446291,
+      "person_actions": 3.54542248044163,
+      "render_encode": 1.0055003864690661
+    }
+  },
+  {
+    "name": "挥手4",
+    "source": "real-actiondata-all/挥手4.mp4",
+    "source_sha256": "684c5ecbeb5d5fbd9a94015accb43098caad1b01d5fb7fc2366ce756d080642d",
+    "processed": false,
+    "frames": 169,
+    "fps": 25.0,
+    "duration": 6.76,
+    "video": "videos/挥手4_逐人融合.mp4",
+    "still": "stills/挥手4.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 24,
+    "labels": {
+      "other": 5,
+      "drink": 7,
+      "wave": 12
+    },
+    "modes": {
+      "rgb_low_luma": 24
+    },
+    "max_detected_people": 2,
+    "distinct_track_ids": 2,
+    "classified_track_ids": [
+      1,
+      2
+    ],
+    "frames_with_at_least_two_classified": 144,
+    "elapsed": 16.004448933992535,
+    "timings": {
+      "preprocess": 7.323573771864176,
+      "detection_pose": 2.6783409509807825,
+      "person_actions": 3.8899688348174095,
+      "render_encode": 1.085252626799047
+    }
+  },
+  {
+    "name": "挥手20",
+    "source": "real-actiondata-all/挥手20.mp4",
+    "source_sha256": "fcde48c0e250ed15dc08a509565a1a30b1179cd41ae75d3bbb3b292bb9fe9cfd",
+    "processed": false,
+    "frames": 55,
+    "fps": 25.0,
+    "duration": 2.2,
+    "video": "videos/挥手20_逐人融合.mp4",
+    "still": "stills/挥手20.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 3,
+    "labels": {
+      "wave": 1,
+      "other": 2
+    },
+    "modes": {
+      "rgb_skeleton": 3
+    },
+    "max_detected_people": 1,
+    "distinct_track_ids": 1,
+    "classified_track_ids": [
+      1
+    ],
+    "frames_with_at_least_two_classified": 0,
+    "elapsed": 5.37030982458964,
+    "timings": {
+      "preprocess": 2.430639204569161,
+      "detection_pose": 1.4393503414466977,
+      "person_actions": 0.5947424969635904,
+      "render_encode": 0.3969913707114756
+    }
+  },
+  {
+    "name": "喝水16",
+    "source": "real-actiondata-all/喝水16.mp4",
+    "source_sha256": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+    "processed": false,
+    "frames": 75,
+    "fps": 25.0,
+    "duration": 3.0,
+    "video": "videos/喝水16_逐人融合.mp4",
+    "still": "stills/喝水16.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 4,
+    "labels": {
+      "drink": 4
+    },
+    "modes": {
+      "rgb_skeleton": 4
+    },
+    "max_detected_people": 1,
+    "distinct_track_ids": 1,
+    "classified_track_ids": [
+      1
+    ],
+    "frames_with_at_least_two_classified": 0,
+    "elapsed": 7.000185776967555,
+    "timings": {
+      "preprocess": 3.2857935214415193,
+      "detection_pose": 1.9100047708489,
+      "person_actions": 0.7541196732781827,
+      "render_encode": 0.5079235965386033
+    }
+  },
+  {
+    "name": "多人0060",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "source_sha256": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "processed": true,
+    "frames": 59,
+    "fps": 29.0,
+    "duration": 2.0344827586206895,
+    "video": "videos/多人0060_逐人融合.mp4",
+    "still": "stills/多人0060.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 38,
+    "labels": {
+      "other": 38
+    },
+    "modes": {
+      "rgb_skeleton": 26,
+      "rgb_soft_no_pose": 12
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 20,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 10.701707714702934,
+    "timings": {
+      "preprocess": 0.6105992435477674,
+      "detection_pose": 1.9437712812796235,
+      "person_actions": 6.280601494014263,
+      "render_encode": 0.702562783844769
+    }
+  },
+  {
+    "name": "多人0054",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "source_sha256": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "processed": true,
+    "frames": 60,
+    "fps": 30.0,
+    "duration": 2.0,
+    "video": "videos/多人0054_逐人融合.mp4",
+    "still": "stills/多人0054.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 41,
+    "labels": {
+      "other": 40,
+      "drink": 1
+    },
+    "modes": {
+      "rgb_soft_no_pose": 14,
+      "rgb_skeleton": 27
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 18,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 11.2815220807679,
+    "timings": {
+      "preprocess": 0.6214573793113232,
+      "detection_pose": 1.9907137202098966,
+      "person_actions": 6.758848974946886,
+      "render_encode": 0.6772838998585939
+    }
+  },
+  {
+    "name": "多人0055",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095808_drinking_water_0055.mp4",
+    "source_sha256": "ac408518cf290840b9e9039ecf351c95ddfe422ec5aeb337b78d005dcbe886ce",
+    "processed": true,
+    "frames": 118,
+    "fps": 28.0,
+    "duration": 4.214285714285714,
+    "video": "videos/多人0055_逐人融合.mp4",
+    "still": "stills/多人0055.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 101,
+    "labels": {
+      "other": 101
+    },
+    "modes": {
+      "rgb_soft_no_pose": 26,
+      "rgb_skeleton": 75
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 19,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      19
+    ],
+    "frames_with_at_least_two_classified": 91,
+    "elapsed": 25.35381338512525,
+    "timings": {
+      "preprocess": 1.3345198221504688,
+      "detection_pose": 3.8679699045605958,
+      "person_actions": 16.678111584391445,
+      "render_encode": 1.3178923013620079
+    }
+  }
+]

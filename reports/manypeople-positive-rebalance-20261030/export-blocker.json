@@ -1,0 +1,18 @@
+{
+  "action": "Launch export-verify Docker job using existing darkpipe-operator:0.3.0 on GPU4",
+  "script": "scripts/export_verify.py",
+  "attempts": 3,
+  "executed": false,
+  "reason": "Automatic approval review failed: unexpected status 503 Service Unavailable",
+  "classification": "Approval service unavailable, not a determination that the action is unsafe",
+  "request_ids": [
+    "a7c4dfec-8dcf-402e-9254-2af5cd67930b",
+    "8393f07a-a990-4f1e-8bf5-64600a4aef3f",
+    "df41b2e7-e698-4c84-a522-33ab57eaf3b1"
+  ],
+  "training_and_evaluation_completed_before_block": true,
+  "selected_checkpoint_predictions_completed": true,
+  "exported_weights_only_load_and_probability_reproduction_completed": false,
+  "production_modified": false,
+  "approval_bypassed": false
+}

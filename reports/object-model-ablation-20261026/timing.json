@@ -1,0 +1,22 @@
+{
+  "n": {
+    "images": 16556,
+    "forward_ms_median": 1.5336255892179906,
+    "forward_ms_p95": 1.650441304082051
+  },
+  "s": {
+    "images": 16556,
+    "forward_ms_median": 2.0767500100191683,
+    "forward_ms_p95": 2.0926900004269555
+  },
+  "m": {
+    "images": 16556,
+    "forward_ms_median": 4.538727196631953,
+    "forward_ms_p95": 4.577481414889917
+  },
+  "m_finetuned": {
+    "images": 16556,
+    "forward_ms_median": 4.525426222244278,
+    "forward_ms_p95": 4.576737459865399
+  }
+}

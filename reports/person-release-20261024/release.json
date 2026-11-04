@@ -1,0 +1,71 @@
+{
+  "version": "20261024-person-gate30",
+  "defaults": {
+    "person_mode": true,
+    "lum_gate": 30,
+    "skel_fusion_alpha": 0.95,
+    "reco_min_conf": 0.91,
+    "skel_no_person": "soft",
+    "clip_pre_sec": 2,
+    "clip_post_sec": 2,
+    "clip_denoise": "off",
+    "gpu_ids": "0,1,2"
+  },
+  "archives": [
+    {
+      "file": "platform/dark-demo-v2_person_20261024.tar.gz",
+      "alias": "platform/dark-demo-v2.tar.gz",
+      "bytes": 349154601,
+      "sha256": "b5180f313b1e21839dfeb5d480eb1e049e7c69709525719546982e72c9a003fd"
+    },
+    {
+      "file": "platform/dark-demo-v2_person_20261024.zip",
+      "alias": "platform/dark-demo-v2.zip",
+      "bytes": 349184162,
+      "sha256": "8fa76a26eb6afbb58efcf20130002d5b29ed18bb99d629e34842601aa665423b"
+    },
+    {
+      "file": "NVIDIA-Box_20261024.zip",
+      "alias": "NVIDIA-Box.zip",
+      "bytes": 381542552,
+      "sha256": "bc49d09af4291d1a8144bc78c888918943e0306d81612982ead9a8f22922dfb3"
+    }
+  ],
+  "image": {
+    "id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+    "archive": "platform/darkpipe-operator-0.3.0.tar.gz",
+    "sha256": "a562d53d7bc588aded2d146939a634cf3e0a78afd6dfb8c5f53692c6afec2b77",
+    "unchanged": true,
+    "reupload_required": false
+  },
+  "regression": {
+    "tests": 160,
+    "passed": true,
+    "log": "archive-regression.log"
+  },
+  "verification": {
+    "final_archive_stream": "release-archive-stream/verification.json",
+    "crowded": "stream-crowded-three/verification.json",
+    "box": "box-offline-verification.json",
+    "box_selfcheck": "box-final-selfcheck.log",
+    "offline": "offline-verification.json",
+    "archive": "archive-verification.json"
+  },
+  "demo": {
+    "videos": 13,
+    "frames": 1240,
+    "full_decode": true
+  },
+  "flow": {
+    "editable": true,
+    "pages": 2,
+    "pictures": 0
+  },
+  "caveats": [
+    "Finite local loopback tests; not real platform camera/NFS/WebHDFS",
+    "Native Box tested on development host, not physical Box",
+    "Accuracy still has errors; historical source exposure; incomplete class/luma coverage",
+    "Single/dual GPU real-time15FPS not established",
+    "Initial temporal history1s is separate from decision latency"
+  ]
+}

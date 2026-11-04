@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "browser": "156.0.8078.4",
+  "extracted_zip": true,
+  "samples": 18,
+  "videos_played": 18,
+  "checks": [
+    "six filters return3 samples each",
+    "six threshold previews correct for all18 samples",
+    "all18 H264 videos play",
+    "closing details pauses video",
+    "images load offline",
+    "390px responsive layout",
+    "no JS errors"
+  ]
+}

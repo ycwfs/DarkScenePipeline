@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "error": "TypeError: _BootWatch.done() missing 1 required positional argument: 'why'",
+  "source": "/inputs/挥手3.mp4",
+  "stopped_at": "2026-10-24 06:51:10"
+}

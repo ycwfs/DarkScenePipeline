@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "sources": [
+    "new-01-child-retained",
+    "new-01-wave-veto",
+    "new-07-standing-veto",
+    "new-09-raised-retained"
+  ]
+}

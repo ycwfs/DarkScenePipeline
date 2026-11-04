@@ -1,0 +1,21 @@
+[
+  {
+    "id": "new-07-000",
+    "number": 7,
+    "track_id": 26,
+    "generation": 0,
+    "action": "drink",
+    "start": 21.32,
+    "end": 21.32,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      240
+    ],
+    "truth": null,
+    "representative": 240,
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+    "source_offset": 0,
+    "image": "long-review/new-07-000.jpg"
+  }
+]

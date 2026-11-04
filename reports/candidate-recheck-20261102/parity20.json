@@ -1,0 +1,8 @@
+{
+  "enabled_events": 67,
+  "disabled_events": 67,
+  "label_differences": 0,
+  "differences_outside_recheck_band": 0,
+  "differences": [],
+  "scope": "same 20-second input, single RTX3090, enhance=off, identical model/config except recheck switch"
+}

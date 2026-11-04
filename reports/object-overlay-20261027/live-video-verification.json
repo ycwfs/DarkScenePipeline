@@ -1,0 +1,433 @@
+[
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T015_G000/R00005/running/E000_T015_G000_R00005_20261026_161918_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "22/1",
+          "nb_frames": "103"
+        }
+      ],
+      "format": {
+        "duration": "4.682000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T019_G000/R00012/waving/E000_T019_G000_R00012_20261026_161941_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "210"
+        }
+      ],
+      "format": {
+        "duration": "8.750000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T017_G000/R00009/picking_up_object/E000_T017_G000_R00009_20261026_161935_picking_up_object_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "108"
+        }
+      ],
+      "format": {
+        "duration": "4.500000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T017_G000/R00006/waving/E000_T017_G000_R00006_20261026_161924_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "96"
+        }
+      ],
+      "format": {
+        "duration": "4.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T017_G000/R00010/picking_up_object/E000_T017_G000_R00010_20261026_161938_picking_up_object_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "14/1",
+          "nb_frames": "72"
+        }
+      ],
+      "format": {
+        "duration": "5.143000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T017_G000/R00011/waving/E000_T017_G000_R00011_20261026_161940_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "96"
+        }
+      ],
+      "format": {
+        "duration": "4.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T017_G000/R00008/picking_up_object/E000_T017_G000_R00008_20261026_161930_picking_up_object_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "128"
+        }
+      ],
+      "format": {
+        "duration": "5.120000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T017_G000/R00007/picking_up_object/E000_T017_G000_R00007_20261026_161927_picking_up_object_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "98"
+        }
+      ],
+      "format": {
+        "duration": "4.084000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T014_G000/R00004/drinking_water/E000_T014_G000_R00004_20261026_161915_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "133"
+        }
+      ],
+      "format": {
+        "duration": "5.542000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T011_G000/R00003/waving/E000_T011_G000_R00003_20261026_161911_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "122"
+        }
+      ],
+      "format": {
+        "duration": "5.084000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T011_G000/R00002/waving/E000_T011_G000_R00002_20261026_161859_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "299"
+        }
+      ],
+      "format": {
+        "duration": "12.459000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/clips/input/20261026_161708_1/E000_T011_G000/R00001/waving/E000_T011_G000_R00001_20261026_161845_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "24/1",
+          "nb_frames": "361"
+        }
+      ],
+      "format": {
+        "duration": "15.042000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-40-hls.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-70-mjpeg.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-40-mjpeg.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-10-mjpeg.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-40-flv.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "1.999000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-10-hls.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-70-hls.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-70-flv.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "1.999000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live/viewer-10-flv.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "1.999000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "full-output-stream.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "1949000/129533",
+          "nb_frames": "1949"
+        }
+      ],
+      "format": {
+        "duration": "129.533000"
+      }
+    },
+    "stderr": ""
+  }
+]

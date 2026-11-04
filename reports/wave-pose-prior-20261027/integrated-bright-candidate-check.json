@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/wave-pose-prior-20261027/inputs/new-07-standing-veto.mkv",
+  "events": 86,
+  "wave_vetoes": 2,
+  "stats": {},
+  "same_person_frames_labels_and_prior_evidence": true,
+  "max_probability_difference": {
+    "rgb_probs": 0.004865586757659912,
+    "skeleton_probs": 0.0,
+    "fused_probs": 0.004729330539703369
+  },
+  "probability_reproducibility_within_2e_4": false,
+  "caveat": "Pass means exact person/frame/label/prior integration consistency across independent model loads. Probability reproducibility is reported separately, not silently relaxed. Paired experiments share identical probabilities. One short source, not a real-time test."
+}

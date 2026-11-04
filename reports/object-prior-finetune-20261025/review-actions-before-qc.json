@@ -1,0 +1,1864 @@
+{
+  "reviewer": "assistant visual review; auxiliary boxes, not independent human ground truth",
+  "coordinate_system": "tile content coordinates (0..400,0..360); exclude 60px title; see tiles-actions/manifest.json",
+  "classes": [
+    "bottle",
+    "cup",
+    "phone",
+    "camera",
+    "paper",
+    "portable_object",
+    "robot_or_exhibit"
+  ],
+  "records": {
+    "0": {
+      "boxes": [
+        [
+          0,
+          183,
+          75,
+          209,
+          98
+        ]
+      ],
+      "note": "Visible light container at mouth; bottle outline approximate."
+    },
+    "1": {
+      "boxes": [
+        [
+          0,
+          181,
+          68,
+          211,
+          90
+        ]
+      ]
+    },
+    "2": {
+      "boxes": [
+        [
+          0,
+          171,
+          86,
+          195,
+          112
+        ]
+      ]
+    },
+    "3": {
+      "exclude": "Blue handheld item partly covered, boundary unclear at this sampled frame."
+    },
+    "4": {
+      "boxes": [
+        [
+          0,
+          198,
+          81,
+          216,
+          113
+        ]
+      ],
+      "note": "Blue bottle at mouth, reject robot/camera proposals."
+    },
+    "5": {
+      "boxes": [
+        [
+          0,
+          198,
+          78,
+          219,
+          96
+        ]
+      ]
+    },
+    "6": {
+      "exclude": "Severe darkness and block artifacts; small hand object cannot be bounded reliably."
+    },
+    "7": {
+      "exclude": "Severe darkness; hand/face overlap."
+    },
+    "8": {
+      "exclude": "Severe darkness; hand/face overlap."
+    },
+    "9": {
+      "exclude": "Severe darkness; cannot separate bottle from hand/face."
+    },
+    "10": {
+      "exclude": "Severe darkness; cannot separate bottle from hand/face."
+    },
+    "11": {
+      "exclude": "Severe darkness; cannot separate bottle from hand/face."
+    },
+    "12": {
+      "exclude": "Severe darkness and compression; small object unclear."
+    },
+    "13": {
+      "exclude": "Severe darkness and compression; small object unclear."
+    },
+    "14": {
+      "exclude": "Severe compression; cannot localize small object."
+    },
+    "15": {
+      "exclude": "Severe compression; cannot localize small object."
+    },
+    "16": {
+      "exclude": "Severe compression; cannot localize small object."
+    },
+    "17": {
+      "boxes": [
+        [
+          0,
+          170,
+          97,
+          187,
+          128
+        ]
+      ],
+      "note": "Clear bottle with flip lid; bottle includes lid/body, excludes hand."
+    },
+    "18": {
+      "boxes": [
+        [
+          0,
+          178,
+          73,
+          195,
+          103
+        ]
+      ]
+    },
+    "19": {
+      "boxes": [
+        [
+          0,
+          180,
+          73,
+          198,
+          102
+        ]
+      ]
+    },
+    "20": {
+      "boxes": [
+        [
+          0,
+          169,
+          99,
+          196,
+          145
+        ]
+      ]
+    },
+    "21": {
+      "boxes": [
+        [
+          0,
+          173,
+          86,
+          205,
+          124
+        ]
+      ]
+    },
+    "22": {
+      "boxes": [
+        [
+          0,
+          182,
+          110,
+          204,
+          151
+        ]
+      ]
+    },
+    "23": {
+      "boxes": [
+        [
+          0,
+          183,
+          80,
+          204,
+          107
+        ]
+      ]
+    },
+    "24": {
+      "boxes": [
+        [
+          0,
+          181,
+          78,
+          204,
+          112
+        ]
+      ]
+    },
+    "25": {
+      "boxes": [
+        [
+          0,
+          176,
+          166,
+          194,
+          192
+        ]
+      ]
+    },
+    "26": {
+      "boxes": [
+        [
+          0,
+          167,
+          88,
+          186,
+          115
+        ]
+      ]
+    },
+    "27": {
+      "boxes": [
+        [
+          0,
+          163,
+          76,
+          187,
+          105
+        ]
+      ]
+    },
+    "29": {
+      "boxes": [
+        [
+          0,
+          249,
+          198,
+          310,
+          285
+        ]
+      ]
+    },
+    "30": {
+      "boxes": [
+        [
+          0,
+          162,
+          86,
+          217,
+          181
+        ]
+      ]
+    },
+    "31": {
+      "boxes": [
+        [
+          0,
+          125,
+          118,
+          180,
+          199
+        ]
+      ]
+    },
+    "35": {
+      "boxes": [
+        [
+          0,
+          184,
+          82,
+          202,
+          116
+        ]
+      ]
+    },
+    "28": {
+      "exclude": "Compression artifacts obscure exact small object boundary; do not train as negative."
+    },
+    "32": {
+      "exclude": "Compression artifacts obscure exact small object boundary; do not train as negative."
+    },
+    "33": {
+      "exclude": "Compression artifacts obscure exact small object boundary; do not train as negative."
+    },
+    "34": {
+      "exclude": "Compression artifacts obscure exact small object boundary; do not train as negative."
+    },
+    "36": {
+      "boxes": [
+        [
+          0,
+          173,
+          74,
+          195,
+          104
+        ]
+      ]
+    },
+    "37": {
+      "boxes": [
+        [
+          0,
+          188,
+          82,
+          205,
+          113
+        ]
+      ]
+    },
+    "44": {
+      "boxes": [
+        [
+          0,
+          189,
+          98,
+          209,
+          130
+        ]
+      ]
+    },
+    "45": {
+      "boxes": [
+        [
+          0,
+          197,
+          62,
+          222,
+          89
+        ]
+      ]
+    },
+    "46": {
+      "boxes": [
+        [
+          0,
+          198,
+          73,
+          227,
+          100
+        ]
+      ]
+    },
+    "47": {
+      "boxes": [
+        [
+          0,
+          225,
+          87,
+          244,
+          117
+        ]
+      ]
+    },
+    "49": {
+      "boxes": [
+        [
+          0,
+          222,
+          73,
+          241,
+          98
+        ]
+      ]
+    },
+    "51": {
+      "boxes": [
+        [
+          0,
+          231,
+          114,
+          250,
+          141
+        ]
+      ]
+    },
+    "52": {
+      "boxes": [
+        [
+          0,
+          170,
+          128,
+          189,
+          159
+        ]
+      ]
+    },
+    "53": {
+      "boxes": [
+        [
+          0,
+          187,
+          70,
+          216,
+          93
+        ]
+      ]
+    },
+    "55": {
+      "boxes": [
+        [
+          0,
+          190,
+          100,
+          209,
+          124
+        ]
+      ]
+    },
+    "56": {
+      "boxes": [
+        [
+          0,
+          184,
+          128,
+          202,
+          160
+        ]
+      ]
+    },
+    "57": {
+      "boxes": [
+        [
+          0,
+          181,
+          74,
+          205,
+          100
+        ]
+      ]
+    },
+    "58": {
+      "boxes": [
+        [
+          0,
+          215,
+          128,
+          235,
+          158
+        ]
+      ]
+    },
+    "59": {
+      "boxes": [
+        [
+          0,
+          229,
+          139,
+          251,
+          170
+        ]
+      ]
+    },
+    "38": {
+      "exclude": "Severe dark/compression; object identity or extent unclear."
+    },
+    "39": {
+      "exclude": "Severe dark/compression; object identity or extent unclear."
+    },
+    "40": {
+      "exclude": "Severe dark/compression; object identity or extent unclear."
+    },
+    "41": {
+      "exclude": "Severe dark/compression; object identity or extent unclear."
+    },
+    "42": {
+      "exclude": "Severe dark/compression; object identity or extent unclear."
+    },
+    "43": {
+      "exclude": "Severe dark/compression; object identity or extent unclear."
+    },
+    "48": {
+      "boxes": [
+        [
+          6,
+          162,
+          69,
+          244,
+          294
+        ]
+      ],
+      "valid_region": [
+        158,
+        60,
+        260,
+        305
+      ],
+      "note": "Printed life-size person on display column; nonphysical-human exhibit, not real person. Partial adjacent hand excluded by valid_region."
+    },
+    "50": {
+      "boxes": [
+        [
+          6,
+          171,
+          70,
+          252,
+          295
+        ]
+      ],
+      "valid_region": [
+        158,
+        60,
+        260,
+        305
+      ],
+      "note": "Printed life-size person on display column; nonphysical-human exhibit, not real person. Partial adjacent hand excluded by valid_region."
+    },
+    "54": {
+      "exclude": "Occluded distant bystander hands behind table; small objects unclear."
+    },
+    "60": {
+      "boxes": [
+        [
+          0,
+          231,
+          79,
+          252,
+          103
+        ]
+      ]
+    },
+    "61": {
+      "boxes": [
+        [
+          0,
+          242,
+          86,
+          261,
+          114
+        ],
+        [
+          6,
+          242,
+          0,
+          284,
+          124
+        ]
+      ],
+      "note": "Printed person partly visible on column behind real actor."
+    },
+    "64": {
+      "boxes": [
+        [
+          0,
+          203,
+          88,
+          222,
+          117
+        ]
+      ],
+      "valid_region": [
+        130,
+        55,
+        280,
+        175
+      ],
+      "note": "Only upper body reviewed as complete; unclear blue item in lowered other hand outside training crop."
+    },
+    "65": {
+      "boxes": [
+        [
+          0,
+          192,
+          71,
+          212,
+          90
+        ]
+      ],
+      "valid_region": [
+        130,
+        55,
+        280,
+        175
+      ],
+      "note": "Only upper body reviewed as complete; unclear blue item in lowered other hand outside training crop."
+    },
+    "66": {
+      "boxes": [
+        [
+          0,
+          191,
+          72,
+          211,
+          91
+        ]
+      ],
+      "valid_region": [
+        130,
+        55,
+        280,
+        175
+      ],
+      "note": "Only upper body reviewed as complete; unclear blue item in lowered other hand outside training crop."
+    },
+    "70": {
+      "boxes": [
+        [
+          0,
+          200,
+          155,
+          220,
+          188
+        ]
+      ]
+    },
+    "71": {
+      "boxes": [
+        [
+          0,
+          194,
+          75,
+          212,
+          103
+        ]
+      ]
+    },
+    "72": {
+      "boxes": [
+        [
+          0,
+          199,
+          82,
+          218,
+          114
+        ]
+      ]
+    },
+    "73": {
+      "boxes": [
+        [
+          0,
+          169,
+          94,
+          193,
+          130
+        ]
+      ]
+    },
+    "74": {
+      "boxes": [
+        [
+          0,
+          178,
+          75,
+          209,
+          100
+        ]
+      ]
+    },
+    "75": {
+      "boxes": [
+        [
+          0,
+          170,
+          112,
+          191,
+          145
+        ]
+      ]
+    },
+    "76": {
+      "boxes": [
+        [
+          0,
+          151,
+          113,
+          177,
+          147
+        ]
+      ]
+    },
+    "77": {
+      "boxes": [
+        [
+          0,
+          170,
+          71,
+          201,
+          95
+        ]
+      ]
+    },
+    "78": {
+      "boxes": [
+        [
+          0,
+          169,
+          112,
+          192,
+          146
+        ]
+      ]
+    },
+    "79": {
+      "boxes": [
+        [
+          0,
+          183,
+          128,
+          201,
+          160
+        ]
+      ]
+    },
+    "80": {
+      "boxes": [
+        [
+          0,
+          188,
+          79,
+          212,
+          111
+        ]
+      ]
+    },
+    "81": {
+      "boxes": [
+        [
+          0,
+          188,
+          104,
+          209,
+          145
+        ]
+      ]
+    },
+    "82": {
+      "boxes": [
+        [
+          0,
+          225,
+          112,
+          252,
+          158
+        ]
+      ]
+    },
+    "83": {
+      "boxes": [
+        [
+          0,
+          233,
+          98,
+          270,
+          122
+        ]
+      ]
+    },
+    "62": {
+      "boxes": [
+        [
+          6,
+          150,
+          74,
+          245,
+          330
+        ]
+      ],
+      "note": "Clearly visible stationary humanoid exhibit, not real actor."
+    },
+    "63": {
+      "exclude": "Extreme dark/compression; cannot resolve small object or exact exhibit boundary."
+    },
+    "67": {
+      "exclude": "Extreme dark/compression; cannot resolve small object or exact exhibit boundary."
+    },
+    "68": {
+      "exclude": "Extreme dark/compression; cannot resolve small object or exact exhibit boundary."
+    },
+    "69": {
+      "exclude": "Extreme dark/compression; cannot resolve small object or exact exhibit boundary."
+    },
+    "84": {
+      "boxes": [
+        [
+          0,
+          221,
+          165,
+          250,
+          203
+        ]
+      ]
+    },
+    "85": {
+      "boxes": [
+        [
+          0,
+          149,
+          225,
+          176,
+          264
+        ]
+      ]
+    },
+    "86": {
+      "boxes": [
+        [
+          0,
+          160,
+          102,
+          210,
+          159
+        ]
+      ]
+    },
+    "87": {
+      "boxes": [
+        [
+          0,
+          161,
+          95,
+          212,
+          148
+        ]
+      ]
+    },
+    "88": {
+      "boxes": [
+        [
+          0,
+          193,
+          165,
+          218,
+          202
+        ]
+      ]
+    },
+    "89": {
+      "boxes": [
+        [
+          0,
+          166,
+          83,
+          189,
+          114
+        ]
+      ]
+    },
+    "90": {
+      "boxes": [
+        [
+          0,
+          165,
+          86,
+          191,
+          117
+        ]
+      ]
+    },
+    "94": {
+      "boxes": [
+        [
+          0,
+          225,
+          110,
+          250,
+          150
+        ]
+      ],
+      "valid_region": [
+        160,
+        70,
+        285,
+        190
+      ]
+    },
+    "95": {
+      "boxes": [
+        [
+          0,
+          217,
+          84,
+          237,
+          106
+        ]
+      ],
+      "valid_region": [
+        140,
+        60,
+        280,
+        160
+      ]
+    },
+    "96": {
+      "boxes": [
+        [
+          0,
+          207,
+          74,
+          225,
+          95
+        ]
+      ],
+      "valid_region": [
+        170,
+        40,
+        260,
+        160
+      ]
+    },
+    "91": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "92": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "93": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "97": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "98": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "99": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "100": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "101": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "102": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "103": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "104": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "105": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "106": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "107": {
+      "exclude": "Severe dark/compression makes small-object localization uncertain; no negative label."
+    },
+    "118": {
+      "boxes": [
+        [
+          4,
+          142,
+          290,
+          187,
+          312
+        ]
+      ]
+    },
+    "119": {
+      "boxes": [
+        [
+          4,
+          129,
+          279,
+          198,
+          305
+        ]
+      ]
+    },
+    "120": {
+      "boxes": [
+        [
+          4,
+          145,
+          222,
+          215,
+          301
+        ]
+      ]
+    },
+    "122": {
+      "boxes": [
+        [
+          4,
+          97,
+          245,
+          139,
+          267
+        ]
+      ],
+      "valid_region": [
+        94,
+        215,
+        188,
+        295
+      ]
+    },
+    "124": {
+      "boxes": [
+        [
+          4,
+          64,
+          226,
+          137,
+          258
+        ]
+      ]
+    },
+    "127": {
+      "boxes": [
+        [
+          4,
+          156,
+          174,
+          201,
+          219
+        ]
+      ]
+    },
+    "130": {
+      "boxes": [
+        [
+          4,
+          124,
+          272,
+          180,
+          299
+        ]
+      ]
+    },
+    "131": {
+      "boxes": [
+        [
+          4,
+          149,
+          216,
+          207,
+          282
+        ]
+      ]
+    },
+    "129": {
+      "boxes": [
+        [
+          6,
+          147,
+          77,
+          245,
+          335
+        ]
+      ],
+      "note": "Fixed humanoid exhibit, clear hard negative for person recognition."
+    },
+    "108": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "109": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "110": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "111": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "112": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "113": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "114": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "115": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "116": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "117": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "121": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "123": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "125": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "126": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "128": {
+      "exclude": "Dark/occluded/too small to determine object semantic and boundary; do not label as empty."
+    },
+    "132": {
+      "boxes": [
+        [
+          4,
+          152,
+          126,
+          205,
+          165
+        ]
+      ]
+    },
+    "133": {
+      "boxes": [
+        [
+          4,
+          220,
+          260,
+          289,
+          292
+        ]
+      ]
+    },
+    "135": {
+      "boxes": [
+        [
+          4,
+          231,
+          220,
+          262,
+          293
+        ]
+      ]
+    },
+    "137": {
+      "boxes": [
+        [
+          4,
+          203,
+          156,
+          228,
+          198
+        ]
+      ]
+    },
+    "139": {
+      "boxes": [
+        [
+          4,
+          215,
+          270,
+          268,
+          302
+        ]
+      ],
+      "valid_region": [
+        100,
+        180,
+        285,
+        350
+      ],
+      "note": "Training crop excludes partial poster/occluded people outside reviewed region."
+    },
+    "141": {
+      "boxes": [
+        [
+          4,
+          197,
+          220,
+          253,
+          318
+        ]
+      ],
+      "valid_region": [
+        180,
+        207,
+        263,
+        330
+      ],
+      "note": "Training crop excludes partial poster/occluded people outside reviewed region."
+    },
+    "143": {
+      "boxes": [
+        [
+          4,
+          215,
+          146,
+          241,
+          208
+        ]
+      ],
+      "valid_region": [
+        160,
+        100,
+        242,
+        230
+      ],
+      "note": "Training crop excludes partial poster/occluded people outside reviewed region."
+    },
+    "146": {
+      "boxes": [
+        [
+          4,
+          204,
+          274,
+          279,
+          301
+        ]
+      ]
+    },
+    "147": {
+      "boxes": [
+        [
+          4,
+          218,
+          264,
+          274,
+          287
+        ]
+      ]
+    },
+    "148": {
+      "boxes": [
+        [
+          4,
+          205,
+          167,
+          227,
+          211
+        ]
+      ]
+    },
+    "151": {
+      "boxes": [
+        [
+          4,
+          258,
+          292,
+          302,
+          322
+        ]
+      ]
+    },
+    "152": {
+      "boxes": [
+        [
+          4,
+          233,
+          277,
+          300,
+          318
+        ]
+      ]
+    },
+    "153": {
+      "boxes": [
+        [
+          4,
+          205,
+          183,
+          243,
+          240
+        ]
+      ]
+    },
+    "154": {
+      "boxes": [
+        [
+          4,
+          264,
+          299,
+          297,
+          319
+        ]
+      ]
+    },
+    "155": {
+      "boxes": [
+        [
+          4,
+          207,
+          279,
+          272,
+          308
+        ]
+      ]
+    },
+    "134": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "136": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "138": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "140": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "142": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "144": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "145": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "149": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "150": {
+      "exclude": "Occluded hands or extreme artifacts prevent complete object labeling."
+    },
+    "156": {
+      "boxes": [
+        [
+          4,
+          212,
+          150,
+          239,
+          193
+        ]
+      ]
+    },
+    "157": {
+      "boxes": [
+        [
+          4,
+          204,
+          282,
+          279,
+          305
+        ]
+      ]
+    },
+    "158": {
+      "boxes": [
+        [
+          4,
+          204,
+          278,
+          274,
+          305
+        ]
+      ]
+    },
+    "160": {
+      "boxes": [
+        [
+          4,
+          203,
+          301,
+          261,
+          333
+        ]
+      ]
+    },
+    "161": {
+      "boxes": [
+        [
+          4,
+          170,
+          274,
+          232,
+          305
+        ]
+      ]
+    },
+    "165": {
+      "boxes": [
+        [
+          4,
+          177,
+          241,
+          213,
+          307
+        ]
+      ]
+    },
+    "166": {
+      "boxes": [
+        [
+          4,
+          183,
+          335,
+          222,
+          360
+        ]
+      ]
+    },
+    "167": {
+      "boxes": [
+        [
+          4,
+          174,
+          309,
+          235,
+          360
+        ]
+      ]
+    },
+    "168": {
+      "boxes": [
+        [
+          4,
+          187,
+          204,
+          208,
+          269
+        ]
+      ]
+    },
+    "169": {
+      "boxes": [
+        [
+          4,
+          184,
+          345,
+          226,
+          360
+        ]
+      ]
+    },
+    "170": {
+      "boxes": [
+        [
+          4,
+          167,
+          260,
+          267,
+          332
+        ]
+      ]
+    },
+    "171": {
+      "boxes": [
+        [
+          4,
+          111,
+          190,
+          164,
+          253
+        ]
+      ]
+    },
+    "173": {
+      "boxes": [
+        [
+          4,
+          237,
+          285,
+          315,
+          319
+        ]
+      ]
+    },
+    "174": {
+      "boxes": [
+        [
+          4,
+          240,
+          248,
+          267,
+          289
+        ]
+      ]
+    },
+    "175": {
+      "boxes": [
+        [
+          4,
+          214,
+          175,
+          228,
+          200
+        ]
+      ]
+    },
+    "179": {
+      "boxes": [
+        [
+          4,
+          148,
+          334,
+          208,
+          360
+        ]
+      ]
+    },
+    "159": {
+      "exclude": "Dark artifacts or nearly edge-on held paper cannot be localized reliably."
+    },
+    "162": {
+      "exclude": "Dark artifacts or nearly edge-on held paper cannot be localized reliably."
+    },
+    "172": {
+      "exclude": "Dark artifacts or nearly edge-on held paper cannot be localized reliably."
+    },
+    "176": {
+      "exclude": "Dark artifacts or nearly edge-on held paper cannot be localized reliably."
+    },
+    "177": {
+      "exclude": "Dark artifacts or nearly edge-on held paper cannot be localized reliably."
+    },
+    "178": {
+      "exclude": "Dark artifacts or nearly edge-on held paper cannot be localized reliably."
+    },
+    "163": {
+      "boxes": [],
+      "note": "Body-only crop; hands and paper outside lower image. Visible crop contains no target object."
+    },
+    "164": {
+      "boxes": [],
+      "note": "Body-only crop; hands and paper outside lower image. Visible crop contains no target object."
+    },
+    "180": {
+      "boxes": [
+        [
+          4,
+          145,
+          283,
+          211,
+          319
+        ]
+      ]
+    },
+    "181": {
+      "boxes": [
+        [
+          4,
+          153,
+          194,
+          206,
+          232
+        ]
+      ]
+    },
+    "185": {
+      "boxes": [
+        [
+          0,
+          166,
+          81,
+          191,
+          100
+        ]
+      ],
+      "valid_region": [
+        155,
+        55,
+        230,
+        125
+      ]
+    },
+    "186": {
+      "boxes": [
+        [
+          0,
+          235,
+          134,
+          254,
+          167
+        ]
+      ],
+      "valid_region": [
+        190,
+        100,
+        280,
+        178
+      ]
+    },
+    "187": {
+      "boxes": [
+        [
+          0,
+          187,
+          88,
+          211,
+          103
+        ]
+      ]
+    },
+    "188": {
+      "boxes": [
+        [
+          0,
+          194,
+          82,
+          213,
+          113
+        ]
+      ]
+    },
+    "189": {
+      "boxes": [
+        [
+          0,
+          193,
+          84,
+          217,
+          100
+        ]
+      ]
+    },
+    "190": {
+      "boxes": [
+        [
+          0,
+          196,
+          85,
+          220,
+          101
+        ]
+      ]
+    },
+    "200": {
+      "boxes": [
+        [
+          0,
+          143,
+          137,
+          165,
+          171
+        ]
+      ]
+    },
+    "201": {
+      "boxes": [
+        [
+          0,
+          188,
+          139,
+          218,
+          184
+        ]
+      ]
+    },
+    "202": {
+      "boxes": [
+        [
+          0,
+          169,
+          119,
+          205,
+          137
+        ]
+      ]
+    },
+    "203": {
+      "boxes": [
+        [
+          0,
+          250,
+          192,
+          284,
+          255
+        ]
+      ]
+    },
+    "182": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "183": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "184": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "191": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "192": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "193": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "194": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "195": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "196": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "197": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "198": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "199": {
+      "exclude": "Severe darkness/compression; fine object boundary not reliable."
+    },
+    "204": {
+      "boxes": [
+        [
+          0,
+          175,
+          117,
+          209,
+          169
+        ]
+      ]
+    },
+    "205": {
+      "boxes": [
+        [
+          0,
+          154,
+          133,
+          185,
+          180
+        ]
+      ]
+    },
+    "206": {
+      "boxes": [
+        [
+          0,
+          201,
+          90,
+          219,
+          110
+        ]
+      ],
+      "valid_region": [
+        170,
+        65,
+        260,
+        160
+      ]
+    },
+    "207": {
+      "boxes": [
+        [
+          0,
+          190,
+          72,
+          213,
+          91
+        ]
+      ],
+      "valid_region": [
+        170,
+        65,
+        260,
+        160
+      ]
+    },
+    "208": {
+      "boxes": [
+        [
+          0,
+          209,
+          97,
+          228,
+          129
+        ]
+      ],
+      "valid_region": [
+        170,
+        65,
+        260,
+        160
+      ]
+    },
+    "209": {
+      "boxes": [
+        [
+          0,
+          214,
+          104,
+          243,
+          145
+        ]
+      ],
+      "valid_region": [
+        180,
+        40,
+        270,
+        170
+      ]
+    },
+    "210": {
+      "boxes": [
+        [
+          0,
+          218,
+          74,
+          240,
+          100
+        ]
+      ],
+      "valid_region": [
+        180,
+        40,
+        270,
+        170
+      ]
+    },
+    "211": {
+      "boxes": [
+        [
+          0,
+          215,
+          65,
+          236,
+          82
+        ]
+      ],
+      "valid_region": [
+        180,
+        40,
+        270,
+        170
+      ]
+    },
+    "214": {
+      "boxes": [
+        [
+          0,
+          184,
+          74,
+          204,
+          94
+        ]
+      ]
+    },
+    "220": {
+      "boxes": [
+        [
+          0,
+          165,
+          183,
+          181,
+          215
+        ]
+      ]
+    },
+    "221": {
+      "boxes": [
+        [
+          0,
+          201,
+          182,
+          217,
+          212
+        ]
+      ]
+    },
+    "212": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    },
+    "213": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    },
+    "215": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    },
+    "216": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    },
+    "217": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    },
+    "218": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    },
+    "219": {
+      "exclude": "Object hidden at hand/head or severe dark noise; no reliable object box."
+    }
+  }
+}

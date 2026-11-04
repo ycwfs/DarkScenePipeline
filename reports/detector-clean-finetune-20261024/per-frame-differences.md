@@ -1,0 +1,33 @@
+| 帧 | 原始 | 上轮 | 本轮 |
+|---|---:|---:|---:|
+| real-actiondata-all/other/other95.mp4 F51 | 1/2 | 1/2 | 2/2 |
+| real-actiondata-all/挥手28.mp4 F42 | 3/3 | 1/3 | 3/3 |
+| real-actiondata-all/挥手29.mp4 F43 | 2/3 | 1/3 | 2/3 |
+| real-actiondata-all/追逐25.mp4 F70 | 2/2 | 1/2 | 1/2 |
+| real-actiondata-all/other/other225.mp4 F0 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F5 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F10 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F15 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F20 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F25 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F30 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F35 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F40 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F45 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F50 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F55 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F60 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F65 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F70 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F75 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other225.mp4 F80 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other230.mp4 F24 | 0/1 | 0/1 | 1/1 |
+| real-actiondata-all/other/other200.mp4 F83 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other200.mp4 F93 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other200.mp4 F98 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other200.mp4 F108 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other200.mp4 F113 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other223.mp4 F25 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other223.mp4 F36 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/other/other223.mp4 F41 | 0/1 | 1/1 | 1/1 |
+| real-actiondata-all/挥手34.mp4 F83 | 1/1 | 1/1 | 0/1 |

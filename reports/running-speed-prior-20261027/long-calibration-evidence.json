@@ -1,0 +1,1498 @@
+[
+  {
+    "frame": 521,
+    "track_id": 37,
+    "truth": "chase",
+    "group": "child37-run-away",
+    "note": "Gray-sweater child moving away; consecutive raw frames show running/hopping stride.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 0.39172746719941925,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 496,
+          "end_frame": 500,
+          "start_time": 19.84,
+          "end_time": 20.0,
+          "joints": 13,
+          "speed": 0.3139901890621736
+        },
+        {
+          "start_frame": 496,
+          "end_frame": 501,
+          "start_time": 19.84,
+          "end_time": 20.04,
+          "joints": 13,
+          "speed": 0.26866745537070197
+        },
+        {
+          "start_frame": 497,
+          "end_frame": 502,
+          "start_time": 19.88,
+          "end_time": 20.08,
+          "joints": 13,
+          "speed": 0.24521520351903708
+        },
+        {
+          "start_frame": 498,
+          "end_frame": 503,
+          "start_time": 19.92,
+          "end_time": 20.12,
+          "joints": 13,
+          "speed": 0.22841520411694147
+        },
+        {
+          "start_frame": 500,
+          "end_frame": 505,
+          "start_time": 20.0,
+          "end_time": 20.2,
+          "joints": 13,
+          "speed": 0.4243066860470081
+        },
+        {
+          "start_frame": 501,
+          "end_frame": 506,
+          "start_time": 20.04,
+          "end_time": 20.24,
+          "joints": 13,
+          "speed": 0.4494488203114979
+        },
+        {
+          "start_frame": 502,
+          "end_frame": 507,
+          "start_time": 20.08,
+          "end_time": 20.28,
+          "joints": 12,
+          "speed": 0.5019408283456429
+        },
+        {
+          "start_frame": 503,
+          "end_frame": 508,
+          "start_time": 20.12,
+          "end_time": 20.32,
+          "joints": 12,
+          "speed": 0.44663197375975056
+        },
+        {
+          "start_frame": 503,
+          "end_frame": 509,
+          "start_time": 20.12,
+          "end_time": 20.36,
+          "joints": 12,
+          "speed": 0.3961764796363692
+        },
+        {
+          "start_frame": 505,
+          "end_frame": 510,
+          "start_time": 20.2,
+          "end_time": 20.4,
+          "joints": 13,
+          "speed": 0.32185288560752
+        },
+        {
+          "start_frame": 506,
+          "end_frame": 511,
+          "start_time": 20.24,
+          "end_time": 20.44,
+          "joints": 13,
+          "speed": 0.27308980296672186
+        },
+        {
+          "start_frame": 508,
+          "end_frame": 513,
+          "start_time": 20.32,
+          "end_time": 20.52,
+          "joints": 12,
+          "speed": 0.23081321266035393
+        },
+        {
+          "start_frame": 509,
+          "end_frame": 514,
+          "start_time": 20.36,
+          "end_time": 20.56,
+          "joints": 12,
+          "speed": 0.3268622321741582
+        },
+        {
+          "start_frame": 510,
+          "end_frame": 515,
+          "start_time": 20.4,
+          "end_time": 20.6,
+          "joints": 12,
+          "speed": 0.32446392200308893
+        },
+        {
+          "start_frame": 511,
+          "end_frame": 516,
+          "start_time": 20.44,
+          "end_time": 20.64,
+          "joints": 12,
+          "speed": 0.3456527981683796
+        },
+        {
+          "start_frame": 511,
+          "end_frame": 517,
+          "start_time": 20.44,
+          "end_time": 20.68,
+          "joints": 12,
+          "speed": 0.4161903806868503
+        },
+        {
+          "start_frame": 513,
+          "end_frame": 518,
+          "start_time": 20.52,
+          "end_time": 20.72,
+          "joints": 12,
+          "speed": 0.5874017177408389
+        },
+        {
+          "start_frame": 515,
+          "end_frame": 520,
+          "start_time": 20.6,
+          "end_time": 20.8,
+          "joints": 12,
+          "speed": 0.67190393845632
+        },
+        {
+          "start_frame": 516,
+          "end_frame": 521,
+          "start_time": 20.64,
+          "end_time": 20.84,
+          "joints": 12,
+          "speed": 0.6697981461556101
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 23,
+      "valid_pairs": 19
+    }
+  },
+  {
+    "frame": 613,
+    "track_id": 37,
+    "truth": "chase",
+    "group": "child37-run-away",
+    "note": "Same child farther from camera; running sequence.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": null,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 25,
+      "valid_pairs": 0
+    }
+  },
+  {
+    "frame": 4878,
+    "track_id": 460,
+    "truth": "other",
+    "group": "adult460-walk",
+    "note": "Black-shirt adult walking with cup.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 0.1766639458674049,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 4856,
+          "end_frame": 4861,
+          "start_time": 194.24,
+          "end_time": 194.44,
+          "joints": 13,
+          "speed": 0.37114450080682765
+        },
+        {
+          "start_frame": 4859,
+          "end_frame": 4863,
+          "start_time": 194.36,
+          "end_time": 194.52,
+          "joints": 13,
+          "speed": 0.28788527100136657
+        },
+        {
+          "start_frame": 4859,
+          "end_frame": 4864,
+          "start_time": 194.36,
+          "end_time": 194.56,
+          "joints": 13,
+          "speed": 0.251033369424005
+        },
+        {
+          "start_frame": 4860,
+          "end_frame": 4865,
+          "start_time": 194.4,
+          "end_time": 194.6,
+          "joints": 15,
+          "speed": 0.15471593594369468
+        },
+        {
+          "start_frame": 4861,
+          "end_frame": 4866,
+          "start_time": 194.44,
+          "end_time": 194.64,
+          "joints": 15,
+          "speed": 0.12934604833555408
+        },
+        {
+          "start_frame": 4863,
+          "end_frame": 4867,
+          "start_time": 194.52,
+          "end_time": 194.68,
+          "joints": 15,
+          "speed": 0.17195940901986445
+        },
+        {
+          "start_frame": 4863,
+          "end_frame": 4868,
+          "start_time": 194.52,
+          "end_time": 194.72,
+          "joints": 15,
+          "speed": 0.12969341080067573
+        },
+        {
+          "start_frame": 4864,
+          "end_frame": 4869,
+          "start_time": 194.56,
+          "end_time": 194.76,
+          "joints": 15,
+          "speed": 0.12064185394954993
+        },
+        {
+          "start_frame": 4865,
+          "end_frame": 4870,
+          "start_time": 194.6,
+          "end_time": 194.8,
+          "joints": 15,
+          "speed": 0.13149895332027942
+        },
+        {
+          "start_frame": 4866,
+          "end_frame": 4871,
+          "start_time": 194.64,
+          "end_time": 194.84,
+          "joints": 15,
+          "speed": 0.12718595488559453
+        },
+        {
+          "start_frame": 4867,
+          "end_frame": 4872,
+          "start_time": 194.68,
+          "end_time": 194.88,
+          "joints": 15,
+          "speed": 0.15178955729259308
+        },
+        {
+          "start_frame": 4868,
+          "end_frame": 4873,
+          "start_time": 194.72,
+          "end_time": 194.92,
+          "joints": 15,
+          "speed": 0.1326513052061117
+        },
+        {
+          "start_frame": 4869,
+          "end_frame": 4874,
+          "start_time": 194.76,
+          "end_time": 194.96,
+          "joints": 15,
+          "speed": 0.1583990672871805
+        },
+        {
+          "start_frame": 4870,
+          "end_frame": 4875,
+          "start_time": 194.8,
+          "end_time": 195.0,
+          "joints": 15,
+          "speed": 0.15056900482331648
+        },
+        {
+          "start_frame": 4871,
+          "end_frame": 4876,
+          "start_time": 194.84,
+          "end_time": 195.04,
+          "joints": 15,
+          "speed": 0.17899826876068525
+        },
+        {
+          "start_frame": 4872,
+          "end_frame": 4877,
+          "start_time": 194.88,
+          "end_time": 195.08,
+          "joints": 16,
+          "speed": 0.15281636996679354
+        },
+        {
+          "start_frame": 4873,
+          "end_frame": 4878,
+          "start_time": 194.92,
+          "end_time": 195.12,
+          "joints": 15,
+          "speed": 0.2029587989217907
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 22,
+      "valid_pairs": 17
+    }
+  },
+  {
+    "frame": 4951,
+    "track_id": 470,
+    "truth": "other",
+    "group": "adult470-walk",
+    "note": "Black-clad adult walking with bag.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 0.18249401644209495,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 4933,
+          "end_frame": 4937,
+          "start_time": 197.32,
+          "end_time": 197.48,
+          "joints": 15,
+          "speed": 0.286725811981675
+        },
+        {
+          "start_frame": 4933,
+          "end_frame": 4938,
+          "start_time": 197.32,
+          "end_time": 197.52,
+          "joints": 15,
+          "speed": 0.2503537871129681
+        },
+        {
+          "start_frame": 4934,
+          "end_frame": 4939,
+          "start_time": 197.36,
+          "end_time": 197.56,
+          "joints": 15,
+          "speed": 0.25098060786271664
+        },
+        {
+          "start_frame": 4935,
+          "end_frame": 4940,
+          "start_time": 197.4,
+          "end_time": 197.6,
+          "joints": 15,
+          "speed": 0.22815490360029625
+        },
+        {
+          "start_frame": 4936,
+          "end_frame": 4941,
+          "start_time": 197.44,
+          "end_time": 197.64,
+          "joints": 15,
+          "speed": 0.24760596195320939
+        },
+        {
+          "start_frame": 4937,
+          "end_frame": 4942,
+          "start_time": 197.48,
+          "end_time": 197.68,
+          "joints": 15,
+          "speed": 0.19866030391917483
+        },
+        {
+          "start_frame": 4938,
+          "end_frame": 4943,
+          "start_time": 197.52,
+          "end_time": 197.72,
+          "joints": 15,
+          "speed": 0.1994655624800121
+        },
+        {
+          "start_frame": 4939,
+          "end_frame": 4944,
+          "start_time": 197.56,
+          "end_time": 197.76,
+          "joints": 15,
+          "speed": 0.22690609426422859
+        },
+        {
+          "start_frame": 4940,
+          "end_frame": 4945,
+          "start_time": 197.6,
+          "end_time": 197.8,
+          "joints": 15,
+          "speed": 0.20023946944212825
+        },
+        {
+          "start_frame": 4941,
+          "end_frame": 4946,
+          "start_time": 197.64,
+          "end_time": 197.84,
+          "joints": 15,
+          "speed": 0.11014421723632888
+        },
+        {
+          "start_frame": 4942,
+          "end_frame": 4947,
+          "start_time": 197.68,
+          "end_time": 197.88,
+          "joints": 15,
+          "speed": 0.11618200247843921
+        },
+        {
+          "start_frame": 4943,
+          "end_frame": 4948,
+          "start_time": 197.72,
+          "end_time": 197.92,
+          "joints": 15,
+          "speed": 0.11798845723114702
+        },
+        {
+          "start_frame": 4944,
+          "end_frame": 4949,
+          "start_time": 197.76,
+          "end_time": 197.96,
+          "joints": 15,
+          "speed": 0.12598472625768964
+        },
+        {
+          "start_frame": 4945,
+          "end_frame": 4950,
+          "start_time": 197.8,
+          "end_time": 198.0,
+          "joints": 15,
+          "speed": 0.09795136230133258
+        },
+        {
+          "start_frame": 4946,
+          "end_frame": 4951,
+          "start_time": 197.84,
+          "end_time": 198.04,
+          "joints": 15,
+          "speed": 0.08006697851007741
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 22,
+      "valid_pairs": 15
+    }
+  },
+  {
+    "frame": 5773,
+    "track_id": 558,
+    "truth": "other",
+    "group": "overlap558-walk",
+    "note": "Two overlapping adults walking together; detector box merges bodies.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 0.45306800697482125,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 5748,
+          "end_frame": 5752,
+          "start_time": 229.92,
+          "end_time": 230.08,
+          "joints": 10,
+          "speed": 1.6228168163030694
+        },
+        {
+          "start_frame": 5748,
+          "end_frame": 5753,
+          "start_time": 229.92,
+          "end_time": 230.12,
+          "joints": 11,
+          "speed": 0.26416491228464206
+        },
+        {
+          "start_frame": 5749,
+          "end_frame": 5754,
+          "start_time": 229.96,
+          "end_time": 230.16,
+          "joints": 11,
+          "speed": 0.29347123402424685
+        },
+        {
+          "start_frame": 5750,
+          "end_frame": 5755,
+          "start_time": 230.0,
+          "end_time": 230.2,
+          "joints": 11,
+          "speed": 0.28690237151101167
+        },
+        {
+          "start_frame": 5751,
+          "end_frame": 5756,
+          "start_time": 230.04,
+          "end_time": 230.24,
+          "joints": 11,
+          "speed": 0.2693166459220796
+        },
+        {
+          "start_frame": 5752,
+          "end_frame": 5757,
+          "start_time": 230.08,
+          "end_time": 230.28,
+          "joints": 12,
+          "speed": 0.2099485804805201
+        },
+        {
+          "start_frame": 5753,
+          "end_frame": 5758,
+          "start_time": 230.12,
+          "end_time": 230.32,
+          "joints": 11,
+          "speed": 1.223732609486311
+        },
+        {
+          "start_frame": 5754,
+          "end_frame": 5759,
+          "start_time": 230.16,
+          "end_time": 230.36,
+          "joints": 11,
+          "speed": 0.2152680090942191
+        },
+        {
+          "start_frame": 5755,
+          "end_frame": 5760,
+          "start_time": 230.2,
+          "end_time": 230.4,
+          "joints": 11,
+          "speed": 0.19736903919718385
+        },
+        {
+          "start_frame": 5756,
+          "end_frame": 5761,
+          "start_time": 230.24,
+          "end_time": 230.44,
+          "joints": 11,
+          "speed": 0.1866315598012254
+        },
+        {
+          "start_frame": 5757,
+          "end_frame": 5762,
+          "start_time": 230.28,
+          "end_time": 230.48,
+          "joints": 12,
+          "speed": 1.1076885210782073
+        },
+        {
+          "start_frame": 5758,
+          "end_frame": 5763,
+          "start_time": 230.32,
+          "end_time": 230.52,
+          "joints": 13,
+          "speed": 1.0846921488169956
+        },
+        {
+          "start_frame": 5759,
+          "end_frame": 5764,
+          "start_time": 230.36,
+          "end_time": 230.56,
+          "joints": 11,
+          "speed": 0.13414601868011275
+        },
+        {
+          "start_frame": 5760,
+          "end_frame": 5765,
+          "start_time": 230.4,
+          "end_time": 230.6,
+          "joints": 12,
+          "speed": 0.1401716358214678
+        },
+        {
+          "start_frame": 5761,
+          "end_frame": 5766,
+          "start_time": 230.44,
+          "end_time": 230.64,
+          "joints": 11,
+          "speed": 0.11918072947066077
+        },
+        {
+          "start_frame": 5763,
+          "end_frame": 5768,
+          "start_time": 230.52,
+          "end_time": 230.72,
+          "joints": 12,
+          "speed": 0.2225420998453663
+        },
+        {
+          "start_frame": 5765,
+          "end_frame": 5770,
+          "start_time": 230.6,
+          "end_time": 230.8,
+          "joints": 12,
+          "speed": 0.3138687245428997
+        },
+        {
+          "start_frame": 5768,
+          "end_frame": 5773,
+          "start_time": 230.72,
+          "end_time": 230.92,
+          "joints": 12,
+          "speed": 0.26331246918656315
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 23,
+      "valid_pairs": 18
+    }
+  },
+  {
+    "frame": 7475,
+    "track_id": 749,
+    "truth": "chase",
+    "group": "child749-run-across",
+    "note": "Dark-shirt child running toward the foreground.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 1.146327767192904,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 7450,
+          "end_frame": 7454,
+          "start_time": 298.0,
+          "end_time": 298.16,
+          "joints": 16,
+          "speed": 0.7042943674187788
+        },
+        {
+          "start_frame": 7450,
+          "end_frame": 7455,
+          "start_time": 298.0,
+          "end_time": 298.2,
+          "joints": 16,
+          "speed": 0.747328279523657
+        },
+        {
+          "start_frame": 7451,
+          "end_frame": 7456,
+          "start_time": 298.04,
+          "end_time": 298.24,
+          "joints": 16,
+          "speed": 0.8263061365813048
+        },
+        {
+          "start_frame": 7452,
+          "end_frame": 7457,
+          "start_time": 298.08,
+          "end_time": 298.28,
+          "joints": 16,
+          "speed": 0.9585734251361056
+        },
+        {
+          "start_frame": 7453,
+          "end_frame": 7458,
+          "start_time": 298.12,
+          "end_time": 298.32,
+          "joints": 16,
+          "speed": 0.9430636972021808
+        },
+        {
+          "start_frame": 7454,
+          "end_frame": 7459,
+          "start_time": 298.16,
+          "end_time": 298.36,
+          "joints": 16,
+          "speed": 0.8544347063144857
+        },
+        {
+          "start_frame": 7455,
+          "end_frame": 7460,
+          "start_time": 298.2,
+          "end_time": 298.4,
+          "joints": 16,
+          "speed": 0.7847579615741581
+        },
+        {
+          "start_frame": 7456,
+          "end_frame": 7461,
+          "start_time": 298.24,
+          "end_time": 298.44,
+          "joints": 16,
+          "speed": 0.8667308691112953
+        },
+        {
+          "start_frame": 7457,
+          "end_frame": 7462,
+          "start_time": 298.28,
+          "end_time": 298.48,
+          "joints": 16,
+          "speed": 0.8874424705590006
+        },
+        {
+          "start_frame": 7458,
+          "end_frame": 7463,
+          "start_time": 298.32,
+          "end_time": 298.52,
+          "joints": 16,
+          "speed": 1.1270257047223442
+        },
+        {
+          "start_frame": 7459,
+          "end_frame": 7464,
+          "start_time": 298.36,
+          "end_time": 298.56,
+          "joints": 16,
+          "speed": 1.3073302559780031
+        },
+        {
+          "start_frame": 7460,
+          "end_frame": 7465,
+          "start_time": 298.4,
+          "end_time": 298.6,
+          "joints": 16,
+          "speed": 1.353512318208166
+        },
+        {
+          "start_frame": 7461,
+          "end_frame": 7466,
+          "start_time": 298.44,
+          "end_time": 298.64,
+          "joints": 16,
+          "speed": 1.2759494856279212
+        },
+        {
+          "start_frame": 7462,
+          "end_frame": 7467,
+          "start_time": 298.48,
+          "end_time": 298.68,
+          "joints": 16,
+          "speed": 1.1963692064606413
+        },
+        {
+          "start_frame": 7463,
+          "end_frame": 7468,
+          "start_time": 298.52,
+          "end_time": 298.72,
+          "joints": 16,
+          "speed": 1.2592487644446275
+        },
+        {
+          "start_frame": 7464,
+          "end_frame": 7469,
+          "start_time": 298.56,
+          "end_time": 298.76,
+          "joints": 16,
+          "speed": 1.2523637754535981
+        },
+        {
+          "start_frame": 7465,
+          "end_frame": 7470,
+          "start_time": 298.6,
+          "end_time": 298.8,
+          "joints": 16,
+          "speed": 1.3908797785447247
+        },
+        {
+          "start_frame": 7466,
+          "end_frame": 7471,
+          "start_time": 298.64,
+          "end_time": 298.84,
+          "joints": 16,
+          "speed": 1.5524770486300508
+        },
+        {
+          "start_frame": 7467,
+          "end_frame": 7472,
+          "start_time": 298.68,
+          "end_time": 298.88,
+          "joints": 16,
+          "speed": 1.6832863721510598
+        },
+        {
+          "start_frame": 7468,
+          "end_frame": 7473,
+          "start_time": 298.72,
+          "end_time": 298.92,
+          "joints": 16,
+          "speed": 1.5162951723272262
+        },
+        {
+          "start_frame": 7469,
+          "end_frame": 7474,
+          "start_time": 298.76,
+          "end_time": 298.96,
+          "joints": 16,
+          "speed": 1.4111663690866507
+        },
+        {
+          "start_frame": 7470,
+          "end_frame": 7475,
+          "start_time": 298.8,
+          "end_time": 299.0,
+          "joints": 16,
+          "speed": 1.3203747131879027
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 26,
+      "valid_pairs": 22
+    }
+  },
+  {
+    "frame": 7488,
+    "track_id": 749,
+    "truth": "chase",
+    "group": "child749-run-across",
+    "note": "Same child running out of frame.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 1.656220512789612,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 7463,
+          "end_frame": 7467,
+          "start_time": 298.52,
+          "end_time": 298.68,
+          "joints": 16,
+          "speed": 1.1656685631395116
+        },
+        {
+          "start_frame": 7463,
+          "end_frame": 7468,
+          "start_time": 298.52,
+          "end_time": 298.72,
+          "joints": 16,
+          "speed": 1.2592487644446275
+        },
+        {
+          "start_frame": 7464,
+          "end_frame": 7469,
+          "start_time": 298.56,
+          "end_time": 298.76,
+          "joints": 16,
+          "speed": 1.2523637754535981
+        },
+        {
+          "start_frame": 7465,
+          "end_frame": 7470,
+          "start_time": 298.6,
+          "end_time": 298.8,
+          "joints": 16,
+          "speed": 1.3908797785447247
+        },
+        {
+          "start_frame": 7466,
+          "end_frame": 7471,
+          "start_time": 298.64,
+          "end_time": 298.84,
+          "joints": 16,
+          "speed": 1.5524770486300508
+        },
+        {
+          "start_frame": 7467,
+          "end_frame": 7472,
+          "start_time": 298.68,
+          "end_time": 298.88,
+          "joints": 16,
+          "speed": 1.6832863721510598
+        },
+        {
+          "start_frame": 7468,
+          "end_frame": 7473,
+          "start_time": 298.72,
+          "end_time": 298.92,
+          "joints": 16,
+          "speed": 1.5162951723272262
+        },
+        {
+          "start_frame": 7469,
+          "end_frame": 7474,
+          "start_time": 298.76,
+          "end_time": 298.96,
+          "joints": 16,
+          "speed": 1.4111663690866507
+        },
+        {
+          "start_frame": 7470,
+          "end_frame": 7475,
+          "start_time": 298.8,
+          "end_time": 299.0,
+          "joints": 16,
+          "speed": 1.3203747131879027
+        },
+        {
+          "start_frame": 7471,
+          "end_frame": 7476,
+          "start_time": 298.84,
+          "end_time": 299.04,
+          "joints": 16,
+          "speed": 1.3361819654587732
+        },
+        {
+          "start_frame": 7472,
+          "end_frame": 7477,
+          "start_time": 298.88,
+          "end_time": 299.08,
+          "joints": 16,
+          "speed": 1.3750664733225708
+        },
+        {
+          "start_frame": 7473,
+          "end_frame": 7478,
+          "start_time": 298.92,
+          "end_time": 299.12,
+          "joints": 16,
+          "speed": 1.565083907703338
+        },
+        {
+          "start_frame": 7474,
+          "end_frame": 7479,
+          "start_time": 298.96,
+          "end_time": 299.16,
+          "joints": 16,
+          "speed": 1.677832642430336
+        },
+        {
+          "start_frame": 7475,
+          "end_frame": 7480,
+          "start_time": 299.0,
+          "end_time": 299.2,
+          "joints": 16,
+          "speed": 1.7802720049605019
+        },
+        {
+          "start_frame": 7476,
+          "end_frame": 7481,
+          "start_time": 299.04,
+          "end_time": 299.24,
+          "joints": 16,
+          "speed": 1.7404154824644282
+        },
+        {
+          "start_frame": 7477,
+          "end_frame": 7482,
+          "start_time": 299.08,
+          "end_time": 299.28,
+          "joints": 16,
+          "speed": 1.7398841187208365
+        },
+        {
+          "start_frame": 7478,
+          "end_frame": 7483,
+          "start_time": 299.12,
+          "end_time": 299.32,
+          "joints": 16,
+          "speed": 1.8174031440733662
+        },
+        {
+          "start_frame": 7479,
+          "end_frame": 7484,
+          "start_time": 299.16,
+          "end_time": 299.36,
+          "joints": 16,
+          "speed": 1.8374209117363016
+        },
+        {
+          "start_frame": 7480,
+          "end_frame": 7485,
+          "start_time": 299.2,
+          "end_time": 299.4,
+          "joints": 16,
+          "speed": 2.071852159079155
+        },
+        {
+          "start_frame": 7481,
+          "end_frame": 7486,
+          "start_time": 299.24,
+          "end_time": 299.44,
+          "joints": 13,
+          "speed": 2.2115739132157928
+        },
+        {
+          "start_frame": 7482,
+          "end_frame": 7487,
+          "start_time": 299.28,
+          "end_time": 299.48,
+          "joints": 13,
+          "speed": 2.3223307035797864
+        },
+        {
+          "start_frame": 7483,
+          "end_frame": 7488,
+          "start_time": 299.32,
+          "end_time": 299.52,
+          "joints": 16,
+          "speed": 2.4097732976609185
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 26,
+      "valid_pairs": 22
+    }
+  },
+  {
+    "frame": 8120,
+    "track_id": 795,
+    "truth": "other",
+    "group": "adult795-walk",
+    "note": "Black-shirt adult walking away.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 0.29082835308025107,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 8095,
+          "end_frame": 8099,
+          "start_time": 323.8,
+          "end_time": 323.96,
+          "joints": 12,
+          "speed": 0.32820738973289404
+        },
+        {
+          "start_frame": 8095,
+          "end_frame": 8100,
+          "start_time": 323.8,
+          "end_time": 324.0,
+          "joints": 12,
+          "speed": 0.3223842177217593
+        },
+        {
+          "start_frame": 8096,
+          "end_frame": 8101,
+          "start_time": 323.84,
+          "end_time": 324.04,
+          "joints": 13,
+          "speed": 0.2714139637293538
+        },
+        {
+          "start_frame": 8097,
+          "end_frame": 8102,
+          "start_time": 323.88,
+          "end_time": 324.08,
+          "joints": 13,
+          "speed": 0.25082998678952934
+        },
+        {
+          "start_frame": 8098,
+          "end_frame": 8103,
+          "start_time": 323.92,
+          "end_time": 324.12,
+          "joints": 13,
+          "speed": 0.2952153548616012
+        },
+        {
+          "start_frame": 8099,
+          "end_frame": 8104,
+          "start_time": 323.96,
+          "end_time": 324.16,
+          "joints": 13,
+          "speed": 0.3086202125762491
+        },
+        {
+          "start_frame": 8100,
+          "end_frame": 8105,
+          "start_time": 324.0,
+          "end_time": 324.2,
+          "joints": 12,
+          "speed": 0.2714614058114821
+        },
+        {
+          "start_frame": 8101,
+          "end_frame": 8106,
+          "start_time": 324.04,
+          "end_time": 324.24,
+          "joints": 12,
+          "speed": 0.23833264718938366
+        },
+        {
+          "start_frame": 8102,
+          "end_frame": 8107,
+          "start_time": 324.08,
+          "end_time": 324.28,
+          "joints": 12,
+          "speed": 0.21222134704755516
+        },
+        {
+          "start_frame": 8103,
+          "end_frame": 8108,
+          "start_time": 324.12,
+          "end_time": 324.32,
+          "joints": 12,
+          "speed": 0.1785914956810071
+        },
+        {
+          "start_frame": 8104,
+          "end_frame": 8109,
+          "start_time": 324.16,
+          "end_time": 324.36,
+          "joints": 12,
+          "speed": 0.23780846286526677
+        },
+        {
+          "start_frame": 8105,
+          "end_frame": 8110,
+          "start_time": 324.2,
+          "end_time": 324.4,
+          "joints": 12,
+          "speed": 0.2950561035138162
+        },
+        {
+          "start_frame": 8106,
+          "end_frame": 8111,
+          "start_time": 324.24,
+          "end_time": 324.44,
+          "joints": 12,
+          "speed": 0.38011299819583966
+        },
+        {
+          "start_frame": 8107,
+          "end_frame": 8112,
+          "start_time": 324.28,
+          "end_time": 324.48,
+          "joints": 12,
+          "speed": 0.3651051422309457
+        },
+        {
+          "start_frame": 8108,
+          "end_frame": 8113,
+          "start_time": 324.32,
+          "end_time": 324.52,
+          "joints": 12,
+          "speed": 0.347533517101717
+        },
+        {
+          "start_frame": 8109,
+          "end_frame": 8114,
+          "start_time": 324.36,
+          "end_time": 324.56,
+          "joints": 12,
+          "speed": 0.3417395286735156
+        },
+        {
+          "start_frame": 8110,
+          "end_frame": 8115,
+          "start_time": 324.4,
+          "end_time": 324.6,
+          "joints": 12,
+          "speed": 0.3329875095909137
+        },
+        {
+          "start_frame": 8111,
+          "end_frame": 8116,
+          "start_time": 324.44,
+          "end_time": 324.64,
+          "joints": 12,
+          "speed": 0.30625629100271773
+        },
+        {
+          "start_frame": 8112,
+          "end_frame": 8117,
+          "start_time": 324.48,
+          "end_time": 324.68,
+          "joints": 12,
+          "speed": 0.32966249180307916
+        },
+        {
+          "start_frame": 8113,
+          "end_frame": 8118,
+          "start_time": 324.52,
+          "end_time": 324.72,
+          "joints": 12,
+          "speed": 0.30749023156582633
+        },
+        {
+          "start_frame": 8114,
+          "end_frame": 8119,
+          "start_time": 324.56,
+          "end_time": 324.76,
+          "joints": 12,
+          "speed": 0.2664436029465151
+        },
+        {
+          "start_frame": 8115,
+          "end_frame": 8120,
+          "start_time": 324.6,
+          "end_time": 324.8,
+          "joints": 12,
+          "speed": 0.2107498671345566
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 26,
+      "valid_pairs": 22
+    }
+  },
+  {
+    "frame": 8828,
+    "track_id": 822,
+    "truth": "other",
+    "group": "adult822-walk",
+    "note": "Blue-shirt adult slowly walking/turning.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": 0.31547210677651644,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [
+        {
+          "start_frame": 8803,
+          "end_frame": 8807,
+          "start_time": 352.12,
+          "end_time": 352.28,
+          "joints": 14,
+          "speed": 0.3581910657448924
+        },
+        {
+          "start_frame": 8803,
+          "end_frame": 8808,
+          "start_time": 352.12,
+          "end_time": 352.32,
+          "joints": 13,
+          "speed": 0.31894961532639726
+        },
+        {
+          "start_frame": 8804,
+          "end_frame": 8809,
+          "start_time": 352.16,
+          "end_time": 352.36,
+          "joints": 12,
+          "speed": 0.30598573750858565
+        },
+        {
+          "start_frame": 8805,
+          "end_frame": 8810,
+          "start_time": 352.2,
+          "end_time": 352.4,
+          "joints": 12,
+          "speed": 0.26203977314879756
+        },
+        {
+          "start_frame": 8806,
+          "end_frame": 8811,
+          "start_time": 352.24,
+          "end_time": 352.44,
+          "joints": 12,
+          "speed": 0.2196989227179619
+        },
+        {
+          "start_frame": 8807,
+          "end_frame": 8812,
+          "start_time": 352.28,
+          "end_time": 352.48,
+          "joints": 12,
+          "speed": 0.2264079210682544
+        },
+        {
+          "start_frame": 8808,
+          "end_frame": 8813,
+          "start_time": 352.32,
+          "end_time": 352.52,
+          "joints": 12,
+          "speed": 0.1809989680336827
+        },
+        {
+          "start_frame": 8809,
+          "end_frame": 8814,
+          "start_time": 352.36,
+          "end_time": 352.56,
+          "joints": 11,
+          "speed": 0.17710375960600822
+        },
+        {
+          "start_frame": 8810,
+          "end_frame": 8815,
+          "start_time": 352.4,
+          "end_time": 352.6,
+          "joints": 11,
+          "speed": 0.21030868247703402
+        },
+        {
+          "start_frame": 8811,
+          "end_frame": 8816,
+          "start_time": 352.44,
+          "end_time": 352.64,
+          "joints": 11,
+          "speed": 0.247679962422262
+        },
+        {
+          "start_frame": 8812,
+          "end_frame": 8817,
+          "start_time": 352.48,
+          "end_time": 352.68,
+          "joints": 11,
+          "speed": 0.24184894628709033
+        },
+        {
+          "start_frame": 8813,
+          "end_frame": 8818,
+          "start_time": 352.52,
+          "end_time": 352.72,
+          "joints": 12,
+          "speed": 0.2024754788882355
+        },
+        {
+          "start_frame": 8815,
+          "end_frame": 8820,
+          "start_time": 352.6,
+          "end_time": 352.8,
+          "joints": 8,
+          "speed": 0.432655330658031
+        },
+        {
+          "start_frame": 8816,
+          "end_frame": 8821,
+          "start_time": 352.64,
+          "end_time": 352.84,
+          "joints": 8,
+          "speed": 0.4883159452206433
+        },
+        {
+          "start_frame": 8817,
+          "end_frame": 8822,
+          "start_time": 352.68,
+          "end_time": 352.88,
+          "joints": 8,
+          "speed": 0.4908329464002862
+        },
+        {
+          "start_frame": 8818,
+          "end_frame": 8823,
+          "start_time": 352.72,
+          "end_time": 352.92,
+          "joints": 9,
+          "speed": 0.39359712247022244
+        },
+        {
+          "start_frame": 8818,
+          "end_frame": 8824,
+          "start_time": 352.72,
+          "end_time": 352.96,
+          "joints": 10,
+          "speed": 0.39156788672060533
+        },
+        {
+          "start_frame": 8820,
+          "end_frame": 8825,
+          "start_time": 352.8,
+          "end_time": 353.0,
+          "joints": 9,
+          "speed": 0.35699521927535294
+        },
+        {
+          "start_frame": 8821,
+          "end_frame": 8826,
+          "start_time": 352.84,
+          "end_time": 353.04,
+          "joints": 9,
+          "speed": 0.36836193500543535
+        },
+        {
+          "start_frame": 8822,
+          "end_frame": 8827,
+          "start_time": 352.88,
+          "end_time": 353.08,
+          "joints": 8,
+          "speed": 0.38439936425380794
+        },
+        {
+          "start_frame": 8823,
+          "end_frame": 8828,
+          "start_time": 352.92,
+          "end_time": 353.12,
+          "joints": 8,
+          "speed": 0.3664996590732583
+        }
+      ],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 25,
+      "valid_pairs": 21
+    }
+  },
+  {
+    "frame": 9341,
+    "track_id": 909,
+    "truth": "other",
+    "group": "far909-not-running",
+    "note": "Distant person bends/stands by counter, not running in temporal context; limited pixel detail.",
+    "baseline": "chase",
+    "evidence": {
+      "applied": false,
+      "supported": true,
+      "min_speed": 0.0,
+      "speed": null,
+      "units": "person_box_heights_per_second",
+      "lag_seconds": 0.2,
+      "min_joints": 5,
+      "min_pairs": 3,
+      "keypoint_conf": 0.5,
+      "pairs": [],
+      "reason": "disabled",
+      "missing_policy": "bypass",
+      "unique_frames": 26,
+      "valid_pairs": 0
+    }
+  }
+]

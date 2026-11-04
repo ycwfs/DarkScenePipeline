@@ -1,0 +1,176 @@
+{
+  "raw720": {
+    "0.1": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.15": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    },
+    "0.2": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    },
+    "0.25": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    },
+    "0.3": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    },
+    "0.35": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    },
+    "0.4": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    },
+    "0.5": {
+      "gt": 44,
+      "matched": 43,
+      "recall": 0.9772727272727273,
+      "predictions": 43,
+      "unmatched_predictions": 0
+    }
+  },
+  "ntire720": {
+    "0.1": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.15": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.2": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.25": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.3": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.35": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.4": {
+      "gt": 44,
+      "matched": 42,
+      "recall": 0.9545454545454546,
+      "predictions": 42,
+      "unmatched_predictions": 0
+    },
+    "0.5": {
+      "gt": 44,
+      "matched": 42,
+      "recall": 0.9545454545454546,
+      "predictions": 42,
+      "unmatched_predictions": 0
+    }
+  },
+  "ft720": {
+    "0.1": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.15": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.2": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 45,
+      "unmatched_predictions": 1
+    },
+    "0.25": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.3": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.35": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.4": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    },
+    "0.5": {
+      "gt": 44,
+      "matched": 44,
+      "recall": 1.0,
+      "predictions": 44,
+      "unmatched_predictions": 0
+    }
+  }
+}

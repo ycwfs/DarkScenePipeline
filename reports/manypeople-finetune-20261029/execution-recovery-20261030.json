@@ -1,0 +1,18 @@
+{
+  "evaluation_fix": "Iterate nested dictionary values, not keys; all 828 val/test windows covered, no pseudo ground truth.",
+  "metric_refactor": "Shared CPU-only NumPy evaluation_metrics.py reproduces all 20 stored comparisons.",
+  "plotting": "Host Matplotlib; production image unchanged.",
+  "export_fix": "Candidate ST-GCN training metadata TorchVersion replaced with tensor state and primitive metadata; weights_only=True load and tensor equality passed.",
+  "unchanged_selection_lock_sha256": "3ed4e2b0a6853269c5914687574d1161d5ddc4274d2bfa4d97448b30ef77a6bc",
+  "unchanged_training_checkpoints": true,
+  "new_training": false,
+  "production_modified": false,
+  "failed_attempt_logs": [
+    "evaluate-selected.log",
+    "report.log",
+    "demos-0.log",
+    "demos-1.log",
+    "demos-2.log"
+  ],
+  "completed_log": "finish-exportfix.log"
+}

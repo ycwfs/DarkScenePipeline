@@ -1,0 +1,54 @@
+{
+  "review_type": "assistant qualitative visual audit, not exhaustive action ground truth",
+  "selected_examples": [
+    {
+      "id": "old-drink-supported",
+      "source_id": "3b3cd82b736befd7",
+      "event_index": 2,
+      "note": "旧测试真实喝水；连续检出瓶，两种规则均保留。"
+    },
+    {
+      "id": "old-drink-missed",
+      "source_id": "5da1038bd2222f4b",
+      "event_index": 1,
+      "note": "旧测试真实喝水；瓶只断续检出，严格规则误杀。"
+    },
+    {
+      "id": "old-pickup-missed",
+      "source_id": "7ce9e264c4e2c972",
+      "event_index": 0,
+      "note": "旧测试真实捡物；有纸张框，但连续抬起证据不足。"
+    },
+    {
+      "id": "new05-phone",
+      "source_id": "new-05",
+      "event_index": 1223,
+      "note": "本人手里的亮屏手机未被可靠检出；邻人的手机不能否决本人的动作。"
+    },
+    {
+      "id": "new03-exhibit",
+      "source_id": "new-03",
+      "event_index": 3331,
+      "note": "实际是机器人展品，仅一帧约0.40，未达到持续否决条件。"
+    },
+    {
+      "id": "new09-supported",
+      "source_id": "new-09",
+      "event_index": 2113,
+      "note": "关键反例：视觉上是相机拍摄，模型却持续预测为瓶，严格规则仍保留喝水。"
+    },
+    {
+      "id": "new03-near",
+      "source_id": "new-03",
+      "event_index": 4586,
+      "note": "手靠近头部；零星“瓶”预测缺少可靠物体身份，保守保持原结果。"
+    },
+    {
+      "id": "new07-pickup",
+      "source_id": "new-07",
+      "event_index": 280,
+      "note": "人物站立、手在背后，未见连续捡起动作；原模型仍预测捡物。"
+    }
+  ],
+  "used_for_training_or_selection": false
+}

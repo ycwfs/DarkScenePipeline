@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-26",
+  "purpose": "Inspect remaining drink/pick-up false triggers in manypeople saved clips under one-frame object support",
+  "source_saved_clips": {"drink":269,"pick_up":27,"original_threshold":0.75},
+  "current_action_threshold":0.85,
+  "action_windows":564,
+  "object_support_confidence":0.35,
+  "model_source":"object-prior-finetune-20261025/models/yolo26m_objects_candidate.onnx",
+  "scope":"All native integer video frames within each current candidate action window, not just five sampled frames",
+  "positive_rule":"One compatible object in selected person's 30% expanded native ROI suffices; same frozen class mapping and ambiguity exclusion",
+  "negative_rule":"Keep prior frozen five-sample conservative contradiction veto so this experiment changes only positive evidence coverage",
+  "cache":"Keep existing five observations exactly; infer missing frames with unchanged extraction, shared current RTMO and Retinexformer",
+  "person_binding":"Nearest event same track_id and history_generation within .55 s; pose one-to-one; actor IoU>.4 abstains. Bounded offline approximation, not freshly tracked full video.",
+  "review":"Inspect retained cases, preserve uncertain labels. Assistant visual verification, not independent human expert ground truth. No training or model selection on feedback.",
+  "production_changed":false
+}

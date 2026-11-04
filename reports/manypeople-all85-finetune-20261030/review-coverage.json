@@ -1,0 +1,30 @@
+{
+  "positive_windows_by_source": {
+    "new-01": 13,
+    "new-02": 2,
+    "new-03": 13,
+    "new-04": 7,
+    "new-05": 33,
+    "new-06": 4,
+    "new-08": 7,
+    "new-09": 6
+  },
+  "positive_events_by_label": {
+    "chase": 19,
+    "drink": 5,
+    "talk": 12,
+    "wave": 8
+  },
+  "selected_other_sources": {
+    "new-05": 28,
+    "new-07": 29,
+    "new-09": 28
+  },
+  "selected_other_unique_tracks": 56,
+  "positive_brightness": {
+    ">=75": 85
+  },
+  "old_test_positive_brightness": {
+    ">=75": 51
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "main_review": 473,
+  "xclip_review": 2011,
+  "original_saved_clips": 454,
+  "original_clips_unchanged_hardlinks": true,
+  "initial_non_other_events_covered": 994,
+  "historical_non_other_observations_covered": 7049,
+  "duplicate_observation_assignments": 0,
+  "all_main_previews_strictly_decoded": true,
+  "preview_frames": 33214,
+  "zero_target_box_previews": [],
+  "base_window_states": {
+    "held_for_review": 31513,
+    "other_candidate_unreviewed": 16087
+  },
+  "base_source_counts": {
+    "1": 5565,
+    "2": 7055,
+    "3": 6935,
+    "4": 4142,
+    "5": 3672,
+    "6": 2690,
+    "7": 6312,
+    "8": 6193,
+    "9": 5036
+  },
+  "training_labels_empty": true,
+  "models_and_production_code_unchanged": true,
+  "source_checks": "source-media.json:9 original SHA256 values and all80316 remuxed frame counts verified"
+}

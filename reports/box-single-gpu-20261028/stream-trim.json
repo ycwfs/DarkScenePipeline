@@ -1,0 +1,21 @@
+{
+  "source": "live-final/full-output-stream.mp4",
+  "output": "live-final/full-output-5min.mp4",
+  "original_seconds": 365.933,
+  "trim_start": 57.6,
+  "trim_end": 357.533,
+  "seconds": 299.933,
+  "black_intervals": [
+    [
+      0.0,
+      57.6,
+      57.6
+    ],
+    [
+      357.533,
+      365.867,
+      8.334
+    ]
+  ],
+  "method": "Only trim contiguous black transport preroll/tail from externally recorded RTMP output; preserve all middle frames/gaps; H264 re-encode, no model re-inference or test markers"
+}

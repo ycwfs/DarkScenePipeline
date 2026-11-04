@@ -1,0 +1,13 @@
+{
+  "operator_archive": "dark-demo-v2_multiperson_20261022.tar.gz",
+  "archive_sha256": "7b9b9afd51e72e851d51625eb0908214b3f23582ec4a906ff4513c583636fcf5",
+  "all_source_files_match_delivery": true,
+  "files_verified": 47,
+  "model": {
+    "size": 28099109,
+    "sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362"
+  },
+  "image": "darkpipe-operator:0.3.0",
+  "physical_gpu": 1,
+  "weights_and_production_code_changed": false
+}

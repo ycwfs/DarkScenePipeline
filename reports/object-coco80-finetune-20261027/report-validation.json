@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "html_reference_count": 123,
+  "missing_references": [],
+  "video_players": 12,
+  "buttons": 17,
+  "interaction_groups_reviewed": 3,
+  "complete_decoded_videos": 65,
+  "production_preserved": true,
+  "plots_visually_reviewed": 2,
+  "scripts_parsed": 19
+}

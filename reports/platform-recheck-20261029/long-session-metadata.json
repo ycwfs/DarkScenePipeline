@@ -1,0 +1,14 @@
+{
+  "observation": "ActionPool.submit retains per-person/generation ownership until process termination",
+  "model_execution": false,
+  "real_source": "release-extracted/dark-demo-v2/darkpipe/person/scheduling.py",
+  "distinct_track_generations": 50000,
+  "retained_after_churn": 50000,
+  "repeated_calls_using_only_last_identity": 10000,
+  "retained_after_only_one_identity": 50000,
+  "shallow_mapping_and_tuple_bytes": 5821536,
+  "counts_are_synthetic_not_elapsed_hours": true,
+  "other_static_findings": "PersonEngine last_seen/generations/last_submitted reset on input epoch changes, but do not prune departed track IDs during an uninterrupted epoch.",
+  "limitation": "This demonstrates accumulating small metadata, not a measured production OOM or the cause of observed RSS growth; ROI/model caches have separate bounds.",
+  "production_modified": false
+}

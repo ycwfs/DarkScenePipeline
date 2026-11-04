@@ -1,0 +1,826 @@
+{
+  "provenance": "AI visual review of raw, gamma for visibility, historical enhanced stills; frozen before new inference",
+  "limitations": "approximate visible-person boxes, no independent human confirmation, not exhaustive, no automatic proposals copied to all frames",
+  "samples": [
+    {
+      "id": "H001",
+      "source": "real-actiondata-all/other/other225.mp4",
+      "video_id": "02cfb195aba51c8e",
+      "frame": 20,
+      "luma": 31.16837584914741,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          474.0,
+          370.0,
+          634.0,
+          703.0
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          474,
+          370,
+          634,
+          703
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "f1a4ccecd47287c28dba7f3d64aa4b35bec146c729561adfa4124b6350551d48",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H002",
+      "source": "real-actiondata-all/other/other225.mp4",
+      "video_id": "02cfb195aba51c8e",
+      "frame": 40,
+      "luma": 30.86869699532453,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          434.0,
+          352.0,
+          616.0,
+          662.0
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          434,
+          352,
+          616,
+          662
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "0dc8853fae3f3a945f6925a768e97f569c56c8f69df55f6eb0103775397041b4",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H003",
+      "source": "real-actiondata-all/other/other225.mp4",
+      "video_id": "02cfb195aba51c8e",
+      "frame": 60,
+      "luma": 31.720361224559955,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          508.0,
+          313.0,
+          688.0,
+          630.0
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          508,
+          313,
+          688,
+          630
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "7648998a5e2dbea3e4a47cdac110b6c95d1002009dd5604429daaa35c3c7b805",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H004",
+      "source": "real-actiondata-all/other/other227.mp4",
+      "video_id": "168083707a4147ee",
+      "frame": 23,
+      "luma": 15.301931724422442,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [],
+      "gt_boxes_native": [
+        [
+          1190,
+          595,
+          1380,
+          915
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "1fa5fa4323fb0c7043680bf7c6e5d6d7d0a6cd56d111217202a07aa8d75a066f",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H005",
+      "source": "real-actiondata-all/other/other227.mp4",
+      "video_id": "168083707a4147ee",
+      "frame": 46,
+      "luma": 13.55459335121012,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [],
+      "gt_boxes_native": [
+        [
+          1060,
+          365,
+          1240,
+          790
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "707227956446504d7e6dd7302adcd241ec0302e950a165f06fe777c4572f6f9b",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H006",
+      "source": "real-actiondata-all/other/other227.mp4",
+      "video_id": "168083707a4147ee",
+      "frame": 69,
+      "luma": 14.397961317381737,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          655.346,
+          484.946,
+          862.266,
+          901.472
+        ],
+        [
+          1021.861,
+          357.859,
+          1151.687,
+          749.063
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          1020,
+          350,
+          1160,
+          770
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "aa3c1dcc3707f4512f35b787e5c7439537a78e83c96fd298c85e85ed83a27d97",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H007",
+      "source": "real-actiondata-all/捡东西18.mp4",
+      "video_id": "35ec19ec97d6d0f0",
+      "frame": 12,
+      "luma": 14.622391869499449,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          702.319,
+          373.721,
+          867.713,
+          788.557
+        ],
+        [
+          652.602,
+          602.261,
+          808.888,
+          905.962
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          700,
+          305,
+          880,
+          830
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "2ee3b53c55f36c7aa256672de33f3b9a08e308b79048fbb33971b11c113c671e",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H008",
+      "source": "real-actiondata-all/捡东西18.mp4",
+      "video_id": "35ec19ec97d6d0f0",
+      "frame": 24,
+      "luma": 13.651352980610557,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [],
+      "gt_boxes_native": [
+        [
+          625,
+          295,
+          880,
+          870
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "117effb723cec45cd89e9af9e8f355f5bb79cb31a2f4049ed22f4780fd83caaa",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H009",
+      "source": "real-actiondata-all/捡东西18.mp4",
+      "video_id": "35ec19ec97d6d0f0",
+      "frame": 36,
+      "luma": 13.407805957783276,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          715.028,
+          358.117,
+          854.973,
+          784.432
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          690,
+          300,
+          875,
+          835
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "0cc8498763fc802c2820c08cbac67882aa911f1fa5dbcc87126c1c7377aa3396",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H010",
+      "source": "real-actiondata-all/捡东西20.mp4",
+      "video_id": "58f5536a4ea9f55b",
+      "frame": 19,
+      "luma": 13.51899553080308,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          653.642,
+          487.114,
+          853.924,
+          969.732
+        ],
+        [
+          1177.64,
+          297.667,
+          1234.8,
+          424.107
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          1170,
+          285,
+          1245,
+          445
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "3355ea4186fa2d6da2d6c7e711c0f1b584255f51e90be99b348cc959969e50f5",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H011",
+      "source": "real-actiondata-all/捡东西20.mp4",
+      "video_id": "58f5536a4ea9f55b",
+      "frame": 39,
+      "luma": 14.994980782453244,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [],
+      "gt_boxes_native": [
+        [
+          1115,
+          235,
+          1210,
+          460
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "d26802cc68c9e5e7718bb5ac5e2e1bc282273036e62fc13d128f8770c5cfb061",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H012",
+      "source": "real-actiondata-all/捡东西20.mp4",
+      "video_id": "58f5536a4ea9f55b",
+      "frame": 59,
+      "luma": 14.468458701182618,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          646.213,
+          531.265,
+          852.843,
+          899.43
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          1115,
+          245,
+          1220,
+          465
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "1c10b6a2010a6c12ee9055a8a5050bbbdfc333ef8f0bb73fad945e4000c4ea9c",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H013",
+      "source": "real-actiondata-all/other/other230.mp4",
+      "video_id": "5b9fe350fe2eb33b",
+      "frame": 30,
+      "luma": 15.035393282453244,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          940.064,
+          265.611,
+          1031.462,
+          508.55
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          940,
+          265,
+          1035,
+          515
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "4adee775153edc5e0fc8c22fee3290e661ae09a267050cfbd87f4ee4f67a8668",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H014",
+      "source": "real-actiondata-all/other/other230.mp4",
+      "video_id": "5b9fe350fe2eb33b",
+      "frame": 60,
+      "luma": 13.460706229372937,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          971.383,
+          264.558,
+          1057.308,
+          396.749
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          970,
+          260,
+          1065,
+          510
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "2337c53909759abf38f4b96a129ef3e36fbf11a6ecc592c636a2d2ab8eee876d",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H015",
+      "source": "real-actiondata-all/other/other230.mp4",
+      "video_id": "5b9fe350fe2eb33b",
+      "frame": 90,
+      "luma": 15.408343337458746,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          653.914,
+          486.183,
+          856.651,
+          928.815
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          1045,
+          240,
+          1140,
+          440
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "beadb90cc641368a8939fd40a7dca1885de1d54377c16bc6133ad405b7f54f90",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H016",
+      "source": "real-actiondata-all/other/other200.mp4",
+      "video_id": "7e9bc4c0e9a12906",
+      "frame": 29,
+      "luma": 30.75370838490099,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [],
+      "gt_boxes_native": [
+        [
+          475,
+          275,
+          610,
+          680
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "dd4f21ca053c3a178fdf90ff578736d1158d9b0a3df2ae9777fc8baca719e30b",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H017",
+      "source": "real-actiondata-all/other/other200.mp4",
+      "video_id": "7e9bc4c0e9a12906",
+      "frame": 58,
+      "luma": 31.93690893839384,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          618.898,
+          331.738,
+          778.967,
+          714.381
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          618,
+          332,
+          780,
+          715
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "fd211d294193e33ca76c2c75de889fa8953f21719971a8037531131b2b7af3ca",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H018",
+      "source": "real-actiondata-all/other/other200.mp4",
+      "video_id": "7e9bc4c0e9a12906",
+      "frame": 87,
+      "luma": 30.880762042766776,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          753.153,
+          363.441,
+          940.281,
+          837.927
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          753,
+          363,
+          940,
+          838
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "05db76eb2a13b9953c84092971433fcd05387a00842db8b3208c823ee0200e6e",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H019",
+      "source": "real-actiondata-all/other/other223.mp4",
+      "video_id": "d7c5ba82952df18d",
+      "frame": 20,
+      "luma": 30.708023937706265,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          876.537,
+          270.327,
+          962.436,
+          644.471
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          876,
+          270,
+          963,
+          645
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "df257dce983d7b8cde3e8d647022b54385d6612998596ee1ef39b352ae99cefa",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H020",
+      "source": "real-actiondata-all/other/other223.mp4",
+      "video_id": "d7c5ba82952df18d",
+      "frame": 41,
+      "luma": 31.57310938875137,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          887.605,
+          234.788,
+          1032.309,
+          579.405
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          887,
+          235,
+          1033,
+          580
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "6ab586e74f0e81a5f38fe6fb3d5d6a35d8469f8a6a305f1e78bdd68fcc897eeb",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H021",
+      "source": "real-actiondata-all/other/other223.mp4",
+      "video_id": "d7c5ba82952df18d",
+      "frame": 61,
+      "luma": 30.988575161578655,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          911.041,
+          216.322,
+          1014.95,
+          540.501
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          911,
+          216,
+          1015,
+          541
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "b13b0b5652ce6547def496d51a57e9e8c0d29c867e4ebb9fd1ba69dabb2ae289",
+      "exhibit_region_native": null
+    },
+    {
+      "id": "H022",
+      "source": "real-actiondata-all/挥手34.mp4",
+      "video_id": "f50f562c1c39d257",
+      "frame": 25,
+      "luma": 13.773650275027503,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          978.734,
+          187.479,
+          1070.355,
+          437.307
+        ],
+        [
+          1054.453,
+          262.247,
+          1130.664,
+          433.97
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          970,
+          185,
+          1080,
+          450
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "a531ce88d9049890db8ddefa12094b462e1d3afa496e4014e6662676b4324f3a",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H023",
+      "source": "real-actiondata-all/挥手34.mp4",
+      "video_id": "f50f562c1c39d257",
+      "frame": 50,
+      "luma": 14.281626605473047,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          988.374,
+          220.2,
+          1069.495,
+          451.413
+        ],
+        [
+          1050.705,
+          258.992,
+          1149.02,
+          439.495
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          975,
+          210,
+          1080,
+          460
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "a9dcfb45446efca5f468ed603f3605582bd3d29a46f22b7fc4fa2dfc0a488921",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    },
+    {
+      "id": "H024",
+      "source": "real-actiondata-all/挥手34.mp4",
+      "video_id": "f50f562c1c39d257",
+      "frame": 75,
+      "luma": 14.266074460258524,
+      "native_shape": [
+        1080,
+        1920
+      ],
+      "historical_proposals": [
+        [
+          986.284,
+          211.557,
+          1068.542,
+          452.333
+        ],
+        [
+          656.789,
+          587.356,
+          850.814,
+          907.151
+        ]
+      ],
+      "gt_boxes_native": [
+        [
+          975,
+          205,
+          1080,
+          465
+        ]
+      ],
+      "annotation_status": "AI visually reviewed diagnostic reference; user review pending",
+      "exhaustive": false,
+      "native_image_sha256": "0664804787d905d134bae742981e6db8195a68748dd19a1e924565a312ad2578",
+      "exhibit_region_native": [
+        630,
+        480,
+        890,
+        990
+      ]
+    }
+  ]
+}

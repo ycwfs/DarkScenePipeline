@@ -1,0 +1,20 @@
+{
+  "model": "microsoft/xclip-base-patch16-zero-shot",
+  "weights_sha256": "6f57805daf0db792cc4a09e99b72c97feb2b7e7a0a99c219718d28186d852fe4",
+  "input": "Retinexformer enhanced720 -> person detector -> box/appearance tracker (no pose) -> 15% person ROI -> aspect-preserving224square ->32frames/1s -> XCLIP",
+  "no_skeleton": true,
+  "no_object_prior": true,
+  "no_training": true,
+  "prompts_sha256": "2b95fff2ee1e6bc5cb889eecab9379acebc68743714a17725dbc045adce0d845",
+  "thresholds": [
+    0,
+    0.4,
+    0.75,
+    0.85,
+    0.925
+  ],
+  "primary_threshold": 0.4,
+  "calibration": "Historical val only: choose threshold on .00:.01:.99 grid maximizing macro F1 over represented classes, tie higher other recall then higher threshold; held-out historical test scored after lock. No prompt tuning after score inspection.",
+  "evaluation": "Historical all val/test sources; matched frozen person/time windows for classifier comparison plus full no-pose end-to-end 01/07/09 and selected short demos. Paired fixed boxes may originate from prior pose-assisted tracking; explicitly distinguished from no-pose end-to-end.",
+  "limits": "Public zero-shot model is not onsite fine-tuned; per-person crops lose some interaction context. Different probability scales, do not compare .925 as equal calibration. Same historical data is not a new independent external test."
+}

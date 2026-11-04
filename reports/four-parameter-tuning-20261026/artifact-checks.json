@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "windows": 51834,
+  "sources": 544,
+  "artifact_files": 742,
+  "html_links_pass": true,
+  "production_algorithm_hashes_unchanged": true,
+  "figures_visually_reviewed": [
+    "01-tradeoff.png",
+    "02-joint-grid.png"
+  ],
+  "cpu_regressions": "9 passed"
+}

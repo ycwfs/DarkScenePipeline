@@ -1,0 +1,439 @@
+[
+  {
+    "video": "喝水16",
+    "variant": "raw_native",
+    "frames": 12,
+    "mean_luma": 139.0890604617573,
+    "max_container_conf": 0.016220152378082275,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 11
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 11
+    }
+  },
+  {
+    "video": "喝水16",
+    "variant": "raw720",
+    "frames": 12,
+    "mean_luma": 139.08844798485057,
+    "max_container_conf": 0.016256630420684814,
+    "pose_frames": 12,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 4
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 12
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 12
+    }
+  },
+  {
+    "video": "喝水16",
+    "variant": "enhanced720",
+    "frames": 12,
+    "mean_luma": 168.16507156645352,
+    "max_container_conf": 0.0230138897895813,
+    "pose_frames": 12,
+    "0.25": {
+      "person": 11,
+      "container": 0,
+      "non_person": 8
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 12
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 12
+    }
+  },
+  {
+    "video": "喝水16",
+    "variant": "person_crop",
+    "frames": 12,
+    "mean_luma": 100.33633416535339,
+    "max_container_conf": 0.10017621517181396,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.1": {
+      "person": 12,
+      "container": 1,
+      "non_person": 3
+    },
+    "0.05": {
+      "person": 12,
+      "container": 3,
+      "non_person": 11
+    }
+  },
+  {
+    "video": "喝水16",
+    "variant": "interaction_crop",
+    "frames": 12,
+    "mean_luma": 95.88692381258562,
+    "max_container_conf": 0.14869648218154907,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 1
+    },
+    "0.1": {
+      "person": 12,
+      "container": 1,
+      "non_person": 8
+    },
+    "0.05": {
+      "person": 12,
+      "container": 1,
+      "non_person": 11
+    }
+  },
+  {
+    "video": "捡东西2",
+    "variant": "raw_native",
+    "frames": 12,
+    "mean_luma": 150.12479003034176,
+    "max_container_conf": 0.004259824752807617,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 1
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 9
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 11
+    }
+  },
+  {
+    "video": "捡东西2",
+    "variant": "raw720",
+    "frames": 12,
+    "mean_luma": 150.1245385190342,
+    "max_container_conf": 0.008450627326965332,
+    "pose_frames": 12,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 1
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 5
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 7
+    }
+  },
+  {
+    "video": "捡东西2",
+    "variant": "enhanced720",
+    "frames": 12,
+    "mean_luma": 176.73811436474378,
+    "max_container_conf": 0.008814513683319092,
+    "pose_frames": 12,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 1
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 3
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 9
+    }
+  },
+  {
+    "video": "捡东西2",
+    "variant": "person_crop",
+    "frames": 12,
+    "mean_luma": 103.51763851952057,
+    "max_container_conf": 0.015847623348236084,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 10,
+      "container": 0,
+      "non_person": 3
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 6
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 11
+    }
+  },
+  {
+    "video": "捡东西2",
+    "variant": "interaction_crop",
+    "frames": 12,
+    "mean_luma": 97.61896087165651,
+    "max_container_conf": 0.0077953338623046875,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 12,
+      "container": 0,
+      "non_person": 3
+    },
+    "0.1": {
+      "person": 12,
+      "container": 0,
+      "non_person": 6
+    },
+    "0.05": {
+      "person": 12,
+      "container": 0,
+      "non_person": 7
+    }
+  },
+  {
+    "video": "喝水8",
+    "variant": "raw_native",
+    "frames": 12,
+    "mean_luma": 2.413221152504501,
+    "max_container_conf": 0.0014809966087341309,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 0,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.1": {
+      "person": 0,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.05": {
+      "person": 1,
+      "container": 0,
+      "non_person": 2
+    }
+  },
+  {
+    "video": "喝水8",
+    "variant": "raw720",
+    "frames": 12,
+    "mean_luma": 2.4092407404542535,
+    "max_container_conf": 0.0013294219970703125,
+    "pose_frames": 1,
+    "0.25": {
+      "person": 0,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.1": {
+      "person": 0,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.05": {
+      "person": 1,
+      "container": 0,
+      "non_person": 2
+    }
+  },
+  {
+    "video": "喝水8",
+    "variant": "enhanced720",
+    "frames": 12,
+    "mean_luma": 15.417440682010906,
+    "max_container_conf": 0.0007514357566833496,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 0,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.1": {
+      "person": 0,
+      "container": 0,
+      "non_person": 0
+    },
+    "0.05": {
+      "person": 0,
+      "container": 0,
+      "non_person": 1
+    }
+  },
+  {
+    "video": "捡东西1",
+    "variant": "raw_native",
+    "frames": 12,
+    "mean_luma": 30.974099819275654,
+    "max_container_conf": 0.0010020136833190918,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 2,
+      "container": 0,
+      "non_person": 4
+    },
+    "0.1": {
+      "person": 3,
+      "container": 0,
+      "non_person": 10
+    },
+    "0.05": {
+      "person": 3,
+      "container": 0,
+      "non_person": 12
+    }
+  },
+  {
+    "video": "捡东西1",
+    "variant": "raw720",
+    "frames": 12,
+    "mean_luma": 30.973222106481476,
+    "max_container_conf": 0.001124560832977295,
+    "pose_frames": 7,
+    "0.25": {
+      "person": 2,
+      "container": 0,
+      "non_person": 4
+    },
+    "0.1": {
+      "person": 3,
+      "container": 0,
+      "non_person": 10
+    },
+    "0.05": {
+      "person": 4,
+      "container": 0,
+      "non_person": 12
+    }
+  },
+  {
+    "video": "捡东西1",
+    "variant": "enhanced720",
+    "frames": 12,
+    "mean_luma": 109.2573540798611,
+    "max_container_conf": 0.0007233023643493652,
+    "pose_frames": 2,
+    "0.25": {
+      "person": 1,
+      "container": 0,
+      "non_person": 6
+    },
+    "0.1": {
+      "person": 3,
+      "container": 0,
+      "non_person": 11
+    },
+    "0.05": {
+      "person": 3,
+      "container": 0,
+      "non_person": 11
+    }
+  },
+  {
+    "video": "挥手18",
+    "variant": "raw_native",
+    "frames": 12,
+    "mean_luma": 20.531806316832235,
+    "max_container_conf": 0.00027042627334594727,
+    "pose_frames": 0,
+    "0.25": {
+      "person": 3,
+      "container": 0,
+      "non_person": 10
+    },
+    "0.1": {
+      "person": 3,
+      "container": 0,
+      "non_person": 11
+    },
+    "0.05": {
+      "person": 3,
+      "container": 0,
+      "non_person": 12
+    }
+  },
+  {
+    "video": "挥手18",
+    "variant": "raw720",
+    "frames": 12,
+    "mean_luma": 20.528818327431697,
+    "max_container_conf": 0.004827916622161865,
+    "pose_frames": 7,
+    "0.25": {
+      "person": 5,
+      "container": 0,
+      "non_person": 8
+    },
+    "0.1": {
+      "person": 7,
+      "container": 0,
+      "non_person": 11
+    },
+    "0.05": {
+      "person": 8,
+      "container": 0,
+      "non_person": 12
+    }
+  },
+  {
+    "video": "挥手18",
+    "variant": "enhanced720",
+    "frames": 12,
+    "mean_luma": 75.11945393432573,
+    "max_container_conf": 0.000947415828704834,
+    "pose_frames": 3,
+    "0.25": {
+      "person": 2,
+      "container": 0,
+      "non_person": 2
+    },
+    "0.1": {
+      "person": 3,
+      "container": 0,
+      "non_person": 7
+    },
+    "0.05": {
+      "person": 3,
+      "container": 0,
+      "non_person": 10
+    }
+  }
+]

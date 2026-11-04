@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "all_tensors": 768,
+  "preserved_80class_outputs": [
+    "model.23.cv3.0.2.weight",
+    "model.23.cv3.0.2.bias",
+    "model.23.cv3.1.2.weight",
+    "model.23.cv3.1.2.bias",
+    "model.23.cv3.2.2.weight",
+    "model.23.cv3.2.2.bias",
+    "model.23.one2one_cv3.0.2.weight",
+    "model.23.one2one_cv3.0.2.bias",
+    "model.23.one2one_cv3.1.2.weight",
+    "model.23.one2one_cv3.1.2.bias",
+    "model.23.one2one_cv3.2.2.weight",
+    "model.23.one2one_cv3.2.2.bias"
+  ],
+  "phone_row": 67,
+  "bottle_row": 39,
+  "cup_row": 41,
+  "all_names_identical": true
+}

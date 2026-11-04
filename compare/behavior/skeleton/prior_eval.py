@@ -48,8 +48,7 @@ from darkpipe.stages.enhance_retinexformer import RetinexformerStage
 from darkpipe.stages.object_prior import PriorGate
 from darkpipe.stages.recognize import (BehaviorRecognizer, frame_luma, gate_luma, preprocess_frame,
                                        reject_probs)
-from darkpipe.stages.skeleton_aux import (SkeletonAux, merge_persons,
-                                          normalize_window)
+from darkpipe.stages.skeleton_aux import SkeletonAux
 
 LABELS = ["wave", "throw", "chase", "fall", "fight", "talk", "drink", "pick_up",
           "shake_hands", "other"]
@@ -106,6 +105,7 @@ def decision_record(stack, p_rgb, info, ps2, pres2, win, lums, alphas,
     rgb = reject_probs(p_rgb, LABELS, reject_tau)
     gated = gate_luma(lums, stack.lum_gate) is not None
     row = dict(schema_version=2, probability_dtype="float32", no_person=no_person,
+               skeleton_aggregation="highest_person_probability_20261022",
                reject_tau=reject_tau, lum_gate=stack.lum_gate,
                rgb=[float(x) for x in p_rgb], ps2=[float(x) for x in ps2],
                pres2=float(pres2), pres=float(info["pres"]), lum=lum,
@@ -168,15 +168,12 @@ class Stack:
         t0 = time.perf_counter()
         info = self.skel.analyze(win_bgr)
         self.t["skel"] += time.perf_counter() - t0
-        # alpha-mode vector: the deployed probs() math on slots 0/1 of the same pose run
-        t0 = time.perf_counter()
-        x, pres = normalize_window(info["sk"])
-        xt = torch.from_numpy(x[:2]).unsqueeze(0).to(self.dev)
-        with torch.no_grad():
-            lg = torch.stack([self.skel.net(xt[:, m]) for m in range(xt.shape[1])], 1)[0]
-        ps2 = merge_persons(lg, torch.tensor(pres[:2]).unsqueeze(0).to(self.dev))
-        self.t["skel2"] += time.perf_counter() - t0
-        return info, ps2[0].softmax(0).float().cpu().numpy(), float(pres[:2].max())
+        # Same winner and full vector as deployed alpha; do not re-run a historical merge.
+        if info['best'] >= 0:
+            return info, info['p'], float(info['presence'][info['best']])
+        p = np.zeros(len(LABELS), np.float32)
+        p[LABELS.index('other')] = 1.0
+        return info, p, 0.0
 
     def skel_pick(self, info):
         """Diagnostic-only re-derivation of the skeleton side's candidate (the deployed

@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "platform_payload_files": 67,
+  "box_payload_files": 86,
+  "unchanged_model_files": 13,
+  "added_model_files": 0,
+  "changed_from_object_prior_release": [
+    "CLAUDE.md",
+    "README.md",
+    "darkpipe/person/clips.py",
+    "darkpipe/person/core.py",
+    "darkpipe/person/object_overlay.py",
+    "darkpipe/person/object_runtime.py",
+    "darkpipe/person/runtime.py",
+    "darkpipe/person/service.py",
+    "models.json"
+  ],
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_object_overlay_20261027.tar.gz",
+      "alias": "platform/dark-demo-v2.tar.gz",
+      "sha256": "63c4416ebe3a9e9523ee5b03c1c92568a65647a48d5e13cc19d7b96e2e284626",
+      "bytes": 417892888
+    },
+    {
+      "path": "platform/dark-demo-v2_object_overlay_20261027.zip",
+      "alias": "platform/dark-demo-v2.zip",
+      "sha256": "e1cccb52fc4e0a5d67faf9a8b16151e322601ec9cdade70a6a51cb98935aa75f",
+      "bytes": 417925582
+    },
+    {
+      "path": "NVIDIA-Box_object_overlay_20261027.zip",
+      "alias": "NVIDIA-Box.zip",
+      "sha256": "612af12b7c7565d053cfffe8edf8e0a913d312b918453c5e85bedf21bf957dc3",
+      "bytes": 450282633
+    }
+  ],
+  "model_training": false,
+  "object_prior": true
+}

@@ -1,0 +1,358 @@
+{
+  "schema": "assistant_visual_box_drafts_v1",
+  "coordinate_system": "native pixels; xyxy; right/bottom exclusive",
+  "reference_size": [
+    960,
+    540
+  ],
+  "annotator": "Codex visual review",
+  "independent_human_review": false,
+  "interpolation_used": false,
+  "source_images_used": [
+    "original frames",
+    "gamma display adjustment",
+    "existing Retinexformer previews",
+    "adjacent frames"
+  ],
+  "sources": {
+    "捡东西1": {
+      "path": "real-actiondata-all/捡东西1.mp4",
+      "sha256": "1d4d072b22d10fe13d77c7cd8233d7b34c9f7a98d3df5d8017ea3fa5b2303226",
+      "fps": 25.0
+    },
+    "挥手18": {
+      "path": "real-actiondata-all/挥手18.mp4",
+      "sha256": "4078760fdadd05f6a84b598b07facd6b404bb2482830e0e15f32573abd187da7",
+      "fps": 25.0
+    },
+    "喝水8": {
+      "path": "real-actiondata-all/喝水8.mp4",
+      "sha256": "fec443198ddeccad295ec8a96c93a5a288c852a9ffa5371a16daafe98ae09f0c",
+      "fps": 25.0
+    }
+  },
+  "frames": [
+    {
+      "video": "捡东西1",
+      "frame_index_zero_based": 13,
+      "timestamp_seconds": 0.52,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "人物可定位；深色衣服左边缘与背景相近，底部阴影不计入人体。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        12,
+        13,
+        14
+      ],
+      "status": "draft_box",
+      "bbox_xyxy": [
+        640,
+        170,
+        870,
+        900
+      ],
+      "bbox_xywh": [
+        640,
+        170,
+        230,
+        730
+      ],
+      "truncated": false,
+      "yolo_xywh_normalized": [
+        0.3932291666666667,
+        0.49537037037037035,
+        0.11979166666666667,
+        0.6759259259259259
+      ]
+    },
+    {
+      "video": "捡东西1",
+      "frame_index_zero_based": 32,
+      "timestamp_seconds": 1.28,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "人物弯腰；头、躯干及腿可定位，手部边缘模糊。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        31,
+        32,
+        33
+      ],
+      "status": "draft_box",
+      "bbox_xyxy": [
+        680,
+        374,
+        1070,
+        826
+      ],
+      "bbox_xywh": [
+        680,
+        374,
+        390,
+        452
+      ],
+      "truncated": false,
+      "yolo_xywh_normalized": [
+        0.4557291666666667,
+        0.5555555555555556,
+        0.203125,
+        0.4185185185185185
+      ]
+    },
+    {
+      "video": "捡东西1",
+      "frame_index_zero_based": 52,
+      "timestamp_seconds": 2.08,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "人物弯腰；框包含可见身体，地面阴影不计入人体。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        51,
+        52,
+        53
+      ],
+      "status": "draft_box",
+      "bbox_xyxy": [
+        690,
+        344,
+        1074,
+        808
+      ],
+      "bbox_xywh": [
+        690,
+        344,
+        384,
+        464
+      ],
+      "truncated": false,
+      "yolo_xywh_normalized": [
+        0.459375,
+        0.5333333333333333,
+        0.2,
+        0.42962962962962964
+      ]
+    },
+    {
+      "video": "挥手18",
+      "frame_index_zero_based": 12,
+      "timestamp_seconds": 0.48,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "框包含抬起及外伸的手臂；黑色上衣边缘仍需复核。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        11,
+        12,
+        13
+      ],
+      "status": "draft_box",
+      "bbox_xyxy": [
+        502,
+        50,
+        1044,
+        1056
+      ],
+      "bbox_xywh": [
+        502,
+        50,
+        542,
+        1006
+      ],
+      "truncated": false,
+      "yolo_xywh_normalized": [
+        0.40260416666666665,
+        0.5120370370370371,
+        0.28229166666666666,
+        0.9314814814814815
+      ]
+    },
+    {
+      "video": "挥手18",
+      "frame_index_zero_based": 30,
+      "timestamp_seconds": 1.2,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "框包含抬起手臂；脚部接近/触及图像底边，不外推不可见部分。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        29,
+        30,
+        31
+      ],
+      "status": "draft_box",
+      "bbox_xyxy": [
+        580,
+        6,
+        1118,
+        1080
+      ],
+      "bbox_xywh": [
+        580,
+        6,
+        538,
+        1074
+      ],
+      "truncated": true,
+      "yolo_xywh_normalized": [
+        0.4421875,
+        0.5027777777777778,
+        0.28020833333333334,
+        0.9944444444444445
+      ]
+    },
+    {
+      "video": "挥手18",
+      "frame_index_zero_based": 48,
+      "timestamp_seconds": 1.92,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "框包含抬起手臂及身体右侧可见手臂；脚部在底边截断，不外推完整身体。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        47,
+        48,
+        49
+      ],
+      "status": "draft_box",
+      "bbox_xyxy": [
+        750,
+        52,
+        1190,
+        1080
+      ],
+      "bbox_xywh": [
+        750,
+        52,
+        440,
+        1028
+      ],
+      "truncated": true,
+      "yolo_xywh_normalized": [
+        0.5052083333333334,
+        0.524074074074074,
+        0.22916666666666666,
+        0.9518518518518518
+      ]
+    },
+    {
+      "video": "喝水8",
+      "frame_index_zero_based": 12,
+      "timestamp_seconds": 0.48,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "存在疑似移动人影，但躯干、手臂及上下边界不能可靠区分。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        11,
+        12,
+        13
+      ],
+      "status": "uncertain_do_not_use_as_negative",
+      "bbox_xyxy": null,
+      "bbox_xywh": null,
+      "yolo_xywh_normalized": null,
+      "truncated": null
+    },
+    {
+      "video": "喝水8",
+      "frame_index_zero_based": 31,
+      "timestamp_seconds": 1.24,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "相邻帧可辅助判断移动区域，仍不足以确定准确人体框。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        30,
+        31,
+        32
+      ],
+      "status": "uncertain_do_not_use_as_negative",
+      "bbox_xyxy": null,
+      "bbox_xywh": null,
+      "yolo_xywh_normalized": null,
+      "truncated": null
+    },
+    {
+      "video": "喝水8",
+      "frame_index_zero_based": 49,
+      "timestamp_seconds": 1.96,
+      "image_size": [
+        1920,
+        1080
+      ],
+      "review_status": "pending_independent_review",
+      "include_in_training": false,
+      "exhaustive_person_annotation": false,
+      "note": "全身边界不可靠；不根据视频文件名或动作标签猜框。",
+      "classification": "person",
+      "action_label": null,
+      "adjacent_frames_reviewed": [
+        48,
+        49,
+        50
+      ],
+      "status": "uncertain_do_not_use_as_negative",
+      "bbox_xyxy": null,
+      "bbox_xywh": null,
+      "yolo_xywh_normalized": null,
+      "truncated": null
+    }
+  ],
+  "summary": {
+    "reviewed_keyframes": 9,
+    "frames_viewed_including_neighbors": 27,
+    "draft_boxes": 6,
+    "uncertain_frames": 3,
+    "frames_added_to_training": 0
+  }
+}

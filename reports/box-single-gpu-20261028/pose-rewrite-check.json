@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "frames": [
+    {
+      "source": "real-actiondata-all/\u559d\u6c3427.mp4",
+      "frame": 0,
+      "max_abs": 0.0
+    },
+    {
+      "source": "real-actiondata-all/\u559d\u6c3427.mp4",
+      "frame": 30,
+      "max_abs": 0.0
+    },
+    {
+      "source": "real-actiondata-all/\u559d\u6c3427.mp4",
+      "frame": 60,
+      "max_abs": 0.0
+    },
+    {
+      "source": "real-actiondata-all/\u559d\u6c3427.mp4",
+      "frame": 90,
+      "max_abs": 0.0
+    },
+    {
+      "source": "real-actiondata-all/\u559d\u6c3427.mp4",
+      "frame": 120,
+      "max_abs": 0.0
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "frame": 0,
+      "max_abs": 0.0
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "frame": 30,
+      "max_abs": 0.0
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "frame": 60,
+      "max_abs": 0.0
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "frame": 90,
+      "max_abs": 0.0
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "frame": 120,
+      "max_abs": 0.0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "reason": "User confirmed three previously uncertain target tracks as other.",
+  "confirmed_tracks": [
+    [
+      "1fa7b05d",
+      2
+    ],
+    [
+      "ab4913f4",
+      3
+    ],
+    [
+      "d460cd44",
+      2
+    ]
+  ],
+  "prior_run": "superseded-before-user-label-confirmation",
+  "stopped_during_epoch": 1,
+  "old_checkpoint_saved": false,
+  "restart_from": "original pn2",
+  "split_changed": false,
+  "test_predictions_seen": false,
+  "threshold_changed": false
+}

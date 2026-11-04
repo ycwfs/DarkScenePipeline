@@ -1,0 +1,66 @@
+[
+  {
+    "case": "old-drink-supported",
+    "source_id": "3b3cd82b736befd7",
+    "event_index": 2,
+    "frame": 38,
+    "view_id": "a_3b3cd82b736befd7_38_123_407_473_1080",
+    "image": "examples/old-drink-supported.jpg"
+  },
+  {
+    "case": "old-drink-missed",
+    "source_id": "5da1038bd2222f4b",
+    "event_index": 1,
+    "frame": 29,
+    "view_id": "a_5da1038bd2222f4b_29_616_188_773_544",
+    "image": "examples/old-drink-missed.jpg"
+  },
+  {
+    "case": "old-pickup-missed",
+    "source_id": "7ce9e264c4e2c972",
+    "event_index": 0,
+    "frame": 15,
+    "view_id": "a_7ce9e264c4e2c972_15_463_162_584_314",
+    "image": "examples/old-pickup-missed.jpg"
+  },
+  {
+    "case": "new05-phone",
+    "source_id": "new-05",
+    "event_index": 1223,
+    "frame": 2186,
+    "view_id": "a_new-05_2186_349_704_914_1080",
+    "image": "examples/new05-phone.jpg"
+  },
+  {
+    "case": "new03-exhibit",
+    "source_id": "new-03",
+    "event_index": 3331,
+    "frame": 6305,
+    "view_id": "a_new-03_6305_885_86_1017_369",
+    "image": "examples/new03-exhibit.jpg"
+  },
+  {
+    "case": "new09-supported",
+    "source_id": "new-09",
+    "event_index": 2113,
+    "frame": 2513,
+    "view_id": "a_new-09_2513_338_70_579_708",
+    "image": "examples/new09-supported.jpg"
+  },
+  {
+    "case": "new03-near",
+    "source_id": "new-03",
+    "event_index": 4586,
+    "frame": 9837,
+    "view_id": "a_new-03_9837_179_461_500_1080",
+    "image": "examples/new03-near.jpg"
+  },
+  {
+    "case": "new07-pickup",
+    "source_id": "new-07",
+    "event_index": 280,
+    "frame": 584,
+    "view_id": "a_new-07_584_570_456_904_1080",
+    "image": "examples/new07-pickup.jpg"
+  }
+]

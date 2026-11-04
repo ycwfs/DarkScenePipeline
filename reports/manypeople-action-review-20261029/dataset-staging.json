@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "awaiting_user_review",
+  "training_ready": false,
+  "model_training_started": false,
+  "review_manifest_sha256": "1bf392331ff849ba8cfc7c5262e2d9290c4088c061f272936f5506242392d20e",
+  "reviewed_positive_samples": 0,
+  "reviewed_other_samples": 0,
+  "other_candidate_windows": 16087,
+  "source_windows": "base-windows.jsonl",
+  "review_items": "review-items.json",
+  "negative_pool": "other-candidates.csv",
+  "split_status": "unassigned; group by recording session/date across views, not random overlapping clips",
+  "recording_groups": {
+    "1": "recording_20261005_1300_multiview",
+    "2": "recording_20261005_1300_multiview",
+    "3": "recording_20261005_1300_multiview",
+    "4": "recording_20261001",
+    "6": "recording_20261001",
+    "8": "recording_20261001",
+    "5": "recording_20261016_14xx_multiview",
+    "7": "recording_20261016_14xx_multiview",
+    "9": "recording_20261016_14xx_multiview"
+  },
+  "constraints": [
+    "Human action labels must come from review; model predictions are not GT.",
+    "Robot/exhibit/wrong-person detections are excluded from action training, not labelled human other.",
+    "Not-drink feedback is not a blanket other label; label actual actions individually.",
+    "XCLIP proposals are a separate optional review pool; use matched original people for future training.",
+    "RGB crops and skeleton sequences must use the same person and original source frames.",
+    "Preview pixels contain overlays and resampling: never use them as training input.",
+    "All nine recordings have already influenced threshold calibration; future holdout is not blind."
+  ]
+}

@@ -1,0 +1,847 @@
+{
+  "frames": 60,
+  "minimum_psnr": 27.881413177246195,
+  "maximum_mae": 7.816430601393472,
+  "rows": [
+    {
+      "id": "lighting-01",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 35.02073392937332,
+      "mae": 3.108666804180418,
+      "maximum_absolute_difference": 36.0,
+      "pytorch_ms": 2488.223705906421,
+      "tensorrt_ms": 111.67190782725811
+    },
+    {
+      "id": "lighting-01",
+      "frame": 70,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.781240836327285,
+      "mae": 2.9755305738907225,
+      "maximum_absolute_difference": 33.0,
+      "pytorch_ms": 27.469297870993614,
+      "tensorrt_ms": 20.138447638601065
+    },
+    {
+      "id": "lighting-01",
+      "frame": 140,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.87161811598562,
+      "mae": 2.952145214521452,
+      "maximum_absolute_difference": 33.0,
+      "pytorch_ms": 29.40425183624029,
+      "tensorrt_ms": 20.56095190346241
+    },
+    {
+      "id": "lighting-02",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 33.25983892945429,
+      "mae": 3.7108234781811515,
+      "maximum_absolute_difference": 67.0,
+      "pytorch_ms": 27.503629680722952,
+      "tensorrt_ms": 19.898833706974983
+    },
+    {
+      "id": "lighting-02",
+      "frame": 79,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.42805219979093,
+      "mae": 3.8492494041070775,
+      "maximum_absolute_difference": 71.0,
+      "pytorch_ms": 29.269311111420393,
+      "tensorrt_ms": 20.826234947890043
+    },
+    {
+      "id": "lighting-02",
+      "frame": 158,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.51461835945893,
+      "mae": 3.9070590392372573,
+      "maximum_absolute_difference": 59.0,
+      "pytorch_ms": 32.03558502718806,
+      "tensorrt_ms": 21.240157075226307
+    },
+    {
+      "id": "lighting-03",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.33873434203732,
+      "mae": 3.3842982214888155,
+      "maximum_absolute_difference": 32.0,
+      "pytorch_ms": 27.338825166225433,
+      "tensorrt_ms": 19.63678002357483
+    },
+    {
+      "id": "lighting-03",
+      "frame": 66,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 35.83629113287695,
+      "mae": 2.828644114411441,
+      "maximum_absolute_difference": 37.0,
+      "pytorch_ms": 31.463460996747017,
+      "tensorrt_ms": 20.883813966065645
+    },
+    {
+      "id": "lighting-03",
+      "frame": 132,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 35.17354990071992,
+      "mae": 3.1274225339200585,
+      "maximum_absolute_difference": 25.0,
+      "pytorch_ms": 36.06796404346824,
+      "tensorrt_ms": 21.443283185362816
+    },
+    {
+      "id": "lighting-04",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 39.159591175856704,
+      "mae": 2.1979178126145946,
+      "maximum_absolute_difference": 46.0,
+      "pytorch_ms": 29.46962881833315,
+      "tensorrt_ms": 21.25182608142495
+    },
+    {
+      "id": "lighting-04",
+      "frame": 33,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 40.207048863707556,
+      "mae": 1.9546892189218923,
+      "maximum_absolute_difference": 19.0,
+      "pytorch_ms": 39.02385290712118,
+      "tensorrt_ms": 21.64452476426959
+    },
+    {
+      "id": "lighting-04",
+      "frame": 66,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 39.81496358515835,
+      "mae": 1.9999335350201686,
+      "maximum_absolute_difference": 25.0,
+      "pytorch_ms": 36.3728879019618,
+      "tensorrt_ms": 21.661325823515654
+    },
+    {
+      "id": "lighting-05",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 42.331487954839275,
+      "mae": 1.455768701870187,
+      "maximum_absolute_difference": 12.0,
+      "pytorch_ms": 31.363047193735838,
+      "tensorrt_ms": 22.319111973047256
+    },
+    {
+      "id": "lighting-05",
+      "frame": 84,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 41.42426687740173,
+      "mae": 1.6473872387238724,
+      "maximum_absolute_difference": 9.0,
+      "pytorch_ms": 37.49354463070631,
+      "tensorrt_ms": 21.642601117491722
+    },
+    {
+      "id": "lighting-05",
+      "frame": 168,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 42.502485652135526,
+      "mae": 1.466388201320132,
+      "maximum_absolute_difference": 9.0,
+      "pytorch_ms": 36.08667943626642,
+      "tensorrt_ms": 21.41357120126486
+    },
+    {
+      "id": "lighting-06",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 38.18615936363884,
+      "mae": 2.4070636230289697,
+      "maximum_absolute_difference": 20.0,
+      "pytorch_ms": 28.30809121951461,
+      "tensorrt_ms": 20.693934056907892
+    },
+    {
+      "id": "lighting-06",
+      "frame": 28,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 38.87510687611298,
+      "mae": 2.2228066556655666,
+      "maximum_absolute_difference": 22.0,
+      "pytorch_ms": 36.154558416455984,
+      "tensorrt_ms": 21.49759139865637
+    },
+    {
+      "id": "lighting-06",
+      "frame": 55,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 38.518086505398394,
+      "mae": 2.306238540520719,
+      "maximum_absolute_difference": 19.0,
+      "pytorch_ms": 38.17235678434372,
+      "tensorrt_ms": 21.576270926743746
+    },
+    {
+      "id": "lighting-07",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 36.27531005474954,
+      "mae": 2.9925937385405206,
+      "maximum_absolute_difference": 17.0,
+      "pytorch_ms": 28.24850892648101,
+      "tensorrt_ms": 20.603185053914785
+    },
+    {
+      "id": "lighting-07",
+      "frame": 66,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 37.32327224050747,
+      "mae": 2.7875206270627064,
+      "maximum_absolute_difference": 13.0,
+      "pytorch_ms": 33.76410761848092,
+      "tensorrt_ms": 21.094293799251318
+    },
+    {
+      "id": "lighting-07",
+      "frame": 132,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 37.10413461304049,
+      "mae": 2.722192427576091,
+      "maximum_absolute_difference": 16.0,
+      "pytorch_ms": 36.587960086762905,
+      "tensorrt_ms": 21.38810232281685
+    },
+    {
+      "id": "lighting-08",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 36.282043726992576,
+      "mae": 3.1185127887788777,
+      "maximum_absolute_difference": 16.0,
+      "pytorch_ms": 32.39013394340873,
+      "tensorrt_ms": 22.127897012978792
+    },
+    {
+      "id": "lighting-08",
+      "frame": 39,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 35.67336447067846,
+      "mae": 3.301725797579758,
+      "maximum_absolute_difference": 15.0,
+      "pytorch_ms": 35.80875601619482,
+      "tensorrt_ms": 20.916906651109457
+    },
+    {
+      "id": "lighting-08",
+      "frame": 77,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 36.38408343172599,
+      "mae": 3.065497799779978,
+      "maximum_absolute_difference": 16.0,
+      "pytorch_ms": 36.46476333960891,
+      "tensorrt_ms": 21.466407924890518
+    },
+    {
+      "id": "lighting-09",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.87706723221654,
+      "mae": 6.112548129812981,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 38.258390966802835,
+      "tensorrt_ms": 21.717431023716927
+    },
+    {
+      "id": "lighting-09",
+      "frame": 27,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.853859035572686,
+      "mae": 6.02631440227356,
+      "maximum_absolute_difference": 28.0,
+      "pytorch_ms": 35.285301972180605,
+      "tensorrt_ms": 21.572167053818703
+    },
+    {
+      "id": "lighting-09",
+      "frame": 53,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.650636936121593,
+      "mae": 6.192319856985699,
+      "maximum_absolute_difference": 25.0,
+      "pytorch_ms": 32.70578710362315,
+      "tensorrt_ms": 21.258908789604902
+    },
+    {
+      "id": "lighting-10",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.828983786698778,
+      "mae": 6.072611844517785,
+      "maximum_absolute_difference": 27.0,
+      "pytorch_ms": 34.20951310545206,
+      "tensorrt_ms": 21.72052999958396
+    },
+    {
+      "id": "lighting-10",
+      "frame": 18,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.802212810560803,
+      "mae": 6.087979006233957,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 35.72795307263732,
+      "tensorrt_ms": 21.89161768183112
+    },
+    {
+      "id": "lighting-10",
+      "frame": 35,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.743177028443473,
+      "mae": 6.07696300880088,
+      "maximum_absolute_difference": 27.0,
+      "pytorch_ms": 38.96750323474407,
+      "tensorrt_ms": 21.81576704606414
+    },
+    {
+      "id": "rule-挥手22",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.463290383556355,
+      "mae": 3.331034561789512,
+      "maximum_absolute_difference": 22.0,
+      "pytorch_ms": 28.804467990994453,
+      "tensorrt_ms": 21.025079768151045
+    },
+    {
+      "id": "rule-挥手22",
+      "frame": 27,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.504251714661024,
+      "mae": 3.285956408140814,
+      "maximum_absolute_difference": 23.0,
+      "pytorch_ms": 30.069441068917513,
+      "tensorrt_ms": 21.182667929679155
+    },
+    {
+      "id": "rule-挥手22",
+      "frame": 53,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.49959615656611,
+      "mae": 3.286780344701137,
+      "maximum_absolute_difference": 24.0,
+      "pytorch_ms": 36.367128137499094,
+      "tensorrt_ms": 21.638897247612476
+    },
+    {
+      "id": "rule-挥手32",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.967400537305565,
+      "mae": 5.226393472680601,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 30.888936948031187,
+      "tensorrt_ms": 21.782828029245138
+    },
+    {
+      "id": "rule-挥手32",
+      "frame": 46,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.82865152840855,
+      "mae": 5.3317725522552255,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 37.83161612227559,
+      "tensorrt_ms": 22.142699919641018
+    },
+    {
+      "id": "rule-挥手32",
+      "frame": 92,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.187816190218655,
+      "mae": 5.77649202420242,
+      "maximum_absolute_difference": 28.0,
+      "pytorch_ms": 34.508605021983385,
+      "tensorrt_ms": 21.25937771052122
+    },
+    {
+      "id": "rule-追逐20",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 38.29222050974426,
+      "mae": 2.3887490832416574,
+      "maximum_absolute_difference": 15.0,
+      "pytorch_ms": 28.290940914303064,
+      "tensorrt_ms": 21.1622710339725
+    },
+    {
+      "id": "rule-追逐20",
+      "frame": 47,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 37.9680741277608,
+      "mae": 2.495546846351302,
+      "maximum_absolute_difference": 19.0,
+      "pytorch_ms": 37.7020388841629,
+      "tensorrt_ms": 21.74617489799857
+    },
+    {
+      "id": "rule-追逐20",
+      "frame": 94,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 40.61937045609962,
+      "mae": 1.8649947286395305,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 37.03302517533302,
+      "tensorrt_ms": 24.54091515392065
+    },
+    {
+      "id": "rule-喝水27",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.310615021905374,
+      "mae": 5.7251386596993035,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 36.1233432777226,
+      "tensorrt_ms": 21.546154282987118
+    },
+    {
+      "id": "rule-喝水27",
+      "frame": 62,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.25756702379872,
+      "mae": 5.754683489182251,
+      "maximum_absolute_difference": 27.0,
+      "pytorch_ms": 37.01797593384981,
+      "tensorrt_ms": 21.943036001175642
+    },
+    {
+      "id": "rule-喝水27",
+      "frame": 124,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.975955325507964,
+      "mae": 5.2633525852585255,
+      "maximum_absolute_difference": 27.0,
+      "pytorch_ms": 39.42624805495143,
+      "tensorrt_ms": 21.887439768761396
+    },
+    {
+      "id": "crowd-child",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.34966526315543,
+      "mae": 4.88625206270627,
+      "maximum_absolute_difference": 25.0,
+      "pytorch_ms": 31.670906115323305,
+      "tensorrt_ms": 23.785498924553394
+    },
+    {
+      "id": "crowd-child",
+      "frame": 375,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 33.408298612790674,
+      "mae": 4.412717730106344,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 35.19509872421622,
+      "tensorrt_ms": 21.30155498161912
+    },
+    {
+      "id": "crowd-child",
+      "frame": 749,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 29.860558894825132,
+      "mae": 6.396256188118812,
+      "maximum_absolute_difference": 30.0,
+      "pytorch_ms": 33.72958907857537,
+      "tensorrt_ms": 21.16269012913108
+    },
+    {
+      "id": "crowd-walking",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 31.742083687918516,
+      "mae": 5.353430968096809,
+      "maximum_absolute_difference": 23.0,
+      "pytorch_ms": 35.157612059265375,
+      "tensorrt_ms": 20.843342877924442
+    },
+    {
+      "id": "crowd-walking",
+      "frame": 375,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 34.24531287922646,
+      "mae": 3.98713902640264,
+      "maximum_absolute_difference": 19.0,
+      "pytorch_ms": 38.3315896615386,
+      "tensorrt_ms": 21.88546536490321
+    },
+    {
+      "id": "crowd-walking",
+      "frame": 749,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.40200109254628,
+      "mae": 4.715724697469747,
+      "maximum_absolute_difference": 25.0,
+      "pytorch_ms": 37.20835596323013,
+      "tensorrt_ms": 21.836320869624615
+    },
+    {
+      "id": "crowd-phone",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.59580730030618,
+      "mae": 4.743505913091309,
+      "maximum_absolute_difference": 20.0,
+      "pytorch_ms": 33.17915974184871,
+      "tensorrt_ms": 21.13685291260481
+    },
+    {
+      "id": "crowd-phone",
+      "frame": 375,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.43342131472695,
+      "mae": 4.721358177484415,
+      "maximum_absolute_difference": 24.0,
+      "pytorch_ms": 31.05630585923791,
+      "tensorrt_ms": 23.380383849143982
+    },
+    {
+      "id": "crowd-phone",
+      "frame": 749,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.87629355633293,
+      "mae": 4.602244911991199,
+      "maximum_absolute_difference": 23.0,
+      "pytorch_ms": 37.67393995076418,
+      "tensorrt_ms": 21.98444213718176
+    },
+    {
+      "id": "crowd-camera",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.891336098406306,
+      "mae": 5.536954528786212,
+      "maximum_absolute_difference": 25.0,
+      "pytorch_ms": 34.82044814154506,
+      "tensorrt_ms": 21.52222767472267
+    },
+    {
+      "id": "crowd-camera",
+      "frame": 375,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 28.81351182615239,
+      "mae": 7.243960854418775,
+      "maximum_absolute_difference": 32.0,
+      "pytorch_ms": 30.904516112059355,
+      "tensorrt_ms": 22.630218882113695
+    },
+    {
+      "id": "crowd-camera",
+      "frame": 749,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 27.881413177246195,
+      "mae": 7.816430601393472,
+      "maximum_absolute_difference": 34.0,
+      "pytorch_ms": 36.62600088864565,
+      "tensorrt_ms": 21.769378799945116
+    },
+    {
+      "id": "new-01-wave-veto",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.62083419491934,
+      "mae": 5.951118445177851,
+      "maximum_absolute_difference": 26.0,
+      "pytorch_ms": 33.27754000201821,
+      "tensorrt_ms": 21.023757755756378
+    },
+    {
+      "id": "new-01-wave-veto",
+      "frame": 150,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 30.75217417469989,
+      "mae": 5.7803435551888525,
+      "maximum_absolute_difference": 28.0,
+      "pytorch_ms": 42.72982804104686,
+      "tensorrt_ms": 23.569940589368343
+    },
+    {
+      "id": "new-01-wave-veto",
+      "frame": 299,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 28.67378273654173,
+      "mae": 7.671004079574624,
+      "maximum_absolute_difference": 35.0,
+      "pytorch_ms": 37.17367397621274,
+      "tensorrt_ms": 21.81765576824546
+    },
+    {
+      "id": "new-07-standing-veto",
+      "frame": 0,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 35.19518223280899,
+      "mae": 3.5132700770077006,
+      "maximum_absolute_difference": 18.0,
+      "pytorch_ms": 32.50076621770859,
+      "tensorrt_ms": 21.040676161646843
+    },
+    {
+      "id": "new-07-standing-veto",
+      "frame": 150,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.99304086481098,
+      "mae": 4.573130958929227,
+      "maximum_absolute_difference": 21.0,
+      "pytorch_ms": 34.247188828885555,
+      "tensorrt_ms": 21.099614910781384
+    },
+    {
+      "id": "new-07-standing-veto",
+      "frame": 299,
+      "shape": [
+        404,
+        720,
+        3
+      ],
+      "psnr": 32.04901676842817,
+      "mae": 5.162769297763109,
+      "maximum_absolute_difference": 20.0,
+      "pytorch_ms": 37.48180391266942,
+      "tensorrt_ms": 21.808494813740253
+    }
+  ]
+}

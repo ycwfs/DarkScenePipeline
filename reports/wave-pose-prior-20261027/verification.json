@@ -1,0 +1,1327 @@
+{
+  "passed": true,
+  "source_count": 17,
+  "sources": [
+    {
+      "directory": "long-videos/new-01",
+      "frames": 9876,
+      "paired_checks": 5565
+    },
+    {
+      "directory": "long-videos/new-07",
+      "frames": 13500,
+      "paired_checks": 6312
+    },
+    {
+      "directory": "long-videos/new-09",
+      "frames": 6050,
+      "paired_checks": 5036
+    },
+    {
+      "directory": "short-regression/new-01",
+      "frames": 625,
+      "paired_checks": 298
+    },
+    {
+      "directory": "short-regression/new-07",
+      "frames": 750,
+      "paired_checks": 415
+    },
+    {
+      "directory": "short-regression/new-09",
+      "frames": 750,
+      "paired_checks": 688
+    },
+    {
+      "directory": "wave-shorts/new-01-child-retained",
+      "frames": 300,
+      "paired_checks": 165
+    },
+    {
+      "directory": "wave-shorts/new-01-wave-veto",
+      "frames": 300,
+      "paired_checks": 189
+    },
+    {
+      "directory": "wave-shorts/new-07-standing-veto",
+      "frames": 300,
+      "paired_checks": 86
+    },
+    {
+      "directory": "wave-shorts/new-09-raised-retained",
+      "frames": 300,
+      "paired_checks": 233
+    },
+    {
+      "directory": "old-videos/1fa7b05d59e8d258",
+      "frames": 81,
+      "paired_checks": 12
+    },
+    {
+      "directory": "old-videos/220cc82202abab6e",
+      "frames": 78,
+      "paired_checks": 4
+    },
+    {
+      "directory": "old-videos/56f605e0ad40c73a",
+      "frames": 85,
+      "paired_checks": 11
+    },
+    {
+      "directory": "old-videos/92b9a42823e68e4e",
+      "frames": 87,
+      "paired_checks": 12
+    },
+    {
+      "directory": "old-videos/b576f320195dfed9",
+      "frames": 160,
+      "paired_checks": 22
+    },
+    {
+      "directory": "old-videos/c99b19d78b33d718",
+      "frames": 130,
+      "paired_checks": 9
+    },
+    {
+      "directory": "old-videos/d0ab8993eff23b00",
+      "frames": 115,
+      "paired_checks": 14
+    }
+  ],
+  "checks": {
+    "paired_events": 19071,
+    "wave_windows": 69,
+    "wave_vetoes": 23
+  },
+  "videos": [
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T037_G001/R00003/running/E000_T037_G001_R00003_20261027_050647_running_0001.mp4",
+      "sha256": "2a49a90712a68a1f3e236e17ab08275cf365c2c731713704c419eb7198df6b12",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T037_G001/R00001/running/E000_T037_G001_R00001_20261027_050634_running_0001.mp4",
+      "sha256": "24e1c1c45e24aaf99a05ebdde5337500a6cfc696e0c70f5c2fff75ebe8498d4f",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T558_G000/R00006/running/E000_T558_G000_R00006_20261027_051751_running_0001.mp4",
+      "sha256": "b3672b7522a06ec7ee86cc35b0809b0ef3074d85b56bc5e222ef6e15f37f557b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T658_G000/R00007/waving/E000_T658_G000_R00007_20261027_051952_waving_0001.mp4",
+      "sha256": "0e34cb95121821965906a146f378e10a193215297c254ba5eeaeb3b918c9ad59",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T795_G000/R00009/running/E000_T795_G000_R00009_20261027_052305_running_0001.mp4",
+      "sha256": "8518b9d113a5c9303bf64867936ab42688af15d47c1c5ce0ccdf522c68526233",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T460_G000/R00004/running/E000_T460_G000_R00004_20261027_051548_running_0001.mp4",
+      "sha256": "3d72481e72d4a0dac9d0b0a4733cda7445b443e729d105be919b0554179c1b06",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T909_G001/R00012/running/E000_T909_G001_R00012_20261027_052531_running_0001.mp4",
+      "sha256": "f3ec70173ca3b86bfe36b2c47af7908646d952a3b9e7e441131171368e76fc31",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T470_G001/R00005/running/E000_T470_G001_R00005_20261027_051559_running_0001.mp4",
+      "sha256": "605d45a1c9452f28c18528aebbe61217f9bdd9d44a14a81c42b715e25870c99e",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T815_G001/R00010/waving/E000_T815_G001_R00010_20261027_052326_waving_0001.mp4",
+      "sha256": "c25cf61f9c60886d956861ab7185acc2c2a719887e8111ae2e540b479eea6317",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T749_G000/R00008/running/E000_T749_G000_R00008_20261027_052143_running_0001.mp4",
+      "sha256": "e078e8aba53df0b967994871f99c87c11bad3b74e0f792741a522119a1447626",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T044_G001/R00002/waving/E000_T044_G001_R00002_20261027_050641_waving_0001.mp4",
+      "sha256": "d6f23197100e431898b7af57242f52d7232481bf3ba4f1424299a5b57848a3ec",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline-clips/review/E000_T822_G001/R00011/running/E000_T822_G001_R00011_20261027_052436_running_0001.mp4",
+      "sha256": "4478ab5716a28db509dd22612229d2a9a815b43292c9567ca3dcad78c0d526a8",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/baseline.mp4",
+      "sha256": "aadde01cb401ac4b1df3f6a10e954da05eea47ce37edf2e7bcb3d12e6ad18b05",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "395.040000",
+        "nb_frames": "9876"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T037_G001/R00003/running/E000_T037_G001_R00003_20261027_050647_running_0001.mp4",
+      "sha256": "2a49a90712a68a1f3e236e17ab08275cf365c2c731713704c419eb7198df6b12",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T037_G001/R00001/running/E000_T037_G001_R00001_20261027_050634_running_0001.mp4",
+      "sha256": "24e1c1c45e24aaf99a05ebdde5337500a6cfc696e0c70f5c2fff75ebe8498d4f",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T558_G000/R00006/running/E000_T558_G000_R00006_20261027_051751_running_0001.mp4",
+      "sha256": "b3672b7522a06ec7ee86cc35b0809b0ef3074d85b56bc5e222ef6e15f37f557b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T795_G000/R00008/running/E000_T795_G000_R00008_20261027_052305_running_0001.mp4",
+      "sha256": "8518b9d113a5c9303bf64867936ab42688af15d47c1c5ce0ccdf522c68526233",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T460_G000/R00004/running/E000_T460_G000_R00004_20261027_051548_running_0001.mp4",
+      "sha256": "3d72481e72d4a0dac9d0b0a4733cda7445b443e729d105be919b0554179c1b06",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T909_G001/R00010/running/E000_T909_G001_R00010_20261027_052531_running_0001.mp4",
+      "sha256": "f3ec70173ca3b86bfe36b2c47af7908646d952a3b9e7e441131171368e76fc31",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T470_G001/R00005/running/E000_T470_G001_R00005_20261027_051559_running_0001.mp4",
+      "sha256": "605d45a1c9452f28c18528aebbe61217f9bdd9d44a14a81c42b715e25870c99e",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T749_G000/R00007/running/E000_T749_G000_R00007_20261027_052143_running_0001.mp4",
+      "sha256": "e078e8aba53df0b967994871f99c87c11bad3b74e0f792741a522119a1447626",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T044_G001/R00002/waving/E000_T044_G001_R00002_20261027_050641_waving_0001.mp4",
+      "sha256": "d6f23197100e431898b7af57242f52d7232481bf3ba4f1424299a5b57848a3ec",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate-clips/review/E000_T822_G001/R00009/running/E000_T822_G001_R00009_20261027_052436_running_0001.mp4",
+      "sha256": "4478ab5716a28db509dd22612229d2a9a815b43292c9567ca3dcad78c0d526a8",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-01/candidate.mp4",
+      "sha256": "a30b7a0f858e874616f93fb0c32721c6782bcdb6addf4d349ecf0b0e4a75db3d",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "395.040000",
+        "nb_frames": "9876"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T913_G000/R00008/waving/E000_T913_G000_R00008_20261027_052720_waving_0001.mp4",
+      "sha256": "7febd821447970a7d3b1689c0f01afa4a36b1adc1c154b47e097f6e1a86ef26b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T311_G001/R00004/waving/E000_T311_G001_R00004_20261027_051312_waving_0001.mp4",
+      "sha256": "cec916fa7c3c339d9d6790049c5bf52b5102470bb55257107d950156f9153041",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.160000",
+        "nb_frames": "154"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T237_G000/R00002/waving/E000_T237_G000_R00002_20261027_051038_waving_0001.mp4",
+      "sha256": "27e764e16b06131aec2d940d24867b1e632b3fd8698830257a0b96cb314e657c",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T894_G000/R00009/waving/E000_T894_G000_R00009_20261027_052747_waving_0001.mp4",
+      "sha256": "95fb2fff4b0862971b9b2feec1baa58ee978037fe21ea67cfc763708eee5109c",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T894_G000/R00007/waving/E000_T894_G000_R00007_20261027_052624_waving_0001.mp4",
+      "sha256": "63c3ae26f6562792b691eeced8b7e7b1eefa3ab8120999e069fb4c42993a0f0b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T894_G002/R00011/waving/E000_T894_G002_R00011_20261027_052843_waving_0001.mp4",
+      "sha256": "8d58bf97d3bb4a411a6b53ecd9830773731fe4b21d35322ed9e781163d8dff70",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T311_G000/R00003/waving/E000_T311_G000_R00003_20261027_051238_waving_0001.mp4",
+      "sha256": "bba4124363f90920c00ef234ce6b68183c6d70d9d055f81bc32a4f15857612c2",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T321_G000/R00005/waving/E000_T321_G000_R00005_20261027_051338_waving_0001.mp4",
+      "sha256": "a381cfd198bda30585cd9fa4bc87c84ee2adef1021bf6c50d577a35b54413015",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T559_G000/R00006/waving/E000_T559_G000_R00006_20261027_051839_waving_0001.mp4",
+      "sha256": "d84e7421e9ea57bfadb6f96114e8acc87b7b9b17b5c4fa4c63705fe0426934fe",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "5.120000",
+        "nb_frames": "128"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T992_G000/R00013/waving/E000_T992_G000_R00013_20261027_052958_waving_0001.mp4",
+      "sha256": "d6fcb317f3ac0e7506301adcacc54b221706925c884e6d1d11addaa8c62c49d5",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "5.600000",
+        "nb_frames": "140"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T026_G000/R00001/drinking_water/E000_T026_G000_R00001_20261027_050640_drinking_water_0001.mp4",
+      "sha256": "cfa0f84d2add9b5abc85379ba100bf791047642332c0417887c2f56317ae4928",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T942_G001/R00010/waving/E000_T942_G001_R00010_20261027_052752_waving_0001.mp4",
+      "sha256": "385ddd85478eeccca8519d3130f34e38a3ac63ff4ece91827d418d37391799da",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline-clips/review/E000_T966_G000/R00012/waving/E000_T966_G000_R00012_20261027_052852_waving_0001.mp4",
+      "sha256": "2dcefa171b6b5cce9fe7b762cd885cf91b708dc2dfea5e281d27e79134b75150",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/baseline.mp4",
+      "sha256": "62839f9dbdc96ca4883acdddf745f79340e920f71d595a16b6c3c100a0c302e4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "540.000000",
+        "nb_frames": "13500"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/candidate-clips/review/E000_T992_G000/R00002/waving/E000_T992_G000_R00002_20261027_053003_waving_0001.mp4",
+      "sha256": "4db02b864fec3de33046f54d1f815ad9b4e3bf604e175020bfb74789049482b5",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/candidate-clips/review/E000_T026_G000/R00001/drinking_water/E000_T026_G000_R00001_20261027_050640_drinking_water_0001.mp4",
+      "sha256": "cfa0f84d2add9b5abc85379ba100bf791047642332c0417887c2f56317ae4928",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-07/candidate.mp4",
+      "sha256": "a93f83b63f4aad723d0eb5d160fefe538cd466ea2cbd7df4feb1597cff5cb17c",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "540.000000",
+        "nb_frames": "13500"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-09/baseline-clips/review/E000_T607_G000/R00001/waving/E000_T607_G000_R00001_20261027_051447_waving_0001.mp4",
+      "sha256": "d551d74ac5cac0896041d60dd92421417339b4b02fba3a3aeda0657826733d43",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-09/baseline.mp4",
+      "sha256": "bfdc3277f8aa7b786bf5c3add8f0d784f6a36f5580ad0beb8ab421735f31733b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "242.000000",
+        "nb_frames": "6050"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-09/candidate-clips/review/E000_T607_G000/R00001/waving/E000_T607_G000_R00001_20261027_051447_waving_0001.mp4",
+      "sha256": "d551d74ac5cac0896041d60dd92421417339b4b02fba3a3aeda0657826733d43",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "long-videos/new-09/candidate.mp4",
+      "sha256": "bfdc3277f8aa7b786bf5c3add8f0d784f6a36f5580ad0beb8ab421735f31733b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "242.000000",
+        "nb_frames": "6050"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-01/baseline.mp4",
+      "sha256": "68a831eed1fc547685068e005fd40fa417ddc7f081b51c088130f1cc9effcc82",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "25.000000",
+        "nb_frames": "625"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-01/candidate.mp4",
+      "sha256": "68a831eed1fc547685068e005fd40fa417ddc7f081b51c088130f1cc9effcc82",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "25.000000",
+        "nb_frames": "625"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-07/baseline-clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261027_053358_drinking_water_0001.mp4",
+      "sha256": "00e8111a2f76a24e82bb6e1df5e58835273c6b8a2be8f0d40a3794ea8a8a9ad1",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-07/baseline.mp4",
+      "sha256": "e8ae7ce807c2b79ea72d1edf67659cbf755d9a0c531488a8a121afc37726dbcc",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "30.000000",
+        "nb_frames": "750"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-07/candidate-clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261027_053358_drinking_water_0001.mp4",
+      "sha256": "00e8111a2f76a24e82bb6e1df5e58835273c6b8a2be8f0d40a3794ea8a8a9ad1",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-07/candidate.mp4",
+      "sha256": "e8ae7ce807c2b79ea72d1edf67659cbf755d9a0c531488a8a121afc37726dbcc",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "30.000000",
+        "nb_frames": "750"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-09/baseline-clips/review/E000_T009_G000/R00001/drinking_water/E000_T009_G000_R00001_20261027_052156_drinking_water_0001.mp4",
+      "sha256": "95c03f188dfd360a30455518ff69faf5b7f840c5561503b8363bc26f55da1392",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-09/baseline.mp4",
+      "sha256": "eafc365e98092d4132eda2f635c4661aaff1e846272d23db030a08b3286b6cbc",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "30.000000",
+        "nb_frames": "750"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-09/candidate-clips/review/E000_T009_G000/R00001/drinking_water/E000_T009_G000_R00001_20261027_052156_drinking_water_0001.mp4",
+      "sha256": "95c03f188dfd360a30455518ff69faf5b7f840c5561503b8363bc26f55da1392",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.080000",
+        "nb_frames": "102"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "short-regression/new-09/candidate.mp4",
+      "sha256": "eafc365e98092d4132eda2f635c4661aaff1e846272d23db030a08b3286b6cbc",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "30.000000",
+        "nb_frames": "750"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-child-retained/baseline-clips/review/E000_T009_G001/R00001/waving/E000_T009_G001_R00001_20261027_052717_waving_0001.mp4",
+      "sha256": "eee70030174895e1daf56a8b6437bda79b349ba812b577e2749d51587eb82ae6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-child-retained/baseline.mp4",
+      "sha256": "a488dda23f80dc88f4755be171a1c42e115e1d40b4ac8596b3279256792932ee",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-child-retained/candidate-clips/review/E000_T009_G001/R00001/waving/E000_T009_G001_R00001_20261027_052717_waving_0001.mp4",
+      "sha256": "eee70030174895e1daf56a8b6437bda79b349ba812b577e2749d51587eb82ae6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-child-retained/candidate.mp4",
+      "sha256": "a488dda23f80dc88f4755be171a1c42e115e1d40b4ac8596b3279256792932ee",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-wave-veto/baseline-clips/review/E000_T014_G000/R00002/waving/E000_T014_G000_R00002_20261027_052721_waving_0001.mp4",
+      "sha256": "f4daba1d7d20ce5cd10f4aca40d6ae447b3da083daded81ea01255152c77e847",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.000000",
+        "nb_frames": "100"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-wave-veto/baseline-clips/review/E000_T006_G000/R00001/running/E000_T006_G000_R00001_20261027_052707_running_0001.mp4",
+      "sha256": "5e002cbf6caa2f043762cb494ba35ac4b88f5192c3718c35aa145351206e7fd6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-wave-veto/baseline.mp4",
+      "sha256": "d79958446c522044a2ab72aea791de6c42d12a3c4117541322de78e57d24d28b",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-wave-veto/candidate-clips/review/E000_T006_G000/R00001/running/E000_T006_G000_R00001_20261027_052707_running_0001.mp4",
+      "sha256": "5e002cbf6caa2f043762cb494ba35ac4b88f5192c3718c35aa145351206e7fd6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-01-wave-veto/candidate.mp4",
+      "sha256": "ad5d10ecfb9b8930c02bcb615b4d0b584308500d0cc9f99ed1719ebab74ecee9",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-07-standing-veto/baseline-clips/review/E000_T023_G000/R00001/waving/E000_T023_G000_R00001_20261027_052714_waving_0001.mp4",
+      "sha256": "4cfc9b00f09b733803a2172ab385acfeec55eb18099c52609c8c1e63f5d51635",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.520000",
+        "nb_frames": "113"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-07-standing-veto/baseline.mp4",
+      "sha256": "c45b1f073d1b7d8a5923c984ed50b108734f97357879265ae35ccb20ce710dc7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-07-standing-veto/candidate.mp4",
+      "sha256": "c950380e03b608e93f727a7c502810e820ceeb8c4bb28edabd050075be580023",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-09-raised-retained/baseline-clips/review/E000_T029_G000/R00001/waving/E000_T029_G000_R00001_20261027_052823_waving_0001.mp4",
+      "sha256": "c6068aa4df219472bc15eede2d23afca0c0f6a1a2f58db55d6e06d27138492b7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-09-raised-retained/baseline.mp4",
+      "sha256": "d2b6b7ec7e2830657907140033c17118d7d5f371cd7e90032fc00dc90d8b36e4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-09-raised-retained/candidate-clips/review/E000_T029_G000/R00001/waving/E000_T029_G000_R00001_20261027_052823_waving_0001.mp4",
+      "sha256": "c6068aa4df219472bc15eede2d23afca0c0f6a1a2f58db55d6e06d27138492b7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.040000",
+        "nb_frames": "101"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "wave-shorts/new-09-raised-retained/candidate.mp4",
+      "sha256": "d2b6b7ec7e2830657907140033c17118d7d5f371cd7e90032fc00dc90d8b36e4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/1fa7b05d59e8d258/baseline-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050908_waving_0001.mp4",
+      "sha256": "738aed5a7602c8cf8fe497b2e2bffbafe789d009483bad843a14eac3371de71a",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.666667",
+        "nb_frames": "80"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/1fa7b05d59e8d258/baseline.mp4",
+      "sha256": "7f4fcdf2707cda459307cfbee7257b25145a044515cfb1dc8e3dc7b3793351a9",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.700000",
+        "nb_frames": "81"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/1fa7b05d59e8d258/candidate-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050908_waving_0001.mp4",
+      "sha256": "738aed5a7602c8cf8fe497b2e2bffbafe789d009483bad843a14eac3371de71a",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.666667",
+        "nb_frames": "80"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/1fa7b05d59e8d258/candidate.mp4",
+      "sha256": "7f4fcdf2707cda459307cfbee7257b25145a044515cfb1dc8e3dc7b3793351a9",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.700000",
+        "nb_frames": "81"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/220cc82202abab6e/baseline-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050909_waving_0001.mp4",
+      "sha256": "177d1b304b71803862f00c24a3b9829701e2dc0ccbce647591491d6446bd2db2",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.566667",
+        "nb_frames": "77"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/220cc82202abab6e/baseline.mp4",
+      "sha256": "fb4704020efd7015bb8c907de414e18019d050c200980304ac090336b08bafe6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.600000",
+        "nb_frames": "78"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/220cc82202abab6e/candidate-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050909_waving_0001.mp4",
+      "sha256": "177d1b304b71803862f00c24a3b9829701e2dc0ccbce647591491d6446bd2db2",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.566667",
+        "nb_frames": "77"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/220cc82202abab6e/candidate.mp4",
+      "sha256": "fb4704020efd7015bb8c907de414e18019d050c200980304ac090336b08bafe6",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.600000",
+        "nb_frames": "78"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/56f605e0ad40c73a/baseline-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050909_waving_0001.mp4",
+      "sha256": "a1f3c119569b41609ecfa9241af9bb4fb5414add603cd25ccc5294d71499543c",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.833333",
+        "nb_frames": "85"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/56f605e0ad40c73a/baseline.mp4",
+      "sha256": "8a3fbc84436c7373d2853eb7e0b1ce50599d013ddd0e337a28f41578bcdd1ec4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.833333",
+        "nb_frames": "85"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/56f605e0ad40c73a/candidate-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050909_waving_0001.mp4",
+      "sha256": "a1f3c119569b41609ecfa9241af9bb4fb5414add603cd25ccc5294d71499543c",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.833333",
+        "nb_frames": "85"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/56f605e0ad40c73a/candidate.mp4",
+      "sha256": "8a3fbc84436c7373d2853eb7e0b1ce50599d013ddd0e337a28f41578bcdd1ec4",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.833333",
+        "nb_frames": "85"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/92b9a42823e68e4e/baseline-clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_050939_waving_0001.mp4",
+      "sha256": "a30b56c439c8bc7d4c35b73bcd3cb4184b4f3bf4bc54b8207e8927cc7ca49720",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.900000",
+        "nb_frames": "87"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/92b9a42823e68e4e/baseline.mp4",
+      "sha256": "6648db02329594e927064303e8a7ba96f28d5915db7c60c7606a1b839b8f12bb",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.900000",
+        "nb_frames": "87"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/92b9a42823e68e4e/candidate-clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_050939_waving_0001.mp4",
+      "sha256": "a30b56c439c8bc7d4c35b73bcd3cb4184b4f3bf4bc54b8207e8927cc7ca49720",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.900000",
+        "nb_frames": "87"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/92b9a42823e68e4e/candidate.mp4",
+      "sha256": "6648db02329594e927064303e8a7ba96f28d5915db7c60c7606a1b839b8f12bb",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "2.900000",
+        "nb_frames": "87"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/b576f320195dfed9/baseline-clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_051007_waving_0001.mp4",
+      "sha256": "936463c7cd462266a5e2b4be3ba739688a2fb3ad28dcd00524aef5829323f1d7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.360000",
+        "nb_frames": "159"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/b576f320195dfed9/baseline.mp4",
+      "sha256": "8dce5ef52e2a644d697451cde72c0f21efc71832d3f241fd39b1ae5b21404030",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.400000",
+        "nb_frames": "160"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/b576f320195dfed9/candidate-clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_051007_waving_0001.mp4",
+      "sha256": "936463c7cd462266a5e2b4be3ba739688a2fb3ad28dcd00524aef5829323f1d7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.360000",
+        "nb_frames": "159"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/b576f320195dfed9/candidate.mp4",
+      "sha256": "8dce5ef52e2a644d697451cde72c0f21efc71832d3f241fd39b1ae5b21404030",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.400000",
+        "nb_frames": "160"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/c99b19d78b33d718/baseline-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050938_waving_0001.mp4",
+      "sha256": "d6d2417ba4e780fe2038040da197d9176987581c7e43a61c5a94303a6a1c7d92",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "5.160000",
+        "nb_frames": "129"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/c99b19d78b33d718/baseline.mp4",
+      "sha256": "f67ec10b50ea5acbb698f61a8cb9b5e599c09449aec386d6b6a611fe0dea5bac",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "5.200000",
+        "nb_frames": "130"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/c99b19d78b33d718/candidate-clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_050938_waving_0001.mp4",
+      "sha256": "d6d2417ba4e780fe2038040da197d9176987581c7e43a61c5a94303a6a1c7d92",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "5.160000",
+        "nb_frames": "129"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/c99b19d78b33d718/candidate.mp4",
+      "sha256": "f67ec10b50ea5acbb698f61a8cb9b5e599c09449aec386d6b6a611fe0dea5bac",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "5.200000",
+        "nb_frames": "130"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/d0ab8993eff23b00/baseline-clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_050938_waving_0001.mp4",
+      "sha256": "b6f62c0bc6841fffe19187d077ea528d89c7e32ef804a2e7c8220ec70316fac1",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/d0ab8993eff23b00/baseline.mp4",
+      "sha256": "ec5c69aadb7f59d3c910350db307a2d9ec1af501fce9269c31962feeab5c1dce",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.600000",
+        "nb_frames": "115"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/d0ab8993eff23b00/candidate-clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_050938_waving_0001.mp4",
+      "sha256": "b6f62c0bc6841fffe19187d077ea528d89c7e32ef804a2e7c8220ec70316fac1",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.560000",
+        "nb_frames": "114"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "old-videos/d0ab8993eff23b00/candidate.mp4",
+      "sha256": "ec5c69aadb7f59d3c910350db307a2d9ec1af501fce9269c31962feeab5c1dce",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "4.600000",
+        "nb_frames": "115"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "integrated-candidate/output.mp4",
+      "sha256": "8dce5ef52e2a644d697451cde72c0f21efc71832d3f241fd39b1ae5b21404030",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.400000",
+        "nb_frames": "160"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "integrated-candidate/clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261027_051447_waving_0001.mp4",
+      "sha256": "936463c7cd462266a5e2b4be3ba739688a2fb3ad28dcd00524aef5829323f1d7",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "6.360000",
+        "nb_frames": "159"
+      },
+      "decode_passed": true
+    },
+    {
+      "path": "integrated-bright-candidate/output.mp4",
+      "sha256": "c950380e03b608e93f727a7c502810e820ceeb8c4bb28edabd050075be580023",
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 808,
+        "duration": "12.000000",
+        "nb_frames": "300"
+      },
+      "decode_passed": true
+    }
+  ],
+  "video_count": 102,
+  "integrated_candidate_passed": true,
+  "integrated_bright_candidate_passed": true,
+  "independent_bright_probability_reproducibility_within_2e_4": false,
+  "scope": "Finite offline paired evidence and complete decode; no new streaming, NFS or infinite-duration claim."
+}

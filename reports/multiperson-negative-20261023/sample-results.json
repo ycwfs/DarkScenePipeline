@@ -1,0 +1,325 @@
+[
+  {
+    "name": "20261012_095918_drinking_water_0060",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "source_sha256": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "requested": true,
+    "frames": 59,
+    "fps": 29.0,
+    "duration": 2.0344827586206895,
+    "source_shape": [
+      1680,
+      1020
+    ],
+    "content_height": 944,
+    "old_label_bar_removed": 76,
+    "model_shape": [
+      720,
+      404
+    ],
+    "output_shape": [
+      1680,
+      1020
+    ],
+    "video": "videos/20261012_095918_drinking_water_0060_多人骨架.mp4",
+    "still": "stills/20261012_095918_drinking_water_0060.jpg",
+    "events": 2,
+    "final_labels": {
+      "Other": 2
+    },
+    "fired_events": 0,
+    "valid_people_per_event": [
+      6,
+      6
+    ],
+    "max_people": 6,
+    "frames_with_multiple_people": 31,
+    "frames_with_at_least_four_people": 31,
+    "drawn_people_histogram": {
+      "0": 28,
+      "6": 31
+    },
+    "displayed_person_class_observations": {
+      "other": 186
+    },
+    "first_pose_seconds": 0.9655172413793104,
+    "fusion_verified": true,
+    "elapsed": 4.0815913011319935,
+    "preprocessing": "Remove old bar, resize recognition to 720; no repeated enhancement/SR/denoise",
+    "raw_luma_available": false,
+    "lum_gate_effective": "unavailable raw: deployed fail-open policy"
+  },
+  {
+    "name": "20261012_095756_drinking_water_0054",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "source_sha256": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "requested": false,
+    "frames": 60,
+    "fps": 30.0,
+    "duration": 2.0,
+    "source_shape": [
+      1680,
+      1020
+    ],
+    "content_height": 944,
+    "old_label_bar_removed": 76,
+    "model_shape": [
+      720,
+      404
+    ],
+    "output_shape": [
+      1680,
+      1020
+    ],
+    "video": "videos/20261012_095756_drinking_water_0054_多人骨架.mp4",
+    "still": "stills/20261012_095756_drinking_water_0054.jpg",
+    "events": 2,
+    "final_labels": {
+      "Other": 2
+    },
+    "fired_events": 0,
+    "valid_people_per_event": [
+      6,
+      6
+    ],
+    "max_people": 6,
+    "frames_with_multiple_people": 31,
+    "frames_with_at_least_four_people": 31,
+    "drawn_people_histogram": {
+      "0": 29,
+      "6": 31
+    },
+    "displayed_person_class_observations": {
+      "other": 140,
+      "drink": 16,
+      "shake_hands": 15,
+      "pick_up": 15
+    },
+    "first_pose_seconds": 0.9666666666666667,
+    "fusion_verified": true,
+    "elapsed": 3.707167204003781,
+    "preprocessing": "Remove old bar, resize recognition to 720; no repeated enhancement/SR/denoise",
+    "raw_luma_available": false,
+    "lum_gate_effective": "unavailable raw: deployed fail-open policy"
+  },
+  {
+    "name": "20261012_095808_drinking_water_0055",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095808_drinking_water_0055.mp4",
+    "source_sha256": "ac408518cf290840b9e9039ecf351c95ddfe422ec5aeb337b78d005dcbe886ce",
+    "requested": false,
+    "frames": 118,
+    "fps": 28.0,
+    "duration": 4.214285714285714,
+    "source_shape": [
+      1680,
+      1020
+    ],
+    "content_height": 944,
+    "old_label_bar_removed": 76,
+    "model_shape": [
+      720,
+      404
+    ],
+    "output_shape": [
+      1680,
+      1020
+    ],
+    "video": "videos/20261012_095808_drinking_water_0055_多人骨架.mp4",
+    "still": "stills/20261012_095808_drinking_water_0055.jpg",
+    "events": 6,
+    "final_labels": {
+      "Other": 6
+    },
+    "fired_events": 0,
+    "valid_people_per_event": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "max_people": 6,
+    "frames_with_multiple_people": 91,
+    "frames_with_at_least_four_people": 91,
+    "drawn_people_histogram": {
+      "0": 27,
+      "6": 90,
+      "4": 1
+    },
+    "displayed_person_class_observations": {
+      "other": 485,
+      "pick_up": 43,
+      "drink": 16
+    },
+    "first_pose_seconds": 0.9642857142857143,
+    "fusion_verified": true,
+    "elapsed": 8.619337941054255,
+    "preprocessing": "Remove old bar, resize recognition to 720; no repeated enhancement/SR/denoise",
+    "raw_luma_available": false,
+    "lum_gate_effective": "unavailable raw: deployed fail-open policy"
+  },
+  {
+    "name": "20261012_095850_waving_0058",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_095850_waving_0058.mp4",
+    "source_sha256": "51a56728e87cfc84ecd9dd3f8495068deceea734fc6fff087aa74ebb90c9150f",
+    "requested": false,
+    "frames": 52,
+    "fps": 26.0,
+    "duration": 2.0,
+    "source_shape": [
+      1680,
+      1020
+    ],
+    "content_height": 944,
+    "old_label_bar_removed": 76,
+    "model_shape": [
+      720,
+      404
+    ],
+    "output_shape": [
+      1680,
+      1020
+    ],
+    "video": "videos/20261012_095850_waving_0058_多人骨架.mp4",
+    "still": "stills/20261012_095850_waving_0058.jpg",
+    "events": 2,
+    "final_labels": {
+      "Other": 2
+    },
+    "fired_events": 0,
+    "valid_people_per_event": [
+      6,
+      6
+    ],
+    "max_people": 6,
+    "frames_with_multiple_people": 27,
+    "frames_with_at_least_four_people": 27,
+    "drawn_people_histogram": {
+      "0": 25,
+      "6": 27
+    },
+    "displayed_person_class_observations": {
+      "other": 108,
+      "shake_hands": 16,
+      "drink": 38
+    },
+    "first_pose_seconds": 0.9615384615384616,
+    "fusion_verified": true,
+    "elapsed": 3.3660998698323965,
+    "preprocessing": "Remove old bar, resize recognition to 720; no repeated enhancement/SR/denoise",
+    "raw_luma_available": false,
+    "lum_gate_effective": "unavailable raw: deployed fail-open policy"
+  },
+  {
+    "name": "20261012_101212_drinking_water_0101",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101212_drinking_water_0101.mp4",
+    "source_sha256": "b03dec3d19c54cbfde9139df53bf324449e5a453d26eefbece562ada133ec187",
+    "requested": false,
+    "frames": 118,
+    "fps": 30.0,
+    "duration": 3.933333333333333,
+    "source_shape": [
+      1680,
+      1020
+    ],
+    "content_height": 944,
+    "old_label_bar_removed": 76,
+    "model_shape": [
+      720,
+      404
+    ],
+    "output_shape": [
+      1680,
+      1020
+    ],
+    "video": "videos/20261012_101212_drinking_water_0101_多人骨架.mp4",
+    "still": "stills/20261012_101212_drinking_water_0101.jpg",
+    "events": 6,
+    "final_labels": {
+      "Other": 6
+    },
+    "fired_events": 0,
+    "valid_people_per_event": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "max_people": 6,
+    "frames_with_multiple_people": 89,
+    "frames_with_at_least_four_people": 89,
+    "drawn_people_histogram": {
+      "0": 29,
+      "6": 89
+    },
+    "displayed_person_class_observations": {
+      "other": 445,
+      "drink": 57,
+      "throw": 16,
+      "wave": 16
+    },
+    "first_pose_seconds": 0.9666666666666667,
+    "fusion_verified": true,
+    "elapsed": 8.216401147190481,
+    "preprocessing": "Remove old bar, resize recognition to 720; no repeated enhancement/SR/denoise",
+    "raw_luma_available": false,
+    "lum_gate_effective": "unavailable raw: deployed fail-open policy"
+  },
+  {
+    "name": "20261012_102056_waving_0124",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_102056_waving_0124.mp4",
+    "source_sha256": "1382c00b2ad2aa9498e1facd2a1349214a0a3f5dc9ba0992ed36532124aaddde",
+    "requested": false,
+    "frames": 60,
+    "fps": 30.0,
+    "duration": 2.0,
+    "source_shape": [
+      1680,
+      1020
+    ],
+    "content_height": 944,
+    "old_label_bar_removed": 76,
+    "model_shape": [
+      720,
+      404
+    ],
+    "output_shape": [
+      1680,
+      1020
+    ],
+    "video": "videos/20261012_102056_waving_0124_多人骨架.mp4",
+    "still": "stills/20261012_102056_waving_0124.jpg",
+    "events": 2,
+    "final_labels": {
+      "Other": 2
+    },
+    "fired_events": 0,
+    "valid_people_per_event": [
+      6,
+      6
+    ],
+    "max_people": 6,
+    "frames_with_multiple_people": 31,
+    "frames_with_at_least_four_people": 31,
+    "drawn_people_histogram": {
+      "0": 29,
+      "6": 31
+    },
+    "displayed_person_class_observations": {
+      "drink": 16,
+      "wave": 31,
+      "other": 108,
+      "chase": 16,
+      "pick_up": 15
+    },
+    "first_pose_seconds": 0.9666666666666667,
+    "fusion_verified": true,
+    "elapsed": 3.6241614390164614,
+    "preprocessing": "Remove old bar, resize recognition to 720; no repeated enhancement/SR/denoise",
+    "raw_luma_available": false,
+    "lum_gate_effective": "unavailable raw: deployed fail-open policy"
+  }
+]

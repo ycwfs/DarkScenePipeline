@@ -1,0 +1,19 @@
+{
+  "windows": 51834,
+  "known": 4445,
+  "new_human": 736,
+  "candidates": 2114,
+  "features": 1684,
+  "frontend_missing": 430,
+  "by_source": {
+    "new-01": 30,
+    "new-02": 66,
+    "new-03": 230,
+    "new-04": 15,
+    "new-05": 16,
+    "new-06": 4,
+    "new-07": 20,
+    "new-08": 22,
+    "new-09": 27
+  }
+}

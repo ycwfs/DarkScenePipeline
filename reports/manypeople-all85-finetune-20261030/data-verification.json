@@ -1,0 +1,1 @@
+{"records":7020,"old_train":5009,"old_val":233,"old_test":262,"new_positive":85,"new_other":85,"rgb_train":5179,"skeleton_train":3379,"skeleton_new_positive":70,"old_group_isolation":true,"new_all_capture_groups_seen_by_training":true,"pseudo_used":false,"scored_windows":1148}

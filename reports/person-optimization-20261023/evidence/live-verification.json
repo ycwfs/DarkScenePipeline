@@ -1,0 +1,104 @@
+[
+  {
+    "run": "live/1gpu/多人0060",
+    "decoded_frames": 377,
+    "events": 345,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/1gpu/挥手3",
+    "decoded_frames": 587,
+    "events": 102,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/1gpu/留出_挥手28",
+    "decoded_frames": 422,
+    "events": 109,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/2gpu/多人0060",
+    "decoded_frames": 519,
+    "events": 319,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/2gpu/挥手3",
+    "decoded_frames": 601,
+    "events": 102,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/2gpu/留出_挥手28",
+    "decoded_frames": 473,
+    "events": 111,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/3gpu/多人0060",
+    "decoded_frames": 532,
+    "events": 453,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/3gpu/挥手3",
+    "decoded_frames": 644,
+    "events": 102,
+    "accounting_passed": true
+  },
+  {
+    "run": "live/3gpu/留出_挥手28",
+    "decoded_frames": 506,
+    "events": 102,
+    "accounting_passed": true
+  },
+  {
+    "run": "live-extra/1gpu/八候选0118",
+    "decoded_frames": 326,
+    "events": 273,
+    "accounting_passed": true
+  },
+  {
+    "run": "live-extra/1gpu/四候选0047",
+    "decoded_frames": 426,
+    "events": 134,
+    "accounting_passed": true
+  },
+  {
+    "run": "live-extra/2gpu/八候选0118",
+    "decoded_frames": 496,
+    "events": 273,
+    "accounting_passed": true
+  },
+  {
+    "run": "live-extra/2gpu/四候选0047",
+    "decoded_frames": 531,
+    "events": 134,
+    "accounting_passed": true
+  },
+  {
+    "run": "live-extra/3gpu/八候选0118",
+    "decoded_frames": 393,
+    "events": 273,
+    "accounting_passed": true
+  },
+  {
+    "run": "live-extra/3gpu/四候选0047",
+    "decoded_frames": 531,
+    "events": 134,
+    "accounting_passed": true
+  },
+  {
+    "run": "soak/3gpu/八候选0118",
+    "decoded_frames": 7049,
+    "events": 4133,
+    "accounting_passed": true
+  },
+  {
+    "run": "soak/3gpu/长现场_挥手",
+    "decoded_frames": 6674,
+    "events": 533,
+    "accounting_passed": true
+  }
+]

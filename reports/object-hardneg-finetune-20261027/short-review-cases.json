@@ -1,0 +1,40 @@
+[
+  {
+    "id": "short-07-000",
+    "number": 7,
+    "track_id": 3,
+    "generation": 0,
+    "action": "drink",
+    "start": 11.36,
+    "end": 11.36,
+    "baseline_windows": 1,
+    "candidate_windows": 1,
+    "indices": [
+      146
+    ],
+    "truth": null,
+    "representative": 146,
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-07.mkv",
+    "source_offset": 10,
+    "image": "short-review/short-07-000.jpg"
+  },
+  {
+    "id": "short-09-001",
+    "number": 9,
+    "track_id": 9,
+    "generation": 0,
+    "action": "drink",
+    "start": 8.76,
+    "end": 8.76,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      180
+    ],
+    "truth": null,
+    "representative": 180,
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-09.mkv",
+    "source_offset": 94,
+    "image": "short-review/short-09-001.jpg"
+  }
+]

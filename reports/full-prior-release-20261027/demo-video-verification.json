@@ -1,0 +1,800 @@
+[
+  {
+    "path": "demos/lighting-01/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "141"
+        }
+      ],
+      "format": {
+        "duration": "5.640000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-01/clips/review/E000_T001_G000/R00002/drinking_water/E000_T001_G000_R00002_20261027_115413_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "140"
+        }
+      ],
+      "format": {
+        "duration": "5.600000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-01/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_115412_running_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "75"
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-02/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "159"
+        }
+      ],
+      "format": {
+        "duration": "6.360000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-02/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261027_115427_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "101"
+        }
+      ],
+      "format": {
+        "duration": "4.040000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-02/clips/review/E000_T003_G000/R00002/drinking_water/E000_T003_G000_R00002_20261027_115428_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "157"
+        }
+      ],
+      "format": {
+        "duration": "6.280000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-03/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "133"
+        }
+      ],
+      "format": {
+        "duration": "5.320000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-03/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_115443_waving_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "132"
+        }
+      ],
+      "format": {
+        "duration": "5.280000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-04/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "67"
+        }
+      ],
+      "format": {
+        "duration": "2.680000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-05/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "169"
+        }
+      ],
+      "format": {
+        "duration": "6.760000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-05/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_115506_waving_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "168"
+        }
+      ],
+      "format": {
+        "duration": "6.720000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-06/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "56"
+        }
+      ],
+      "format": {
+        "duration": "2.240000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-06/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_115520_running_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "55"
+        }
+      ],
+      "format": {
+        "duration": "2.200000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-07/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "133"
+        }
+      ],
+      "format": {
+        "duration": "5.320000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-08/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "78"
+        }
+      ],
+      "format": {
+        "duration": "3.120000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-08/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261027_115543_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "77"
+        }
+      ],
+      "format": {
+        "duration": "3.080000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-09/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "54"
+        }
+      ],
+      "format": {
+        "duration": "1.800000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-09/clips/review/E000_T002_G000/R00001/picking_up_object/E000_T002_G000_R00001_20261027_115554_picking_up_object_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "53"
+        }
+      ],
+      "format": {
+        "duration": "1.767000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-10/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "36"
+        }
+      ],
+      "format": {
+        "duration": "1.200000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-11/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "27/1",
+          "nb_read_frames": "74"
+        }
+      ],
+      "format": {
+        "duration": "2.741000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-12/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "81"
+        }
+      ],
+      "format": {
+        "duration": "2.700000"
+      }
+    }
+  },
+  {
+    "path": "demos/lighting-13/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "29/1",
+          "nb_read_frames": "59"
+        }
+      ],
+      "format": {
+        "duration": "2.035000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-挥手22/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "54"
+        }
+      ],
+      "format": {
+        "duration": "2.160000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-挥手22/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_115633_waving_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "53"
+        }
+      ],
+      "format": {
+        "duration": "2.120000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-挥手32/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "93"
+        }
+      ],
+      "format": {
+        "duration": "3.100000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-挥手32/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261027_115643_waving_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "93"
+        }
+      ],
+      "format": {
+        "duration": "3.100000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-追逐20/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "95"
+        }
+      ],
+      "format": {
+        "duration": "3.800000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-追逐20/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261027_115652_running_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "75"
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-喝水27/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "125"
+        }
+      ],
+      "format": {
+        "duration": "4.167000"
+      }
+    }
+  },
+  {
+    "path": "demos/rule-喝水27/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261027_115705_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "125"
+        }
+      ],
+      "format": {
+        "duration": "4.167000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-child/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-child/clips/review/E000_T020_G001/R00003/running/E000_T020_G001_R00003_20261027_115454_running_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-child/clips/review/E000_T020_G001/R00001/running/E000_T020_G001_R00001_20261027_115441_running_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-child/clips/review/E000_T027_G001/R00002/waving/E000_T027_G001_R00002_20261027_115449_waving_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-walking/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-phone/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-phone/clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261027_115755_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-camera/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/crowd-camera/clips/review/E000_T009_G000/R00001/drinking_water/E000_T009_G000_R00001_20261027_115932_drinking_water_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    }
+  },
+  {
+    "path": "demos/new-01-wave-veto/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    }
+  },
+  {
+    "path": "demos/new-01-wave-veto/clips/review/E000_T006_G000/R00001/running/E000_T006_G000_R00001_20261027_120914_running_0001.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "101"
+        }
+      ],
+      "format": {
+        "duration": "4.040000"
+      }
+    }
+  },
+  {
+    "path": "demos/new-07-standing-veto/output.mp4",
+    "passed": true,
+    "stderr": "",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1",
+          "nb_read_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    }
+  }
+]

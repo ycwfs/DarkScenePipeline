@@ -1,0 +1,9 @@
+{
+  "reports/low-conf-candidate-audit-20261101/input-hashes.json": "08e902e5291850eeaacb5cd124d3b5088df12dad5d6ece0380269c7409b4d349",
+  "reports/low-conf-candidate-audit-20261101/decisions.json": "0b91945f224bc8ddf360c7d839b5e5e2b4a4e25d2be971bbe566fbfad13301ff",
+  "reports/low-conf-candidate-audit-20261101/prior-evidence.json": "4d053756d9c0118e34ba48431a88e00dffa174c9d6a7d23e3332e080eab8d52c",
+  "reports/other-action-review-20261101/protocol.json": "b83e41edb22721894da18bb23d136f060ff03f64d409968b14b14f502191dc80",
+  "platform/dark-demo-v2/darkpipe/person/object_runtime.py": "8bb75c46135711cfaf8d38bdfda2ffddb517c8ea8df48fc66ba83f07c55f50d7",
+  "platform/dark-demo-v2/darkpipe/person/object_prior.py": "41fa0436a726a84ab63b6cbd390ad5edb0697e60f49183236e9bce9c88b40269",
+  "platform/dark-demo-v2/ckpts/yolo26m_objects_20261026.onnx": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5"
+}

@@ -1,0 +1,10 @@
+{
+  "source": "rtmo-s_person_20261024.onnx",
+  "source_sha256": "f26ad25cd52f97b73fae7eae9c06ebe1650316ca316db66c67b484303ce340e2",
+  "output": "rtmo-s_person_20261024_box.onnx",
+  "sha256": "a1f27b6ddb9d03cb0597dae214fde28d8c4ace09659050fc53a880aaa9a500d7",
+  "rewrites": [
+    "/ArgMax"
+  ],
+  "change": "Unsqueeze rank1 -> ArgMax axis1 -> Squeeze; original indices, values and external shapes preserved"
+}

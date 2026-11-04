@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "matched_frozen_sources": 26,
+  "replayed_windows": 619,
+  "old_windows": 55,
+  "new_windows": 564,
+  "strict_to_single_monotonicity_checked": true,
+  "production_changed": false
+}

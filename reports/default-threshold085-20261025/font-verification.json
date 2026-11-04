@@ -1,0 +1,11 @@
+{
+  "source": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+  "source_sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+  "font_index": 0,
+  "original_sha256": "5c4df08fbe603b20d5b60e9f4cbfeb6b21327f324eadd409f2e27c26e9c164b0",
+  "output_sha256": "f0e9f95f5c567d110b7878bd02bb856589a77944f17cd15227c179d57c383965",
+  "old_codepoints": 119,
+  "new_codepoints": 121,
+  "added_text": "跑动",
+  "original_glyphs_preserved": true
+}

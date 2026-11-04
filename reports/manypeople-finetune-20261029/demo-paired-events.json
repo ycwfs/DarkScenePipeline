@@ -1,0 +1,65 @@
+[
+  {
+    "input": "new-other",
+    "baseline_events": 123,
+    "selected_events": 123,
+    "paired": 123,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  },
+  {
+    "input": "new-drink",
+    "baseline_events": 99,
+    "selected_events": 99,
+    "paired": 99,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  },
+  {
+    "input": "new-chase",
+    "baseline_events": 87,
+    "selected_events": 87,
+    "paired": 87,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  },
+  {
+    "input": "new-wave",
+    "baseline_events": 137,
+    "selected_events": 137,
+    "paired": 137,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  },
+  {
+    "input": "old-dark",
+    "baseline_events": 3,
+    "selected_events": 3,
+    "paired": 3,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  },
+  {
+    "input": "old-dim",
+    "baseline_events": 7,
+    "selected_events": 7,
+    "paired": 7,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  },
+  {
+    "input": "old-bright",
+    "baseline_events": 5,
+    "selected_events": 5,
+    "paired": 5,
+    "label_changes": 0,
+    "unpaired_baseline": 0,
+    "unpaired_selected": 0
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "manifest": "platform/dark-demo-v2.tar.gz.manifest.json",
+    "files": 67,
+    "mismatches": [],
+    "archive_sha256": "63c4416ebe3a9e9523ee5b03c1c92568a65647a48d5e13cc19d7b96e2e284626",
+    "archive_unchanged": true
+  },
+  {
+    "manifest": "NVIDIA-Box.zip.manifest.json",
+    "files": 86,
+    "mismatches": [],
+    "archive_sha256": "612af12b7c7565d053cfffe8edf8e0a913d312b918453c5e85bedf21bf957dc3",
+    "archive_unchanged": true
+  }
+]

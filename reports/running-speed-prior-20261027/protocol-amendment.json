@@ -1,0 +1,7 @@
+{
+  "before_test": true,
+  "reason": "Strict missing-pose reject cannot preserve all reviewed child triggers at any positive threshold: frame613 has zero reliable pairs. Candidate uses fail-open for missing pose; strict variant retained in sweep. Geometry formula unchanged.",
+  "user_question": "Asked optional missing-pose preference; pending at amendment. Proceed with explicitly stated conservative bypass assumption.",
+  "original_protocol_sha256": "94081ea0faff054d20e748878eff635a356ca941705dc4748f51c16420a6cabb",
+  "current_rule_sha256": "29d209e612e2332d224fc96aff2e9b1a3a1362fbdacca2ff075391b570e295c8"
+}

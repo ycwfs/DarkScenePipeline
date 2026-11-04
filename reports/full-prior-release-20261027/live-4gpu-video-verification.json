@@ -1,0 +1,176 @@
+[
+  {
+    "path": "live-4gpu/clips/input/20261027_120846_1/E000_T185_G000/R00002/drinking_water/E000_T185_G000_R00002_20261027_121111_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "22/1",
+          "nb_frames": "100"
+        }
+      ],
+      "format": {
+        "duration": "4.546000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/clips/input/20261027_120846_1/E000_T058_G000/R00001/running/E000_T058_G000_R00001_20261027_121023_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "13/1",
+          "nb_frames": "52"
+        }
+      ],
+      "format": {
+        "duration": "4.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/viewer-120-flv.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "1.999000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/viewer-10-mjpeg.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/viewer-10-hls.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/viewer-120-mjpeg.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/viewer-120-hls.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "2.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/viewer-10-flv.mkv",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "15/1"
+        }
+      ],
+      "format": {
+        "duration": "1.999000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-4gpu/full-output-stream.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 808,
+          "avg_frame_rate": "814000/54133",
+          "nb_frames": "2442"
+        }
+      ],
+      "format": {
+        "duration": "162.399000"
+      }
+    },
+    "stderr": ""
+  }
+]

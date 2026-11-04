@@ -1,0 +1,537 @@
+[
+  {
+    "name": "挥手3",
+    "predictions": 22,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [
+      {
+        "track_id": 1,
+        "timestamp": 0.96,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 1.48,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 2.0,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 2.52,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 3.04,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 3.56,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 4.08,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 4.6,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 5.12,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 5.64,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 6.16,
+        "before": "drink",
+        "after": "other"
+      }
+    ],
+    "baseline_labels": {
+      "wave": 10,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 11,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 1
+    },
+    "selected_labels": {
+      "wave": 10,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 12
+    },
+    "comparison": "comparisons/挥手3_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "160"
+    },
+    "sha256": "e4d8c946cd62c524f7c42f7f68e5da53b12cb4c4b2e5acefd2ea398eba27fc82"
+  },
+  {
+    "name": "挥手4",
+    "predictions": 24,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [
+      {
+        "track_id": 2,
+        "timestamp": 0.96,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 1,
+        "timestamp": 1.48,
+        "before": "other",
+        "after": "chase"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 1.48,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 3.04,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 3.56,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 4.6,
+        "before": "wave",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 5.12,
+        "before": "wave",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 5.64,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 6.16,
+        "before": "drink",
+        "after": "other"
+      },
+      {
+        "track_id": 2,
+        "timestamp": 6.68,
+        "before": "drink",
+        "after": "other"
+      }
+    ],
+    "baseline_labels": {
+      "wave": 12,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 7,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 5
+    },
+    "selected_labels": {
+      "wave": 10,
+      "throw": 0,
+      "chase": 1,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 13
+    },
+    "comparison": "comparisons/挥手4_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "169"
+    },
+    "sha256": "13ce68c717c05786aa395f8f7ce9a928f683a34075ba835d644567a6b14edb22"
+  },
+  {
+    "name": "挥手20",
+    "predictions": 3,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 1,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 2
+    },
+    "selected_labels": {
+      "wave": 1,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 2
+    },
+    "comparison": "comparisons/挥手20_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "55"
+    },
+    "sha256": "6f50d93d43ac3de016340a262f8bc8537c4462bc36f402b86111c715b45f4d7a"
+  },
+  {
+    "name": "喝水16",
+    "predictions": 4,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 4,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 0
+    },
+    "selected_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 4,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 0
+    },
+    "comparison": "comparisons/喝水16_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "75"
+    },
+    "sha256": "bd2b4077386cad1133cc1a38ef843ae93cfadf91fafcfeb32ab86f0e29cb89d8"
+  },
+  {
+    "name": "多人0060",
+    "predictions": 38,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 38
+    },
+    "selected_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 38
+    },
+    "comparison": "comparisons/多人0060_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 594,
+      "nb_read_frames": "59"
+    },
+    "sha256": "39772d3fd9a15e16275aad5b5061d8d875a77f30932aa67bd49196958331f974"
+  },
+  {
+    "name": "多人0054",
+    "predictions": 41,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [
+      {
+        "track_id": 13,
+        "timestamp": 1.9666666666666666,
+        "before": "drink",
+        "after": "other"
+      }
+    ],
+    "baseline_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 1,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 40
+    },
+    "selected_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 41
+    },
+    "comparison": "comparisons/多人0054_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 594,
+      "nb_read_frames": "60"
+    },
+    "sha256": "369015f6be03b42c0dc0d1079e35bdace862e025f92ee9b28e121c3297206d17"
+  },
+  {
+    "name": "回传留出_181324",
+    "predictions": 3,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 3
+    },
+    "selected_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 3
+    },
+    "comparison": "comparisons/回传留出_181324_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "50"
+    },
+    "sha256": "6b3f3e51bd9cda792c324d712160992d03adeda983d4aa10b8044f29c16a4d18"
+  },
+  {
+    "name": "留出_捡东西23",
+    "predictions": 3,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 3,
+      "shake_hands": 0,
+      "other": 0
+    },
+    "selected_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 3,
+      "shake_hands": 0,
+      "other": 0
+    },
+    "comparison": "comparisons/留出_捡东西23_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "61"
+    },
+    "sha256": "51260111714801e63733302f592c48a79dc5cb4f28e7887220530414c3377c9f"
+  },
+  {
+    "name": "留出_挥手28",
+    "predictions": 11,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 4,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 7
+    },
+    "selected_labels": {
+      "wave": 4,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 0,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 7
+    },
+    "comparison": "comparisons/留出_挥手28_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "85"
+    },
+    "sha256": "43c8bd053526e944750d86837293196959c99a08c5633454bdb1f8520fcbc32a"
+  },
+  {
+    "name": "留出_喝水26",
+    "predictions": 6,
+    "matched_person_windows": true,
+    "skeleton_unchanged": true,
+    "skeleton_max_absolute_difference": 0.0,
+    "changed_predictions": [],
+    "baseline_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 5,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 1
+    },
+    "selected_labels": {
+      "wave": 0,
+      "throw": 0,
+      "chase": 0,
+      "fall": 0,
+      "fight": 0,
+      "talk": 0,
+      "drink": 5,
+      "pick_up": 0,
+      "shake_hands": 0,
+      "other": 1
+    },
+    "comparison": "comparisons/留出_喝水26_微调前后.mp4",
+    "output": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 592,
+      "nb_read_frames": "117"
+    },
+    "sha256": "58770e79957ee775f64c283fb7f4903d87a69e016b1d6987ece0885cf80840dc"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "time": 12.192943334113806,
+    "action": "source_pause"
+  },
+  {
+    "time": 20.207623342983425,
+    "action": "source_resume"
+  },
+  {
+    "time": 30.239440180826932,
+    "action": "output_down"
+  },
+  {
+    "time": 38.006429037079215,
+    "action": "output_up"
+  },
+  {
+    "time": 50.140927956905216,
+    "action": "source_down"
+  },
+  {
+    "time": 56.15208491170779,
+    "action": "source_up"
+  },
+  {
+    "time": 65.23345210403204,
+    "action": "viewer_reconnect"
+  },
+  {
+    "time": 78.00767710385844,
+    "action": "sigterm"
+  }
+]

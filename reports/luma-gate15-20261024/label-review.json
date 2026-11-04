@@ -1,0 +1,57 @@
+{
+  "records": [
+    {
+      "video_id": "de33753bf592c4cc",
+      "source": "real-actiondata-all/追逐30.mp4",
+      "track_id": 1,
+      "status": "reviewed",
+      "reviewer": "assistant visual review of prediction-free 0.25s track contact sequence",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 1.92,
+          "label": "chase"
+        }
+      ],
+      "evidence": "review/de33753bf592c4cc_T01.jpg",
+      "evidence_sha256": "67a1a38b88f80d5d838692bff56d1bc84e5e188a4bb42652e701b4b100d38f8d",
+      "note": "New actor not temporally covered in original annotations. Uses existing jogging/running chase vocabulary; no copied labels for bystanders. Boundary frames outside listed interval remain unknown."
+    },
+    {
+      "video_id": "7a744e54208d220c",
+      "source": "real-actiondata-all/挥手27.mp4",
+      "track_id": 1,
+      "status": "reviewed",
+      "reviewer": "assistant visual review of prediction-free 0.25s track contact sequence",
+      "segments": [
+        {
+          "start": 0.24,
+          "end": 2.4,
+          "label": "wave"
+        }
+      ],
+      "evidence": "review/7a744e54208d220c_T01.jpg",
+      "evidence_sha256": "325116928c7cf98d27ffc31acd9dc0ab415251917979b85111b987f3eb75c89b",
+      "note": "New actor not temporally covered in original annotations. Uses existing jogging/running chase vocabulary; no copied labels for bystanders. Boundary frames outside listed interval remain unknown."
+    },
+    {
+      "video_id": "4e19f9c50c1a54c0",
+      "source": "real-actiondata-all/追逐46.mp4",
+      "track_id": 1,
+      "status": "reviewed",
+      "reviewer": "assistant visual review of prediction-free 0.25s track contact sequence",
+      "segments": [
+        {
+          "start": 0.48,
+          "end": 1.92,
+          "label": "chase"
+        }
+      ],
+      "evidence": "review/4e19f9c50c1a54c0_T01.jpg",
+      "evidence_sha256": "89383ac6db19695b2adeb59fa1419cbe1699104a0c33fab02ab72fca81f4622a",
+      "note": "New actor not temporally covered in original annotations. Uses existing jogging/running chase vocabulary; no copied labels for bystanders. Boundary frames outside listed interval remain unknown."
+    }
+  ],
+  "original_annotations_modified": false,
+  "training_modified": false
+}

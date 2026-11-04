@@ -1,0 +1,13 @@
+{
+  "videos": 222,
+  "frames": 1332,
+  "person_frames": 5049,
+  "production_geometry_checks": 34900,
+  "coordinates_verified": true,
+  "visual_cases_reviewed": 40,
+  "html_links_verified": 41,
+  "model_hashes_unchanged": true,
+  "source_annotation_and_split_unchanged": true,
+  "artifact_files": 286,
+  "complete": true
+}

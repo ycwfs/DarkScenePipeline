@@ -1,0 +1,23 @@
+{
+  "videos": 6,
+  "frames": 467,
+  "events": 20,
+  "fired_events": 0,
+  "frames_with_multiple_people": 300,
+  "max_displayed_people": 6,
+  "person_classes_per_event": {
+    "other": 98,
+    "drink": 10,
+    "shake_hands": 2,
+    "pick_up": 5,
+    "throw": 1,
+    "wave": 3,
+    "chase": 1
+  },
+  "selected_classes": {
+    "other": 20
+  },
+  "full_decode_passed": true,
+  "all_fusion_checks_passed": true,
+  "raw_luma_available": false
+}

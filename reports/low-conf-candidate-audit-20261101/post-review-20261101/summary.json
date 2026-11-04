@@ -1,0 +1,37 @@
+{
+  "high_bin": {
+    "continuation": {
+      "true": 16,
+      "false": 2,
+      "unknown": 0
+    },
+    "running2": {
+      "true": 6,
+      "false": 2,
+      "unknown": 0
+    },
+    "combined": {
+      "true": 19,
+      "false": 4,
+      "unknown": 0
+    }
+  },
+  "all_bins": {
+    "continuation": {
+      "true": 18,
+      "false": 5,
+      "unknown": 0
+    },
+    "running2": {
+      "true": 8,
+      "false": 2,
+      "unknown": 0
+    },
+    "combined": {
+      "true": 23,
+      "false": 7,
+      "unknown": 0
+    }
+  },
+  "interpretation": "High bin combined = 19 true and 4 known false after user confirmed the 10 high-bin unknowns; all-bin combined = 23 true and 7 known false after confirming all 13 unknowns."
+}

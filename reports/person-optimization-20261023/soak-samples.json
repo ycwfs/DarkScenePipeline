@@ -1,0 +1,12 @@
+[
+  {
+    "name": "长现场_挥手",
+    "source": "real-actiondata/挥手.mp4",
+    "processed": false
+  },
+  {
+    "name": "八候选0118",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101642_drinking_water_0118.mp4",
+    "processed": true
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "paired_group_weighting": true,
+  "bootstrap_seed": 2301,
+  "known_delta": 0.25,
+  "ties_handled": true
+}

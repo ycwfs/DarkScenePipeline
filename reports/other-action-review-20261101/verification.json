@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": {
+    "user_confirmed_windows": 13,
+    "exact_object_windows": 145,
+    "old_exact_object_reuse": 2,
+    "new_frozen_hashes_unchanged": 7,
+    "accepted_windows_rule_checked": 307,
+    "state_machine_tests": "6 passed"
+  }
+}

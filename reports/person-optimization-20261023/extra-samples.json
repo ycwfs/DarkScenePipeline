@@ -1,0 +1,12 @@
+[
+  {
+    "name": "四候选0047",
+    "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_095504_picking_up_object_0047.mp4",
+    "processed": true
+  },
+  {
+    "name": "八候选0118",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101642_drinking_water_0118.mp4",
+    "processed": true
+  }
+]

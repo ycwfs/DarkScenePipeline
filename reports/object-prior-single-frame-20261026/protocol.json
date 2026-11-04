@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26",
+  "question": "Does one positive object observation in a person's crop retain more true drink/pickup predictions than consecutive interaction evidence?",
+  "type": "Exploratory paired replay requested after prior results were inspected; not an untouched confirmatory test",
+  "source": "reports/object-prior-finetune-20261025/action-evaluation/*.json",
+  "weights": "Unchanged YOLO26m candidate and saved action probabilities",
+  "sample_scope": "Existing five sampled frames per one-second action window, not every decoded video frame",
+  "action_threshold": 0.85,
+  "support_confidence": 0.35,
+  "comparisons": {
+    "baseline": "No object requirement, original action label",
+    "conservative": "Existing sustained contradictory evidence veto; missing support preserves action",
+    "strict": "Existing three consecutive interactions spanning at least .35s; pickup also requires upward motion",
+    "single_interaction": "At least one sampled frame with object at own hand/head for drink, or own hand for pickup; pickup lift requirement removed",
+    "single_roi": "At least one sampled frame with compatible object center in selected person's 30% expanded native-pixel ROI; no keypoint/motion requirement"
+  },
+  "compatible_classes": {
+    "drink": [0, 1],
+    "pick_up": [0, 1, 2, 3, 4, 5]
+  },
+  "unchanged_guard": "Do not weaken the existing sustained contradiction veto. Exclude ambiguous person bindings. Use cached detections already filtered for nearby other-person wrists.",
+  "interpretation": "Single ROI tests object presence, not whether the object caused the action. Phone/camera/exhibit presence cannot create actions. Lack of support becomes other in these gating ablations.",
+  "production_modified": false,
+  "training_or_threshold_selection_on_feedback": false
+}

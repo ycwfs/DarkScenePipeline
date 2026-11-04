@@ -1,0 +1,86 @@
+{
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "DARKPIPE_BOX_BACKEND": "tensorrt",
+    "DARKPIPE_BOX_PROFILE": "balanced",
+    "DARKPIPE_BOX_ACTION_BATCH": "2",
+    "DARKPIPE_BOX_GRAPHS": "0",
+    "TORCH_CUDNN_V8_API_LRU_CACHE_LIMIT": "256"
+  },
+  "results": [
+    {
+      "name": "archive-check-env",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/check_env.py"
+      ],
+      "elapsed_seconds": 18.338711814023554,
+      "returncode": 0
+    },
+    {
+      "name": "archive-entry",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/benchmark_box.py",
+        "--video",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/喝水27.mp4",
+        "--output-dir",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/archive-entry",
+        "--backend",
+        "tensorrt"
+      ],
+      "elapsed_seconds": 23.123771068174392,
+      "returncode": 0
+    },
+    {
+      "name": "archive-demos",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/scripts/bench_offline.py",
+        "--runtime",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/runtime",
+        "--name",
+        "archive-demos",
+        "--ids",
+        "all",
+        "--max-frames",
+        "0",
+        "--sr-scale",
+        "1"
+      ],
+      "elapsed_seconds": 528.7155697909184,
+      "returncode": 0
+    },
+    {
+      "name": "archive-probe",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/scripts/bench_offline.py",
+        "--runtime",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/runtime",
+        "--name",
+        "archive-probe",
+        "--max-frames",
+        "150",
+        "--sr-scale",
+        "1"
+      ],
+      "elapsed_seconds": 80.1182432291098,
+      "returncode": 0
+    },
+    {
+      "name": "archive-faults",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/scripts/run_faults.py"
+      ],
+      "elapsed_seconds": 125.9823028948158,
+      "returncode": 0
+    }
+  ]
+}

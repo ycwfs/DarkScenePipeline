@@ -1,0 +1,19 @@
+{
+  "files": 9,
+  "frames": 80316,
+  "seconds": 3212.666,
+  "clips": 454,
+  "events": 47600,
+  "context_complete": 452,
+  "label_counts": {
+    "other": 46606,
+    "chase": 78,
+    "wave": 150,
+    "drink": 705,
+    "pick_up": 53,
+    "fall": 5,
+    "throw": 3
+  },
+  "package_unchanged": true,
+  "verified": true
+}

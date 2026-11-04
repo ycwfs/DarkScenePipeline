@@ -1,0 +1,23 @@
+{
+  "status":"Codex visual corrections at explicitly inspected frames; still pending user confirmation",
+  "scope":"Only these frame/person pairs are removed. Similar adjacent-frame proposals remain reviewable and flagged.",
+  "include_in_training":false,
+  "entries":[
+    {"source":"real-actiondata-all/other/other10.mp4","frame":25,"person_ids":"all","reason":"椅子误检；该关键帧未见可确认的人物。"},
+    {"source":"real-actiondata-all/other/other16.mp4","frame":25,"person_ids":"all","reason":"屏幕/墙面误检；该关键帧未见可确认的人物。"},
+    {"source":"real-actiondata-all/other/other22.mp4","frame":25,"person_ids":"all","reason":"屏幕/墙面误检；该关键帧未见可确认的人物。"},
+    {"source":"real-actiondata-all/other/other4.mp4","frame":25,"person_ids":"all","reason":"椅子误检；该关键帧未见可确认的人物。"},
+    {"source":"real-actiondata-all/other/other224.mp4","frame":55,"person_ids":["P002"],"reason":"地面小物体被框为人物。"},
+    {"source":"real-actiondata-all/other/other76.mp4","frame":65,"person_ids":["P003"],"reason":"画面右侧亮标识/墙面误检。"},
+    {"source":"real-actiondata-all/other/other77.mp4","frame":74,"person_ids":["P003"],"reason":"展示台局部小框误检。"},
+    {"source":"real-actiondata-all/喝水23.mp4","frame":41,"person_ids":["P002"],"reason":"前景椅子误检；实际人物在右侧。"},
+    {"source":"real-actiondata-all/喝水31.mp4","frame":43,"person_ids":["P006"],"reason":"前景椅子误检；实际人物在远处。"},
+    {"source":"real-actiondata-all/喝水6.mp4","frame":38,"person_ids":["P001"],"reason":"左侧屏幕亮斑误检；实际人物在中部。"},
+    {"source":"real-actiondata-all/挥手10.mp4","frame":105,"person_ids":["P002"],"reason":"左侧屏幕亮斑误检；实际人物在右侧。"},
+    {"source":"real-actiondata-all/挥手11.mp4","frame":114,"person_ids":["P001"],"reason":"左侧屏幕亮斑误检；右侧人影仍需补框，不能视作无人。"},
+    {"source":"real-actiondata-all/挥手35.mp4","frame":44,"person_ids":["P004"],"reason":"前景椅子误检；实际人物在右侧。"},
+    {"source":"real-actiondata-all/挥手36.mp4","frame":37,"person_ids":["P001"],"reason":"前景椅子误检；实际人物在右侧。"},
+    {"source":"real-actiondata-all/捡东西20.mp4","frame":39,"person_ids":["P003"],"reason":"前景椅子误检；人体边界仍需确认，不能视作无人。"},
+    {"source":"real-actiondata-all/捡东西10.mp4","frame":30,"person_ids":["P003"],"reason":"远处椅子误检，若该编号不在该帧则只记录核对备注。"}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "models": {
+    "n": {
+      "path": "/ssd1/wfs/project/lowlight/yolo26n-detect.pt",
+      "sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    "s": {
+      "path": "/ssd1/wfs/project/lowlight/yolo26s-detect.pt",
+      "sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b"
+    },
+    "m": {
+      "path": "/ssd1/wfs/project/lowlight/yolo26m-detect.pt",
+      "sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7"
+    },
+    "m_finetuned": {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-prior-finetune-20261025/models/yolo26m_objects_candidate.pt",
+      "sha256": "b2d4bfc6d236626a81394b015bb848597c7aca397e09155145629a945c32422e"
+    }
+  },
+  "variants": [
+    "native_raw",
+    "native_gamma",
+    "small_raw",
+    "small_enhanced"
+  ],
+  "confidence": 0.35,
+  "iou": 0.5,
+  "lum_gate": 30.0,
+  "action_threshold": 0.85,
+  "detector": "640 letterbox, FP32, end-to-end one-to-one head, batch8",
+  "object_truth": "78 previously reviewed val/test ROIs; auxiliary visual labels",
+  "actions": "all619 frozen candidate windows (55old,564new), five cached sample frames each",
+  "gate": "raw window L<30 or unknown: skip object inference/filter; sample L<30 also skipped",
+  "limits": [
+    "No training, no model selection on feedback",
+    "COCO n/s/m lack camera/paper/exhibit classes",
+    "New feedback has no complete action GT",
+    "Same-scene history, not independent new-scene test",
+    "Cached actor binding, positive ROI support only; no phone/exhibit veto",
+    "No streaming speed claim; separately processed source crops"
+  ],
+  "input_manifest_sha256": "6ea7040a0ffd78b9f9dd192f691a214cbdf7b0d1eba7f511b2382082cbedf0dc",
+  "policy_sha256": "6029e7f4a86e4b52f02d8f59d80b9b3f6df5d3cb65cc83f8090df8c112162d82"
+}

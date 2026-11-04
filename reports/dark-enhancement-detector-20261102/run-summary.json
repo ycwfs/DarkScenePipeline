@@ -1,0 +1,10 @@
+{
+  "seconds": 179.03136038780212,
+  "records": 44,
+  "conditions": [
+    "raw_native",
+    "raw720",
+    "ntire720",
+    "ft720"
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "original_threshold": 0.75,
+  "requested_threshold": 0.85,
+  "probability_source": "unchanged full-precision fused_probs",
+  "original_event_decisions_matched": 47600,
+  "counts": {
+    "0.75": {
+      "other": 46606,
+      "chase": 78,
+      "wave": 150,
+      "drink": 705,
+      "pick_up": 53,
+      "fall": 5,
+      "throw": 3
+    },
+    "0.85": {
+      "other": 46853,
+      "chase": 64,
+      "wave": 115,
+      "drink": 527,
+      "pick_up": 37,
+      "fall": 2,
+      "throw": 2
+    }
+  },
+  "videos": [
+    {
+      "number": 1,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "events": 5565,
+      "events_sha256": "c5930629856dc0dd117247b4d4a5d4d3efa4dbab5f3bd4b8f4f4b769adf568a5",
+      "threshold_counts": {
+        "0.75": {
+          "other": 5488,
+          "chase": 40,
+          "wave": 11,
+          "drink": 11,
+          "pick_up": 15
+        },
+        "0.85": {
+          "other": 5505,
+          "chase": 31,
+          "wave": 9,
+          "drink": 6,
+          "pick_up": 14
+        }
+      }
+    },
+    {
+      "number": 2,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-19-17h28m11s-存储_一层展厅2#屏_20261005130000_20261005135959_2.avi-.avi",
+      "events": 7055,
+      "events_sha256": "579ff74d6f5277bd938b616b31111f064f83e880582b3db98b3535801e2de831",
+      "threshold_counts": {
+        "0.75": {
+          "other": 6867,
+          "drink": 168,
+          "wave": 11,
+          "fall": 2,
+          "throw": 3,
+          "chase": 4
+        },
+        "0.85": {
+          "other": 6927,
+          "drink": 114,
+          "wave": 7,
+          "fall": 1,
+          "throw": 2,
+          "chase": 4
+        }
+      }
+    },
+    {
+      "number": 3,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-19-17h35m50s-存储_一层展厅5#屏_20261005130000_20261005135959.avi-.avi",
+      "events": 6935,
+      "events_sha256": "2e01d5825b386a7c4627881d58d4ca086addd6f831306cca1e0be64cbe7abdc6",
+      "threshold_counts": {
+        "0.75": {
+          "other": 6674,
+          "drink": 208,
+          "pick_up": 20,
+          "wave": 18,
+          "chase": 12,
+          "fall": 3
+        },
+        "0.85": {
+          "other": 6733,
+          "drink": 168,
+          "wave": 12,
+          "chase": 10,
+          "pick_up": 11,
+          "fall": 1
+        }
+      }
+    },
+    {
+      "number": 4,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅2#屏_20261001114400_20261001114800.avi",
+      "events": 4142,
+      "events_sha256": "193ff4f0b74a8e56ab831fd7bf376e6aa31ad788d03b17dae774392b8382e0fa",
+      "threshold_counts": {
+        "0.75": {
+          "other": 4084,
+          "wave": 20,
+          "drink": 37,
+          "chase": 1
+        },
+        "0.85": {
+          "other": 4102,
+          "wave": 16,
+          "drink": 24
+        }
+      }
+    },
+    {
+      "number": 5,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅2#屏_20261016143600_20261016144000.avi",
+      "events": 3672,
+      "events_sha256": "9f3d159a1ea09eb41417a8bae323c5d779a470051fd254d50f05259979c01553",
+      "threshold_counts": {
+        "0.75": {
+          "other": 3561,
+          "drink": 95,
+          "wave": 16
+        },
+        "0.85": {
+          "other": 3586,
+          "drink": 77,
+          "wave": 9
+        }
+      }
+    },
+    {
+      "number": 6,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261001113300_20261001113559.avi",
+      "events": 2690,
+      "events_sha256": "2fab4e3e0b23ea62652d7f151ddd25d1f12e103b8e9730c1c9fc54412a9cd549",
+      "threshold_counts": {
+        "0.75": {
+          "other": 2652,
+          "wave": 4,
+          "drink": 24,
+          "chase": 10
+        },
+        "0.85": {
+          "other": 2660,
+          "wave": 4,
+          "drink": 17,
+          "chase": 9
+        }
+      }
+    },
+    {
+      "number": 7,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "events": 6312,
+      "events_sha256": "287579566653780bf9e3c07210fe5865a2f36881731e9cc0f5611133f342c7bf",
+      "threshold_counts": {
+        "0.75": {
+          "other": 6156,
+          "pick_up": 14,
+          "drink": 85,
+          "wave": 56,
+          "chase": 1
+        },
+        "0.85": {
+          "other": 6192,
+          "pick_up": 10,
+          "drink": 62,
+          "wave": 47,
+          "chase": 1
+        }
+      }
+    },
+    {
+      "number": 8,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261001105000_20261001105500.avi",
+      "events": 6193,
+      "events_sha256": "c468de6d3910dec8e53b0f950e7c3af5c25d5c30f4b0f2984d93f7f715b13711",
+      "threshold_counts": {
+        "0.75": {
+          "other": 6155,
+          "drink": 15,
+          "wave": 10,
+          "chase": 9,
+          "pick_up": 4
+        },
+        "0.85": {
+          "other": 6164,
+          "drink": 12,
+          "wave": 7,
+          "chase": 8,
+          "pick_up": 2
+        }
+      }
+    },
+    {
+      "number": 9,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+      "events": 5036,
+      "events_sha256": "5cd2383a15eb4ac023afcd04156b6c248371fa6d35de4865d2cadc1f859acfdd",
+      "threshold_counts": {
+        "0.75": {
+          "other": 4969,
+          "drink": 62,
+          "wave": 4,
+          "chase": 1
+        },
+        "0.85": {
+          "other": 4984,
+          "drink": 47,
+          "wave": 4,
+          "chase": 1
+        }
+      }
+    }
+  ],
+  "caveat": "Window trigger counts only; no person/action ground truth. Not false-positive counts, action episodes, or regenerated clip counts."
+}

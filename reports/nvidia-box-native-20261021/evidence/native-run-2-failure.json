@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "error": "ProcessingFailed: 实时处理失败：clip-close: ClipWriteError: 停止时仍有未能开始保存的动作片段",
+  "clips": {
+    "session": "127.0.0.1/20261021_161827_1524142",
+    "clips_saved": 6,
+    "clips_abandoned": 2,
+    "clips_forced": 0,
+    "frames_dropped": 116,
+    "uploads_dropped": 0,
+    "stage_orphans_cleaned": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 1,
+    "write_error": "停止时仍有未能开始保存的动作片段",
+    "recovery_stage_dir": "/tmp/darkpipe_clipstage",
+    "writer_alive": false,
+    "uploads_pending": 0
+  },
+  "scope": "Before the corresponding shutdown fix"
+}

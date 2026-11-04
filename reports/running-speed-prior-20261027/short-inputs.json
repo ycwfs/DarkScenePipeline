@@ -1,0 +1,57 @@
+[
+  {
+    "id": "child-away",
+    "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/child-away.mkv",
+    "start": 18,
+    "seconds": 10,
+    "frames": 250,
+    "processed": false,
+    "sha256": "6f5c339ef2900dc948c311d4b3346cebb43ddcee4e078a9a795fca9907a091cd",
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+    "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+  },
+  {
+    "id": "adult-walk",
+    "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/adult-walk.mkv",
+    "start": 190,
+    "seconds": 12,
+    "frames": 300,
+    "processed": false,
+    "sha256": "680c9ed3cd4b78c2a00f7cf37053c4af1d3c7a81836ea3fdad25878747482b04",
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+    "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+  },
+  {
+    "id": "overlap-walk",
+    "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/overlap-walk.mkv",
+    "start": 225,
+    "seconds": 12,
+    "frames": 300,
+    "processed": false,
+    "sha256": "0a6b321566f8f6f8bf8d26c5c49fcef07a512adde04d68c09f85a4719547b1b8",
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+    "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+  },
+  {
+    "id": "child-across",
+    "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/child-across.mkv",
+    "start": 294,
+    "seconds": 12,
+    "frames": 300,
+    "processed": false,
+    "sha256": "d1d02e85a265748541a4431c4d229ef987978ad642b08568493008bf28fc5b3d",
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+    "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+  },
+  {
+    "id": "slow-walk",
+    "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/slow-walk.mkv",
+    "start": 348,
+    "seconds": 10,
+    "frames": 250,
+    "processed": false,
+    "sha256": "4b10ed6baa6018f226843ee2e4ecd6e6e1fd1fb4d97649d380f6609aad1b7e85",
+    "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+    "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+  }
+]

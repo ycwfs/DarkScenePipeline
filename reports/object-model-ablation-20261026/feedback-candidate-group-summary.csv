@@ -1,0 +1,17 @@
+﻿model,variant,baseline_groups,positive_groups,negative_groups,tp_retained,added_fn,fp_remaining,fp_removed
+n,native_raw,234,1,233,0,1,6,227
+n,native_gamma,234,1,233,0,1,7,226
+n,small_raw,234,1,233,0,1,5,228
+n,small_enhanced,234,1,233,0,1,5,228
+s,native_raw,234,1,233,0,1,4,229
+s,native_gamma,234,1,233,0,1,4,229
+s,small_raw,234,1,233,0,1,4,229
+s,small_enhanced,234,1,233,0,1,7,226
+m,native_raw,234,1,233,0,1,9,224
+m,native_gamma,234,1,233,0,1,6,227
+m,small_raw,234,1,233,0,1,6,227
+m,small_enhanced,234,1,233,0,1,4,229
+m_finetuned,native_raw,234,1,233,0,1,50,183
+m_finetuned,native_gamma,234,1,233,0,1,56,177
+m_finetuned,small_raw,234,1,233,0,1,36,197
+m_finetuned,small_enhanced,234,1,233,0,1,27,206

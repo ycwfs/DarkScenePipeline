@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>线上多人负样本 · 2026-10-23</title><style>
+body{margin:0;background:#101923;color:#ecf3fa;font:16px/1.7 system-ui,sans-serif}main{max-width:1480px;margin:auto;padding:26px}
+h1{font-size:30px;margin-bottom:8px}h2{font-size:22px;margin:0 0 12px}.intro{max-width:1100px;color:#cbd7e3}
+.notice{padding:14px 18px;border-left:4px solid #f4d05b;background:#202b39;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}article{padding:18px;background:#1b2735;border:1px solid #38495d;border-radius:10px}
+video{width:100%;background:#000}a{color:#9bcaff}p{color:#cbd7e3}.buttons{display:flex;gap:12px;align-items:center;margin-top:12px}
+button{background:#34475d;color:#fff;border:1px solid #60758a;border-radius:5px;padding:7px 12px;cursor:pointer;font:inherit}
+.filename{overflow-wrap:anywhere;font-size:13px}details{color:#aebed0}summary{cursor:pointer}
+@media(max-width:800px){.grid{grid-template-columns:1fr}main{padding:15px}}</style><main>
+<h1>线上多人负样本 · 6段完整回放</h1>
+<p class="intro">当前模型逐人显示骨架类别；黄色与“*”表示选中参与融合的骨架，绿色为其余有效骨架。
+底栏使用0.7×RGB + 0.3×所选骨架，最终阈值0.75。6段共20次识别，底栏全部为“其他”。</p>
+<div class="notice">当前每个识别窗口最多6个候选，拥挤画面中的所有人不一定都会显示。人形机器人和机器狗也出现了人体误检；
+人物边上的喝水、挥手、握手等是骨架模型原始分类，仍可能错误，底栏为其他不表示逐人识别全对。</div>
+<p class="intro">输入是已增强的线上录像：已裁掉旧底栏，不重复增强。原始照度无法还原，此处不复算照度门。
+每段开头约1秒积累窗口，短片可选择0.5倍慢放。<a href="README.md">查看处理口径及结果说明</a></p>
+<div class="grid"><article><h2>09:59:18 · #0060 · 你指定的片段</h2>
+<video controls loop preload="metadata" poster="stills/20261012_095918_drinking_water_0060.jpg" src="videos/20261012_095918_drinking_water_0060_多人骨架.mp4"></video>
+<div class="buttons"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/20261012_095918_drinking_water_0060_多人骨架.mp4" download>下载视频</a></div>
+<p>2.03秒 · 59帧 · 2次识别，底栏均为其他<br>
+最多同时显示6个骨架 · 31帧含多人骨架</p>
+<details><summary>源文件与逐事件结果</summary><p class="filename">online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4</p>
+<a href="events/20261012_095918_drinking_water_0060.json">查看概率与选中人物</a></details></article><article><h2>09:57:56 · #0054</h2>
+<video controls loop preload="metadata" poster="stills/20261012_095756_drinking_water_0054.jpg" src="videos/20261012_095756_drinking_water_0054_多人骨架.mp4"></video>
+<div class="buttons"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/20261012_095756_drinking_water_0054_多人骨架.mp4" download>下载视频</a></div>
+<p>2.00秒 · 60帧 · 2次识别，底栏均为其他<br>
+最多同时显示6个骨架 · 31帧含多人骨架</p>
+<details><summary>源文件与逐事件结果</summary><p class="filename">online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4</p>
+<a href="events/20261012_095756_drinking_water_0054.json">查看概率与选中人物</a></details></article><article><h2>09:58:08 · #0055</h2>
+<video controls loop preload="metadata" poster="stills/20261012_095808_drinking_water_0055.jpg" src="videos/20261012_095808_drinking_water_0055_多人骨架.mp4"></video>
+<div class="buttons"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/20261012_095808_drinking_water_0055_多人骨架.mp4" download>下载视频</a></div>
+<p>4.21秒 · 118帧 · 6次识别，底栏均为其他<br>
+最多同时显示6个骨架 · 91帧含多人骨架</p>
+<details><summary>源文件与逐事件结果</summary><p class="filename">online-negative-sample/20261012_083305_78/drinking_water/20261012_095808_drinking_water_0055.mp4</p>
+<a href="events/20261012_095808_drinking_water_0055.json">查看概率与选中人物</a></details></article><article><h2>09:58:50 · #0058</h2>
+<video controls loop preload="metadata" poster="stills/20261012_095850_waving_0058.jpg" src="videos/20261012_095850_waving_0058_多人骨架.mp4"></video>
+<div class="buttons"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/20261012_095850_waving_0058_多人骨架.mp4" download>下载视频</a></div>
+<p>2.00秒 · 52帧 · 2次识别，底栏均为其他<br>
+最多同时显示6个骨架 · 27帧含多人骨架</p>
+<details><summary>源文件与逐事件结果</summary><p class="filename">online-negative-sample/20261012_083305_78/waving/20261012_095850_waving_0058.mp4</p>
+<a href="events/20261012_095850_waving_0058.json">查看概率与选中人物</a></details></article><article><h2>10:12:12 · #0101</h2>
+<video controls loop preload="metadata" poster="stills/20261012_101212_drinking_water_0101.jpg" src="videos/20261012_101212_drinking_water_0101_多人骨架.mp4"></video>
+<div class="buttons"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/20261012_101212_drinking_water_0101_多人骨架.mp4" download>下载视频</a></div>
+<p>3.93秒 · 118帧 · 6次识别，底栏均为其他<br>
+最多同时显示6个骨架 · 89帧含多人骨架</p>
+<details><summary>源文件与逐事件结果</summary><p class="filename">online-negative-sample/20261012_083305_78/drinking_water/20261012_101212_drinking_water_0101.mp4</p>
+<a href="events/20261012_101212_drinking_water_0101.json">查看概率与选中人物</a></details></article><article><h2>10:20:56 · #0124</h2>
+<video controls loop preload="metadata" poster="stills/20261012_102056_waving_0124.jpg" src="videos/20261012_102056_waving_0124_多人骨架.mp4"></video>
+<div class="buttons"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/20261012_102056_waving_0124_多人骨架.mp4" download>下载视频</a></div>
+<p>2.00秒 · 60帧 · 2次识别，底栏均为其他<br>
+最多同时显示6个骨架 · 31帧含多人骨架</p>
+<details><summary>源文件与逐事件结果</summary><p class="filename">online-negative-sample/20261012_083305_78/waving/20261012_102056_waving_0124.mp4</p>
+<a href="events/20261012_102056_waving_0124.json">查看概率与选中人物</a></details></article></div></main></html>

@@ -1,0 +1,39 @@
+{
+  "box": {
+    "output": "/ssd1/wfs/project/lowlight/DarkScenePipeline/NVIDIA-Box_20261021.zip",
+    "bytes": 249069938,
+    "sha256": "38099bf27911a0a1c20558b182e0ebf9324f909c2f0b701648f88e4f46b350d0",
+    "files": 67
+  },
+  "default_box": {
+    "output": "/ssd1/wfs/project/lowlight/DarkScenePipeline/NVIDIA-Box.zip",
+    "bytes": 249069938,
+    "sha256": "38099bf27911a0a1c20558b182e0ebf9324f909c2f0b701648f88e4f46b350d0",
+    "files": 67
+  },
+  "box_archives_byte_identical": true,
+  "zip_crc_ok": true,
+  "final_code_and_weights_match_real_tested_package": true,
+  "platform": [
+    {
+      "archive": "dark-demo-v2_nativefix_20261021.tar.gz",
+      "sha256": "197057e81efcb241230ac2e977e0b31f06ad03100ae7ce715cca27ba0c8a85a0",
+      "size": 216685867
+    },
+    {
+      "archive": "dark-demo-v2_nativefix_20261021.zip",
+      "sha256": "f2cfc41f57d4187bb1f9ca849d99b9bf03868ebfc475723bb442fddbc67e3962",
+      "size": 216706841
+    }
+  ],
+  "final_extracted": "/tmp/nvidia-box-native-release-cjo9_jtt/NVIDIA-Box",
+  "model_sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+  "platform_aliases_match": true,
+  "platform_tar_zip_contents_identical": true,
+  "box_sources_match_actual_platform_archive": true,
+  "final_wrapper_tests_passed": 10,
+  "final_source_tests_passed": 125,
+  "historical_box_20261019_unchanged": true,
+  "final_extracted_environment_checks_passed": true,
+  "final_installer_constraints_and_local_wheels_verified": true
+}

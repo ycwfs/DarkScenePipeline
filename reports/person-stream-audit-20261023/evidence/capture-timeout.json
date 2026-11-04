@@ -1,0 +1,18 @@
+[
+  {
+    "name": "current_production",
+    "elapsed": 7.019179271068424,
+    "test_deadline_exceeded": true,
+    "returncode": -9,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "name": "candidate_bounded",
+    "elapsed": 3.3483093669638038,
+    "test_deadline_exceeded": false,
+    "returncode": 0,
+    "stdout": "False\n",
+    "stderr": "[ WARN:0@3.049] global cap_ffmpeg_impl.hpp:453 _opencv_ffmpeg_interrupt_callback Stream timeout triggered after 3007.381718 ms\n[ WARN:0@3.049] global cap.cpp:212 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name\n"
+  }
+]

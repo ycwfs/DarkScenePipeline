@@ -1,0 +1,1 @@
+{"passed":true,"browser":"156.0.8078.4","checks":["file_url_assets","native_bbox_drag_roundtrip","native_joint_drag_roundtrip","visibility_edit","feedback_export_validation","reload_persistence","feedback_import_roundtrip","raw_gamma_enhanced_views","no_mobile_horizontal_overflow","no_page_errors"],"synthetic_feedback":true,"real_user_reviews_added":0}

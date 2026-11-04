@@ -1,0 +1,14 @@
+{
+  "previous": "dark-demo-v2_nativefix_20261021.tar.gz",
+  "all_eight_weights_unchanged": true,
+  "sha256": {
+    "ckpts/NTIRE.pth": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+    "ckpts/rtmo-s_end2end.onnx": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+    "ckpts/stgcn_behavior_32f_realactall_full.pth": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+    "ckpts/videomamba_t_behavior_32f.pth": "66efc1596cf503465aceb49fc19c8ed55a2a507718023a1e4f338dae03991c44",
+    "ckpts/videomamba_t_behavior_32f_realactall_full.pth": "929021bc8d1f5a227e5f01c415919dbcce0a48615d8de766845d622fb8eaeb79",
+    "ckpts/videomamba_t_behavior_32f_realactall_full_pn.pth": "31ee8a11fdd21a7fd5b969d030e774a608559a45f9cc2351689f444014176b04",
+    "ckpts/videomamba_t_behavior_32f_realactall_full_pn2.pth": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+    "ckpts/yolo26m_detect.onnx": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c"
+  }
+}

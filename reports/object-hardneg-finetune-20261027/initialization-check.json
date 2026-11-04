@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "preserved_outputs": [
+    "model.23.cv3.0.2.weight",
+    "model.23.cv3.0.2.bias",
+    "model.23.cv3.1.2.weight",
+    "model.23.cv3.1.2.bias",
+    "model.23.cv3.2.2.weight",
+    "model.23.cv3.2.2.bias",
+    "model.23.one2one_cv3.0.2.weight",
+    "model.23.one2one_cv3.0.2.bias",
+    "model.23.one2one_cv3.1.2.weight",
+    "model.23.one2one_cv3.1.2.bias",
+    "model.23.one2one_cv3.2.2.weight",
+    "model.23.one2one_cv3.2.2.bias"
+  ]
+}

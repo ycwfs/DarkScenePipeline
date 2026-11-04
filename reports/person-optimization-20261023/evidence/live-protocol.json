@@ -1,0 +1,28 @@
+{
+  "cards": [
+    1,
+    2,
+    3
+  ],
+  "seconds": 30,
+  "samples": [
+    {
+      "name": "挥手3",
+      "source": "real-actiondata-all/挥手3.mp4",
+      "processed": false
+    },
+    {
+      "name": "留出_挥手28",
+      "source": "real-actiondata-all/挥手28.mp4",
+      "processed": false
+    },
+    {
+      "name": "多人0060",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+      "processed": true
+    }
+  ],
+  "auto_backend": true,
+  "process_workers": false,
+  "method": "Native-rate latest-frame replay, one slot, no source slowdown. Short videos loop; tracker and submission history reset at clip boundaries, including skipped boundary frames. Input FPS equals consumed unique source indices / emitted source duration. No RTSP, platform, HAMI, NFS or remote player included."
+}

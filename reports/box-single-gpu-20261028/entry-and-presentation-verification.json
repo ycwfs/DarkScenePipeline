@@ -1,0 +1,62 @@
+[
+  {
+    "path": "archive-entry/outputs/喝水27/20261028_215622_2589775/喝水27-处理后.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "125"
+        }
+      ],
+      "format": {
+        "duration": "4.167000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-entry/outputs/喝水27/20261028_215622_2589775/E000_T001_G000_R00001_20261028_215639_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "125"
+        }
+      ],
+      "format": {
+        "duration": "4.167000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "live-final/full-output-5min.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "15/1",
+          "nb_frames": "4499"
+        }
+      ],
+      "format": {
+        "duration": "299.934000"
+      }
+    },
+    "stderr": ""
+  }
+]

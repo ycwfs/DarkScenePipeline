@@ -1,0 +1,83 @@
+[
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+    "exit_code": 0,
+    "frames": 9876,
+    "stderr": "",
+    "seconds": 43.24021328706294,
+    "expected_frames": 9876,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-19-17h28m11s-存储_一层展厅2#屏_20261005130000_20261005135959_2.avi-.avi",
+    "exit_code": 0,
+    "frames": 11219,
+    "stderr": "",
+    "seconds": 44.20866265008226,
+    "expected_frames": 11219,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-19-17h35m50s-存储_一层展厅5#屏_20261005130000_20261005135959.avi-.avi",
+    "exit_code": 0,
+    "frames": 15671,
+    "stderr": "",
+    "seconds": 42.919868133962154,
+    "expected_frames": 15671,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅2#屏_20261001114400_20261001114800.avi",
+    "exit_code": 0,
+    "frames": 6000,
+    "stderr": "",
+    "seconds": 24.579455719329417,
+    "expected_frames": 6000,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅2#屏_20261016143600_20261016144000.avi",
+    "exit_code": 0,
+    "frames": 6000,
+    "stderr": "",
+    "seconds": 26.051074820104986,
+    "expected_frames": 6000,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261001113300_20261001113559.avi",
+    "exit_code": 0,
+    "frames": 4500,
+    "stderr": "",
+    "seconds": 14.985954567790031,
+    "expected_frames": 4500,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+    "exit_code": 0,
+    "frames": 13500,
+    "stderr": "",
+    "seconds": 43.47799857100472,
+    "expected_frames": 13500,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261001105000_20261001105500.avi",
+    "exit_code": 0,
+    "frames": 7500,
+    "stderr": "",
+    "seconds": 33.56604729918763,
+    "expected_frames": 7500,
+    "pass": true
+  },
+  {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+    "exit_code": 0,
+    "frames": 6050,
+    "stderr": "",
+    "seconds": 27.109354680404067,
+    "expected_frames": 6050,
+    "pass": true
+  }
+]

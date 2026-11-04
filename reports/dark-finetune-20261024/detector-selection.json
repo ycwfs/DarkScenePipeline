@@ -1,0 +1,170 @@
+{
+  "rows": [
+    {
+      "path": "/ssd1/wfs/project/lowlight/yolo26m-detect.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9550414642711093,
+        "metrics/recall(B)": 0.9236393961683331,
+        "metrics/mAP50(B)": 0.9591907482222275,
+        "metrics/mAP50-95(B)": 0.8861044622854275,
+        "fitness": 0.8861044622854275
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch0.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9712351770696557,
+        "metrics/recall(B)": 0.9787384438147596,
+        "metrics/mAP50(B)": 0.99403861003861,
+        "metrics/mAP50-95(B)": 0.8399083817051981,
+        "fitness": 0.8399083817051981
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch1.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9796012928276887,
+        "metrics/recall(B)": 0.9855072463768116,
+        "metrics/mAP50(B)": 0.9942835272504593,
+        "metrics/mAP50-95(B)": 0.831162971427174,
+        "fitness": 0.831162971427174
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch2.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9973034887804613,
+        "metrics/recall(B)": 0.9565217391304348,
+        "metrics/mAP50(B)": 0.9931844491607178,
+        "metrics/mAP50-95(B)": 0.7694161237649246,
+        "fitness": 0.7694161237649246
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch3.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9987363311780593,
+        "metrics/recall(B)": 0.9855072463768116,
+        "metrics/mAP50(B)": 0.9947183098591549,
+        "metrics/mAP50-95(B)": 0.8297807101626962,
+        "fitness": 0.8297807101626962
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch4.pt",
+      "metrics": {
+        "metrics/precision(B)": 1.0,
+        "metrics/recall(B)": 0.9997996032692616,
+        "metrics/mAP50(B)": 0.995,
+        "metrics/mAP50-95(B)": 0.8496388703294488,
+        "fitness": 0.8496388703294488
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch5.pt",
+      "metrics": {
+        "metrics/precision(B)": 1.0,
+        "metrics/recall(B)": 0.9977909880203214,
+        "metrics/mAP50(B)": 0.995,
+        "metrics/mAP50-95(B)": 0.8589487301660593,
+        "fitness": 0.8589487301660593
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch6.pt",
+      "metrics": {
+        "metrics/precision(B)": 1.0,
+        "metrics/recall(B)": 0.999513892644371,
+        "metrics/mAP50(B)": 0.995,
+        "metrics/mAP50-95(B)": 0.8424964546113201,
+        "fitness": 0.8424964546113201
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch7.pt",
+      "metrics": {
+        "metrics/precision(B)": 1.0,
+        "metrics/recall(B)": 0.9833016028397424,
+        "metrics/mAP50(B)": 0.9947183098591549,
+        "metrics/mAP50-95(B)": 0.8358139107235724,
+        "fitness": 0.8358139107235724
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch8.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9918255814063063,
+        "metrics/recall(B)": 1.0,
+        "metrics/mAP50(B)": 0.995,
+        "metrics/mAP50-95(B)": 0.8344663434516528,
+        "fitness": 0.8344663434516528
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch9.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9798354364500887,
+        "metrics/recall(B)": 1.0,
+        "metrics/mAP50(B)": 0.9947142857142857,
+        "metrics/mAP50-95(B)": 0.8526401948168459,
+        "fitness": 0.8526401948168459
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch10.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9993154159825861,
+        "metrics/recall(B)": 1.0,
+        "metrics/mAP50(B)": 0.995,
+        "metrics/mAP50-95(B)": 0.8439216042334557,
+        "fitness": 0.8439216042334557
+      },
+      "head": "one-to-one, nms=False"
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch11.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9988636932140768,
+        "metrics/recall(B)": 1.0,
+        "metrics/mAP50(B)": 0.995,
+        "metrics/mAP50-95(B)": 0.8509350858904152,
+        "fitness": 0.8509350858904152
+      },
+      "head": "one-to-one, nms=False"
+    }
+  ],
+  "best": {
+    "path": "/ssd1/wfs/project/lowlight/yolo26m-detect.pt",
+    "metrics": {
+      "metrics/precision(B)": 0.9550414642711093,
+      "metrics/recall(B)": 0.9236393961683331,
+      "metrics/mAP50(B)": 0.9591907482222275,
+      "metrics/mAP50-95(B)": 0.8861044622854275,
+      "fitness": 0.8861044622854275
+    },
+    "head": "one-to-one, nms=False"
+  },
+  "rationale": "same one-to-one head as deployed ONNX; no test data used",
+  "best_finetuned": {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/dark-finetune-20261024/runs/detector/weights/epoch5.pt",
+    "metrics": {
+      "metrics/precision(B)": 1.0,
+      "metrics/recall(B)": 0.9977909880203214,
+      "metrics/mAP50(B)": 0.995,
+      "metrics/mAP50-95(B)": 0.8589487301660593,
+      "fitness": 0.8589487301660593
+    },
+    "head": "one-to-one, nms=False"
+  }
+}

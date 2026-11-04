@@ -1,0 +1,4 @@
+source,seconds,frames,windows,baseline_drink_windows,baseline_pickup_windows,baseline_clips,baseline_false_interaction_windows,baseline_false_interaction_groups,candidate_drink_windows,candidate_pickup_windows,candidate_clips,candidate_false_interaction_windows,candidate_false_interaction_groups
+new-01,395.04,9876,5565,0,0,12,0,0,0,0,12,0,0
+new-07,540.0,13500,6312,1,0,13,1,1,1,0,13,1,1
+new-09,242.0,6050,5036,0,0,1,0,0,0,0,1,0,0

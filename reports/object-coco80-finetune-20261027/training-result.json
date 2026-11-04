@@ -1,0 +1,12 @@
+{
+  "metrics": {
+    "metrics/precision(B)": 0.6888431103473142,
+    "metrics/recall(B)": 0.5765524704561589,
+    "metrics/mAP50(B)": 0.6312566207188457,
+    "metrics/mAP50-95(B)": 0.45371681805035685,
+    "fitness": 0.45371681805035685
+  },
+  "automatic_best": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-coco80-finetune-20261027/runs/coco80/weights/best.pt",
+  "last": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-coco80-finetune-20261027/runs/coco80/weights/last.pt",
+  "selection": "Separate fixed validation selection; test excluded"
+}

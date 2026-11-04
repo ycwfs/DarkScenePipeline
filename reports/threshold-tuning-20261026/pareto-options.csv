@@ -1,0 +1,4 @@
+﻿action_threshold,object_min_conf,old_val_drink_tp,old_val_pickup_tp,old_val_positive_correct,old_val_other_fp,old_val_macro_f1,online_val_other_fp,new_known_drink_fp,new_true_drink_tp,new_unreviewed_drink,new_pickup_triggers,val_tp_wave,val_tp_chase,val_tp_drink,val_tp_pick_up,feasible,objective
+0.9,0.1,9.0,3.0,26.0,5.0,0.7949005977225462,0.0,49.0,0.0,0.0,1.0,6.0,8.0,9.0,3.0,True,0.06201004553349294
+0.9,0.3,8.0,3.0,25.0,5.0,0.7826262626262627,0.0,27.0,0.0,0.0,0.0,6.0,8.0,8.0,3.0,True,0.04109749800497582
+0.9,0.36,8.0,1.0,23.0,5.0,0.7168333941827918,0.0,22.0,0.0,0.0,0.0,6.0,8.0,8.0,1.0,True,0.03634464629394921

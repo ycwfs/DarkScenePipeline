@@ -1,0 +1,62 @@
+[
+  {
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "requested": true,
+    "sampled_pose_candidates": [
+      10,
+      9,
+      9
+    ],
+    "reason": "user requested"
+  },
+  {
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "requested": false,
+    "sampled_pose_candidates": [
+      15,
+      14,
+      14
+    ],
+    "reason": "crowded co-frame scene; reviewed contact image"
+  },
+  {
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095808_drinking_water_0055.mp4",
+    "requested": false,
+    "sampled_pose_candidates": [
+      14,
+      11,
+      11
+    ],
+    "reason": "crowded co-frame scene; reviewed contact image"
+  },
+  {
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_095850_waving_0058.mp4",
+    "requested": false,
+    "sampled_pose_candidates": [
+      13,
+      13,
+      12
+    ],
+    "reason": "crowded co-frame scene; reviewed contact image"
+  },
+  {
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101212_drinking_water_0101.mp4",
+    "requested": false,
+    "sampled_pose_candidates": [
+      12,
+      11,
+      11
+    ],
+    "reason": "crowded co-frame scene; reviewed contact image"
+  },
+  {
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_102056_waving_0124.mp4",
+    "requested": false,
+    "sampled_pose_candidates": [
+      10,
+      9,
+      10
+    ],
+    "reason": "crowded co-frame scene; reviewed contact image"
+  }
+]

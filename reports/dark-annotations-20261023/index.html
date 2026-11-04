@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>暗场标注复核 · DarkScene</title><link rel="stylesheet" href="review.css"></head>
+<body>
+<header><div><div class="eyebrow">DARKSCENE / FIELD ANNOTATION / 2026.10.23</div><h1>暗场<span>标注复核</span></h1></div>
+<div id="counts" class="counts">正在加载目录…</div><div class="header-actions"><button id="export" class="primary">导出审核 JSON ↓</button><label class="button">导入审核<input id="import" type="file" accept="application/json" hidden></label></div></header>
+<div class="notice"><b>待审核草稿</b> 原图逐帧 L&lt;75 · 框与骨架不等于真值 · 无框不代表无人 · 修改自动暂存到本浏览器，请定期导出。<span id="save-state" role="status"></span></div>
+<main><aside class="library"><div class="section-label">01 / 视频目录 <span id="video-count"></span></div>
+<input id="search" type="search" aria-label="搜索视频" placeholder="搜索文件名 / 视频 ID">
+<select id="video-filter" aria-label="筛选视频"><option value="all">全部暗场视频</option><option value="missing">含无框帧</option><option value="risk">含待重点核对帧</option><option value="edited">本地有审核记录</option></select>
+<div id="videos" class="video-list"></div></aside>
+<section class="workspace"><div class="scene-head"><div><h2 id="title">选择视频</h2><div id="source" class="muted"></div></div><a id="video-link" target="_blank" rel="noopener">播放完整核对视频 ↗</a></div>
+<div class="toolbar"><label>显示 <select id="view"><option value="gamma">Gamma 提亮（γ=0.45）</option><option value="raw">原始画面</option><option value="enhanced">Retinexformer 提亮</option></select></label><label><input id="boxes" type="checkbox" checked>人体框</label><label><input id="poses" type="checkbox" checked>骨架</label><label><input id="labels" type="checkbox">点编号</label><button id="clean">按住隐藏标注</button></div>
+<div id="canvas-wrap"><canvas id="canvas" aria-label="可编辑人体框和骨架"></canvas></div>
+<div class="frame-meta"><strong id="frame-id"></strong><span id="frame-risk"></span></div>
+<input id="timeline" type="range" min="0" max="0" value="0" aria-label="暗帧时间轴">
+<div class="navigation"><button id="prev">← 上一帧</button><button id="play">播放暗帧</button><button id="next">下一帧 →</button><button id="next-risk">下一处疑点</button><label>原视频帧号 <input id="goto" type="number" min="0" value="0"><button id="jump">跳转</button></label></div>
+<div class="review-actions"><button id="approve-box" class="positive">本帧所有人体框正确</button><button id="approve-pose" class="positive">框＋显示的骨架点正确</button><button id="issue">有问题</button><button id="uncertain">看不清 / 排除</button><button id="empty">确认无人</button></div>
+<div class="hint">左右键逐暗帧查看；可能跨越亮帧。框模式：拖动框内移动、拖动角点改大小；骨架模式：拖动关节点，或选择点名后点击画面补点。点名按人物自身左右。核对视频保留全部源帧及原帧率。</div>
+</section>
+<aside class="inspector"><div class="section-label">02 / 人物与关节点</div><label>本帧人物<select id="person" aria-label="选择人物"></select></label>
+<div class="row"><button id="add">＋ 添加人物框</button><button id="delete">删除人物</button></div>
+<label>编辑模式<select id="mode"><option value="box">人体框</option><option value="pose">骨架关节点</option></select></label>
+<label>关节点<select id="joint"></select></label><label>该点状态<select id="visibility"><option value="">未核对</option><option value="2">可见，位置可确认（v=2）</option><option value="1">遮挡，但位置可确认（v=1）</option><option value="0">无法定位 / 不标（v=0）</option></select></label>
+<div class="mini-note">“框＋骨架正确”会将当前画出的候选点确认为可见；其余未定位点记为 v=0。请先修正遮挡点和错误点。模型分数不会自动变成真实可见性。</div>
+<div id="person-info" class="details"></div>
+<div id="assistant-note" class="mini-note"></div>
+<label>问题备注<textarea id="note" rows="4" placeholder="例如：P002 是背景误检；右手腕应更靠左；此处还有第三个人。"></textarea></label>
+<button id="reset">恢复本帧原始草稿</button><div id="review-state" class="review-state"></div>
+<div class="section-label bottom-label">审核原则</div><p class="small">人物编号仅是短期关联标识，可能换号。两个已确认示例仅确认人体框；新骨架仍待审核。审核记录独立保存，不直接改模型或开始训练。</p>
+</aside></main>
+<footer>原始像素坐标 · COCO 17 点 · 现场原片 SHA256 锁定 · 训练 / 验证 / 测试来源分组保留</footer>
+<script src="catalog.js"></script><script src="review.js"></script></body></html>

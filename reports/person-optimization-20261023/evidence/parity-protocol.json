@@ -1,0 +1,78 @@
+{
+  "arguments": {
+    "cards": [
+      1,
+      2,
+      3
+    ],
+    "repeats": 1,
+    "samples": null,
+    "output": "reports/person-optimization-20261023/parity",
+    "diagnostics": true,
+    "no_paced": true,
+    "warmups": 1
+  },
+  "checkpoint_sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf",
+  "source_sha256": {
+    "real-actiondata-all/喝水16.mp4": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+    "real-actiondata-all/挥手3.mp4": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+    "real-actiondata-all/挥手28.mp4": "56f605e0ad40c73a2bf3bdb5360219283e55707b5a5feb2ddb5cadfa66ae5895",
+    "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4": "f43a2db9263f9bd3b7a12b793bc9c43c5aa794205b2d0d17265de39adb8acf7d"
+  },
+  "samples": [
+    {
+      "name": "喝水16",
+      "source": "real-actiondata-all/喝水16.mp4",
+      "processed": false
+    },
+    {
+      "name": "挥手3",
+      "source": "real-actiondata-all/挥手3.mp4",
+      "processed": false
+    },
+    {
+      "name": "留出_挥手28",
+      "source": "real-actiondata-all/挥手28.mp4",
+      "processed": false
+    },
+    {
+      "name": "多人0060",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+      "processed": true
+    },
+    {
+      "name": "多人0054",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+      "processed": true
+    },
+    {
+      "name": "回传留出_181324",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4",
+      "processed": true
+    }
+  ],
+  "cuda_visible_devices": "2,3,4",
+  "gpu": "index, name, uuid, memory.used [MiB], utilization.gpu [%]\n0, NVIDIA GeForce RTX 3090, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, 21153 MiB, 22 %\n1, NVIDIA GeForce RTX 3090, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, 22561 MiB, 100 %\n2, NVIDIA GeForce RTX 3090, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, 15 MiB, 0 %\n3, NVIDIA GeForce RTX 3090, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, 15 MiB, 0 %\n4, NVIDIA GeForce RTX 3090, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, 15 MiB, 0 %\n5, NVIDIA GeForce RTX 3090, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, 1039 MiB, 6 %\n",
+  "code_sha256": {
+    "profile_actions.py": "76851a67956ca80347f2f2cd639571ad3984756539020a218281c030272c8c8e",
+    "action_engine.py": "f46022bd0432b0be963135ec3b15e6027efa702c181e52649c22c8e51e3847e1",
+    "runtime.py": "de272c13b52c291b7fd4f04fc9319ce3998c1d9ed8ab2015e623d093d24a457d",
+    "scheduling.py": "f1dc4c5bc859e3640c3cd53ef64d7aae3bb8efbaf806a139ad90598702b1d5c6",
+    "accuracy_regression.py": "f9c7988da1777f5829a65f4622a065a330746a548575305ed4321c2d505f2938",
+    "benchmark.py": "ce7a9268f2ce35c5f87b5aec565cb5a4ab23c68f8d0f7e9fc9ef5dea4d93bc6b"
+  },
+  "coalesce": false,
+  "drop_frames": false,
+  "alpha": 0.7,
+  "threshold": 0.75,
+  "luma_gate": 75,
+  "input": [
+    32,
+    224,
+    400
+  ],
+  "output": "Same original display dimensions, per-person drawing, H264 libx264 encoding",
+  "paced_method": "FIFO nominal source arrivals at native fps, no source backpressure adjustment, local files only"
+}

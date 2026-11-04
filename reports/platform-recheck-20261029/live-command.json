@@ -1,0 +1,12 @@
+{
+  "stage": "live",
+  "command": [
+    "/ssd1/wfs/project/lowlight/DarkScenePipeline/.venv/bin/python",
+    "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/scripts/run_live.py",
+    "--cards",
+    "0,1,2"
+  ],
+  "started_unix": 1793240299.3988051,
+  "returncode": 0,
+  "elapsed_seconds": 994.1900594234467
+}

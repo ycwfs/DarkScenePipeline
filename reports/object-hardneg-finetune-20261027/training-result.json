@@ -1,0 +1,11 @@
+{
+  "metrics": {
+    "metrics/precision(B)": 0.5691533111261283,
+    "metrics/recall(B)": 0.6297619047619047,
+    "metrics/mAP50(B)": 0.5781645475443274,
+    "metrics/mAP50-95(B)": 0.35526621230885247,
+    "fitness": 0.35526621230885247
+  },
+  "automatic_best": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/best.pt",
+  "last": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/last.pt"
+}

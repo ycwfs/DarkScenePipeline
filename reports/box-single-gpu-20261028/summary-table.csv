@@ -1,0 +1,5 @@
+metric,original,candidate
+Processed frames / source second,10.566666666666666,12.776666666666667
+Median processing FPS,11.37,13.93
+Capture to output P95 (ms),230.62962589319795,180.6503089144826
+Action age P95 (ms),909.8265459761024,864.0301281586288

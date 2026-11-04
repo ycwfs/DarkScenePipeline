@@ -1,0 +1,146 @@
+{
+  "session": "input20/20261102_005757_21784",
+  "mode": "offline",
+  "status": "finished",
+  "source": "/tmp/darkpipe-recheck/input20.mp4",
+  "local_input": "/tmp/darkpipe-recheck/input20.mp4",
+  "started_at": "2026-11-02 00:58:00",
+  "stopped_at": "2026-11-02 00:58:37",
+  "output_video": [
+    "/tmp/darkpipe-recheck/out/input20/20261102_005757_21784/input20-处理后.mp4"
+  ],
+  "events_json": [
+    "/tmp/darkpipe-recheck/out/input20/20261102_005757_21784/input20_events.json"
+  ],
+  "events_total": 67,
+  "label_counts": {
+    "other": 67
+  },
+  "clips": {
+    "events_received": 67,
+    "frames_recording_input": 500,
+    "max_recorders": 0,
+    "events_without_output_frame": 0,
+    "clips_saved": 0,
+    "clips_abandoned": 0,
+    "clips_forced": 0,
+    "frames_dropped": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "uploads_dropped": 0,
+    "totals": {
+      "clips_saved": 0,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0
+    },
+    "clips": [],
+    "object_overlay": {
+      "max_history_bytes": 4654080,
+      "frames": 500,
+      "frames_with_objects": 0,
+      "boxes": 0,
+      "followed_boxes": 0
+    },
+    "writer_alive": false,
+    "recovery_stage_dir": "/tmp/darkpipe_person_clips_xvlajmsj",
+    "uploads_pending": 0,
+    "write_error": null,
+    "error": null
+  },
+  "clip_videos": [],
+  "stats": {
+    "frames": 500,
+    "seconds": 26.256145102903247,
+    "object_overlay": {
+      "max_history_bytes": 4654080,
+      "frames": 500,
+      "frames_with_objects": 0,
+      "boxes": 0,
+      "followed_boxes": 0
+    },
+    "fps": 19.0431571304176,
+    "clips": {
+      "events_received": 67,
+      "frames_recording_input": 500,
+      "max_recorders": 0,
+      "events_without_output_frame": 0,
+      "clips_saved": 0,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0,
+      "totals": {
+        "clips_saved": 0,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "uploads_dropped": 0
+      },
+      "clips": [],
+      "object_overlay": {
+        "max_history_bytes": 4654080,
+        "frames": 500,
+        "frames_with_objects": 0,
+        "boxes": 0,
+        "followed_boxes": 0
+      },
+      "writer_alive": false,
+      "recovery_stage_dir": "/tmp/darkpipe_person_clips_xvlajmsj",
+      "uploads_pending": 0,
+      "write_error": null,
+      "error": null
+    },
+    "person": {
+      "frames": 500,
+      "events": 67,
+      "submitted": 67,
+      "object_history_frames": 0,
+      "object_history_bytes": 0,
+      "max_decision_age": 16.189578027278184,
+      "decision_age_p95": 15.96760991051793,
+      "coalesced": 0,
+      "action_workers": [
+        {
+          "device": "cuda:0",
+          "stats": {
+            "wave_unaffected_action": 67,
+            "running_unaffected_action": 67,
+            "object_unaffected_action": 67,
+            "windows": 67,
+            "uploaded_frames": 953,
+            "reused_frames": 1191,
+            "calls": 66
+          },
+          "queue": {
+            "submitted": 67,
+            "max_pending": 2
+          }
+        }
+      ]
+    },
+    "wall_seconds": 36.585
+  },
+  "config": {
+    "person_mode": true,
+    "input_processed": false,
+    "enhance": "off",
+    "sr": "off",
+    "sr_scale": null,
+    "recognize": "behavior",
+    "gpu_ids": "0",
+    "reco_span_sec": 1.0,
+    "proc_max_side": 720
+  }
+}

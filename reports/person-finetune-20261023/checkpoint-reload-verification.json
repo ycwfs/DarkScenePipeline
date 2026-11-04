@@ -1,0 +1,10 @@
+{
+  "epoch": 3,
+  "checkpoint_sha256": "f972b8991f69ec179cc70d1611550cf1dfba1eb27610b3136afafb00713167c8",
+  "finite_tensors": true,
+  "metadata_scope_checked": true,
+  "validation_windows": 8,
+  "max_rgb_probability_difference": 0.0,
+  "fused_decisions_equal": true,
+  "test_accessed": false
+}

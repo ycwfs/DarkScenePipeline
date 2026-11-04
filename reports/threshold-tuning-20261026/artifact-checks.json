@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "model_and_policy_hashes_unchanged": true,
+  "windows": 51834,
+  "sources": 544,
+  "onsite_no_window_sources": 71,
+  "html_links": 7,
+  "non_object_decisions_unchanged_under_object_only": 51420,
+  "baseline_replay": {
+    "old_baseline_reproduced": 4234,
+    "new_baseline_reproduced": 564,
+    "deployment_reject_checks": 207336,
+    "object_policy_checks": 5288,
+    "passed": true
+  },
+  "final_preset_matches_lock_and_outputs": true,
+  "policy_cpu_tests": "9 passed"
+}

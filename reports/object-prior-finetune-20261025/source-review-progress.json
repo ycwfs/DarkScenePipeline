@@ -1,0 +1,41 @@
+{
+  "historical_sources": 535,
+  "roi_review_sources": 276,
+  "remaining_overview_sources": 259,
+  "remaining_pages_reviewed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "method": "Assistant visual review of source overview middle frame and sampled native pixel ROI. No claim of dense frame labels.",
+  "additional_exhibit_sources_remaining_index": [
+    7,
+    157,
+    158,
+    182,
+    184,
+    218,
+    219,
+    239,
+    241,
+    242,
+    253,
+    254,
+    255,
+    257
+  ]
+}

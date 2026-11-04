@@ -1,0 +1,403 @@
+{
+  "passed": true,
+  "summary": [
+    {
+      "id": "old-01",
+      "title": "喝水",
+      "split": "train",
+      "source": "real-actiondata-all/喝水.mp4",
+      "start": 0,
+      "seconds": 4.84,
+      "frames": 121,
+      "people_max": 1,
+      "object_frames": 19,
+      "exact_boxes": 3,
+      "followed_boxes": 16,
+      "clips": 1,
+      "labels": {
+        "other": 3,
+        "drink": 5
+      },
+      "prior_reasons": {
+        "unaffected_action": 2,
+        "single_frame_support": 5,
+        "no_compatible_object": 1
+      },
+      "clip_object_frames": 20
+    },
+    {
+      "id": "old-02",
+      "title": "喝水16",
+      "split": "train",
+      "source": "real-actiondata-all/喝水16.mp4",
+      "start": 0,
+      "seconds": 3.0,
+      "frames": 75,
+      "people_max": 1,
+      "object_frames": 54,
+      "exact_boxes": 12,
+      "followed_boxes": 42,
+      "clips": 1,
+      "labels": {
+        "drink": 4
+      },
+      "prior_reasons": {
+        "single_frame_support": 4
+      },
+      "clip_object_frames": 54
+    },
+    {
+      "id": "old-03",
+      "title": "喝水17",
+      "split": "train",
+      "source": "real-actiondata-all/喝水17.mp4",
+      "start": 0,
+      "seconds": 2.48,
+      "frames": 62,
+      "people_max": 1,
+      "object_frames": 48,
+      "exact_boxes": 12,
+      "followed_boxes": 38,
+      "clips": 1,
+      "labels": {
+        "drink": 3
+      },
+      "prior_reasons": {
+        "single_frame_support": 3
+      },
+      "clip_object_frames": 48
+    },
+    {
+      "id": "old-04",
+      "title": "捡东西14",
+      "split": "train",
+      "source": "real-actiondata-all/捡东西14.mp4",
+      "start": 0,
+      "seconds": 1.8,
+      "frames": 54,
+      "people_max": 2,
+      "object_frames": 11,
+      "exact_boxes": 2,
+      "followed_boxes": 9,
+      "clips": 1,
+      "labels": {
+        "other": 2,
+        "pick_up": 1
+      },
+      "prior_reasons": {
+        "no_compatible_object": 1,
+        "unaffected_action": 1,
+        "single_frame_support": 1
+      },
+      "clip_object_frames": 11
+    },
+    {
+      "id": "old-05",
+      "title": "捡东西12",
+      "split": "train",
+      "source": "real-actiondata-all/捡东西12.mp4",
+      "start": 0,
+      "seconds": 2.64,
+      "frames": 66,
+      "people_max": 1,
+      "object_frames": 31,
+      "exact_boxes": 7,
+      "followed_boxes": 24,
+      "clips": 1,
+      "labels": {
+        "other": 1,
+        "pick_up": 3
+      },
+      "prior_reasons": {
+        "unaffected_action": 1,
+        "single_frame_support": 3
+      },
+      "clip_object_frames": 31
+    },
+    {
+      "id": "old-06",
+      "title": "挥手3",
+      "split": "train",
+      "source": "real-actiondata-all/挥手3.mp4",
+      "start": 0,
+      "seconds": 6.4,
+      "frames": 160,
+      "people_max": 2,
+      "object_frames": 0,
+      "exact_boxes": 0,
+      "followed_boxes": 0,
+      "clips": 1,
+      "labels": {
+        "other": 12,
+        "wave": 10
+      },
+      "prior_reasons": {
+        "unaffected_action": 22
+      },
+      "clip_object_frames": 0
+    },
+    {
+      "id": "old-07",
+      "title": "喝水4",
+      "split": "train",
+      "source": "real-actiondata-all/喝水4.mp4",
+      "start": 0,
+      "seconds": 5.64,
+      "frames": 141,
+      "people_max": 2,
+      "object_frames": 0,
+      "exact_boxes": 0,
+      "followed_boxes": 0,
+      "clips": 2,
+      "labels": {
+        "chase": 1,
+        "drink": 8
+      },
+      "prior_reasons": {
+        "unaffected_action": 1,
+        "below_luma_gate": 8
+      },
+      "clip_object_frames": 0
+    },
+    {
+      "id": "old-08",
+      "title": "other/other123",
+      "split": "train",
+      "source": "real-actiondata-all/other/other123.mp4",
+      "start": 0,
+      "seconds": 4.32,
+      "frames": 108,
+      "people_max": 1,
+      "object_frames": 11,
+      "exact_boxes": 3,
+      "followed_boxes": 8,
+      "clips": 1,
+      "labels": {
+        "pick_up": 1,
+        "other": 6
+      },
+      "prior_reasons": {
+        "single_frame_support": 1,
+        "unaffected_action": 6
+      },
+      "clip_object_frames": 11
+    },
+    {
+      "id": "old-09",
+      "title": "喝水27",
+      "split": "val",
+      "source": "real-actiondata-all/喝水27.mp4",
+      "start": 0,
+      "seconds": 4.166666666666667,
+      "frames": 125,
+      "people_max": 1,
+      "object_frames": 22,
+      "exact_boxes": 5,
+      "followed_boxes": 24,
+      "clips": 1,
+      "labels": {
+        "other": 2,
+        "drink": 5
+      },
+      "prior_reasons": {
+        "unaffected_action": 2,
+        "single_frame_support": 5
+      },
+      "clip_object_frames": 22
+    },
+    {
+      "id": "new-01",
+      "title": "new-01 140–165s",
+      "split": "feedback_calibration",
+      "source": "data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "start": 140,
+      "seconds": 25,
+      "frames": 625,
+      "people_max": 12,
+      "object_frames": 0,
+      "exact_boxes": 0,
+      "followed_boxes": 0,
+      "clips": 0,
+      "labels": {
+        "other": 298
+      },
+      "prior_reasons": {
+        "unaffected_action": 297,
+        "no_compatible_object": 1
+      },
+      "clip_object_frames": 0
+    },
+    {
+      "id": "new-07",
+      "title": "new-07 10–40s",
+      "split": "feedback_calibration",
+      "source": "data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "start": 10,
+      "seconds": 30,
+      "frames": 750,
+      "people_max": 14,
+      "object_frames": 7,
+      "exact_boxes": 1,
+      "followed_boxes": 6,
+      "clips": 1,
+      "labels": {
+        "other": 414,
+        "drink": 1
+      },
+      "prior_reasons": {
+        "unaffected_action": 414,
+        "single_frame_support": 1
+      },
+      "clip_object_frames": 7
+    },
+    {
+      "id": "new-09",
+      "title": "new-09 94–124s",
+      "split": "feedback_calibration",
+      "source": "data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+      "start": 94,
+      "seconds": 30,
+      "frames": 750,
+      "people_max": 19,
+      "object_frames": 6,
+      "exact_boxes": 1,
+      "followed_boxes": 5,
+      "clips": 1,
+      "labels": {
+        "other": 687,
+        "drink": 1
+      },
+      "prior_reasons": {
+        "unaffected_action": 683,
+        "no_compatible_object": 4,
+        "single_frame_support": 1
+      },
+      "clip_object_frames": 6
+    }
+  ],
+  "decoded_videos": [
+    {
+      "path": "demos/old-01/output.mp4",
+      "frames": 121,
+      "sha256": "e14b415cf5a03be75a8236ce6012df520c2fe0006e279299d88db57e70a97d07"
+    },
+    {
+      "path": "demos/old-01/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261026_161204_drinking_water_0001.mp4",
+      "frames": 120,
+      "sha256": "261f67bd593d0bf63c5103113fa16ed25dfc167f55e758cf02e40130e2f99c1a"
+    },
+    {
+      "path": "demos/old-02/output.mp4",
+      "frames": 75,
+      "sha256": "e7a61a5c2219b01d35c7c9a5d72e93b5a9e809b712b958c14923397aca0789b9"
+    },
+    {
+      "path": "demos/old-02/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261026_161217_drinking_water_0001.mp4",
+      "frames": 74,
+      "sha256": "9c4e93324728286deb617e1c2561252948e541865478411040a6e3c58d14e626"
+    },
+    {
+      "path": "demos/old-03/output.mp4",
+      "frames": 62,
+      "sha256": "c39ce2d984907cc104e853b262a37ede51d43207b8a006184920ec96af310e06"
+    },
+    {
+      "path": "demos/old-03/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261026_161227_drinking_water_0001.mp4",
+      "frames": 61,
+      "sha256": "9413a40c56d9a0553b76c68a8d3a0e5abe7e29eef954b3d2203e5dce1bda9d29"
+    },
+    {
+      "path": "demos/old-04/output.mp4",
+      "frames": 54,
+      "sha256": "5d5b590afeb25eea1ab4bf79c5b2026ccbde68bf4014eb08ddc42ba4c8fa2231"
+    },
+    {
+      "path": "demos/old-04/clips/review/E000_T002_G000/R00001/picking_up_object/E000_T002_G000_R00001_20261026_161236_picking_up_object_0001.mp4",
+      "frames": 53,
+      "sha256": "e03ef456f7fd3e35182d67f2c7259dbfad87a65e950312d6cb2e8bdae2e4d0ad"
+    },
+    {
+      "path": "demos/old-05/output.mp4",
+      "frames": 66,
+      "sha256": "be7c9604720bf30e9005834b1d825de1b92289634ff253469b77e11cc2714f65"
+    },
+    {
+      "path": "demos/old-05/clips/review/E000_T001_G000/R00001/picking_up_object/E000_T001_G000_R00001_20261026_161245_picking_up_object_0001.mp4",
+      "frames": 65,
+      "sha256": "ddbb9aff5f6170cb2aa593d83c33c48f30ecc55c04f7c909bb2503dba03f679b"
+    },
+    {
+      "path": "demos/old-06/output.mp4",
+      "frames": 160,
+      "sha256": "8dce5ef52e2a644d697451cde72c0f21efc71832d3f241fd39b1ae5b21404030"
+    },
+    {
+      "path": "demos/old-06/clips/review/E000_T002_G000/R00001/waving/E000_T002_G000_R00001_20261026_161252_waving_0001.mp4",
+      "frames": 159,
+      "sha256": "936463c7cd462266a5e2b4be3ba739688a2fb3ad28dcd00524aef5829323f1d7"
+    },
+    {
+      "path": "demos/old-07/output.mp4",
+      "frames": 141,
+      "sha256": "82cc1cd724da8a9da1a92076104645e26c323416fde450cbbc183f857480fe37"
+    },
+    {
+      "path": "demos/old-07/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261026_161307_running_0001.mp4",
+      "frames": 75,
+      "sha256": "65e45501acdb4229529c7aeef94525fa93ee1ff3d4a4d1b7534a1ef18b4e47f4"
+    },
+    {
+      "path": "demos/old-07/clips/review/E000_T001_G000/R00002/drinking_water/E000_T001_G000_R00002_20261026_161307_drinking_water_0001.mp4",
+      "frames": 140,
+      "sha256": "5d3f3d5726cfc3219350503fdf38cd5c36f420b29c43843fff92bf2e9fc1dc5e"
+    },
+    {
+      "path": "demos/old-08/output.mp4",
+      "frames": 108,
+      "sha256": "d8f17f5807cc863bfe3827e600e71bf1a20d7d284f2c798cec125d1dbfe8cff3"
+    },
+    {
+      "path": "demos/old-08/clips/review/E000_T001_G000/R00001/picking_up_object/E000_T001_G000_R00001_20261026_161320_picking_up_object_0001.mp4",
+      "frames": 75,
+      "sha256": "16f8bdc80ba6cb41283f302f30f74af0d92df7470f6a45921c4d6cb3ca124442"
+    },
+    {
+      "path": "demos/old-09/output.mp4",
+      "frames": 125,
+      "sha256": "f8497a007b0454275e49d169dda0276d038e2292cb6c88434ecf700edf01f582"
+    },
+    {
+      "path": "demos/old-09/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261026_161333_drinking_water_0001.mp4",
+      "frames": 125,
+      "sha256": "6fb6b92877ef92f7aab2951b87fa6cc56301a4d5f91ed245b77f30d5f2f456d4"
+    },
+    {
+      "path": "demos/new-01/output.mp4",
+      "frames": 625,
+      "sha256": "68a831eed1fc547685068e005fd40fa417ddc7f081b51c088130f1cc9effcc82"
+    },
+    {
+      "path": "demos/new-07/output.mp4",
+      "frames": 750,
+      "sha256": "e8ae7ce807c2b79ea72d1edf67659cbf755d9a0c531488a8a121afc37726dbcc"
+    },
+    {
+      "path": "demos/new-07/clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261026_161344_drinking_water_0001.mp4",
+      "frames": 102,
+      "sha256": "00e8111a2f76a24e82bb6e1df5e58835273c6b8a2be8f0d40a3794ea8a8a9ad1"
+    },
+    {
+      "path": "demos/new-09/output.mp4",
+      "frames": 750,
+      "sha256": "eafc365e98092d4132eda2f635c4661aaff1e846272d23db030a08b3286b6cbc"
+    },
+    {
+      "path": "demos/new-09/clips/review/E000_T009_G000/R00001/drinking_water/E000_T009_G000_R00001_20261026_161511_drinking_water_0001.mp4",
+      "frames": 102,
+      "sha256": "95c03f188dfd360a30455518ff69faf5b7f840c5561503b8363bc26f55da1392"
+    }
+  ],
+  "total_frames": 3037,
+  "total_clips": 12,
+  "object_frames": 209
+}

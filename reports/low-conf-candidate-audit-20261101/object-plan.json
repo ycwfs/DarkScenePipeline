@@ -1,0 +1,30 @@
+{
+  "potential_continuation": 133,
+  "needed": 226,
+  "reused": 125,
+  "new_inference": 101,
+  "sources": {
+    "d8dd1f8db660b670": 1,
+    "da3c570dcc033d1b": 1,
+    "5da1038bd2222f4b": 1,
+    "745d97048170913c": 1,
+    "c1877f80faa10327": 1,
+    "e8fba0aacee39d69": 1,
+    "87f6ca0216282a7a": 2,
+    "cbf7cf6bdebd686a": 1,
+    "a02f3d1c93a8e74f": 1,
+    "444d81366fe842a5": 1,
+    "461f50795b91148e": 1,
+    "1f153eddcd6d673e": 1,
+    "8594e05e8a56819b": 1,
+    "aa9c286e92910886": 1,
+    "68f13a8512ef7609": 1,
+    "8cedf1246047632a": 2,
+    "new-01": 11,
+    "new-02": 2,
+    "new-03": 66,
+    "new-05": 1,
+    "new-07": 1,
+    "new-08": 2
+  }
+}

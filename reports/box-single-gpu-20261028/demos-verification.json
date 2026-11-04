@@ -1,0 +1,781 @@
+{
+  "passed": true,
+  "samples": 23,
+  "frames": 5207,
+  "events": 2395,
+  "clips": 17,
+  "context_complete": 5,
+  "decoded_videos": 40,
+  "samples_detail": [
+    {
+      "id": "lighting-01",
+      "title": "喝水4",
+      "source": "real-actiondata-all/喝水4.mp4",
+      "brightness": 7.29568851487099,
+      "input_processed": false,
+      "frames": 141,
+      "fps": 15.543156618286151,
+      "people_max": 2,
+      "events": 9,
+      "labels": {
+        "chase": 1,
+        "drink": 8
+      },
+      "clips": 2,
+      "context_complete": 0,
+      "gpu_mib": 1192,
+      "rss_mib": 2568.3671875,
+      "torch_peak_mib": 440.86962890625,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 1,
+          "below_luma_gate": 8
+        },
+        "wave_prior": {
+          "unaffected_action": 9
+        },
+        "running_prior": {
+          "below_luma_gate": 1,
+          "unaffected_action": 8
+        }
+      },
+      "historical_brightness": 7.295688514870988
+    },
+    {
+      "id": "lighting-02",
+      "title": "喝水7",
+      "source": "real-actiondata/喝水7.mp4",
+      "brightness": 8.225839180046151,
+      "input_processed": false,
+      "frames": 159,
+      "fps": 15.662838904965248,
+      "people_max": 3,
+      "events": 15,
+      "labels": {
+        "other": 6,
+        "drink": 9
+      },
+      "clips": 2,
+      "context_complete": 0,
+      "gpu_mib": 1292,
+      "rss_mib": 2645.16015625,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 6,
+          "below_luma_gate": 9
+        },
+        "wave_prior": {
+          "unaffected_action": 15
+        },
+        "running_prior": {
+          "unaffected_action": 15
+        }
+      },
+      "historical_brightness": 8.22583918004615
+    },
+    {
+      "id": "lighting-03",
+      "title": "挥手13",
+      "source": "real-actiondata-all/挥手13.mp4",
+      "brightness": 22.210658206701783,
+      "input_processed": false,
+      "frames": 133,
+      "fps": 15.973293519846182,
+      "people_max": 2,
+      "events": 8,
+      "labels": {
+        "other": 2,
+        "wave": 6
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1292,
+      "rss_mib": 2645.16015625,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 8
+        },
+        "wave_prior": {
+          "unaffected_action": 2,
+          "below_luma_gate": 6
+        },
+        "running_prior": {
+          "unaffected_action": 8
+        }
+      },
+      "historical_brightness": 22.210658206701776
+    },
+    {
+      "id": "lighting-04",
+      "title": "捡东西5",
+      "source": "real-actiondata-all/捡东西5.mp4",
+      "brightness": 37.2322843416478,
+      "input_processed": false,
+      "frames": 67,
+      "fps": 13.181938375222852,
+      "people_max": 1,
+      "events": 4,
+      "labels": {
+        "other": 4
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2662.18359375,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 4
+        },
+        "wave_prior": {
+          "unaffected_action": 4
+        },
+        "running_prior": {
+          "unaffected_action": 4
+        }
+      },
+      "historical_brightness": 37.232284341647784
+    },
+    {
+      "id": "lighting-05",
+      "title": "挥手4",
+      "source": "real-actiondata-all/挥手4.mp4",
+      "brightness": 32.271181168061325,
+      "input_processed": false,
+      "frames": 169,
+      "fps": 15.923549042250002,
+      "people_max": 2,
+      "events": 24,
+      "labels": {
+        "other": 14,
+        "wave": 10
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1310,
+      "rss_mib": 2701.4453125,
+      "torch_peak_mib": 481.416015625,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 24
+        },
+        "wave_prior": {
+          "unaffected_action": 14,
+          "below_luma_gate": 10
+        },
+        "running_prior": {
+          "unaffected_action": 24
+        }
+      },
+      "historical_brightness": 32.27118116806133
+    },
+    {
+      "id": "lighting-06",
+      "title": "捡东西8",
+      "source": "real-actiondata-all/捡东西8.mp4",
+      "brightness": 52.27637349416306,
+      "input_processed": false,
+      "frames": 56,
+      "fps": 13.813313667227346,
+      "people_max": 2,
+      "events": 2,
+      "labels": {
+        "other": 2
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2686.9453125,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 2
+        },
+        "wave_prior": {
+          "unaffected_action": 2
+        },
+        "running_prior": {
+          "unaffected_action": 2
+        }
+      },
+      "historical_brightness": 52.276373494163025
+    },
+    {
+      "id": "lighting-07",
+      "title": "other83",
+      "source": "real-actiondata-all/other/other83.mp4",
+      "brightness": 67.70653745804796,
+      "input_processed": false,
+      "frames": 133,
+      "fps": 13.940459166146638,
+      "people_max": 1,
+      "events": 9,
+      "labels": {
+        "other": 9
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1326,
+      "rss_mib": 2711.8984375,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 9
+        },
+        "wave_prior": {
+          "unaffected_action": 9
+        },
+        "running_prior": {
+          "unaffected_action": 9
+        }
+      },
+      "historical_brightness": 67.70653745804796
+    },
+    {
+      "id": "lighting-08",
+      "title": "喝水18",
+      "source": "real-actiondata-all/喝水18.mp4",
+      "brightness": 89.17300748925452,
+      "input_processed": false,
+      "frames": 78,
+      "fps": 12.534802461113822,
+      "people_max": 1,
+      "events": 5,
+      "labels": {
+        "drink": 3,
+        "other": 2
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2718.3984375,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 51,
+      "prior_reasons": {
+        "object_prior": {
+          "single_frame_support": 3,
+          "unaffected_action": 2
+        },
+        "wave_prior": {
+          "unaffected_action": 5
+        },
+        "running_prior": {
+          "unaffected_action": 5
+        }
+      },
+      "historical_brightness": 89.17300748925452
+    },
+    {
+      "id": "lighting-09",
+      "title": "捡东西14",
+      "source": "real-actiondata-all/捡东西14.mp4",
+      "brightness": 119.29078105359723,
+      "input_processed": false,
+      "frames": 54,
+      "fps": 11.876701579755073,
+      "people_max": 2,
+      "events": 3,
+      "labels": {
+        "other": 2,
+        "pick_up": 1
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2721.26953125,
+      "torch_peak_mib": 481.41748046875,
+      "object_frames": 10,
+      "prior_reasons": {
+        "object_prior": {
+          "no_compatible_object": 1,
+          "unaffected_action": 1,
+          "single_frame_support": 1
+        },
+        "wave_prior": {
+          "unaffected_action": 3
+        },
+        "running_prior": {
+          "unaffected_action": 3
+        }
+      },
+      "historical_brightness": 119.29078105359724
+    },
+    {
+      "id": "lighting-10",
+      "title": "other91",
+      "source": "real-actiondata-all/other/other91.mp4",
+      "brightness": 120.37600688724257,
+      "input_processed": false,
+      "frames": 36,
+      "fps": 12.434765497131362,
+      "people_max": 3,
+      "events": 3,
+      "labels": {
+        "other": 3
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2696.23828125,
+      "torch_peak_mib": 481.41748046875,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 3
+        },
+        "wave_prior": {
+          "unaffected_action": 3
+        },
+        "running_prior": {
+          "unaffected_action": 3
+        }
+      },
+      "historical_brightness": 120.37600688724254
+    },
+    {
+      "id": "lighting-11",
+      "title": "20261012_100424_drinking_water_0077",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100424_drinking_water_0077.mp4",
+      "brightness": null,
+      "input_processed": true,
+      "frames": 74,
+      "fps": 19.402507099231965,
+      "people_max": 4,
+      "events": 14,
+      "labels": {
+        "other": 14
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1196,
+      "rss_mib": 2697.72265625,
+      "torch_peak_mib": 481.41796875,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 14
+        },
+        "wave_prior": {
+          "unaffected_action": 14
+        },
+        "running_prior": {
+          "unaffected_action": 14
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "lighting-12",
+      "title": "20261012_100047_waving_0068",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100047_waving_0068.mp4",
+      "brightness": null,
+      "input_processed": true,
+      "frames": 81,
+      "fps": 16.393436425643078,
+      "people_max": 8,
+      "events": 31,
+      "labels": {
+        "other": 31
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1164,
+      "rss_mib": 2736.4765625,
+      "torch_peak_mib": 481.41845703125,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 31
+        },
+        "wave_prior": {
+          "unaffected_action": 31
+        },
+        "running_prior": {
+          "unaffected_action": 31
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "lighting-13",
+      "title": "20261012_095918_drinking_water_0060",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+      "brightness": null,
+      "input_processed": true,
+      "frames": 59,
+      "fps": 14.014879298478853,
+      "people_max": 16,
+      "events": 34,
+      "labels": {
+        "other": 34
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1196,
+      "rss_mib": 2784.75,
+      "torch_peak_mib": 481.419921875,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 34
+        },
+        "wave_prior": {
+          "unaffected_action": 34
+        },
+        "running_prior": {
+          "unaffected_action": 34
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "rule-挥手22",
+      "title": "挥手22",
+      "source": "real-actiondata-all/挥手22.mp4",
+      "brightness": 154.0624882207376,
+      "input_processed": false,
+      "frames": 54,
+      "fps": 12.626122805056571,
+      "people_max": 1,
+      "events": 3,
+      "labels": {
+        "wave": 3
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2782.78515625,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 3
+        },
+        "wave_prior": {
+          "wrist_above_both_shoulders": 3
+        },
+        "running_prior": {
+          "unaffected_action": 3
+        }
+      },
+      "historical_brightness": 154.06248822073755
+    },
+    {
+      "id": "rule-挥手32",
+      "title": "挥手32",
+      "source": "real-actiondata-all/挥手32.mp4",
+      "brightness": 120.54100341340917,
+      "input_processed": false,
+      "frames": 93,
+      "fps": 13.881693290015798,
+      "people_max": 2,
+      "events": 6,
+      "labels": {
+        "other": 2,
+        "wave": 4
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1324,
+      "rss_mib": 2782.66796875,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 6
+        },
+        "wave_prior": {
+          "unaffected_action": 2,
+          "wrist_above_both_shoulders": 4
+        },
+        "running_prior": {
+          "unaffected_action": 6
+        }
+      },
+      "historical_brightness": 120.54100341340919
+    },
+    {
+      "id": "rule-追逐20",
+      "title": "追逐20",
+      "source": "real-actiondata-all/追逐20.mp4",
+      "brightness": 40.41039802667766,
+      "input_processed": false,
+      "frames": 95,
+      "fps": 15.616790309950046,
+      "people_max": 1,
+      "events": 1,
+      "labels": {
+        "chase": 1
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1326,
+      "rss_mib": 2785.08984375,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 1
+        },
+        "wave_prior": {
+          "unaffected_action": 1
+        },
+        "running_prior": {
+          "speed_supported": 1
+        }
+      },
+      "historical_brightness": 40.41039802667766
+    },
+    {
+      "id": "rule-喝水27",
+      "title": "喝水27",
+      "source": "real-actiondata-all/喝水27.mp4",
+      "brightness": 120.82503159661711,
+      "input_processed": false,
+      "frames": 125,
+      "fps": 12.881952812237133,
+      "people_max": 1,
+      "events": 7,
+      "labels": {
+        "other": 4,
+        "drink": 3
+      },
+      "clips": 1,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2798.78515625,
+      "torch_peak_mib": 440.57958984375,
+      "object_frames": 15,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 2,
+          "single_frame_support": 3,
+          "no_compatible_object": 2
+        },
+        "wave_prior": {
+          "unaffected_action": 7
+        },
+        "running_prior": {
+          "unaffected_action": 7
+        }
+      },
+      "historical_brightness": 120.82503159661717
+    },
+    {
+      "id": "crowd-child",
+      "title": "new-01 10–40s",
+      "source": "reports/full-prior-release-20261027/inputs/child.mkv",
+      "brightness": 108.15813229603947,
+      "input_processed": false,
+      "frames": 750,
+      "fps": 10.917693132498766,
+      "people_max": 13,
+      "events": 369,
+      "labels": {
+        "other": 366,
+        "chase": 2,
+        "wave": 1
+      },
+      "clips": 3,
+      "context_complete": 3,
+      "gpu_mib": 1326,
+      "rss_mib": 2904.8125,
+      "torch_peak_mib": 481.419921875,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 369
+        },
+        "wave_prior": {
+          "unaffected_action": 368,
+          "wrist_above_both_shoulders": 1
+        },
+        "running_prior": {
+          "unaffected_action": 367,
+          "speed_supported": 1,
+          "insufficient_pose_bypass": 1
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "crowd-walking",
+      "title": "new-01 185–215s",
+      "source": "reports/full-prior-release-20261027/inputs/walking.mkv",
+      "brightness": 105.77155698669321,
+      "input_processed": false,
+      "frames": 750,
+      "fps": 10.065302489604488,
+      "people_max": 14,
+      "events": 479,
+      "labels": {
+        "other": 479
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1326,
+      "rss_mib": 2983.29296875,
+      "torch_peak_mib": 481.419921875,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 477,
+          "no_compatible_object": 2
+        },
+        "wave_prior": {
+          "unaffected_action": 479
+        },
+        "running_prior": {
+          "unaffected_action": 477,
+          "below_speed_threshold": 2
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "crowd-phone",
+      "title": "new-07 10–40s",
+      "source": "reports/full-prior-release-20261027/inputs/phone.mkv",
+      "brightness": 99.37729075020631,
+      "input_processed": false,
+      "frames": 750,
+      "fps": 10.291407521712635,
+      "people_max": 14,
+      "events": 415,
+      "labels": {
+        "other": 414,
+        "drink": 1
+      },
+      "clips": 1,
+      "context_complete": 1,
+      "gpu_mib": 1326,
+      "rss_mib": 2999.57421875,
+      "torch_peak_mib": 481.42041015625,
+      "object_frames": 7,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 414,
+          "single_frame_support": 1
+        },
+        "wave_prior": {
+          "unaffected_action": 415
+        },
+        "running_prior": {
+          "unaffected_action": 415
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "crowd-camera",
+      "title": "new-09 94–124s",
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "brightness": 100.43584577502756,
+      "input_processed": false,
+      "frames": 750,
+      "fps": 8.393658615431043,
+      "people_max": 19,
+      "events": 682,
+      "labels": {
+        "other": 682
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1326,
+      "rss_mib": 3015.71875,
+      "torch_peak_mib": 481.4228515625,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 677,
+          "no_compatible_object": 5
+        },
+        "wave_prior": {
+          "unaffected_action": 682
+        },
+        "running_prior": {
+          "unaffected_action": 682
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "new-01-wave-veto",
+      "title": "new-01-wave-veto",
+      "source": "reports/wave-pose-prior-20261027/inputs/new-01-wave-veto.mkv",
+      "brightness": 99.80833582092272,
+      "input_processed": false,
+      "frames": 300,
+      "fps": 9.850581495327209,
+      "people_max": 14,
+      "events": 186,
+      "labels": {
+        "other": 185,
+        "chase": 1
+      },
+      "clips": 1,
+      "context_complete": 1,
+      "gpu_mib": 1326,
+      "rss_mib": 3048.53125,
+      "torch_peak_mib": 481.4208984375,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 186
+        },
+        "wave_prior": {
+          "unaffected_action": 185,
+          "insufficient_raised_wrist_frames": 1
+        },
+        "running_prior": {
+          "unaffected_action": 185,
+          "speed_supported": 1
+        }
+      },
+      "historical_brightness": null
+    },
+    {
+      "id": "new-07-standing-veto",
+      "title": "new-07-standing-veto",
+      "source": "reports/wave-pose-prior-20261027/inputs/new-07-standing-veto.mkv",
+      "brightness": 100.51885447085849,
+      "input_processed": false,
+      "frames": 300,
+      "fps": 10.93866527786198,
+      "people_max": 9,
+      "events": 86,
+      "labels": {
+        "other": 86
+      },
+      "clips": 0,
+      "context_complete": 0,
+      "gpu_mib": 1294,
+      "rss_mib": 2970.65625,
+      "torch_peak_mib": 481.419921875,
+      "object_frames": 0,
+      "prior_reasons": {
+        "object_prior": {
+          "unaffected_action": 86
+        },
+        "wave_prior": {
+          "unaffected_action": 85,
+          "insufficient_raised_wrist_frames": 1
+        },
+        "running_prior": {
+          "unaffected_action": 86
+        }
+      },
+      "historical_brightness": null
+    }
+  ],
+  "note": "Historical diagnostic inputs, not independent accuracy. Persons are detector/tracker counts, not ground truth. File-boundary context is reported, not hidden."
+}

@@ -1,0 +1,626 @@
+[
+  {
+    "index": 127,
+    "extra": 0,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 5,
+    "seconds": 0.17857142857142858,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-00.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 128,
+    "extra": 1,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 14,
+    "seconds": 0.5,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-01.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 129,
+    "extra": 2,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 23,
+    "seconds": 0.8214285714285714,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-02.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 130,
+    "extra": 3,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 32,
+    "seconds": 1.1428571428571428,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-03.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 131,
+    "extra": 4,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 42,
+    "seconds": 1.5,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-04.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 132,
+    "extra": 5,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 51,
+    "seconds": 1.8214285714285714,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-05.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 133,
+    "extra": 6,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 60,
+    "seconds": 2.142857142857143,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-06.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 134,
+    "extra": 7,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 69,
+    "seconds": 2.4642857142857144,
+    "rect": [
+      1354,
+      97,
+      1510,
+      291
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-07.png",
+        "width": 156,
+        "height": 194,
+        "origin": [
+          1354,
+          97
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 1.8525641025641026,
+      "scale_y": 1.8556701030927836,
+      "left": 55,
+      "top": 40,
+      "width": 156,
+      "height": 194
+    }
+  },
+  {
+    "index": 135,
+    "extra": 8,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 4,
+    "seconds": 0.13333333333333333,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-08.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 136,
+    "extra": 9,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 11,
+    "seconds": 0.36666666666666664,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-09.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 137,
+    "extra": 10,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 18,
+    "seconds": 0.6,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-10.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 138,
+    "extra": 11,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 26,
+    "seconds": 0.8666666666666667,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-11.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 139,
+    "extra": 12,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 33,
+    "seconds": 1.1,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-12.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 140,
+    "extra": 13,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 41,
+    "seconds": 1.3666666666666667,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-13.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 141,
+    "extra": 14,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 48,
+    "seconds": 1.6,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-14.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  },
+  {
+    "index": 142,
+    "extra": 15,
+    "number": -1,
+    "split": "train",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+    "group": "1d5e40daf952ed1b",
+    "frame": 55,
+    "seconds": 1.8333333333333333,
+    "rect": [
+      734,
+      0,
+      877,
+      130
+    ],
+    "variants": {
+      "native_raw": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/review/extra-native-15.png",
+        "width": 143,
+        "height": 130,
+        "origin": [
+          734,
+          0
+        ],
+        "scale": [
+          1,
+          1
+        ]
+      }
+    },
+    "tile_transform": {
+      "scale_x": 2.769230769230769,
+      "scale_y": 2.769230769230769,
+      "left": 2,
+      "top": 40,
+      "width": 143,
+      "height": 130
+    }
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "model": "n",
+      "case": "old-drink-supported",
+      "detections": 1,
+      "min_iou": 0.9999034565553486,
+      "max_score_error": 8.851289749145508e-05,
+      "passed": true
+    },
+    {
+      "model": "n",
+      "case": "new05-phone",
+      "detections": 5,
+      "min_iou": 0.9994235639576564,
+      "max_score_error": 0.0007985234260559082,
+      "passed": true
+    },
+    {
+      "model": "n",
+      "case": "new09-supported",
+      "detections": 4,
+      "min_iou": 0.9997049884821236,
+      "max_score_error": 0.0038037896156311035,
+      "passed": true
+    },
+    {
+      "model": "s",
+      "case": "old-drink-supported",
+      "detections": 1,
+      "min_iou": 0.9998993799808241,
+      "max_score_error": 4.172325134277344e-06,
+      "passed": true
+    },
+    {
+      "model": "s",
+      "case": "new05-phone",
+      "detections": 6,
+      "min_iou": 0.9997021698447435,
+      "max_score_error": 0.0010838508605957031,
+      "passed": true
+    },
+    {
+      "model": "s",
+      "case": "new09-supported",
+      "detections": 5,
+      "min_iou": 0.9995528994176661,
+      "max_score_error": 0.0024774670600891113,
+      "passed": true
+    },
+    {
+      "model": "m",
+      "case": "old-drink-supported",
+      "detections": 1,
+      "min_iou": 0.9999143087561996,
+      "max_score_error": 7.635354995727539e-05,
+      "passed": true
+    },
+    {
+      "model": "m",
+      "case": "new05-phone",
+      "detections": 5,
+      "min_iou": 0.9996008021139309,
+      "max_score_error": 0.00038689374923706055,
+      "passed": true
+    },
+    {
+      "model": "m",
+      "case": "new09-supported",
+      "detections": 4,
+      "min_iou": 0.9999137781968771,
+      "max_score_error": 0.005643248558044434,
+      "passed": true
+    },
+    {
+      "model": "m_finetuned",
+      "case": "old-drink-supported",
+      "detections": 1,
+      "min_iou": 0.9998909612408805,
+      "max_score_error": 0.00013881921768188477,
+      "passed": true
+    },
+    {
+      "model": "m_finetuned",
+      "case": "new05-phone",
+      "detections": 1,
+      "min_iou": 0.9998816186871139,
+      "max_score_error": 0.00017637014389038086,
+      "passed": true
+    },
+    {
+      "model": "m_finetuned",
+      "case": "new09-supported",
+      "detections": 1,
+      "min_iou": 0.9997501310512232,
+      "max_score_error": 0.0002244710922241211,
+      "passed": true
+    }
+  ],
+  "note": "public predict API batch1 nms=False vs saved custom batch8, all classes conf>=.35, 640 FP32",
+  "tolerances": {
+    "counts_and_classes": "equal",
+    "iou_min": 0.98,
+    "score_abs_max": 0.01
+  },
+  "diagnostic": "First default-head attempt used nms=None; one-to-one requires explicit nms=False. A preliminary .003 score tolerance failed at .003804; this check reports actual differences."
+}

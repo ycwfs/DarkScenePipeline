@@ -1,0 +1,23 @@
+{
+  "reason": "Initial broad adaptation failed generic validation guard; no test results inspected.",
+  "baseline_coco_val": 0.5251037728611181,
+  "broad_first2_val": [
+    0.449,
+    0.4525
+  ],
+  "strategy": "Update only original class logits for person,bottle,cup,remote,cell phone,book; freeze all features, localization, BN and other rows.",
+  "targets": [
+    0,
+    39,
+    41,
+    65,
+    67,
+    73
+  ],
+  "epochs": 20,
+  "seed": 27,
+  "lr0": 0.0002,
+  "weight_decay": 0,
+  "data": "Same frozen dataset as broad adaptation",
+  "selection": "Same generic validation guard and site val objective. Final compare both training families using validation only."
+}

@@ -1,0 +1,1231 @@
+{
+  "long_videos": [
+    {
+      "source": "new-01",
+      "seconds": 395.04,
+      "frames": 9876,
+      "windows": 5565,
+      "baseline_drink_windows": 0,
+      "baseline_pickup_windows": 0,
+      "baseline_clips": 12,
+      "baseline_false_interaction_windows": 0,
+      "baseline_false_interaction_groups": 0,
+      "candidate_drink_windows": 0,
+      "candidate_pickup_windows": 0,
+      "candidate_clips": 12,
+      "candidate_false_interaction_windows": 0,
+      "candidate_false_interaction_groups": 0
+    },
+    {
+      "source": "new-07",
+      "seconds": 540.0,
+      "frames": 13500,
+      "windows": 6312,
+      "baseline_drink_windows": 1,
+      "baseline_pickup_windows": 0,
+      "baseline_clips": 13,
+      "baseline_false_interaction_windows": 1,
+      "baseline_false_interaction_groups": 1,
+      "candidate_drink_windows": 1,
+      "candidate_pickup_windows": 0,
+      "candidate_clips": 13,
+      "candidate_false_interaction_windows": 1,
+      "candidate_false_interaction_groups": 1
+    },
+    {
+      "source": "new-09",
+      "seconds": 242.0,
+      "frames": 6050,
+      "windows": 5036,
+      "baseline_drink_windows": 0,
+      "baseline_pickup_windows": 0,
+      "baseline_clips": 1,
+      "baseline_false_interaction_windows": 0,
+      "baseline_false_interaction_groups": 0,
+      "candidate_drink_windows": 0,
+      "candidate_pickup_windows": 0,
+      "candidate_clips": 1,
+      "candidate_false_interaction_windows": 0,
+      "candidate_false_interaction_groups": 0
+    }
+  ],
+  "cases": [
+    {
+      "id": "new-07-000",
+      "number": 7,
+      "track_id": 26,
+      "generation": 0,
+      "action": "drink",
+      "start": 21.32,
+      "end": 21.32,
+      "baseline_windows": 1,
+      "candidate_windows": 1,
+      "indices": [
+        240
+      ],
+      "truth": "false_action",
+      "representative": 240,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "source_offset": 0,
+      "image": "long-review/new-07-000.jpg",
+      "description": "21.32秒/T26白衣人物手机贴耳通话，非喝水；手机仍被识别为瓶，支持分数0.583→0.767。",
+      "review": "Assistant visual review of five raw frames plus source temporal context; agrees with prior user not_drink feedback for this scene."
+    }
+  ],
+  "frames": 29426,
+  "seconds": 1177.04,
+  "paired_windows": 16913,
+  "object_context": {
+    "train": {
+      "images": 44,
+      "sources": 5,
+      "models": {
+        "baseline": {
+          "bottle": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "cup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "phone": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 13
+          },
+          "camera": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "paper": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "portable_object": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8
+          },
+          "robot_or_exhibit": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "microphone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10
+          },
+          "confused_as_container": {
+            "phone": {
+              "errors": 0,
+              "total": 15
+            },
+            "camera": {
+              "errors": 0,
+              "total": 0
+            },
+            "microphone": {
+              "errors": 2,
+              "total": 10
+            }
+          }
+        },
+        "candidate": {
+          "bottle": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "cup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "phone": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 13
+          },
+          "camera": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "paper": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "portable_object": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8
+          },
+          "robot_or_exhibit": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "microphone": {
+            "tp": 2,
+            "fp": 3,
+            "fn": 8
+          },
+          "confused_as_container": {
+            "phone": {
+              "errors": 0,
+              "total": 15
+            },
+            "camera": {
+              "errors": 0,
+              "total": 0
+            },
+            "microphone": {
+              "errors": 0,
+              "total": 10
+            }
+          }
+        }
+      }
+    },
+    "val": {
+      "images": 10,
+      "sources": 1,
+      "models": {
+        "baseline": {
+          "bottle": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          },
+          "cup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "phone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "camera": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "paper": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "portable_object": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "robot_or_exhibit": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3
+          },
+          "microphone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "confused_as_container": {
+            "phone": {
+              "errors": 0,
+              "total": 1
+            },
+            "camera": {
+              "errors": 0,
+              "total": 0
+            },
+            "microphone": {
+              "errors": 0,
+              "total": 0
+            }
+          }
+        },
+        "candidate": {
+          "bottle": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "cup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "phone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "camera": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "paper": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "portable_object": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "robot_or_exhibit": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3
+          },
+          "microphone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "confused_as_container": {
+            "phone": {
+              "errors": 0,
+              "total": 1
+            },
+            "camera": {
+              "errors": 0,
+              "total": 0
+            },
+            "microphone": {
+              "errors": 0,
+              "total": 0
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "images": 32,
+      "sources": 3,
+      "models": {
+        "baseline": {
+          "bottle": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 4
+          },
+          "cup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "phone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8
+          },
+          "camera": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3
+          },
+          "paper": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "portable_object": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "robot_or_exhibit": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "microphone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "confused_as_container": {
+            "phone": {
+              "errors": 1,
+              "total": 8
+            },
+            "camera": {
+              "errors": 2,
+              "total": 3
+            },
+            "microphone": {
+              "errors": 0,
+              "total": 1
+            }
+          }
+        },
+        "candidate": {
+          "bottle": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 4
+          },
+          "cup": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "phone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 8
+          },
+          "camera": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3
+          },
+          "paper": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "portable_object": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "robot_or_exhibit": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "microphone": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "confused_as_container": {
+            "phone": {
+              "errors": 1,
+              "total": 8
+            },
+            "camera": {
+              "errors": 0,
+              "total": 3
+            },
+            "microphone": {
+              "errors": 0,
+              "total": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "old_object_test": {
+    "images": 47,
+    "groups": 31,
+    "models": {
+      "baseline": {
+        "bottle": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 9
+        },
+        "cup": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "phone": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3
+        },
+        "camera": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "paper": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 6
+        },
+        "portable_object": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1
+        },
+        "robot_or_exhibit": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 3
+        },
+        "microphone": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "confused_as_container": {
+          "phone": {
+            "errors": 0,
+            "total": 3
+          },
+          "camera": {
+            "errors": 0,
+            "total": 0
+          },
+          "microphone": {
+            "errors": 0,
+            "total": 0
+          }
+        }
+      },
+      "candidate": {
+        "bottle": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 9
+        },
+        "cup": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "phone": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3
+        },
+        "camera": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "paper": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 6
+        },
+        "portable_object": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1
+        },
+        "robot_or_exhibit": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 3
+        },
+        "microphone": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "confused_as_container": {
+          "phone": {
+            "errors": 0,
+            "total": 3
+          },
+          "camera": {
+            "errors": 0,
+            "total": 0
+          },
+          "microphone": {
+            "errors": 0,
+            "total": 0
+          }
+        }
+      }
+    }
+  },
+  "old_cached": {
+    "test": {
+      "windows": 25,
+      "sources": 9,
+      "models": {
+        "baseline": {
+          "true_actions_retained": 6,
+          "true_actions": 15,
+          "other_false_triggers": 1,
+          "other_windows": 3,
+          "labels": {
+            "drink": 6,
+            "other": 13,
+            "pick_up": 5,
+            "wave": 1
+          }
+        },
+        "candidate": {
+          "true_actions_retained": 6,
+          "true_actions": 15,
+          "other_false_triggers": 1,
+          "other_windows": 3,
+          "labels": {
+            "drink": 6,
+            "other": 13,
+            "pick_up": 5,
+            "wave": 1
+          }
+        }
+      }
+    },
+    "val": {
+      "windows": 30,
+      "sources": 8,
+      "models": {
+        "baseline": {
+          "true_actions_retained": 11,
+          "true_actions": 14,
+          "other_false_triggers": 4,
+          "other_windows": 7,
+          "labels": {
+            "pick_up": 5,
+            "drink": 17,
+            "other": 8
+          }
+        },
+        "candidate": {
+          "true_actions_retained": 12,
+          "true_actions": 14,
+          "other_false_triggers": 4,
+          "other_windows": 7,
+          "labels": {
+            "pick_up": 6,
+            "drink": 17,
+            "other": 7
+          }
+        }
+      }
+    }
+  },
+  "selected": {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch8.pt",
+    "metrics": {
+      "metrics/precision(B)": 0.5859623772105569,
+      "metrics/recall(B)": 0.5988447743815793,
+      "metrics/mAP50(B)": 0.6329495308716707,
+      "metrics/mAP50-95(B)": 0.3651635549438661,
+      "fitness": 0.3651635549438661
+    },
+    "score": 0.3651635549438661
+  },
+  "production_replaced": false,
+  "short_regression": [
+    {
+      "source": {
+        "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+        "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+        "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "bytes": 214371254,
+        "sha256": "b43eb3edb1e00e8b60a8e5dbd8ea3fe6953c85b0100a331bc421e8cbfe80d2b4",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-01.mkv",
+        "duration": 25,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "frames": 625,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 1,
+        "source_offset": 140,
+        "scope": "previous short demo, restarted track/window context",
+        "original_video_sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2"
+      },
+      "frames": 625,
+      "output_frames": 625,
+      "seconds": 25.0,
+      "elapsed": 99.56749718217179,
+      "paired_checks": 298,
+      "baseline": {
+        "actions": {
+          "other": 298
+        },
+        "objects": {
+          "max_history_bytes": 4654080,
+          "frames": 625,
+          "frames_with_objects": 0,
+          "boxes": 0,
+          "followed_boxes": 0
+        },
+        "clips": {
+          "events_received": 298,
+          "frames_recording_input": 625,
+          "max_recorders": 0,
+          "events_without_output_frame": 0,
+          "clips_saved": 0,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "uploads_dropped": 0,
+          "totals": {
+            "clips_saved": 0,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "clips_unfinished": 0,
+            "clips_failed": 0,
+            "write_errors": 0,
+            "uploads_dropped": 0
+          },
+          "clips": [],
+          "object_overlay": {
+            "max_history_bytes": 4654080,
+            "frames": 625,
+            "frames_with_objects": 0,
+            "boxes": 0,
+            "followed_boxes": 0
+          },
+          "writer_alive": false,
+          "recovery_stage_dir": "/tmp/darkpipe_person_clips_yxdn__s2",
+          "uploads_pending": 0,
+          "write_error": null,
+          "error": null
+        }
+      },
+      "candidate": {
+        "actions": {
+          "other": 298
+        },
+        "objects": {
+          "max_history_bytes": 4654080,
+          "frames": 625,
+          "frames_with_objects": 0,
+          "boxes": 0,
+          "followed_boxes": 0
+        },
+        "clips": {
+          "events_received": 298,
+          "frames_recording_input": 625,
+          "max_recorders": 0,
+          "events_without_output_frame": 0,
+          "clips_saved": 0,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "uploads_dropped": 0,
+          "totals": {
+            "clips_saved": 0,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "clips_unfinished": 0,
+            "clips_failed": 0,
+            "write_errors": 0,
+            "uploads_dropped": 0
+          },
+          "clips": [],
+          "object_overlay": {
+            "max_history_bytes": 4654080,
+            "frames": 625,
+            "frames_with_objects": 0,
+            "boxes": 0,
+            "followed_boxes": 0
+          },
+          "writer_alive": false,
+          "recovery_stage_dir": "/tmp/darkpipe_person_clips_ofw9w18f",
+          "uploads_pending": 0,
+          "write_error": null,
+          "error": null
+        }
+      },
+      "transitions": {
+        "other->other": 298
+      },
+      "config": {
+        "alpha": 0.972,
+        "lum_gate": 35,
+        "action_threshold": 0.925,
+        "object_threshold": 0.581
+      },
+      "methodology": "Complete raw-video production frontend/action execution once; paired production object-prior calls on exact same tasks. Separate complete visualizations and clip recorders. Offline diagnostic, not real-time throughput test.",
+      "metadata_correction": "Corrected input hash from original whole video to exact short MKV; inference untouched."
+    },
+    {
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "bytes": 166479314,
+        "sha256": "09694048b2c7022ed1e906c3dbc9718086d26bfad17c6520cb1cc9e1b9c153a4",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-07.mkv",
+        "duration": 30,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "frames": 750,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 7,
+        "source_offset": 10,
+        "scope": "previous short demo, restarted track/window context",
+        "original_video_sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad"
+      },
+      "frames": 750,
+      "output_frames": 750,
+      "seconds": 30.0,
+      "elapsed": 126.41825916524976,
+      "paired_checks": 415,
+      "baseline": {
+        "actions": {
+          "other": 414,
+          "drink": 1
+        },
+        "objects": {
+          "max_history_bytes": 4654080,
+          "frames": 750,
+          "frames_with_objects": 7,
+          "boxes": 7,
+          "followed_boxes": 6
+        },
+        "clips": {
+          "events_received": 415,
+          "frames_recording_input": 750,
+          "max_recorders": 1,
+          "events_without_output_frame": 0,
+          "clips_saved": 1,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "uploads_dropped": 0,
+          "totals": {
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "clips_unfinished": 0,
+            "clips_failed": 0,
+            "write_errors": 0,
+            "uploads_dropped": 0
+          },
+          "clips": [
+            {
+              "session": "E000_T003_G000/R00001",
+              "seq": 1,
+              "label": "Drinking water",
+              "label_key": "drinking_water",
+              "confidence": 0.9324,
+              "labels_in_clip": {
+                "Drinking water": 1
+              },
+              "frames": 102,
+              "fps": 25.0,
+              "duration_seconds": 4.04,
+              "trigger_stream_time": 11.36,
+              "first_event": {
+                "frame_index": 284,
+                "timestamp": 11.36,
+                "label": "Drinking water",
+                "confidence": 0.9324,
+                "topk": [],
+                "model": "",
+                "window": 0,
+                "skeleton_active": false,
+                "actor_poses": [],
+                "skeleton_selected_slot": -1,
+                "clip_start_source_time": 9.36,
+                "writer_drop_start": 0,
+                "last_action_source_time": 11.36,
+                "writer_frames_dropped": 0
+              },
+              "closed_because": "post 静默期结束",
+              "started_at": "2026-10-27 02:20:11",
+              "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/short-regression/new-07/baseline-clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261027_022059_drinking_water_0001.mp4",
+              "frames_written": 102,
+              "capture_fps": 25.248,
+              "playback_speed": 0.99,
+              "person_id": 3,
+              "history_generation": 0,
+              "capture_epoch": 0,
+              "action_key": "drinking_water",
+              "recording_id": 1,
+              "start_source_time": 9.36,
+              "end_source_time": 13.399999999999999,
+              "pre_context_available": 2.0,
+              "post_context_available": 2.039999999999999,
+              "requested_pre": 2.0,
+              "requested_post": 2.0,
+              "recording_policy": "full frame per person and action; overlapping files allowed",
+              "writer_frames_dropped": 0,
+              "context_complete": true
+            }
+          ],
+          "object_overlay": {
+            "max_history_bytes": 4654080,
+            "frames": 750,
+            "frames_with_objects": 7,
+            "boxes": 7,
+            "followed_boxes": 6
+          },
+          "writer_alive": false,
+          "recovery_stage_dir": "/tmp/darkpipe_person_clips_qatccmqr",
+          "uploads_pending": 0,
+          "write_error": null,
+          "error": null
+        }
+      },
+      "candidate": {
+        "actions": {
+          "other": 414,
+          "drink": 1
+        },
+        "objects": {
+          "max_history_bytes": 4654080,
+          "frames": 750,
+          "frames_with_objects": 7,
+          "boxes": 7,
+          "followed_boxes": 6
+        },
+        "clips": {
+          "events_received": 415,
+          "frames_recording_input": 750,
+          "max_recorders": 1,
+          "events_without_output_frame": 0,
+          "clips_saved": 1,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "uploads_dropped": 0,
+          "totals": {
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "clips_unfinished": 0,
+            "clips_failed": 0,
+            "write_errors": 0,
+            "uploads_dropped": 0
+          },
+          "clips": [
+            {
+              "session": "E000_T003_G000/R00001",
+              "seq": 1,
+              "label": "Drinking water",
+              "label_key": "drinking_water",
+              "confidence": 0.9324,
+              "labels_in_clip": {
+                "Drinking water": 1
+              },
+              "frames": 102,
+              "fps": 25.0,
+              "duration_seconds": 4.04,
+              "trigger_stream_time": 11.36,
+              "first_event": {
+                "frame_index": 284,
+                "timestamp": 11.36,
+                "label": "Drinking water",
+                "confidence": 0.9324,
+                "topk": [],
+                "model": "",
+                "window": 0,
+                "skeleton_active": false,
+                "actor_poses": [],
+                "skeleton_selected_slot": -1,
+                "clip_start_source_time": 9.36,
+                "writer_drop_start": 0,
+                "last_action_source_time": 11.36,
+                "writer_frames_dropped": 0
+              },
+              "closed_because": "post 静默期结束",
+              "started_at": "2026-10-27 02:20:11",
+              "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/short-regression/new-07/candidate-clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261027_022059_drinking_water_0001.mp4",
+              "frames_written": 102,
+              "capture_fps": 25.248,
+              "playback_speed": 0.99,
+              "person_id": 3,
+              "history_generation": 0,
+              "capture_epoch": 0,
+              "action_key": "drinking_water",
+              "recording_id": 1,
+              "start_source_time": 9.36,
+              "end_source_time": 13.399999999999999,
+              "pre_context_available": 2.0,
+              "post_context_available": 2.039999999999999,
+              "requested_pre": 2.0,
+              "requested_post": 2.0,
+              "recording_policy": "full frame per person and action; overlapping files allowed",
+              "writer_frames_dropped": 0,
+              "context_complete": true
+            }
+          ],
+          "object_overlay": {
+            "max_history_bytes": 4654080,
+            "frames": 750,
+            "frames_with_objects": 7,
+            "boxes": 7,
+            "followed_boxes": 6
+          },
+          "writer_alive": false,
+          "recovery_stage_dir": "/tmp/darkpipe_person_clips_gwoj2rkp",
+          "uploads_pending": 0,
+          "write_error": null,
+          "error": null
+        }
+      },
+      "transitions": {
+        "other->other": 414,
+        "drink->drink": 1
+      },
+      "config": {
+        "alpha": 0.972,
+        "lum_gate": 35,
+        "action_threshold": 0.925,
+        "object_threshold": 0.581
+      },
+      "methodology": "Complete raw-video production frontend/action execution once; paired production object-prior calls on exact same tasks. Separate complete visualizations and clip recorders. Offline diagnostic, not real-time throughput test.",
+      "metadata_correction": "Corrected input hash from original whole video to exact short MKV; inference untouched."
+    },
+    {
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "bytes": 131077996,
+        "sha256": "4dfba4a07a591d8a4b0e6e27552a06ab5a6022f84b4c1c6849eb700e8db28ee9",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-09.mkv",
+        "duration": 30,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25.0,
+        "frames": 750,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 9,
+        "source_offset": 94,
+        "scope": "previous short demo, restarted track/window context",
+        "original_video_sha256": "ef0658fe87e45bc8a43f608057f5fc26b2810aa307a56a7e2f017c5b747d974d"
+      },
+      "frames": 750,
+      "output_frames": 750,
+      "seconds": 30.0,
+      "elapsed": 152.45508419303223,
+      "paired_checks": 688,
+      "baseline": {
+        "actions": {
+          "other": 687,
+          "drink": 1
+        },
+        "objects": {
+          "max_history_bytes": 4654080,
+          "frames": 750,
+          "frames_with_objects": 6,
+          "boxes": 6,
+          "followed_boxes": 5
+        },
+        "clips": {
+          "events_received": 688,
+          "frames_recording_input": 750,
+          "max_recorders": 1,
+          "events_without_output_frame": 0,
+          "clips_saved": 1,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "uploads_dropped": 0,
+          "totals": {
+            "clips_saved": 1,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "clips_unfinished": 0,
+            "clips_failed": 0,
+            "write_errors": 0,
+            "uploads_dropped": 0
+          },
+          "clips": [
+            {
+              "session": "E000_T009_G000/R00001",
+              "seq": 1,
+              "label": "Drinking water",
+              "label_key": "drinking_water",
+              "confidence": 0.9285,
+              "labels_in_clip": {
+                "Drinking water": 1
+              },
+              "frames": 102,
+              "fps": 25.0,
+              "duration_seconds": 4.04,
+              "trigger_stream_time": 8.76,
+              "first_event": {
+                "frame_index": 219,
+                "timestamp": 8.76,
+                "label": "Drinking water",
+                "confidence": 0.9285,
+                "topk": [],
+                "model": "",
+                "window": 0,
+                "skeleton_active": false,
+                "actor_poses": [],
+                "skeleton_selected_slot": -1,
+                "clip_start_source_time": 6.76,
+                "writer_drop_start": 0,
+                "last_action_source_time": 8.76,
+                "writer_frames_dropped": 0
+              },
+              "closed_because": "post 静默期结束",
+              "started_at": "2026-10-27 02:20:11",
+              "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/short-regression/new-09/baseline-clips/review/E000_T009_G000/R00001/drinking_water/E000_T009_G000_R00001_20261027_022104_drinking_water_0001.mp4",
+              "frames_written": 102,
+              "capture_fps": 25.248,
+              "playback_speed": 0.99,
+              "person_id": 9,
+              "history_generation": 0,
+              "capture_epoch": 0,
+              "action_key": "drinking_water",
+              "recording_id": 1,
+              "start_source_time": 6.76,
+              "end_source_time": 10.8,
+              "pre_context_available": 2.0,
+              "post_context_available": 2.040000000000001,
+              "requested_pre": 2.0,
+              "requested_post": 2.0,
+              "recording_policy": "full frame per person and action; overlapping files allowed",
+              "writer_frames_dropped": 0,
+              "context_complete": true
+            }
+          ],
+          "object_overlay": {
+            "max_history_bytes": 4654080,
+            "frames": 750,
+            "frames_with_objects": 6,
+            "boxes": 6,
+            "followed_boxes": 5
+          },
+          "writer_alive": false,
+          "recovery_stage_dir": "/tmp/darkpipe_person_clips_b8nu5pta",
+          "uploads_pending": 0,
+          "write_error": null,
+          "error": null
+        }
+      },
+      "candidate": {
+        "actions": {
+          "other": 688
+        },
+        "objects": {
+          "max_history_bytes": 4654080,
+          "frames": 750,
+          "frames_with_objects": 0,
+          "boxes": 0,
+          "followed_boxes": 0
+        },
+        "clips": {
+          "events_received": 688,
+          "frames_recording_input": 750,
+          "max_recorders": 0,
+          "events_without_output_frame": 0,
+          "clips_saved": 0,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "uploads_dropped": 0,
+          "totals": {
+            "clips_saved": 0,
+            "clips_abandoned": 0,
+            "clips_forced": 0,
+            "frames_dropped": 0,
+            "clips_unfinished": 0,
+            "clips_failed": 0,
+            "write_errors": 0,
+            "uploads_dropped": 0
+          },
+          "clips": [],
+          "object_overlay": {
+            "max_history_bytes": 4654080,
+            "frames": 750,
+            "frames_with_objects": 0,
+            "boxes": 0,
+            "followed_boxes": 0
+          },
+          "writer_alive": false,
+          "recovery_stage_dir": "/tmp/darkpipe_person_clips_wbmmlz9n",
+          "uploads_pending": 0,
+          "write_error": null,
+          "error": null
+        }
+      },
+      "transitions": {
+        "other->other": 687,
+        "drink->other": 1
+      },
+      "config": {
+        "alpha": 0.972,
+        "lum_gate": 35,
+        "action_threshold": 0.925,
+        "object_threshold": 0.581
+      },
+      "methodology": "Complete raw-video production frontend/action execution once; paired production object-prior calls on exact same tasks. Separate complete visualizations and clip recorders. Offline diagnostic, not real-time throughput test.",
+      "metadata_correction": "Corrected input hash from original whole video to exact short MKV; inference untouched."
+    }
+  ],
+  "short_review": [
+    {
+      "id": "short-07-000",
+      "number": 7,
+      "track_id": 3,
+      "generation": 0,
+      "action": "drink",
+      "start": 11.36,
+      "end": 11.36,
+      "baseline_windows": 1,
+      "candidate_windows": 1,
+      "indices": [
+        146
+      ],
+      "truth": "false_action",
+      "representative": 146,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-07.mkv",
+      "source_offset": 10,
+      "image": "short-review/short-07-000.jpg",
+      "description": "白衣人物手机贴耳通话，非喝水；错误瓶子分数0.597→0.728，误报保留。"
+    },
+    {
+      "id": "short-09-001",
+      "number": 9,
+      "track_id": 9,
+      "generation": 0,
+      "action": "drink",
+      "start": 8.76,
+      "end": 8.76,
+      "baseline_windows": 1,
+      "candidate_windows": 0,
+      "indices": [
+        180
+      ],
+      "truth": "false_action",
+      "representative": 180,
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-overlay-20261027/inputs/new-09.mkv",
+      "source_offset": 94,
+      "image": "short-review/short-09-001.jpg",
+      "description": "黑衣人物持相机拍摄，非喝水；旧模型误认瓶0.589，候选不再支持喝水。"
+    }
+  ]
+}

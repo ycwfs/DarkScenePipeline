@@ -1,0 +1,178 @@
+{
+  "initialization": "/ssd1/wfs/project/lowlight/yolo26m-detect.pt",
+  "initialization_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+  "nc": 80,
+  "names": [
+    "person",
+    "bicycle",
+    "car",
+    "motorcycle",
+    "airplane",
+    "bus",
+    "train",
+    "truck",
+    "boat",
+    "traffic light",
+    "fire hydrant",
+    "stop sign",
+    "parking meter",
+    "bench",
+    "bird",
+    "cat",
+    "dog",
+    "horse",
+    "sheep",
+    "cow",
+    "elephant",
+    "bear",
+    "zebra",
+    "giraffe",
+    "backpack",
+    "umbrella",
+    "handbag",
+    "tie",
+    "suitcase",
+    "frisbee",
+    "skis",
+    "snowboard",
+    "sports ball",
+    "kite",
+    "baseball bat",
+    "baseball glove",
+    "skateboard",
+    "surfboard",
+    "tennis racket",
+    "bottle",
+    "wine glass",
+    "cup",
+    "fork",
+    "knife",
+    "spoon",
+    "bowl",
+    "banana",
+    "apple",
+    "sandwich",
+    "orange",
+    "broccoli",
+    "carrot",
+    "hot dog",
+    "pizza",
+    "donut",
+    "cake",
+    "chair",
+    "couch",
+    "potted plant",
+    "bed",
+    "dining table",
+    "toilet",
+    "tv",
+    "laptop",
+    "mouse",
+    "remote",
+    "keyboard",
+    "cell phone",
+    "microwave",
+    "oven",
+    "toaster",
+    "sink",
+    "refrigerator",
+    "book",
+    "clock",
+    "vase",
+    "scissors",
+    "teddy bear",
+    "hair drier",
+    "toothbrush"
+  ],
+  "mapping": {
+    "0": 39,
+    "1": 41,
+    "2": 67,
+    "3": 67,
+    "4": 73,
+    "5": null,
+    "6": null,
+    "7": 67
+  },
+  "approved_semantics": "camera and microphone -> cell phone; paper -> book; robot/exhibit background; ambiguous portable items background",
+  "caveats": [
+    "Expanded project semantics are not literal COCO labels.",
+    "Teacher retention proposals in TRAIN only are weak labels, not reviewed truth.",
+    "Site val/test only score reviewed target classes; other classes are incompletely annotated.",
+    "COCO validation historically used by pretrained model development; retention regression, not novel generalization.",
+    "Site source groups previously inspected/calibrated; not blind evaluation."
+  ],
+  "coco": {
+    "train": {
+      "images": 2400,
+      "classes": 80
+    },
+    "val": {
+      "images": 1000,
+      "classes": 80
+    },
+    "test": {
+      "images": 4000,
+      "classes": 80
+    }
+  },
+  "site": {
+    "train": {
+      "images": 717,
+      "reviewed_boxes": {
+        "bottle": 115,
+        "book": 64,
+        "cell phone": 103,
+        "person": 346
+      },
+      "pseudo_boxes": 1288
+    },
+    "val": {
+      "images": 41,
+      "reviewed_boxes": {
+        "bottle": 3,
+        "book": 15,
+        "cell phone": 2
+      },
+      "pseudo_boxes": 0
+    },
+    "test": {
+      "images": 79,
+      "reviewed_boxes": {
+        "bottle": 16,
+        "book": 12,
+        "cell phone": 15
+      },
+      "pseudo_boxes": 0
+    }
+  },
+  "training": {
+    "seed": 27,
+    "epochs": 20,
+    "imgsz": 640,
+    "batch": 16,
+    "lr0": 0.0001,
+    "freeze": 10,
+    "replay_images": 2400,
+    "site_repeat": 3
+  },
+  "selection": "Max reviewed site val mAP50-95 among epochs with COCO1000 val mAP50-95 >= original - .01; earliest tie. If none pass, retain original, report best candidate separately.",
+  "fixed_policy": {
+    "alpha": 0.972,
+    "lum_gate": 35,
+    "action_threshold": 0.925,
+    "object_threshold": 0.581,
+    "drink": [
+      39,
+      41
+    ],
+    "pick_up": [
+      39,
+      41,
+      67,
+      73,
+      65
+    ]
+  },
+  "production_updated": false
+}

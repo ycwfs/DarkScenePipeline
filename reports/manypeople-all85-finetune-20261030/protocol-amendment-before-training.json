@@ -1,0 +1,1 @@
+{"reason":"User explicitly moves all 85 human positives into training; old training-only scope confirmed.","training_started":false,"previous_test_seen":true,"crowded_positive_holdout_exists":false}

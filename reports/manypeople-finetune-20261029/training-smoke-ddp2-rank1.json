@@ -1,0 +1,1 @@
+{"train_only":true,"discarded_weights":true,"batch":8,"labels":["other","drink","wave","pick_up","chase","throw","fall","talk"],"loss":1.3108893632888794,"peak_allocated_mib":11061.59521484375,"peak_reserved_mib":11558.0,"finite_gradients":true,"gpu_count":2,"distributed_processes":2,"rank":1}

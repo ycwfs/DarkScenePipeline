@@ -1,0 +1,3414 @@
+{
+  "protocol": {
+    "created": "2026-11-01T18:32:52.926766",
+    "status": "frozen_before_corrected_results",
+    "baseline": {
+      "alpha": 0.972,
+      "gate": 35,
+      "action": 0.925,
+      "object": 0.581,
+      "wave_frames": 3,
+      "running_speed": 0.35
+    },
+    "bins": [
+      [
+        0.65,
+        0.75
+      ],
+      [
+        0.75,
+        0.85
+      ],
+      [
+        0.85,
+        0.925
+      ]
+    ],
+    "lower_endpoint": "strictly greater than .65; other lower endpoints inclusive; upper endpoints exclusive",
+    "continuation": {
+      "max_from_original_anchor_s": 1.2,
+      "max_adjacent_gap_s": 0.65,
+      "same_identity_and_action": true,
+      "reset": "other, different action, prior reject, gap, generation change",
+      "refresh_anchor_by_recovered": false,
+      "require_positive_prior_support": true,
+      "added_temporal_wait_s": 0
+    },
+    "running": {
+      "windows": 2,
+      "min_span_s": 0.5,
+      "max_adjacent_gap_s": 0.65,
+      "require_bright_reliable_speed": 0.35,
+      "diagnostics": [
+        {
+          "windows": 1,
+          "min_span_s": 0
+        },
+        {
+          "windows": 3,
+          "min_span_s": 1
+        }
+      ],
+      "no_retroactive_output": true
+    },
+    "truth": "Historical reviewed labels plus exact human-labelled 736 crowded windows; no pseudo other, excluded or conflicted windows",
+    "scope": "Paired causal offline replay of frozen current production probabilities; no production edits or promotion",
+    "delay": "Running: first qualifying subthreshold candidate to confirmation on source timeline; continuation no additional future-frame wait; not camera-to-display latency",
+    "selection": "Fixed declared rules; no selecting settings by held-out test results",
+    "source_separation": "old train/val/test and new human feedback separately; all historically viewed, not untouched blind test"
+  },
+  "roles": {
+    "old_train": {
+      "total": 3756,
+      "known": 3297,
+      "true_actions": 468,
+      "baseline_correct": 426,
+      "baseline_other_fp": 5,
+      "baseline_wrong_action": 0,
+      "bins": [
+        {
+          "range": [
+            0.65,
+            0.75
+          ],
+          "candidates": 14,
+          "known_candidates": 4,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 2,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 2,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 2,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 2,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.75,
+            0.85
+          ],
+          "candidates": 25,
+          "known_candidates": 12,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 3,
+              "true_recovered": 0,
+              "other_false_positives": 3,
+              "wrong_action": 0,
+              "added_false_positives": 3,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {
+                "pick_up": 2,
+                "throw": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 3,
+              "true_recovered": 0,
+              "other_false_positives": 3,
+              "wrong_action": 0,
+              "added_false_positives": 3,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {
+                "pick_up": 2,
+                "throw": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.85,
+            0.925
+          ],
+          "candidates": 71,
+          "known_candidates": 15,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 8,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 8,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 1,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.5200000000000014,
+                "p95": 0.5200000000000014,
+                "max": 0.5200000000000014
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5200000000000014,
+                "median": 0.5200000000000014,
+                "min": 0.5200000000000014,
+                "max": 0.5200000000000014
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "99ab4050cc230278_25",
+                  "delay": 0.5200000000000014,
+                  "truth": null
+                }
+              ]
+            },
+            "combined": {
+              "recovered_windows": 9,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 9,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.05777777777777793,
+                "p95": 0.3120000000000006,
+                "max": 0.5200000000000014
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5200000000000014,
+                "median": 0.5200000000000014,
+                "min": 0.5200000000000014,
+                "max": 0.5200000000000014
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "99ab4050cc230278_25",
+                  "delay": 0.5200000000000014,
+                  "truth": null
+                }
+              ]
+            },
+            "running1": {
+              "recovered_windows": 5,
+              "true_recovered": 0,
+              "other_false_positives": 2,
+              "wrong_action": 0,
+              "added_false_positives": 2,
+              "unlabelled": 3,
+              "true_actions": {},
+              "false_actions": {
+                "chase": 2
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 4,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "6b152ab8753c8f06_2",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "6419e026832de157_2",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "7e25914fdc94d0f7_0",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "99ab4050cc230278_24",
+                  "delay": 0.0,
+                  "truth": null
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        }
+      ],
+      "totals": {
+        "continuation": {
+          "recovered_windows": 13,
+          "true_recovered": 0,
+          "other_false_positives": 3,
+          "wrong_action": 0,
+          "added_false_positives": 3,
+          "unlabelled": 10,
+          "true_actions": {},
+          "false_actions": {
+            "pick_up": 2,
+            "throw": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running2": {
+          "recovered_windows": 1,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 1,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": {
+            "mean": 0.5200000000000014,
+            "p95": 0.5200000000000014,
+            "max": 0.5200000000000014
+          },
+          "first_confirmations": 1,
+          "confirmation_delay_s": {
+            "mean": 0.5200000000000014,
+            "median": 0.5200000000000014,
+            "min": 0.5200000000000014,
+            "max": 0.5200000000000014
+          },
+          "confirmed_episodes": [
+            {
+              "id": "99ab4050cc230278_25",
+              "delay": 0.5200000000000014,
+              "truth": null
+            }
+          ]
+        },
+        "combined": {
+          "recovered_windows": 14,
+          "true_recovered": 0,
+          "other_false_positives": 3,
+          "wrong_action": 0,
+          "added_false_positives": 3,
+          "unlabelled": 11,
+          "true_actions": {},
+          "false_actions": {
+            "pick_up": 2,
+            "throw": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.03714285714285724,
+            "p95": 0.1820000000000003,
+            "max": 0.5200000000000014
+          },
+          "first_confirmations": 1,
+          "confirmation_delay_s": {
+            "mean": 0.5200000000000014,
+            "median": 0.5200000000000014,
+            "min": 0.5200000000000014,
+            "max": 0.5200000000000014
+          },
+          "confirmed_episodes": [
+            {
+              "id": "99ab4050cc230278_25",
+              "delay": 0.5200000000000014,
+              "truth": null
+            }
+          ]
+        },
+        "running1": {
+          "recovered_windows": 5,
+          "true_recovered": 0,
+          "other_false_positives": 2,
+          "wrong_action": 0,
+          "added_false_positives": 2,
+          "unlabelled": 3,
+          "true_actions": {},
+          "false_actions": {
+            "chase": 2
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 4,
+          "confirmation_delay_s": {
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "confirmed_episodes": [
+            {
+              "id": "6b152ab8753c8f06_2",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "6419e026832de157_2",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "7e25914fdc94d0f7_0",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "99ab4050cc230278_24",
+              "delay": 0.0,
+              "truth": null
+            }
+          ]
+        },
+        "running3": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        }
+      }
+    },
+    "old_val": {
+      "total": 226,
+      "known": 198,
+      "true_actions": 36,
+      "baseline_correct": 25,
+      "baseline_other_fp": 3,
+      "baseline_wrong_action": 0,
+      "bins": [
+        {
+          "range": [
+            0.65,
+            0.75
+          ],
+          "candidates": 2,
+          "known_candidates": 1,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.75,
+            0.85
+          ],
+          "candidates": 0,
+          "known_candidates": 0,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.85,
+            0.925
+          ],
+          "candidates": 5,
+          "known_candidates": 4,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        }
+      ],
+      "totals": {
+        "continuation": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running2": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "combined": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running1": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running3": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        }
+      }
+    },
+    "old_test": {
+      "total": 252,
+      "known": 214,
+      "true_actions": 51,
+      "baseline_correct": 34,
+      "baseline_other_fp": 2,
+      "baseline_wrong_action": 1,
+      "bins": [
+        {
+          "range": [
+            0.65,
+            0.75
+          ],
+          "candidates": 2,
+          "known_candidates": 1,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.75,
+            0.85
+          ],
+          "candidates": 1,
+          "known_candidates": 0,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.85,
+            0.925
+          ],
+          "candidates": 15,
+          "known_candidates": 10,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 3,
+              "true_recovered": 2,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 2
+              },
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 1,
+              "true_recovered": 1,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {
+                "chase": 1
+              },
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.5,
+                "p95": 0.5,
+                "max": 0.5
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5,
+                "median": 0.5,
+                "min": 0.5,
+                "max": 0.5
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "92cb1dbf7394409d_9",
+                  "delay": 0.5,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "combined": {
+              "recovered_windows": 3,
+              "true_recovered": 2,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 2
+              },
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 4,
+              "true_recovered": 3,
+              "other_false_positives": 1,
+              "wrong_action": 0,
+              "added_false_positives": 1,
+              "unlabelled": 0,
+              "true_actions": {
+                "chase": 3
+              },
+              "false_actions": {
+                "chase": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 3,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "049b2f2b873f5588_0",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "8ac476f8fb995f97_1",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "92cb1dbf7394409d_7",
+                  "delay": 0.0,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        }
+      ],
+      "totals": {
+        "continuation": {
+          "recovered_windows": 3,
+          "true_recovered": 2,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 1,
+          "true_actions": {
+            "chase": 2
+          },
+          "false_actions": {},
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running2": {
+          "recovered_windows": 1,
+          "true_recovered": 1,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {
+            "chase": 1
+          },
+          "false_actions": {},
+          "added_window_wait_s": {
+            "mean": 0.5,
+            "p95": 0.5,
+            "max": 0.5
+          },
+          "first_confirmations": 1,
+          "confirmation_delay_s": {
+            "mean": 0.5,
+            "median": 0.5,
+            "min": 0.5,
+            "max": 0.5
+          },
+          "confirmed_episodes": [
+            {
+              "id": "92cb1dbf7394409d_9",
+              "delay": 0.5,
+              "truth": "chase"
+            }
+          ]
+        },
+        "combined": {
+          "recovered_windows": 3,
+          "true_recovered": 2,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 1,
+          "true_actions": {
+            "chase": 2
+          },
+          "false_actions": {},
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running1": {
+          "recovered_windows": 4,
+          "true_recovered": 3,
+          "other_false_positives": 1,
+          "wrong_action": 0,
+          "added_false_positives": 1,
+          "unlabelled": 0,
+          "true_actions": {
+            "chase": 3
+          },
+          "false_actions": {
+            "chase": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 3,
+          "confirmation_delay_s": {
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "confirmed_episodes": [
+            {
+              "id": "049b2f2b873f5588_0",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "8ac476f8fb995f97_1",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "92cb1dbf7394409d_7",
+              "delay": 0.0,
+              "truth": "chase"
+            }
+          ]
+        },
+        "running3": {
+          "recovered_windows": 0,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 0,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": null,
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        }
+      }
+    },
+    "new_feedback": {
+      "total": 47600,
+      "known": 736,
+      "true_actions": 85,
+      "baseline_correct": 14,
+      "baseline_other_fp": 8,
+      "baseline_wrong_action": 0,
+      "bins": [
+        {
+          "range": [
+            0.65,
+            0.75
+          ],
+          "candidates": 133,
+          "known_candidates": 3,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 3,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 3,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 3,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_2525",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_2553",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_3384",
+                  "delay": 0.0,
+                  "truth": null
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.75,
+            0.85
+          ],
+          "candidates": 214,
+          "known_candidates": 155,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 2,
+              "true_recovered": 1,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 1
+              },
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.26001040041603574,
+                "p95": 0.4940197607904679,
+                "max": 0.5200208008320715
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5200208008320715,
+                "median": 0.5200208008320715,
+                "min": 0.5200208008320715,
+                "max": 0.5200208008320715
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-03_6930",
+                  "delay": 0.5200208008320715,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "combined": {
+              "recovered_windows": 2,
+              "true_recovered": 1,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 1
+              },
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.26001040041603574,
+                "p95": 0.4940197607904679,
+                "max": 0.5200208008320715
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5200208008320715,
+                "median": 0.5200208008320715,
+                "min": 0.5200208008320715,
+                "max": 0.5200208008320715
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-03_6930",
+                  "delay": 0.5200208008320715,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running1": {
+              "recovered_windows": 8,
+              "true_recovered": 2,
+              "other_false_positives": 3,
+              "wrong_action": 0,
+              "added_false_positives": 3,
+              "unlabelled": 3,
+              "true_actions": {
+                "chase": 2
+              },
+              "false_actions": {
+                "chase": 3
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 6,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_227",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-02_894",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-03_2936",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-04_2029",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2681",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-08_4931",
+                  "delay": 0.0,
+                  "truth": null
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 1,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 1.1200000000000045,
+                "p95": 1.1200000000000045,
+                "max": 1.1200000000000045
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 1.1200000000000045,
+                "median": 1.1200000000000045,
+                "min": 1.1200000000000045,
+                "max": 1.1200000000000045
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-08_5702",
+                  "delay": 1.1200000000000045,
+                  "truth": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "range": [
+            0.85,
+            0.925
+          ],
+          "candidates": 614,
+          "known_candidates": 423,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 7,
+              "true_recovered": 5,
+              "other_false_positives": 2,
+              "wrong_action": 0,
+              "added_false_positives": 2,
+              "unlabelled": 0,
+              "true_actions": {
+                "chase": 4,
+                "wave": 1
+              },
+              "false_actions": {
+                "chase": 1,
+                "wave": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 6,
+              "true_recovered": 4,
+              "other_false_positives": 2,
+              "wrong_action": 0,
+              "added_false_positives": 2,
+              "unlabelled": 0,
+              "true_actions": {
+                "chase": 4
+              },
+              "false_actions": {
+                "chase": 2
+              },
+              "added_window_wait_s": {
+                "mean": 0.5266736002773532,
+                "p95": 0.5500052002080054,
+                "max": 0.5600000000000023
+              },
+              "first_confirmations": 6,
+              "confirmation_delay_s": {
+                "mean": 0.5266736002773532,
+                "median": 0.5200104004160266,
+                "min": 0.5200000000000102,
+                "max": 0.5600000000000023
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_4580",
+                  "delay": 0.5200000000000387,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-03_3914",
+                  "delay": 0.5200208008320146,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_4160",
+                  "delay": 0.5200208008320146,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_2237",
+                  "delay": 0.5600000000000023,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2616",
+                  "delay": 0.5200000000000102,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_5689",
+                  "delay": 0.5200000000000387,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "combined": {
+              "recovered_windows": 11,
+              "true_recovered": 7,
+              "other_false_positives": 4,
+              "wrong_action": 0,
+              "added_false_positives": 4,
+              "unlabelled": 0,
+              "true_actions": {
+                "chase": 6,
+                "wave": 1
+              },
+              "false_actions": {
+                "chase": 3,
+                "wave": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.192729163712006,
+                "p95": 0.5400104004160085,
+                "max": 0.5600000000000023
+              },
+              "first_confirmations": 4,
+              "confirmation_delay_s": {
+                "mean": 0.5300052002080164,
+                "median": 0.5200104004160266,
+                "min": 0.5200000000000102,
+                "max": 0.5600000000000023
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_4580",
+                  "delay": 0.5200000000000387,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-03_4160",
+                  "delay": 0.5200208008320146,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_2237",
+                  "delay": 0.5600000000000023,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2616",
+                  "delay": 0.5200000000000102,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running1": {
+              "recovered_windows": 29,
+              "true_recovered": 16,
+              "other_false_positives": 11,
+              "wrong_action": 0,
+              "added_false_positives": 11,
+              "unlabelled": 2,
+              "true_actions": {
+                "chase": 16
+              },
+              "false_actions": {
+                "chase": 11
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 23,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_65",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-01_151",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-01_211",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_2647",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_3239",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_3739",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4574",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4611",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4787",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4889",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-02_4968",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-02_6447",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-03_786",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_3911",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_4151",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_6925",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_1249",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_2228",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2371",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2612",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_4549",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_5146",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_5679",
+                  "delay": 0.0,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        }
+      ],
+      "totals": {
+        "continuation": {
+          "recovered_windows": 7,
+          "true_recovered": 5,
+          "other_false_positives": 2,
+          "wrong_action": 0,
+          "added_false_positives": 2,
+          "unlabelled": 0,
+          "true_actions": {
+            "chase": 4,
+            "wave": 1
+          },
+          "false_actions": {
+            "chase": 1,
+            "wave": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running2": {
+          "recovered_windows": 8,
+          "true_recovered": 5,
+          "other_false_positives": 2,
+          "wrong_action": 0,
+          "added_false_positives": 2,
+          "unlabelled": 1,
+          "true_actions": {
+            "chase": 5
+          },
+          "false_actions": {
+            "chase": 2
+          },
+          "added_window_wait_s": {
+            "mean": 0.4600078003120238,
+            "p95": 0.5460072802912265,
+            "max": 0.5600000000000023
+          },
+          "first_confirmations": 7,
+          "confirmation_delay_s": {
+            "mean": 0.5257232003565987,
+            "median": 0.5200208008320146,
+            "min": 0.5200000000000102,
+            "max": 0.5600000000000023
+          },
+          "confirmed_episodes": [
+            {
+              "id": "new-01_4580",
+              "delay": 0.5200000000000387,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_3914",
+              "delay": 0.5200208008320146,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_4160",
+              "delay": 0.5200208008320146,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_6930",
+              "delay": 0.5200208008320715,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2237",
+              "delay": 0.5600000000000023,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2616",
+              "delay": 0.5200000000000102,
+              "truth": "chase"
+            },
+            {
+              "id": "new-08_5689",
+              "delay": 0.5200000000000387,
+              "truth": "chase"
+            }
+          ]
+        },
+        "combined": {
+          "recovered_windows": 13,
+          "true_recovered": 8,
+          "other_false_positives": 4,
+          "wrong_action": 0,
+          "added_false_positives": 4,
+          "unlabelled": 1,
+          "true_actions": {
+            "chase": 7,
+            "wave": 1
+          },
+          "false_actions": {
+            "chase": 3,
+            "wave": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.20308012320493363,
+            "p95": 0.5360124804992438,
+            "max": 0.5600000000000023
+          },
+          "first_confirmations": 5,
+          "confirmation_delay_s": {
+            "mean": 0.5280083203328274,
+            "median": 0.5200208008320146,
+            "min": 0.5200000000000102,
+            "max": 0.5600000000000023
+          },
+          "confirmed_episodes": [
+            {
+              "id": "new-01_4580",
+              "delay": 0.5200000000000387,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_4160",
+              "delay": 0.5200208008320146,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_6930",
+              "delay": 0.5200208008320715,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2237",
+              "delay": 0.5600000000000023,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2616",
+              "delay": 0.5200000000000102,
+              "truth": "chase"
+            }
+          ]
+        },
+        "running1": {
+          "recovered_windows": 40,
+          "true_recovered": 18,
+          "other_false_positives": 14,
+          "wrong_action": 0,
+          "added_false_positives": 14,
+          "unlabelled": 8,
+          "true_actions": {
+            "chase": 18
+          },
+          "false_actions": {
+            "chase": 14
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 32,
+          "confirmation_delay_s": {
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "confirmed_episodes": [
+            {
+              "id": "new-01_65",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-01_151",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-01_211",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_227",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-01_2525",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_2553",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_2647",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_3239",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_3384",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_3739",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4574",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4611",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4787",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4889",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-02_894",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-02_4968",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-02_6447",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_786",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_2936",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_3911",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_4151",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_6925",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-04_2029",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_1249",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2228",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2371",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2612",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2681",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-08_4549",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-08_4931",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-08_5146",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-08_5679",
+              "delay": 0.0,
+              "truth": "chase"
+            }
+          ]
+        },
+        "running3": {
+          "recovered_windows": 1,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 1,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": {
+            "mean": 1.1200000000000045,
+            "p95": 1.1200000000000045,
+            "max": 1.1200000000000045
+          },
+          "first_confirmations": 1,
+          "confirmation_delay_s": {
+            "mean": 1.1200000000000045,
+            "median": 1.1200000000000045,
+            "min": 1.1200000000000045,
+            "max": 1.1200000000000045
+          },
+          "confirmed_episodes": [
+            {
+              "id": "new-08_5702",
+              "delay": 1.1200000000000045,
+              "truth": null
+            }
+          ]
+        }
+      }
+    },
+    "all": {
+      "total": 51834,
+      "known": 4445,
+      "true_actions": 640,
+      "baseline_correct": 499,
+      "baseline_other_fp": 18,
+      "baseline_wrong_action": 1,
+      "bins": [
+        {
+          "range": [
+            0.65,
+            0.75
+          ],
+          "candidates": 151,
+          "known_candidates": 9,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 2,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 2,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "combined": {
+              "recovered_windows": 2,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 2,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running1": {
+              "recovered_windows": 3,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 3,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 3,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_2525",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_2553",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_3384",
+                  "delay": 0.0,
+                  "truth": null
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        },
+        {
+          "range": [
+            0.75,
+            0.85
+          ],
+          "candidates": 240,
+          "known_candidates": 167,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 3,
+              "true_recovered": 0,
+              "other_false_positives": 3,
+              "wrong_action": 0,
+              "added_false_positives": 3,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {
+                "pick_up": 2,
+                "throw": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 2,
+              "true_recovered": 1,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 1
+              },
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 0.26001040041603574,
+                "p95": 0.4940197607904679,
+                "max": 0.5200208008320715
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5200208008320715,
+                "median": 0.5200208008320715,
+                "min": 0.5200208008320715,
+                "max": 0.5200208008320715
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-03_6930",
+                  "delay": 0.5200208008320715,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "combined": {
+              "recovered_windows": 5,
+              "true_recovered": 1,
+              "other_false_positives": 3,
+              "wrong_action": 0,
+              "added_false_positives": 3,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 1
+              },
+              "false_actions": {
+                "pick_up": 2,
+                "throw": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.1040041601664143,
+                "p95": 0.4160166406656571,
+                "max": 0.5200208008320715
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 0.5200208008320715,
+                "median": 0.5200208008320715,
+                "min": 0.5200208008320715,
+                "max": 0.5200208008320715
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-03_6930",
+                  "delay": 0.5200208008320715,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running1": {
+              "recovered_windows": 8,
+              "true_recovered": 2,
+              "other_false_positives": 3,
+              "wrong_action": 0,
+              "added_false_positives": 3,
+              "unlabelled": 3,
+              "true_actions": {
+                "chase": 2
+              },
+              "false_actions": {
+                "chase": 3
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 6,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-01_227",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-02_894",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-03_2936",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-04_2029",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2681",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-08_4931",
+                  "delay": 0.0,
+                  "truth": null
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 1,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 1,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": {
+                "mean": 1.1200000000000045,
+                "p95": 1.1200000000000045,
+                "max": 1.1200000000000045
+              },
+              "first_confirmations": 1,
+              "confirmation_delay_s": {
+                "mean": 1.1200000000000045,
+                "median": 1.1200000000000045,
+                "min": 1.1200000000000045,
+                "max": 1.1200000000000045
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "new-08_5702",
+                  "delay": 1.1200000000000045,
+                  "truth": null
+                }
+              ]
+            }
+          }
+        },
+        {
+          "range": [
+            0.85,
+            0.925
+          ],
+          "candidates": 705,
+          "known_candidates": 452,
+          "methods": {
+            "continuation": {
+              "recovered_windows": 18,
+              "true_recovered": 7,
+              "other_false_positives": 2,
+              "wrong_action": 0,
+              "added_false_positives": 2,
+              "unlabelled": 9,
+              "true_actions": {
+                "chase": 6,
+                "wave": 1
+              },
+              "false_actions": {
+                "chase": 1,
+                "wave": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            },
+            "running2": {
+              "recovered_windows": 8,
+              "true_recovered": 5,
+              "other_false_positives": 2,
+              "wrong_action": 0,
+              "added_false_positives": 2,
+              "unlabelled": 1,
+              "true_actions": {
+                "chase": 5
+              },
+              "false_actions": {
+                "chase": 2
+              },
+              "added_window_wait_s": {
+                "mean": 0.522505200208015,
+                "p95": 0.5460072802912066,
+                "max": 0.5600000000000023
+              },
+              "first_confirmations": 8,
+              "confirmation_delay_s": {
+                "mean": 0.522505200208015,
+                "median": 0.5200000000000387,
+                "min": 0.5,
+                "max": 0.5600000000000023
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "92cb1dbf7394409d_9",
+                  "delay": 0.5,
+                  "truth": "chase"
+                },
+                {
+                  "id": "99ab4050cc230278_25",
+                  "delay": 0.5200000000000014,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_4580",
+                  "delay": 0.5200000000000387,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-03_3914",
+                  "delay": 0.5200208008320146,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_4160",
+                  "delay": 0.5200208008320146,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_2237",
+                  "delay": 0.5600000000000023,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2616",
+                  "delay": 0.5200000000000102,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_5689",
+                  "delay": 0.5200000000000387,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "combined": {
+              "recovered_windows": 23,
+              "true_recovered": 9,
+              "other_false_positives": 4,
+              "wrong_action": 0,
+              "added_false_positives": 4,
+              "unlabelled": 10,
+              "true_actions": {
+                "chase": 8,
+                "wave": 1
+              },
+              "false_actions": {
+                "chase": 3,
+                "wave": 1
+              },
+              "added_window_wait_s": {
+                "mean": 0.11478351307965509,
+                "p95": 0.520018720748817,
+                "max": 0.5600000000000023
+              },
+              "first_confirmations": 5,
+              "confirmation_delay_s": {
+                "mean": 0.5280041601664134,
+                "median": 0.5200000000000387,
+                "min": 0.5200000000000014,
+                "max": 0.5600000000000023
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "99ab4050cc230278_25",
+                  "delay": 0.5200000000000014,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_4580",
+                  "delay": 0.5200000000000387,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-03_4160",
+                  "delay": 0.5200208008320146,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_2237",
+                  "delay": 0.5600000000000023,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2616",
+                  "delay": 0.5200000000000102,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running1": {
+              "recovered_windows": 38,
+              "true_recovered": 19,
+              "other_false_positives": 14,
+              "wrong_action": 0,
+              "added_false_positives": 14,
+              "unlabelled": 5,
+              "true_actions": {
+                "chase": 19
+              },
+              "false_actions": {
+                "chase": 14
+              },
+              "added_window_wait_s": {
+                "mean": 0.0,
+                "p95": 0.0,
+                "max": 0.0
+              },
+              "first_confirmations": 30,
+              "confirmation_delay_s": {
+                "mean": 0.0,
+                "median": 0.0,
+                "min": 0.0,
+                "max": 0.0
+              },
+              "confirmed_episodes": [
+                {
+                  "id": "049b2f2b873f5588_0",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "8ac476f8fb995f97_1",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "92cb1dbf7394409d_7",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "6b152ab8753c8f06_2",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "6419e026832de157_2",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "7e25914fdc94d0f7_0",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "99ab4050cc230278_24",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_65",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-01_151",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-01_211",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-01_2647",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_3239",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_3739",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4574",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4611",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4787",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-01_4889",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-02_4968",
+                  "delay": 0.0,
+                  "truth": null
+                },
+                {
+                  "id": "new-02_6447",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-03_786",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_3911",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_4151",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-03_6925",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_1249",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-06_2228",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2371",
+                  "delay": 0.0,
+                  "truth": "other"
+                },
+                {
+                  "id": "new-06_2612",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_4549",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_5146",
+                  "delay": 0.0,
+                  "truth": "chase"
+                },
+                {
+                  "id": "new-08_5679",
+                  "delay": 0.0,
+                  "truth": "chase"
+                }
+              ]
+            },
+            "running3": {
+              "recovered_windows": 0,
+              "true_recovered": 0,
+              "other_false_positives": 0,
+              "wrong_action": 0,
+              "added_false_positives": 0,
+              "unlabelled": 0,
+              "true_actions": {},
+              "false_actions": {},
+              "added_window_wait_s": null,
+              "first_confirmations": 0,
+              "confirmation_delay_s": null,
+              "confirmed_episodes": []
+            }
+          }
+        }
+      ],
+      "totals": {
+        "continuation": {
+          "recovered_windows": 23,
+          "true_recovered": 7,
+          "other_false_positives": 5,
+          "wrong_action": 0,
+          "added_false_positives": 5,
+          "unlabelled": 11,
+          "true_actions": {
+            "chase": 6,
+            "wave": 1
+          },
+          "false_actions": {
+            "pick_up": 2,
+            "throw": 1,
+            "chase": 1,
+            "wave": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 0,
+          "confirmation_delay_s": null,
+          "confirmed_episodes": []
+        },
+        "running2": {
+          "recovered_windows": 10,
+          "true_recovered": 6,
+          "other_false_positives": 2,
+          "wrong_action": 0,
+          "added_false_positives": 2,
+          "unlabelled": 2,
+          "true_actions": {
+            "chase": 6
+          },
+          "false_actions": {
+            "chase": 2
+          },
+          "added_window_wait_s": {
+            "mean": 0.4700062402496192,
+            "p95": 0.5420093603744334,
+            "max": 0.5600000000000023
+          },
+          "first_confirmations": 9,
+          "confirmation_delay_s": {
+            "mean": 0.5222291558329102,
+            "median": 0.5200000000000387,
+            "min": 0.5,
+            "max": 0.5600000000000023
+          },
+          "confirmed_episodes": [
+            {
+              "id": "92cb1dbf7394409d_9",
+              "delay": 0.5,
+              "truth": "chase"
+            },
+            {
+              "id": "99ab4050cc230278_25",
+              "delay": 0.5200000000000014,
+              "truth": null
+            },
+            {
+              "id": "new-01_4580",
+              "delay": 0.5200000000000387,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_3914",
+              "delay": 0.5200208008320146,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_4160",
+              "delay": 0.5200208008320146,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_6930",
+              "delay": 0.5200208008320715,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2237",
+              "delay": 0.5600000000000023,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2616",
+              "delay": 0.5200000000000102,
+              "truth": "chase"
+            },
+            {
+              "id": "new-08_5689",
+              "delay": 0.5200000000000387,
+              "truth": "chase"
+            }
+          ]
+        },
+        "combined": {
+          "recovered_windows": 30,
+          "true_recovered": 10,
+          "other_false_positives": 7,
+          "wrong_action": 0,
+          "added_false_positives": 7,
+          "unlabelled": 13,
+          "true_actions": {
+            "chase": 9,
+            "wave": 1
+          },
+          "false_actions": {
+            "pick_up": 2,
+            "throw": 1,
+            "chase": 3,
+            "wave": 1
+          },
+          "added_window_wait_s": {
+            "mean": 0.10533472005547129,
+            "p95": 0.5200208008320459,
+            "max": 0.5600000000000023
+          },
+          "first_confirmations": 6,
+          "confirmation_delay_s": {
+            "mean": 0.5266736002773564,
+            "median": 0.5200104004160266,
+            "min": 0.5200000000000014,
+            "max": 0.5600000000000023
+          },
+          "confirmed_episodes": [
+            {
+              "id": "99ab4050cc230278_25",
+              "delay": 0.5200000000000014,
+              "truth": null
+            },
+            {
+              "id": "new-01_4580",
+              "delay": 0.5200000000000387,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_4160",
+              "delay": 0.5200208008320146,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_6930",
+              "delay": 0.5200208008320715,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2237",
+              "delay": 0.5600000000000023,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2616",
+              "delay": 0.5200000000000102,
+              "truth": "chase"
+            }
+          ]
+        },
+        "running1": {
+          "recovered_windows": 49,
+          "true_recovered": 21,
+          "other_false_positives": 17,
+          "wrong_action": 0,
+          "added_false_positives": 17,
+          "unlabelled": 11,
+          "true_actions": {
+            "chase": 21
+          },
+          "false_actions": {
+            "chase": 17
+          },
+          "added_window_wait_s": {
+            "mean": 0.0,
+            "p95": 0.0,
+            "max": 0.0
+          },
+          "first_confirmations": 39,
+          "confirmation_delay_s": {
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "confirmed_episodes": [
+            {
+              "id": "049b2f2b873f5588_0",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "8ac476f8fb995f97_1",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "92cb1dbf7394409d_7",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "6b152ab8753c8f06_2",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "6419e026832de157_2",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "7e25914fdc94d0f7_0",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "99ab4050cc230278_24",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_65",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-01_151",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-01_211",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_227",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-01_2525",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_2553",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_2647",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_3239",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_3384",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-01_3739",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4574",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4611",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4787",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-01_4889",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-02_894",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-02_4968",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-02_6447",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_786",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_2936",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-03_3911",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_4151",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-03_6925",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-04_2029",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_1249",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2228",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2371",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-06_2612",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-06_2681",
+              "delay": 0.0,
+              "truth": "other"
+            },
+            {
+              "id": "new-08_4549",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-08_4931",
+              "delay": 0.0,
+              "truth": null
+            },
+            {
+              "id": "new-08_5146",
+              "delay": 0.0,
+              "truth": "chase"
+            },
+            {
+              "id": "new-08_5679",
+              "delay": 0.0,
+              "truth": "chase"
+            }
+          ]
+        },
+        "running3": {
+          "recovered_windows": 1,
+          "true_recovered": 0,
+          "other_false_positives": 0,
+          "wrong_action": 0,
+          "added_false_positives": 0,
+          "unlabelled": 1,
+          "true_actions": {},
+          "false_actions": {},
+          "added_window_wait_s": {
+            "mean": 1.1200000000000045,
+            "p95": 1.1200000000000045,
+            "max": 1.1200000000000045
+          },
+          "first_confirmations": 1,
+          "confirmation_delay_s": {
+            "mean": 1.1200000000000045,
+            "median": 1.1200000000000045,
+            "min": 1.1200000000000045,
+            "max": 1.1200000000000045
+          },
+          "confirmed_episodes": [
+            {
+              "id": "new-08_5702",
+              "delay": 1.1200000000000045,
+              "truth": null
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": {
+    "continuation": {
+      "new_multipeople": {
+        "positive_groups": 44,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "online_supplement": {
+        "positive_groups": 0,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "onsite": {
+        "positive_groups": 163,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 1
+      }
+    },
+    "running2": {
+      "new_multipeople": {
+        "positive_groups": 44,
+        "recovered_previously_missed_groups": 3,
+        "new_false_other_groups": 2
+      },
+      "online_supplement": {
+        "positive_groups": 0,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "onsite": {
+        "positive_groups": 163,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      }
+    },
+    "combined": {
+      "new_multipeople": {
+        "positive_groups": 44,
+        "recovered_previously_missed_groups": 3,
+        "new_false_other_groups": 2
+      },
+      "online_supplement": {
+        "positive_groups": 0,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "onsite": {
+        "positive_groups": 163,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 1
+      }
+    },
+    "running1": {
+      "new_multipeople": {
+        "positive_groups": 44,
+        "recovered_previously_missed_groups": 8,
+        "new_false_other_groups": 11
+      },
+      "online_supplement": {
+        "positive_groups": 0,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "onsite": {
+        "positive_groups": 163,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 3
+      }
+    },
+    "running3": {
+      "new_multipeople": {
+        "positive_groups": 44,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "online_supplement": {
+        "positive_groups": 0,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      },
+      "onsite": {
+        "positive_groups": 163,
+        "recovered_previously_missed_groups": 0,
+        "new_false_other_groups": 0
+      }
+    }
+  },
+  "decision_cost_ms": {
+    "mean": 0.009725326060114982,
+    "p95": 0.006028,
+    "max": 196.031813
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "file:// initial page and real H264 preview playback",
+    "four review states, persistence, unicode notes, JSON/CSV export and Python validation",
+    "import restores labels; incompatible manifest rejected without overwriting",
+    "source/action/id filters and known true-drink hint",
+    "original source remux seeking and target overlay",
+    "XCLIP appendix uses original-source playback and separate target trace",
+    "mobile layout without horizontal overflow"
+  ],
+  "javascript_errors": [],
+  "synthetic_labels": "Temporary isolated browser context only; no user annotations or staging labels changed"
+}

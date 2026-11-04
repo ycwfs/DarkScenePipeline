@@ -1,0 +1,12 @@
+{
+  "reason": "Threaded DataParallel failed Triton cache reentrancy; replaced with two-process DDP. Forked DataLoader after CUDA/NCCL initialization then stalled after first step; preserved attempt and restarted from same initial weights/seed using spawn workers. Global batch8, epochs6, data, splits and selection unchanged.",
+  "evidence": [
+    "training-smoke-dp.log",
+    "training-smoke-ddp2.log",
+    "attempts/fork-loader-stalled/reason.json"
+  ],
+  "active_log": "train-rgb.log",
+  "successful_continuous_steps_at_recording": 70,
+  "checkpoint_selection_seen": false,
+  "test_metrics_seen": false
+}

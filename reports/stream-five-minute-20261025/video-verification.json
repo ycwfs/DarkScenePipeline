@@ -1,0 +1,592 @@
+[
+  {
+    "path": "input-multiaction-5min.mp4",
+    "duration": 300.56,
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "7514",
+    "full_decode": true
+  },
+  {
+    "path": "full-output-stream.mp4",
+    "duration": 350.133,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "5252000/350133",
+    "nb_read_frames": "5252",
+    "full_decode": true
+  },
+  {
+    "path": "output-multiaction-5min.mp4",
+    "duration": 300.2,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "4503",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T011_G000/R00001/waving/E000_T011_G000_R00001_20261025_035836_waving_0001.mp4",
+    "duration": 11.834,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "284",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T011_G000/R00002/waving/E000_T011_G000_R00002_20261025_035846_waving_0001.mp4",
+    "duration": 6.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "146",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T011_G000/R00003/waving/E000_T011_G000_R00003_20261025_035851_waving_0001.mp4",
+    "duration": 12.375,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "297",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T011_G000/R00004/waving/E000_T011_G000_R00004_20261025_035902_waving_0001.mp4",
+    "duration": 5.64,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "141",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T014_G000/R00005/drinking_water/E000_T014_G000_R00005_20261025_035906_drinking_water_0001.mp4",
+    "duration": 5.542,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "133",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T015_G000/R00006/chasing/E000_T015_G000_R00006_20261025_035909_chasing_0001.mp4",
+    "duration": 4.52,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "113",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00007/picking_up_object/E000_T017_G000_R00007_20261025_035910_picking_up_object_0001.mp4",
+    "duration": 5.542,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "133",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00008/throwing_object/E000_T017_G000_R00008_20261025_035913_throwing_object_0001.mp4",
+    "duration": 4.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "96",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00009/waving/E000_T017_G000_R00009_20261025_035915_waving_0001.mp4",
+    "duration": 4.584,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "110",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00010/picking_up_object/E000_T017_G000_R00010_20261025_035917_picking_up_object_0001.mp4",
+    "duration": 5.04,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "126",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00011/picking_up_object/E000_T017_G000_R00011_20261025_035921_picking_up_object_0001.mp4",
+    "duration": 5.6,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "140",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00012/waving/E000_T017_G000_R00012_20261025_035923_waving_0001.mp4",
+    "duration": 4.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "96",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00013/picking_up_object/E000_T017_G000_R00013_20261025_035926_picking_up_object_0001.mp4",
+    "duration": 4.584,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "110",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T017_G000/R00014/picking_up_object/E000_T017_G000_R00014_20261025_035929_picking_up_object_0001.mp4",
+    "duration": 6.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "146",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T019_G000/R00015/waving/E000_T019_G000_R00015_20261025_035932_waving_0001.mp4",
+    "duration": 8.75,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "210",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T020_G000/R00016/drinking_water/E000_T020_G000_R00016_20261025_040007_drinking_water_0001.mp4",
+    "duration": 15.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "361",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T020_G000/R00017/drinking_water/E000_T020_G000_R00017_20261025_040020_drinking_water_0001.mp4",
+    "duration": 4.542,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "109",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T020_G000/R00018/drinking_water/E000_T020_G000_R00018_20261025_040023_drinking_water_0001.mp4",
+    "duration": 9.125,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "219",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T023_G000/R00019/waving/E000_T023_G000_R00019_20261025_040030_waving_0001.mp4",
+    "duration": 5.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "121",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T024_G000/R00020/picking_up_object/E000_T024_G000_R00020_20261025_040033_picking_up_object_0001.mp4",
+    "duration": 5.542,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "133",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T025_G000/R00021/chasing/E000_T025_G000_R00021_20261025_040036_chasing_0001.mp4",
+    "duration": 6.125,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "147",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T028_G000/R00022/chasing/E000_T028_G000_R00022_20261025_040040_chasing_0001.mp4",
+    "duration": 4.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "96",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T029_G000/R00023/throwing_object/E000_T029_G000_R00023_20261025_040041_throwing_object_0001.mp4",
+    "duration": 8.125,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "195",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T029_G000/R00024/picking_up_object/E000_T029_G000_R00024_20261025_040047_picking_up_object_0001.mp4",
+    "duration": 5.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "122",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T029_G000/R00025/throwing_object/E000_T029_G000_R00025_20261025_040051_throwing_object_0001.mp4",
+    "duration": 4.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "97",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T029_G000/R00026/throwing_object/E000_T029_G000_R00026_20261025_040054_throwing_object_0001.mp4",
+    "duration": 6.667,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "160",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T029_G000/R00027/picking_up_object/E000_T029_G000_R00027_20261025_040057_picking_up_object_0001.mp4",
+    "duration": 5.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "122",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T029_G000/R00028/throwing_object/E000_T029_G000_R00028_20261025_040059_throwing_object_0001.mp4",
+    "duration": 5.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "122",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T032_G000/R00029/drinking_water/E000_T032_G000_R00029_20261025_040102_drinking_water_0001.mp4",
+    "duration": 6.667,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "160",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T033_G000/R00030/drinking_water/E000_T033_G000_R00030_20261025_040106_drinking_water_0001.mp4",
+    "duration": 7.64,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "191",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T033_G001/R00032/drinking_water/E000_T033_G001_R00032_20261025_040111_drinking_water_0001.mp4",
+    "duration": 5.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "121",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T036_G000/R00031/waving/E000_T036_G000_R00031_20261025_040110_waving_0001.mp4",
+    "duration": 6.6,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "165",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T038_G000/R00033/picking_up_object/E000_T038_G000_R00033_20261025_040130_picking_up_object_0001.mp4",
+    "duration": 4.542,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "109",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T042_G000/R00034/picking_up_object/E000_T042_G000_R00034_20261025_040135_picking_up_object_0001.mp4",
+    "duration": 4.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "97",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T042_G000/R00035/falling/E000_T042_G000_R00035_20261025_040135_falling_0001.mp4",
+    "duration": 6.6,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "165",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T042_G000/R00036/picking_up_object/E000_T042_G000_R00036_20261025_040138_picking_up_object_0001.mp4",
+    "duration": 4.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "96",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T042_G000/R00037/falling/E000_T042_G000_R00037_20261025_040143_falling_0001.mp4",
+    "duration": 6.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "146",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T042_G000/R00038/falling/E000_T042_G000_R00038_20261025_040150_falling_0001.mp4",
+    "duration": 7.125,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "171",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T042_G000/R00039/picking_up_object/E000_T042_G000_R00039_20261025_040154_picking_up_object_0001.mp4",
+    "duration": 4.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "97",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T043_G000/R00040/chasing/E000_T043_G000_R00040_20261025_040155_chasing_0001.mp4",
+    "duration": 4.959,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "119",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T043_G001/R00041/chasing/E000_T043_G001_R00041_20261025_040158_chasing_0001.mp4",
+    "duration": 4.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "96",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T049_G000/R00042/drinking_water/E000_T049_G000_R00042_20261025_040206_drinking_water_0001.mp4",
+    "duration": 5.584,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "134",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T050_G000/R00043/waving/E000_T050_G000_R00043_20261025_040208_waving_0001.mp4",
+    "duration": 5.042,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "121",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T063_G000/R00044/drinking_water/E000_T063_G000_R00044_20261025_040233_drinking_water_0001.mp4",
+    "duration": 6.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "146",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T064_G000/R00045/waving/E000_T064_G000_R00045_20261025_040237_waving_0001.mp4",
+    "duration": 5.68,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "142",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T065_G000/R00046/chasing/E000_T065_G000_R00046_20261025_040240_chasing_0001.mp4",
+    "duration": 4.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "96",
+    "full_decode": true
+  },
+  {
+    "path": "live/clips/input/20261025_035659_1/E000_T067_G000/R00047/picking_up_object/E000_T067_G000_R00047_20261025_040244_picking_up_object_0001.mp4",
+    "duration": 5.084,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "24/1",
+    "nb_read_frames": "122",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-10-flv.mkv",
+    "duration": 1.999,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "30",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-10-hls.mkv",
+    "duration": 2.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "30",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-10-mjpeg.mkv",
+    "duration": 2.0,
+    "codec_name": "mjpeg",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "50",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-140-flv.mkv",
+    "duration": 1.999,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "30",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-140-hls.mkv",
+    "duration": 2.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "30",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-140-mjpeg.mkv",
+    "duration": 2.0,
+    "codec_name": "mjpeg",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "50",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-275-flv.mkv",
+    "duration": 1.999,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "30",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-275-hls.mkv",
+    "duration": 2.0,
+    "codec_name": "h264",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "15/1",
+    "nb_read_frames": "30",
+    "full_decode": true
+  },
+  {
+    "path": "live/viewer-275-mjpeg.mkv",
+    "duration": 2.0,
+    "codec_name": "mjpeg",
+    "width": 1440,
+    "height": 808,
+    "avg_frame_rate": "25/1",
+    "nb_read_frames": "50",
+    "full_decode": true
+  }
+]

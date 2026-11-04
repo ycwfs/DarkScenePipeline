@@ -1,0 +1,56 @@
+import json
+from pathlib import Path
+import numpy as np, matplotlib.pyplot as plt
+OUT=Path(__file__).resolve().parents[1]
+rows=json.loads((OUT/'matched/records.json').read_text())
+hard=[r for r in rows if r['cohort']=='quartile24']
+aux=[r for r in rows if r['cohort']=='auxiliary44']
+# report hard cohort matched boxes; the records are frozen before inference.
+def agg(rr,c):
+ gt=sum(len(x['gt_boxes_native']) for x in rr); m=sum(x['conditions'][c]['formal']['matched'] for x in rr)
+ p=sum(len(x['conditions'][c]['formal']['pred_boxes_native']) for x in rr)
+ return m,gt,p,sum(x['conditions'][c]['formal']['unmatched'] for x in rr)
+conds=['raw_native','raw720','ntire720','ft720','raw1280','ntire1280','ft1280']
+fig,ax=plt.subplots(figsize=(9,5),dpi=180)
+for label,rr,col in [('Quartile hard (24)',hard,'#b91c1c'),('Auxiliary (44)',aux,'#2563eb')]:
+ vals=[]
+ for c in ['raw_native','raw720','ntire720','ft720']:
+  m,g,_,_=agg(rr,c);vals.append(100*m/g)
+ ax.plot(['Raw native','Raw 720','NTIRE 720','Onsite FT 720'],vals,marker='o',label=label,color=col)
+ax.set_ylim(0,105);ax.set_ylabel('Reference-box match (%)');ax.set_title('Formal detector: easy auxiliary vs historical hard frames');ax.grid(axis='y',alpha=.25);ax.legend();fig.tight_layout();fig.savefig(OUT/'figures/figure-04-hard-cohort.png');fig.savefig(OUT/'figures/figure-04-hard-cohort.pdf');plt.close(fig)
+fig,ax=plt.subplots(figsize=(9,5),dpi=180)
+for rr,label,col in [(hard,'Hard: full-frame', '#dc2626'),(hard,'Hard: 1280 full-frame','#f59e0b')]:
+ cs=['raw_native','raw720','ntire720','ft720'] if 'full-frame' in label and '1280' not in label else ['raw1280','ntire1280','ft1280']
+ vals=[100*agg(rr,c)[0]/agg(rr,c)[1] for c in cs]
+ ax.plot(['raw','NTIRE','onsite FT'] if '1280' in label else ['raw native','raw 720','NTIRE 720','onsite FT 720'],vals,marker='o',label=label,color=col)
+ax.set_ylim(0,105);ax.set_ylabel('Reference-box match (%)');ax.set_title('Hard frames: preserving 1280 does not enlarge the 640 detector input');ax.grid(axis='y',alpha=.25);ax.legend();fig.tight_layout();fig.savefig(OUT/'figures/figure-05-resolution.png');fig.savefig(OUT/'figures/figure-05-resolution.pdf');plt.close(fig)
+lines=[]
+lines += ['# 暗场增强与人体检测诊断（扩展版，2026-11-03）','',
+'## 目的', '', '对同一批历史暗场帧比较原图、原图720、生产NTIRE增强720、历史现场微调增强720；另对困难帧保留1280并做局部切片探针。比较命中人体参考框、候选框数量、框IoU和人物尺寸。', '',
+'## 结论', '',
+'1. 在原先44帧的筛选辅助框上，正式清理检测器命中：原图39/44、原图720 43/44、NTIRE720 43/44、现场微调720 44/44。此前报告中的NTIRE 44/44来自GPU缓存/CPU精度混用；本轮两种增强均以CPU FP32重算，结果为43/44和44/44，不能宣称二者完全相同。',
+'2. 在新增24帧历史困难参考框上，正式检测器命中为原图12/24、原图720 12/24、NTIRE720 15/24、现场微调720 14/24。困难集的漏检没有被增强模型稳定解决；NTIRE较现场微调多1个参考框，但现场微调在一帧产生2个未匹配候选。',
+'3. 1280全帧输入仍在检测前letterbox到640，因此保存更大的前端帧并不放大模型内人物。困难集1280全帧命中：NTIRE13/24、现场微调13/24，与720接近；不能把输入分辨率单独作为解决办法。',
+'4. 2×2局部切片探针不是可直接上线的方案：它把场景拆开后出现重复／未匹配框（NTIRE 6个、现场微调19个），且总命中没有超过全帧稳定结果。它说明“真正放大人物”需要重新设计带去重和上下文的ROI检测，而不是简单切四块。',
+'5. 亮场5帧回归中，NTIRE、现场微调与原图均能命中主要真人；未发现增强替换带来的稳定亮场收益。', '',
+'## 按因素的判断', '',
+'| 候选优化方向 | 证据 | 判断 |', '|---|---|---|',
+'| 更换/继续训练增强模型 | 44帧中现场微调相对NTIRE仅多1个命中；24困难帧NTIRE反而多1个 | 不是当前第一优先级；先保留生产NTIRE |',
+'| 调低人体检测阈值 | 44帧原图720从0.35降到0.10只补1帧；增强720在0.35已达筛选集上限 | 不应仅凭本实验降阈值，须先审计新增框 |',
+'| 人体检测器暗场硬例微调 | 困难帧多个增强输入共同漏检，正式检测器与原始检测器差异大 | 第一优先级：收集真实漏检帧，加入真人／展品／噪声硬例回归 |',
+'| 提高整帧输入分辨率 | 1280仍被640 letterbox，收益不稳定 | 单独无效 |',
+'| ROI/重叠切片检测 | 放大后未匹配候选显著增加，需人物绑定和跨片NMS | 仅作为后续受控候选，不能直接替换 |', '',
+'## 统计表', '', '| 队列 | 原图 | 原图720 | NTIRE720 | 现场微调720 |', '|---|---:|---:|---:|---:|']
+for label,rr in [('44帧辅助集',aux),('24帧困难参考集',hard)]:
+ vals=[]
+ for c in ['raw_native','raw720','ntire720','ft720']:
+  m,g,p,u=agg(rr,c); vals.append(f'{m}/{g} ({100*m/g:.1f}%)')
+ lines.append('| '+label+' | '+' | '.join(vals)+' |')
+lines += ['', '| 24帧困难集 | raw1280 | NTIRE1280 | 现场微调1280 |', '|---|---:|---:|---:|']
+lines.append('| 参考框命中 | '+' | '.join(f'{agg(hard,c)[0]}/{agg(hard,c)[1]} ({100*agg(hard,c)[0]/agg(hard,c)[1]:.1f}%)' for c in ['raw1280','ntire1280','ft1280'])+' |')
+lines += ['', '## 720缩放与人物尺寸', '', '原先44帧参考人物框原图平均高度349.9 px，720图平均130.9 px。检测器随后把720/1280/原图全部保持比例 letterbox 到640；所以“原图更高清”不会自动增加模型输入人物高度。困难帧中有远处人物，实际640输入的高度约40–80 px，需用真实框尺寸分层评估。', '', '## 限制', '', '- 24帧困难集由原始暗场标注中的历史候选和可见人物构成，采用固定四分位抽样；本轮做了视觉参考框，但不是用户确认的穷尽GT。未匹配预测不能直接叫误检，展品与真人必须逐框复核。', '- 相邻帧高度相关，结果是配对描述统计，没有独立样本显著性检验。', '- CPU上统一FP32重算增强；平台生产使用GPU FP16，因此本轮只用于输入效果比较，不用于速度结论。', '- 没有新的平台失败原录像，因此不能证明线上漏检已经复现或解决。', '', '## 文件', '', '- [analysis-report.md](analysis-report.md)', '- [stats-appendix.md](stats-appendix.md)', '- [matched/records.json](matched/records.json)', '- [hard/review](hard/review)（原图与历史增强对照）', '- [figures/figure-04-hard-cohort.png](figures/figure-04-hard-cohort.png)', '- [figures/figure-05-resolution.png](figures/figure-05-resolution.png)']
+(OUT/'analysis-report.md').write_text('\n'.join(lines)+'\n')
+(OUT/'summary.md').write_text('\n'.join(lines[:28])+'\n')
+# replace catalog with expanded entries
+cat=(OUT/'figure-catalog.md').read_text()+'\n## figure-04-hard-cohort\n\n目的：显示44帧辅助集和24帧历史困难参考集的配对命中差异。困难集仅作诊断，不能当完整测试集。\n\n## figure-05-resolution\n\n目的：比较全帧720与全帧1280在固定640检测器下的命中。观察：提高前端保存分辨率没有稳定提高命中。\n'
+(OUT/'figure-catalog.md').write_text(cat)

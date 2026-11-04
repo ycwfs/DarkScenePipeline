@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>原图亮度样本册 · DarkScene</title><link rel="stylesheet" href="style.css"></head>
+<body><main><header><div><p class="eyebrow">DARKSCENE / 现场样本册 / 2026.10.24</p><h1>先看亮度，<br>再选分流点。</h1><p class="intro">18段真实现场视频，按原图平均亮度分为6档。<br>每张对照图：左边原图，右边同帧增强。</p></div>
+<aside><span class="large-number">18<span>段</span></span><p>全部来自训练划分原片<br>无人工压暗 · 无额外调色</p><a href="luma-samples-review.zip" download>下载完整预览包 ↗</a><a href="overview-raw.jpg" target="_blank">打开18张原图总览 ↗</a></aside></header>
+<div class="reading-note"><strong>看左边选亮度，看右边判断增强后是否看得清。</strong><p>L 为0–255像素亮度，不是 lux。它统计全画面，包括黑边、墙面和屏幕；同一个L下，人体可见程度也可能不同。图片可点开放大，视频可展开播放。</p></div>
+<div class="controls"><div><label>显示亮度档位</label><nav aria-label="筛选亮度区间"><button type="button" class="selected" data-filter="all" aria-pressed="true">全部18段</button><button type="button" data-filter="0" aria-pressed="false">0–15</button><button type="button" data-filter="1" aria-pressed="false">15–30</button><button type="button" data-filter="2" aria-pressed="false">30–45</button><button type="button" data-filter="3" aria-pressed="false">45–60</button><button type="button" data-filter="4" aria-pressed="false">60–75</button><button type="button" data-filter="5" aria-pressed="false">≥75</button></nav></div>
+<div><label>预览门限 <span id="threshold-label">T = 75</span></label><div class="thresholds" role="group" aria-label="预览亮度门限"><button type="button" data-threshold="75" aria-pressed="true" class="selected">75</button><button type="button" data-threshold="60" aria-pressed="false" class="">60</button><button type="button" data-threshold="45" aria-pressed="false" class="">45</button><button type="button" data-threshold="30" aria-pressed="false" class="">30</button><button type="button" data-threshold="15" aria-pressed="false" class="">15</button><button type="button" data-threshold="0" aria-pressed="false" class="">关闭</button></div></div>
+<p class="control-note">门限按钮仅标记片段与T的关系，不修改实际算子。实际分流还取决于识别窗口和骨架质量；“关闭”不是亮度为0的档位。</p><p id="visible-count" aria-live="polite">正在显示18段</p></div>
+<section data-bin="0" id="band-0"><div class="band-heading"><h2>0 ≤ L < 15</h2><p>全库 3,730 帧落在此区间 · 此处展示3段</p></div><article id="sample-1-1" data-sample="1-1">
+<div class="meta"><span class="sample-number">S1-1</span><h3>喝水8.mp4</h3>
+<p class="luma-value">2.45<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>2.41</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>2.29 — 2.47</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.76s</dd></div>
+<div><dt>预览帧</dt><dd>F0034</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note">原片自带左右黑边；黑边计入全画面平均值。没有人为压暗或额外裁剪。</p></div>
+<div class="media"><a href="samples/1-1/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/1-1/comparison.jpg" alt="喝水8.mp4，左侧原图右侧增强，原图亮度2.45"></a>
+<details><summary>播放同帧对照视频 · 2.76 秒</summary><video controls preload="none" playsinline poster="samples/1-1/comparison.jpg" src="samples/1-1/comparison.mp4" aria-label="喝水8.mp4对照视频"></video></details>
+<div class="links"><a href="samples/1-1/raw.png" target="_blank">原图 PNG</a><a href="samples/1-1/enhanced.png" target="_blank">增强 PNG</a><a href="samples/1-1/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-1-2" data-sample="1-2">
+<div class="meta"><span class="sample-number">S1-2</span><h3>追逐7.mp4</h3>
+<p class="luma-value">7.81<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>7.74</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>7.46 — 7.92</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.80s</dd></div>
+<div><dt>预览帧</dt><dd>F0035</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/1-2/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/1-2/comparison.jpg" alt="追逐7.mp4，左侧原图右侧增强，原图亮度7.81"></a>
+<details><summary>播放同帧对照视频 · 2.80 秒</summary><video controls preload="none" playsinline poster="samples/1-2/comparison.jpg" src="samples/1-2/comparison.mp4" aria-label="追逐7.mp4对照视频"></video></details>
+<div class="links"><a href="samples/1-2/raw.png" target="_blank">原图 PNG</a><a href="samples/1-2/enhanced.png" target="_blank">增强 PNG</a><a href="samples/1-2/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-1-3" data-sample="1-3">
+<div class="meta"><span class="sample-number">S1-3</span><h3>挥手35.mp4</h3>
+<p class="luma-value">14.89<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>14.07</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>13.38 — 15.46</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.52s</dd></div>
+<div><dt>预览帧</dt><dd>F0044</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"> 本片段部分帧跨过15，分档依据预览关键帧。</p></div>
+<div class="media"><a href="samples/1-3/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/1-3/comparison.jpg" alt="挥手35.mp4，左侧原图右侧增强，原图亮度14.89"></a>
+<details><summary>播放同帧对照视频 · 3.52 秒</summary><video controls preload="none" playsinline poster="samples/1-3/comparison.jpg" src="samples/1-3/comparison.mp4" aria-label="挥手35.mp4对照视频"></video></details>
+<div class="links"><a href="samples/1-3/raw.png" target="_blank">原图 PNG</a><a href="samples/1-3/enhanced.png" target="_blank">增强 PNG</a><a href="samples/1-3/comparison.mp4" download>下载视频</a></div></div></article></section><section data-bin="1" id="band-1"><div class="band-heading"><h2>15 ≤ L < 30</h2><p>全库 3,820 帧落在此区间 · 此处展示3段</p></div><article id="sample-2-1" data-sample="2-1">
+<div class="meta"><span class="sample-number">S2-1</span><h3>挥手18.mp4</h3>
+<p class="luma-value">20.53<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>20.53</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>20.12 — 20.96</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.68s</dd></div>
+<div><dt>预览帧</dt><dd>F0033</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/2-1/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/2-1/comparison.jpg" alt="挥手18.mp4，左侧原图右侧增强，原图亮度20.53"></a>
+<details><summary>播放同帧对照视频 · 2.68 秒</summary><video controls preload="none" playsinline poster="samples/2-1/comparison.jpg" src="samples/2-1/comparison.mp4" aria-label="挥手18.mp4对照视频"></video></details>
+<div class="links"><a href="samples/2-1/raw.png" target="_blank">原图 PNG</a><a href="samples/2-1/enhanced.png" target="_blank">增强 PNG</a><a href="samples/2-1/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-2-2" data-sample="2-2">
+<div class="meta"><span class="sample-number">S2-2</span><h3>喝水12.mp4</h3>
+<p class="luma-value">23.23<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>23.26</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>23.12 — 23.44</dd></div>
+<div><dt>源视频时间</dt><dd>0.28 — 4.28s</dd></div>
+<div><dt>预览帧</dt><dd>F0057</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/2-2/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/2-2/comparison.jpg" alt="喝水12.mp4，左侧原图右侧增强，原图亮度23.23"></a>
+<details><summary>播放同帧对照视频 · 4.00 秒</summary><video controls preload="none" playsinline poster="samples/2-2/comparison.jpg" src="samples/2-2/comparison.mp4" aria-label="喝水12.mp4对照视频"></video></details>
+<div class="links"><a href="samples/2-2/raw.png" target="_blank">原图 PNG</a><a href="samples/2-2/enhanced.png" target="_blank">增强 PNG</a><a href="samples/2-2/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-2-3" data-sample="2-3">
+<div class="meta"><span class="sample-number">S2-3</span><h3>other32.mp4</h3>
+<p class="luma-value">26.97<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>26.95</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>26.78 — 27.01</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.49s</dd></div>
+<div><dt>预览帧</dt><dd>F0031</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note">Other场景，主要用于比较暗画面背景亮度。</p></div>
+<div class="media"><a href="samples/2-3/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/2-3/comparison.jpg" alt="other32.mp4，左侧原图右侧增强，原图亮度26.97"></a>
+<details><summary>播放同帧对照视频 · 2.49 秒</summary><video controls preload="none" playsinline poster="samples/2-3/comparison.jpg" src="samples/2-3/comparison.mp4" aria-label="other32.mp4对照视频"></video></details>
+<div class="links"><a href="samples/2-3/raw.png" target="_blank">原图 PNG</a><a href="samples/2-3/enhanced.png" target="_blank">增强 PNG</a><a href="samples/2-3/comparison.mp4" download>下载视频</a></div></div></article></section><section data-bin="2" id="band-2"><div class="band-heading"><h2>30 ≤ L < 45</h2><p>全库 9,471 帧落在此区间 · 此处展示3段</p></div><article id="sample-3-1" data-sample="3-1">
+<div class="meta"><span class="sample-number">S3-1</span><h3>喝水1.mp4</h3>
+<p class="luma-value">31.74<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>31.98</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>31.69 — 32.17</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.96s</dd></div>
+<div><dt>预览帧</dt><dd>F0037</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/3-1/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/3-1/comparison.jpg" alt="喝水1.mp4，左侧原图右侧增强，原图亮度31.74"></a>
+<details><summary>播放同帧对照视频 · 2.96 秒</summary><video controls preload="none" playsinline poster="samples/3-1/comparison.jpg" src="samples/3-1/comparison.mp4" aria-label="喝水1.mp4对照视频"></video></details>
+<div class="links"><a href="samples/3-1/raw.png" target="_blank">原图 PNG</a><a href="samples/3-1/enhanced.png" target="_blank">增强 PNG</a><a href="samples/3-1/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-3-2" data-sample="3-2">
+<div class="meta"><span class="sample-number">S3-2</span><h3>捡东西5.mp4</h3>
+<p class="luma-value">36.96<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>37.23</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>36.49 — 37.75</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.68s</dd></div>
+<div><dt>预览帧</dt><dd>F0033</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/3-2/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/3-2/comparison.jpg" alt="捡东西5.mp4，左侧原图右侧增强，原图亮度36.96"></a>
+<details><summary>播放同帧对照视频 · 2.68 秒</summary><video controls preload="none" playsinline poster="samples/3-2/comparison.jpg" src="samples/3-2/comparison.mp4" aria-label="捡东西5.mp4对照视频"></video></details>
+<div class="links"><a href="samples/3-2/raw.png" target="_blank">原图 PNG</a><a href="samples/3-2/enhanced.png" target="_blank">增强 PNG</a><a href="samples/3-2/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-3-3" data-sample="3-3">
+<div class="meta"><span class="sample-number">S3-3</span><h3>捡东西11.mp4</h3>
+<p class="luma-value">42.83<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>42.74</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>42.14 — 43.28</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.36s</dd></div>
+<div><dt>预览帧</dt><dd>F0042</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/3-3/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/3-3/comparison.jpg" alt="捡东西11.mp4，左侧原图右侧增强，原图亮度42.83"></a>
+<details><summary>播放同帧对照视频 · 3.36 秒</summary><video controls preload="none" playsinline poster="samples/3-3/comparison.jpg" src="samples/3-3/comparison.mp4" aria-label="捡东西11.mp4对照视频"></video></details>
+<div class="links"><a href="samples/3-3/raw.png" target="_blank">原图 PNG</a><a href="samples/3-3/enhanced.png" target="_blank">增强 PNG</a><a href="samples/3-3/comparison.mp4" download>下载视频</a></div></div></article></section><section data-bin="3" id="band-3"><div class="band-heading"><h2>45 ≤ L < 60</h2><p>全库 954 帧落在此区间 · 此处展示3段</p></div><article id="sample-4-1" data-sample="4-1">
+<div class="meta"><span class="sample-number">S4-1</span><h3>捡东西10.mp4</h3>
+<p class="luma-value">48.16<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>47.98</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>47.53 — 48.27</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.08s</dd></div>
+<div><dt>预览帧</dt><dd>F0038</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/4-1/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/4-1/comparison.jpg" alt="捡东西10.mp4，左侧原图右侧增强，原图亮度48.16"></a>
+<details><summary>播放同帧对照视频 · 3.08 秒</summary><video controls preload="none" playsinline poster="samples/4-1/comparison.jpg" src="samples/4-1/comparison.mp4" aria-label="捡东西10.mp4对照视频"></video></details>
+<div class="links"><a href="samples/4-1/raw.png" target="_blank">原图 PNG</a><a href="samples/4-1/enhanced.png" target="_blank">增强 PNG</a><a href="samples/4-1/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-4-2" data-sample="4-2">
+<div class="meta"><span class="sample-number">S4-2</span><h3>挥手25.mp4</h3>
+<p class="luma-value">53.07<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>53.13</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>52.99 — 53.36</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.60s</dd></div>
+<div><dt>预览帧</dt><dd>F0032</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/4-2/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/4-2/comparison.jpg" alt="挥手25.mp4，左侧原图右侧增强，原图亮度53.07"></a>
+<details><summary>播放同帧对照视频 · 2.60 秒</summary><video controls preload="none" playsinline poster="samples/4-2/comparison.jpg" src="samples/4-2/comparison.mp4" aria-label="挥手25.mp4对照视频"></video></details>
+<div class="links"><a href="samples/4-2/raw.png" target="_blank">原图 PNG</a><a href="samples/4-2/enhanced.png" target="_blank">增强 PNG</a><a href="samples/4-2/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-4-3" data-sample="4-3">
+<div class="meta"><span class="sample-number">S4-3</span><h3>喝水21.mp4</h3>
+<p class="luma-value">57.74<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>57.69</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>57.47 — 57.86</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.56s</dd></div>
+<div><dt>预览帧</dt><dd>F0044</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/4-3/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/4-3/comparison.jpg" alt="喝水21.mp4，左侧原图右侧增强，原图亮度57.74"></a>
+<details><summary>播放同帧对照视频 · 3.56 秒</summary><video controls preload="none" playsinline poster="samples/4-3/comparison.jpg" src="samples/4-3/comparison.mp4" aria-label="喝水21.mp4对照视频"></video></details>
+<div class="links"><a href="samples/4-3/raw.png" target="_blank">原图 PNG</a><a href="samples/4-3/enhanced.png" target="_blank">增强 PNG</a><a href="samples/4-3/comparison.mp4" download>下载视频</a></div></div></article></section><section data-bin="4" id="band-4"><div class="band-heading"><h2>60 ≤ L < 75</h2><p>全库 1,917 帧落在此区间 · 此处展示3段</p></div><article id="sample-5-1" data-sample="5-1">
+<div class="meta"><span class="sample-number">S5-1</span><h3>捡东西9.mp4</h3>
+<p class="luma-value">60.83<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>61.02</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>60.71 — 61.62</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.32s</dd></div>
+<div><dt>预览帧</dt><dd>F0029</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/5-1/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/5-1/comparison.jpg" alt="捡东西9.mp4，左侧原图右侧增强，原图亮度60.83"></a>
+<details><summary>播放同帧对照视频 · 2.32 秒</summary><video controls preload="none" playsinline poster="samples/5-1/comparison.jpg" src="samples/5-1/comparison.mp4" aria-label="捡东西9.mp4对照视频"></video></details>
+<div class="links"><a href="samples/5-1/raw.png" target="_blank">原图 PNG</a><a href="samples/5-1/enhanced.png" target="_blank">增强 PNG</a><a href="samples/5-1/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-5-2" data-sample="5-2">
+<div class="meta"><span class="sample-number">S5-2</span><h3>other83.mp4</h3>
+<p class="luma-value">67.47<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>67.58</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>67.29 — 68.38</dd></div>
+<div><dt>源视频时间</dt><dd>0.64 — 4.64s</dd></div>
+<div><dt>预览帧</dt><dd>F0066</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/5-2/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/5-2/comparison.jpg" alt="other83.mp4，左侧原图右侧增强，原图亮度67.47"></a>
+<details><summary>播放同帧对照视频 · 4.00 秒</summary><video controls preload="none" playsinline poster="samples/5-2/comparison.jpg" src="samples/5-2/comparison.mp4" aria-label="other83.mp4对照视频"></video></details>
+<div class="links"><a href="samples/5-2/raw.png" target="_blank">原图 PNG</a><a href="samples/5-2/enhanced.png" target="_blank">增强 PNG</a><a href="samples/5-2/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-5-3" data-sample="5-3">
+<div class="meta"><span class="sample-number">S5-3</span><h3>捡东西6.mp4</h3>
+<p class="luma-value">70.41<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>70.43</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>69.03 — 70.89</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.52s</dd></div>
+<div><dt>预览帧</dt><dd>F0044</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note">人物被展台遮挡；较高的全画面L不等于人体清晰。</p></div>
+<div class="media"><a href="samples/5-3/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/5-3/comparison.jpg" alt="捡东西6.mp4，左侧原图右侧增强，原图亮度70.41"></a>
+<details><summary>播放同帧对照视频 · 3.52 秒</summary><video controls preload="none" playsinline poster="samples/5-3/comparison.jpg" src="samples/5-3/comparison.mp4" aria-label="捡东西6.mp4对照视频"></video></details>
+<div class="links"><a href="samples/5-3/raw.png" target="_blank">原图 PNG</a><a href="samples/5-3/enhanced.png" target="_blank">增强 PNG</a><a href="samples/5-3/comparison.mp4" download>下载视频</a></div></div></article></section><section data-bin="5" id="band-5"><div class="band-heading"><h2>L ≥ 75</h2><p>全库 22,301 帧落在此区间 · 此处展示3段</p></div><article id="sample-6-1" data-sample="6-1">
+<div class="meta"><span class="sample-number">S6-1</span><h3>喝水18.mp4</h3>
+<p class="luma-value">89.36<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>89.17</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>88.26 — 89.45</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.12s</dd></div>
+<div><dt>预览帧</dt><dd>F0039</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/6-1/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/6-1/comparison.jpg" alt="喝水18.mp4，左侧原图右侧增强，原图亮度89.36"></a>
+<details><summary>播放同帧对照视频 · 3.12 秒</summary><video controls preload="none" playsinline poster="samples/6-1/comparison.jpg" src="samples/6-1/comparison.mp4" aria-label="喝水18.mp4对照视频"></video></details>
+<div class="links"><a href="samples/6-1/raw.png" target="_blank">原图 PNG</a><a href="samples/6-1/enhanced.png" target="_blank">增强 PNG</a><a href="samples/6-1/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-6-2" data-sample="6-2">
+<div class="meta"><span class="sample-number">S6-2</span><h3>捡东西25.mp4</h3>
+<p class="luma-value">103.12<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>102.94</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>102.70 — 103.13</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 2.03s</dd></div>
+<div><dt>预览帧</dt><dd>F0030</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/6-2/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/6-2/comparison.jpg" alt="捡东西25.mp4，左侧原图右侧增强，原图亮度103.12"></a>
+<details><summary>播放同帧对照视频 · 2.03 秒</summary><video controls preload="none" playsinline poster="samples/6-2/comparison.jpg" src="samples/6-2/comparison.mp4" aria-label="捡东西25.mp4对照视频"></video></details>
+<div class="links"><a href="samples/6-2/raw.png" target="_blank">原图 PNG</a><a href="samples/6-2/enhanced.png" target="_blank">增强 PNG</a><a href="samples/6-2/comparison.mp4" download>下载视频</a></div></div></article><article id="sample-6-3" data-sample="6-3">
+<div class="meta"><span class="sample-number">S6-3</span><h3>喝水16.mp4</h3>
+<p class="luma-value">138.89<small>预览帧原图 L</small></p>
+<dl><div><dt>片段均值</dt><dd>139.07</dd></div>
+<div><dt>最暗 — 最亮</dt><dd>138.79 — 139.39</dd></div>
+<div><dt>源视频时间</dt><dd>0.00 — 3.00s</dd></div>
+<div><dt>预览帧</dt><dd>F0037</dd></div></dl>
+<p class="gate-state" aria-live="polite"></p><p class="sample-note"></p></div>
+<div class="media"><a href="samples/6-3/comparison.jpg" target="_blank" class="poster-link" title="打开完整对照图"><img loading="lazy" width="1440" height="498" src="samples/6-3/comparison.jpg" alt="喝水16.mp4，左侧原图右侧增强，原图亮度138.89"></a>
+<details><summary>播放同帧对照视频 · 3.00 秒</summary><video controls preload="none" playsinline poster="samples/6-3/comparison.jpg" src="samples/6-3/comparison.mp4" aria-label="喝水16.mp4对照视频"></video></details>
+<div class="links"><a href="samples/6-3/raw.png" target="_blank">原图 PNG</a><a href="samples/6-3/enhanced.png" target="_blank">增强 PNG</a><a href="samples/6-3/comparison.mp4" download>下载视频</a></div></div></article></section><footer><h2>边界附近的数据覆盖</h2><p>现有413段去重原片、42,193帧。75～100区间只有《喝水18》和《挥手21》两段、118帧；本页选了其中一段。70以上至75附近及75上下的覆盖稀疏，不能假装每个阈值附近都有充足样本。</p>
+<p>这里只帮助你选择亮度范围，未展示人体检测或骨架预测，也未改变默认门限75。确定候选门限后，再核对动作误报、漏报和速度。</p>
+<a href="README.md">样本清单与说明</a> · <a href="samples.csv" download>下载CSV</a> · <a href="overview-enhanced.jpg" target="_blank">增强图总览</a></footer></main>
+<script id="sample-data" type="application/json">[{"sample_id": "1-1", "bin_index": 0, "min_luma": 2.294765446232123, "max_luma": 2.4724567347359736, "mean_luma": 2.4057303744459593}, {"sample_id": "1-2", "bin_index": 0, "min_luma": 7.46122403740374, "max_luma": 7.9245036062981296, "mean_luma": 7.739521279074336}, {"sample_id": "1-3", "bin_index": 0, "min_luma": 13.37877867161716, "max_luma": 15.461613249449943, "mean_luma": 14.07455967702239}, {"sample_id": "2-1", "bin_index": 1, "min_luma": 20.1245012720022, "max_luma": 20.964691412266227, "mean_luma": 20.53253545207133}, {"sample_id": "2-2", "bin_index": 1, "min_luma": 23.12112063050055, "max_luma": 23.4378081029978, "mean_luma": 23.26271976897689}, {"sample_id": "2-3", "bin_index": 1, "min_luma": 26.779371538091308, "max_luma": 27.012890838146312, "mean_luma": 26.94506285553959}, {"sample_id": "3-1", "bin_index": 2, "min_luma": 31.685637121837182, "max_luma": 32.16593104716721, "mean_luma": 31.980348430159744}, {"sample_id": "3-2", "bin_index": 2, "min_luma": 36.49045495737074, "max_luma": 37.7497899030528, "mean_luma": 37.232284341647784}, {"sample_id": "3-3", "bin_index": 2, "min_luma": 42.13702931793179, "max_luma": 43.280190205583054, "mean_luma": 42.7438210698488}, {"sample_id": "4-1", "bin_index": 3, "min_luma": 47.53453052117712, "max_luma": 48.268611117986794, "mean_luma": 47.97746958945894}, {"sample_id": "4-2", "bin_index": 3, "min_luma": 52.986807552942786, "max_luma": 53.36203596672167, "mean_luma": 53.12874909648176}, {"sample_id": "4-3", "bin_index": 3, "min_luma": 57.470615817519246, "max_luma": 57.85544186262375, "mean_luma": 57.686920338708724}, {"sample_id": "5-1", "bin_index": 4, "min_luma": 60.706390147139714, "max_luma": 61.62106810024752, "mean_luma": 61.01614047776545}, {"sample_id": "5-2", "bin_index": 4, "min_luma": 67.2892400508801, "max_luma": 68.38022045173267, "mean_luma": 67.57881436674917}, {"sample_id": "5-3", "bin_index": 4, "min_luma": 69.0299325460671, "max_luma": 70.8888011929318, "mean_luma": 70.43395581233905}, {"sample_id": "6-1", "bin_index": 5, "min_luma": 88.25799320338284, "max_luma": 89.45229525233773, "mean_luma": 89.17300748925452}, {"sample_id": "6-2", "bin_index": 5, "min_luma": 102.70379147070956, "max_luma": 103.13016487555005, "mean_luma": 102.94185996839435}, {"sample_id": "6-3", "bin_index": 5, "min_luma": 138.79045222084704, "max_luma": 139.39165341377884, "mean_luma": 139.06711968202237}]</script><script src="review.js"></script></body></html>

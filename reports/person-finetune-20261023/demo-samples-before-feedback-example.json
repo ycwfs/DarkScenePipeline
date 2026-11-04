@@ -1,0 +1,45 @@
+[
+  {
+    "name": "挥手3",
+    "source": "real-actiondata-all/挥手3.mp4"
+  },
+  {
+    "name": "挥手4",
+    "source": "real-actiondata-all/挥手4.mp4"
+  },
+  {
+    "name": "挥手20",
+    "source": "real-actiondata-all/挥手20.mp4"
+  },
+  {
+    "name": "喝水16",
+    "source": "real-actiondata-all/喝水16.mp4"
+  },
+  {
+    "name": "多人0060",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "processed": true
+  },
+  {
+    "name": "多人0054",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "processed": true
+  },
+  {
+    "name": "多人0055",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095808_drinking_water_0055.mp4",
+    "processed": true
+  },
+  {
+    "name": "留出_捡东西23",
+    "source": "real-actiondata-all/捡东西23.mp4"
+  },
+  {
+    "name": "留出_挥手28",
+    "source": "real-actiondata-all/挥手28.mp4"
+  },
+  {
+    "name": "留出_喝水26",
+    "source": "real-actiondata-all/喝水26.mp4"
+  }
+]

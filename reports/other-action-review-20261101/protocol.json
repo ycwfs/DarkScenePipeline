@@ -1,0 +1,14 @@
+{
+  "status": "frozen_before_results",
+  "question": "Can subthreshold non-running actions be independently recovered by repeated same-class predictions when action-specific production priors also support each window?",
+  "baseline": {"alpha": 0.972, "luma_gate": 35, "action_threshold": 0.925, "object_threshold": 0.581, "wave_min_frames": 3, "running_speed": 0.35},
+  "classes": ["wave", "throw", "fall", "fight", "talk", "drink", "pick_up", "shake_hands"],
+  "candidate": "Same actor and history generation; raw fused top class is unchanged and score is >0.65 and <0.925; baseline final label is other; adjacent output windows are at most 0.65 seconds apart.",
+  "primary_two_window": "Two consecutive eligible windows spanning at least 0.5 seconds; output begins at the second window, no retroactive output.",
+  "strict_three_window": "Three consecutive eligible windows spanning at least 1.0 seconds; output begins at the third window, no retroactive output.",
+  "class_priors": {"wave": "Existing pose prior must support each window.", "drink": "Existing seven-class object prior at threshold 0.581 must support each window and obey luma gate 35.", "pick_up": "Existing seven-class object prior at threshold 0.581 must support each window and obey luma gate 35.", "other_classes": "No class-specific prior exists; temporal consensus alone is diagnostic and cannot establish correctness."},
+  "reset": "A baseline-confirmed action, other/noncandidate top label, prior failure, identity/generation change, or gap above 0.65 seconds resets the streak.",
+  "data": "Old frozen windows plus 10/25 crowded labels and user-confirmed 13 recovered windows. Do not treat pseudo-other, excluded, conflicted, or unlabeled windows as ground truth.",
+  "reporting": "Separate old train/validation/test and crowded train/validation/test; report windows and action groups separately; unknown outcomes remain unknown.",
+  "promotion": "No production changes or parameter promotion in this experiment."
+}

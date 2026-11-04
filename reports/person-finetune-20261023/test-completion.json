@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "selection_epoch": 7,
+  "data_sha256": "51f93c974ed831530b26ee5c625fbb564850fb7e858f9f93602b51643b548584",
+  "test_videos": 52,
+  "test_windows": 204,
+  "selection_unchanged": true,
+  "threshold_tuned": false
+}

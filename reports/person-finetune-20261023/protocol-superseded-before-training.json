@@ -1,0 +1,35 @@
+{
+  "scope_confirmed": "user: local field videos + platform negatives; visual person annotation first",
+  "init": "videomamba_t_behavior_32f_realactall_full_pn2.pth",
+  "initial_sha256": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+  "split_sha256": "231325c7a242cbfefc7771d9a25884025c846021d1cb987e053d1ee3fd8f7416",
+  "alpha": 0.7,
+  "threshold": 0.75,
+  "lum_gate": 75.0,
+  "candidate": {
+    "epochs": 8,
+    "head_lr": 0.0001,
+    "backbone_lr": 1e-05,
+    "batch": 8,
+    "seed": 23,
+    "optimizer": "AdamW",
+    "weight_decay": 0.05,
+    "label_smoothing": 0.05,
+    "augmentation": "shared horizontal flip across all 32 frames",
+    "sampling": "class balanced, equal source-video mass within class",
+    "distillation": false
+  },
+  "selection": "validation fused macro-F1 at 0.75, then RGB macro-F1, then lower other false-positive rate; baseline epoch0 eligible",
+  "test": "sealed until validation checkpoint selection; no threshold tuning on test",
+  "annotation": "visual track/time labels; no copied scene labels or prediction-generated ground truth",
+  "unsupported_classes": [
+    "fight",
+    "talk",
+    "shake_hands"
+  ],
+  "single_video_classes": [
+    "throw",
+    "fall"
+  ],
+  "production_modified": false
+}

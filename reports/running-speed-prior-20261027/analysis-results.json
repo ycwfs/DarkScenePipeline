@@ -1,0 +1,503 @@
+{
+  "threshold": 0.35,
+  "missing_policy": "bypass",
+  "old": {
+    "train": {
+      "true_total": 88,
+      "true_before": 88,
+      "true_after": 88,
+      "true_bypass": 35,
+      "false_before": 1,
+      "false_after": 1,
+      "unknown_before": 23,
+      "unknown_after": 23
+    },
+    "val": {
+      "true_total": 13,
+      "true_before": 8,
+      "true_after": 8,
+      "true_bypass": 0,
+      "false_before": 1,
+      "false_after": 1,
+      "unknown_before": 1,
+      "unknown_after": 1
+    },
+    "test": {
+      "true_total": 25,
+      "true_before": 17,
+      "true_after": 17,
+      "true_bypass": 0,
+      "false_before": 0,
+      "false_after": 0,
+      "unknown_before": 3,
+      "unknown_after": 3
+    }
+  },
+  "long": {
+    "true_baseline": 4,
+    "true_kept": 4,
+    "false_baseline": 6,
+    "false_kept": 2,
+    "unknown_baseline": 0
+  },
+  "integrated": [
+    {
+      "directory": "long-videos/new-01",
+      "source": {
+        "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+        "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+        "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "bytes": 214371254,
+        "sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "duration": 395.04,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 9876,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 1
+      },
+      "frames": 9876,
+      "events": 5565,
+      "actions": {
+        "other": 5558,
+        "chase": 6,
+        "wave": 1
+      },
+      "running_before": 10,
+      "running_after": 6,
+      "speed_vetoes": 4,
+      "clips": 6,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "long-videos/new-07",
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "bytes": 166479314,
+        "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "duration": 540.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 13500,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 7
+      },
+      "frames": 13500,
+      "events": 6312,
+      "actions": {
+        "other": 6310,
+        "drink": 1,
+        "wave": 1
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 2,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "long-videos/new-09",
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "bytes": 131077996,
+        "sha256": "ef0658fe87e45bc8a43f608057f5fc26b2810aa307a56a7e2f017c5b747d974d",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "duration": 242.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 6050,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 9
+      },
+      "frames": 6050,
+      "events": 5036,
+      "actions": {
+        "other": 5035,
+        "wave": 1
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/220255c6344fa810",
+      "source": {
+        "source": "real-actiondata-all/追逐38.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "220255c6344fa81010f84a421800fccf49c7296033930c8b8c51e93e8c1ec338",
+        "bytes": 441007,
+        "frames": 62,
+        "fps": 30.0,
+        "width": 968,
+        "height": 544,
+        "seconds": 2.066666666666667,
+        "validation": "container metadata only; full decode pending",
+        "id": "220255c6344fa810",
+        "aliases": [
+          "real-actiondata-all/追逐38.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "220255c6344fa810",
+        "raw_mean_luma": 104.42485239268382,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/220255c6344fa810/result.json",
+        "cache_sha256": "667cdb50ac9001aeea3344099fb92270dd4e38b736258fcbd9bc9797e0aeb04c",
+        "scope": "onsite",
+        "windows": 2,
+        "box_frames": 58,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 62,
+      "events": 2,
+      "actions": {
+        "chase": 2
+      },
+      "running_before": 2,
+      "running_after": 2,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/8ac476f8fb995f97",
+      "source": {
+        "source": "real-actiondata-all/追逐24.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "8ac476f8fb995f9770fb1acfeb80d259b87cb896ea26d6043b24fd562a3d62b0",
+        "bytes": 3246399,
+        "frames": 137,
+        "fps": 30.0,
+        "width": 1920,
+        "height": 1080,
+        "seconds": 4.566666666666666,
+        "validation": "container metadata only; full decode pending",
+        "id": "8ac476f8fb995f97",
+        "aliases": [
+          "real-actiondata-all/追逐24.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "test",
+        "group": "8ac476f8fb995f97",
+        "raw_mean_luma": 120.72777125576151,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/8ac476f8fb995f97/result.json",
+        "cache_sha256": "93f42e7f1c8ffd7eec7eb31d754cf38fb4432818e01463d038d9fa4c44690b35",
+        "scope": "onsite",
+        "windows": 8,
+        "box_frames": 137,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 137,
+      "events": 8,
+      "actions": {
+        "other": 2,
+        "chase": 6
+      },
+      "running_before": 6,
+      "running_after": 6,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/adult-walk",
+      "source": {
+        "id": "adult-walk",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/adult-walk.mkv",
+        "start": 190,
+        "seconds": 12,
+        "frames": 300,
+        "processed": false,
+        "sha256": "680c9ed3cd4b78c2a00f7cf37053c4af1d3c7a81836ea3fdad25878747482b04",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 300,
+      "events": 190,
+      "actions": {
+        "other": 190
+      },
+      "running_before": 2,
+      "running_after": 0,
+      "speed_vetoes": 2,
+      "clips": 0,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/c4ebf78868c388a0",
+      "source": {
+        "source": "real-actiondata-all/other/other186.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "other",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "c4ebf78868c388a01c1d586097a264ff1216e66a9a93d22e885fb8d9b0d70ccc",
+        "bytes": 476773,
+        "frames": 71,
+        "fps": 30.0,
+        "width": 968,
+        "height": 544,
+        "seconds": 2.3666666666666667,
+        "validation": "container metadata only; full decode pending",
+        "id": "c4ebf78868c388a0",
+        "aliases": [
+          "real-actiondata-all/other/other186.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "c4ebf78868c388a0",
+        "raw_mean_luma": 104.31459946461634,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/c4ebf78868c388a0/result.json",
+        "cache_sha256": "0267bd73e89f10a2abc38d9726b69f7ed0b0f5d588b5dfb804eec6593c565aa5",
+        "scope": "onsite",
+        "windows": 3,
+        "box_frames": 71,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 71,
+      "events": 3,
+      "actions": {
+        "chase": 1,
+        "other": 2
+      },
+      "running_before": 1,
+      "running_after": 1,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/child-across",
+      "source": {
+        "id": "child-across",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/child-across.mkv",
+        "start": 294,
+        "seconds": 12,
+        "frames": 300,
+        "processed": false,
+        "sha256": "d1d02e85a265748541a4431c4d229ef987978ad642b08568493008bf28fc5b3d",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 300,
+      "events": 140,
+      "actions": {
+        "other": 138,
+        "chase": 2
+      },
+      "running_before": 2,
+      "running_after": 2,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/child-away",
+      "source": {
+        "id": "child-away",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/child-away.mkv",
+        "start": 18,
+        "seconds": 10,
+        "frames": 250,
+        "processed": false,
+        "sha256": "6f5c339ef2900dc948c311d4b3346cebb43ddcee4e078a9a795fca9907a091cd",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 250,
+      "events": 137,
+      "actions": {
+        "other": 136,
+        "wave": 1
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/de33753bf592c4cc",
+      "source": {
+        "source": "real-actiondata-all/追逐30.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "de33753bf592c4ccc5420868e80ee9f8e70ebe7b7edb87e1ad115f965137e4bc",
+        "bytes": 5002074,
+        "frames": 54,
+        "fps": 25.0,
+        "width": 1920,
+        "height": 1080,
+        "seconds": 2.16,
+        "validation": "container metadata only; full decode pending",
+        "id": "de33753bf592c4cc",
+        "aliases": [
+          "real-actiondata-all/追逐30.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "de33753bf592c4cc",
+        "raw_mean_luma": 31.338647954291947,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/de33753bf592c4cc/result.json",
+        "cache_sha256": "455d48fe64287dce6efe6f675bc44fc32046967bbb58dc4973258bebcf7f284b",
+        "scope": "onsite",
+        "windows": 3,
+        "box_frames": 52,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 54,
+      "events": 3,
+      "actions": {
+        "other": 3
+      },
+      "running_before": 0,
+      "running_after": 0,
+      "speed_vetoes": 0,
+      "clips": 0,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/de7f71c723b0f8d2",
+      "source": {
+        "source": "real-actiondata-all/追逐40.mp4",
+        "dataset": "real-actiondata-all",
+        "video_label": "chase",
+        "label_provenance": "historical video label",
+        "processed": false,
+        "sealed_holdout": false,
+        "person_annotations": "not yet reviewed",
+        "sha256": "de7f71c723b0f8d272a7a5d73075b388e02662dc0eb298ea1223b1af5896576d",
+        "bytes": 1556544,
+        "frames": 122,
+        "fps": 30.0,
+        "width": 968,
+        "height": 544,
+        "seconds": 4.066666666666666,
+        "validation": "container metadata only; full decode pending",
+        "id": "de7f71c723b0f8d2",
+        "aliases": [
+          "real-actiondata-all/追逐40.mp4"
+        ],
+        "datasets": [
+          "real-actiondata-all"
+        ],
+        "split": "val",
+        "group": "de7f71c723b0f8d2",
+        "raw_mean_luma": 103.84576465225926,
+        "demo": false,
+        "cache": "reports/person-release-20261024/data/de7f71c723b0f8d2/result.json",
+        "cache_sha256": "6d48c4fc4291014e7d1b7695764e530020d19a5b9a7cb49bdf637055464797e4",
+        "scope": "onsite",
+        "windows": 7,
+        "box_frames": 122,
+        "people_mode": 1,
+        "people_max": 1
+      },
+      "frames": 122,
+      "events": 7,
+      "actions": {
+        "other": 1,
+        "chase": 6
+      },
+      "running_before": 6,
+      "running_after": 6,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 1
+    },
+    {
+      "directory": "short-videos/overlap-walk",
+      "source": {
+        "id": "overlap-walk",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/overlap-walk.mkv",
+        "start": 225,
+        "seconds": 12,
+        "frames": 300,
+        "processed": false,
+        "sha256": "0a6b321566f8f6f8bf8d26c5c49fcef07a512adde04d68c09f85a4719547b1b8",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 300,
+      "events": 185,
+      "actions": {
+        "other": 184,
+        "chase": 1
+      },
+      "running_before": 1,
+      "running_after": 1,
+      "speed_vetoes": 0,
+      "clips": 1,
+      "clip_context_incomplete": 0
+    },
+    {
+      "directory": "short-videos/slow-walk",
+      "source": {
+        "id": "slow-walk",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/running-speed-prior-20261027/inputs/slow-walk.mkv",
+        "start": 348,
+        "seconds": 10,
+        "frames": 250,
+        "processed": false,
+        "sha256": "4b10ed6baa6018f226843ee2e4ecd6e6e1fd1fb4d97649d380f6609aad1b7e85",
+        "original": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "scope": "Feedback short excerpts; overlap full-video episodes, restarted tracking"
+      },
+      "frames": 250,
+      "events": 88,
+      "actions": {
+        "other": 88
+      },
+      "running_before": 1,
+      "running_after": 0,
+      "speed_vetoes": 1,
+      "clips": 0,
+      "clip_context_incomplete": 0
+    }
+  ]
+}

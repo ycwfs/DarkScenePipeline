@@ -1,0 +1,32 @@
+[
+  {
+    "archive": "platform/dark-demo-v2_multiperson_20261022.tar.gz",
+    "alias": "platform/dark-demo-v2.tar.gz",
+    "sha256": "7b9b9afd51e72e851d51625eb0908214b3f23582ec4a906ff4513c583636fcf5",
+    "bytes": 216687320,
+    "files_verified": 47,
+    "all_files_match_source": true,
+    "alias_byte_identical": true,
+    "extracted": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/unpacked/platform-tar/dark-demo-v2"
+  },
+  {
+    "archive": "platform/dark-demo-v2_multiperson_20261022.zip",
+    "alias": "platform/dark-demo-v2.zip",
+    "sha256": "5dfe0e15b607088d615474f13216891350588af587cafcbaae775454c6383e18",
+    "bytes": 216708620,
+    "files_verified": 47,
+    "all_files_match_source": true,
+    "alias_byte_identical": true,
+    "extracted": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/unpacked/platform-zip"
+  },
+  {
+    "archive": "NVIDIA-Box_20261022.zip",
+    "alias": "NVIDIA-Box.zip",
+    "sha256": "e8de2f71cc0ab6c65e3349c194463838ea24d6ca80cdec61ee1597afee8f4dfb",
+    "bytes": 249065513,
+    "files_verified": 66,
+    "all_files_match_source": true,
+    "alias_byte_identical": true,
+    "extracted": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/unpacked/box/NVIDIA-Box"
+  }
+]

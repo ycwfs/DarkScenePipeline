@@ -1,0 +1,30 @@
+[
+  {
+    "time": 60.23227696213871,
+    "action": "output_down"
+  },
+  {
+    "time": 72.00185857340693,
+    "action": "output_up"
+  },
+  {
+    "time": 110.06088656140491,
+    "action": "source_pause"
+  },
+  {
+    "time": 118.07621340313926,
+    "action": "source_resume"
+  },
+  {
+    "time": 155.24637313513085,
+    "action": "source_down"
+  },
+  {
+    "time": 163.0130333211273,
+    "action": "source_up"
+  },
+  {
+    "time": 200.07560720201582,
+    "action": "viewer_reconnect"
+  }
+]

@@ -1,0 +1,140 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>逐人动作识别 · RGB与骨架融合</title><style>
+body{margin:0;background:#101923;color:#eef4fa;font:16px/1.65 system-ui,sans-serif}main{max-width:1480px;margin:auto;padding:28px}
+h1{font-size:30px;margin:0 0 12px}h2{font-size:23px;margin:0 0 12px}p{color:#c2d0dd}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+article{padding:18px;background:#1b2735;border:1px solid #38495d;border-radius:10px}video{width:100%;background:#000}a{color:#a5cfff}
+.notice{padding:16px;background:#272b33;border-left:4px solid #f7c866;margin:20px 0}.tools{display:flex;gap:12px;align-items:center;margin-top:10px}
+button{background:#35495f;color:white;border:1px solid #60758a;border-radius:5px;padding:7px 12px;font:inherit;cursor:pointer}
+summary{cursor:pointer;color:#b9cbe1}details{margin:12px 0}pre{white-space:pre-wrap;font-size:13px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}main{padding:15px}}</style><main>
+<h1>每个人的动作，由自己的视频与骨架共同判断</h1>
+<p>人体检测与短期跟踪 → 逐人视频裁剪 → 该人的RGB分类 + 该人的骨架分类 → 独立融合。
+每个人的框下显示融合后的类别；已移除全画面的结果底栏。</p>
+<p>绿框：其他（只显示文字）；橙框：达到阈值的动作及概率；灰框：识别中。低于阈值的动作统一显示“其他”。
+T编号是短期跟踪编号。新出现的人约1秒后首次分类，
+拥挤位置的文字通过连线对应人物框。</p>
+<div class="notice">本轮是独立演示，沿用现有模型，尚未用逐人裁剪数据训练。挥手样例中可见未挥手者被判为喝水，
+拥挤负样本也有逐人误报；人形展品和背景仍可能被当作人。结果按模型原样展示。</div>
+<p>α=0.7，最终阈值0.75，原图照度门75。每段可展开查看实际裁剪输入与逐人概率。
+<a href="README.md">完整说明与验证</a></p><div class="grid"><article><h2>挥手3</h2>
+<video controls loop preload="metadata" poster="stills/挥手3.jpg" src="videos/挥手3_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/挥手3_逐人融合.mp4" download>下载</a></div>
+<p>保留原图照度门；低于75时使用逐人RGB。<br>160帧 · 最多3个检测候选 · 22次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/挥手3_T01.jpg" target="_blank">01</a> <a href="crops/挥手3_T02.jpg" target="_blank">02</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;drink&quot;: 11,
+    &quot;wave&quot;: 10,
+    &quot;other&quot;: 1
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_low_luma&quot;: 22
+  }
+}</pre>
+<a href="events/挥手3.json">查看逐人概率与源帧</a></details></article><article><h2>挥手4</h2>
+<video controls loop preload="metadata" poster="stills/挥手4.jpg" src="videos/挥手4_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/挥手4_逐人融合.mp4" download>下载</a></div>
+<p>保留原图照度门；低于75时使用逐人RGB。<br>169帧 · 最多2个检测候选 · 24次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/挥手4_T01.jpg" target="_blank">01</a> <a href="crops/挥手4_T02.jpg" target="_blank">02</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;other&quot;: 5,
+    &quot;drink&quot;: 7,
+    &quot;wave&quot;: 12
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_low_luma&quot;: 24
+  }
+}</pre>
+<a href="events/挥手4.json">查看逐人概率与源帧</a></details></article><article><h2>挥手20</h2>
+<video controls loop preload="metadata" poster="stills/挥手20.jpg" src="videos/挥手20_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/挥手20_逐人融合.mp4" download>下载</a></div>
+<p>保留原图照度门；低于75时使用逐人RGB。<br>55帧 · 最多1个检测候选 · 3次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/挥手20_T01.jpg" target="_blank">01</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;wave&quot;: 1,
+    &quot;other&quot;: 2
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_skeleton&quot;: 3
+  }
+}</pre>
+<a href="events/挥手20.json">查看逐人概率与源帧</a></details></article><article><h2>喝水16</h2>
+<video controls loop preload="metadata" poster="stills/喝水16.jpg" src="videos/喝水16_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/喝水16_逐人融合.mp4" download>下载</a></div>
+<p>保留原图照度门；低于75时使用逐人RGB。<br>75帧 · 最多1个检测候选 · 4次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/喝水16_T01.jpg" target="_blank">01</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;drink&quot;: 4
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_skeleton&quot;: 4
+  }
+}</pre>
+<a href="events/喝水16.json">查看逐人概率与源帧</a></details></article><article><h2>多人0060</h2>
+<video controls loop preload="metadata" poster="stills/多人0060.jpg" src="videos/多人0060_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/多人0060_逐人融合.mp4" download>下载</a></div>
+<p>线上已增强切片，裁掉旧底栏；原图亮度不可用。<br>59帧 · 最多16个检测候选 · 38次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/多人0060_T01.jpg" target="_blank">01</a> <a href="crops/多人0060_T02.jpg" target="_blank">02</a> <a href="crops/多人0060_T03.jpg" target="_blank">03</a> <a href="crops/多人0060_T04.jpg" target="_blank">04</a> <a href="crops/多人0060_T05.jpg" target="_blank">05</a> <a href="crops/多人0060_T06.jpg" target="_blank">06</a> <a href="crops/多人0060_T07.jpg" target="_blank">07</a> <a href="crops/多人0060_T08.jpg" target="_blank">08</a> <a href="crops/多人0060_T09.jpg" target="_blank">09</a> <a href="crops/多人0060_T10.jpg" target="_blank">10</a> <a href="crops/多人0060_T11.jpg" target="_blank">11</a> <a href="crops/多人0060_T12.jpg" target="_blank">12</a> <a href="crops/多人0060_T13.jpg" target="_blank">13</a> <a href="crops/多人0060_T14.jpg" target="_blank">14</a> <a href="crops/多人0060_T15.jpg" target="_blank">15</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;other&quot;: 38
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_skeleton&quot;: 26,
+    &quot;rgb_soft_no_pose&quot;: 12
+  }
+}</pre>
+<a href="events/多人0060.json">查看逐人概率与源帧</a></details></article><article><h2>多人0054</h2>
+<video controls loop preload="metadata" poster="stills/多人0054.jpg" src="videos/多人0054_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/多人0054_逐人融合.mp4" download>下载</a></div>
+<p>线上已增强切片，裁掉旧底栏；原图亮度不可用。<br>60帧 · 最多16个检测候选 · 41次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/多人0054_T01.jpg" target="_blank">01</a> <a href="crops/多人0054_T02.jpg" target="_blank">02</a> <a href="crops/多人0054_T03.jpg" target="_blank">03</a> <a href="crops/多人0054_T04.jpg" target="_blank">04</a> <a href="crops/多人0054_T06.jpg" target="_blank">06</a> <a href="crops/多人0054_T07.jpg" target="_blank">07</a> <a href="crops/多人0054_T08.jpg" target="_blank">08</a> <a href="crops/多人0054_T09.jpg" target="_blank">09</a> <a href="crops/多人0054_T10.jpg" target="_blank">10</a> <a href="crops/多人0054_T12.jpg" target="_blank">12</a> <a href="crops/多人0054_T13.jpg" target="_blank">13</a> <a href="crops/多人0054_T14.jpg" target="_blank">14</a> <a href="crops/多人0054_T15.jpg" target="_blank">15</a> <a href="crops/多人0054_T16.jpg" target="_blank">16</a> <a href="crops/多人0054_T17.jpg" target="_blank">17</a> <a href="crops/多人0054_T18.jpg" target="_blank">18</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;other&quot;: 40,
+    &quot;drink&quot;: 1
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_soft_no_pose&quot;: 14,
+    &quot;rgb_skeleton&quot;: 27
+  }
+}</pre>
+<a href="events/多人0054.json">查看逐人概率与源帧</a></details></article><article><h2>多人0055</h2>
+<video controls loop preload="metadata" poster="stills/多人0055.jpg" src="videos/多人0055_逐人融合.mp4"></video>
+<div class="tools"><button onclick="this.closest('article').querySelector('video').playbackRate=0.5">0.5倍慢放</button>
+<button onclick="this.closest('article').querySelector('video').playbackRate=1">原速</button>
+<a href="videos/多人0055_逐人融合.mp4" download>下载</a></div>
+<p>线上已增强切片，裁掉旧底栏；原图亮度不可用。<br>118帧 · 最多16个检测候选 · 101次逐人判断</p>
+<details><summary>查看各人物实际输入裁剪（轨迹编号）</summary><p><a href="crops/多人0055_T01.jpg" target="_blank">01</a> <a href="crops/多人0055_T02.jpg" target="_blank">02</a> <a href="crops/多人0055_T03.jpg" target="_blank">03</a> <a href="crops/多人0055_T04.jpg" target="_blank">04</a> <a href="crops/多人0055_T05.jpg" target="_blank">05</a> <a href="crops/多人0055_T06.jpg" target="_blank">06</a> <a href="crops/多人0055_T07.jpg" target="_blank">07</a> <a href="crops/多人0055_T08.jpg" target="_blank">08</a> <a href="crops/多人0055_T09.jpg" target="_blank">09</a> <a href="crops/多人0055_T11.jpg" target="_blank">11</a> <a href="crops/多人0055_T12.jpg" target="_blank">12</a> <a href="crops/多人0055_T13.jpg" target="_blank">13</a> <a href="crops/多人0055_T14.jpg" target="_blank">14</a> <a href="crops/多人0055_T15.jpg" target="_blank">15</a> <a href="crops/多人0055_T17.jpg" target="_blank">17</a> <a href="crops/多人0055_T19.jpg" target="_blank">19</a> </p>
+<p>每张图为同一轨迹窗口内4个采样时刻，识别实际使用32帧；填边保持人体比例。</p></details>
+<details><summary>分支与最终分类统计</summary><pre>{
+  &quot;labels&quot;: {
+    &quot;other&quot;: 101
+  },
+  &quot;modes&quot;: {
+    &quot;rgb_soft_no_pose&quot;: 26,
+    &quot;rgb_skeleton&quot;: 75
+  }
+}</pre>
+<a href="events/多人0055.json">查看逐人概率与源帧</a></details></article></div></main></html>

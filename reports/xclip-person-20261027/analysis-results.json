@@ -1,0 +1,1503 @@
+{
+  "old": {
+    "val": {
+      "sources": 60,
+      "sources_with_windows": 44,
+      "person_windows": 226,
+      "known": 198,
+      "methods": {
+        "xclip_0": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 41,
+          "accuracy": 0.20707070707070707,
+          "macro_f1": 0.32753501679588715,
+          "other_false": 150,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 8,
+              "fp": 50,
+              "fn": 1,
+              "precision": 0.13793103448275862,
+              "recall": 0.8888888888888888,
+              "f1": 0.23880597014925373
+            },
+            "chase": {
+              "total": 13,
+              "tp": 11,
+              "fp": 63,
+              "fn": 2,
+              "precision": 0.14864864864864866,
+              "recall": 0.8461538461538461,
+              "f1": 0.25287356321839083
+            },
+            "drink": {
+              "total": 10,
+              "tp": 6,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1": 0.75
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 23,
+              "fn": 0,
+              "precision": 0.14814814814814814,
+              "recall": 1.0,
+              "f1": 0.25806451612903225
+            },
+            "other": {
+              "total": 162,
+              "tp": 12,
+              "fp": 0,
+              "fn": 150,
+              "precision": 1.0,
+              "recall": 0.07407407407407407,
+              "f1": 0.13793103448275862
+            }
+          }
+        },
+        "xclip_0.4": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 163,
+          "accuracy": 0.8232323232323232,
+          "macro_f1": 0.6543790516919527,
+          "other_false": 24,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 8,
+              "fn": 3,
+              "precision": 0.42857142857142855,
+              "recall": 0.6666666666666666,
+              "f1": 0.5217391304347826
+            },
+            "chase": {
+              "total": 13,
+              "tp": 11,
+              "fp": 18,
+              "fn": 2,
+              "precision": 0.3793103448275862,
+              "recall": 0.8461538461538461,
+              "f1": 0.5238095238095238
+            },
+            "drink": {
+              "total": 10,
+              "tp": 6,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1": 0.75
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 2,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.6666666666666666,
+              "recall": 0.5,
+              "f1": 0.5714285714285714
+            },
+            "other": {
+              "total": 162,
+              "tp": 138,
+              "fp": 5,
+              "fn": 24,
+              "precision": 0.965034965034965,
+              "recall": 0.8518518518518519,
+              "f1": 0.9049180327868852
+            }
+          }
+        },
+        "xclip_0.41": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 165,
+          "accuracy": 0.8333333333333334,
+          "macro_f1": 0.6610439638254395,
+          "other_false": 22,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 8,
+              "fn": 3,
+              "precision": 0.42857142857142855,
+              "recall": 0.6666666666666666,
+              "f1": 0.5217391304347826
+            },
+            "chase": {
+              "total": 13,
+              "tp": 11,
+              "fp": 16,
+              "fn": 2,
+              "precision": 0.4074074074074074,
+              "recall": 0.8461538461538461,
+              "f1": 0.55
+            },
+            "drink": {
+              "total": 10,
+              "tp": 6,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1": 0.75
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 2,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.6666666666666666,
+              "recall": 0.5,
+              "f1": 0.5714285714285714
+            },
+            "other": {
+              "total": 162,
+              "tp": 140,
+              "fp": 5,
+              "fn": 22,
+              "precision": 0.9655172413793104,
+              "recall": 0.8641975308641975,
+              "f1": 0.9120521172638436
+            }
+          }
+        },
+        "xclip_0.75": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 176,
+          "accuracy": 0.8888888888888888,
+          "macro_f1": 0.5191228070175439,
+          "other_false": 0,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 4,
+              "fn": 3,
+              "precision": 0.6,
+              "recall": 0.6666666666666666,
+              "f1": 0.631578947368421
+            },
+            "chase": {
+              "total": 13,
+              "tp": 2,
+              "fp": 0,
+              "fn": 11,
+              "precision": 1.0,
+              "recall": 0.15384615384615385,
+              "f1": 0.26666666666666666
+            },
+            "drink": {
+              "total": 10,
+              "tp": 6,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1": 0.75
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 162,
+              "tp": 162,
+              "fp": 18,
+              "fn": 0,
+              "precision": 0.9,
+              "recall": 1.0,
+              "f1": 0.9473684210526315
+            }
+          }
+        },
+        "xclip_0.85": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 174,
+          "accuracy": 0.8787878787878788,
+          "macro_f1": 0.46468788249694004,
+          "other_false": 0,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 4,
+              "fn": 3,
+              "precision": 0.6,
+              "recall": 0.6666666666666666,
+              "f1": 0.631578947368421
+            },
+            "chase": {
+              "total": 13,
+              "tp": 0,
+              "fp": 0,
+              "fn": 13,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "drink": {
+              "total": 10,
+              "tp": 6,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1": 0.75
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 162,
+              "tp": 162,
+              "fp": 20,
+              "fn": 0,
+              "precision": 0.8901098901098901,
+              "recall": 1.0,
+              "f1": 0.9418604651162791
+            }
+          }
+        },
+        "xclip_0.925": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 172,
+          "accuracy": 0.8686868686868687,
+          "macro_f1": 0.4416690814256737,
+          "other_false": 0,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 2,
+              "fn": 3,
+              "precision": 0.75,
+              "recall": 0.6666666666666666,
+              "f1": 0.7058823529411765
+            },
+            "chase": {
+              "total": 13,
+              "tp": 0,
+              "fp": 0,
+              "fn": 13,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "drink": {
+              "total": 10,
+              "tp": 4,
+              "fp": 0,
+              "fn": 6,
+              "precision": 1.0,
+              "recall": 0.4,
+              "f1": 0.5714285714285714
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 162,
+              "tp": 162,
+              "fp": 24,
+              "fn": 0,
+              "precision": 0.8709677419354839,
+              "recall": 1.0,
+              "f1": 0.9310344827586207
+            }
+          }
+        },
+        "videomamba_rgb_0925": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 184,
+          "accuracy": 0.9292929292929293,
+          "macro_f1": 0.8199425114762539,
+          "other_false": 6,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "precision": 0.8888888888888888,
+              "recall": 0.6153846153846154,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 5,
+              "fn": 0,
+              "precision": 0.4444444444444444,
+              "recall": 1.0,
+              "f1": 0.6153846153846154
+            },
+            "other": {
+              "total": 162,
+              "tp": 156,
+              "fp": 8,
+              "fn": 6,
+              "precision": 0.9512195121951219,
+              "recall": 0.9629629629629629,
+              "f1": 0.9570552147239264
+            }
+          }
+        },
+        "videomamba_rgb_075": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 182,
+          "accuracy": 0.9191919191919192,
+          "macro_f1": 0.8022446689113355,
+          "other_false": 8,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "precision": 0.8888888888888888,
+              "recall": 0.6153846153846154,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 7,
+              "fn": 0,
+              "precision": 0.36363636363636365,
+              "recall": 1.0,
+              "f1": 0.5333333333333333
+            },
+            "other": {
+              "total": 162,
+              "tp": 154,
+              "fp": 8,
+              "fn": 8,
+              "precision": 0.9506172839506173,
+              "recall": 0.9506172839506173,
+              "f1": 0.9506172839506173
+            }
+          }
+        },
+        "current_full": {
+          "windows": 198,
+          "unknown": 28,
+          "correct": 184,
+          "accuracy": 0.9292929292929293,
+          "macro_f1": 0.7541636676576435,
+          "other_false": 3,
+          "other_total": 162,
+          "per_class": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.6666666666666666,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "precision": 0.8888888888888888,
+              "recall": 0.6153846153846154,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "precision": 0.3333333333333333,
+              "recall": 0.25,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "precision": 0.9352941176470588,
+              "recall": 0.9814814814814815,
+              "f1": 0.9578313253012049
+            }
+          }
+        }
+      }
+    },
+    "test": {
+      "sources": 58,
+      "sources_with_windows": 52,
+      "person_windows": 252,
+      "known": 214,
+      "methods": {
+        "xclip_0": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 60,
+          "accuracy": 0.2803738317757009,
+          "macro_f1": 0.36042630986096746,
+          "other_false": 149,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 57,
+              "fn": 0,
+              "precision": 0.16176470588235295,
+              "recall": 1.0,
+              "f1": 0.27848101265822783
+            },
+            "chase": {
+              "total": 25,
+              "tp": 24,
+              "fp": 33,
+              "fn": 1,
+              "precision": 0.42105263157894735,
+              "recall": 0.96,
+              "f1": 0.5853658536585366
+            },
+            "drink": {
+              "total": 11,
+              "tp": 8,
+              "fp": 8,
+              "fn": 3,
+              "precision": 0.5,
+              "recall": 0.7272727272727273,
+              "f1": 0.5925925925925926
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 25,
+              "fn": 1,
+              "precision": 0.10714285714285714,
+              "recall": 0.75,
+              "f1": 0.1875
+            },
+            "other": {
+              "total": 163,
+              "tp": 14,
+              "fp": 0,
+              "fn": 149,
+              "precision": 1.0,
+              "recall": 0.08588957055214724,
+              "f1": 0.15819209039548024
+            }
+          }
+        },
+        "xclip_0.4": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 181,
+          "accuracy": 0.8457943925233645,
+          "macro_f1": 0.6319233567790443,
+          "other_false": 23,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 13,
+              "fn": 0,
+              "precision": 0.4583333333333333,
+              "recall": 1.0,
+              "f1": 0.6285714285714286
+            },
+            "chase": {
+              "total": 25,
+              "tp": 22,
+              "fp": 9,
+              "fn": 3,
+              "precision": 0.7096774193548387,
+              "recall": 0.88,
+              "f1": 0.7857142857142857
+            },
+            "drink": {
+              "total": 11,
+              "tp": 8,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.7272727272727273,
+              "f1": 0.8421052631578947
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 1,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 163,
+              "tp": 140,
+              "fp": 7,
+              "fn": 23,
+              "precision": 0.9523809523809523,
+              "recall": 0.8588957055214724,
+              "f1": 0.9032258064516129
+            }
+          }
+        },
+        "xclip_0.41": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 181,
+          "accuracy": 0.8457943925233645,
+          "macro_f1": 0.6228794081735258,
+          "other_false": 22,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 12,
+              "fn": 0,
+              "precision": 0.4782608695652174,
+              "recall": 1.0,
+              "f1": 0.6470588235294118
+            },
+            "chase": {
+              "total": 25,
+              "tp": 22,
+              "fp": 9,
+              "fn": 3,
+              "precision": 0.7096774193548387,
+              "recall": 0.88,
+              "f1": 0.7857142857142857
+            },
+            "drink": {
+              "total": 11,
+              "tp": 7,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6363636363636364,
+              "f1": 0.7777777777777778
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 1,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 163,
+              "tp": 141,
+              "fp": 8,
+              "fn": 22,
+              "precision": 0.9463087248322147,
+              "recall": 0.8650306748466258,
+              "f1": 0.9038461538461539
+            }
+          }
+        },
+        "xclip_0.75": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 198,
+          "accuracy": 0.9252336448598131,
+          "macro_f1": 0.6942412288566134,
+          "other_false": 1,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.8461538461538461,
+              "recall": 1.0,
+              "f1": 0.9166666666666666
+            },
+            "chase": {
+              "total": 25,
+              "tp": 18,
+              "fp": 1,
+              "fn": 7,
+              "precision": 0.9473684210526315,
+              "recall": 0.72,
+              "f1": 0.8181818181818182
+            },
+            "drink": {
+              "total": 11,
+              "tp": 7,
+              "fp": 0,
+              "fn": 4,
+              "precision": 1.0,
+              "recall": 0.6363636363636364,
+              "f1": 0.7777777777777778
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 163,
+              "tp": 162,
+              "fp": 13,
+              "fn": 1,
+              "precision": 0.9257142857142857,
+              "recall": 0.9938650306748467,
+              "f1": 0.9585798816568047
+            }
+          }
+        },
+        "xclip_0.85": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 193,
+          "accuracy": 0.9018691588785047,
+          "macro_f1": 0.6503374164311033,
+          "other_false": 0,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 2,
+              "fn": 0,
+              "precision": 0.8461538461538461,
+              "recall": 1.0,
+              "f1": 0.9166666666666666
+            },
+            "chase": {
+              "total": 25,
+              "tp": 13,
+              "fp": 0,
+              "fn": 12,
+              "precision": 1.0,
+              "recall": 0.52,
+              "f1": 0.6842105263157895
+            },
+            "drink": {
+              "total": 11,
+              "tp": 6,
+              "fp": 0,
+              "fn": 5,
+              "precision": 1.0,
+              "recall": 0.5454545454545454,
+              "f1": 0.7058823529411765
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 163,
+              "tp": 163,
+              "fp": 19,
+              "fn": 0,
+              "precision": 0.8956043956043956,
+              "recall": 1.0,
+              "f1": 0.9449275362318841
+            }
+          }
+        },
+        "xclip_0.925": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 180,
+          "accuracy": 0.8411214953271028,
+          "macro_f1": 0.5262169312169311,
+          "other_false": 0,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 10,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.9090909090909091,
+              "f1": 0.9523809523809523
+            },
+            "chase": {
+              "total": 25,
+              "tp": 2,
+              "fp": 0,
+              "fn": 23,
+              "precision": 1.0,
+              "recall": 0.08,
+              "f1": 0.14814814814814814
+            },
+            "drink": {
+              "total": 11,
+              "tp": 5,
+              "fp": 0,
+              "fn": 6,
+              "precision": 1.0,
+              "recall": 0.45454545454545453,
+              "f1": 0.625
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "other": {
+              "total": 163,
+              "tp": 163,
+              "fp": 34,
+              "fn": 0,
+              "precision": 0.8274111675126904,
+              "recall": 1.0,
+              "f1": 0.9055555555555556
+            }
+          }
+        },
+        "videomamba_rgb_0925": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 197,
+          "accuracy": 0.9205607476635514,
+          "macro_f1": 0.8417617748254536,
+          "other_false": 8,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.7857142857142857,
+              "recall": 1.0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 19,
+              "fp": 3,
+              "fn": 6,
+              "precision": 0.8636363636363636,
+              "recall": 0.76,
+              "f1": 0.8085106382978723
+            },
+            "drink": {
+              "total": 11,
+              "tp": 8,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.7272727272727273,
+              "f1": 0.8421052631578947
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            },
+            "other": {
+              "total": 163,
+              "tp": 155,
+              "fp": 8,
+              "fn": 8,
+              "precision": 0.950920245398773,
+              "recall": 0.950920245398773,
+              "f1": 0.950920245398773
+            }
+          }
+        },
+        "videomamba_rgb_075": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 199,
+          "accuracy": 0.9299065420560748,
+          "macro_f1": 0.8612437417654808,
+          "other_false": 9,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.7857142857142857,
+              "recall": 1.0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 20,
+              "fp": 3,
+              "fn": 5,
+              "precision": 0.8695652173913043,
+              "recall": 0.8,
+              "f1": 0.8333333333333334
+            },
+            "drink": {
+              "total": 11,
+              "tp": 10,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.9090909090909091,
+              "recall": 0.9090909090909091,
+              "f1": 0.9090909090909091
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            },
+            "other": {
+              "total": 163,
+              "tp": 154,
+              "fp": 5,
+              "fn": 9,
+              "precision": 0.9685534591194969,
+              "recall": 0.9447852760736196,
+              "f1": 0.9565217391304348
+            }
+          }
+        },
+        "current_full": {
+          "windows": 214,
+          "unknown": 38,
+          "correct": 195,
+          "accuracy": 0.9112149532710281,
+          "macro_f1": 0.7844593837535013,
+          "other_false": 2,
+          "other_total": 163,
+          "per_class": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.7857142857142857,
+              "recall": 1.0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "precision": 1.0,
+              "recall": 0.68,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "precision": 1.0,
+              "recall": 0.2727272727272727,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "precision": 0.9096045197740112,
+              "recall": 0.9877300613496932,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      }
+    }
+  },
+  "long": [
+    {
+      "source": {
+        "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+        "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+        "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "bytes": 214371254,
+        "sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+        "duration": 395.04,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 9876,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 1
+      },
+      "frames": 9876,
+      "events": 5573,
+      "labels": {
+        "wave": 380,
+        "other": 4346,
+        "fall": 11,
+        "pick_up": 31,
+        "shake_hands": 237,
+        "chase": 182,
+        "fight": 73,
+        "talk": 304,
+        "drink": 7,
+        "throw": 2
+      },
+      "elapsed": 945.9719376428984,
+      "loaded_models": [
+        "NTIRE.pth",
+        "yolo26m_person_20261024.onnx",
+        "microsoft/xclip-base-patch16-zero-shot"
+      ],
+      "no_pose": true,
+      "no_object": true,
+      "primary_threshold": 0.4,
+      "visualization_size": [
+        720,
+        404
+      ],
+      "method": "Full sequence, independent box+appearance tracker; no skeleton in frontend/decision.",
+      "threshold_counts": {
+        "0.4": {
+          "wave": 380,
+          "other": 4346,
+          "fall": 11,
+          "pick_up": 31,
+          "shake_hands": 237,
+          "chase": 182,
+          "fight": 73,
+          "talk": 304,
+          "drink": 7,
+          "throw": 2
+        },
+        "0.41": {
+          "wave": 354,
+          "other": 4437,
+          "fall": 9,
+          "pick_up": 27,
+          "shake_hands": 216,
+          "chase": 175,
+          "fight": 68,
+          "talk": 280,
+          "drink": 6,
+          "throw": 1
+        },
+        "0.75": {
+          "other": 5502,
+          "wave": 38,
+          "chase": 20,
+          "shake_hands": 4,
+          "fight": 2,
+          "talk": 7
+        },
+        "0.925": {
+          "other": 5571,
+          "wave": 2
+        }
+      },
+      "videomamba_full_counts": {
+        "other": 5554,
+        "chase": 10,
+        "wave": 1
+      },
+      "baseline_windows": 5565,
+      "comparison_limit": "Independent no-pose tracking changes windows; counts are triggers, not false-positive counts. Only reviewed anchors below have labels."
+    },
+    {
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "bytes": 166479314,
+        "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+        "duration": 540.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 13500,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 7
+      },
+      "frames": 13500,
+      "events": 6333,
+      "labels": {
+        "other": 4162,
+        "wave": 883,
+        "shake_hands": 1007,
+        "talk": 174,
+        "drink": 19,
+        "pick_up": 24,
+        "chase": 35,
+        "fight": 8,
+        "fall": 21
+      },
+      "elapsed": 1211.8721340089105,
+      "loaded_models": [
+        "NTIRE.pth",
+        "yolo26m_person_20261024.onnx",
+        "microsoft/xclip-base-patch16-zero-shot"
+      ],
+      "no_pose": true,
+      "no_object": true,
+      "primary_threshold": 0.4,
+      "visualization_size": [
+        720,
+        404
+      ],
+      "method": "Full sequence, independent box+appearance tracker; no skeleton in frontend/decision.",
+      "threshold_counts": {
+        "0.4": {
+          "other": 4162,
+          "wave": 883,
+          "shake_hands": 1007,
+          "talk": 174,
+          "drink": 19,
+          "pick_up": 24,
+          "chase": 35,
+          "fight": 8,
+          "fall": 21
+        },
+        "0.41": {
+          "other": 4291,
+          "wave": 843,
+          "shake_hands": 941,
+          "talk": 162,
+          "drink": 17,
+          "pick_up": 21,
+          "chase": 32,
+          "fight": 8,
+          "fall": 18
+        },
+        "0.75": {
+          "other": 6129,
+          "shake_hands": 72,
+          "talk": 6,
+          "wave": 124,
+          "fall": 2
+        },
+        "0.925": {
+          "other": 6311,
+          "wave": 18,
+          "shake_hands": 4
+        }
+      },
+      "videomamba_full_counts": {
+        "other": 6310,
+        "drink": 1,
+        "wave": 1
+      },
+      "baseline_windows": 6312,
+      "comparison_limit": "Independent no-pose tracking changes windows; counts are triggers, not false-positive counts. Only reviewed anchors below have labels."
+    },
+    {
+      "source": {
+        "archive": "大厅视频.7z",
+        "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+        "path": "extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "bytes": 131077996,
+        "sha256": "ef0658fe87e45bc8a43f608057f5fc26b2810aa307a56a7e2f017c5b747d974d",
+        "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+        "duration": 242.0,
+        "width": 1920,
+        "height": 1080,
+        "fps": "25/1",
+        "frames": 6050,
+        "codec": "h264",
+        "probe_errors": "",
+        "number": 9
+      },
+      "frames": 6050,
+      "events": 5064,
+      "labels": {
+        "other": 3187,
+        "pick_up": 26,
+        "talk": 288,
+        "wave": 353,
+        "shake_hands": 1132,
+        "chase": 30,
+        "throw": 4,
+        "fight": 8,
+        "drink": 23,
+        "fall": 13
+      },
+      "elapsed": 694.8977802279405,
+      "loaded_models": [
+        "NTIRE.pth",
+        "yolo26m_person_20261024.onnx",
+        "microsoft/xclip-base-patch16-zero-shot"
+      ],
+      "no_pose": true,
+      "no_object": true,
+      "primary_threshold": 0.4,
+      "visualization_size": [
+        720,
+        404
+      ],
+      "method": "Full sequence, independent box+appearance tracker; no skeleton in frontend/decision.",
+      "threshold_counts": {
+        "0.4": {
+          "other": 3187,
+          "pick_up": 26,
+          "talk": 288,
+          "wave": 353,
+          "shake_hands": 1132,
+          "chase": 30,
+          "throw": 4,
+          "fight": 8,
+          "drink": 23,
+          "fall": 13
+        },
+        "0.41": {
+          "other": 3282,
+          "pick_up": 21,
+          "talk": 265,
+          "wave": 330,
+          "shake_hands": 1092,
+          "throw": 4,
+          "chase": 29,
+          "fight": 6,
+          "drink": 23,
+          "fall": 12
+        },
+        "0.75": {
+          "other": 4804,
+          "shake_hands": 216,
+          "wave": 24,
+          "talk": 11,
+          "drink": 9
+        },
+        "0.925": {
+          "other": 5035,
+          "wave": 2,
+          "shake_hands": 25,
+          "drink": 2
+        }
+      },
+      "videomamba_full_counts": {
+        "other": 5035,
+        "wave": 1
+      },
+      "baseline_windows": 5036,
+      "comparison_limit": "Independent no-pose tracking changes windows; counts are triggers, not false-positive counts. Only reviewed anchors below have labels."
+    }
+  ],
+  "bootstrap": {
+    "groups": 48,
+    "replicates": 2000,
+    "seed": 27,
+    "macro_f1_difference_xclip_minus_full": -0.1615799755799755,
+    "percentile95": [
+      -0.3040666023477732,
+      0.04351241699284778
+    ],
+    "method": "Resample original source groups. Descriptive uncertainty, no significance or external-generalization claim."
+  },
+  "reviewed_running_anchors": [
+    {
+      "frame": 521,
+      "track_id": 37,
+      "truth": "chase",
+      "group": "child37-run-away",
+      "note": "Gray-sweater child moving away; consecutive raw frames show running/hopping stride.",
+      "timestamp": 20.84,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 37,
+      "xclip_timestamp": 20.84,
+      "labels": {
+        "0.4": "chase",
+        "0.41": "chase",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 613,
+      "track_id": 37,
+      "truth": "chase",
+      "group": "child37-run-away",
+      "note": "Same child farther from camera; running sequence.",
+      "timestamp": 24.52,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 37,
+      "xclip_timestamp": 24.52,
+      "labels": {
+        "0.4": "chase",
+        "0.41": "chase",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 4878,
+      "track_id": 460,
+      "truth": "other",
+      "group": "adult460-walk",
+      "note": "Black-shirt adult walking with cup.",
+      "timestamp": 195.12,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 458,
+      "xclip_timestamp": 195.12,
+      "labels": {
+        "0.4": "other",
+        "0.41": "other",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 4951,
+      "track_id": 470,
+      "truth": "other",
+      "group": "adult470-walk",
+      "note": "Black-clad adult walking with bag.",
+      "timestamp": 198.04,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 468,
+      "xclip_timestamp": 198.04,
+      "labels": {
+        "0.4": "other",
+        "0.41": "other",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 5773,
+      "track_id": 558,
+      "truth": "other",
+      "group": "overlap558-walk",
+      "note": "Two overlapping adults walking together; detector box merges bodies.",
+      "timestamp": 230.92,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 556,
+      "xclip_timestamp": 230.92,
+      "labels": {
+        "0.4": "other",
+        "0.41": "other",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 7475,
+      "track_id": 749,
+      "truth": "chase",
+      "group": "child749-run-across",
+      "note": "Dark-shirt child running toward the foreground.",
+      "timestamp": 299.0,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 747,
+      "xclip_timestamp": 299.0,
+      "labels": {
+        "0.4": "chase",
+        "0.41": "chase",
+        "0.75": "chase",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 7488,
+      "track_id": 749,
+      "truth": "chase",
+      "group": "child749-run-across",
+      "note": "Same child running out of frame.",
+      "timestamp": 299.52,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 747,
+      "xclip_timestamp": 299.52,
+      "labels": {
+        "0.4": "chase",
+        "0.41": "chase",
+        "0.75": "chase",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 8120,
+      "track_id": 795,
+      "truth": "other",
+      "group": "adult795-walk",
+      "note": "Black-shirt adult walking away.",
+      "timestamp": 324.8,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 793,
+      "xclip_timestamp": 324.8,
+      "labels": {
+        "0.4": "wave",
+        "0.41": "wave",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 8828,
+      "track_id": 822,
+      "truth": "other",
+      "group": "adult822-walk",
+      "note": "Blue-shirt adult slowly walking/turning.",
+      "timestamp": 353.12,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 820,
+      "xclip_timestamp": 353.12,
+      "labels": {
+        "0.4": "other",
+        "0.41": "other",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    },
+    {
+      "frame": 9341,
+      "track_id": 909,
+      "truth": "other",
+      "group": "far909-not-running",
+      "note": "Distant person bends/stands by counter, not running in temporal context; limited pixel detail.",
+      "timestamp": 373.64,
+      "matched": true,
+      "iou": 1.0,
+      "time_delta": 0.0,
+      "xclip_track": 907,
+      "xclip_timestamp": 373.64,
+      "labels": {
+        "0.4": "other",
+        "0.41": "other",
+        "0.75": "other",
+        "0.925": "other"
+      }
+    }
+  ]
+}

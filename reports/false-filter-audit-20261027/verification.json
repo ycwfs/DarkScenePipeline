@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "frozen_baseline_windows": 51834,
+  "old_stage_counts_verified": true,
+  "memory_actor_generation_causality_verified": true,
+  "actual_long_event_count": 16913,
+  "figures": 4,
+  "no_production_change": true
+}

@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "platform_payload_files": 66,
+  "box_payload_files": 85,
+  "unchanged_model_files": 12,
+  "added_model_files": 1,
+  "changed_from_tau075": [
+    "CLAUDE.md",
+    "README.md",
+    "ckpts/yolo26m_objects_20261026.onnx",
+    "darkpipe/assets/NotoSansCJK-subset.ttf",
+    "darkpipe/config.py",
+    "darkpipe/constants.py",
+    "darkpipe/person/action_engine.py",
+    "darkpipe/person/clips.py",
+    "darkpipe/person/core.py",
+    "darkpipe/person/frontend_process.py",
+    "darkpipe/person/object_prior.py",
+    "darkpipe/person/object_runtime.py",
+    "darkpipe/person/runtime.py",
+    "darkpipe/stages/__init__.py",
+    "darkpipe/stages/object_prior.py",
+    "darkpipe/stages/recognize.py",
+    "main.py",
+    "models.json",
+    "suanzi.json"
+  ],
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_person_object_20261026.tar.gz",
+      "alias": "platform/dark-demo-v2.tar.gz",
+      "sha256": "f0e64375aea338461def1602e27abca98fabe82cdaae4e14b03b861c31742206",
+      "bytes": 417888630
+    },
+    {
+      "path": "platform/dark-demo-v2_person_object_20261026.zip",
+      "alias": "platform/dark-demo-v2.zip",
+      "sha256": "b40952a2f40b5779e13fa113214d154813f97ca9f03d5d673eb05658fb0dbde7",
+      "bytes": 417920696
+    },
+    {
+      "path": "NVIDIA-Box_person_object_20261026.zip",
+      "alias": "NVIDIA-Box.zip",
+      "sha256": "7fffe21606f05cbf0427f24b20b0979dd5caed44e85547e8a395f103cd8977e6",
+      "bytes": 450278265
+    }
+  ],
+  "model_training": false,
+  "object_prior": true
+}

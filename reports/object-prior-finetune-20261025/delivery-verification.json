@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "archives": [
+    {
+      "archive": "object-prior-review_20261026.zip",
+      "sha256": "cd0f873b84bef906496c6b7c6b419376bd3be4524f2059d40d1c19342dec83ce",
+      "files_verified": 81,
+      "independent_extract": true
+    },
+    {
+      "archive": "object-prior-candidate_20261026.zip",
+      "sha256": "a879b37cc6969a9012885a73f6a7ebaa97efc557918a8754577a56a4ab41590b",
+      "files_verified": 1781,
+      "independent_extract": true,
+      "portable_images": 397,
+      "portable_cpu_probe": {
+        "predictions": 1,
+        "providers": [
+          "CPUExecutionProvider"
+        ],
+        "matches_saved_output": true
+      },
+      "rules_tests": 8
+    }
+  ]
+}

@@ -1,0 +1,933 @@
+[
+  {
+    "path": "reports/manypeople-inference-20261025/events/01_events.json",
+    "sha256": "c5930629856dc0dd117247b4d4a5d4d3efa4dbab5f3bd4b8f4f4b769adf568a5",
+    "number": 1,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 77
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/02_events.json",
+    "sha256": "579ff74d6f5277bd938b616b31111f064f83e880582b3db98b3535801e2de831",
+    "number": 2,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 7055,
+    "non_other": 188
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/03_events.json",
+    "sha256": "2e01d5825b386a7c4627881d58d4ca086addd6f831306cca1e0be64cbe7abdc6",
+    "number": 3,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 6935,
+    "non_other": 261
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/04_events.json",
+    "sha256": "193ff4f0b74a8e56ab831fd7bf376e6aa31ad788d03b17dae774392b8382e0fa",
+    "number": 4,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 4142,
+    "non_other": 58
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/05_events.json",
+    "sha256": "9f3d159a1ea09eb41417a8bae323c5d779a470051fd254d50f05259979c01553",
+    "number": 5,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 3672,
+    "non_other": 111
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/06_events.json",
+    "sha256": "2fab4e3e0b23ea62652d7f151ddd25d1f12e103b8e9730c1c9fc54412a9cd549",
+    "number": 6,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 2690,
+    "non_other": 38
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/07_events.json",
+    "sha256": "287579566653780bf9e3c07210fe5865a2f36881731e9cc0f5611133f342c7bf",
+    "number": 7,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 156
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/08_events.json",
+    "sha256": "c468de6d3910dec8e53b0f950e7c3af5c25d5c30f4b0f2984d93f7f715b13711",
+    "number": 8,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 6193,
+    "non_other": 38
+  },
+  {
+    "path": "reports/manypeople-inference-20261025/events/09_events.json",
+    "sha256": "5cd2383a15eb4ac023afcd04156b6c248371fa6d35de4865d2cadc1f859acfdd",
+    "number": 9,
+    "offset": 0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 67
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/new-07/events.json",
+    "sha256": "2c6f752049f8f27f6e1dc84aa0c0dfe15585d0bf5eeb0753fccb7e90f4a1a3c0",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/new-01/events.json",
+    "sha256": "76d1d7fb8e1f234e1e4bbfb50aee6b017519a00b57facbe7934626eb2694f66c",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-overlay-20261027/demos/new-09/events.json",
+    "sha256": "c9dbf0d9021f0595d79e860f98059b01bf37504e3eacdbc47933a39fc3c269a0",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-07/baseline-events.jsonl",
+    "sha256": "f35b81f5ffe3d83051d373f670b86cf98f7ac30829faa59e9e0bab98c2b9577c",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 20
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-07/candidate-events.jsonl",
+    "sha256": "e47c65a20928b4afd1c199ce58d5753a5d1f55495b20d13ef85c4424ccf3eede",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 20
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-01/baseline-events.jsonl",
+    "sha256": "70592f1fb322e1db27c8d4ffdf4a93ca8160416a45c70dd266a82041c23deff9",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 13
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-01/candidate-events.jsonl",
+    "sha256": "0eafed48d811e01651dfe4f15df57f88478144c70d394c6d6185e59a83f0a629",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 13
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-09/baseline-events.jsonl",
+    "sha256": "43d6b537ad3e4d40c4291e8dcf48de24eef988abca14ba49f61823d415457b7a",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/long-videos/new-09/candidate-events.jsonl",
+    "sha256": "3aa3dd77bcd9557b82ccf6e069a5787826195028e67ec6b2ff2ec90e17f4a995",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/short-regression/new-07/baseline-events.jsonl",
+    "sha256": "42d7823602891361d2f091270f14e041f44bf3ea4217dff71988303baf985344",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/short-regression/new-07/candidate-events.jsonl",
+    "sha256": "06308c505af995ea91b130621ec6f72b02c4ca76d0fcc6e1c92983cd1a209d0a",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/short-regression/new-01/baseline-events.jsonl",
+    "sha256": "1d0b1dbbd87f6dbf89ba9e7110d64102a1503967a563ec093c33e619b3eef28b",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/short-regression/new-01/candidate-events.jsonl",
+    "sha256": "39cf6c7c520801d6b896ca7c984b4d2735c2bf459f870c4e8de3f09c21be5fa7",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/short-regression/new-09/baseline-events.jsonl",
+    "sha256": "d71c51a741f89e9e76cb87cdc19c4e9215f6b6b7cba94816a2d861d80b32469f",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-hardneg-finetune-20261027/short-regression/new-09/candidate-events.jsonl",
+    "sha256": "90cc065d5968e3dd4e2bce255c2f42589d993c387f988321266ae601a683067c",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/long-videos/new-07/baseline-events.jsonl",
+    "sha256": "5e0bd5cb3f151cfc59c602b9c566b2473e17479836be7a9af4854509b716158a",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 20
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/long-videos/new-07/candidate-events.jsonl",
+    "sha256": "4181fc119b47ff816691309445ceccee33786335e3b055bc4373527a8cb65551",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 19
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/long-videos/new-01/baseline-events.jsonl",
+    "sha256": "f1d2ffe38b878c76444f098efdb5f32ce76fd8d416e0df88c66bad799d23e707",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 13
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/long-videos/new-01/candidate-events.jsonl",
+    "sha256": "cc572eb3fe6b622d6d9a89e631b0e027da39433d47f4da09ba4c105d7bfd5f6d",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 13
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/long-videos/new-09/baseline-events.jsonl",
+    "sha256": "feaf766caf63c61e17b62fdfdc8dda6bd78c0c28244d3eaf48540525570f10b3",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/long-videos/new-09/candidate-events.jsonl",
+    "sha256": "971136129b423c2637f05fda36fa47bea416228463b36986e26169ac5702c1ed",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/short-regression/new-07/baseline-events.jsonl",
+    "sha256": "8ef29927d5137a469b4d2bee75d04d16bd9b4628cc7722f017e0c609897ba5b1",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/short-regression/new-07/candidate-events.jsonl",
+    "sha256": "99bc06e64844996fea8cebc1fa7bbb757a33a05c7277d2e6c50253dcca5193ec",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/short-regression/new-01/baseline-events.jsonl",
+    "sha256": "dbfc26636e8c7b1a5b49da61b595b794ac268e02afe75260e496c3d79f83fe94",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/short-regression/new-01/candidate-events.jsonl",
+    "sha256": "0c74a20903378e605eb3ab0e47918dfa6f6ed4a4f73e99074ebc874aaf820f94",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/short-regression/new-09/baseline-events.jsonl",
+    "sha256": "7c4933e0c83df70917b6be2e7e582e812e54322d2a1e4e28056ed0826d25021d",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/object-coco80-finetune-20261027/short-regression/new-09/candidate-events.jsonl",
+    "sha256": "b8e8c7e4b85a621ab7d9658e66bd558c7a6ab10fe870ed6ae563481141e86cf9",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 0
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/long-videos/new-07/baseline-events.jsonl",
+    "sha256": "67d6cb345e0e2286c7a51a8a51b48914d16c0577cc67671ec92e6208861b9aa0",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 20
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/long-videos/new-07/candidate-events.jsonl",
+    "sha256": "8adff4b32c4ebe66c90a0a489d2c62e055a4b027b13ee23de317895eeb6cb95f",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 2
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/long-videos/new-01/baseline-events.jsonl",
+    "sha256": "2733046185248437bee95ddc56479d1f4d1fd7fdcde61f6870be529f282864da",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 13
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/long-videos/new-01/candidate-events.jsonl",
+    "sha256": "7ee13229836c71c7c8ff94453abeee236c6581e90c3941fd2fb57ea25b558054",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 11
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/long-videos/new-09/baseline-events.jsonl",
+    "sha256": "d557a25667d8f0073765e7b3a2edb8c3712209fc7c4caaa2f6c7cf1f99b82738",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/long-videos/new-09/candidate-events.jsonl",
+    "sha256": "da7a069feb1701395b958f083d38cef6179f6880369697f60c69c9161b94af56",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/short-regression/new-07/baseline-events.jsonl",
+    "sha256": "0dd91572d4762d6127df1019b985f065ca5c1080efe16dda5e5e77b6c097b2d0",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/short-regression/new-07/candidate-events.jsonl",
+    "sha256": "55a504d2342a627b7a5f7503ff9fd97f768f9126fab43add60e656f05a64562a",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/short-regression/new-01/baseline-events.jsonl",
+    "sha256": "8338f6c75eb734a93b9cb623204f6d1c29ca6b356b7f6452a5b1ef59f8b968d8",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/short-regression/new-01/candidate-events.jsonl",
+    "sha256": "a9aaa72d5cde38e02f87943add7a9f349438824daf19119eeca7e4bdc68f5e29",
+    "number": 1,
+    "offset": 140.0,
+    "category": "videomamba",
+    "events": 298,
+    "non_other": 0
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/short-regression/new-09/baseline-events.jsonl",
+    "sha256": "63b82385b502a4689419f98bb5444e0be18e476ec10df4f298e472106c35a219",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/short-regression/new-09/candidate-events.jsonl",
+    "sha256": "12dc213e1b47201a2321a7409c78c29b25db74491c6c41835f064c4c31220a4a",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-01-wave-veto/baseline-events.jsonl",
+    "sha256": "4023f64b76943e47f6bd4ba24eff04501d62d85ef5f69d407ed000912b2d0989",
+    "number": 1,
+    "offset": 261.0,
+    "category": "videomamba",
+    "events": 189,
+    "non_other": 2
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-01-wave-veto/candidate-events.jsonl",
+    "sha256": "c34460923a734ff20c2831e039d943d17637d246f7a549a0061c7e86814fd2dd",
+    "number": 1,
+    "offset": 261.0,
+    "category": "videomamba",
+    "events": 189,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-07-standing-veto/baseline-events.jsonl",
+    "sha256": "d56366f47f5e64a83898cd7603cdadd9f3f642447d07c6d4af0fb3be013db6f2",
+    "number": 7,
+    "offset": 90.0,
+    "category": "videomamba",
+    "events": 86,
+    "non_other": 2
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-07-standing-veto/candidate-events.jsonl",
+    "sha256": "0e9a80f6ae5497711f6aeadefffa742426d04a06110796ec154eeeee3f8e89dc",
+    "number": 7,
+    "offset": 90.0,
+    "category": "videomamba",
+    "events": 86,
+    "non_other": 0
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-09-raised-retained/baseline-events.jsonl",
+    "sha256": "07d33fb6b8dd2317ea1c2708097d1c8e199301f8372a0614ebc7bbe5eea534d5",
+    "number": 9,
+    "offset": 133.0,
+    "category": "videomamba",
+    "events": 233,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-09-raised-retained/candidate-events.jsonl",
+    "sha256": "6a4812d0fff77e6462d1d264e1cf2972fc3e80a513be8c88849877534027abd6",
+    "number": 9,
+    "offset": 133.0,
+    "category": "videomamba",
+    "events": 233,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-01-child-retained/baseline-events.jsonl",
+    "sha256": "b14ed47c8d7b1e5cbd1d7397a52d58e9af9ddc520d02a47c369f2101a47e5d25",
+    "number": 1,
+    "offset": 18.0,
+    "category": "videomamba",
+    "events": 165,
+    "non_other": 1
+  },
+  {
+    "path": "reports/wave-pose-prior-20261027/wave-shorts/new-01-child-retained/candidate-events.jsonl",
+    "sha256": "8b513e41601eb9546268cb958727194abcebd223cf0b0c0030ec53a9b6ecf347",
+    "number": 1,
+    "offset": 18.0,
+    "category": "videomamba",
+    "events": 165,
+    "non_other": 1
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/long-videos/new-07/events.json",
+    "sha256": "5f9fae47fdc955cea28fa194093364b7bb8270f0aabb20689f0595495cd02593",
+    "number": 7,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 6312,
+    "non_other": 2
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/long-videos/new-01/events.json",
+    "sha256": "abbd549cd62b62a2b00d33e50005162295fda386b707658865808d3a018e84e1",
+    "number": 1,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5565,
+    "non_other": 7
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/long-videos/new-09/events.json",
+    "sha256": "c95d1f67cb43b56889b6ba6898cada95a4a6629e07c06ff1ec5d6be1ec00ee9d",
+    "number": 9,
+    "offset": 0.0,
+    "category": "videomamba",
+    "events": 5036,
+    "non_other": 1
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/slow-walk/events.json",
+    "sha256": "f6f6cf0340883ef5a6f15a070d190672f13c588ed0db66177cf6e4ddb6da3915",
+    "number": 1,
+    "offset": 348.0,
+    "category": "videomamba",
+    "events": 88,
+    "non_other": 0
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/child-away/events.json",
+    "sha256": "de21131139816f8566361914dcc0d0a839cd50e5ab7162cf77b9cf1c5ddb254a",
+    "number": 1,
+    "offset": 18.0,
+    "category": "videomamba",
+    "events": 137,
+    "non_other": 1
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/adult-walk/events.json",
+    "sha256": "136bac078da456a493fabe0b7feaba5ecc4a5e1ba0bbf11e7c5d951185c98381",
+    "number": 1,
+    "offset": 190.0,
+    "category": "videomamba",
+    "events": 190,
+    "non_other": 0
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/overlap-walk/events.json",
+    "sha256": "f60f252c9ae199dfcdccaaebe546d048a0a4f8b95e15df146eddd41cca6701ec",
+    "number": 1,
+    "offset": 225.0,
+    "category": "videomamba",
+    "events": 185,
+    "non_other": 1
+  },
+  {
+    "path": "reports/running-speed-prior-20261027/short-videos/child-across/events.json",
+    "sha256": "592a0a38f4a573b473700a6f025d16ad868910a981cf11db0c99f39024770c69",
+    "number": 1,
+    "offset": 294.0,
+    "category": "videomamba",
+    "events": 140,
+    "non_other": 2
+  },
+  {
+    "path": "reports/xclip-person-20261027/long-videos/new-07/events.jsonl",
+    "sha256": "55f17a5d23b4460b760e4443ddaff2cab9461a22e21c0c2fcc876a2a813f1ad9",
+    "number": 7,
+    "offset": 0.0,
+    "category": "xclip",
+    "events": 6333,
+    "non_other": 2171
+  },
+  {
+    "path": "reports/xclip-person-20261027/long-videos/new-01/events.jsonl",
+    "sha256": "55b4da4b633759bece68bfa4bfbe6e90869b2f33a1f81f3537dc0cff225ec5e0",
+    "number": 1,
+    "offset": 0.0,
+    "category": "xclip",
+    "events": 5573,
+    "non_other": 1227
+  },
+  {
+    "path": "reports/xclip-person-20261027/long-videos/new-09/events.jsonl",
+    "sha256": "fd30ece30fb4b3510a2e9fdbb6bda704910c0f04e7108c616ff3e1614bd408cb",
+    "number": 9,
+    "offset": 0.0,
+    "category": "xclip",
+    "events": 5064,
+    "non_other": 1877
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/new-01-wave-veto/events.json",
+    "sha256": "27bd97e7cd9b431c6e96563c3915b15b2a22d49e7f089238ae6925b5dff711fe",
+    "number": 1,
+    "offset": 261.0,
+    "category": "videomamba",
+    "events": 189,
+    "non_other": 1
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/crowd-phone/events.json",
+    "sha256": "0d353e68737797ffd3b9e98bafc4ffcfc2af68c3f9c26f1c54c510729d160efd",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/crowd-camera/events.json",
+    "sha256": "a497df31a36d9b60f69de63708b621ccde5f6ac11e71ed7459dd5038bade4da5",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/crowd-walking/events.json",
+    "sha256": "33236571b5c9a9705f694110a73ac0559cb2b343cca9ed453ee5d1710ee63b8f",
+    "number": 1,
+    "offset": 185.0,
+    "category": "videomamba",
+    "events": 474,
+    "non_other": 0
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/new-07-standing-veto/events.json",
+    "sha256": "900197f0f86006cc2943f5a9cb7f6de0b1a5141ff0084f4072ee833c253d66b7",
+    "number": 7,
+    "offset": 90.0,
+    "category": "videomamba",
+    "events": 86,
+    "non_other": 0
+  },
+  {
+    "path": "reports/full-prior-release-20261027/demos/crowd-child/events.json",
+    "sha256": "6c3c2fd4d7fee4209138d19dc76ba50e0499dca084866b1fa754b024235f08ec",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 369,
+    "non_other": 3
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/new-01-wave-veto/events.json",
+    "sha256": "0ae9c51030ef845e28e869b95dbe25ee261eebd7ec3714a1bab52fb67be16c6e",
+    "number": 1,
+    "offset": 261.0,
+    "category": "videomamba",
+    "events": 186,
+    "non_other": 1
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/crowd-phone/events.json",
+    "sha256": "375a68533914f4bbca99519d5b7d83f9de104367485ff21ad613dd4a0061edf7",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 414,
+    "non_other": 1
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/crowd-camera/events.json",
+    "sha256": "8927b4b404a942bfc431df78febfeacd111a74fe92110c8e06f0fe2cf6ff9411",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 682,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/crowd-walking/events.json",
+    "sha256": "2b6506fedafeaf055c1047ba8d9783ef7b6b65467f3d4709e63be1b70e63465b",
+    "number": 1,
+    "offset": 185.0,
+    "category": "videomamba",
+    "events": 479,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/new-07-standing-veto/events.json",
+    "sha256": "bea3fb07250407765452da0ed476d63690bf3a98921558c5b787271e92191987",
+    "number": 7,
+    "offset": 90.0,
+    "category": "videomamba",
+    "events": 86,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/trt-final-demos/crowd-child/events.json",
+    "sha256": "577c7db3b9c4b492581dee5c5aa50819c4cc184045d1f9c4bb5388580555ce65",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 369,
+    "non_other": 3
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/baseline-probe/crowd-camera/events.json",
+    "sha256": "c750e17255ab11223be0762c10f6c2f03b9d6e8a6f187644d92d72c1e90fee19",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 115,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/baseline-probe/crowd-child/events.json",
+    "sha256": "491dd4bc8639665207dfb2be2fb3dae080f629d7d3b194291ec799ad456d6ddf",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 46,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/new-01-wave-veto/events.json",
+    "sha256": "1aabb09a7381648b0141af90c1b1e788cc9de5836bdf278f6fc634b339c45209",
+    "number": 1,
+    "offset": 261.0,
+    "category": "videomamba",
+    "events": 186,
+    "non_other": 1
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/crowd-phone/events.json",
+    "sha256": "db79e96774fd63cf1b41a7106b107bce3b4d2dcf6c9cdbecd09d5c9e1cda2caf",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/crowd-camera/events.json",
+    "sha256": "0f1edeeabd180dc2f56a0d0603c9d27f7f0459ba9bb873c8f6009dedc9dfa1e2",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 682,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/crowd-walking/events.json",
+    "sha256": "c89c0d685b3068055ff64e1a9dc47300e3392588a0f386bc471eb16bb5c3d9aa",
+    "number": 1,
+    "offset": 185.0,
+    "category": "videomamba",
+    "events": 479,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/new-07-standing-veto/events.json",
+    "sha256": "57d2a59702da0b75775d76cf62897fa62cf51da7a59f1e59e1c4975494d4f875",
+    "number": 7,
+    "offset": 90.0,
+    "category": "videomamba",
+    "events": 86,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-demos/crowd-child/events.json",
+    "sha256": "e550273b84a87f8b5f907a308ef083cc898accee256e8774e58a3f888272a168",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 369,
+    "non_other": 3
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/lowmem-probe/crowd-camera/events.json",
+    "sha256": "eacc3de8c9464fde3949acee32e4a3758ce09dd15390abdceed8f9a12f44d17c",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 115,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/lowmem-probe/crowd-child/events.json",
+    "sha256": "2b6c578b3e0b044cbea02ee1a54b5327767c14628376529433642b1c2e4e6d9f",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 46,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/graph-fixed/crowd-camera/events.json",
+    "sha256": "06ccec7315ae880472211a4827d4bef31f5136e4ee527b93dbee1af4a5d21c6d",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 115,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/graph-fixed/crowd-child/events.json",
+    "sha256": "651c03de86bd7c99f9cfd4efa8874eb61fac9c9f1d86563b7663457aabe3cb11",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 46,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-probe/crowd-camera/events.json",
+    "sha256": "91978d266b48410afbd02758d89d643acb89f26cae720f97bf51a94ac1943f25",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 114,
+    "non_other": 0
+  },
+  {
+    "path": "reports/box-single-gpu-20261028/archive-probe/crowd-child/events.json",
+    "sha256": "b78be12e54993540783c72642291b6c7291174b9dba6df412312252d54cce693",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 46,
+    "non_other": 0
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/new-01-wave-veto/events.json",
+    "sha256": "7670db00667b67b8d048062fb0725a07091468b675d316966572a3a3d39531e2",
+    "number": 1,
+    "offset": 261.0,
+    "category": "videomamba",
+    "events": 189,
+    "non_other": 1
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/crowd-phone/events.json",
+    "sha256": "7ee2baf3df67157a8ec53738b965fea201f0e0506b20edb4e1eb88701309f93d",
+    "number": 7,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 415,
+    "non_other": 1
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/crowd-camera/events.json",
+    "sha256": "81b6b8e13dffb8b13c062e050c1842a93c1284f24efac997f7faea16487c50f7",
+    "number": 9,
+    "offset": 94.0,
+    "category": "videomamba",
+    "events": 688,
+    "non_other": 1
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/crowd-walking/events.json",
+    "sha256": "b5703b41c28b8f6e1dbf810b42b990147c5fe40529e6de02b01ff463eeb84640",
+    "number": 1,
+    "offset": 185.0,
+    "category": "videomamba",
+    "events": 474,
+    "non_other": 0
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/new-07-standing-veto/events.json",
+    "sha256": "17b40a75a5f8a25583a1fbb0b36eecefdd69f89456afc6e53292b610891203fb",
+    "number": 7,
+    "offset": 90.0,
+    "category": "videomamba",
+    "events": 86,
+    "non_other": 0
+  },
+  {
+    "path": "reports/platform-recheck-20261029/demos/crowd-child/events.json",
+    "sha256": "6ad30de1b2bb5592dccd3d20cb0436f68665ed83490c9cbea84e165354a8cd3f",
+    "number": 1,
+    "offset": 10.0,
+    "category": "videomamba",
+    "events": 369,
+    "non_other": 3
+  },
+  {
+    "path": "reports/threshold-tuning-20261026/window-results.csv",
+    "column": "baseline",
+    "sha256": "a0470676e553c839df1cf21cf9af41cd6abf8f8127bbf0515ee561cd14b820ce",
+    "number": "all9",
+    "offset": 0,
+    "category": "videomamba",
+    "events": 47600,
+    "non_other": 232
+  },
+  {
+    "path": "reports/threshold-tuning-20261026/window-results.csv",
+    "column": "recommended",
+    "sha256": "a0470676e553c839df1cf21cf9af41cd6abf8f8127bbf0515ee561cd14b820ce",
+    "number": "all9",
+    "offset": 0,
+    "category": "videomamba",
+    "events": 47600,
+    "non_other": 22
+  },
+  {
+    "path": "reports/four-parameter-tuning-20261026/window-results.csv",
+    "column": "baseline",
+    "sha256": "43064a173864e7f2eea57843343bbf140bf487ee5c7e964bab3adff122a281f0",
+    "number": "all9",
+    "offset": 0,
+    "category": "videomamba",
+    "events": 47600,
+    "non_other": 232
+  },
+  {
+    "path": "reports/four-parameter-tuning-20261026/window-results.csv",
+    "column": "recommended",
+    "sha256": "43064a173864e7f2eea57843343bbf140bf487ee5c7e964bab3adff122a281f0",
+    "number": "all9",
+    "offset": 0,
+    "category": "videomamba",
+    "events": 47600,
+    "non_other": 55
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "gpu": 0,
+    "exit_code": 0
+  },
+  {
+    "gpu": 1,
+    "exit_code": 0
+  },
+  {
+    "gpu": 2,
+    "exit_code": 0
+  },
+  {
+    "gpu": 3,
+    "exit_code": 0
+  },
+  {
+    "gpu": 4,
+    "exit_code": 0
+  },
+  {
+    "gpu": 5,
+    "exit_code": 0
+  }
+]

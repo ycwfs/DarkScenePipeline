@@ -1,0 +1,16 @@
+{
+  "status": "locked before action feedback inference",
+  "selected_epoch": 17,
+  "config": {
+    "support_conf": 0.35,
+    "device_conf": 0.65,
+    "exhibit_conf": 0.85,
+    "keypoint_conf": 0.5,
+    "consecutive": 3,
+    "min_span": 0.35
+  },
+  "rules_sha256": "ebe9733fb5d15104eab45a04307a3b07324846b109daf0459a1b2af18590c63c",
+  "model_sha256": "7c9bc11befb2bc74890767fe769e0efb692f061b379473286fe8bf3b8e5848b5",
+  "source": "old validation-selected detector, fixed conservative geometry; no threshold tuning on nine feedback videos",
+  "caveat": "Old val has only one phone box; camera and cup unsupported; no calibrated probability claim"
+}

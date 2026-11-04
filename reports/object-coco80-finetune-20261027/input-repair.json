@@ -1,0 +1,7 @@
+{
+  "image": "000000414738.jpg",
+  "issue": "missing in first local COCO copy",
+  "replacement": "/ssd2/DATASETS/coco/train2017/000000414738.jpg",
+  "training_steps_before_restart": 0,
+  "all_images_verified": true
+}

@@ -1,0 +1,155 @@
+{
+  "complete": true,
+  "resumed_after": "Evaluation dictionary-iteration error corrected; successful evaluate-selected-fixed job, no reselection or retraining.",
+  "completed_unix": 1793324198.0190525,
+  "jobs": {
+    "objects-0": {
+      "name": "mp-ft29-objects-0",
+      "container": "b2bb24cb5e3141732d15f161504476cef851b8999dcedbe3563655c7f292d052",
+      "gpu": 4,
+      "script": "object_evidence.py",
+      "args": [
+        "--shard",
+        "0/2",
+        "--wait"
+      ],
+      "started": 1793290756.472706
+    },
+    "objects-1": {
+      "name": "mp-ft29-objects-1",
+      "container": "100a7d4ba47f71c8f36f92c9fed99ce1362953f027991e2a0d6fbb3a6a542af8",
+      "gpu": 5,
+      "script": "object_evidence.py",
+      "args": [
+        "--shard",
+        "1/2",
+        "--wait"
+      ],
+      "started": 1793290756.985312
+    },
+    "assemble": {
+      "name": "mp-ft29-assemble",
+      "container": "5728675b644767e417a2278f46ce9bd077933096f1c8d5a613da94a77fcfa403",
+      "gpu": 3,
+      "script": "assemble.py",
+      "args": [],
+      "started": 1793292374.8451476
+    },
+    "train-skeleton": {
+      "name": "mp-ft29-train-skeleton",
+      "container": "570613c0a9794ac9c660851283ac1af684889503ae3e81aab4927102c71f127e",
+      "gpu": 3,
+      "script": "train_models.py",
+      "args": [
+        "skeleton"
+      ],
+      "started": 1793292902.7014713
+    },
+    "predict-skeleton-baseline": {
+      "name": "mp-ft29-predict-skeleton-baseline",
+      "container": "e30498d32cc35559205b5f698de7fd0db12ea7202e9dd540fdd77b223a08f339",
+      "gpu": 3,
+      "script": "predict.py",
+      "args": [
+        "skeleton",
+        "--which",
+        "baseline"
+      ],
+      "started": 1793292964.0176105
+    },
+    "predict-skeleton-candidate": {
+      "name": "mp-ft29-predict-skeleton-candidate",
+      "container": "7450117294db82d5b99c25a33623f8dbe1a1636188ff6b73e1d8dd185b500151",
+      "gpu": 3,
+      "script": "predict.py",
+      "args": [
+        "skeleton",
+        "--which",
+        "candidate"
+      ],
+      "started": 1793292979.6984048
+    },
+    "train-rgb": {
+      "name": "mp-ft29-train-rgb",
+      "container": "74cd2b06c1c0a8324a3033bc3c46ec0fa7b459a82ad8d5e1a332d07bfe52bf45",
+      "gpu": "0,1",
+      "script": "train_models.py",
+      "args": [
+        "rgb"
+      ],
+      "started": 1793293288.473654
+    },
+    "predict-rgb-baseline": {
+      "name": "mp-ft29-predict-rgb-baseline",
+      "container": "230885eb386365b84f5507616374979802cab41dd825315c1621b288803c4071",
+      "gpu": 2,
+      "script": "predict.py",
+      "args": [
+        "rgb",
+        "--which",
+        "baseline"
+      ],
+      "started": 1793293288.9323504
+    },
+    "predict-rgb-candidate": {
+      "name": "mp-ft29-predict-rgb-candidate",
+      "container": "1b3dcd4799044f16005ba820c6315df4487647264cf798a82a89113e33a24403",
+      "gpu": 0,
+      "script": "predict.py",
+      "args": [
+        "rgb",
+        "--which",
+        "candidate"
+      ],
+      "started": 1793296399.4176373
+    },
+    "joint-select": {
+      "name": "mp-ft29-joint-select",
+      "container": "cb5941fcbf16608333aef181c585065887958f7fb289d8ea40e0b68988265595",
+      "gpu": 3,
+      "script": "joint_select.py",
+      "args": [],
+      "started": 1793296921.4383104
+    },
+    "predict-rgb-selected": {
+      "name": "mp-ft29-predict-rgb-selected",
+      "container": "d17a34866e393f348d2c516ccc2554aaf896dcb34304195b77154df80fb1fa3e",
+      "gpu": 0,
+      "script": "predict.py",
+      "args": [
+        "rgb",
+        "--which",
+        "selected"
+      ],
+      "started": 1793297012.351993
+    },
+    "predict-skeleton-selected": {
+      "name": "mp-ft29-predict-skeleton-selected",
+      "container": "0c0a0061ba4df15f116de4e2c6a981c653ba7264085a8aba4fe0c1354cf07da3",
+      "gpu": 3,
+      "script": "predict.py",
+      "args": [
+        "skeleton",
+        "--which",
+        "selected"
+      ],
+      "started": 1793297012.8319585
+    },
+    "evaluate-selected": {
+      "name": "mp-ft29-evaluate-selected",
+      "container": "49f50c3500e91c6342ba06c5e57e45d5a3a01fcfcb04ec4303f09095a0b65ad4",
+      "gpu": 3,
+      "script": "evaluate_selected.py",
+      "args": [],
+      "started": 1793297541.3672798
+    },
+    "evaluate-selected-fixed": {
+      "name": "mp-ft29-evaluate-selected-fixed",
+      "container": "3bc86d2b9a40ef1387ac5f94b5adf651e81f046e9a342fc6087187976b857289",
+      "gpu": 3,
+      "script": "evaluate_selected.py",
+      "args": [],
+      "started": 1793324112.0147502
+    }
+  }
+}

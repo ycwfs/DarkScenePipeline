@@ -1,0 +1,4798 @@
+{
+  "seed": 24,
+  "train_windows": 2507,
+  "val_windows": 169,
+  "train_labels": {
+    "other": 2156,
+    "drink": 134,
+    "wave": 98,
+    "pick_up": 36,
+    "chase": 67,
+    "throw": 6,
+    "fall": 10
+  },
+  "val_labels": {
+    "other": 138,
+    "drink": 6,
+    "wave": 8,
+    "pick_up": 4,
+    "chase": 13
+  },
+  "coverage": [
+    {
+      "video_id": "1d5e40daf952ed1b",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_083425_drinking_water_0002.mp4",
+      "split": "train",
+      "frames": 78,
+      "box_frames": 78,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "1277aab7ae23c886",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091406_drinking_water_0005.mp4",
+      "split": "train",
+      "frames": 76,
+      "box_frames": 76,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "2d5b0f004cf5b221",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091756_drinking_water_0009.mp4",
+      "split": "train",
+      "frames": 69,
+      "box_frames": 67,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "431d51a1bdfa6168",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091922_drinking_water_0010.mp4",
+      "split": "train",
+      "frames": 56,
+      "box_frames": 56,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "1dba445dbb9b5e7f",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091927_drinking_water_0011.mp4",
+      "split": "train",
+      "frames": 51,
+      "box_frames": 51,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "a6dc542d4e2f385a",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091930_drinking_water_0012.mp4",
+      "split": "train",
+      "frames": 56,
+      "box_frames": 56,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b0994c2f308d7657",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_092839_drinking_water_0014.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "a6e8375246cb3a7c",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_093135_drinking_water_0016.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 85,
+      "windows": 12,
+      "known": 12,
+      "unknown": 0
+    },
+    {
+      "video_id": "bba3333c7bc0ab8b",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094227_drinking_water_0018.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 74,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "82c4d886d2db744e",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094245_drinking_water_0019.mp4",
+      "split": "train",
+      "frames": 70,
+      "box_frames": 70,
+      "windows": 16,
+      "known": 16,
+      "unknown": 0
+    },
+    {
+      "video_id": "da6e3389c18aa09c",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094436_drinking_water_0021.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 9,
+      "known": 9,
+      "unknown": 0
+    },
+    {
+      "video_id": "bad35584ef5e9ffc",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094525_drinking_water_0022.mp4",
+      "split": "train",
+      "frames": 127,
+      "box_frames": 127,
+      "windows": 39,
+      "known": 39,
+      "unknown": 0
+    },
+    {
+      "video_id": "47535b47f6aa9641",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094714_drinking_water_0024.mp4",
+      "split": "train",
+      "frames": 72,
+      "box_frames": 72,
+      "windows": 22,
+      "known": 22,
+      "unknown": 0
+    },
+    {
+      "video_id": "033b456513837833",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094721_drinking_water_0025.mp4",
+      "split": "train",
+      "frames": 48,
+      "box_frames": 48,
+      "windows": 15,
+      "known": 15,
+      "unknown": 0
+    },
+    {
+      "video_id": "a383ae8a1f0cfb9f",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094817_drinking_water_0028.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "94f30fa8457f158b",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094823_drinking_water_0029.mp4",
+      "split": "train",
+      "frames": 46,
+      "box_frames": 46,
+      "windows": 12,
+      "known": 12,
+      "unknown": 0
+    },
+    {
+      "video_id": "f6faa8007aadc09d",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094900_drinking_water_0032.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "7c08d4cf69a6ba2e",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094943_drinking_water_0035.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "68f1f884020bec43",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095430_drinking_water_0045.mp4",
+      "split": "train",
+      "frames": 56,
+      "box_frames": 56,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "1f1e50ba7d6122fe",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095642_drinking_water_0050.mp4",
+      "split": "train",
+      "frames": 69,
+      "box_frames": 69,
+      "windows": 23,
+      "known": 23,
+      "unknown": 0
+    },
+    {
+      "video_id": "b46867fba205aa0c",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095735_drinking_water_0053.mp4",
+      "split": "train",
+      "frames": 57,
+      "box_frames": 57,
+      "windows": 33,
+      "known": 33,
+      "unknown": 0
+    },
+    {
+      "video_id": "e00e00e05307c3e5",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 35,
+      "known": 35,
+      "unknown": 0
+    },
+    {
+      "video_id": "ac408518cf290840",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095808_drinking_water_0055.mp4",
+      "split": "train",
+      "frames": 118,
+      "box_frames": 118,
+      "windows": 78,
+      "known": 78,
+      "unknown": 0
+    },
+    {
+      "video_id": "2bc5bbd5c2608647",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095832_drinking_water_0056.mp4",
+      "split": "train",
+      "frames": 79,
+      "box_frames": 79,
+      "windows": 43,
+      "known": 43,
+      "unknown": 0
+    },
+    {
+      "video_id": "b7e6e87223a4032a",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 34,
+      "known": 34,
+      "unknown": 0
+    },
+    {
+      "video_id": "5c162313b699a471",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095923_drinking_water_0061.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 35,
+      "known": 35,
+      "unknown": 0
+    },
+    {
+      "video_id": "8f267ad7ad48f99e",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100139_drinking_water_0070.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 58,
+      "windows": 11,
+      "known": 11,
+      "unknown": 0
+    },
+    {
+      "video_id": "5739fcf1114b0c0f",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100217_drinking_water_0071.mp4",
+      "split": "train",
+      "frames": 161,
+      "box_frames": 161,
+      "windows": 34,
+      "known": 34,
+      "unknown": 0
+    },
+    {
+      "video_id": "ef75770f1d2a7c3f",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100401_drinking_water_0075.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "1778dcfef14aa661",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100424_drinking_water_0077.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 74,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "4bfbbea49714cc1b",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100450_drinking_water_0079.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "d471abd967732c4f",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100521_drinking_water_0080.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "9e39a01c89bda1ae",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100538_drinking_water_0081.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "cb69b2d720ceb3a0",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100540_drinking_water_0082.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 85,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "4d7acd7b3f7c90d1",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100653_drinking_water_0083.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "b36509aae0226aaa",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100755_drinking_water_0085.mp4",
+      "split": "train",
+      "frames": 79,
+      "box_frames": 79,
+      "windows": 18,
+      "known": 18,
+      "unknown": 0
+    },
+    {
+      "video_id": "ad87568563d7ab31",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101141_drinking_water_0098.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 23,
+      "known": 23,
+      "unknown": 0
+    },
+    {
+      "video_id": "639314332facbb19",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101150_drinking_water_0099.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "b03dec3d19c54cbf",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101212_drinking_water_0101.mp4",
+      "split": "train",
+      "frames": 118,
+      "box_frames": 118,
+      "windows": 67,
+      "known": 67,
+      "unknown": 0
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "split": "train",
+      "frames": 65,
+      "box_frames": 65,
+      "windows": 29,
+      "known": 29,
+      "unknown": 0
+    },
+    {
+      "video_id": "94d02851fa28ae1d",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101332_drinking_water_0106.mp4",
+      "split": "train",
+      "frames": 55,
+      "box_frames": 55,
+      "windows": 21,
+      "known": 21,
+      "unknown": 0
+    },
+    {
+      "video_id": "4c10559ebd0aa4f1",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101431_drinking_water_0110.mp4",
+      "split": "train",
+      "frames": 105,
+      "box_frames": 105,
+      "windows": 35,
+      "known": 35,
+      "unknown": 0
+    },
+    {
+      "video_id": "b22aefe635be43d5",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101507_drinking_water_0112.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 53,
+      "known": 53,
+      "unknown": 0
+    },
+    {
+      "video_id": "3439a5089cc742d2",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101538_drinking_water_0114.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 50,
+      "windows": 13,
+      "known": 13,
+      "unknown": 0
+    },
+    {
+      "video_id": "b5dd257b5a237a68",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101609_drinking_water_0116.mp4",
+      "split": "train",
+      "frames": 138,
+      "box_frames": 138,
+      "windows": 42,
+      "known": 42,
+      "unknown": 0
+    },
+    {
+      "video_id": "9ed347cf27c1b951",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101624_drinking_water_0117.mp4",
+      "split": "train",
+      "frames": 132,
+      "box_frames": 132,
+      "windows": 47,
+      "known": 47,
+      "unknown": 0
+    },
+    {
+      "video_id": "90ecea111b1cf012",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101642_drinking_water_0118.mp4",
+      "split": "train",
+      "frames": 163,
+      "box_frames": 163,
+      "windows": 65,
+      "known": 65,
+      "unknown": 0
+    },
+    {
+      "video_id": "df8fc4c18811c870",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101745_drinking_water_0119.mp4",
+      "split": "train",
+      "frames": 55,
+      "box_frames": 55,
+      "windows": 25,
+      "known": 25,
+      "unknown": 0
+    },
+    {
+      "video_id": "8882a435b2bca793",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102035_drinking_water_0122.mp4",
+      "split": "train",
+      "frames": 70,
+      "box_frames": 70,
+      "windows": 35,
+      "known": 35,
+      "unknown": 0
+    },
+    {
+      "video_id": "5b9cbe56a77eeb89",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102128_drinking_water_0126.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "cb88c82815526272",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102131_drinking_water_0127.mp4",
+      "split": "train",
+      "frames": 104,
+      "box_frames": 104,
+      "windows": 36,
+      "known": 36,
+      "unknown": 0
+    },
+    {
+      "video_id": "1b03574a847c85fe",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102443_drinking_water_0137.mp4",
+      "split": "train",
+      "frames": 56,
+      "box_frames": 56,
+      "windows": 21,
+      "known": 21,
+      "unknown": 0
+    },
+    {
+      "video_id": "96125f16f5f4f017",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102628_drinking_water_0144.mp4",
+      "split": "train",
+      "frames": 116,
+      "box_frames": 116,
+      "windows": 51,
+      "known": 51,
+      "unknown": 0
+    },
+    {
+      "video_id": "d6cffbdb7983c2a1",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102926_drinking_water_0150.mp4",
+      "split": "train",
+      "frames": 68,
+      "box_frames": 68,
+      "windows": 16,
+      "known": 16,
+      "unknown": 0
+    },
+    {
+      "video_id": "d9e20f8439aa026c",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103130_drinking_water_0151.mp4",
+      "split": "train",
+      "frames": 53,
+      "box_frames": 53,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "ac9fbe07a0abcf34",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103137_drinking_water_0152.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 74,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "0e2eb94d42315a78",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103151_drinking_water_0153.mp4",
+      "split": "train",
+      "frames": 53,
+      "box_frames": 53,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "b1a0a16e10b6205f",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103200_drinking_water_0154.mp4",
+      "split": "train",
+      "frames": 112,
+      "box_frames": 112,
+      "windows": 18,
+      "known": 18,
+      "unknown": 0
+    },
+    {
+      "video_id": "a2ec47c778effb40",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103212_drinking_water_0155.mp4",
+      "split": "train",
+      "frames": 126,
+      "box_frames": 126,
+      "windows": 16,
+      "known": 16,
+      "unknown": 0
+    },
+    {
+      "video_id": "ba9dfc9aea3365f9",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103353_drinking_water_0158.mp4",
+      "split": "train",
+      "frames": 51,
+      "box_frames": 51,
+      "windows": 18,
+      "known": 18,
+      "unknown": 0
+    },
+    {
+      "video_id": "2d9f4c18c56bc7f7",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_103613_drinking_water_0160.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "e0cc9022036efbe2",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_104045_drinking_water_0163.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "6e90d9539d179f4c",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_104051_drinking_water_0164.mp4",
+      "split": "train",
+      "frames": 80,
+      "box_frames": 80,
+      "windows": 15,
+      "known": 15,
+      "unknown": 0
+    },
+    {
+      "video_id": "3c575181660978ca",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_104130_drinking_water_0166.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 15,
+      "known": 15,
+      "unknown": 0
+    },
+    {
+      "video_id": "ab9dc73de780474b",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_083334_picking_up_object_0001.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 35,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "3f60c63372ec5312",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_091013_picking_up_object_0003.mp4",
+      "split": "train",
+      "frames": 55,
+      "box_frames": 26,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "02ff41fdcce35cef",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_091020_picking_up_object_0004.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 34,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "26bc12ec7f736386",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_091608_picking_up_object_0008.mp4",
+      "split": "train",
+      "frames": 73,
+      "box_frames": 73,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "65adc473daa3204e",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_092821_picking_up_object_0013.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b1f99a302346595b",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_094005_picking_up_object_0017.mp4",
+      "split": "train",
+      "frames": 53,
+      "box_frames": 53,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "0f5fe42263f9b9e1",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_095139_picking_up_object_0040.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 50,
+      "windows": 9,
+      "known": 9,
+      "unknown": 0
+    },
+    {
+      "video_id": "d1bdd97aecd7ae06",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_095504_picking_up_object_0047.mp4",
+      "split": "train",
+      "frames": 118,
+      "box_frames": 118,
+      "windows": 28,
+      "known": 28,
+      "unknown": 0
+    },
+    {
+      "video_id": "ad57179f283ba2ef",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_095546_picking_up_object_0049.mp4",
+      "split": "train",
+      "frames": 53,
+      "box_frames": 53,
+      "windows": 17,
+      "known": 17,
+      "unknown": 0
+    },
+    {
+      "video_id": "4272a1aa9ab7bced",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_100837_picking_up_object_0088.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "67f2274125acca71",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_104127_picking_up_object_0165.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 85,
+      "windows": 17,
+      "known": 17,
+      "unknown": 0
+    },
+    {
+      "video_id": "7f39b494e4e2cc16",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_104149_picking_up_object_0167.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 13,
+      "known": 13,
+      "unknown": 0
+    },
+    {
+      "video_id": "f92ade88a18a971b",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_091409_waving_0006.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b54ca615b535ba66",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_094619_waving_0023.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 9,
+      "known": 9,
+      "unknown": 0
+    },
+    {
+      "video_id": "8332e081f79e5557",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_095647_waving_0051.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 58,
+      "windows": 19,
+      "known": 19,
+      "unknown": 0
+    },
+    {
+      "video_id": "51a56728e87cfc84",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_095850_waving_0058.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 31,
+      "known": 31,
+      "unknown": 0
+    },
+    {
+      "video_id": "35568b3951e75dcc",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100001_waving_0063.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 50,
+      "windows": 17,
+      "known": 17,
+      "unknown": 0
+    },
+    {
+      "video_id": "b6cb6ef9d0e10b61",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100004_waving_0064.mp4",
+      "split": "train",
+      "frames": 92,
+      "box_frames": 92,
+      "windows": 31,
+      "known": 31,
+      "unknown": 0
+    },
+    {
+      "video_id": "3849d98b01bf5f22",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100028_waving_0066.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 27,
+      "known": 27,
+      "unknown": 0
+    },
+    {
+      "video_id": "94731121e48aa167",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100040_waving_0067.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 37,
+      "known": 37,
+      "unknown": 0
+    },
+    {
+      "video_id": "4fbb0825fd4d5cbc",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100047_waving_0068.mp4",
+      "split": "train",
+      "frames": 81,
+      "box_frames": 81,
+      "windows": 31,
+      "known": 31,
+      "unknown": 0
+    },
+    {
+      "video_id": "9791f82975e1400c",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_100422_waving_0076.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "e44fd2f03c83146b",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_101019_waving_0093.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 16,
+      "known": 16,
+      "unknown": 0
+    },
+    {
+      "video_id": "8f53fe8e6bec61a4",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_101047_waving_0094.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 74,
+      "windows": 28,
+      "known": 28,
+      "unknown": 0
+    },
+    {
+      "video_id": "63620675cfa17a36",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_101130_waving_0097.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 15,
+      "known": 15,
+      "unknown": 0
+    },
+    {
+      "video_id": "bbf14a97dbf5f462",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_101422_waving_0109.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 17,
+      "known": 17,
+      "unknown": 0
+    },
+    {
+      "video_id": "1382c00b2ad2aa94",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_102056_waving_0124.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 25,
+      "known": 25,
+      "unknown": 0
+    },
+    {
+      "video_id": "c8a3c5863ba1668f",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_102548_waving_0141.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "484f535c6bf14ac1",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_102606_waving_0143.mp4",
+      "split": "train",
+      "frames": 57,
+      "box_frames": 57,
+      "windows": 21,
+      "known": 21,
+      "unknown": 0
+    },
+    {
+      "video_id": "1858d321c4aa7f44",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_102753_waving_0148.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 16,
+      "known": 16,
+      "unknown": 0
+    },
+    {
+      "video_id": "6dd96105a03bcaf2",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_102804_waving_0149.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "4778e1385149dce2",
+      "source": "online-negative-sample/20261012_083305_78/waving/20261012_104035_waving_0162.mp4",
+      "split": "train",
+      "frames": 77,
+      "box_frames": 77,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "e71301de702bbbf6",
+      "source": "real-actiondata-all/other/other1.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "c569584506c11d37",
+      "source": "real-actiondata-all/other/other10.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "99df5aa5e0ca95e1",
+      "source": "real-actiondata-all/other/other101.mp4",
+      "split": "train",
+      "frames": 77,
+      "box_frames": 77,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "df411bf0281718c8",
+      "source": "real-actiondata-all/other/other102.mp4",
+      "split": "train",
+      "frames": 231,
+      "box_frames": 230,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "0ee5252c09c850ca",
+      "source": "real-actiondata-all/other/other103.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 50,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "7bf880391d230ae1",
+      "source": "real-actiondata-all/other/other105.mp4",
+      "split": "train",
+      "frames": 103,
+      "box_frames": 103,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "0d0741396d7b18fa",
+      "source": "real-actiondata-all/other/other107.mp4",
+      "split": "train",
+      "frames": 86,
+      "box_frames": 86,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "971b440d8d1262a4",
+      "source": "real-actiondata-all/other/other108.mp4",
+      "split": "train",
+      "frames": 494,
+      "box_frames": 449,
+      "windows": 46,
+      "known": 46,
+      "unknown": 0
+    },
+    {
+      "video_id": "82e182c81fc46596",
+      "source": "real-actiondata-all/other/other109.mp4",
+      "split": "train",
+      "frames": 573,
+      "box_frames": 571,
+      "windows": 47,
+      "known": 47,
+      "unknown": 0
+    },
+    {
+      "video_id": "fe8f315e9eff4655",
+      "source": "real-actiondata-all/other/other11.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "745d97048170913c",
+      "source": "real-actiondata-all/other/other113.mp4",
+      "split": "train",
+      "frames": 270,
+      "box_frames": 270,
+      "windows": 34,
+      "known": 34,
+      "unknown": 0
+    },
+    {
+      "video_id": "a96079bbed50e965",
+      "source": "real-actiondata-all/other/other114.mp4",
+      "split": "train",
+      "frames": 642,
+      "box_frames": 642,
+      "windows": 80,
+      "known": 80,
+      "unknown": 0
+    },
+    {
+      "video_id": "7c4d64858dd2abb2",
+      "source": "real-actiondata-all/other/other115.mp4",
+      "split": "train",
+      "frames": 41,
+      "box_frames": 34,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "5953d2498c0a4641",
+      "source": "real-actiondata-all/other/other116.mp4",
+      "split": "train",
+      "frames": 53,
+      "box_frames": 53,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "11ee6330d988eb52",
+      "source": "real-actiondata-all/other/other117.mp4",
+      "split": "train",
+      "frames": 143,
+      "box_frames": 143,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "4dea91f240e9ee7c",
+      "source": "real-actiondata-all/other/other118.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "66a8dfb3a832dc3e",
+      "source": "real-actiondata-all/other/other119.mp4",
+      "split": "train",
+      "frames": 84,
+      "box_frames": 84,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "b7f69c7c9f29e414",
+      "source": "real-actiondata-all/other/other12.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "c1877f80faa10327",
+      "source": "real-actiondata-all/other/other123.mp4",
+      "split": "train",
+      "frames": 108,
+      "box_frames": 108,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "c6b333a26c1b534d",
+      "source": "real-actiondata-all/other/other124.mp4",
+      "split": "train",
+      "frames": 40,
+      "box_frames": 40,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "5302be2aa2c4e6db",
+      "source": "real-actiondata-all/other/other126.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "675309f08bb6cc7f",
+      "source": "real-actiondata-all/other/other128.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "706ea6c4dc0e24c1",
+      "source": "real-actiondata-all/other/other129.mp4",
+      "split": "train",
+      "frames": 41,
+      "box_frames": 41,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "2f8d6b7f3f1c9bf5",
+      "source": "real-actiondata-all/other/other13.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "bea5224ddbcbf0fb",
+      "source": "real-actiondata-all/other/other131.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "a5dc309742b5c72f",
+      "source": "real-actiondata-all/other/other133.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "5691d4942ba3a32e",
+      "source": "real-actiondata-all/other/other135.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b961416076992df3",
+      "source": "real-actiondata-all/other/other136.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "6708a2ad93192ab5",
+      "source": "real-actiondata-all/other/other138.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "608d495c075f787d",
+      "source": "real-actiondata-all/other/other139.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "4f1b5ca8b9aa234e",
+      "source": "real-actiondata-all/other/other14.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "76b161163139cf93",
+      "source": "real-actiondata-all/other/other140.mp4",
+      "split": "train",
+      "frames": 51,
+      "box_frames": 51,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "53b9de12111b6352",
+      "source": "real-actiondata-all/other/other141.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "0cf567d476ceb74e",
+      "source": "real-actiondata-all/other/other143.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "2a0a0028e014080c",
+      "source": "real-actiondata-all/other/other144.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "e287e2344219b2ab",
+      "source": "real-actiondata-all/other/other145.mp4",
+      "split": "train",
+      "frames": 96,
+      "box_frames": 96,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "71a5d17c368fada7",
+      "source": "real-actiondata-all/other/other146.mp4",
+      "split": "train",
+      "frames": 81,
+      "box_frames": 81,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "15ff6de4450f22a7",
+      "source": "real-actiondata-all/other/other147.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "80d4d80b1e6f2a5e",
+      "source": "real-actiondata-all/other/other148.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b668ae2cbb449383",
+      "source": "real-actiondata-all/other/other149.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "39b93d7c6f1228be",
+      "source": "real-actiondata-all/other/other15.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "69b301e6f7237a6e",
+      "source": "real-actiondata-all/other/other151.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "4cee3521b0bf1bd6",
+      "source": "real-actiondata-all/other/other153.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "c39cdeadacfb42f4",
+      "source": "real-actiondata-all/other/other155.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "d67426c89e50e2ff",
+      "source": "real-actiondata-all/other/other156.mp4",
+      "split": "train",
+      "frames": 76,
+      "box_frames": 76,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "e2c1147145374eb9",
+      "source": "real-actiondata-all/other/other157.mp4",
+      "split": "train",
+      "frames": 41,
+      "box_frames": 41,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "ee95200d4615d44d",
+      "source": "real-actiondata-all/other/other158.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "813e786984fa81b5",
+      "source": "real-actiondata-all/other/other159.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "5e122bdc32dbdbbe",
+      "source": "real-actiondata-all/other/other16.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "062ff4f0ea6e4472",
+      "source": "real-actiondata-all/other/other162.mp4",
+      "split": "train",
+      "frames": 51,
+      "box_frames": 46,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "46df5000241c08d3",
+      "source": "real-actiondata-all/other/other166.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "e6112fd03e3207d8",
+      "source": "real-actiondata-all/other/other169.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "83c8b01370ce0f08",
+      "source": "real-actiondata-all/other/other17.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "1b1cd99cfd48a37b",
+      "source": "real-actiondata-all/other/other170.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "370cf175f7906845",
+      "source": "real-actiondata-all/other/other172.mp4",
+      "split": "train",
+      "frames": 72,
+      "box_frames": 72,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "5af06683149f6949",
+      "source": "real-actiondata-all/other/other174.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "90351de41b46ed3a",
+      "source": "real-actiondata-all/other/other175.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "6fb808f4c398860b",
+      "source": "real-actiondata-all/other/other178.mp4",
+      "split": "train",
+      "frames": 75,
+      "box_frames": 75,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "62c3a89c80a41c32",
+      "source": "real-actiondata-all/other/other179.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "ebf25cdc28600592",
+      "source": "real-actiondata-all/other/other18.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "43dc2bb5d524a21c",
+      "source": "real-actiondata-all/other/other180.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "c236233ec06ac031",
+      "source": "real-actiondata-all/other/other181.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "df2cb6ecc4e19e76",
+      "source": "real-actiondata-all/other/other182.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "3854199ca6c106e1",
+      "source": "real-actiondata-all/other/other183.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "a901955651c35091",
+      "source": "real-actiondata-all/other/other184.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "711510b66348693f",
+      "source": "real-actiondata-all/other/other187.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "bfe7b0c6b2acaf5a",
+      "source": "real-actiondata-all/other/other188.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "7f75a03536d43dbb",
+      "source": "real-actiondata-all/other/other189.mp4",
+      "split": "train",
+      "frames": 134,
+      "box_frames": 69,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "e8fba0aacee39d69",
+      "source": "real-actiondata-all/other/other191.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "8524afdcfb80899e",
+      "source": "real-actiondata-all/other/other192.mp4",
+      "split": "train",
+      "frames": 51,
+      "box_frames": 51,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "ee66e6aa36624867",
+      "source": "real-actiondata-all/other/other193.mp4",
+      "split": "train",
+      "frames": 40,
+      "box_frames": 40,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "0ca8c1edbf05a5ec",
+      "source": "real-actiondata-all/other/other194.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "3761177c17de055d",
+      "source": "real-actiondata-all/other/other195.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b2749d6d3539e844",
+      "source": "real-actiondata-all/other/other199.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "1ddbf94ade1fe116",
+      "source": "real-actiondata-all/other/other2.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "0fd6debb5ca38a41",
+      "source": "real-actiondata-all/other/other20.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "6eb8a0686c26810f",
+      "source": "real-actiondata-all/other/other209.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "3a331b00191144cd",
+      "source": "real-actiondata-all/other/other21.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "a6f9451cf58eb7d8",
+      "source": "real-actiondata-all/other/other210.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "ee74235bb4a1c693",
+      "source": "real-actiondata-all/other/other211.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 58,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "59ca5fd44cabc48c",
+      "source": "real-actiondata-all/other/other212.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "69dd8df4b508066c",
+      "source": "real-actiondata-all/other/other215.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 34,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "a31e9b6fdfadc690",
+      "source": "real-actiondata-all/other/other216.mp4",
+      "split": "train",
+      "frames": 51,
+      "box_frames": 15,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "3957b3aea6577671",
+      "source": "real-actiondata-all/other/other217.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 97,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "f27f5e4d587e9b17",
+      "source": "real-actiondata-all/other/other22.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "cdcf0c9428687945",
+      "source": "real-actiondata-all/other/other220.mp4",
+      "split": "train",
+      "frames": 145,
+      "box_frames": 141,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "8cdaf01bbce54842",
+      "source": "real-actiondata-all/other/other221.mp4",
+      "split": "train",
+      "frames": 68,
+      "box_frames": 2,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "28cee3446ca3ff28",
+      "source": "real-actiondata-all/other/other224.mp4",
+      "split": "train",
+      "frames": 111,
+      "box_frames": 108,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "18c0a9be4122d405",
+      "source": "real-actiondata-all/other/other226.mp4",
+      "split": "train",
+      "frames": 101,
+      "box_frames": 46,
+      "windows": 1,
+      "known": 1,
+      "unknown": 0
+    },
+    {
+      "video_id": "3591176e2cd4bcd0",
+      "source": "real-actiondata-all/other/other228.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 55,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "93bb5a1e1d973269",
+      "source": "real-actiondata-all/other/other229.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "390ceef9561d764c",
+      "source": "real-actiondata-all/other/other23.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "ee861c9bafda28a5",
+      "source": "real-actiondata-all/other/other232.mp4",
+      "split": "train",
+      "frames": 198,
+      "box_frames": 198,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "d4a32cdd38921491",
+      "source": "real-actiondata-all/other/other233.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b77f5c0a44be7b48",
+      "source": "real-actiondata-all/other/other234.mp4",
+      "split": "train",
+      "frames": 77,
+      "box_frames": 77,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "447332ee75c5323f",
+      "source": "real-actiondata-all/other/other237.mp4",
+      "split": "train",
+      "frames": 663,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "9618258de38c7de1",
+      "source": "real-actiondata-all/other/other238.mp4",
+      "split": "train",
+      "frames": 398,
+      "box_frames": 3,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "f6543886be100de4",
+      "source": "real-actiondata-all/other/other24.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "cefe4b4a1ffbb099",
+      "source": "real-actiondata-all/other/other25.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "dd398844c2f79c7e",
+      "source": "real-actiondata-all/other/other26.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "c81a78f440d672ca",
+      "source": "real-actiondata-all/other/other27.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "78cedb7f4cea0e32",
+      "source": "real-actiondata-all/other/other29.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "ae0b592805d8e944",
+      "source": "real-actiondata-all/other/other3.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "7d0b31b5bdc2beff",
+      "source": "real-actiondata-all/other/other30.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "39de40a0e033f757",
+      "source": "real-actiondata-all/other/other31.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "d31b9538458e5427",
+      "source": "real-actiondata-all/other/other32.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "27282bb9453e08dc",
+      "source": "real-actiondata-all/other/other33.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "e712df1f2ca02572",
+      "source": "real-actiondata-all/other/other34.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "9a2fa76b962cf929",
+      "source": "real-actiondata-all/other/other35.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "e72c610b80495602",
+      "source": "real-actiondata-all/other/other36.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "e935131c80ef4b94",
+      "source": "real-actiondata-all/other/other37.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "74f1887cf490e055",
+      "source": "real-actiondata-all/other/other38.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "24060bcfaa6f28d7",
+      "source": "real-actiondata-all/other/other39.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "0b5d694cb07c0fb3",
+      "source": "real-actiondata-all/other/other4.mp4",
+      "split": "train",
+      "frames": 50,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "a97e2d621be0186d",
+      "source": "real-actiondata-all/other/other40.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "bca6fadebe27b5cc",
+      "source": "real-actiondata-all/other/other41.mp4",
+      "split": "train",
+      "frames": 48,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "4282e644d9bf5d92",
+      "source": "real-actiondata-all/other/other43.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "698767ce6bce9582",
+      "source": "real-actiondata-all/other/other44.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "3da6cfd938baf56e",
+      "source": "real-actiondata-all/other/other46.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "b4c8f34cd8d9049f",
+      "source": "real-actiondata-all/other/other48.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "fdc97bb1adfb30a3",
+      "source": "real-actiondata-all/other/other49.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "669cf6aaae8ac413",
+      "source": "real-actiondata-all/other/other5.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "154844066611b99b",
+      "source": "real-actiondata-all/other/other50.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "aac59311817c7506",
+      "source": "real-actiondata-all/other/other51.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "3a618bf2d61e8f08",
+      "source": "real-actiondata-all/other/other52.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "cda46d1240402911",
+      "source": "real-actiondata-all/other/other53.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "0ba9087791d11e7a",
+      "source": "real-actiondata-all/other/other54.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "95e25cc462093409",
+      "source": "real-actiondata-all/other/other6.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "85051132e1485ac6",
+      "source": "real-actiondata-all/other/other7.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "d2653752b7ad769e",
+      "source": "real-actiondata-all/other/other72.mp4",
+      "split": "train",
+      "frames": 162,
+      "box_frames": 160,
+      "windows": 11,
+      "known": 11,
+      "unknown": 0
+    },
+    {
+      "video_id": "d3d3ecc79936db11",
+      "source": "real-actiondata-all/other/other73.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 83,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "67e58cd1fc026240",
+      "source": "real-actiondata-all/other/other74.mp4",
+      "split": "train",
+      "frames": 135,
+      "box_frames": 130,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "208f9c80c3059eeb",
+      "source": "real-actiondata-all/other/other75.mp4",
+      "split": "train",
+      "frames": 78,
+      "box_frames": 78,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "17bebb0cd618b714",
+      "source": "real-actiondata-all/other/other76.mp4",
+      "split": "train",
+      "frames": 130,
+      "box_frames": 130,
+      "windows": 9,
+      "known": 9,
+      "unknown": 0
+    },
+    {
+      "video_id": "035c4ac13850cd4e",
+      "source": "real-actiondata-all/other/other77.mp4",
+      "split": "train",
+      "frames": 149,
+      "box_frames": 149,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "312779ef28498796",
+      "source": "real-actiondata-all/other/other78.mp4",
+      "split": "train",
+      "frames": 154,
+      "box_frames": 137,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "6b152ab8753c8f06",
+      "source": "real-actiondata-all/other/other79.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "90e4dc3779a106ef",
+      "source": "real-actiondata-all/other/other8.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "4503e05a29baad6b",
+      "source": "real-actiondata-all/other/other80.mp4",
+      "split": "train",
+      "frames": 88,
+      "box_frames": 88,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "216d0abbfff34420",
+      "source": "real-actiondata-all/other/other81.mp4",
+      "split": "train",
+      "frames": 67,
+      "box_frames": 67,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "95187740b83c27a8",
+      "source": "real-actiondata-all/other/other82.mp4",
+      "split": "train",
+      "frames": 91,
+      "box_frames": 90,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "abeb396181055bac",
+      "source": "real-actiondata-all/other/other83.mp4",
+      "split": "train",
+      "frames": 133,
+      "box_frames": 133,
+      "windows": 9,
+      "known": 9,
+      "unknown": 0
+    },
+    {
+      "video_id": "0660b0ec5c38fdbc",
+      "source": "real-actiondata-all/other/other84.mp4",
+      "split": "train",
+      "frames": 118,
+      "box_frames": 118,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "11738baf94a458a5",
+      "source": "real-actiondata-all/other/other85.mp4",
+      "split": "train",
+      "frames": 113,
+      "box_frames": 113,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "3c4eaf22881d58b5",
+      "source": "real-actiondata-all/other/other87.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 97,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "f450a5e8d792567e",
+      "source": "real-actiondata-all/other/other88.mp4",
+      "split": "train",
+      "frames": 41,
+      "box_frames": 41,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "50341c1f72e9f82e",
+      "source": "real-actiondata-all/other/other9.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "026830a4be51cc83",
+      "source": "real-actiondata-all/other/other90.mp4",
+      "split": "train",
+      "frames": 45,
+      "box_frames": 45,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "9b4e6f0167c2053b",
+      "source": "real-actiondata-all/other/other91.mp4",
+      "split": "train",
+      "frames": 36,
+      "box_frames": 36,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "b9a7b4be744d0f4e",
+      "source": "real-actiondata-all/other/other92.mp4",
+      "split": "train",
+      "frames": 49,
+      "box_frames": 49,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "03dd82e16bae0455",
+      "source": "real-actiondata-all/other/other93.mp4",
+      "split": "train",
+      "frames": 45,
+      "box_frames": 45,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "01dba4946bf7bd6f",
+      "source": "real-actiondata-all/other/other94.mp4",
+      "split": "train",
+      "frames": 189,
+      "box_frames": 188,
+      "windows": 20,
+      "known": 20,
+      "unknown": 0
+    },
+    {
+      "video_id": "6419e026832de157",
+      "source": "real-actiondata-all/other/other96.mp4",
+      "split": "train",
+      "frames": 222,
+      "box_frames": 221,
+      "windows": 13,
+      "known": 13,
+      "unknown": 0
+    },
+    {
+      "video_id": "4f08b3400604dd4b",
+      "source": "real-actiondata-all/other/other98.mp4",
+      "split": "train",
+      "frames": 144,
+      "box_frames": 143,
+      "windows": 8,
+      "known": 8,
+      "unknown": 0
+    },
+    {
+      "video_id": "3c5cb1a0ca52b53a",
+      "source": "real-actiondata-all/other/other99.mp4",
+      "split": "train",
+      "frames": 127,
+      "box_frames": 127,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "692f42ad7971542b",
+      "source": "real-actiondata-all/喝水.mp4",
+      "split": "train",
+      "frames": 121,
+      "box_frames": 121,
+      "windows": 8,
+      "known": 5,
+      "unknown": 3
+    },
+    {
+      "video_id": "2f8105910668ee63",
+      "source": "real-actiondata-all/喝水1.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 74,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "98e5b2023b50498c",
+      "source": "real-actiondata-all/喝水10.mp4",
+      "split": "train",
+      "frames": 103,
+      "box_frames": 103,
+      "windows": 7,
+      "known": 5,
+      "unknown": 2
+    },
+    {
+      "video_id": "3c1be7546e6abe4c",
+      "source": "real-actiondata-all/喝水11.mp4",
+      "split": "train",
+      "frames": 101,
+      "box_frames": 101,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "a10a2ba1533ca770",
+      "source": "real-actiondata-all/喝水12.mp4",
+      "split": "train",
+      "frames": 115,
+      "box_frames": 115,
+      "windows": 7,
+      "known": 5,
+      "unknown": 2
+    },
+    {
+      "video_id": "5f67300e5f3bf4ba",
+      "source": "real-actiondata-all/喝水13.mp4",
+      "split": "train",
+      "frames": 118,
+      "box_frames": 109,
+      "windows": 8,
+      "known": 2,
+      "unknown": 6
+    },
+    {
+      "video_id": "66a5c0f15fb59cf1",
+      "source": "real-actiondata-all/喝水14.mp4",
+      "split": "train",
+      "frames": 84,
+      "box_frames": 81,
+      "windows": 5,
+      "known": 0,
+      "unknown": 5
+    },
+    {
+      "video_id": "87f6ca0216282a7a",
+      "source": "real-actiondata-all/喝水15.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 82,
+      "windows": 5,
+      "known": 0,
+      "unknown": 5
+    },
+    {
+      "video_id": "8f780ff0eefc1fcb",
+      "source": "real-actiondata-all/喝水16.mp4",
+      "split": "train",
+      "frames": 75,
+      "box_frames": 75,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "a8b212b367a7594f",
+      "source": "real-actiondata-all/喝水17.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "cbf7cf6bdebd686a",
+      "source": "real-actiondata-all/喝水18.mp4",
+      "split": "train",
+      "frames": 78,
+      "box_frames": 78,
+      "windows": 5,
+      "known": 3,
+      "unknown": 2
+    },
+    {
+      "video_id": "e68e8be5396ab726",
+      "source": "real-actiondata-all/喝水19.mp4",
+      "split": "train",
+      "frames": 65,
+      "box_frames": 65,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "0c6f7f8f83b0ee00",
+      "source": "real-actiondata-all/喝水2.mp4",
+      "split": "train",
+      "frames": 89,
+      "box_frames": 88,
+      "windows": 5,
+      "known": 2,
+      "unknown": 3
+    },
+    {
+      "video_id": "17cfb24a53443a5a",
+      "source": "real-actiondata-all/喝水20.mp4",
+      "split": "train",
+      "frames": 111,
+      "box_frames": 95,
+      "windows": 5,
+      "known": 0,
+      "unknown": 5
+    },
+    {
+      "video_id": "59679fde5a979f98",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "split": "train",
+      "frames": 89,
+      "box_frames": 89,
+      "windows": 5,
+      "known": 4,
+      "unknown": 1
+    },
+    {
+      "video_id": "90b78be8cd090104",
+      "source": "real-actiondata-all/喝水22.mp4",
+      "split": "train",
+      "frames": 77,
+      "box_frames": 77,
+      "windows": 5,
+      "known": 3,
+      "unknown": 2
+    },
+    {
+      "video_id": "c25c3e234ecfa853",
+      "source": "real-actiondata-all/喝水23.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 5,
+      "known": 0,
+      "unknown": 5
+    },
+    {
+      "video_id": "fb82c167efa488f9",
+      "source": "real-actiondata-all/喝水24.mp4",
+      "split": "train",
+      "frames": 102,
+      "box_frames": 102,
+      "windows": 5,
+      "known": 4,
+      "unknown": 1
+    },
+    {
+      "video_id": "4f9d96b816a7970a",
+      "source": "real-actiondata-all/喝水25.mp4",
+      "split": "train",
+      "frames": 105,
+      "box_frames": 105,
+      "windows": 6,
+      "known": 3,
+      "unknown": 3
+    },
+    {
+      "video_id": "a02f3d1c93a8e74f",
+      "source": "real-actiondata-all/喝水28.mp4",
+      "split": "train",
+      "frames": 114,
+      "box_frames": 114,
+      "windows": 6,
+      "known": 3,
+      "unknown": 3
+    },
+    {
+      "video_id": "89375c4397ad34c9",
+      "source": "real-actiondata-all/喝水29.mp4",
+      "split": "train",
+      "frames": 91,
+      "box_frames": 48,
+      "windows": 2,
+      "known": 0,
+      "unknown": 2
+    },
+    {
+      "video_id": "371297cdfb7efc6a",
+      "source": "real-actiondata-all/喝水3.mp4",
+      "split": "train",
+      "frames": 146,
+      "box_frames": 144,
+      "windows": 10,
+      "known": 7,
+      "unknown": 3
+    },
+    {
+      "video_id": "c7547c3416afe581",
+      "source": "real-actiondata-all/喝水31.mp4",
+      "split": "train",
+      "frames": 87,
+      "box_frames": 79,
+      "windows": 5,
+      "known": 1,
+      "unknown": 4
+    },
+    {
+      "video_id": "fada77e68305ac31",
+      "source": "real-actiondata-all/喝水32.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 83,
+      "windows": 5,
+      "known": 2,
+      "unknown": 3
+    },
+    {
+      "video_id": "444d81366fe842a5",
+      "source": "real-actiondata-all/喝水33.mp4",
+      "split": "train",
+      "frames": 112,
+      "box_frames": 112,
+      "windows": 6,
+      "known": 4,
+      "unknown": 2
+    },
+    {
+      "video_id": "a677b36824b2473f",
+      "source": "real-actiondata-all/喝水35.mp4",
+      "split": "train",
+      "frames": 112,
+      "box_frames": 112,
+      "windows": 6,
+      "known": 3,
+      "unknown": 3
+    },
+    {
+      "video_id": "ffc37f3401a63fc4",
+      "source": "real-actiondata-all/喝水37.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 85,
+      "windows": 5,
+      "known": 3,
+      "unknown": 2
+    },
+    {
+      "video_id": "1768113a9c6b3f61",
+      "source": "real-actiondata-all/喝水39.mp4",
+      "split": "train",
+      "frames": 105,
+      "box_frames": 105,
+      "windows": 7,
+      "known": 3,
+      "unknown": 4
+    },
+    {
+      "video_id": "66b08dbe0db5a20e",
+      "source": "real-actiondata-all/喝水4.mp4",
+      "split": "train",
+      "frames": 141,
+      "box_frames": 139,
+      "windows": 9,
+      "known": 7,
+      "unknown": 2
+    },
+    {
+      "video_id": "912a7119bb3fdd06",
+      "source": "real-actiondata-all/喝水40.mp4",
+      "split": "train",
+      "frames": 87,
+      "box_frames": 85,
+      "windows": 5,
+      "known": 0,
+      "unknown": 5
+    },
+    {
+      "video_id": "3e91ea8431c106a4",
+      "source": "real-actiondata-all/喝水42.mp4",
+      "split": "train",
+      "frames": 78,
+      "box_frames": 78,
+      "windows": 5,
+      "known": 3,
+      "unknown": 2
+    },
+    {
+      "video_id": "f157abb768a96786",
+      "source": "real-actiondata-all/喝水5.mp4",
+      "split": "train",
+      "frames": 184,
+      "box_frames": 176,
+      "windows": 13,
+      "known": 12,
+      "unknown": 1
+    },
+    {
+      "video_id": "6eb2b57242657a4f",
+      "source": "real-actiondata-all/喝水6.mp4",
+      "split": "train",
+      "frames": 76,
+      "box_frames": 76,
+      "windows": 6,
+      "known": 0,
+      "unknown": 6
+    },
+    {
+      "video_id": "4d696b2f3c251452",
+      "source": "real-actiondata-all/喝水7.mp4",
+      "split": "train",
+      "frames": 94,
+      "box_frames": 41,
+      "windows": 2,
+      "known": 0,
+      "unknown": 2
+    },
+    {
+      "video_id": "fec443198ddeccad",
+      "source": "real-actiondata-all/喝水8.mp4",
+      "split": "train",
+      "frames": 69,
+      "box_frames": 7,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "3fd3b533e82ba0cd",
+      "source": "real-actiondata-all/喝水9.mp4",
+      "split": "train",
+      "frames": 98,
+      "box_frames": 83,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "d0ab8993eff23b00",
+      "source": "real-actiondata-all/挥手1.mp4",
+      "split": "train",
+      "frames": 115,
+      "box_frames": 115,
+      "windows": 14,
+      "known": 11,
+      "unknown": 3
+    },
+    {
+      "video_id": "1e8fc5383e0c7ebf",
+      "source": "real-actiondata-all/挥手10.mp4",
+      "split": "train",
+      "frames": 210,
+      "box_frames": 210,
+      "windows": 20,
+      "known": 0,
+      "unknown": 20
+    },
+    {
+      "video_id": "92ea11e60e5d47c6",
+      "source": "real-actiondata-all/挥手11.mp4",
+      "split": "train",
+      "frames": 228,
+      "box_frames": 225,
+      "windows": 20,
+      "known": 0,
+      "unknown": 20
+    },
+    {
+      "video_id": "c99b19d78b33d718",
+      "source": "real-actiondata-all/挥手12.mp4",
+      "split": "train",
+      "frames": 130,
+      "box_frames": 130,
+      "windows": 9,
+      "known": 7,
+      "unknown": 2
+    },
+    {
+      "video_id": "97c76cf3392a9c1b",
+      "source": "real-actiondata-all/挥手13.mp4",
+      "split": "train",
+      "frames": 133,
+      "box_frames": 129,
+      "windows": 8,
+      "known": 5,
+      "unknown": 3
+    },
+    {
+      "video_id": "fc9a731d5218260f",
+      "source": "real-actiondata-all/挥手14.mp4",
+      "split": "train",
+      "frames": 147,
+      "box_frames": 146,
+      "windows": 10,
+      "known": 6,
+      "unknown": 4
+    },
+    {
+      "video_id": "6849b046cceacd3e",
+      "source": "real-actiondata-all/挥手15.mp4",
+      "split": "train",
+      "frames": 91,
+      "box_frames": 91,
+      "windows": 6,
+      "known": 4,
+      "unknown": 2
+    },
+    {
+      "video_id": "9e9349dda617afef",
+      "source": "real-actiondata-all/挥手16.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 58,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "c8982ae82f07ef4c",
+      "source": "real-actiondata-all/挥手17.mp4",
+      "split": "train",
+      "frames": 57,
+      "box_frames": 51,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "4078760fdadd05f6",
+      "source": "real-actiondata-all/挥手18.mp4",
+      "split": "train",
+      "frames": 67,
+      "box_frames": 66,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "541cb241bad70b01",
+      "source": "real-actiondata-all/挥手19.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "5014b0b77ada6229",
+      "source": "real-actiondata-all/挥手2.mp4",
+      "split": "train",
+      "frames": 119,
+      "box_frames": 118,
+      "windows": 11,
+      "known": 8,
+      "unknown": 3
+    },
+    {
+      "video_id": "fcde48c0e250ed15",
+      "source": "real-actiondata-all/挥手20.mp4",
+      "split": "train",
+      "frames": 55,
+      "box_frames": 55,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "7c2f7e8b8bb28479",
+      "source": "real-actiondata-all/挥手21.mp4",
+      "split": "train",
+      "frames": 40,
+      "box_frames": 40,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "6e54fd92e95d43cf",
+      "source": "real-actiondata-all/挥手22.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "c76c09cceba63e7c",
+      "source": "real-actiondata-all/挥手23.mp4",
+      "split": "train",
+      "frames": 67,
+      "box_frames": 67,
+      "windows": 4,
+      "known": 1,
+      "unknown": 3
+    },
+    {
+      "video_id": "7ebba3f14b97c2e6",
+      "source": "real-actiondata-all/挥手24.mp4",
+      "split": "train",
+      "frames": 62,
+      "box_frames": 59,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "6c9797473973ffee",
+      "source": "real-actiondata-all/挥手25.mp4",
+      "split": "train",
+      "frames": 65,
+      "box_frames": 9,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "f019d7af0cfd4e52",
+      "source": "real-actiondata-all/挥手26.mp4",
+      "split": "train",
+      "frames": 66,
+      "box_frames": 66,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "b576f320195dfed9",
+      "source": "real-actiondata-all/挥手3.mp4",
+      "split": "train",
+      "frames": 160,
+      "box_frames": 160,
+      "windows": 22,
+      "known": 19,
+      "unknown": 3
+    },
+    {
+      "video_id": "d460cd44355a4f93",
+      "source": "real-actiondata-all/挥手31.mp4",
+      "split": "train",
+      "frames": 65,
+      "box_frames": 65,
+      "windows": 9,
+      "known": 6,
+      "unknown": 3
+    },
+    {
+      "video_id": "e46d679b4461ef23",
+      "source": "real-actiondata-all/挥手32.mp4",
+      "split": "train",
+      "frames": 93,
+      "box_frames": 93,
+      "windows": 6,
+      "known": 2,
+      "unknown": 4
+    },
+    {
+      "video_id": "c586e7f67a9ed31d",
+      "source": "real-actiondata-all/挥手35.mp4",
+      "split": "train",
+      "frames": 88,
+      "box_frames": 42,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "6c1950379c24ba7d",
+      "source": "real-actiondata-all/挥手36.mp4",
+      "split": "train",
+      "frames": 75,
+      "box_frames": 66,
+      "windows": 3,
+      "known": 1,
+      "unknown": 2
+    },
+    {
+      "video_id": "e543d52561aec4ba",
+      "source": "real-actiondata-all/挥手37.mp4",
+      "split": "train",
+      "frames": 66,
+      "box_frames": 29,
+      "windows": 1,
+      "known": 0,
+      "unknown": 1
+    },
+    {
+      "video_id": "f61b47c06f87eb1e",
+      "source": "real-actiondata-all/挥手38.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 55,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "684c5ecbeb5d5fbd",
+      "source": "real-actiondata-all/挥手4.mp4",
+      "split": "train",
+      "frames": 169,
+      "box_frames": 169,
+      "windows": 24,
+      "known": 21,
+      "unknown": 3
+    },
+    {
+      "video_id": "1a5e5b4ed53143da",
+      "source": "real-actiondata-all/挥手40.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 58,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "530259c765726e91",
+      "source": "real-actiondata-all/挥手41.mp4",
+      "split": "train",
+      "frames": 82,
+      "box_frames": 79,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "0483b0eb81ca3c6d",
+      "source": "real-actiondata-all/挥手42.mp4",
+      "split": "train",
+      "frames": 70,
+      "box_frames": 69,
+      "windows": 3,
+      "known": 1,
+      "unknown": 2
+    },
+    {
+      "video_id": "922a3b6dce08796f",
+      "source": "real-actiondata-all/挥手43.mp4",
+      "split": "train",
+      "frames": 72,
+      "box_frames": 72,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "911066dba60e270b",
+      "source": "real-actiondata-all/挥手44.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 3,
+      "known": 1,
+      "unknown": 2
+    },
+    {
+      "video_id": "ba0ba14210f3266c",
+      "source": "real-actiondata-all/挥手49.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "c938ebc5ebb6248d",
+      "source": "real-actiondata-all/挥手5.mp4",
+      "split": "train",
+      "frames": 132,
+      "box_frames": 131,
+      "windows": 9,
+      "known": 6,
+      "unknown": 3
+    },
+    {
+      "video_id": "e97748ccd8371f16",
+      "source": "real-actiondata-all/挥手50.mp4",
+      "split": "train",
+      "frames": 48,
+      "box_frames": 48,
+      "windows": 2,
+      "known": 1,
+      "unknown": 1
+    },
+    {
+      "video_id": "df7aa782aaa5214d",
+      "source": "real-actiondata-all/挥手51.mp4",
+      "split": "train",
+      "frames": 63,
+      "box_frames": 63,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "b74e6155d9e8e667",
+      "source": "real-actiondata-all/挥手52.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 54,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "bbbaa4e6f7331a04",
+      "source": "real-actiondata-all/挥手6.mp4",
+      "split": "train",
+      "frames": 107,
+      "box_frames": 106,
+      "windows": 7,
+      "known": 5,
+      "unknown": 2
+    },
+    {
+      "video_id": "344e4ea836d29ee5",
+      "source": "real-actiondata-all/挥手7.mp4",
+      "split": "train",
+      "frames": 152,
+      "box_frames": 150,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "cc0741511b08ff42",
+      "source": "real-actiondata-all/挥手8.mp4",
+      "split": "train",
+      "frames": 64,
+      "box_frames": 64,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "cdb9e33c9032ef05",
+      "source": "real-actiondata-all/挥手9.mp4",
+      "split": "train",
+      "frames": 73,
+      "box_frames": 73,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "1d4d072b22d10fe1",
+      "source": "real-actiondata-all/捡东西1.mp4",
+      "split": "train",
+      "frames": 72,
+      "box_frames": 70,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "d143b29383cdc52c",
+      "source": "real-actiondata-all/捡东西10.mp4",
+      "split": "train",
+      "frames": 77,
+      "box_frames": 56,
+      "windows": 2,
+      "known": 0,
+      "unknown": 2
+    },
+    {
+      "video_id": "59f61340c1226601",
+      "source": "real-actiondata-all/捡东西11.mp4",
+      "split": "train",
+      "frames": 84,
+      "box_frames": 81,
+      "windows": 5,
+      "known": 1,
+      "unknown": 4
+    },
+    {
+      "video_id": "db55821778e02f2d",
+      "source": "real-actiondata-all/捡东西12.mp4",
+      "split": "train",
+      "frames": 66,
+      "box_frames": 66,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "6d410d75543e1fbd",
+      "source": "real-actiondata-all/捡东西14.mp4",
+      "split": "train",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "fb1220b3d09cfde0",
+      "source": "real-actiondata-all/捡东西15.mp4",
+      "split": "train",
+      "frames": 79,
+      "box_frames": 79,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "461f50795b91148e",
+      "source": "real-actiondata-all/捡东西17.mp4",
+      "split": "train",
+      "frames": 75,
+      "box_frames": 75,
+      "windows": 8,
+      "known": 3,
+      "unknown": 5
+    },
+    {
+      "video_id": "1f153eddcd6d673e",
+      "source": "real-actiondata-all/捡东西2.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "d59b214aa23a2b10",
+      "source": "real-actiondata-all/捡东西21.mp4",
+      "split": "train",
+      "frames": 44,
+      "box_frames": 44,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "182e3a30ac1a8d7b",
+      "source": "real-actiondata-all/捡东西24.mp4",
+      "split": "train",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 3,
+      "known": 1,
+      "unknown": 2
+    },
+    {
+      "video_id": "8594e05e8a56819b",
+      "source": "real-actiondata-all/捡东西25.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "69d2c833d0f01ff3",
+      "source": "real-actiondata-all/捡东西26.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 74,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "5f19ec7dd508ac1c",
+      "source": "real-actiondata-all/捡东西28.mp4",
+      "split": "train",
+      "frames": 65,
+      "box_frames": 65,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "715bfec24d7932ab",
+      "source": "real-actiondata-all/捡东西29.mp4",
+      "split": "train",
+      "frames": 70,
+      "box_frames": 70,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "0a3821a9af502a18",
+      "source": "real-actiondata-all/捡东西3.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 85,
+      "windows": 5,
+      "known": 2,
+      "unknown": 3
+    },
+    {
+      "video_id": "17691f1609dbc2a2",
+      "source": "real-actiondata-all/捡东西30.mp4",
+      "split": "train",
+      "frames": 67,
+      "box_frames": 66,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "32a98bbac8041855",
+      "source": "real-actiondata-all/捡东西31.mp4",
+      "split": "train",
+      "frames": 80,
+      "box_frames": 69,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "5ef30e5406ceb045",
+      "source": "real-actiondata-all/捡东西32.mp4",
+      "split": "train",
+      "frames": 83,
+      "box_frames": 33,
+      "windows": 1,
+      "known": 0,
+      "unknown": 1
+    },
+    {
+      "video_id": "aa9c286e92910886",
+      "source": "real-actiondata-all/捡东西4.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 58,
+      "windows": 3,
+      "known": 1,
+      "unknown": 2
+    },
+    {
+      "video_id": "7e25914fdc94d0f7",
+      "source": "real-actiondata-all/捡东西5.mp4",
+      "split": "train",
+      "frames": 67,
+      "box_frames": 64,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "487a0afbadd70908",
+      "source": "real-actiondata-all/捡东西6.mp4",
+      "split": "train",
+      "frames": 88,
+      "box_frames": 30,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "b7e8859575a26b92",
+      "source": "real-actiondata-all/捡东西7.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 59,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "694bca760d51b0de",
+      "source": "real-actiondata-all/捡东西8.mp4",
+      "split": "train",
+      "frames": 56,
+      "box_frames": 55,
+      "windows": 2,
+      "known": 0,
+      "unknown": 2
+    },
+    {
+      "video_id": "5aa82626ac7ce644",
+      "source": "real-actiondata-all/捡东西9.mp4",
+      "split": "train",
+      "frames": 58,
+      "box_frames": 54,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "cdf104cc6253966a",
+      "source": "real-actiondata-all/追逐1.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 67,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "901784aacea534bc",
+      "source": "real-actiondata-all/追逐10.mp4",
+      "split": "train",
+      "frames": 121,
+      "box_frames": 97,
+      "windows": 6,
+      "known": 3,
+      "unknown": 3
+    },
+    {
+      "video_id": "bfd2db8cb178efbe",
+      "source": "real-actiondata-all/追逐11.mp4",
+      "split": "train",
+      "frames": 170,
+      "box_frames": 102,
+      "windows": 7,
+      "known": 5,
+      "unknown": 2
+    },
+    {
+      "video_id": "c17f742cd8d7b896",
+      "source": "real-actiondata-all/追逐12.mp4",
+      "split": "train",
+      "frames": 194,
+      "box_frames": 134,
+      "windows": 8,
+      "known": 7,
+      "unknown": 1
+    },
+    {
+      "video_id": "b4e95df4d1da6fae",
+      "source": "real-actiondata-all/追逐13.mp4",
+      "split": "train",
+      "frames": 163,
+      "box_frames": 152,
+      "windows": 9,
+      "known": 0,
+      "unknown": 9
+    },
+    {
+      "video_id": "0cedb2d93ba62ead",
+      "source": "real-actiondata-all/追逐14.mp4",
+      "split": "train",
+      "frames": 135,
+      "box_frames": 68,
+      "windows": 2,
+      "known": 0,
+      "unknown": 2
+    },
+    {
+      "video_id": "7fa46853e7cf819b",
+      "source": "real-actiondata-all/追逐15.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "299dc5ba055194ff",
+      "source": "real-actiondata-all/追逐16.mp4",
+      "split": "train",
+      "frames": 45,
+      "box_frames": 45,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "d21ef1640dc121c1",
+      "source": "real-actiondata-all/追逐17.mp4",
+      "split": "train",
+      "frames": 70,
+      "box_frames": 70,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "225fb5f887e81816",
+      "source": "real-actiondata-all/追逐18.mp4",
+      "split": "train",
+      "frames": 57,
+      "box_frames": 56,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "32aa9118ccdb4725",
+      "source": "real-actiondata-all/追逐19.mp4",
+      "split": "train",
+      "frames": 74,
+      "box_frames": 71,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "f21a7596fffdf10d",
+      "source": "real-actiondata-all/追逐2.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 53,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "36798ce52c2bdec4",
+      "source": "real-actiondata-all/追逐20.mp4",
+      "split": "train",
+      "frames": 95,
+      "box_frames": 46,
+      "windows": 1,
+      "known": 0,
+      "unknown": 1
+    },
+    {
+      "video_id": "aa13c847a4ce6f72",
+      "source": "real-actiondata-all/追逐21.mp4",
+      "split": "train",
+      "frames": 84,
+      "box_frames": 82,
+      "windows": 5,
+      "known": 4,
+      "unknown": 1
+    },
+    {
+      "video_id": "ee7f2945335d08b8",
+      "source": "real-actiondata-all/追逐22.mp4",
+      "split": "train",
+      "frames": 81,
+      "box_frames": 81,
+      "windows": 5,
+      "known": 4,
+      "unknown": 1
+    },
+    {
+      "video_id": "a288f3265d506e44",
+      "source": "real-actiondata-all/追逐23.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "900addcaf0b89534",
+      "source": "real-actiondata-all/追逐26.mp4",
+      "split": "train",
+      "frames": 102,
+      "box_frames": 80,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "98156edd41f51291",
+      "source": "real-actiondata-all/追逐27.mp4",
+      "split": "train",
+      "frames": 93,
+      "box_frames": 93,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "1d4f3e8381ae99d8",
+      "source": "real-actiondata-all/追逐28.mp4",
+      "split": "train",
+      "frames": 60,
+      "box_frames": 60,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "0316340911c7335a",
+      "source": "real-actiondata-all/追逐3.mp4",
+      "split": "train",
+      "frames": 113,
+      "box_frames": 113,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "913a05b8e6828486",
+      "source": "real-actiondata-all/追逐31.mp4",
+      "split": "train",
+      "frames": 85,
+      "box_frames": 13,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "ae0590a2080efe39",
+      "source": "real-actiondata-all/追逐32.mp4",
+      "split": "train",
+      "frames": 59,
+      "box_frames": 7,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "f9eebd24679a7e47",
+      "source": "real-actiondata-all/追逐34.mp4",
+      "split": "train",
+      "frames": 92,
+      "box_frames": 38,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "3bb7bbbb5dac2886",
+      "source": "real-actiondata-all/追逐36.mp4",
+      "split": "train",
+      "frames": 112,
+      "box_frames": 112,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "83739a9c1ef166ae",
+      "source": "real-actiondata-all/追逐37.mp4",
+      "split": "train",
+      "frames": 101,
+      "box_frames": 101,
+      "windows": 5,
+      "known": 4,
+      "unknown": 1
+    },
+    {
+      "video_id": "31845bb3ebe9242c",
+      "source": "real-actiondata-all/追逐39.mp4",
+      "split": "train",
+      "frames": 82,
+      "box_frames": 82,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "5fc474000ad8b057",
+      "source": "real-actiondata-all/追逐4.mp4",
+      "split": "train",
+      "frames": 123,
+      "box_frames": 93,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "5d7ceafa65fb28dd",
+      "source": "real-actiondata-all/追逐41.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "372e72a806a6ba1f",
+      "source": "real-actiondata-all/追逐43.mp4",
+      "split": "train",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 2,
+      "unknown": 1
+    },
+    {
+      "video_id": "9bc2715b7cba4538",
+      "source": "real-actiondata-all/追逐44.mp4",
+      "split": "train",
+      "frames": 47,
+      "box_frames": 47,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "9023ebf8d99f6a15",
+      "source": "real-actiondata-all/追逐45.mp4",
+      "split": "train",
+      "frames": 40,
+      "box_frames": 38,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "df5b8f29122410a2",
+      "source": "real-actiondata-all/追逐47.mp4",
+      "split": "train",
+      "frames": 69,
+      "box_frames": 68,
+      "windows": 4,
+      "known": 0,
+      "unknown": 4
+    },
+    {
+      "video_id": "2dfb81cf7be15dda",
+      "source": "real-actiondata-all/追逐5.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 79,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "bcb2e7206d754bc7",
+      "source": "real-actiondata-all/追逐6.mp4",
+      "split": "train",
+      "frames": 98,
+      "box_frames": 8,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "0a18f29b730586c2",
+      "source": "real-actiondata-all/追逐7.mp4",
+      "split": "train",
+      "frames": 70,
+      "box_frames": 24,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "5bb9be3c95774ee4",
+      "source": "real-actiondata-all/追逐9.mp4",
+      "split": "train",
+      "frames": 79,
+      "box_frames": 17,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "68f13a8512ef7609",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "frames": 616,
+      "box_frames": 616,
+      "windows": 46,
+      "known": 29,
+      "unknown": 17
+    },
+    {
+      "video_id": "314915317e94aa69",
+      "source": "real-actiondata/喝水1.mp4",
+      "split": "train",
+      "frames": 164,
+      "box_frames": 164,
+      "windows": 11,
+      "known": 9,
+      "unknown": 2
+    },
+    {
+      "video_id": "7b53648a940fbcba",
+      "source": "real-actiondata/喝水10.mp4",
+      "split": "train",
+      "frames": 185,
+      "box_frames": 185,
+      "windows": 13,
+      "known": 11,
+      "unknown": 2
+    },
+    {
+      "video_id": "16787743e3446a1a",
+      "source": "real-actiondata/喝水11.mp4",
+      "split": "train",
+      "frames": 139,
+      "box_frames": 139,
+      "windows": 9,
+      "known": 9,
+      "unknown": 0
+    },
+    {
+      "video_id": "e7e805c9abfc755e",
+      "source": "real-actiondata/喝水12.mp4",
+      "split": "train",
+      "frames": 115,
+      "box_frames": 115,
+      "windows": 7,
+      "known": 5,
+      "unknown": 2
+    },
+    {
+      "video_id": "0fd5052f531d2567",
+      "source": "real-actiondata/喝水2.mp4",
+      "split": "train",
+      "frames": 193,
+      "box_frames": 192,
+      "windows": 13,
+      "known": 8,
+      "unknown": 5
+    },
+    {
+      "video_id": "35f30d6b84db9fa2",
+      "source": "real-actiondata/喝水3.mp4",
+      "split": "train",
+      "frames": 89,
+      "box_frames": 89,
+      "windows": 5,
+      "known": 2,
+      "unknown": 3
+    },
+    {
+      "video_id": "427b2d3c2fad1d3c",
+      "source": "real-actiondata/喝水4.mp4",
+      "split": "train",
+      "frames": 171,
+      "box_frames": 171,
+      "windows": 12,
+      "known": 7,
+      "unknown": 5
+    },
+    {
+      "video_id": "2ff1431546aa2bc4",
+      "source": "real-actiondata/喝水5.mp4",
+      "split": "train",
+      "frames": 160,
+      "box_frames": 160,
+      "windows": 11,
+      "known": 8,
+      "unknown": 3
+    },
+    {
+      "video_id": "bdddda5a72273061",
+      "source": "real-actiondata/喝水6.mp4",
+      "split": "train",
+      "frames": 263,
+      "box_frames": 263,
+      "windows": 19,
+      "known": 14,
+      "unknown": 5
+    },
+    {
+      "video_id": "827a586dc386a23a",
+      "source": "real-actiondata/喝水7.mp4",
+      "split": "train",
+      "frames": 159,
+      "box_frames": 154,
+      "windows": 15,
+      "known": 4,
+      "unknown": 11
+    },
+    {
+      "video_id": "ae5c589b531cb804",
+      "source": "real-actiondata/喝水8.mp4",
+      "split": "train",
+      "frames": 205,
+      "box_frames": 95,
+      "windows": 3,
+      "known": 0,
+      "unknown": 3
+    },
+    {
+      "video_id": "0237087ac4147814",
+      "source": "real-actiondata/喝水9.mp4",
+      "split": "train",
+      "frames": 154,
+      "box_frames": 131,
+      "windows": 9,
+      "known": 3,
+      "unknown": 6
+    },
+    {
+      "video_id": "cbcdd343aba8623e",
+      "source": "real-actiondata/抛物.mp4",
+      "split": "train",
+      "frames": 518,
+      "box_frames": 518,
+      "windows": 38,
+      "known": 15,
+      "unknown": 23
+    },
+    {
+      "video_id": "6d3442ab1f3262e0",
+      "source": "real-actiondata/挥手.mp4",
+      "split": "train",
+      "frames": 755,
+      "box_frames": 753,
+      "windows": 57,
+      "known": 25,
+      "unknown": 32
+    },
+    {
+      "video_id": "8cedf1246047632a",
+      "source": "real-actiondata/捡东西.mp4",
+      "split": "train",
+      "frames": 548,
+      "box_frames": 546,
+      "windows": 41,
+      "known": 20,
+      "unknown": 21
+    },
+    {
+      "video_id": "99ab4050cc230278",
+      "source": "real-actiondata/摔倒.mp4",
+      "split": "train",
+      "frames": 532,
+      "box_frames": 528,
+      "windows": 40,
+      "known": 23,
+      "unknown": 17
+    },
+    {
+      "video_id": "53daffaa9ef9103a",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162326_drinking_water_0001.mp4",
+      "split": "train",
+      "frames": 113,
+      "box_frames": 113,
+      "windows": 65,
+      "known": 65,
+      "unknown": 0
+    },
+    {
+      "video_id": "ce13a491fbcd73fc",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162356_drinking_water_0002.mp4",
+      "split": "train",
+      "frames": 121,
+      "box_frames": 121,
+      "windows": 56,
+      "known": 56,
+      "unknown": 0
+    },
+    {
+      "video_id": "19f785964f9dc67d",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162806_drinking_water_0004.mp4",
+      "split": "train",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 24,
+      "known": 24,
+      "unknown": 0
+    },
+    {
+      "video_id": "b18b92a47e2a5d1a",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_104926_85/waving/20261019_111718_waving_0002.mp4",
+      "split": "train",
+      "frames": 48,
+      "box_frames": 48,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "a61fbc18e5ba1452",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/drinking_water/20261019_112641_drinking_water_0001.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 97,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "2b052f633d9024e3",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/drinking_water/20261019_114127_drinking_water_0007.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 97,
+      "windows": 14,
+      "known": 14,
+      "unknown": 0
+    },
+    {
+      "video_id": "dfbe272db277d058",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/drinking_water/20261019_114334_drinking_water_0009.mp4",
+      "split": "train",
+      "frames": 22,
+      "box_frames": 22,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "186d7b3adc61d005",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/waving/20261019_112709_waving_0002.mp4",
+      "split": "train",
+      "frames": 101,
+      "box_frames": 101,
+      "windows": 11,
+      "known": 11,
+      "unknown": 0
+    },
+    {
+      "video_id": "4a22fb51b5780ce7",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/waving/20261019_112739_waving_0003.mp4",
+      "split": "train",
+      "frames": 97,
+      "box_frames": 97,
+      "windows": 11,
+      "known": 11,
+      "unknown": 0
+    },
+    {
+      "video_id": "dad8190211886666",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/waving/20261019_113653_waving_0004.mp4",
+      "split": "train",
+      "frames": 111,
+      "box_frames": 111,
+      "windows": 12,
+      "known": 12,
+      "unknown": 0
+    },
+    {
+      "video_id": "2c1d00c0ed23be4c",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/waving/20261019_113708_waving_0005.mp4",
+      "split": "train",
+      "frames": 121,
+      "box_frames": 121,
+      "windows": 16,
+      "known": 16,
+      "unknown": 0
+    },
+    {
+      "video_id": "16dcb4baf5efd044",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261019_111849_80/waving/20261019_113717_waving_0006.mp4",
+      "split": "train",
+      "frames": 24,
+      "box_frames": 24,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "fde9a3e95b99c510",
+      "source": "real-actiondata-all/other/other104.mp4",
+      "split": "val",
+      "frames": 93,
+      "box_frames": 93,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "1e0fffd85527a871",
+      "source": "real-actiondata-all/other/other110.mp4",
+      "split": "val",
+      "frames": 309,
+      "box_frames": 308,
+      "windows": 19,
+      "known": 19,
+      "unknown": 0
+    },
+    {
+      "video_id": "d8dd1f8db660b670",
+      "source": "real-actiondata-all/other/other112.mp4",
+      "split": "val",
+      "frames": 219,
+      "box_frames": 219,
+      "windows": 26,
+      "known": 26,
+      "unknown": 0
+    },
+    {
+      "video_id": "00a4f341393019b6",
+      "source": "real-actiondata-all/other/other120.mp4",
+      "split": "val",
+      "frames": 80,
+      "box_frames": 80,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "129a1083339d2a2c",
+      "source": "real-actiondata-all/other/other121.mp4",
+      "split": "val",
+      "frames": 94,
+      "box_frames": 94,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "dac6c40e3f1fef2e",
+      "source": "real-actiondata-all/other/other122.mp4",
+      "split": "val",
+      "frames": 54,
+      "box_frames": 54,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "9588ef0cc5bba34d",
+      "source": "real-actiondata-all/other/other130.mp4",
+      "split": "val",
+      "frames": 51,
+      "box_frames": 51,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "d1469964425c21b0",
+      "source": "real-actiondata-all/other/other132.mp4",
+      "split": "val",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "93a218ef08435253",
+      "source": "real-actiondata-all/other/other134.mp4",
+      "split": "val",
+      "frames": 98,
+      "box_frames": 98,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "6235ff18633042d6",
+      "source": "real-actiondata-all/other/other150.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "f976083492d83ddf",
+      "source": "real-actiondata-all/other/other160.mp4",
+      "split": "val",
+      "frames": 51,
+      "box_frames": 50,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "436ae0456ba78470",
+      "source": "real-actiondata-all/other/other161.mp4",
+      "split": "val",
+      "frames": 40,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "f775dddec4dea678",
+      "source": "real-actiondata-all/other/other164.mp4",
+      "split": "val",
+      "frames": 52,
+      "box_frames": 52,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "8e269a27d270cdc8",
+      "source": "real-actiondata-all/other/other167.mp4",
+      "split": "val",
+      "frames": 78,
+      "box_frames": 78,
+      "windows": 5,
+      "known": 5,
+      "unknown": 0
+    },
+    {
+      "video_id": "a53b3b956be0d543",
+      "source": "real-actiondata-all/other/other171.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "1f1cf8b79e153310",
+      "source": "real-actiondata-all/other/other173.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "c4ebf78868c388a0",
+      "source": "real-actiondata-all/other/other186.mp4",
+      "split": "val",
+      "frames": 71,
+      "box_frames": 71,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "74b34b7617c04514",
+      "source": "real-actiondata-all/other/other190.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "8971e22d65dab6d4",
+      "source": "real-actiondata-all/other/other198.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "84bb519728f89204",
+      "source": "real-actiondata-all/other/other202.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "a95be51ecc7f57b0",
+      "source": "real-actiondata-all/other/other205.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "f2635545f8db7ab9",
+      "source": "real-actiondata-all/other/other207.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "8feae104df8c7ad8",
+      "source": "real-actiondata-all/other/other214.mp4",
+      "split": "val",
+      "frames": 61,
+      "box_frames": 61,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "107047354bfb9992",
+      "source": "real-actiondata-all/other/other218.mp4",
+      "split": "val",
+      "frames": 64,
+      "box_frames": 64,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "6c88b24032c50d73",
+      "source": "real-actiondata-all/other/other219.mp4",
+      "split": "val",
+      "frames": 75,
+      "box_frames": 75,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "1439265296f8110c",
+      "source": "real-actiondata-all/other/other222.mp4",
+      "split": "val",
+      "frames": 51,
+      "box_frames": 51,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "d004e06c76e62ab7",
+      "source": "real-actiondata-all/other/other231.mp4",
+      "split": "val",
+      "frames": 153,
+      "box_frames": 153,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "f9a65e581c16eb81",
+      "source": "real-actiondata-all/other/other235.mp4",
+      "split": "val",
+      "frames": 147,
+      "box_frames": 147,
+      "windows": 10,
+      "known": 10,
+      "unknown": 0
+    },
+    {
+      "video_id": "96031d0d26d6cbdf",
+      "source": "real-actiondata-all/other/other236.mp4",
+      "split": "val",
+      "frames": 497,
+      "box_frames": 0,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "d5f36803929f5203",
+      "source": "real-actiondata-all/other/other89.mp4",
+      "split": "val",
+      "frames": 100,
+      "box_frames": 100,
+      "windows": 6,
+      "known": 6,
+      "unknown": 0
+    },
+    {
+      "video_id": "82eb9f0050410b2a",
+      "source": "real-actiondata-all/喝水27.mp4",
+      "split": "val",
+      "frames": 125,
+      "box_frames": 125,
+      "windows": 7,
+      "known": 3,
+      "unknown": 4
+    },
+    {
+      "video_id": "0481827299813a56",
+      "source": "real-actiondata-all/喝水30.mp4",
+      "split": "val",
+      "frames": 87,
+      "box_frames": 58,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "252284bbb3974d0a",
+      "source": "real-actiondata-all/喝水41.mp4",
+      "split": "val",
+      "frames": 106,
+      "box_frames": 106,
+      "windows": 7,
+      "known": 3,
+      "unknown": 4
+    },
+    {
+      "video_id": "8bf98cf74cd2d587",
+      "source": "real-actiondata-all/喝水43.mp4",
+      "split": "val",
+      "frames": 91,
+      "box_frames": 91,
+      "windows": 6,
+      "known": 4,
+      "unknown": 2
+    },
+    {
+      "video_id": "7a744e54208d220c",
+      "source": "real-actiondata-all/挥手27.mp4",
+      "split": "val",
+      "frames": 70,
+      "box_frames": 65,
+      "windows": 4,
+      "known": 3,
+      "unknown": 1
+    },
+    {
+      "video_id": "1fa7b05d59e8d258",
+      "source": "real-actiondata-all/挥手30.mp4",
+      "split": "val",
+      "frames": 81,
+      "box_frames": 81,
+      "windows": 12,
+      "known": 6,
+      "unknown": 6
+    },
+    {
+      "video_id": "220cc82202abab6e",
+      "source": "real-actiondata-all/挥手33.mp4",
+      "split": "val",
+      "frames": 78,
+      "box_frames": 78,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "dd1eeec69516c44b",
+      "source": "real-actiondata-all/挥手39.mp4",
+      "split": "val",
+      "frames": 71,
+      "box_frames": 14,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "b9755309bb164855",
+      "source": "real-actiondata-all/挥手48.mp4",
+      "split": "val",
+      "frames": 46,
+      "box_frames": 46,
+      "windows": 2,
+      "known": 1,
+      "unknown": 1
+    },
+    {
+      "video_id": "015b1467f9ba6016",
+      "source": "real-actiondata-all/挥手53.mp4",
+      "split": "val",
+      "frames": 62,
+      "box_frames": 62,
+      "windows": 3,
+      "known": 1,
+      "unknown": 2
+    },
+    {
+      "video_id": "fe0c5234858ab18b",
+      "source": "real-actiondata-all/捡东西13.mp4",
+      "split": "val",
+      "frames": 91,
+      "box_frames": 29,
+      "windows": 1,
+      "known": 0,
+      "unknown": 1
+    },
+    {
+      "video_id": "9831d442adecfc66",
+      "source": "real-actiondata-all/捡东西16.mp4",
+      "split": "val",
+      "frames": 59,
+      "box_frames": 59,
+      "windows": 4,
+      "known": 4,
+      "unknown": 0
+    },
+    {
+      "video_id": "c0725bb2829586bb",
+      "source": "real-actiondata-all/捡东西19.mp4",
+      "split": "val",
+      "frames": 75,
+      "box_frames": 45,
+      "windows": 2,
+      "known": 0,
+      "unknown": 2
+    },
+    {
+      "video_id": "e89e6fbe81384ec5",
+      "source": "real-actiondata-all/捡东西22.mp4",
+      "split": "val",
+      "frames": 81,
+      "box_frames": 80,
+      "windows": 4,
+      "known": 2,
+      "unknown": 2
+    },
+    {
+      "video_id": "de33753bf592c4cc",
+      "source": "real-actiondata-all/追逐30.mp4",
+      "split": "val",
+      "frames": 54,
+      "box_frames": 52,
+      "windows": 3,
+      "known": 3,
+      "unknown": 0
+    },
+    {
+      "video_id": "e15ce2bb67f79eca",
+      "source": "real-actiondata-all/追逐33.mp4",
+      "split": "val",
+      "frames": 67,
+      "box_frames": 11,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "220255c6344fa810",
+      "source": "real-actiondata-all/追逐38.mp4",
+      "split": "val",
+      "frames": 62,
+      "box_frames": 58,
+      "windows": 2,
+      "known": 2,
+      "unknown": 0
+    },
+    {
+      "video_id": "de7f71c723b0f8d2",
+      "source": "real-actiondata-all/追逐40.mp4",
+      "split": "val",
+      "frames": 122,
+      "box_frames": 122,
+      "windows": 7,
+      "known": 7,
+      "unknown": 0
+    },
+    {
+      "video_id": "4e19f9c50c1a54c0",
+      "source": "real-actiondata-all/追逐46.mp4",
+      "split": "val",
+      "frames": 54,
+      "box_frames": 47,
+      "windows": 2,
+      "known": 1,
+      "unknown": 1
+    },
+    {
+      "video_id": "03d82262ccf14e05",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211107_drinking_water_0001.mp4",
+      "split": "val",
+      "frames": 104,
+      "box_frames": 13,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "e703b9f06aa6996c",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211125_drinking_water_0002.mp4",
+      "split": "val",
+      "frames": 101,
+      "box_frames": 19,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "6e976428a50af59a",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211130_drinking_water_0003.mp4",
+      "split": "val",
+      "frames": 100,
+      "box_frames": 7,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "5bcef777e72e9bed",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211206_drinking_water_0004.mp4",
+      "split": "val",
+      "frames": 100,
+      "box_frames": 9,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "d3fced0138397273",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211234_drinking_water_0005.mp4",
+      "split": "val",
+      "frames": 100,
+      "box_frames": 11,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "9173b5f7ddee6aeb",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211300_drinking_water_0006.mp4",
+      "split": "val",
+      "frames": 101,
+      "box_frames": 9,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "64eaef3633d9738b",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211319_drinking_water_0007.mp4",
+      "split": "val",
+      "frames": 96,
+      "box_frames": 14,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "17bd0d9e2eabc321",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211345_drinking_water_0008.mp4",
+      "split": "val",
+      "frames": 101,
+      "box_frames": 18,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "82a0ba5184c54b09",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211352_drinking_water_0009.mp4",
+      "split": "val",
+      "frames": 101,
+      "box_frames": 25,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "7e503cafbd495db7",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211404_drinking_water_0010.mp4",
+      "split": "val",
+      "frames": 101,
+      "box_frames": 25,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    },
+    {
+      "video_id": "4744261bc8b1db23",
+      "source": "reports/feedback-finetune-20261019/data/videos/20261017_211044_82/drinking_water/20261017_211533_drinking_water_0012.mp4",
+      "split": "val",
+      "frames": 50,
+      "box_frames": 13,
+      "windows": 0,
+      "known": 0,
+      "unknown": 0
+    }
+  ],
+  "initialization_sha256": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+  "protocol_sha256": "49b4680f1fd2efa20e3b86d17933a5b23fb056ba14c153c0526cf59e87375901",
+  "epochs": 20,
+  "training": "Only pose-valid reviewed train person/time windows, no test; normalized same as deployment; source/class balanced sampling; no pose smoothing",
+  "selection": "Validation skeleton macro F1 on eligible reviewed windows, ties prefer fewer other false positives; epoch0 eligible"
+}

@@ -1,0 +1,12 @@
+path: /ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-prior-finetune-20261025/dataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: bottle
+  1: cup
+  2: phone
+  3: camera
+  4: paper
+  5: portable_object
+  6: robot_or_exhibit

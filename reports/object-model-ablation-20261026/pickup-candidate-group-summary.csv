@@ -1,0 +1,17 @@
+﻿model,variant,candidate_groups,suppressed_groups,retained_groups
+n,native_raw,18,16,2
+n,native_gamma,18,17,1
+n,small_raw,18,18,0
+n,small_enhanced,18,18,0
+s,native_raw,18,17,1
+s,native_gamma,18,18,0
+s,small_raw,18,17,1
+s,small_enhanced,18,18,0
+m,native_raw,18,17,1
+m,native_gamma,18,17,1
+m,small_raw,18,16,2
+m,small_enhanced,18,17,1
+m_finetuned,native_raw,18,14,4
+m_finetuned,native_gamma,18,15,3
+m_finetuned,small_raw,18,17,1
+m_finetuned,small_enhanced,18,18,0

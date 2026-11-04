@@ -1,0 +1,908 @@
+[
+  {
+    "repeat": 1,
+    "name": "喝水16",
+    "source": "real-actiondata-all/喝水16.mp4",
+    "source_sha256": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+    "processed": false,
+    "frames": 75,
+    "fps": 25.0,
+    "duration": 3.0,
+    "video": "videos/喝水16_逐人融合.mp4",
+    "still": "stills/喝水16.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 4,
+    "labels": {
+      "drink": 4
+    },
+    "modes": {
+      "rgb_skeleton": 4
+    },
+    "max_detected_people": 1,
+    "distinct_track_ids": 1,
+    "classified_track_ids": [
+      1
+    ],
+    "frames_with_at_least_two_classified": 0,
+    "elapsed": 7.4553575604222715,
+    "timings": {
+      "preprocess": 3.326522646471858,
+      "detection_pose": 1.97732128854841,
+      "person_actions": 1.106105429586023,
+      "render_encode": 0.5172144374810159
+    },
+    "paced": false,
+    "processing_fps": 10.059879676079815,
+    "encoder_close_seconds": 0.16417221492156386,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 17 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 20 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 51\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 1 %, 28\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 13 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 16 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 58\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 1,
+    "name": "挥手3",
+    "source": "real-actiondata-all/挥手3.mp4",
+    "source_sha256": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+    "processed": false,
+    "frames": 160,
+    "fps": 25.0,
+    "duration": 6.4,
+    "video": "videos/挥手3_逐人融合.mp4",
+    "still": "stills/挥手3.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 22,
+    "labels": {
+      "other": 12,
+      "wave": 10
+    },
+    "modes": {
+      "rgb_low_luma": 22
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2
+    ],
+    "frames_with_at_least_two_classified": 136,
+    "elapsed": 17.45818540127948,
+    "timings": {
+      "preprocess": 7.23696101596579,
+      "detection_pose": 2.596597507596016,
+      "person_actions": 5.585830170661211,
+      "render_encode": 1.000735063571483
+    },
+    "paced": false,
+    "processing_fps": 9.164755461256236,
+    "encoder_close_seconds": 0.21453725593164563,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 13 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 16 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 58\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 15 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 15 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 51 %, 63\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 1,
+    "name": "留出_挥手28",
+    "source": "real-actiondata-all/挥手28.mp4",
+    "source_sha256": "56f605e0ad40c73a2bf3bdb5360219283e55707b5a5feb2ddb5cadfa66ae5895",
+    "processed": false,
+    "frames": 85,
+    "fps": 30.0,
+    "duration": 2.8333333333333335,
+    "video": "videos/留出_挥手28_逐人融合.mp4",
+    "still": "stills/留出_挥手28.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 11,
+    "labels": {
+      "wave": 4,
+      "other": 7
+    },
+    "modes": {
+      "rgb_skeleton": 4,
+      "rgb_soft_no_pose": 7
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2,
+      3
+    ],
+    "frames_with_at_least_two_classified": 50,
+    "elapsed": 10.228096816223115,
+    "timings": {
+      "preprocess": 3.8489595893770456,
+      "detection_pose": 2.2527391356416047,
+      "person_actions": 2.9276770623400807,
+      "render_encode": 0.5883221323601902
+    },
+    "paced": false,
+    "processing_fps": 8.310441475796235,
+    "encoder_close_seconds": 0.16427957033738494,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 15 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 15 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 58\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 20 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 11 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 33 %, 62\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 1,
+    "name": "多人0060",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "source_sha256": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "processed": true,
+    "frames": 59,
+    "fps": 29.0,
+    "duration": 2.0344827586206895,
+    "video": "videos/多人0060_逐人融合.mp4",
+    "still": "stills/多人0060.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 38,
+    "labels": {
+      "other": 38
+    },
+    "modes": {
+      "rgb_skeleton": 26,
+      "rgb_soft_no_pose": 12
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 20,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 14.279936461243778,
+    "timings": {
+      "preprocess": 0.6077033029869199,
+      "detection_pose": 2.0512311295606196,
+      "person_actions": 9.69589875685051,
+      "render_encode": 0.7136317864060402
+    },
+    "paced": false,
+    "processing_fps": 4.131671044904714,
+    "encoder_close_seconds": 0.2146763182245195,
+    "peak_torch_allocated_bytes": 367522816,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 20 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 11 %, 63\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 59\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 17 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 67\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 55\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 1,
+    "name": "多人0054",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "source_sha256": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "processed": true,
+    "frames": 60,
+    "fps": 30.0,
+    "duration": 2.0,
+    "video": "videos/多人0054_逐人融合.mp4",
+    "still": "stills/多人0054.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 41,
+    "labels": {
+      "other": 41
+    },
+    "modes": {
+      "rgb_soft_no_pose": 14,
+      "rgb_skeleton": 27
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 18,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 15.354315178003162,
+    "timings": {
+      "preprocess": 0.6079059774056077,
+      "detection_pose": 2.1650056382641196,
+      "person_actions": 10.522781550884247,
+      "render_encode": 0.7333028065040708
+    },
+    "paced": false,
+    "processing_fps": 3.9076962602641476,
+    "encoder_close_seconds": 0.21442030230537057,
+    "peak_torch_allocated_bytes": 367522816,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 17 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 67\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1519 MiB, 0 %, 54\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 14 %, 61\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 68\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 53\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 1,
+    "name": "回传留出_181324",
+    "source": "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4",
+    "source_sha256": "f43a2db9263f9bd3b7a12b793bc9c43c5aa794205b2d0d17265de39adb8acf7d",
+    "processed": true,
+    "frames": 50,
+    "fps": 25.0,
+    "duration": 2.0,
+    "video": "videos/回传留出_181324_逐人融合.mp4",
+    "still": "stills/回传留出_181324.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 3,
+    "labels": {
+      "other": 3
+    },
+    "modes": {
+      "rgb_skeleton": 3
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      3
+    ],
+    "frames_with_at_least_two_classified": 8,
+    "elapsed": 2.9203027049079537,
+    "timings": {
+      "preprocess": 0.04633865179494023,
+      "detection_pose": 1.3180547053925693,
+      "person_actions": 0.7727363370358944,
+      "render_encode": 0.3701548231765628
+    },
+    "paced": false,
+    "processing_fps": 17.12151275138992,
+    "encoder_close_seconds": 0.21432572277262807,
+    "peak_torch_allocated_bytes": 210651136,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 14 %, 61\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 68\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 53\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 12 %, 61\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 68\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 34 %, 55\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 2,
+    "name": "喝水16",
+    "source": "real-actiondata-all/喝水16.mp4",
+    "source_sha256": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+    "processed": false,
+    "frames": 75,
+    "fps": 25.0,
+    "duration": 3.0,
+    "video": "videos/喝水16_逐人融合.mp4",
+    "still": "stills/喝水16.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 4,
+    "labels": {
+      "drink": 4
+    },
+    "modes": {
+      "rgb_skeleton": 4
+    },
+    "max_detected_people": 1,
+    "distinct_track_ids": 1,
+    "classified_track_ids": [
+      1
+    ],
+    "frames_with_at_least_two_classified": 0,
+    "elapsed": 7.386192999780178,
+    "timings": {
+      "preprocess": 3.305264215450734,
+      "detection_pose": 1.9747295626439154,
+      "person_actions": 1.0943826478905976,
+      "render_encode": 0.5095258001238108
+    },
+    "paced": false,
+    "processing_fps": 10.154080729034847,
+    "encoder_close_seconds": 0.16412704484537244,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 14 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 68\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 34 %, 55\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 13 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 68\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 59\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 2,
+    "name": "挥手3",
+    "source": "real-actiondata-all/挥手3.mp4",
+    "source_sha256": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+    "processed": false,
+    "frames": 160,
+    "fps": 25.0,
+    "duration": 6.4,
+    "video": "videos/挥手3_逐人融合.mp4",
+    "still": "stills/挥手3.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 22,
+    "labels": {
+      "other": 12,
+      "wave": 10
+    },
+    "modes": {
+      "rgb_low_luma": 22
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2
+    ],
+    "frames_with_at_least_two_classified": 136,
+    "elapsed": 17.02543577598408,
+    "timings": {
+      "preprocess": 7.068618419580162,
+      "detection_pose": 2.525208949111402,
+      "person_actions": 5.412218187004328,
+      "render_encode": 1.0056871864944696
+    },
+    "paced": false,
+    "processing_fps": 9.397703653829202,
+    "encoder_close_seconds": 0.21483104908838868,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 13 %, 60\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 68\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 59\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 22 %, 61\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 69\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 40 %, 64\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 2,
+    "name": "留出_挥手28",
+    "source": "real-actiondata-all/挥手28.mp4",
+    "source_sha256": "56f605e0ad40c73a2bf3bdb5360219283e55707b5a5feb2ddb5cadfa66ae5895",
+    "processed": false,
+    "frames": 85,
+    "fps": 30.0,
+    "duration": 2.8333333333333335,
+    "video": "videos/留出_挥手28_逐人融合.mp4",
+    "still": "stills/留出_挥手28.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 11,
+    "labels": {
+      "wave": 4,
+      "other": 7
+    },
+    "modes": {
+      "rgb_skeleton": 4,
+      "rgb_soft_no_pose": 7
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2,
+      3
+    ],
+    "frames_with_at_least_two_classified": 50,
+    "elapsed": 10.195811145938933,
+    "timings": {
+      "preprocess": 3.7270495677366853,
+      "detection_pose": 2.2411566912196577,
+      "person_actions": 3.076534209307283,
+      "render_encode": 0.5562645387835801
+    },
+    "paced": false,
+    "processing_fps": 8.336757005729371,
+    "encoder_close_seconds": 0.16416927706450224,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 22 %, 61\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 69\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 59\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 84 %, 71\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 18 %, 76\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 26 %, 64\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 2,
+    "name": "多人0060",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "source_sha256": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "processed": true,
+    "frames": 59,
+    "fps": 29.0,
+    "duration": 2.0344827586206895,
+    "video": "videos/多人0060_逐人融合.mp4",
+    "still": "stills/多人0060.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 38,
+    "labels": {
+      "other": 38
+    },
+    "modes": {
+      "rgb_skeleton": 26,
+      "rgb_soft_no_pose": 12
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 20,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 14.531470275018364,
+    "timings": {
+      "preprocess": 0.6341412970796227,
+      "detection_pose": 2.0362927210517228,
+      "person_actions": 9.937005102168769,
+      "render_encode": 0.691444631665945
+    },
+    "paced": false,
+    "processing_fps": 4.0601535070700505,
+    "encoder_close_seconds": 0.2646571360528469,
+    "peak_torch_allocated_bytes": 367522816,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 90 %, 73\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 18 %, 76\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 60\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 53 %, 75\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 82\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 56\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 2,
+    "name": "多人0054",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "source_sha256": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "processed": true,
+    "frames": 60,
+    "fps": 30.0,
+    "duration": 2.0,
+    "video": "videos/多人0054_逐人融合.mp4",
+    "still": "stills/多人0054.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 41,
+    "labels": {
+      "other": 41
+    },
+    "modes": {
+      "rgb_soft_no_pose": 14,
+      "rgb_skeleton": 27
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 18,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 15.6109817372635,
+    "timings": {
+      "preprocess": 0.6418571942485869,
+      "detection_pose": 2.2089302563108504,
+      "person_actions": 10.66187800373882,
+      "render_encode": 0.7311602644622326
+    },
+    "paced": false,
+    "processing_fps": 3.843448221887267,
+    "encoder_close_seconds": 0.26497909100726247,
+    "peak_torch_allocated_bytes": 367522816,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 53 %, 75\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 66 %, 77\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 56\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 69 %, 78\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 81 %, 81\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 54\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n"
+  },
+  {
+    "repeat": 2,
+    "name": "回传留出_181324",
+    "source": "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4",
+    "source_sha256": "f43a2db9263f9bd3b7a12b793bc9c43c5aa794205b2d0d17265de39adb8acf7d",
+    "processed": true,
+    "frames": 50,
+    "fps": 25.0,
+    "duration": 2.0,
+    "video": "videos/回传留出_181324_逐人融合.mp4",
+    "still": "stills/回传留出_181324.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 3,
+    "labels": {
+      "other": 3
+    },
+    "modes": {
+      "rgb_skeleton": 3
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      3
+    ],
+    "frames_with_at_least_two_classified": 8,
+    "elapsed": 2.9873172002844512,
+    "timings": {
+      "preprocess": 0.04551584552973509,
+      "detection_pose": 1.3473822711966932,
+      "person_actions": 0.810079856775701,
+      "render_encode": 0.36141533171758056
+    },
+    "paced": false,
+    "processing_fps": 16.73742580641889,
+    "encoder_close_seconds": 0.21437189122661948,
+    "peak_torch_allocated_bytes": 210651136,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 69 %, 78\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 81 %, 81\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 54\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 25\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 100 %, 76\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 83\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 35 %, 56\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 3,
+    "name": "喝水16",
+    "source": "real-actiondata-all/喝水16.mp4",
+    "source_sha256": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+    "processed": false,
+    "frames": 75,
+    "fps": 25.0,
+    "duration": 3.0,
+    "video": "videos/喝水16_逐人融合.mp4",
+    "still": "stills/喝水16.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 4,
+    "labels": {
+      "drink": 4
+    },
+    "modes": {
+      "rgb_skeleton": 4
+    },
+    "max_detected_people": 1,
+    "distinct_track_ids": 1,
+    "classified_track_ids": [
+      1
+    ],
+    "frames_with_at_least_two_classified": 0,
+    "elapsed": 7.405860018916428,
+    "timings": {
+      "preprocess": 3.3286243458278477,
+      "detection_pose": 1.9557788544334471,
+      "person_actions": 1.120088514406234,
+      "render_encode": 0.49438560754060745
+    },
+    "paced": false,
+    "processing_fps": 10.127115528572123,
+    "encoder_close_seconds": 0.16441292082890868,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 93 %, 77\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 83\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 54\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 77 %, 77\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 41 %, 83\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 42 %, 63\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 3,
+    "name": "挥手3",
+    "source": "real-actiondata-all/挥手3.mp4",
+    "source_sha256": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+    "processed": false,
+    "frames": 160,
+    "fps": 25.0,
+    "duration": 6.4,
+    "video": "videos/挥手3_逐人融合.mp4",
+    "still": "stills/挥手3.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 22,
+    "labels": {
+      "other": 12,
+      "wave": 10
+    },
+    "modes": {
+      "rgb_low_luma": 22
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2
+    ],
+    "frames_with_at_least_two_classified": 136,
+    "elapsed": 16.89358215406537,
+    "timings": {
+      "preprocess": 6.786050342954695,
+      "detection_pose": 2.521690769121051,
+      "person_actions": 5.55931715015322,
+      "render_encode": 1.0202047559432685
+    },
+    "paced": false,
+    "processing_fps": 9.471052293163098,
+    "encoder_close_seconds": 0.21471007214859128,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 77 %, 77\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 66 %, 84\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 42 %, 63\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 100 %, 78\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 98 %, 80\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 60\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 3,
+    "name": "留出_挥手28",
+    "source": "real-actiondata-all/挥手28.mp4",
+    "source_sha256": "56f605e0ad40c73a2bf3bdb5360219283e55707b5a5feb2ddb5cadfa66ae5895",
+    "processed": false,
+    "frames": 85,
+    "fps": 30.0,
+    "duration": 2.8333333333333335,
+    "video": "videos/留出_挥手28_逐人融合.mp4",
+    "still": "stills/留出_挥手28.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 11,
+    "labels": {
+      "wave": 4,
+      "other": 7
+    },
+    "modes": {
+      "rgb_skeleton": 4,
+      "rgb_soft_no_pose": 7
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      2,
+      3
+    ],
+    "frames_with_at_least_two_classified": 50,
+    "elapsed": 10.18899909593165,
+    "timings": {
+      "preprocess": 3.6941409395076334,
+      "detection_pose": 2.3665687958709896,
+      "person_actions": 2.901891532354057,
+      "render_encode": 0.5878569101914763
+    },
+    "paced": false,
+    "processing_fps": 8.342330703900005,
+    "encoder_close_seconds": 0.1645175190642476,
+    "peak_torch_allocated_bytes": 395350016,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 100 %, 78\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 98 %, 80\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 60\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 29\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 60 %, 79\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 41 %, 83\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 33 %, 62\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 28\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 3,
+    "name": "多人0060",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "source_sha256": "b7e6e87223a4032a95daaa285974997786e9a2ded1d6223e7db4d148b39fb172",
+    "processed": true,
+    "frames": 59,
+    "fps": 29.0,
+    "duration": 2.0344827586206895,
+    "video": "videos/多人0060_逐人融合.mp4",
+    "still": "stills/多人0060.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 38,
+    "labels": {
+      "other": 38
+    },
+    "modes": {
+      "rgb_skeleton": 26,
+      "rgb_soft_no_pose": 12
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 20,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 14.434150523971766,
+    "timings": {
+      "preprocess": 0.5932744513265789,
+      "detection_pose": 2.0110584390349686,
+      "person_actions": 9.907987535465509,
+      "render_encode": 0.6961233331821859
+    },
+    "paced": false,
+    "processing_fps": 4.087528386378867,
+    "encoder_close_seconds": 0.214551183860749,
+    "peak_torch_allocated_bytes": 367522816,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 60 %, 79\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 41 %, 83\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 61\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 72 %, 80\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 56 %, 84\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 57\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 3,
+    "name": "多人0054",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "source_sha256": "e00e00e05307c3e554b2e5ff10a002217602be47a94f14901936a06271181f03",
+    "processed": true,
+    "frames": 60,
+    "fps": 30.0,
+    "duration": 2.0,
+    "video": "videos/多人0054_逐人融合.mp4",
+    "still": "stills/多人0054.jpg",
+    "output_size": [
+      1680,
+      944
+    ],
+    "global_footer": false,
+    "predictions": 41,
+    "labels": {
+      "other": 41
+    },
+    "modes": {
+      "rgb_soft_no_pose": 14,
+      "rgb_skeleton": 27
+    },
+    "max_detected_people": 16,
+    "distinct_track_ids": 18,
+    "classified_track_ids": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "frames_with_at_least_two_classified": 31,
+    "elapsed": 14.799714507069439,
+    "timings": {
+      "preprocess": 0.6290346654132009,
+      "detection_pose": 2.36229777848348,
+      "person_actions": 9.695411201100796,
+      "render_encode": 0.7246885797940195
+    },
+    "paced": false,
+    "processing_fps": 4.0541322585202275,
+    "encoder_close_seconds": 0.21458325907588005,
+    "peak_torch_allocated_bytes": 367522816,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 72 %, 80\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 25 %, 86\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 57\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 0 %, 74\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 82\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 56\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  },
+  {
+    "repeat": 3,
+    "name": "回传留出_181324",
+    "source": "reports/feedback-finetune-20261019/data/videos/20261015_163555_77/drinking_water/20261015_181324_drinking_water_0005.mp4",
+    "source_sha256": "f43a2db9263f9bd3b7a12b793bc9c43c5aa794205b2d0d17265de39adb8acf7d",
+    "processed": true,
+    "frames": 50,
+    "fps": 25.0,
+    "duration": 2.0,
+    "video": "videos/回传留出_181324_逐人融合.mp4",
+    "still": "stills/回传留出_181324.jpg",
+    "output_size": [
+      1440,
+      808
+    ],
+    "global_footer": false,
+    "predictions": 3,
+    "labels": {
+      "other": 3
+    },
+    "modes": {
+      "rgb_skeleton": 3
+    },
+    "max_detected_people": 3,
+    "distinct_track_ids": 3,
+    "classified_track_ids": [
+      1,
+      3
+    ],
+    "frames_with_at_least_two_classified": 8,
+    "elapsed": 3.010954995173961,
+    "timings": {
+      "preprocess": 0.04682350670918822,
+      "detection_pose": 1.3473546602763236,
+      "person_actions": 0.8063947665505111,
+      "render_encode": 0.36053977767005563
+    },
+    "paced": false,
+    "processing_fps": 16.606027018052856,
+    "encoder_close_seconds": 0.2144622947089374,
+    "peak_torch_allocated_bytes": 210651136,
+    "peak_torch_reserved_bytes": 786432000,
+    "gpu_before": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 0 %, 74\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 82\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 56\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n",
+    "gpu_after": "index, uuid, name, driver_version, memory.used [MiB], utilization.gpu [%], temperature.gpu\n0, GPU-5902bbcd-6256-3536-3028-6ea4105a2d2d, NVIDIA GeForce RTX 3090, 610.57.04, 18595 MiB, 0 %, 69\n1, GPU-ef73936d-1877-b96b-be28-daf0ae829fad, NVIDIA GeForce RTX 3090, 610.57.04, 22561 MiB, 100 %, 81\n2, GPU-79da62d7-4134-8c7f-0e52-8ee4b6a3a92a, NVIDIA GeForce RTX 3090, 610.57.04, 1647 MiB, 0 %, 55\n3, GPU-7a30444f-a014-0a36-26c0-a4e62ecf9679, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 27\n4, GPU-6acfd456-762a-407b-f4fb-0b90cfb6e3e8, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 30\n5, GPU-6beefbbe-19f4-164c-80b0-162558266cc0, NVIDIA GeForce RTX 3090, 610.57.04, 15 MiB, 0 %, 26\n"
+  }
+]

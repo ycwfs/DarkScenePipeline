@@ -1,0 +1,1 @@
+{"all_original_records_unchanged":true,"record_order_unchanged":true,"no_source_group_leakage":true,"old_training_retained":5009,"new_positives_retained":39,"new_human_other_selected":39,"new_human_other_excluded":242,"new_pseudo_other_excluded":278,"validation_and_test_unsampled":true,"xclip_used":false}

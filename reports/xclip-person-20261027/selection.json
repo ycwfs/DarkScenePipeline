@@ -1,0 +1,64 @@
+{
+  "threshold": 0.41,
+  "metrics": {
+    "threshold": 0.41,
+    "windows": 198,
+    "unknown": 28,
+    "correct": 165,
+    "accuracy": 0.8333333333333334,
+    "macro_f1": 0.6610439638254395,
+    "other_false": 22,
+    "other_total": 162,
+    "per_class": {
+      "wave": {
+        "total": 9,
+        "tp": 6,
+        "fp": 8,
+        "fn": 3,
+        "precision": 0.42857142857142855,
+        "recall": 0.6666666666666666,
+        "f1": 0.5217391304347826
+      },
+      "chase": {
+        "total": 13,
+        "tp": 11,
+        "fp": 16,
+        "fn": 2,
+        "precision": 0.4074074074074074,
+        "recall": 0.8461538461538461,
+        "f1": 0.55
+      },
+      "drink": {
+        "total": 10,
+        "tp": 6,
+        "fp": 0,
+        "fn": 4,
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.75
+      },
+      "pick_up": {
+        "total": 4,
+        "tp": 2,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285714
+      },
+      "other": {
+        "total": 162,
+        "tp": 140,
+        "fp": 5,
+        "fn": 22,
+        "precision": 0.9655172413793104,
+        "recall": 0.8641975308641975,
+        "f1": 0.9120521172638436
+      }
+    }
+  },
+  "criterion": "Maximum val macroF1, ties fewer other false alarms, higher threshold",
+  "no_test_opened": true,
+  "val_sources": 60,
+  "val_windows": 226
+}

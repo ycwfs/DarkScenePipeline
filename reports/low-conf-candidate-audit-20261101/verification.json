@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": {
+    "accepted_rule_checks": 113,
+    "causal_prefixes": 882,
+    "crowded_human_windows": 736,
+    "crowded_baseline_archived_comparison": {
+      "checked": 736,
+      "differences": []
+    },
+    "frozen_input_hashes_unchanged": 32,
+    "exact_geometry_windows": 2114,
+    "gpu_supplement_complete": true
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>人物ROI物体先验对照</title>
+<style>body{font:16px system-ui;max-width:1480px;margin:30px auto;padding:12px;line-height:1.6}img{width:100%}section{border-top:1px solid #bbb;padding-top:12px}</style>
+<h1>整帧与人物裁剪：物体先验对照</h1><p>固定检测模型和阈值0.25；左侧是整帧检测后把同一区域放大，中间是在增强图上裁人物后重新检测，右侧是映射到原视频像素后裁剪检测。现场原视频未增强，线上切片已经增强。</p>
+<p>框表示模型预测，不等于正确物体。绿色满足手边容器规则，橙色满足脚边物体规则；其他非人框为蓝色。展示全部已标注正动作中至少一种方法检出容器/脚边物体的候选，以及全部other手边容器候选、12段other脚边候选和3个既有失败例。这是用于核对的诊断集合，不用于计算整体准确率。</p><p><a href="README.md">结论与报告</a></p>
+<section><h2>001 · real-actiondata-all/喝水1.mp4 · T01 · frame 44</h2><img loading="lazy" src="visual/001_2f8105910668ee63_000044_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>002 · real-actiondata-all/喝水1.mp4 · T01 · frame 58</h2><img loading="lazy" src="visual/002_2f8105910668ee63_000058_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>003 · real-actiondata-all/喝水12.mp4 · T01 · frame 46</h2><img loading="lazy" src="visual/003_a10a2ba1533ca770_000046_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>004 · real-actiondata-all/喝水12.mp4 · T01 · frame 68</h2><img loading="lazy" src="visual/004_a10a2ba1533ca770_000068_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>005 · real-actiondata-all/喝水17.mp4 · T01 · frame 24</h2><img loading="lazy" src="visual/005_a8b212b367a7594f_000024_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>006 · real-actiondata-all/喝水2.mp4 · T01 · frame 35</h2><img loading="lazy" src="visual/006_0c6f7f8f83b0ee00_000035_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>007 · real-actiondata-all/喝水2.mp4 · T01 · frame 53</h2><img loading="lazy" src="visual/007_0c6f7f8f83b0ee00_000053_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>008 · real-actiondata-all/喝水35.mp4 · T01 · frame 22</h2><img loading="lazy" src="visual/008_a677b36824b2473f_000022_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>009 · real-actiondata-all/喝水35.mp4 · T01 · frame 89</h2><img loading="lazy" src="visual/009_a677b36824b2473f_000089_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>010 · real-actiondata-all/捡东西14.mp4 · T01 · frame 32</h2><img loading="lazy" src="visual/010_6d410d75543e1fbd_000032_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>011 · real-actiondata-all/捡东西22.mp4 · T01 · frame 32</h2><img loading="lazy" src="visual/011_e89e6fbe81384ec5_000032_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>012 · real-actiondata-all/捡东西23.mp4 · T01 · frame 24</h2><img loading="lazy" src="visual/012_7ce9e264c4e2c972_000024_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>013 · real-actiondata-all/捡东西24.mp4 · T01 · frame 14</h2><img loading="lazy" src="visual/013_182e3a30ac1a8d7b_000014_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>014 · real-actiondata-all/捡东西25.mp4 · T01 · frame 12</h2><img loading="lazy" src="visual/014_8594e05e8a56819b_000012_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>015 · real-actiondata-all/捡东西25.mp4 · T01 · frame 36</h2><img loading="lazy" src="visual/015_8594e05e8a56819b_000036_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>016 · real-actiondata-all/捡东西27.mp4 · T01 · frame 30</h2><img loading="lazy" src="visual/016_fd54d3f8ee4adff7_000030_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>017 · real-actiondata/喝水1.mp4 · T01 · frame 65</h2><img loading="lazy" src="visual/017_314915317e94aa69_000065_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>018 · real-actiondata/喝水12.mp4 · T01 · frame 46</h2><img loading="lazy" src="visual/018_e7e805c9abfc755e_000046_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>019 · real-actiondata/喝水3.mp4 · T01 · frame 53</h2><img loading="lazy" src="visual/019_35f30d6b84db9fa2_000053_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>020 · online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4 · T08 · frame 35</h2><img loading="lazy" src="visual/020_e00e00e05307c3e5_000035_T008.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>021 · online-negative-sample/20261012_083305_78/drinking_water/20261012_101141_drinking_water_0098.mp4 · T09 · frame 47</h2><img loading="lazy" src="visual/021_ad87568563d7ab31_000047_T009.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>022 · online-negative-sample/20261012_083305_78/drinking_water/20261012_101141_drinking_water_0098.mp4 · T09 · frame 59</h2><img loading="lazy" src="visual/022_ad87568563d7ab31_000059_T009.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>023 · online-negative-sample/20261012_083305_78/drinking_water/20261012_102443_drinking_water_0137.mp4 · T04 · frame 0</h2><img loading="lazy" src="visual/023_1b03574a847c85fe_000000_T004.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>024 · reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162326_drinking_water_0001.mp4 · T09 · frame 0</h2><img loading="lazy" src="visual/024_53daffaa9ef9103a_000000_T009.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>025 · reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162326_drinking_water_0001.mp4 · T09 · frame 112</h2><img loading="lazy" src="visual/025_53daffaa9ef9103a_000112_T009.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>026 · online-negative-sample/20261012_083305_78/drinking_water/20261012_083425_drinking_water_0002.mp4 · T02 · frame 0</h2><img loading="lazy" src="visual/026_1d5e40daf952ed1b_000000_T002.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>027 · online-negative-sample/20261012_083305_78/drinking_water/20261012_091756_drinking_water_0009.mp4 · T01 · frame 68</h2><img loading="lazy" src="visual/027_2d5b0f004cf5b221_000068_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>028 · online-negative-sample/20261012_083305_78/drinking_water/20261012_091922_drinking_water_0010.mp4 · T03 · frame 22</h2><img loading="lazy" src="visual/028_431d51a1bdfa6168_000022_T003.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>029 · online-negative-sample/20261012_083305_78/drinking_water/20261012_091930_drinking_water_0012.mp4 · T03 · frame 11</h2><img loading="lazy" src="visual/029_a6dc542d4e2f385a_000011_T003.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>030 · online-negative-sample/20261012_083305_78/drinking_water/20261012_092839_drinking_water_0014.mp4 · T03 · frame 51</h2><img loading="lazy" src="visual/030_b0994c2f308d7657_000051_T003.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>031 · online-negative-sample/20261012_083305_78/drinking_water/20261012_093135_drinking_water_0016.mp4 · T03 · frame 0</h2><img loading="lazy" src="visual/031_a6e8375246cb3a7c_000000_T003.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>032 · online-negative-sample/20261012_083305_78/drinking_water/20261012_094227_drinking_water_0018.mp4 · T02 · frame 44</h2><img loading="lazy" src="visual/032_bba3333c7bc0ab8b_000044_T002.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>033 · online-negative-sample/20261012_083305_78/drinking_water/20261012_094245_drinking_water_0019.mp4 · T04 · frame 0</h2><img loading="lazy" src="visual/033_82c4d886d2db744e_000000_T004.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>034 · online-negative-sample/20261012_083305_78/drinking_water/20261012_094436_drinking_water_0021.mp4 · T05 · frame 24</h2><img loading="lazy" src="visual/034_da6e3389c18aa09c_000024_T005.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>035 · online-negative-sample/20261012_083305_78/drinking_water/20261012_094525_drinking_water_0022.mp4 · T05 · frame 0</h2><img loading="lazy" src="visual/035_bad35584ef5e9ffc_000000_T005.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>036 · online-negative-sample/20261012_083305_78/drinking_water/20261012_094714_drinking_water_0024.mp4 · T07 · frame 14</h2><img loading="lazy" src="visual/036_47535b47f6aa9641_000014_T007.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>037 · online-negative-sample/20261012_083305_78/drinking_water/20261012_094721_drinking_water_0025.mp4 · T02 · frame 47</h2><img loading="lazy" src="visual/037_033b456513837833_000047_T002.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>038 · real-actiondata-all/喝水16.mp4 · T01 · frame 44</h2><img loading="lazy" src="visual/038_8f780ff0eefc1fcb_000044_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>039 · real-actiondata-all/喝水34.mp4 · T01 · frame 60</h2><img loading="lazy" src="visual/039_ad442c59b37f1b2f_000060_T001.jpg" alt="三种检测输入的同人物对照"></section>
+<section><h2>040 · real-actiondata-all/捡东西2.mp4 · T01 · frame 28</h2><img loading="lazy" src="visual/040_1f153eddcd6d673e_000028_T001.jpg" alt="三种检测输入的同人物对照"></section>
+</html>

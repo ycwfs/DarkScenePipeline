@@ -1,0 +1,485 @@
+{
+  "records": [
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.05,
+      "tp": 0,
+      "fp": 1,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.1,
+      "tp": 0,
+      "fp": 1,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.2,
+      "tp": 0,
+      "fp": 1,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.25,
+      "tp": 0,
+      "fp": 1,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.35,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.5,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.581,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.7,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.8,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "original80",
+      "threshold": 0.9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.05,
+      "tp": 8,
+      "fp": 15,
+      "fn": 8
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.1,
+      "tp": 6,
+      "fp": 11,
+      "fn": 10
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.2,
+      "tp": 6,
+      "fp": 5,
+      "fn": 10
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.25,
+      "tp": 5,
+      "fp": 4,
+      "fn": 11
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.35,
+      "tp": 5,
+      "fp": 4,
+      "fn": 11
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.5,
+      "tp": 4,
+      "fp": 1,
+      "fn": 12
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.581,
+      "tp": 4,
+      "fp": 1,
+      "fn": 12
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.7,
+      "tp": 4,
+      "fp": 0,
+      "fn": 12
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.8,
+      "tp": 2,
+      "fp": 0,
+      "fn": 14
+    },
+    {
+      "context": "review_crop",
+      "model": "current7",
+      "threshold": 0.9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.05,
+      "tp": 5,
+      "fp": 7,
+      "fn": 11
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.1,
+      "tp": 3,
+      "fp": 2,
+      "fn": 13
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 15
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.25,
+      "tp": 0,
+      "fp": 1,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.35,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.5,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.581,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.7,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.8,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "review_crop",
+      "model": "candidate80",
+      "threshold": 0.9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 16
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.05,
+      "tp": 0,
+      "fp": 2,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.1,
+      "tp": 0,
+      "fp": 2,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.2,
+      "tp": 0,
+      "fp": 1,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.25,
+      "tp": 0,
+      "fp": 1,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.35,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.5,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.581,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.7,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.8,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "original80",
+      "threshold": 0.9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.05,
+      "tp": 1,
+      "fp": 12,
+      "fn": 3
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.1,
+      "tp": 1,
+      "fp": 11,
+      "fn": 3
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.2,
+      "tp": 1,
+      "fp": 9,
+      "fn": 3
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.25,
+      "tp": 1,
+      "fp": 7,
+      "fn": 3
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.35,
+      "tp": 1,
+      "fp": 6,
+      "fn": 3
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.5,
+      "tp": 0,
+      "fp": 5,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.581,
+      "tp": 0,
+      "fp": 3,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.7,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.8,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "current7",
+      "threshold": 0.9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.05,
+      "tp": 0,
+      "fp": 4,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.1,
+      "tp": 0,
+      "fp": 3,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.2,
+      "tp": 0,
+      "fp": 3,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.25,
+      "tp": 0,
+      "fp": 2,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.35,
+      "tp": 0,
+      "fp": 2,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.5,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.581,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.7,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.8,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    {
+      "context": "deployment_roi",
+      "model": "candidate80",
+      "threshold": 0.9,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    }
+  ],
+  "note": "Descriptive post-selection diagnostic only; no model/default/threshold selection. Same heldout cropped images, not action-window inference."
+}

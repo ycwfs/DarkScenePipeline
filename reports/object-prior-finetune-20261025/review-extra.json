@@ -1,0 +1,127 @@
+{
+  "method": "Manual review of missed static exhibits in full old-source frames, restricted region contains all relevant targets",
+  "pages_reviewed": [
+    0
+  ],
+  "records": {
+    "0": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    },
+    "1": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    },
+    "2": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    },
+    "3": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    },
+    "4": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    },
+    "5": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    },
+    "6": {
+      "boxes": [
+        [
+          6,
+          27,
+          156,
+          78,
+          277
+        ]
+      ],
+      "valid_region": [
+        10,
+        140,
+        110,
+        280
+      ]
+    }
+  }
+}

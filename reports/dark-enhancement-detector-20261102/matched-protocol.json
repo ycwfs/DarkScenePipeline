@@ -1,0 +1,41 @@
+{
+  "question": "same dark test frames: raw/native, raw720, NTIRE720, onsite-finetuned720",
+  "sample_count": 44,
+  "label_status": "filtered auxiliary boxes, incomplete and not independent exhaustive human GT",
+  "iou_threshold": 0.5,
+  "person_confidence": 0.35,
+  "downscale": "same 720 long-side even-dimension rule as deployment",
+  "models": {
+    "detector_formal": {
+      "path": "platform/dark-demo-v2/ckpts/yolo26m_person_20261024.onnx",
+      "sha256": "978d2e164ec6c8130bd91eb3b997e2acd3ac747e33ec29b4ed8db4462b2838d9"
+    },
+    "detector_original": {
+      "path": "platform/dark-demo-v2/ckpts/yolo26m_detect.onnx",
+      "sha256": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c"
+    },
+    "enhancer_ntire": {
+      "path": "platform/dark-demo-v2/ckpts/NTIRE.pth",
+      "sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+    },
+    "enhancer_onsite_ft": {
+      "path": "ckpts_realdeploy_ft/NTIRE.pth",
+      "sha256": "d65d5b65323cabf93ab1f0e0d97adf878a42552ad749c1ae3fddedbd2fa51ec3"
+    }
+  },
+  "runtime": {
+    "torch_cuda_available": false,
+    "ort_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "device": "CPU"
+  },
+  "precision": "both enhancers CPU FP32; ORT CPU FP32",
+  "person_postprocess": "import actual darkpipe.person.core.person_boxes: confidence .35, width>8 height>20, NMS .75",
+  "matching": "maximum-cardinality one-to-one IoU>=.5; IoU maximised second",
+  "resolution": "720/1280 long-side pre-enhancement; all full-frame detector inputs fixed640; optional 4-tile640 inputs",
+  "diagnostic_only": true,
+  "source_footage": "historical; no new platform failure video supplied"
+}

@@ -1,0 +1,3018 @@
+{
+  "coverage": {
+    "drink": {
+      "videos": 57,
+      "frames": 342,
+      "frames_with_person": 277,
+      "no_person_videos": 4,
+      "videos_with_reviewed_action": 50
+    },
+    "pick_up": {
+      "videos": 33,
+      "frames": 198,
+      "frames_with_person": 125,
+      "no_person_videos": 2,
+      "videos_with_reviewed_action": 17
+    },
+    "wave": {
+      "videos": 4,
+      "frames": 24,
+      "frames_with_person": 24,
+      "no_person_videos": 0,
+      "videos_with_reviewed_action": 4
+    },
+    "other": {
+      "videos": 128,
+      "frames": 768,
+      "frames_with_person": 691,
+      "no_person_videos": 8,
+      "videos_with_reviewed_action": 120
+    }
+  },
+  "cohorts": {
+    "drink_all": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 161,
+            "rate": 0.012422360248447204,
+            "videos_hit": 1,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 4,
+            "n": 161,
+            "rate": 0.024844720496894408,
+            "videos_hit": 3,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 8,
+            "n": 161,
+            "rate": 0.049689440993788817,
+            "videos_hit": 7,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 161,
+            "rate": 0.012422360248447204,
+            "videos_hit": 1,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 4,
+            "n": 161,
+            "rate": 0.024844720496894408,
+            "videos_hit": 3,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 8,
+            "n": 161,
+            "rate": 0.049689440993788817,
+            "videos_hit": 7,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 8,
+            "n": 161,
+            "rate": 0.049689440993788817,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 17,
+            "n": 161,
+            "rate": 0.10559006211180125,
+            "videos_hit": 10,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 27,
+            "n": 161,
+            "rate": 0.16770186335403728,
+            "videos_hit": 14,
+            "videos": 51,
+            "groups": 22
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 8,
+            "n": 161,
+            "rate": 0.049689440993788817,
+            "videos_hit": 6,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 16,
+            "n": 161,
+            "rate": 0.09937888198757763,
+            "videos_hit": 11,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 25,
+            "n": 161,
+            "rate": 0.15527950310559005,
+            "videos_hit": 16,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 5,
+            "n": 161,
+            "rate": 0.031055900621118012,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 12,
+            "n": 161,
+            "rate": 0.07453416149068323,
+            "videos_hit": 9,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 21,
+            "n": 161,
+            "rate": 0.13043478260869565,
+            "videos_hit": 14,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 9,
+            "n": 161,
+            "rate": 0.055900621118012424,
+            "videos_hit": 5,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 15,
+            "n": 161,
+            "rate": 0.09316770186335403,
+            "videos_hit": 7,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 21,
+            "n": 161,
+            "rate": 0.13043478260869565,
+            "videos_hit": 11,
+            "videos": 51,
+            "groups": 22
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 7,
+            "n": 161,
+            "rate": 0.043478260869565216,
+            "videos_hit": 5,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 16,
+            "n": 161,
+            "rate": 0.09937888198757763,
+            "videos_hit": 9,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 26,
+            "n": 161,
+            "rate": 0.16149068322981366,
+            "videos_hit": 14,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 7,
+            "n": 161,
+            "rate": 0.043478260869565216,
+            "videos_hit": 5,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 11,
+            "n": 161,
+            "rate": 0.06832298136645963,
+            "videos_hit": 6,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 19,
+            "n": 161,
+            "rate": 0.11801242236024845,
+            "videos_hit": 11,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 9,
+            "n": 161,
+            "rate": 0.055900621118012424,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 17,
+            "n": 161,
+            "rate": 0.10559006211180125,
+            "videos_hit": 8,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 22,
+            "n": 161,
+            "rate": 0.13664596273291926,
+            "videos_hit": 12,
+            "videos": 51,
+            "groups": 22
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 8,
+            "n": 161,
+            "rate": 0.049689440993788817,
+            "videos_hit": 5,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 19,
+            "n": 161,
+            "rate": 0.11801242236024845,
+            "videos_hit": 11,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 28,
+            "n": 161,
+            "rate": 0.17391304347826086,
+            "videos_hit": 16,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 6,
+            "n": 161,
+            "rate": 0.037267080745341616,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 14,
+            "n": 161,
+            "rate": 0.08695652173913043,
+            "videos_hit": 9,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 22,
+            "n": 161,
+            "rate": 0.13664596273291926,
+            "videos_hit": 14,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 7,
+            "n": 161,
+            "rate": 0.043478260869565216,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 16,
+            "n": 161,
+            "rate": 0.09937888198757763,
+            "videos_hit": 6,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 20,
+            "n": 161,
+            "rate": 0.12422360248447205,
+            "videos_hit": 8,
+            "videos": 51,
+            "groups": 22
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 161,
+            "rate": 0.018633540372670808,
+            "videos_hit": 3,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 5,
+            "n": 161,
+            "rate": 0.031055900621118012,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 11,
+            "n": 161,
+            "rate": 0.06832298136645963,
+            "videos_hit": 8,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 161,
+            "rate": 0.018633540372670808,
+            "videos_hit": 3,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 5,
+            "n": 161,
+            "rate": 0.031055900621118012,
+            "videos_hit": 4,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 12,
+            "n": 161,
+            "rate": 0.07453416149068323,
+            "videos_hit": 9,
+            "videos": 51,
+            "groups": 22
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 6,
+            "n": 161,
+            "rate": 0.037267080745341616,
+            "videos_hit": 3,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.1": {
+            "hits": 12,
+            "n": 161,
+            "rate": 0.07453416149068323,
+            "videos_hit": 7,
+            "videos": 51,
+            "groups": 22
+          },
+          "0.05": {
+            "hits": 16,
+            "n": 161,
+            "rate": 0.09937888198757763,
+            "videos_hit": 10,
+            "videos": 51,
+            "groups": 22
+          }
+        }
+      }
+    },
+    "drink_active_pose": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 54,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 54,
+            "rate": 0.018518518518518517,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 54,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 54,
+            "rate": 0.018518518518518517,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 7,
+            "n": 54,
+            "rate": 0.12962962962962962,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 10,
+            "n": 54,
+            "rate": 0.18518518518518517,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 16,
+            "n": 54,
+            "rate": 0.2962962962962963,
+            "videos_hit": 7,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 54,
+            "rate": 0.037037037037037035,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 5,
+            "n": 54,
+            "rate": 0.09259259259259259,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 8,
+            "n": 54,
+            "rate": 0.14814814814814814,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 54,
+            "rate": 0.037037037037037035,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 5,
+            "n": 54,
+            "rate": 0.09259259259259259,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 8,
+            "n": 54,
+            "rate": 0.14814814814814814,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 8,
+            "n": 54,
+            "rate": 0.14814814814814814,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 12,
+            "n": 54,
+            "rate": 0.2222222222222222,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 15,
+            "n": 54,
+            "rate": 0.2777777777777778,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 5,
+            "n": 54,
+            "rate": 0.09259259259259259,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 5,
+            "n": 54,
+            "rate": 0.09259259259259259,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 8,
+            "n": 54,
+            "rate": 0.14814814814814814,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 12,
+            "n": 54,
+            "rate": 0.2222222222222222,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 12,
+            "n": 54,
+            "rate": 0.2222222222222222,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 54,
+            "rate": 0.037037037037037035,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 4,
+            "n": 54,
+            "rate": 0.07407407407407407,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 7,
+            "n": 54,
+            "rate": 0.12962962962962962,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 54,
+            "rate": 0.037037037037037035,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 4,
+            "n": 54,
+            "rate": 0.07407407407407407,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 7,
+            "n": 54,
+            "rate": 0.12962962962962962,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 6,
+            "n": 54,
+            "rate": 0.1111111111111111,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 13,
+            "n": 54,
+            "rate": 0.24074074074074073,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 15,
+            "n": 54,
+            "rate": 0.2777777777777778,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 54,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 54,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 2,
+            "n": 54,
+            "rate": 0.037037037037037035,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 54,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 54,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 3,
+            "n": 54,
+            "rate": 0.05555555555555555,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 6,
+            "n": 54,
+            "rate": 0.1111111111111111,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 9,
+            "n": 54,
+            "rate": 0.16666666666666666,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 11,
+            "n": 54,
+            "rate": 0.2037037037037037,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      }
+    },
+    "pickup_all": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 2,
+            "n": 49,
+            "rate": 0.04081632653061224,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 6,
+            "n": 49,
+            "rate": 0.12244897959183673,
+            "videos_hit": 6,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 49,
+            "rate": 0.08163265306122448,
+            "videos_hit": 3,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 9,
+            "n": 49,
+            "rate": 0.1836734693877551,
+            "videos_hit": 7,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 17,
+            "n": 49,
+            "rate": 0.3469387755102041,
+            "videos_hit": 12,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 5,
+            "n": 49,
+            "rate": 0.10204081632653061,
+            "videos_hit": 4,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 6,
+            "n": 49,
+            "rate": 0.12244897959183673,
+            "videos_hit": 5,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 9,
+            "n": 49,
+            "rate": 0.1836734693877551,
+            "videos_hit": 8,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 49,
+            "rate": 0.061224489795918366,
+            "videos_hit": 2,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 10,
+            "n": 49,
+            "rate": 0.20408163265306123,
+            "videos_hit": 9,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 18,
+            "n": 49,
+            "rate": 0.3673469387755102,
+            "videos_hit": 13,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 49,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 17,
+            "groups": 14
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 49,
+            "rate": 0.02040816326530612,
+            "videos_hit": 1,
+            "videos": 17,
+            "groups": 14
+          }
+        }
+      }
+    },
+    "pickup_active_pose": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 2,
+            "n": 47,
+            "rate": 0.0425531914893617,
+            "videos_hit": 2,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 6,
+            "n": 47,
+            "rate": 0.1276595744680851,
+            "videos_hit": 6,
+            "videos": 15,
+            "groups": 13
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 47,
+            "rate": 0.0851063829787234,
+            "videos_hit": 3,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 9,
+            "n": 47,
+            "rate": 0.19148936170212766,
+            "videos_hit": 7,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 16,
+            "n": 47,
+            "rate": 0.3404255319148936,
+            "videos_hit": 11,
+            "videos": 15,
+            "groups": 13
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 5,
+            "n": 47,
+            "rate": 0.10638297872340426,
+            "videos_hit": 4,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 6,
+            "n": 47,
+            "rate": 0.1276595744680851,
+            "videos_hit": 5,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 9,
+            "n": 47,
+            "rate": 0.19148936170212766,
+            "videos_hit": 8,
+            "videos": 15,
+            "groups": 13
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 47,
+            "rate": 0.06382978723404255,
+            "videos_hit": 2,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 9,
+            "n": 47,
+            "rate": 0.19148936170212766,
+            "videos_hit": 8,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 17,
+            "n": 47,
+            "rate": 0.3617021276595745,
+            "videos_hit": 12,
+            "videos": 15,
+            "groups": 13
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 47,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 15,
+            "groups": 13
+          },
+          "0.05": {
+            "hits": 1,
+            "n": 47,
+            "rate": 0.02127659574468085,
+            "videos_hit": 1,
+            "videos": 15,
+            "groups": 13
+          }
+        }
+      }
+    },
+    "other_all": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 4615,
+            "rate": 0.000866738894907909,
+            "videos_hit": 1,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 4,
+            "n": 4615,
+            "rate": 0.000866738894907909,
+            "videos_hit": 1,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 8,
+            "n": 4615,
+            "rate": 0.001733477789815818,
+            "videos_hit": 3,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 4615,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 4615,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 2,
+            "n": 4615,
+            "rate": 0.0004333694474539545,
+            "videos_hit": 2,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 278,
+            "n": 4615,
+            "rate": 0.06023835319609967,
+            "videos_hit": 58,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 437,
+            "n": 4615,
+            "rate": 0.09469122426868906,
+            "videos_hit": 75,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 611,
+            "n": 4615,
+            "rate": 0.1323943661971831,
+            "videos_hit": 95,
+            "videos": 131,
+            "groups": 16
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 6,
+            "n": 4615,
+            "rate": 0.0013001083423618636,
+            "videos_hit": 4,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 34,
+            "n": 4615,
+            "rate": 0.007367280606717226,
+            "videos_hit": 17,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 72,
+            "n": 4615,
+            "rate": 0.015601300108342361,
+            "videos_hit": 32,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 4615,
+            "rate": 0.000866738894907909,
+            "videos_hit": 2,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 15,
+            "n": 4615,
+            "rate": 0.0032502708559046588,
+            "videos_hit": 10,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 32,
+            "n": 4615,
+            "rate": 0.006933911159263272,
+            "videos_hit": 16,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 116,
+            "n": 4615,
+            "rate": 0.02513542795232936,
+            "videos_hit": 48,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 387,
+            "n": 4615,
+            "rate": 0.0838569880823402,
+            "videos_hit": 90,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 767,
+            "n": 4615,
+            "rate": 0.16619718309859155,
+            "videos_hit": 103,
+            "videos": 131,
+            "groups": 16
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 7,
+            "n": 4615,
+            "rate": 0.0015167930660888408,
+            "videos_hit": 6,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 35,
+            "n": 4615,
+            "rate": 0.007583965330444204,
+            "videos_hit": 18,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 77,
+            "n": 4615,
+            "rate": 0.016684723726977248,
+            "videos_hit": 35,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 4615,
+            "rate": 0.0004333694474539545,
+            "videos_hit": 2,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 10,
+            "n": 4615,
+            "rate": 0.0021668472372697724,
+            "videos_hit": 6,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 21,
+            "n": 4615,
+            "rate": 0.004550379198266522,
+            "videos_hit": 13,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 154,
+            "n": 4615,
+            "rate": 0.033369447453954496,
+            "videos_hit": 57,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 454,
+            "n": 4615,
+            "rate": 0.09837486457204767,
+            "videos_hit": 89,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 895,
+            "n": 4615,
+            "rate": 0.19393282773564463,
+            "videos_hit": 106,
+            "videos": 131,
+            "groups": 16
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 8,
+            "n": 4615,
+            "rate": 0.001733477789815818,
+            "videos_hit": 5,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 34,
+            "n": 4615,
+            "rate": 0.007367280606717226,
+            "videos_hit": 17,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 71,
+            "n": 4615,
+            "rate": 0.015384615384615385,
+            "videos_hit": 31,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 4615,
+            "rate": 0.000866738894907909,
+            "videos_hit": 2,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 15,
+            "n": 4615,
+            "rate": 0.0032502708559046588,
+            "videos_hit": 10,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 32,
+            "n": 4615,
+            "rate": 0.006933911159263272,
+            "videos_hit": 16,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 116,
+            "n": 4615,
+            "rate": 0.02513542795232936,
+            "videos_hit": 48,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 384,
+            "n": 4615,
+            "rate": 0.08320693391115927,
+            "videos_hit": 87,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 764,
+            "n": 4615,
+            "rate": 0.1655471289274106,
+            "videos_hit": 101,
+            "videos": 131,
+            "groups": 16
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 4615,
+            "rate": 0.000866738894907909,
+            "videos_hit": 1,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 10,
+            "n": 4615,
+            "rate": 0.0021668472372697724,
+            "videos_hit": 2,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 18,
+            "n": 4615,
+            "rate": 0.0039003250270855903,
+            "videos_hit": 8,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 4615,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 2,
+            "n": 4615,
+            "rate": 0.0004333694474539545,
+            "videos_hit": 1,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 12,
+            "n": 4615,
+            "rate": 0.002600216684723727,
+            "videos_hit": 7,
+            "videos": 131,
+            "groups": 16
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 325,
+            "n": 4615,
+            "rate": 0.07042253521126761,
+            "videos_hit": 64,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.1": {
+            "hits": 455,
+            "n": 4615,
+            "rate": 0.09859154929577464,
+            "videos_hit": 73,
+            "videos": 131,
+            "groups": 16
+          },
+          "0.05": {
+            "hits": 574,
+            "n": 4615,
+            "rate": 0.12437703141928494,
+            "videos_hit": 82,
+            "videos": 131,
+            "groups": 16
+          }
+        }
+      }
+    },
+    "other_active_pose": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 3082,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 3082,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 2,
+            "n": 3082,
+            "rate": 0.0006489292667099286,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 3082,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 0,
+            "n": 3082,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 2,
+            "n": 3082,
+            "rate": 0.0006489292667099286,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 278,
+            "n": 3082,
+            "rate": 0.09020116807268008,
+            "videos_hit": 58,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 436,
+            "n": 3082,
+            "rate": 0.14146658014276445,
+            "videos_hit": 74,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 610,
+            "n": 3082,
+            "rate": 0.19792342634652824,
+            "videos_hit": 94,
+            "videos": 117,
+            "groups": 8
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 3082,
+            "rate": 0.0012978585334198572,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 20,
+            "n": 3082,
+            "rate": 0.006489292667099286,
+            "videos_hit": 12,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 43,
+            "n": 3082,
+            "rate": 0.013951979234263466,
+            "videos_hit": 20,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 3082,
+            "rate": 0.0012978585334198572,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 15,
+            "n": 3082,
+            "rate": 0.004866969500324465,
+            "videos_hit": 10,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 32,
+            "n": 3082,
+            "rate": 0.010382868267358857,
+            "videos_hit": 16,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 116,
+            "n": 3082,
+            "rate": 0.03763789746917586,
+            "videos_hit": 48,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 385,
+            "n": 3082,
+            "rate": 0.12491888384166126,
+            "videos_hit": 88,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 763,
+            "n": 3082,
+            "rate": 0.24756651524983778,
+            "videos_hit": 100,
+            "videos": 117,
+            "groups": 8
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 3,
+            "n": 3082,
+            "rate": 0.000973393900064893,
+            "videos_hit": 3,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 22,
+            "n": 3082,
+            "rate": 0.007138221933809215,
+            "videos_hit": 12,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 38,
+            "n": 3082,
+            "rate": 0.012329656067488644,
+            "videos_hit": 18,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 2,
+            "n": 3082,
+            "rate": 0.0006489292667099286,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 10,
+            "n": 3082,
+            "rate": 0.003244646333549643,
+            "videos_hit": 6,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 21,
+            "n": 3082,
+            "rate": 0.00681375730045425,
+            "videos_hit": 13,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 154,
+            "n": 3082,
+            "rate": 0.0499675535366645,
+            "videos_hit": 57,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 453,
+            "n": 3082,
+            "rate": 0.14698247890979882,
+            "videos_hit": 88,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 893,
+            "n": 3082,
+            "rate": 0.28974691758598314,
+            "videos_hit": 104,
+            "videos": 117,
+            "groups": 8
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 3082,
+            "rate": 0.0012978585334198572,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 20,
+            "n": 3082,
+            "rate": 0.006489292667099286,
+            "videos_hit": 12,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 43,
+            "n": 3082,
+            "rate": 0.013951979234263466,
+            "videos_hit": 20,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 3082,
+            "rate": 0.0012978585334198572,
+            "videos_hit": 2,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 15,
+            "n": 3082,
+            "rate": 0.004866969500324465,
+            "videos_hit": 10,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 32,
+            "n": 3082,
+            "rate": 0.010382868267358857,
+            "videos_hit": 16,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 116,
+            "n": 3082,
+            "rate": 0.03763789746917586,
+            "videos_hit": 48,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 384,
+            "n": 3082,
+            "rate": 0.1245944192083063,
+            "videos_hit": 87,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 763,
+            "n": 3082,
+            "rate": 0.24756651524983778,
+            "videos_hit": 100,
+            "videos": 117,
+            "groups": 8
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 3082,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 3,
+            "n": 3082,
+            "rate": 0.000973393900064893,
+            "videos_hit": 1,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 9,
+            "n": 3082,
+            "rate": 0.0029201817001946787,
+            "videos_hit": 5,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 0,
+            "n": 3082,
+            "rate": 0.0,
+            "videos_hit": 0,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 2,
+            "n": 3082,
+            "rate": 0.0006489292667099286,
+            "videos_hit": 1,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 11,
+            "n": 3082,
+            "rate": 0.0035691109669046075,
+            "videos_hit": 6,
+            "videos": 117,
+            "groups": 8
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 323,
+            "n": 3082,
+            "rate": 0.10480207657365347,
+            "videos_hit": 62,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.1": {
+            "hits": 453,
+            "n": 3082,
+            "rate": 0.14698247890979882,
+            "videos_hit": 71,
+            "videos": 117,
+            "groups": 8
+          },
+          "0.05": {
+            "hits": 572,
+            "n": 3082,
+            "rate": 0.1855937702790396,
+            "videos_hit": 80,
+            "videos": 117,
+            "groups": 8
+          }
+        }
+      }
+    },
+    "all": {
+      "full_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 9,
+            "n": 5049,
+            "rate": 0.0017825311942959,
+            "videos_hit": 5,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 11,
+            "n": 5049,
+            "rate": 0.002178649237472767,
+            "videos_hit": 7,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 27,
+            "n": 5049,
+            "rate": 0.0053475935828877,
+            "videos_hit": 16,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 4,
+            "n": 5049,
+            "rate": 0.0007922360863537334,
+            "videos_hit": 3,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 6,
+            "n": 5049,
+            "rate": 0.0011883541295306002,
+            "videos_hit": 5,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 20,
+            "n": 5049,
+            "rate": 0.003961180431768667,
+            "videos_hit": 14,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 292,
+            "n": 5049,
+            "rate": 0.05783323430382254,
+            "videos_hit": 65,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 470,
+            "n": 5049,
+            "rate": 0.09308774014656368,
+            "videos_hit": 94,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 663,
+            "n": 5049,
+            "rate": 0.13131313131313133,
+            "videos_hit": 122,
+            "videos": 208,
+            "groups": 52
+          }
+        }
+      },
+      "person_enh720": {
+        "container_score": {
+          "0.25": {
+            "hits": 19,
+            "n": 5049,
+            "rate": 0.003763121410180234,
+            "videos_hit": 14,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 62,
+            "n": 5049,
+            "rate": 0.012279659338482869,
+            "videos_hit": 33,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 112,
+            "n": 5049,
+            "rate": 0.022182610417904536,
+            "videos_hit": 54,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 13,
+            "n": 5049,
+            "rate": 0.0025747672806496337,
+            "videos_hit": 9,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 36,
+            "n": 5049,
+            "rate": 0.0071301247771836,
+            "videos_hit": 23,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 65,
+            "n": 5049,
+            "rate": 0.012873836403248167,
+            "videos_hit": 35,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 139,
+            "n": 5049,
+            "rate": 0.027530204000792237,
+            "videos_hit": 60,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 431,
+            "n": 5049,
+            "rate": 0.08536343830461478,
+            "videos_hit": 113,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 837,
+            "n": 5049,
+            "rate": 0.1657754010695187,
+            "videos_hit": 138,
+            "videos": 208,
+            "groups": 52
+          }
+        }
+      },
+      "person_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 19,
+            "n": 5049,
+            "rate": 0.003763121410180234,
+            "videos_hit": 14,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 60,
+            "n": 5049,
+            "rate": 0.011883541295306001,
+            "videos_hit": 32,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 116,
+            "n": 5049,
+            "rate": 0.022974846504258267,
+            "videos_hit": 55,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 13,
+            "n": 5049,
+            "rate": 0.0025747672806496337,
+            "videos_hit": 9,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 27,
+            "n": 5049,
+            "rate": 0.0053475935828877,
+            "videos_hit": 16,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 50,
+            "n": 5049,
+            "rate": 0.009902951079421667,
+            "videos_hit": 29,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 171,
+            "n": 5049,
+            "rate": 0.0338680926916221,
+            "videos_hit": 66,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 484,
+            "n": 5049,
+            "rate": 0.09586056644880174,
+            "videos_hit": 105,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 943,
+            "n": 5049,
+            "rate": 0.18676965735789267,
+            "videos_hit": 135,
+            "videos": 208,
+            "groups": 52
+          }
+        }
+      },
+      "person_raw720": {
+        "container_score": {
+          "0.25": {
+            "hits": 20,
+            "n": 5049,
+            "rate": 0.003961180431768667,
+            "videos_hit": 13,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 62,
+            "n": 5049,
+            "rate": 0.012279659338482869,
+            "videos_hit": 32,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 116,
+            "n": 5049,
+            "rate": 0.022974846504258267,
+            "videos_hit": 54,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 14,
+            "n": 5049,
+            "rate": 0.002772826302238067,
+            "videos_hit": 9,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 35,
+            "n": 5049,
+            "rate": 0.0069320657555951674,
+            "videos_hit": 22,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 67,
+            "n": 5049,
+            "rate": 0.013269954446425035,
+            "videos_hit": 35,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 133,
+            "n": 5049,
+            "rate": 0.026341849871261636,
+            "videos_hit": 59,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 428,
+            "n": 5049,
+            "rate": 0.08476926123984947,
+            "videos_hit": 112,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 829,
+            "n": 5049,
+            "rate": 0.16419092889681125,
+            "videos_hit": 132,
+            "videos": 208,
+            "groups": 52
+          }
+        }
+      },
+      "full_native": {
+        "container_score": {
+          "0.25": {
+            "hits": 11,
+            "n": 5049,
+            "rate": 0.002178649237472767,
+            "videos_hit": 7,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 26,
+            "n": 5049,
+            "rate": 0.005149534561299267,
+            "videos_hit": 12,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 42,
+            "n": 5049,
+            "rate": 0.008318478906714201,
+            "videos_hit": 19,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "drink_score": {
+          "0.25": {
+            "hits": 6,
+            "n": 5049,
+            "rate": 0.0011883541295306002,
+            "videos_hit": 5,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 16,
+            "n": 5049,
+            "rate": 0.0031689443454149336,
+            "videos_hit": 9,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 35,
+            "n": 5049,
+            "rate": 0.0069320657555951674,
+            "videos_hit": 18,
+            "videos": 208,
+            "groups": 52
+          }
+        },
+        "pickup_score": {
+          "0.25": {
+            "hits": 335,
+            "n": 5049,
+            "rate": 0.06634977223212517,
+            "videos_hit": 69,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.1": {
+            "hits": 479,
+            "n": 5049,
+            "rate": 0.09487027134085958,
+            "videos_hit": 86,
+            "videos": 208,
+            "groups": 52
+          },
+          "0.05": {
+            "hits": 612,
+            "n": 5049,
+            "rate": 0.12121212121212122,
+            "videos_hit": 104,
+            "videos": 208,
+            "groups": 52
+          }
+        }
+      }
+    }
+  },
+  "group_statistics": {
+    "drink_active_pose/drink_score/person_enh720": {
+      "groups": 14,
+      "before_mean": 0.0,
+      "after_mean": 0.03571428571428571,
+      "before_sd": 0.0,
+      "after_sd": 0.13363062095621217,
+      "delta": 0.03571428571428571,
+      "delta_ci95": [
+        0.0,
+        0.10714285714285714
+      ],
+      "increased": 1,
+      "decreased": 0,
+      "tied": 13,
+      "p": 1.0,
+      "holm_p": 1.0
+    },
+    "drink_active_pose/drink_score/person_native": {
+      "groups": 14,
+      "before_mean": 0.0,
+      "after_mean": 0.04120879120879121,
+      "before_sd": 0.0,
+      "after_sd": 0.1336306209562122,
+      "delta": 0.04120879120879121,
+      "delta_ci95": [
+        0.0,
+        0.11813186813186813
+      ],
+      "increased": 2,
+      "decreased": 0,
+      "tied": 12,
+      "p": 0.5,
+      "holm_p": 1.0
+    },
+    "pickup_active_pose/pickup_score/person_enh720": {
+      "groups": 13,
+      "before_mean": 0.0,
+      "after_mean": 0.11538461538461539,
+      "before_sd": 0.0,
+      "after_sd": 0.22957907724039817,
+      "delta": 0.11538461538461539,
+      "delta_ci95": [
+        0.0,
+        0.24358974358974358
+      ],
+      "increased": 3,
+      "decreased": 0,
+      "tied": 10,
+      "p": 0.25,
+      "holm_p": 1.0
+    },
+    "pickup_active_pose/pickup_score/person_native": {
+      "groups": 13,
+      "before_mean": 0.0,
+      "after_mean": 0.12179487179487179,
+      "before_sd": 0.0,
+      "after_sd": 0.2114089217458246,
+      "delta": 0.12179487179487179,
+      "delta_ci95": [
+        0.02564102564102564,
+        0.24358974358974358
+      ],
+      "increased": 4,
+      "decreased": 0,
+      "tied": 9,
+      "p": 0.125,
+      "holm_p": 1.0
+    },
+    "other_active_pose/drink_score/person_enh720": {
+      "groups": 8,
+      "before_mean": 0.0,
+      "after_mean": 0.0016812297771266708,
+      "before_sd": 0.0,
+      "after_sd": 0.004474876204687044,
+      "delta": 0.0016812297771266708,
+      "delta_ci95": [
+        0.0,
+        0.004865943152922849
+      ],
+      "increased": 2,
+      "decreased": 0,
+      "tied": 6,
+      "p": 0.5,
+      "holm_p": 1.0
+    },
+    "other_active_pose/drink_score/person_native": {
+      "groups": 8,
+      "before_mean": 0.0,
+      "after_mean": 8.887308922858158e-05,
+      "before_sd": 0.0,
+      "after_sd": 0.0002513710562341086,
+      "delta": 8.887308922858158e-05,
+      "delta_ci95": [
+        0.0,
+        0.0002666192676857447
+      ],
+      "increased": 1,
+      "decreased": 0,
+      "tied": 7,
+      "p": 1.0,
+      "holm_p": 1.0
+    },
+    "other_active_pose/pickup_score/person_enh720": {
+      "groups": 8,
+      "before_mean": 0.04715770903919196,
+      "after_mean": 0.0302215368209252,
+      "before_sd": 0.06976639401521127,
+      "after_sd": 0.047491035851518905,
+      "delta": -0.016936172218266758,
+      "delta_ci95": [
+        -0.03978182966943068,
+        0.006869772998805257
+      ],
+      "increased": 1,
+      "decreased": 3,
+      "tied": 4,
+      "p": 0.625,
+      "holm_p": 1.0
+    },
+    "other_active_pose/pickup_score/person_native": {
+      "groups": 8,
+      "before_mean": 0.04715770903919196,
+      "after_mean": 0.033881818003912025,
+      "before_sd": 0.06976639401521127,
+      "after_sd": 0.04815961929849636,
+      "delta": -0.013275891035279937,
+      "delta_ci95": [
+        -0.03784279665057265,
+        0.012096774193548387
+      ],
+      "increased": 1,
+      "decreased": 3,
+      "tied": 4,
+      "p": 0.625,
+      "holm_p": 1.0
+    }
+  },
+  "detector_costs": {
+    "full_enh720": {
+      "calls": 1332,
+      "seconds": 16.180618167854846
+    },
+    "person_enh720": {
+      "calls": 5049,
+      "seconds": 54.15627471730113
+    },
+    "person_native": {
+      "calls": 5049,
+      "seconds": 54.57987325079739
+    },
+    "person_raw720": {
+      "calls": 493,
+      "seconds": 5.556889640633017
+    },
+    "full_native": {
+      "calls": 1332,
+      "seconds": 16.038810163270682
+    }
+  },
+  "truth_counts": {
+    "unknown": 209,
+    "drink": 161,
+    "other": 4615,
+    "wave": 15,
+    "pick_up": 49
+  },
+  "total_person_frames": 5049,
+  "active_person_frames": 3286,
+  "production_parity_videos": 222
+}

@@ -1,0 +1,68 @@
+{
+  "wave": [
+    "a person waving their hand",
+    "someone waving hello with a raised arm",
+    "a person waving goodbye",
+    "a man or woman waving an arm in the air"
+  ],
+  "throw": [
+    "a person throwing an object",
+    "someone tossing something through the air",
+    "a person hurling an item away",
+    "throwing a ball or an object"
+  ],
+  "chase": [
+    "a person running",
+    "a person jogging",
+    "a person sprinting",
+    "a child or adult running quickly"
+  ],
+  "fall": [
+    "a person falling down to the ground",
+    "someone collapsing onto the floor",
+    "a person losing balance and falling over",
+    "a man or woman falling down"
+  ],
+  "fight": [
+    "two people fighting",
+    "a person punching another person",
+    "people kicking and hitting each other",
+    "a physical fight or brawl between people"
+  ],
+  "talk": [
+    "people talking to each other",
+    "two persons having a conversation",
+    "a person speaking with someone",
+    "people chatting face to face"
+  ],
+  "drink": [
+    "a person drinking water",
+    "someone drinking from a cup or a bottle",
+    "a person taking a sip of a drink",
+    "drinking a beverage"
+  ],
+  "pick_up": [
+    "a person picking something up from the ground",
+    "someone bending down to pick up an object",
+    "a person lifting an item off the floor",
+    "picking up an object"
+  ],
+  "shake_hands": [
+    "two people shaking hands",
+    "a handshake between two persons",
+    "people greeting each other with a handshake",
+    "shaking hands"
+  ],
+  "other": [
+    "a person walking normally",
+    "a person standing still",
+    "a person sitting down",
+    "people eating a meal",
+    "a person smiling or laughing",
+    "a person riding a bicycle",
+    "a person exercising",
+    "a person climbing",
+    "a person clapping their hands",
+    "an ordinary everyday activity"
+  ]
+}

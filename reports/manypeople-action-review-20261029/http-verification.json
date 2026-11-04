@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "url": "http://127.0.0.1:8766/index.html",
+  "range_cases": 4,
+  "invalid_ranges": 3,
+  "head": true,
+  "browser_clip_playback": true,
+  "browser_raw_seek_150_seconds": true,
+  "javascript_errors": [],
+  "annotation_data_unchanged": true,
+  "limitation": "Local HTTP/browser verified; user VS Code forwarding must be configured on their client."
+}

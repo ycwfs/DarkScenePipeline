@@ -1,0 +1,51 @@
+{
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_person_tau075_20261024.tar.gz",
+      "sha256": "097239706c567cc3473554d654b86453c0a7a2a837ae7efd6cd08c32d8b62fc3",
+      "size": 349154657,
+      "default_alias": "platform/dark-demo-v2.tar.gz"
+    },
+    {
+      "path": "platform/dark-demo-v2_person_tau075_20261024.zip",
+      "sha256": "5b8fcc479ece77b54b8f0a7c3f373710349ae753268b0e52a9d386b6cae959d6",
+      "size": 349184441,
+      "default_alias": "platform/dark-demo-v2.zip"
+    },
+    {
+      "path": "NVIDIA-Box_tau075_20261024.zip",
+      "sha256": "e544c7fab0bd4509de0342483c38628721dfc5096cf3c3a831746c3547ab7221",
+      "size": 381542889,
+      "default_alias": "NVIDIA-Box.zip"
+    }
+  ],
+  "defaults": {
+    "reco_min_conf": 0.75,
+    "lum_gate": 30,
+    "skel_fusion_alpha": 0.95
+  },
+  "platform_files": 63,
+  "box_files": 82,
+  "changed_platform_files": [
+    "CLAUDE.md",
+    "README.md",
+    "darkpipe/config.py",
+    "darkpipe/person/core.py",
+    "main.py",
+    "models.json",
+    "suanzi.json"
+  ],
+  "platform_tar_zip_equal": true,
+  "source_equal": true,
+  "box_runtime_and_models_equal": true,
+  "unchanged_platform_weight_count": 12,
+  "extracted_defaults_verified": true,
+  "old_tau091_archive_preserved": true,
+  "gpu_inference_or_accuracy_retested": false,
+  "aliases_and_sidecars_verified": true,
+  "regression": {
+    "passed": 48,
+    "log": "regression.log",
+    "gpu_inference": false
+  }
+}

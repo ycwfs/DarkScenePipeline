@@ -1,0 +1,39 @@
+{
+  "six_panel_contact_sheet": "visual-contact-sheet.jpg",
+  "object_overlay_image": "object-overlay-check.jpg",
+  "object_source": "demos/rule-喝水27",
+  "frame": 82,
+  "object_boxes": [
+    {
+      "bbox": [
+        0.33147118356492783,
+        0.2457028946073929,
+        0.36844174596998425,
+        0.29584291665860923
+      ],
+      "class_id": 0,
+      "confidence": 0.7302600145339966,
+      "track_id": 1,
+      "sample_frame": 82,
+      "sample_timestamp": 2.7333333333333334,
+      "age": 0.0,
+      "followed": false
+    },
+    {
+      "bbox": [
+        0.37616409195794,
+        0.2442890488275207,
+        0.3925956990983751,
+        0.2883674697120591
+      ],
+      "class_id": 0,
+      "confidence": 0.6884538531303406,
+      "track_id": 1,
+      "sample_frame": 82,
+      "sample_timestamp": 2.7333333333333334,
+      "age": 0.0,
+      "followed": false
+    }
+  ],
+  "scope": "Selected actual output frames checked for drawing/placement; not an accuracy score"
+}

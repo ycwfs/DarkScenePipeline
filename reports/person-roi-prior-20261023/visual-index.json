@@ -1,0 +1,1042 @@
+[
+  {
+    "number": 1,
+    "id": "2f8105910668ee63_000044_T001",
+    "image": "visual/001_2f8105910668ee63_000044_T001.jpg",
+    "source": "real-actiondata-all/喝水1.mp4",
+    "frame": 44,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.04373741149902344,
+        "drink_score": 0.04373741149902344,
+        "pickup_score": 0.04639929533004761
+      },
+      "person_enh720": {
+        "container_score": 0.037867844104766846,
+        "drink_score": 0.037867844104766846,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.35357600450515747,
+        "drink_score": 0.35357600450515747,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 2,
+    "id": "2f8105910668ee63_000058_T001",
+    "image": "visual/002_2f8105910668ee63_000058_T001.jpg",
+    "source": "real-actiondata-all/喝水1.mp4",
+    "frame": 58,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.03974258899688721,
+        "drink_score": 0.03974258899688721,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.3279954791069031,
+        "drink_score": 0.3279954791069031,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.6648848652839661,
+        "drink_score": 0.6648848652839661,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 3,
+    "id": "a10a2ba1533ca770_000046_T001",
+    "image": "visual/003_a10a2ba1533ca770_000046_T001.jpg",
+    "source": "real-actiondata-all/喝水12.mp4",
+    "frame": 46,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.28673964738845825,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.08162307739257812,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 4,
+    "id": "a10a2ba1533ca770_000068_T001",
+    "image": "visual/004_a10a2ba1533ca770_000068_T001.jpg",
+    "source": "real-actiondata-all/喝水12.mp4",
+    "frame": 68,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.017413079738616943
+      },
+      "person_enh720": {
+        "container_score": 0.2851139307022095,
+        "drink_score": 0.0,
+        "pickup_score": 0.04602384567260742
+      },
+      "person_native": {
+        "container_score": 0.20384752750396729,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 5,
+    "id": "a8b212b367a7594f_000024_T001",
+    "image": "visual/005_a8b212b367a7594f_000024_T001.jpg",
+    "source": "real-actiondata-all/喝水17.mp4",
+    "frame": 24,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.020281195640563965,
+        "drink_score": 0.020281195640563965,
+        "pickup_score": 0.06237757205963135
+      },
+      "person_enh720": {
+        "container_score": 0.08852636814117432,
+        "drink_score": 0.08852636814117432,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.2513277530670166,
+        "drink_score": 0.2513277530670166,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 6,
+    "id": "0c6f7f8f83b0ee00_000035_T001",
+    "image": "visual/006_0c6f7f8f83b0ee00_000035_T001.jpg",
+    "source": "real-actiondata-all/喝水2.mp4",
+    "frame": 35,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.2654995918273926,
+        "drink_score": 0.2654995918273926,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.23578476905822754,
+        "drink_score": 0.23578476905822754,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.05224412679672241,
+        "drink_score": 0.05224412679672241,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 7,
+    "id": "0c6f7f8f83b0ee00_000053_T001",
+    "image": "visual/007_0c6f7f8f83b0ee00_000053_T001.jpg",
+    "source": "real-actiondata-all/喝水2.mp4",
+    "frame": 53,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.5021617412567139,
+        "drink_score": 0.5021617412567139,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.2892742156982422,
+        "drink_score": 0.2892742156982422,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.01640552282333374,
+        "drink_score": 0.01640552282333374,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 8,
+    "id": "a677b36824b2473f_000022_T001",
+    "image": "visual/008_a677b36824b2473f_000022_T001.jpg",
+    "source": "real-actiondata-all/喝水35.mp4",
+    "frame": 22,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.06727862358093262,
+        "drink_score": 0.06727862358093262,
+        "pickup_score": 0.020339131355285645
+      },
+      "person_enh720": {
+        "container_score": 0.7379899024963379,
+        "drink_score": 0.7379899024963379,
+        "pickup_score": 0.0922744870185852
+      },
+      "person_native": {
+        "container_score": 0.4510310888290405,
+        "drink_score": 0.4510310888290405,
+        "pickup_score": 0.20353466272354126
+      }
+    }
+  },
+  {
+    "number": 9,
+    "id": "a677b36824b2473f_000089_T001",
+    "image": "visual/009_a677b36824b2473f_000089_T001.jpg",
+    "source": "real-actiondata-all/喝水35.mp4",
+    "frame": 89,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.13975101709365845
+      },
+      "person_enh720": {
+        "container_score": 0.5036012530326843,
+        "drink_score": 0.5036012530326843,
+        "pickup_score": 0.7243789434432983
+      },
+      "person_native": {
+        "container_score": 0.2968425154685974,
+        "drink_score": 0.2968425154685974,
+        "pickup_score": 0.27503466606140137
+      }
+    }
+  },
+  {
+    "number": 10,
+    "id": "6d410d75543e1fbd_000032_T001",
+    "image": "visual/010_6d410d75543e1fbd_000032_T001.jpg",
+    "source": "real-actiondata-all/捡东西14.mp4",
+    "frame": 32,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.01294320821762085,
+        "drink_score": 0.01294320821762085,
+        "pickup_score": 0.08994853496551514
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.1096305251121521
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.42579108476638794
+      }
+    }
+  },
+  {
+    "number": 11,
+    "id": "e89e6fbe81384ec5_000032_T001",
+    "image": "visual/011_e89e6fbe81384ec5_000032_T001.jpg",
+    "source": "real-actiondata-all/捡东西22.mp4",
+    "frame": 32,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.1340051293373108
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.287391722202301
+      }
+    }
+  },
+  {
+    "number": 12,
+    "id": "7ce9e264c4e2c972_000024_T001",
+    "image": "visual/012_7ce9e264c4e2c972_000024_T001.jpg",
+    "source": "real-actiondata-all/捡东西23.mp4",
+    "frame": 24,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0598415732383728
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.43612152338027954
+      }
+    }
+  },
+  {
+    "number": 13,
+    "id": "182e3a30ac1a8d7b_000014_T001",
+    "image": "visual/013_182e3a30ac1a8d7b_000014_T001.jpg",
+    "source": "real-actiondata-all/捡东西24.mp4",
+    "frame": 14,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0221901535987854
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.583585798740387
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 14,
+    "id": "8594e05e8a56819b_000012_T001",
+    "image": "visual/014_8594e05e8a56819b_000012_T001.jpg",
+    "source": "real-actiondata-all/捡东西25.mp4",
+    "frame": 12,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.8519254922866821
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.4092286229133606
+      }
+    }
+  },
+  {
+    "number": 15,
+    "id": "8594e05e8a56819b_000036_T001",
+    "image": "visual/015_8594e05e8a56819b_000036_T001.jpg",
+    "source": "real-actiondata-all/捡东西25.mp4",
+    "frame": 36,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.8975557684898376
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.9146901965141296
+      }
+    }
+  },
+  {
+    "number": 16,
+    "id": "fd54d3f8ee4adff7_000030_T001",
+    "image": "visual/016_fd54d3f8ee4adff7_000030_T001.jpg",
+    "source": "real-actiondata-all/捡东西27.mp4",
+    "frame": 30,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.04436290264129639
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.3164975643157959
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 17,
+    "id": "314915317e94aa69_000065_T001",
+    "image": "visual/017_314915317e94aa69_000065_T001.jpg",
+    "source": "real-actiondata/喝水1.mp4",
+    "frame": 65,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.12255924940109253,
+        "drink_score": 0.12255924940109253,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.45742636919021606,
+        "drink_score": 0.45742636919021606,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.3695650100708008,
+        "drink_score": 0.3695650100708008,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 18,
+    "id": "e7e805c9abfc755e_000046_T001",
+    "image": "visual/018_e7e805c9abfc755e_000046_T001.jpg",
+    "source": "real-actiondata/喝水12.mp4",
+    "frame": 46,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.012251317501068115
+      },
+      "person_enh720": {
+        "container_score": 0.3099792003631592,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.1481560468673706,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 19,
+    "id": "35f30d6b84db9fa2_000053_T001",
+    "image": "visual/019_35f30d6b84db9fa2_000053_T001.jpg",
+    "source": "real-actiondata/喝水3.mp4",
+    "frame": 53,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.04135769605636597,
+        "drink_score": 0.04135769605636597,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.1379622220993042,
+        "drink_score": 0.1379622220993042,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.28487759828567505,
+        "drink_score": 0.28487759828567505,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 20,
+    "id": "e00e00e05307c3e5_000035_T008",
+    "image": "visual/020_e00e00e05307c3e5_000035_T008.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095756_drinking_water_0054.mp4",
+    "frame": 35,
+    "track_id": 8,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.24549812078475952
+      },
+      "person_enh720": {
+        "container_score": 0.027454018592834473,
+        "drink_score": 0.027454018592834473,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.2599441409111023,
+        "drink_score": 0.2599441409111023,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 21,
+    "id": "ad87568563d7ab31_000047_T009",
+    "image": "visual/021_ad87568563d7ab31_000047_T009.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101141_drinking_water_0098.mp4",
+    "frame": 47,
+    "track_id": 9,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.026808500289916992
+      },
+      "person_enh720": {
+        "container_score": 0.2717779874801636,
+        "drink_score": 0.2717779874801636,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 22,
+    "id": "ad87568563d7ab31_000059_T009",
+    "image": "visual/022_ad87568563d7ab31_000059_T009.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101141_drinking_water_0098.mp4",
+    "frame": 59,
+    "track_id": 9,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.027043521404266357
+      },
+      "person_enh720": {
+        "container_score": 0.27497798204421997,
+        "drink_score": 0.27497798204421997,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 23,
+    "id": "1b03574a847c85fe_000000_T004",
+    "image": "visual/023_1b03574a847c85fe_000000_T004.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_102443_drinking_water_0137.mp4",
+    "frame": 0,
+    "track_id": 4,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.01370173692703247,
+        "drink_score": 0.01370173692703247,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.32912397384643555,
+        "drink_score": 0.32912397384643555,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 24,
+    "id": "53daffaa9ef9103a_000000_T009",
+    "image": "visual/024_53daffaa9ef9103a_000000_T009.jpg",
+    "source": "reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162326_drinking_water_0001.mp4",
+    "frame": 0,
+    "track_id": 9,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.429324209690094,
+        "drink_score": 0.429324209690094,
+        "pickup_score": 0.04534268379211426
+      },
+      "person_native": {
+        "container_score": 0.11771655082702637,
+        "drink_score": 0.11771655082702637,
+        "pickup_score": 0.2543729543685913
+      }
+    }
+  },
+  {
+    "number": 25,
+    "id": "53daffaa9ef9103a_000112_T009",
+    "image": "visual/025_53daffaa9ef9103a_000112_T009.jpg",
+    "source": "reports/feedback-finetune-20261019/data/videos/20261015_161630_77/drinking_water/20261015_162326_drinking_water_0001.mp4",
+    "frame": 112,
+    "track_id": 9,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.3489668369293213,
+        "drink_score": 0.3489668369293213,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.14111119508743286,
+        "drink_score": 0.14111119508743286,
+        "pickup_score": 0.021348178386688232
+      }
+    }
+  },
+  {
+    "number": 26,
+    "id": "1d5e40daf952ed1b_000000_T002",
+    "image": "visual/026_1d5e40daf952ed1b_000000_T002.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_083425_drinking_water_0002.mp4",
+    "frame": 0,
+    "track_id": 2,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.2872874140739441
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 27,
+    "id": "2d5b0f004cf5b221_000068_T001",
+    "image": "visual/027_2d5b0f004cf5b221_000068_T001.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091756_drinking_water_0009.mp4",
+    "frame": 68,
+    "track_id": 1,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.10459530353546143
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.41613680124282837
+      }
+    }
+  },
+  {
+    "number": 28,
+    "id": "431d51a1bdfa6168_000022_T003",
+    "image": "visual/028_431d51a1bdfa6168_000022_T003.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091922_drinking_water_0010.mp4",
+    "frame": 22,
+    "track_id": 3,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.6606343388557434
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.01948106288909912
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.03193819522857666
+      }
+    }
+  },
+  {
+    "number": 29,
+    "id": "a6dc542d4e2f385a_000011_T003",
+    "image": "visual/029_a6dc542d4e2f385a_000011_T003.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_091930_drinking_water_0012.mp4",
+    "frame": 11,
+    "track_id": 3,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.6691167950630188
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.027586936950683594
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.018093466758728027
+      }
+    }
+  },
+  {
+    "number": 30,
+    "id": "b0994c2f308d7657_000051_T003",
+    "image": "visual/030_b0994c2f308d7657_000051_T003.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_092839_drinking_water_0014.mp4",
+    "frame": 51,
+    "track_id": 3,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.5542278289794922
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.044097959995269775
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.03889644145965576
+      }
+    }
+  },
+  {
+    "number": 31,
+    "id": "a6e8375246cb3a7c_000000_T003",
+    "image": "visual/031_a6e8375246cb3a7c_000000_T003.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_093135_drinking_water_0016.mp4",
+    "frame": 0,
+    "track_id": 3,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.010311901569366455
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.31646019220352173
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.260667622089386
+      }
+    }
+  },
+  {
+    "number": 32,
+    "id": "bba3333c7bc0ab8b_000044_T002",
+    "image": "visual/032_bba3333c7bc0ab8b_000044_T002.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094227_drinking_water_0018.mp4",
+    "frame": 44,
+    "track_id": 2,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.7392415404319763
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.010141432285308838
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.05737549066543579
+      }
+    }
+  },
+  {
+    "number": 33,
+    "id": "82c4d886d2db744e_000000_T004",
+    "image": "visual/033_82c4d886d2db744e_000000_T004.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094245_drinking_water_0019.mp4",
+    "frame": 0,
+    "track_id": 4,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.05225837230682373
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.3626616597175598
+      }
+    }
+  },
+  {
+    "number": 34,
+    "id": "da6e3389c18aa09c_000024_T005",
+    "image": "visual/034_da6e3389c18aa09c_000024_T005.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094436_drinking_water_0021.mp4",
+    "frame": 24,
+    "track_id": 5,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.3139640688896179
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.3306872844696045
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0316312313079834
+      }
+    }
+  },
+  {
+    "number": 35,
+    "id": "bad35584ef5e9ffc_000000_T005",
+    "image": "visual/035_bad35584ef5e9ffc_000000_T005.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094525_drinking_water_0022.mp4",
+    "frame": 0,
+    "track_id": 5,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.017299771308898926
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.33649224042892456
+      }
+    }
+  },
+  {
+    "number": 36,
+    "id": "47535b47f6aa9641_000014_T007",
+    "image": "visual/036_47535b47f6aa9641_000014_T007.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094714_drinking_water_0024.mp4",
+    "frame": 14,
+    "track_id": 7,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.7084161043167114
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.08906739950180054
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.10823714733123779
+      }
+    }
+  },
+  {
+    "number": 37,
+    "id": "033b456513837833_000047_T002",
+    "image": "visual/037_033b456513837833_000047_T002.jpg",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_094721_drinking_water_0025.mp4",
+    "frame": 47,
+    "track_id": 2,
+    "truth": "other",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.3386138677597046
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.1554638147354126
+      }
+    }
+  },
+  {
+    "number": 38,
+    "id": "8f780ff0eefc1fcb_000044_T001",
+    "image": "visual/038_8f780ff0eefc1fcb_000044_T001.jpg",
+    "source": "real-actiondata-all/喝水16.mp4",
+    "frame": 44,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.014774978160858154,
+        "drink_score": 0.014774978160858154,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.025573909282684326,
+        "drink_score": 0.025573909282684326,
+        "pickup_score": 0.0
+      },
+      "person_native": {
+        "container_score": 0.021253645420074463,
+        "drink_score": 0.021253645420074463,
+        "pickup_score": 0.0
+      }
+    }
+  },
+  {
+    "number": 39,
+    "id": "ad442c59b37f1b2f_000060_T001",
+    "image": "visual/039_ad442c59b37f1b2f_000060_T001.jpg",
+    "source": "real-actiondata-all/喝水34.mp4",
+    "frame": 60,
+    "track_id": 1,
+    "truth": "drink",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.8687800168991089
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.3663266897201538
+      }
+    }
+  },
+  {
+    "number": 40,
+    "id": "1f153eddcd6d673e_000028_T001",
+    "image": "visual/040_1f153eddcd6d673e_000028_T001.jpg",
+    "source": "real-actiondata-all/捡东西2.mp4",
+    "frame": 28,
+    "track_id": 1,
+    "truth": "pick_up",
+    "scores": {
+      "full_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.0
+      },
+      "person_enh720": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.01217186450958252
+      },
+      "person_native": {
+        "container_score": 0.0,
+        "drink_score": 0.0,
+        "pickup_score": 0.021062195301055908
+      }
+    }
+  }
+]

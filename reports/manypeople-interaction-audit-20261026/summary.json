@@ -1,0 +1,115 @@
+{
+  "threshold": 0.85,
+  "action_windows": 564,
+  "drink": 527,
+  "pick_up": 37,
+  "segments": 160,
+  "segments_with_object_support": 39,
+  "windows_with_object_support": 90,
+  "windows_without_object_support": 474,
+  "existing_related_clip_files": 6,
+  "caveat": "Predictions and detector boxes only. No complete person-level action truth. Five sampled frames per window; not dense video detection.",
+  "event_hashes": [
+    {
+      "path": "reports/manypeople-inference-20261025/events/01_events.json",
+      "sha256": "c5930629856dc0dd117247b4d4a5d4d3efa4dbab5f3bd4b8f4f4b769adf568a5"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/02_events.json",
+      "sha256": "579ff74d6f5277bd938b616b31111f064f83e880582b3db98b3535801e2de831"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/03_events.json",
+      "sha256": "2e01d5825b386a7c4627881d58d4ca086addd6f831306cca1e0be64cbe7abdc6"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/04_events.json",
+      "sha256": "193ff4f0b74a8e56ab831fd7bf376e6aa31ad788d03b17dae774392b8382e0fa"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/05_events.json",
+      "sha256": "9f3d159a1ea09eb41417a8bae323c5d779a470051fd254d50f05259979c01553"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/06_events.json",
+      "sha256": "2fab4e3e0b23ea62652d7f151ddd25d1f12e103b8e9730c1c9fc54412a9cd549"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/07_events.json",
+      "sha256": "287579566653780bf9e3c07210fe5865a2f36881731e9cc0f5611133f342c7bf"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/08_events.json",
+      "sha256": "c468de6d3910dec8e53b0f950e7c3af5c25d5c30f4b0f2984d93f7f715b13711"
+    },
+    {
+      "path": "reports/manypeople-inference-20261025/events/09_events.json",
+      "sha256": "5cd2383a15eb4ac023afcd04156b6c248371fa6d35de4865d2cadc1f859acfdd"
+    }
+  ],
+  "by_source": [
+    {
+      "source": 1,
+      "events": 5565,
+      "drink": 6,
+      "pick_up": 14,
+      "candidate_segments": 7
+    },
+    {
+      "source": 2,
+      "events": 7055,
+      "drink": 114,
+      "pick_up": 0,
+      "candidate_segments": 32
+    },
+    {
+      "source": 3,
+      "events": 6935,
+      "drink": 168,
+      "pick_up": 11,
+      "candidate_segments": 46
+    },
+    {
+      "source": 4,
+      "events": 4142,
+      "drink": 24,
+      "pick_up": 0,
+      "candidate_segments": 9
+    },
+    {
+      "source": 5,
+      "events": 3672,
+      "drink": 77,
+      "pick_up": 0,
+      "candidate_segments": 18
+    },
+    {
+      "source": 6,
+      "events": 2690,
+      "drink": 17,
+      "pick_up": 0,
+      "candidate_segments": 6
+    },
+    {
+      "source": 7,
+      "events": 6312,
+      "drink": 62,
+      "pick_up": 10,
+      "candidate_segments": 24
+    },
+    {
+      "source": 8,
+      "events": 6193,
+      "drink": 12,
+      "pick_up": 2,
+      "candidate_segments": 3
+    },
+    {
+      "source": 9,
+      "events": 5036,
+      "drink": 47,
+      "pick_up": 0,
+      "candidate_segments": 15
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "dark-demo-v2_recheck_20261102.tar.gz": {
+    "path": "/ssd1/wfs/project/lowlight/dark-demo-v2_recheck_20261102.tar.gz",
+    "bytes": 417901738,
+    "sha256": "7f2dc470c2e77f32147f11dcfc4986194eae886432799f5031cb47afbe57a7a5"
+  },
+  "dark-demo-v2_recheck_20261102.zip": {
+    "path": "/ssd1/wfs/project/lowlight/dark-demo-v2_recheck_20261102.zip",
+    "bytes": 417936746,
+    "sha256": "47022fd54875dbb2fd820b120379ac1d368fcb7507c65482dbb00b216e0a34a9"
+  },
+  "NVIDIA-Box_recheck_20261102.zip": {
+    "path": "/ssd1/wfs/project/lowlight/NVIDIA-Box_recheck_20261102.zip",
+    "bytes": 486771944,
+    "sha256": "ed72e81b7918b44498d020a3513c8ee5b56a49404ac894b547d4985657a014eb"
+  }
+}

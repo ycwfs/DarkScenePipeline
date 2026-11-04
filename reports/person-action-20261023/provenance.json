@@ -1,0 +1,26 @@
+{
+  "models": {
+    "ckpts/videomamba_t_behavior_32f_realactall_full_pn2.pth": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362",
+    "ckpts/stgcn_behavior_32f_realactall_full.pth": "0620e3520b883daf1a9ed974a5a88b2b0015e01bee12498b286a5a2d40831f5a",
+    "ckpts/rtmo-s_end2end.onnx": "d0703d40d19f3921da51ae725402d5fdae4d2478c7442072d3101bd396f370d8",
+    "ckpts/yolo26m_detect.onnx": "d6f908203fd98902a99d0761d2baf74530ca77e4e80346e6d21ab4850589fb6c",
+    "ckpts/NTIRE.pth": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa"
+  },
+  "production_modified": false,
+  "scope": "independent per-person demo",
+  "parameters": {
+    "alpha": 0.7,
+    "threshold": 0.75,
+    "lum_gate": 75,
+    "person_confidence": 0.35,
+    "window_seconds": 1.0,
+    "action_interval_seconds": 0.5,
+    "crop_margin": 0.15,
+    "rgb_batch": 2,
+    "person_limit": null
+  },
+  "physical_gpu": 2,
+  "runtime": "DarkScenePipeline/.venv native Python 3.10; existing scipy/torch/ORT; no environment changes",
+  "image_modified": false,
+  "production_source_and_all_release_archives_verified_unchanged": true
+}

@@ -1,0 +1,127 @@
+{
+  "feedback": [
+    {
+      "source_id": "new-01",
+      "windows": 20,
+      "drink": 6,
+      "pick_up": 14,
+      "conservative_veto": 0,
+      "strict_veto": 20,
+      "samples": 100,
+      "binding_valid": 98,
+      "pose_available": 23
+    },
+    {
+      "source_id": "new-02",
+      "windows": 114,
+      "drink": 114,
+      "pick_up": 0,
+      "conservative_veto": 0,
+      "strict_veto": 114,
+      "samples": 570,
+      "binding_valid": 559,
+      "pose_available": 523
+    },
+    {
+      "source_id": "new-03",
+      "windows": 179,
+      "drink": 168,
+      "pick_up": 11,
+      "conservative_veto": 0,
+      "strict_veto": 179,
+      "samples": 895,
+      "binding_valid": 872,
+      "pose_available": 414
+    },
+    {
+      "source_id": "new-04",
+      "windows": 24,
+      "drink": 24,
+      "pick_up": 0,
+      "conservative_veto": 0,
+      "strict_veto": 24,
+      "samples": 120,
+      "binding_valid": 118,
+      "pose_available": 115
+    },
+    {
+      "source_id": "new-05",
+      "windows": 77,
+      "drink": 77,
+      "pick_up": 0,
+      "conservative_veto": 0,
+      "strict_veto": 77,
+      "samples": 385,
+      "binding_valid": 383,
+      "pose_available": 376
+    },
+    {
+      "source_id": "new-06",
+      "windows": 17,
+      "drink": 17,
+      "pick_up": 0,
+      "conservative_veto": 0,
+      "strict_veto": 17,
+      "samples": 85,
+      "binding_valid": 78,
+      "pose_available": 70
+    },
+    {
+      "source_id": "new-07",
+      "windows": 72,
+      "drink": 62,
+      "pick_up": 10,
+      "conservative_veto": 0,
+      "strict_veto": 72,
+      "samples": 360,
+      "binding_valid": 347,
+      "pose_available": 350
+    },
+    {
+      "source_id": "new-08",
+      "windows": 14,
+      "drink": 12,
+      "pick_up": 2,
+      "conservative_veto": 0,
+      "strict_veto": 14,
+      "samples": 70,
+      "binding_valid": 64,
+      "pose_available": 49
+    },
+    {
+      "source_id": "new-09",
+      "windows": 47,
+      "drink": 47,
+      "pick_up": 0,
+      "conservative_veto": 0,
+      "strict_veto": 38,
+      "samples": 235,
+      "binding_valid": 216,
+      "pose_available": 194
+    }
+  ],
+  "old_truth_breakdown": {
+    "val": {
+      "('other', 'pick_up', 'pick_up', 'other')": 7,
+      "(None, 'drink', 'drink', 'other')": 6,
+      "('drink', 'drink', 'drink', 'other')": 9,
+      "(None, 'drink', 'drink', 'drink')": 1,
+      "('drink', 'drink', 'drink', 'drink')": 1,
+      "('pick_up', 'pick_up', 'pick_up', 'other')": 4,
+      "(None, 'pick_up', 'pick_up', 'other')": 2
+    },
+    "test": {
+      "(None, 'drink', 'drink', 'drink')": 1,
+      "('drink', 'drink', 'drink', 'drink')": 5,
+      "(None, 'drink', 'drink', 'other')": 4,
+      "('drink', 'drink', 'drink', 'other')": 5,
+      "('pick_up', 'pick_up', 'pick_up', 'other')": 4,
+      "(None, 'pick_up', 'pick_up', 'other')": 2,
+      "('other', 'pick_up', 'pick_up', 'other')": 3,
+      "('drink', 'wave', 'wave', 'wave')": 1
+    }
+  },
+  "old_windows": 55,
+  "new_windows": 564,
+  "interpretation": "Feedback has no complete person-action truth: suppression counts, not corrected errors."
+}

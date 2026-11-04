@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "error": "ProcessingFailed: 实时处理失败：shutdown: RuntimeError: 处理线程未在停止后 5 秒内退出",
+  "clips": {
+    "session": "127.0.0.1/20261021_162836_1544366",
+    "clips_saved": 5,
+    "clips_abandoned": 2,
+    "clips_forced": 0,
+    "frames_dropped": 55,
+    "uploads_dropped": 0,
+    "stage_orphans_cleaned": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "write_error": null,
+    "recovery_stage_dir": null,
+    "writer_alive": false,
+    "uploads_pending": 0
+  },
+  "scope": "Before the corresponding shutdown fix"
+}

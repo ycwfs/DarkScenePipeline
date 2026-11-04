@@ -1,0 +1,836 @@
+{
+  "heldout_candidate_windows": 247,
+  "repeated_candidate_runs": 52,
+  "object_sequence_windows": 147,
+  "exact_object_evidence_reused": 2,
+  "object_inference_needed": 145,
+  "by_action": {
+    "drink": 131,
+    "pick_up": 14
+  },
+  "by_source": {
+    "ad442c59b37f1b2f": 2,
+    "new-01": 5,
+    "new-02": 91,
+    "new-03": 14,
+    "new-04": 21,
+    "new-06": 10,
+    "new-08": 2
+  },
+  "runs": [
+    {
+      "source_id": "ad442c59b37f1b2f",
+      "track_id": 1,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "ad442c59b37f1b2f_2",
+        "ad442c59b37f1b2f_3"
+      ],
+      "times": [
+        1.9666666666666666,
+        2.466666666666667
+      ]
+    },
+    {
+      "source_id": "new-01",
+      "track_id": 90,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-01_551",
+        "new-01_556"
+      ],
+      "times": [
+        45.92,
+        46.44
+      ]
+    },
+    {
+      "source_id": "new-01",
+      "track_id": 574,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-01_3287",
+        "new-01_3294",
+        "new-01_3301"
+      ],
+      "times": [
+        234.8,
+        235.32,
+        235.84
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 39,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_349",
+        "new-02_360",
+        "new-02_371",
+        "new-02_382"
+      ],
+      "times": [
+        22.08,
+        22.6,
+        23.12,
+        23.64
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 44,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_554",
+        "new-02_562"
+      ],
+      "times": [
+        34.4,
+        34.92
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 44,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_817",
+        "new-02_825",
+        "new-02_832"
+      ],
+      "times": [
+        50.52,
+        51.04,
+        51.56
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 19,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_791",
+        "new-02_799",
+        "new-02_805"
+      ],
+      "times": [
+        48.6,
+        49.12,
+        49.64
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 104,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_965",
+        "new-02_973"
+      ],
+      "times": [
+        61.04,
+        61.56
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 143,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_1293",
+        "new-02_1302"
+      ],
+      "times": [
+        81.84,
+        82.36
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 248,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_2064",
+        "new-02_2075",
+        "new-02_2085",
+        "new-02_2095",
+        "new-02_2105"
+      ],
+      "times": [
+        124.08,
+        124.6,
+        125.12,
+        125.64,
+        126.16
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 287,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_2368",
+        "new-02_2376",
+        "new-02_2384"
+      ],
+      "times": [
+        140.4,
+        140.92,
+        141.44
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 270,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_2385",
+        "new-02_2394"
+      ],
+      "times": [
+        141.48,
+        142.0
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 335,
+      "generation": 2,
+      "action": "drink",
+      "ids": [
+        "new-02_3506",
+        "new-02_3515"
+      ],
+      "times": [
+        203.36,
+        203.88
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 325,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_3276",
+        "new-02_3285",
+        "new-02_3292"
+      ],
+      "times": [
+        188.4,
+        188.92,
+        189.44
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 325,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_3310",
+        "new-02_3319"
+      ],
+      "times": [
+        190.48,
+        191.0
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 392,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_3820",
+        "new-02_3828",
+        "new-02_3835",
+        "new-02_3840",
+        "new-02_3848",
+        "new-02_3854",
+        "new-02_3862",
+        "new-02_3868",
+        "new-02_3873",
+        "new-02_3879",
+        "new-02_3885"
+      ],
+      "times": [
+        228.24,
+        228.76,
+        229.28,
+        229.8,
+        230.32,
+        230.84,
+        231.36,
+        231.88,
+        232.4,
+        232.92,
+        233.44
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 410,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_4284",
+        "new-02_4291"
+      ],
+      "times": [
+        259.36,
+        259.88
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 458,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4243",
+        "new-02_4251",
+        "new-02_4259",
+        "new-02_4267"
+      ],
+      "times": [
+        256.68,
+        257.2,
+        257.72,
+        258.24
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 458,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4330",
+        "new-02_4337"
+      ],
+      "times": [
+        263.44,
+        263.96
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 458,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4447",
+        "new-02_4456"
+      ],
+      "times": [
+        270.2,
+        270.72
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 458,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4504",
+        "new-02_4511"
+      ],
+      "times": [
+        273.84,
+        274.36
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 458,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4561",
+        "new-02_4571"
+      ],
+      "times": [
+        277.48,
+        278.0
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 480,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_4464",
+        "new-02_4472"
+      ],
+      "times": [
+        271.2,
+        271.72
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 480,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_4533",
+        "new-02_4542",
+        "new-02_4550",
+        "new-02_4558",
+        "new-02_4568"
+      ],
+      "times": [
+        275.88,
+        276.4,
+        276.92,
+        277.44,
+        277.96
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 480,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_4647",
+        "new-02_4655",
+        "new-02_4662"
+      ],
+      "times": [
+        284.2,
+        284.72,
+        285.24
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 480,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_4749",
+        "new-02_4755"
+      ],
+      "times": [
+        292.52,
+        293.04
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 480,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_5302",
+        "new-02_5309"
+      ],
+      "times": [
+        333.6,
+        334.12
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 502,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4477",
+        "new-02_4485",
+        "new-02_4493",
+        "new-02_4500"
+      ],
+      "times": [
+        271.88,
+        272.4,
+        272.92,
+        273.44
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 517,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_4645",
+        "new-02_4653"
+      ],
+      "times": [
+        284.0,
+        284.52
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 609,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_5274",
+        "new-02_5281"
+      ],
+      "times": [
+        331.44,
+        331.96
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 609,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_5343",
+        "new-02_5351",
+        "new-02_5358",
+        "new-02_5365",
+        "new-02_5372",
+        "new-02_5380"
+      ],
+      "times": [
+        336.64,
+        337.16,
+        337.68,
+        338.2,
+        338.72,
+        339.24
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 609,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-02_5646",
+        "new-02_5653",
+        "new-02_5659"
+      ],
+      "times": [
+        359.0,
+        359.52,
+        360.04
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 748,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_6375",
+        "new-02_6383"
+      ],
+      "times": [
+        410.4,
+        410.92
+      ]
+    },
+    {
+      "source_id": "new-02",
+      "track_id": 748,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-02_6548",
+        "new-02_6554"
+      ],
+      "times": [
+        422.36,
+        422.88
+      ]
+    },
+    {
+      "source_id": "new-03",
+      "track_id": 98,
+      "generation": 0,
+      "action": "pick_up",
+      "ids": [
+        "new-03_986",
+        "new-03_992"
+      ],
+      "times": [
+        92.68370734829394,
+        93.20372814912596
+      ]
+    },
+    {
+      "source_id": "new-03",
+      "track_id": 180,
+      "generation": 0,
+      "action": "pick_up",
+      "ids": [
+        "new-03_1105",
+        "new-03_1113"
+      ],
+      "times": [
+        100.68402736109445,
+        101.20404816192648
+      ]
+    },
+    {
+      "source_id": "new-03",
+      "track_id": 315,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-03_2186",
+        "new-03_2193"
+      ],
+      "times": [
+        171.16684667386696,
+        171.686867474699
+      ]
+    },
+    {
+      "source_id": "new-03",
+      "track_id": 370,
+      "generation": 0,
+      "action": "pick_up",
+      "ids": [
+        "new-03_2589",
+        "new-03_2596",
+        "new-03_2604",
+        "new-03_2611"
+      ],
+      "times": [
+        198.92795711828475,
+        199.44797791911677,
+        199.9679987199488,
+        200.48801952078085
+      ]
+    },
+    {
+      "source_id": "new-03",
+      "track_id": 370,
+      "generation": 0,
+      "action": "pick_up",
+      "ids": [
+        "new-03_2854",
+        "new-03_2863"
+      ],
+      "times": [
+        216.60866434657387,
+        217.12868514740592
+      ]
+    },
+    {
+      "source_id": "new-03",
+      "track_id": 446,
+      "generation": 0,
+      "action": "pick_up",
+      "ids": [
+        "new-03_3152",
+        "new-03_3156"
+      ],
+      "times": [
+        237.4094963798552,
+        237.96951878075123
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 53,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-04_702",
+        "new-04_709",
+        "new-04_715"
+      ],
+      "times": [
+        44.68,
+        45.2,
+        45.72
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 187,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-04_1018",
+        "new-04_1026",
+        "new-04_1034"
+      ],
+      "times": [
+        66.72,
+        67.24,
+        67.76
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 254,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-04_1299",
+        "new-04_1307",
+        "new-04_1316"
+      ],
+      "times": [
+        83.16,
+        83.68,
+        84.2
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 258,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-04_1400",
+        "new-04_1409"
+      ],
+      "times": [
+        89.04,
+        89.56
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 303,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-04_1636",
+        "new-04_1643",
+        "new-04_1650",
+        "new-04_1657"
+      ],
+      "times": [
+        103.88,
+        104.4,
+        104.92,
+        105.44
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 360,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-04_1932",
+        "new-04_1940"
+      ],
+      "times": [
+        124.24,
+        124.76
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 533,
+      "generation": 1,
+      "action": "drink",
+      "ids": [
+        "new-04_3108",
+        "new-04_3120"
+      ],
+      "times": [
+        187.48,
+        188.0
+      ]
+    },
+    {
+      "source_id": "new-04",
+      "track_id": 632,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-04_3606",
+        "new-04_3619"
+      ],
+      "times": [
+        213.68,
+        214.2
+      ]
+    },
+    {
+      "source_id": "new-06",
+      "track_id": 213,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-06_855",
+        "new-06_861"
+      ],
+      "times": [
+        50.36,
+        50.88
+      ]
+    },
+    {
+      "source_id": "new-06",
+      "track_id": 385,
+      "generation": 3,
+      "action": "drink",
+      "ids": [
+        "new-06_1758",
+        "new-06_1768"
+      ],
+      "times": [
+        108.12,
+        108.68
+      ]
+    },
+    {
+      "source_id": "new-06",
+      "track_id": 481,
+      "generation": 0,
+      "action": "drink",
+      "ids": [
+        "new-06_1981",
+        "new-06_1988",
+        "new-06_1996",
+        "new-06_2005",
+        "new-06_2012",
+        "new-06_2020"
+      ],
+      "times": [
+        121.8,
+        122.32,
+        122.84,
+        123.36,
+        123.88,
+        124.4
+      ]
+    },
+    {
+      "source_id": "new-08",
+      "track_id": 192,
+      "generation": 4,
+      "action": "pick_up",
+      "ids": [
+        "new-08_1163",
+        "new-08_1176"
+      ],
+      "times": [
+        57.0,
+        57.52
+      ]
+    }
+  ]
+}

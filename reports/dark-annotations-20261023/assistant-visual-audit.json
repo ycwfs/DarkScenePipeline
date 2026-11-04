@@ -1,0 +1,1677 @@
+{
+  "frames": [
+    {
+      "number": 1,
+      "video_id": "c569584506c11d37",
+      "source": "real-actiondata-all/other/other10.mp4",
+      "frame": 25,
+      "image": "data/c569584506c11d37/raw/000025.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 2,
+      "video_id": "b7f69c7c9f29e414",
+      "source": "real-actiondata-all/other/other12.mp4",
+      "frame": 31,
+      "image": "data/b7f69c7c9f29e414/raw/000031.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 3,
+      "video_id": "4f1b5ca8b9aa234e",
+      "source": "real-actiondata-all/other/other14.mp4",
+      "frame": 31,
+      "image": "data/4f1b5ca8b9aa234e/raw/000031.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 4,
+      "video_id": "5e122bdc32dbdbbe",
+      "source": "real-actiondata-all/other/other16.mp4",
+      "frame": 25,
+      "image": "data/5e122bdc32dbdbbe/raw/000025.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 5,
+      "video_id": "ebf25cdc28600592",
+      "source": "real-actiondata-all/other/other18.mp4",
+      "frame": 31,
+      "image": "data/ebf25cdc28600592/raw/000031.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 6,
+      "video_id": "7f75a03536d43dbb",
+      "source": "real-actiondata-all/other/other189.mp4",
+      "frame": 67,
+      "image": "data/7f75a03536d43dbb/raw/000067.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 7,
+      "video_id": "1ddbf94ade1fe116",
+      "source": "real-actiondata-all/other/other2.mp4",
+      "frame": 31,
+      "image": "data/1ddbf94ade1fe116/raw/000031.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 8,
+      "video_id": "0fd6debb5ca38a41",
+      "source": "real-actiondata-all/other/other20.mp4",
+      "frame": 31,
+      "image": "data/0fd6debb5ca38a41/raw/000031.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 9,
+      "video_id": "7e9bc4c0e9a12906",
+      "source": "real-actiondata-all/other/other200.mp4",
+      "frame": 58,
+      "image": "data/7e9bc4c0e9a12906/raw/000058.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 10,
+      "video_id": "ee74235bb4a1c693",
+      "source": "real-actiondata-all/other/other211.mp4",
+      "frame": 29,
+      "image": "data/ee74235bb4a1c693/raw/000029.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 11,
+      "video_id": "3957b3aea6577671",
+      "source": "real-actiondata-all/other/other217.mp4",
+      "frame": 48,
+      "image": "data/3957b3aea6577671/raw/000048.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 12,
+      "video_id": "6c88b24032c50d73",
+      "source": "real-actiondata-all/other/other219.mp4",
+      "frame": 37,
+      "image": "data/6c88b24032c50d73/raw/000037.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 13,
+      "video_id": "f27f5e4d587e9b17",
+      "source": "real-actiondata-all/other/other22.mp4",
+      "frame": 25,
+      "image": "data/f27f5e4d587e9b17/raw/000025.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 14,
+      "video_id": "cdcf0c9428687945",
+      "source": "real-actiondata-all/other/other220.mp4",
+      "frame": 72,
+      "image": "data/cdcf0c9428687945/raw/000072.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 15,
+      "video_id": "8cdaf01bbce54842",
+      "source": "real-actiondata-all/other/other221.mp4",
+      "frame": 34,
+      "image": "data/8cdaf01bbce54842/raw/000034.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 16,
+      "video_id": "1439265296f8110c",
+      "source": "real-actiondata-all/other/other222.mp4",
+      "frame": 25,
+      "image": "data/1439265296f8110c/raw/000025.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 17,
+      "video_id": "d7c5ba82952df18d",
+      "source": "real-actiondata-all/other/other223.mp4",
+      "frame": 41,
+      "image": "data/d7c5ba82952df18d/raw/000041.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 18,
+      "video_id": "28cee3446ca3ff28",
+      "source": "real-actiondata-all/other/other224.mp4",
+      "frame": 55,
+      "image": "data/28cee3446ca3ff28/raw/000055.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 19,
+      "video_id": "02cfb195aba51c8e",
+      "source": "real-actiondata-all/other/other225.mp4",
+      "frame": 40,
+      "image": "data/02cfb195aba51c8e/raw/000040.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 20,
+      "video_id": "18c0a9be4122d405",
+      "source": "real-actiondata-all/other/other226.mp4",
+      "frame": 50,
+      "image": "data/18c0a9be4122d405/raw/000050.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 21,
+      "video_id": "168083707a4147ee",
+      "source": "real-actiondata-all/other/other227.mp4",
+      "frame": 46,
+      "image": "data/168083707a4147ee/raw/000046.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 22,
+      "video_id": "3591176e2cd4bcd0",
+      "source": "real-actiondata-all/other/other228.mp4",
+      "frame": 48,
+      "image": "data/3591176e2cd4bcd0/raw/000048.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 23,
+      "video_id": "5b9fe350fe2eb33b",
+      "source": "real-actiondata-all/other/other230.mp4",
+      "frame": 60,
+      "image": "data/5b9fe350fe2eb33b/raw/000060.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 24,
+      "video_id": "9618258de38c7de1",
+      "source": "real-actiondata-all/other/other238.mp4",
+      "frame": 199,
+      "image": "data/9618258de38c7de1/raw/000199.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 25,
+      "video_id": "f6543886be100de4",
+      "source": "real-actiondata-all/other/other24.mp4",
+      "frame": 31,
+      "image": "data/f6543886be100de4/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 26,
+      "video_id": "dd398844c2f79c7e",
+      "source": "real-actiondata-all/other/other26.mp4",
+      "frame": 31,
+      "image": "data/dd398844c2f79c7e/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 27,
+      "video_id": "7d0b31b5bdc2beff",
+      "source": "real-actiondata-all/other/other30.mp4",
+      "frame": 31,
+      "image": "data/7d0b31b5bdc2beff/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 28,
+      "video_id": "d31b9538458e5427",
+      "source": "real-actiondata-all/other/other32.mp4",
+      "frame": 31,
+      "image": "data/d31b9538458e5427/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 29,
+      "video_id": "9a2fa76b962cf929",
+      "source": "real-actiondata-all/other/other35.mp4",
+      "frame": 31,
+      "image": "data/9a2fa76b962cf929/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 30,
+      "video_id": "e935131c80ef4b94",
+      "source": "real-actiondata-all/other/other37.mp4",
+      "frame": 31,
+      "image": "data/e935131c80ef4b94/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 31,
+      "video_id": "0b5d694cb07c0fb3",
+      "source": "real-actiondata-all/other/other4.mp4",
+      "frame": 25,
+      "image": "data/0b5d694cb07c0fb3/raw/000025.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 32,
+      "video_id": "a97e2d621be0186d",
+      "source": "real-actiondata-all/other/other40.mp4",
+      "frame": 31,
+      "image": "data/a97e2d621be0186d/raw/000031.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 33,
+      "video_id": "95e25cc462093409",
+      "source": "real-actiondata-all/other/other6.mp4",
+      "frame": 31,
+      "image": "data/95e25cc462093409/raw/000031.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 34,
+      "video_id": "d2653752b7ad769e",
+      "source": "real-actiondata-all/other/other72.mp4",
+      "frame": 81,
+      "image": "data/d2653752b7ad769e/raw/000081.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 35,
+      "video_id": "d3d3ecc79936db11",
+      "source": "real-actiondata-all/other/other73.mp4",
+      "frame": 42,
+      "image": "data/d3d3ecc79936db11/raw/000042.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 36,
+      "video_id": "67e58cd1fc026240",
+      "source": "real-actiondata-all/other/other74.mp4",
+      "frame": 67,
+      "image": "data/67e58cd1fc026240/raw/000067.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 37,
+      "video_id": "208f9c80c3059eeb",
+      "source": "real-actiondata-all/other/other75.mp4",
+      "frame": 39,
+      "image": "data/208f9c80c3059eeb/raw/000039.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 38,
+      "video_id": "17bebb0cd618b714",
+      "source": "real-actiondata-all/other/other76.mp4",
+      "frame": 65,
+      "image": "data/17bebb0cd618b714/raw/000065.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 39,
+      "video_id": "035c4ac13850cd4e",
+      "source": "real-actiondata-all/other/other77.mp4",
+      "frame": 74,
+      "image": "data/035c4ac13850cd4e/raw/000074.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 40,
+      "video_id": "312779ef28498796",
+      "source": "real-actiondata-all/other/other78.mp4",
+      "frame": 77,
+      "image": "data/312779ef28498796/raw/000077.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 41,
+      "video_id": "6b152ab8753c8f06",
+      "source": "real-actiondata-all/other/other79.mp4",
+      "frame": 41,
+      "image": "data/6b152ab8753c8f06/raw/000041.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 42,
+      "video_id": "90e4dc3779a106ef",
+      "source": "real-actiondata-all/other/other8.mp4",
+      "frame": 31,
+      "image": "data/90e4dc3779a106ef/raw/000031.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 43,
+      "video_id": "abeb396181055bac",
+      "source": "real-actiondata-all/other/other83.mp4",
+      "frame": 66,
+      "image": "data/abeb396181055bac/raw/000066.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 44,
+      "video_id": "0660b0ec5c38fdbc",
+      "source": "real-actiondata-all/other/other84.mp4",
+      "frame": 59,
+      "image": "data/0660b0ec5c38fdbc/raw/000059.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 45,
+      "video_id": "11738baf94a458a5",
+      "source": "real-actiondata-all/other/other85.mp4",
+      "frame": 56,
+      "image": "data/11738baf94a458a5/raw/000056.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 46,
+      "video_id": "3c4eaf22881d58b5",
+      "source": "real-actiondata-all/other/other87.mp4",
+      "frame": 48,
+      "image": "data/3c4eaf22881d58b5/raw/000048.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 47,
+      "video_id": "692f42ad7971542b",
+      "source": "real-actiondata-all/喝水.mp4",
+      "frame": 60,
+      "image": "data/692f42ad7971542b/raw/000060.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 48,
+      "video_id": "2f8105910668ee63",
+      "source": "real-actiondata-all/喝水1.mp4",
+      "frame": 37,
+      "image": "data/2f8105910668ee63/raw/000037.jpg",
+      "sheet": "audit/overview-03.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 49,
+      "video_id": "98e5b2023b50498c",
+      "source": "real-actiondata-all/喝水10.mp4",
+      "frame": 51,
+      "image": "data/98e5b2023b50498c/raw/000051.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 50,
+      "video_id": "3c1be7546e6abe4c",
+      "source": "real-actiondata-all/喝水11.mp4",
+      "frame": 50,
+      "image": "data/3c1be7546e6abe4c/raw/000050.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 51,
+      "video_id": "a10a2ba1533ca770",
+      "source": "real-actiondata-all/喝水12.mp4",
+      "frame": 57,
+      "image": "data/a10a2ba1533ca770/raw/000057.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 52,
+      "video_id": "5f67300e5f3bf4ba",
+      "source": "real-actiondata-all/喝水13.mp4",
+      "frame": 59,
+      "image": "data/5f67300e5f3bf4ba/raw/000059.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 53,
+      "video_id": "66a5c0f15fb59cf1",
+      "source": "real-actiondata-all/喝水14.mp4",
+      "frame": 42,
+      "image": "data/66a5c0f15fb59cf1/raw/000042.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 54,
+      "video_id": "87f6ca0216282a7a",
+      "source": "real-actiondata-all/喝水15.mp4",
+      "frame": 41,
+      "image": "data/87f6ca0216282a7a/raw/000041.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 55,
+      "video_id": "0c6f7f8f83b0ee00",
+      "source": "real-actiondata-all/喝水2.mp4",
+      "frame": 44,
+      "image": "data/0c6f7f8f83b0ee00/raw/000044.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 56,
+      "video_id": "17cfb24a53443a5a",
+      "source": "real-actiondata-all/喝水20.mp4",
+      "frame": 55,
+      "image": "data/17cfb24a53443a5a/raw/000055.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 57,
+      "video_id": "59679fde5a979f98",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "frame": 44,
+      "image": "data/59679fde5a979f98/raw/000044.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 58,
+      "video_id": "c25c3e234ecfa853",
+      "source": "real-actiondata-all/喝水23.mp4",
+      "frame": 41,
+      "image": "data/c25c3e234ecfa853/raw/000041.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 59,
+      "video_id": "89375c4397ad34c9",
+      "source": "real-actiondata-all/喝水29.mp4",
+      "frame": 45,
+      "image": "data/89375c4397ad34c9/raw/000045.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 60,
+      "video_id": "371297cdfb7efc6a",
+      "source": "real-actiondata-all/喝水3.mp4",
+      "frame": 73,
+      "image": "data/371297cdfb7efc6a/raw/000073.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 61,
+      "video_id": "0481827299813a56",
+      "source": "real-actiondata-all/喝水30.mp4",
+      "frame": 43,
+      "image": "data/0481827299813a56/raw/000043.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 62,
+      "video_id": "c7547c3416afe581",
+      "source": "real-actiondata-all/喝水31.mp4",
+      "frame": 43,
+      "image": "data/c7547c3416afe581/raw/000043.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 63,
+      "video_id": "1768113a9c6b3f61",
+      "source": "real-actiondata-all/喝水39.mp4",
+      "frame": 52,
+      "image": "data/1768113a9c6b3f61/raw/000052.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 64,
+      "video_id": "66b08dbe0db5a20e",
+      "source": "real-actiondata-all/喝水4.mp4",
+      "frame": 70,
+      "image": "data/66b08dbe0db5a20e/raw/000070.jpg",
+      "sheet": "audit/overview-04.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 65,
+      "video_id": "912a7119bb3fdd06",
+      "source": "real-actiondata-all/喝水40.mp4",
+      "frame": 43,
+      "image": "data/912a7119bb3fdd06/raw/000043.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 66,
+      "video_id": "252284bbb3974d0a",
+      "source": "real-actiondata-all/喝水41.mp4",
+      "frame": 53,
+      "image": "data/252284bbb3974d0a/raw/000053.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 67,
+      "video_id": "3e91ea8431c106a4",
+      "source": "real-actiondata-all/喝水42.mp4",
+      "frame": 39,
+      "image": "data/3e91ea8431c106a4/raw/000039.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 68,
+      "video_id": "8bf98cf74cd2d587",
+      "source": "real-actiondata-all/喝水43.mp4",
+      "frame": 45,
+      "image": "data/8bf98cf74cd2d587/raw/000045.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 69,
+      "video_id": "f157abb768a96786",
+      "source": "real-actiondata-all/喝水5.mp4",
+      "frame": 92,
+      "image": "data/f157abb768a96786/raw/000092.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 70,
+      "video_id": "6eb2b57242657a4f",
+      "source": "real-actiondata-all/喝水6.mp4",
+      "frame": 38,
+      "image": "data/6eb2b57242657a4f/raw/000038.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 71,
+      "video_id": "4d696b2f3c251452",
+      "source": "real-actiondata-all/喝水7.mp4",
+      "frame": 47,
+      "image": "data/4d696b2f3c251452/raw/000047.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 72,
+      "video_id": "fec443198ddeccad",
+      "source": "real-actiondata-all/喝水8.mp4",
+      "frame": 34,
+      "image": "data/fec443198ddeccad/raw/000034.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 73,
+      "video_id": "3fd3b533e82ba0cd",
+      "source": "real-actiondata-all/喝水9.mp4",
+      "frame": 49,
+      "image": "data/3fd3b533e82ba0cd/raw/000049.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 74,
+      "video_id": "d0ab8993eff23b00",
+      "source": "real-actiondata-all/挥手1.mp4",
+      "frame": 57,
+      "image": "data/d0ab8993eff23b00/raw/000057.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 75,
+      "video_id": "1e8fc5383e0c7ebf",
+      "source": "real-actiondata-all/挥手10.mp4",
+      "frame": 105,
+      "image": "data/1e8fc5383e0c7ebf/raw/000105.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 76,
+      "video_id": "92ea11e60e5d47c6",
+      "source": "real-actiondata-all/挥手11.mp4",
+      "frame": 114,
+      "image": "data/92ea11e60e5d47c6/raw/000114.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 77,
+      "video_id": "c99b19d78b33d718",
+      "source": "real-actiondata-all/挥手12.mp4",
+      "frame": 65,
+      "image": "data/c99b19d78b33d718/raw/000065.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 78,
+      "video_id": "97c76cf3392a9c1b",
+      "source": "real-actiondata-all/挥手13.mp4",
+      "frame": 66,
+      "image": "data/97c76cf3392a9c1b/raw/000066.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 79,
+      "video_id": "fc9a731d5218260f",
+      "source": "real-actiondata-all/挥手14.mp4",
+      "frame": 73,
+      "image": "data/fc9a731d5218260f/raw/000073.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 80,
+      "video_id": "6849b046cceacd3e",
+      "source": "real-actiondata-all/挥手15.mp4",
+      "frame": 45,
+      "image": "data/6849b046cceacd3e/raw/000045.jpg",
+      "sheet": "audit/overview-05.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 81,
+      "video_id": "9e9349dda617afef",
+      "source": "real-actiondata-all/挥手16.mp4",
+      "frame": 29,
+      "image": "data/9e9349dda617afef/raw/000029.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 82,
+      "video_id": "c8982ae82f07ef4c",
+      "source": "real-actiondata-all/挥手17.mp4",
+      "frame": 28,
+      "image": "data/c8982ae82f07ef4c/raw/000028.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 83,
+      "video_id": "4078760fdadd05f6",
+      "source": "real-actiondata-all/挥手18.mp4",
+      "frame": 33,
+      "image": "data/4078760fdadd05f6/raw/000033.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 84,
+      "video_id": "5014b0b77ada6229",
+      "source": "real-actiondata-all/挥手2.mp4",
+      "frame": 59,
+      "image": "data/5014b0b77ada6229/raw/000059.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 85,
+      "video_id": "c76c09cceba63e7c",
+      "source": "real-actiondata-all/挥手23.mp4",
+      "frame": 33,
+      "image": "data/c76c09cceba63e7c/raw/000033.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 86,
+      "video_id": "7ebba3f14b97c2e6",
+      "source": "real-actiondata-all/挥手24.mp4",
+      "frame": 31,
+      "image": "data/7ebba3f14b97c2e6/raw/000031.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 87,
+      "video_id": "6c9797473973ffee",
+      "source": "real-actiondata-all/挥手25.mp4",
+      "frame": 32,
+      "image": "data/6c9797473973ffee/raw/000032.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 88,
+      "video_id": "7a744e54208d220c",
+      "source": "real-actiondata-all/挥手27.mp4",
+      "frame": 35,
+      "image": "data/7a744e54208d220c/raw/000035.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 89,
+      "video_id": "b576f320195dfed9",
+      "source": "real-actiondata-all/挥手3.mp4",
+      "frame": 80,
+      "image": "data/b576f320195dfed9/raw/000080.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 90,
+      "video_id": "f50f562c1c39d257",
+      "source": "real-actiondata-all/挥手34.mp4",
+      "frame": 50,
+      "image": "data/f50f562c1c39d257/raw/000050.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 91,
+      "video_id": "c586e7f67a9ed31d",
+      "source": "real-actiondata-all/挥手35.mp4",
+      "frame": 44,
+      "image": "data/c586e7f67a9ed31d/raw/000044.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 92,
+      "video_id": "6c1950379c24ba7d",
+      "source": "real-actiondata-all/挥手36.mp4",
+      "frame": 37,
+      "image": "data/6c1950379c24ba7d/raw/000037.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 93,
+      "video_id": "e543d52561aec4ba",
+      "source": "real-actiondata-all/挥手37.mp4",
+      "frame": 33,
+      "image": "data/e543d52561aec4ba/raw/000033.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 94,
+      "video_id": "f61b47c06f87eb1e",
+      "source": "real-actiondata-all/挥手38.mp4",
+      "frame": 35,
+      "image": "data/f61b47c06f87eb1e/raw/000035.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 95,
+      "video_id": "dd1eeec69516c44b",
+      "source": "real-actiondata-all/挥手39.mp4",
+      "frame": 35,
+      "image": "data/dd1eeec69516c44b/raw/000035.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 96,
+      "video_id": "684c5ecbeb5d5fbd",
+      "source": "real-actiondata-all/挥手4.mp4",
+      "frame": 84,
+      "image": "data/684c5ecbeb5d5fbd/raw/000084.jpg",
+      "sheet": "audit/overview-06.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 97,
+      "video_id": "c938ebc5ebb6248d",
+      "source": "real-actiondata-all/挥手5.mp4",
+      "frame": 66,
+      "image": "data/c938ebc5ebb6248d/raw/000066.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 98,
+      "video_id": "df7aa782aaa5214d",
+      "source": "real-actiondata-all/挥手51.mp4",
+      "frame": 31,
+      "image": "data/df7aa782aaa5214d/raw/000031.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 99,
+      "video_id": "b74e6155d9e8e667",
+      "source": "real-actiondata-all/挥手52.mp4",
+      "frame": 30,
+      "image": "data/b74e6155d9e8e667/raw/000030.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 100,
+      "video_id": "015b1467f9ba6016",
+      "source": "real-actiondata-all/挥手53.mp4",
+      "frame": 31,
+      "image": "data/015b1467f9ba6016/raw/000031.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 101,
+      "video_id": "bbbaa4e6f7331a04",
+      "source": "real-actiondata-all/挥手6.mp4",
+      "frame": 53,
+      "image": "data/bbbaa4e6f7331a04/raw/000053.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 102,
+      "video_id": "344e4ea836d29ee5",
+      "source": "real-actiondata-all/挥手7.mp4",
+      "frame": 76,
+      "image": "data/344e4ea836d29ee5/raw/000076.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 103,
+      "video_id": "cc0741511b08ff42",
+      "source": "real-actiondata-all/挥手8.mp4",
+      "frame": 32,
+      "image": "data/cc0741511b08ff42/raw/000032.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 104,
+      "video_id": "cdb9e33c9032ef05",
+      "source": "real-actiondata-all/挥手9.mp4",
+      "frame": 36,
+      "image": "data/cdb9e33c9032ef05/raw/000036.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 105,
+      "video_id": "1d4d072b22d10fe1",
+      "source": "real-actiondata-all/捡东西1.mp4",
+      "frame": 36,
+      "image": "data/1d4d072b22d10fe1/raw/000036.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 106,
+      "video_id": "d143b29383cdc52c",
+      "source": "real-actiondata-all/捡东西10.mp4",
+      "frame": 38,
+      "image": "data/d143b29383cdc52c/raw/000038.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 107,
+      "video_id": "59f61340c1226601",
+      "source": "real-actiondata-all/捡东西11.mp4",
+      "frame": 42,
+      "image": "data/59f61340c1226601/raw/000042.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 108,
+      "video_id": "fe0c5234858ab18b",
+      "source": "real-actiondata-all/捡东西13.mp4",
+      "frame": 45,
+      "image": "data/fe0c5234858ab18b/raw/000045.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 109,
+      "video_id": "35ec19ec97d6d0f0",
+      "source": "real-actiondata-all/捡东西18.mp4",
+      "frame": 24,
+      "image": "data/35ec19ec97d6d0f0/raw/000024.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 110,
+      "video_id": "c0725bb2829586bb",
+      "source": "real-actiondata-all/捡东西19.mp4",
+      "frame": 37,
+      "image": "data/c0725bb2829586bb/raw/000037.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 111,
+      "video_id": "58f5536a4ea9f55b",
+      "source": "real-actiondata-all/捡东西20.mp4",
+      "frame": 39,
+      "image": "data/58f5536a4ea9f55b/raw/000039.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 112,
+      "video_id": "5f19ec7dd508ac1c",
+      "source": "real-actiondata-all/捡东西28.mp4",
+      "frame": 32,
+      "image": "data/5f19ec7dd508ac1c/raw/000032.jpg",
+      "sheet": "audit/overview-07.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 113,
+      "video_id": "715bfec24d7932ab",
+      "source": "real-actiondata-all/捡东西29.mp4",
+      "frame": 35,
+      "image": "data/715bfec24d7932ab/raw/000035.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 114,
+      "video_id": "17691f1609dbc2a2",
+      "source": "real-actiondata-all/捡东西30.mp4",
+      "frame": 33,
+      "image": "data/17691f1609dbc2a2/raw/000033.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 115,
+      "video_id": "32a98bbac8041855",
+      "source": "real-actiondata-all/捡东西31.mp4",
+      "frame": 40,
+      "image": "data/32a98bbac8041855/raw/000040.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 116,
+      "video_id": "5ef30e5406ceb045",
+      "source": "real-actiondata-all/捡东西32.mp4",
+      "frame": 41,
+      "image": "data/5ef30e5406ceb045/raw/000041.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 117,
+      "video_id": "7e25914fdc94d0f7",
+      "source": "real-actiondata-all/捡东西5.mp4",
+      "frame": 33,
+      "image": "data/7e25914fdc94d0f7/raw/000033.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 118,
+      "video_id": "487a0afbadd70908",
+      "source": "real-actiondata-all/捡东西6.mp4",
+      "frame": 44,
+      "image": "data/487a0afbadd70908/raw/000044.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 119,
+      "video_id": "b7e8859575a26b92",
+      "source": "real-actiondata-all/捡东西7.mp4",
+      "frame": 30,
+      "image": "data/b7e8859575a26b92/raw/000030.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 120,
+      "video_id": "694bca760d51b0de",
+      "source": "real-actiondata-all/捡东西8.mp4",
+      "frame": 28,
+      "image": "data/694bca760d51b0de/raw/000028.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 121,
+      "video_id": "5aa82626ac7ce644",
+      "source": "real-actiondata-all/捡东西9.mp4",
+      "frame": 29,
+      "image": "data/5aa82626ac7ce644/raw/000029.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 122,
+      "video_id": "cdf104cc6253966a",
+      "source": "real-actiondata-all/追逐1.mp4",
+      "frame": 37,
+      "image": "data/cdf104cc6253966a/raw/000037.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 123,
+      "video_id": "901784aacea534bc",
+      "source": "real-actiondata-all/追逐10.mp4",
+      "frame": 60,
+      "image": "data/901784aacea534bc/raw/000060.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 124,
+      "video_id": "c17f742cd8d7b896",
+      "source": "real-actiondata-all/追逐12.mp4",
+      "frame": 97,
+      "image": "data/c17f742cd8d7b896/raw/000097.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 125,
+      "video_id": "b4e95df4d1da6fae",
+      "source": "real-actiondata-all/追逐13.mp4",
+      "frame": 81,
+      "image": "data/b4e95df4d1da6fae/raw/000081.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 126,
+      "video_id": "0cedb2d93ba62ead",
+      "source": "real-actiondata-all/追逐14.mp4",
+      "frame": 67,
+      "image": "data/0cedb2d93ba62ead/raw/000067.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 127,
+      "video_id": "32aa9118ccdb4725",
+      "source": "real-actiondata-all/追逐19.mp4",
+      "frame": 37,
+      "image": "data/32aa9118ccdb4725/raw/000037.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 128,
+      "video_id": "f21a7596fffdf10d",
+      "source": "real-actiondata-all/追逐2.mp4",
+      "frame": 30,
+      "image": "data/f21a7596fffdf10d/raw/000030.jpg",
+      "sheet": "audit/overview-08.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 129,
+      "video_id": "36798ce52c2bdec4",
+      "source": "real-actiondata-all/追逐20.mp4",
+      "frame": 47,
+      "image": "data/36798ce52c2bdec4/raw/000047.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 130,
+      "video_id": "a288f3265d506e44",
+      "source": "real-actiondata-all/追逐23.mp4",
+      "frame": 30,
+      "image": "data/a288f3265d506e44/raw/000030.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 131,
+      "video_id": "0316340911c7335a",
+      "source": "real-actiondata-all/追逐3.mp4",
+      "frame": 56,
+      "image": "data/0316340911c7335a/raw/000056.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 132,
+      "video_id": "de33753bf592c4cc",
+      "source": "real-actiondata-all/追逐30.mp4",
+      "frame": 27,
+      "image": "data/de33753bf592c4cc/raw/000027.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 133,
+      "video_id": "ae0590a2080efe39",
+      "source": "real-actiondata-all/追逐32.mp4",
+      "frame": 29,
+      "image": "data/ae0590a2080efe39/raw/000029.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 134,
+      "video_id": "9023ebf8d99f6a15",
+      "source": "real-actiondata-all/追逐45.mp4",
+      "frame": 20,
+      "image": "data/9023ebf8d99f6a15/raw/000020.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 135,
+      "video_id": "bcb2e7206d754bc7",
+      "source": "real-actiondata-all/追逐6.mp4",
+      "frame": 49,
+      "image": "data/bcb2e7206d754bc7/raw/000049.jpg",
+      "sheet": "audit/overview-09.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 1,
+      "video_id": "9e8f8386f8d22801",
+      "source": "real-actiondata-0909/other/2屏_黑_无.avi",
+      "frame": 238,
+      "image": "data/9e8f8386f8d22801/raw/000238.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 2,
+      "video_id": "e0034e97384a701e",
+      "source": "real-actiondata-0909/other/5屏_黑_无.avi",
+      "frame": 112,
+      "image": "data/e0034e97384a701e/raw/000112.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 3,
+      "video_id": "f6d19d6a591f44c9",
+      "source": "real-actiondata-0909/other/中心屏_黑_无.avi",
+      "frame": 218,
+      "image": "data/f6d19d6a591f44c9/raw/000218.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 4,
+      "video_id": "bfd2db8cb178efbe",
+      "source": "real-actiondata-all/追逐11.mp4",
+      "frame": 85,
+      "image": "data/bfd2db8cb178efbe/raw/000085.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 5,
+      "video_id": "225fb5f887e81816",
+      "source": "real-actiondata-all/追逐18.mp4",
+      "frame": 28,
+      "image": "data/225fb5f887e81816/raw/000028.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 6,
+      "video_id": "aa13c847a4ce6f72",
+      "source": "real-actiondata-all/追逐21.mp4",
+      "frame": 42,
+      "image": "data/aa13c847a4ce6f72/raw/000042.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 7,
+      "video_id": "913a05b8e6828486",
+      "source": "real-actiondata-all/追逐31.mp4",
+      "frame": 42,
+      "image": "data/913a05b8e6828486/raw/000042.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 8,
+      "video_id": "e15ce2bb67f79eca",
+      "source": "real-actiondata-all/追逐33.mp4",
+      "frame": 33,
+      "image": "data/e15ce2bb67f79eca/raw/000033.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 9,
+      "video_id": "f9eebd24679a7e47",
+      "source": "real-actiondata-all/追逐34.mp4",
+      "frame": 46,
+      "image": "data/f9eebd24679a7e47/raw/000046.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 10,
+      "video_id": "5fc474000ad8b057",
+      "source": "real-actiondata-all/追逐4.mp4",
+      "frame": 61,
+      "image": "data/5fc474000ad8b057/raw/000061.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 11,
+      "video_id": "4e19f9c50c1a54c0",
+      "source": "real-actiondata-all/追逐46.mp4",
+      "frame": 27,
+      "image": "data/4e19f9c50c1a54c0/raw/000027.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 12,
+      "video_id": "df5b8f29122410a2",
+      "source": "real-actiondata-all/追逐47.mp4",
+      "frame": 34,
+      "image": "data/df5b8f29122410a2/raw/000034.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 13,
+      "video_id": "2dfb81cf7be15dda",
+      "source": "real-actiondata-all/追逐5.mp4",
+      "frame": 48,
+      "image": "data/2dfb81cf7be15dda/raw/000048.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 14,
+      "video_id": "0a18f29b730586c2",
+      "source": "real-actiondata-all/追逐7.mp4",
+      "frame": 35,
+      "image": "data/0a18f29b730586c2/raw/000035.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 15,
+      "video_id": "5bb9be3c95774ee4",
+      "source": "real-actiondata-all/追逐9.mp4",
+      "frame": 39,
+      "image": "data/5bb9be3c95774ee4/raw/000039.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 16,
+      "video_id": "68f13a8512ef7609",
+      "source": "real-actiondata/喝水.mp4",
+      "frame": 308,
+      "image": "data/68f13a8512ef7609/raw/000308.jpg",
+      "sheet": "audit/overview-01.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 17,
+      "video_id": "314915317e94aa69",
+      "source": "real-actiondata/喝水1.mp4",
+      "frame": 82,
+      "image": "data/314915317e94aa69/raw/000082.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 18,
+      "video_id": "7b53648a940fbcba",
+      "source": "real-actiondata/喝水10.mp4",
+      "frame": 92,
+      "image": "data/7b53648a940fbcba/raw/000092.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 19,
+      "video_id": "16787743e3446a1a",
+      "source": "real-actiondata/喝水11.mp4",
+      "frame": 69,
+      "image": "data/16787743e3446a1a/raw/000069.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 20,
+      "video_id": "e7e805c9abfc755e",
+      "source": "real-actiondata/喝水12.mp4",
+      "frame": 57,
+      "image": "data/e7e805c9abfc755e/raw/000057.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 21,
+      "video_id": "0fd5052f531d2567",
+      "source": "real-actiondata/喝水2.mp4",
+      "frame": 96,
+      "image": "data/0fd5052f531d2567/raw/000096.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 22,
+      "video_id": "35f30d6b84db9fa2",
+      "source": "real-actiondata/喝水3.mp4",
+      "frame": 44,
+      "image": "data/35f30d6b84db9fa2/raw/000044.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 23,
+      "video_id": "427b2d3c2fad1d3c",
+      "source": "real-actiondata/喝水4.mp4",
+      "frame": 85,
+      "image": "data/427b2d3c2fad1d3c/raw/000085.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 24,
+      "video_id": "2ff1431546aa2bc4",
+      "source": "real-actiondata/喝水5.mp4",
+      "frame": 80,
+      "image": "data/2ff1431546aa2bc4/raw/000080.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 25,
+      "video_id": "bdddda5a72273061",
+      "source": "real-actiondata/喝水6.mp4",
+      "frame": 131,
+      "image": "data/bdddda5a72273061/raw/000131.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 26,
+      "video_id": "827a586dc386a23a",
+      "source": "real-actiondata/喝水7.mp4",
+      "frame": 79,
+      "image": "data/827a586dc386a23a/raw/000079.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 27,
+      "video_id": "ae5c589b531cb804",
+      "source": "real-actiondata/喝水8.mp4",
+      "frame": 102,
+      "image": "data/ae5c589b531cb804/raw/000102.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 28,
+      "video_id": "0237087ac4147814",
+      "source": "real-actiondata/喝水9.mp4",
+      "frame": 77,
+      "image": "data/0237087ac4147814/raw/000077.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 29,
+      "video_id": "cbcdd343aba8623e",
+      "source": "real-actiondata/抛物.mp4",
+      "frame": 259,
+      "image": "data/cbcdd343aba8623e/raw/000259.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 30,
+      "video_id": "6d3442ab1f3262e0",
+      "source": "real-actiondata/挥手.mp4",
+      "frame": 377,
+      "image": "data/6d3442ab1f3262e0/raw/000377.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 31,
+      "video_id": "8cedf1246047632a",
+      "source": "real-actiondata/捡东西.mp4",
+      "frame": 274,
+      "image": "data/8cedf1246047632a/raw/000274.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    },
+    {
+      "number": 32,
+      "video_id": "99ab4050cc230278",
+      "source": "real-actiondata/摔倒.mp4",
+      "frame": 266,
+      "image": "data/99ab4050cc230278/raw/000266.jpg",
+      "sheet": "audit/overview-02.jpg",
+      "inspection": "Codex inspected overview midpoint; not exhaustive joint or full-video verification",
+      "include_in_training": false
+    }
+  ],
+  "user_confirmed": false,
+  "description": "Overview visual inspection record; model outputs remain drafts.",
+  "unique_source_midpoints_inspected": 167
+}

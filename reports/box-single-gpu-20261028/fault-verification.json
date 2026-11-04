@@ -1,0 +1,1038 @@
+{
+  "passed": true,
+  "seconds": 110,
+  "recoveries": {
+    "source_resume": {
+      "health_ok_seconds": 0.5444509340450168,
+      "receiver_activity_seconds": 0.020233154762536287
+    },
+    "output_up": {
+      "health_ok_seconds": 8.081840603146702,
+      "receiver_activity_seconds": 12.747635572217405
+    },
+    "source_up": {
+      "health_ok_seconds": 5.527142826933414,
+      "receiver_activity_seconds": 0.04492530785501003
+    }
+  },
+  "outage_indications": {
+    "source_pause": {
+      "statuses": {
+        "ok": 8,
+        "degraded": 3
+      },
+      "http_statuses": {
+        "200": 8,
+        "503": 3
+      }
+    },
+    "output_down": {
+      "statuses": {
+        "degraded": 10
+      },
+      "http_statuses": {
+        "200": 10
+      }
+    },
+    "source_down": {
+      "statuses": {
+        "degraded": 10
+      },
+      "http_statuses": {
+        "503": 10
+      }
+    }
+  },
+  "epochs": [
+    0,
+    1,
+    2
+  ],
+  "reconnects": 2,
+  "push_restarts": 4,
+  "received_frames": [
+    973,
+    266
+  ],
+  "expected_receiver_disconnects": [
+    51,
+    5
+  ],
+  "stale_processing": [
+    {
+      "outage": "source_pause",
+      "processed_frames_after_three_seconds": 2,
+      "last_output_after_fault_seconds": 4.203723581973463
+    },
+    {
+      "outage": "source_down",
+      "processed_frames_after_three_seconds": 0,
+      "last_output_after_fault_seconds": 0.17131755501031876
+    }
+  ],
+  "events": 194,
+  "clips_saved": 13,
+  "clips_context_complete": 10,
+  "clip_frame_drops": 0,
+  "final_clip_counters": {
+    "clips_failed": 0,
+    "clips_forced": 0,
+    "clips_abandoned": 0,
+    "write_errors": 0
+  },
+  "session_clips": {
+    "frames_recording_input": 1274,
+    "max_recorders": 2,
+    "events_received": 194,
+    "capture_discontinuities": 4,
+    "events_without_output_frame": 0,
+    "clips_saved": 13,
+    "clips_abandoned": 0,
+    "clips_forced": 0,
+    "frames_dropped": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "uploads_dropped": 0,
+    "totals": {
+      "clips_saved": 13,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0
+    },
+    "clips": [
+      {
+        "session": "E000_T008_G000/R00001",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9608,
+        "labels_in_clip": {
+          "Waving": 7
+        },
+        "frames": 84,
+        "fps": 13.0,
+        "duration_seconds": 5.523,
+        "trigger_stream_time": 21.458,
+        "first_event": {
+          "frame_index": 512,
+          "timestamp": 21.458,
+          "label": "Waving",
+          "confidence": 0.9529,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 19.499596090056002,
+          "writer_drop_start": 0,
+          "last_action_source_time": 24.702822187915444,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "输入断流/时间间隙，尾部上下文不完整",
+        "started_at": "2026-10-28 22:07:17",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E000_T008_G000/R00001/waving/E000_T008_G000_R00001_20261028_220721_waving_0001.mp4",
+        "frames_written": 72,
+        "capture_fps": 15.209,
+        "playback_speed": 0.997,
+        "person_id": 8,
+        "history_generation": 0,
+        "capture_epoch": 0,
+        "action_key": "waving",
+        "recording_id": 1,
+        "start_source_time": 19.499596090056002,
+        "end_source_time": 25.022596090056002,
+        "pre_context_available": 1.9584039099439963,
+        "post_context_available": 0.31977390214055745,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      },
+      {
+        "session": "E001_T002_G000/R00002",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9448,
+        "labels_in_clip": {
+          "Waving": 2
+        },
+        "frames": 65,
+        "fps": 12.0,
+        "duration_seconds": 4.511,
+        "trigger_stream_time": 35.582,
+        "first_event": {
+          "frame_index": 812,
+          "timestamp": 35.582,
+          "label": "Waving",
+          "confidence": 0.9269,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 33.63030568510294,
+          "writer_drop_start": 0,
+          "last_action_source_time": 36.102515316102654,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:31",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T002_G000/R00002/waving/E001_T002_G000_R00002_20261028_220735_waving_0001.mp4",
+        "frames_written": 55,
+        "capture_fps": 14.409,
+        "playback_speed": 0.984,
+        "person_id": 2,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "waving",
+        "recording_id": 2,
+        "start_source_time": 33.63030568510294,
+        "end_source_time": 38.14130568510294,
+        "pre_context_available": 1.9516943148970611,
+        "post_context_available": 2.0387903690002886,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T002_G000/R00003",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9595,
+        "labels_in_clip": {
+          "Waving": 11
+        },
+        "frames": 139,
+        "fps": 12.0,
+        "duration_seconds": 9.927,
+        "trigger_stream_time": 38.223,
+        "first_event": {
+          "frame_index": 879,
+          "timestamp": 38.223,
+          "label": "Waving",
+          "confidence": 0.9551,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 36.25588916614652,
+          "writer_drop_start": 0,
+          "last_action_source_time": 44.14609073381871,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:34",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T002_G000/R00003/waving/E001_T002_G000_R00003_20261028_220737_waving_0001.mp4",
+        "frames_written": 120,
+        "capture_fps": 14.002,
+        "playback_speed": 0.993,
+        "person_id": 2,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "waving",
+        "recording_id": 3,
+        "start_source_time": 36.25588916614652,
+        "end_source_time": 46.182889166146516,
+        "pre_context_available": 1.9671108338534822,
+        "post_context_available": 2.0367984323278066,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T002_G000/R00004",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9594,
+        "labels_in_clip": {
+          "Waving": 3
+        },
+        "frames": 76,
+        "fps": 12.0,
+        "duration_seconds": 5.078,
+        "trigger_stream_time": 47.3,
+        "first_event": {
+          "frame_index": 1106,
+          "timestamp": 47.3,
+          "label": "Waving",
+          "confidence": 0.9541,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 45.34283900493756,
+          "writer_drop_start": 0,
+          "last_action_source_time": 48.38479811698198,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:43",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T002_G000/R00004/waving/E001_T002_G000_R00004_20261028_220746_waving_0001.mp4",
+        "frames_written": 61,
+        "capture_fps": 14.967,
+        "playback_speed": 0.999,
+        "person_id": 2,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "waving",
+        "recording_id": 4,
+        "start_source_time": 45.34283900493756,
+        "end_source_time": 50.42083900493756,
+        "pre_context_available": 1.9571609950624378,
+        "post_context_available": 2.036040887955579,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T003_G000/R00005",
+        "seq": 1,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9619,
+        "labels_in_clip": {
+          "Drinking water": 4
+        },
+        "frames": 85,
+        "fps": 12.0,
+        "duration_seconds": 5.68,
+        "trigger_stream_time": 50.543,
+        "first_event": {
+          "frame_index": 1187,
+          "timestamp": 50.543,
+          "label": "Drinking water",
+          "confidence": 0.9378,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 48.57919615181163,
+          "writer_drop_start": 0,
+          "last_action_source_time": 52.21855692192912,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:46",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T003_G000/R00005/drinking_water/E001_T003_G000_R00005_20261028_220750_drinking_water_0001.mp4",
+        "frames_written": 69,
+        "capture_fps": 14.965,
+        "playback_speed": 0.988,
+        "person_id": 3,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "drinking_water",
+        "recording_id": 5,
+        "start_source_time": 48.57919615181163,
+        "end_source_time": 54.25919615181163,
+        "pre_context_available": 1.9638038481883697,
+        "post_context_available": 2.0406392298825082,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T004_G000/R00006",
+        "seq": 1,
+        "label": "Running",
+        "label_key": "running",
+        "confidence": 0.9592,
+        "labels_in_clip": {
+          "Running": 2
+        },
+        "frames": 69,
+        "fps": 12.0,
+        "duration_seconds": 4.593,
+        "trigger_stream_time": 53.581,
+        "first_event": {
+          "frame_index": 1263,
+          "timestamp": 53.581,
+          "label": "Running",
+          "confidence": 0.9538,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 51.584775913041085,
+          "writer_drop_start": 0,
+          "last_action_source_time": 54.14514114288613,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:49",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T004_G000/R00006/running/E001_T004_G000_R00006_20261028_220753_running_0001.mp4",
+        "frames_written": 56,
+        "capture_fps": 15.023,
+        "playback_speed": 0.984,
+        "person_id": 4,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "running",
+        "recording_id": 6,
+        "start_source_time": 51.584775913041085,
+        "end_source_time": 56.17777591304109,
+        "pre_context_available": 1.996224086958918,
+        "post_context_available": 2.0326347701549565,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T006_G000/R00007",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9338,
+        "labels_in_clip": {
+          "Waving": 2
+        },
+        "frames": 70,
+        "fps": 14.0,
+        "duration_seconds": 4.512,
+        "trigger_stream_time": 59.624,
+        "first_event": {
+          "frame_index": 1414,
+          "timestamp": 59.624,
+          "label": "Waving",
+          "confidence": 0.9318,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 57.66506733093411,
+          "writer_drop_start": 0,
+          "last_action_source_time": 60.13762635411695,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:56",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00007/waving/E001_T006_G000_R00007_20261028_220759_waving_0001.mp4",
+        "frames_written": 64,
+        "capture_fps": 15.514,
+        "playback_speed": 0.987,
+        "person_id": 6,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "waving",
+        "recording_id": 7,
+        "start_source_time": 57.66506733093411,
+        "end_source_time": 62.17706733093411,
+        "pre_context_available": 1.958932669065895,
+        "post_context_available": 2.0394409768171613,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T006_G000/R00008",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9471,
+        "labels_in_clip": {
+          "Picking up object": 2
+        },
+        "frames": 69,
+        "fps": 12.0,
+        "duration_seconds": 4.529,
+        "trigger_stream_time": 62.218,
+        "first_event": {
+          "frame_index": 1479,
+          "timestamp": 62.218,
+          "label": "Picking up object",
+          "confidence": 0.9339,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 60.218572604004294,
+          "writer_drop_start": 0,
+          "last_action_source_time": 62.74244838487357,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:07:58",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00008/picking_up_object/E001_T006_G000_R00008_20261028_220801_picking_up_object_0001.mp4",
+        "frames_written": 55,
+        "capture_fps": 15.235,
+        "playback_speed": 0.988,
+        "person_id": 6,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 8,
+        "start_source_time": 60.218572604004294,
+        "end_source_time": 64.74757260400429,
+        "pre_context_available": 1.9994273959957098,
+        "post_context_available": 2.005124219130721,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T006_G000/R00009",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9538,
+        "labels_in_clip": {
+          "Picking up object": 3
+        },
+        "frames": 75,
+        "fps": 12.0,
+        "duration_seconds": 5.125,
+        "trigger_stream_time": 66.423,
+        "first_event": {
+          "frame_index": 1584,
+          "timestamp": 66.423,
+          "label": "Picking up object",
+          "confidence": 0.9316,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 64.45762941613793,
+          "writer_drop_start": 0,
+          "last_action_source_time": 67.53743219515309,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:08:02",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00009/picking_up_object/E001_T006_G000_R00009_20261028_220806_picking_up_object_0001.mp4",
+        "frames_written": 62,
+        "capture_fps": 14.634,
+        "playback_speed": 0.992,
+        "person_id": 6,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 9,
+        "start_source_time": 64.45762941613793,
+        "end_source_time": 69.58262941613793,
+        "pre_context_available": 1.965370583862068,
+        "post_context_available": 2.0451972209848464,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T006_G000/R00010",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9555,
+        "labels_in_clip": {
+          "Picking up object": 2
+        },
+        "frames": 66,
+        "fps": 12.0,
+        "duration_seconds": 4.561,
+        "trigger_stream_time": 70.783,
+        "first_event": {
+          "frame_index": 1693,
+          "timestamp": 70.783,
+          "label": "Picking up object",
+          "confidence": 0.9461,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 68.81665244791657,
+          "writer_drop_start": 0,
+          "last_action_source_time": 71.30559909390286,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:08:07",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00010/picking_up_object/E001_T006_G000_R00010_20261028_220810_picking_up_object_0001.mp4",
+        "frames_written": 55,
+        "capture_fps": 14.471,
+        "playback_speed": 0.995,
+        "person_id": 6,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 10,
+        "start_source_time": 68.81665244791657,
+        "end_source_time": 73.37765244791657,
+        "pre_context_available": 1.966347552083434,
+        "post_context_available": 2.0720533540137183,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T006_G000/R00011",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9276,
+        "labels_in_clip": {
+          "Picking up object": 1
+        },
+        "frames": 46,
+        "fps": 12.0,
+        "duration_seconds": 3.163,
+        "trigger_stream_time": 73.5,
+        "first_event": {
+          "frame_index": 1761,
+          "timestamp": 73.5,
+          "label": "Picking up object",
+          "confidence": 0.9276,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 71.54160356381908,
+          "writer_drop_start": 0,
+          "last_action_source_time": 73.49976116977632,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "输入断流/时间间隙，尾部上下文不完整",
+        "started_at": "2026-10-28 22:08:09",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00011/picking_up_object/E001_T006_G000_R00011_20261028_220813_picking_up_object_0001.mp4",
+        "frames_written": 38,
+        "capture_fps": 14.543,
+        "playback_speed": 0.999,
+        "person_id": 6,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 11,
+        "start_source_time": 71.54160356381908,
+        "end_source_time": 74.70460356381908,
+        "pre_context_available": 1.9583964361809194,
+        "post_context_available": 1.2048423940427568,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      },
+      {
+        "session": "E002_T010_G000/R00012",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9603,
+        "labels_in_clip": {
+          "Waving": 13
+        },
+        "frames": 173,
+        "fps": 12.0,
+        "duration_seconds": 11.521,
+        "trigger_stream_time": 107.38,
+        "first_event": {
+          "frame_index": 2294,
+          "timestamp": 107.38,
+          "label": "Waving",
+          "confidence": 0.9506,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 105.41992474207655,
+          "writer_drop_start": 0,
+          "last_action_source_time": 114.85913510480896,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-28 22:08:43",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E002_T010_G000/R00012/waving/E002_T010_G000_R00012_20261028_220846_waving_0001.mp4",
+        "frames_written": 139,
+        "capture_fps": 15.016,
+        "playback_speed": 0.995,
+        "person_id": 10,
+        "history_generation": 8589934592,
+        "capture_epoch": 2,
+        "action_key": "waving",
+        "recording_id": 12,
+        "start_source_time": 105.41992474207655,
+        "end_source_time": 116.94092474207655,
+        "pre_context_available": 1.9600752579234495,
+        "post_context_available": 2.0817896372675904,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E002_T010_G000/R00013",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9579,
+        "labels_in_clip": {
+          "Waving": 5
+        },
+        "frames": 71,
+        "fps": 12.0,
+        "duration_seconds": 4.719,
+        "trigger_stream_time": 117.022,
+        "first_event": {
+          "frame_index": 2535,
+          "timestamp": 117.022,
+          "label": "Waving",
+          "confidence": 0.9552,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 115.09559128293768,
+          "writer_drop_start": 0,
+          "last_action_source_time": 119.17811371572316,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "服务停止，尾部上下文可能不完整",
+        "started_at": "2026-10-28 22:08:53",
+        "video": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/faults/clips/input/20261028_220657_2603232/E002_T010_G000/R00013/waving/E002_T010_G000_R00013_20261028_220856_waving_0001.mp4",
+        "frames_written": 57,
+        "capture_fps": 15.046,
+        "playback_speed": 0.993,
+        "person_id": 10,
+        "history_generation": 8589934592,
+        "capture_epoch": 2,
+        "action_key": "waving",
+        "recording_id": 13,
+        "start_source_time": 115.09559128293768,
+        "end_source_time": 119.81459128293767,
+        "pre_context_available": 1.9264087170623299,
+        "post_context_available": 0.6364775672145129,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      }
+    ],
+    "object_overlay": {
+      "max_history_bytes": 3199680,
+      "frames": 1274,
+      "frames_with_objects": 66,
+      "boxes": 73,
+      "followed_boxes": 44,
+      "alignment_hidden": 16
+    },
+    "writer_alive": false,
+    "recovery_stage_dir": "/tmp/darkpipe_person_clips_75y626ra",
+    "uploads_pending": 0,
+    "write_error": null,
+    "error": null
+  },
+  "clip_decode": [
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T003_G000/R00005/drinking_water/E001_T003_G000_R00005_20261028_220750_drinking_water_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "69"
+          }
+        ],
+        "format": {
+          "duration": "5.750000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E000_T008_G000/R00001/waving/E000_T008_G000_R00001_20261028_220721_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "13/1",
+            "nb_frames": "72"
+          }
+        ],
+        "format": {
+          "duration": "5.539000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00009/picking_up_object/E001_T006_G000_R00009_20261028_220806_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "62"
+          }
+        ],
+        "format": {
+          "duration": "5.167000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00010/picking_up_object/E001_T006_G000_R00010_20261028_220810_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "55"
+          }
+        ],
+        "format": {
+          "duration": "4.584000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00011/picking_up_object/E001_T006_G000_R00011_20261028_220813_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "38"
+          }
+        ],
+        "format": {
+          "duration": "3.167000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00008/picking_up_object/E001_T006_G000_R00008_20261028_220801_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "55"
+          }
+        ],
+        "format": {
+          "duration": "4.584000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T006_G000/R00007/waving/E001_T006_G000_R00007_20261028_220759_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "14/1",
+            "nb_frames": "64"
+          }
+        ],
+        "format": {
+          "duration": "4.572000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T004_G000/R00006/running/E001_T004_G000_R00006_20261028_220753_running_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "56"
+          }
+        ],
+        "format": {
+          "duration": "4.667000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E002_T010_G000/R00013/waving/E002_T010_G000_R00013_20261028_220856_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "57"
+          }
+        ],
+        "format": {
+          "duration": "4.750000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E002_T010_G000/R00012/waving/E002_T010_G000_R00012_20261028_220846_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "139"
+          }
+        ],
+        "format": {
+          "duration": "11.584000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T002_G000/R00003/waving/E001_T002_G000_R00003_20261028_220737_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "120"
+          }
+        ],
+        "format": {
+          "duration": "10.000000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T002_G000/R00002/waving/E001_T002_G000_R00002_20261028_220735_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "55"
+          }
+        ],
+        "format": {
+          "duration": "4.584000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261028_220657_2603232/E001_T002_G000/R00004/waving/E001_T002_G000_R00004_20261028_220746_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 720,
+            "height": 404,
+            "avg_frame_rate": "12/1",
+            "nb_frames": "61"
+          }
+        ],
+        "format": {
+          "duration": "5.084000"
+        }
+      },
+      "stderr": ""
+    }
+  ],
+  "normal_stop": true,
+  "owned_processes_alive": 0,
+  "limitation": "Controlled localhost outages, local storage; not real NFS failure or unlimited reliability guarantee. RTMP may repeat last image briefly until input-lost warning appears. Receiver activity after input recovery includes warning/last-image frames; it is not fresh-source end-to-end recovery latency. A few buffered in-flight frames can finish after the source pause."
+}

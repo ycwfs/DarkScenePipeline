@@ -1,0 +1,190 @@
+{
+  "runs": 1,
+  "training_runs": 0,
+  "bootstrap_seed": 25,
+  "bootstrap_repeats": 5000,
+  "contrasts": [
+    {
+      "left": [
+        "n",
+        "native_raw"
+      ],
+      "right": [
+        "m",
+        "native_raw"
+      ],
+      "cls": "bottle",
+      "groups": 4,
+      "GT": 12,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "n",
+        "native_raw"
+      ],
+      "right": [
+        "m",
+        "native_raw"
+      ],
+      "cls": "phone",
+      "groups": 3,
+      "GT": 3,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "s",
+        "native_raw"
+      ],
+      "right": [
+        "m",
+        "native_raw"
+      ],
+      "cls": "bottle",
+      "groups": 4,
+      "GT": 12,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "s",
+        "native_raw"
+      ],
+      "right": [
+        "m",
+        "native_raw"
+      ],
+      "cls": "phone",
+      "groups": 3,
+      "GT": 3,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "s",
+        "native_raw"
+      ],
+      "right": [
+        "s",
+        "small_raw"
+      ],
+      "cls": "bottle",
+      "groups": 4,
+      "GT": 12,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "s",
+        "native_raw"
+      ],
+      "right": [
+        "s",
+        "small_raw"
+      ],
+      "cls": "phone",
+      "groups": 3,
+      "GT": 3,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "s",
+        "small_enhanced"
+      ],
+      "right": [
+        "s",
+        "small_raw"
+      ],
+      "cls": "bottle",
+      "groups": 4,
+      "GT": 12,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "s",
+        "small_enhanced"
+      ],
+      "right": [
+        "s",
+        "small_raw"
+      ],
+      "cls": "phone",
+      "groups": 3,
+      "GT": 3,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "left": [
+        "m_finetuned",
+        "native_raw"
+      ],
+      "right": [
+        "m_finetuned",
+        "small_enhanced"
+      ],
+      "cls": "bottle",
+      "groups": 4,
+      "GT": 12,
+      "recall_delta": 0.08333333333333333,
+      "CI95": [
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "left": [
+        "m_finetuned",
+        "native_raw"
+      ],
+      "right": [
+        "m_finetuned",
+        "small_enhanced"
+      ],
+      "cls": "phone",
+      "groups": 3,
+      "GT": 3,
+      "recall_delta": 0.0,
+      "CI95": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "method": "paired source-group percentile bootstrap; descriptive same-scene auxiliary labels",
+  "significance": "No p values: single fixed model run, sparse classes, correlated scenes, exploratory feedback"
+}

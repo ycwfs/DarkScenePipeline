@@ -1,0 +1,658 @@
+{
+  "records": [
+    {
+      "bin_index": 0,
+      "sample_id": "1-1",
+      "source": "real-actiondata-all/喝水8.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "drink",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "fec443198ddeccad295ec8a96c93a5a288c852a9ffa5371a16daafe98ae09f0c",
+      "bytes": 2082111,
+      "frames": 69,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.76,
+      "validation": "container metadata only; full decode pending",
+      "id": "fec443198ddeccad",
+      "aliases": [
+        "real-actiondata-all/喝水8.mp4",
+        "real-actiondata-0909/喝水8.mp4",
+        "real-actiondata-cutdrink/喝水8.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "frozen_split": {
+        "video_id": "fec443198ddeccad",
+        "source": "real-actiondata-all/喝水8.mp4",
+        "group": "692f42ad7971542b",
+        "split": "train",
+        "video_label": "drink",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 0,
+      "sample_id": "1-2",
+      "source": "real-actiondata-all/追逐7.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "chase",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "0a18f29b730586c2eb6b2f41406d221bbe08e3e2c3992577d482e3162085d1e7",
+      "bytes": 4192307,
+      "frames": 70,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.8,
+      "validation": "container metadata only; full decode pending",
+      "id": "0a18f29b730586c2",
+      "aliases": [
+        "real-actiondata-all/追逐7.mp4",
+        "real-actiondata-0909/追逐7.mp4",
+        "real-actiondata/追逐7.mp4",
+        "real-actiondata-cutdrink/追逐7.mp4"
+      ],
+      "datasets": [
+        "real-actiondata",
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "frozen_split": {
+        "video_id": "0a18f29b730586c2",
+        "source": "real-actiondata-all/追逐7.mp4",
+        "group": "cdf104cc6253966a",
+        "split": "train",
+        "video_label": "chase",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 0,
+      "sample_id": "1-3",
+      "source": "real-actiondata-all/挥手35.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "c586e7f67a9ed31d9fd9e1a01c21646fe186920472403918a0c8cf689fc05d88",
+      "bytes": 7866345,
+      "frames": 88,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.52,
+      "validation": "container metadata only; full decode pending",
+      "id": "c586e7f67a9ed31d",
+      "aliases": [
+        "real-actiondata-all/挥手35.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "c586e7f67a9ed31d",
+        "source": "real-actiondata-all/挥手35.mp4",
+        "group": "c586e7f67a9ed31d",
+        "split": "train",
+        "video_label": "wave",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 1,
+      "sample_id": "2-1",
+      "source": "real-actiondata-all/挥手18.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "4078760fdadd05f6a84b598b07facd6b404bb2482830e0e15f32573abd187da7",
+      "bytes": 5990069,
+      "frames": 67,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.68,
+      "validation": "container metadata only; full decode pending",
+      "id": "4078760fdadd05f6",
+      "aliases": [
+        "real-actiondata-all/挥手18.mp4",
+        "real-actiondata-0909/挥手18.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "4078760fdadd05f6",
+        "source": "real-actiondata-all/挥手18.mp4",
+        "group": "d0ab8993eff23b00",
+        "split": "train",
+        "video_label": "wave",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 1,
+      "sample_id": "2-2",
+      "source": "real-actiondata-all/喝水12.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "drink",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "a10a2ba1533ca770e166a554841f6051117ef4cebdb41ed159458e9f472446bb",
+      "bytes": 1045957,
+      "frames": 115,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 4.6,
+      "validation": "container metadata only; full decode pending",
+      "id": "a10a2ba1533ca770",
+      "aliases": [
+        "real-actiondata-all/喝水12.mp4",
+        "real-actiondata-0909/喝水12.mp4",
+        "real-actiondata-cutdrink/喝水12.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "frozen_split": {
+        "video_id": "a10a2ba1533ca770",
+        "source": "real-actiondata-all/喝水12.mp4",
+        "group": "692f42ad7971542b",
+        "split": "train",
+        "video_label": "drink",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 1,
+      "sample_id": "2-3",
+      "source": "real-actiondata-all/other/other32.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "other",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "d31b9538458e5427513391b506e02086a2bfcdb9eb900ca01a9d97dcfb21cba0",
+      "bytes": 4875571,
+      "frames": 62,
+      "fps": 24.916666666666668,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.4882943143812706,
+      "validation": "container metadata only; full decode pending",
+      "id": "d31b9538458e5427",
+      "aliases": [
+        "real-actiondata-all/other/other32.mp4",
+        "real-actiondata-0909/other/other32.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "d31b9538458e5427",
+        "source": "real-actiondata-all/other/other32.mp4",
+        "group": "e71301de702bbbf6",
+        "split": "train",
+        "video_label": "other",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 2,
+      "sample_id": "3-1",
+      "source": "real-actiondata-all/喝水1.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "drink",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "2f8105910668ee6388013806bf531d5bc062fd525222667736939d754207f624",
+      "bytes": 4122100,
+      "frames": 74,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.96,
+      "validation": "container metadata only; full decode pending",
+      "id": "2f8105910668ee63",
+      "aliases": [
+        "real-actiondata-all/喝水1.mp4",
+        "real-actiondata-0909/喝水1.mp4",
+        "real-actiondata-cutdrink/喝水1.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "frozen_split": {
+        "video_id": "2f8105910668ee63",
+        "source": "real-actiondata-all/喝水1.mp4",
+        "group": "692f42ad7971542b",
+        "split": "train",
+        "video_label": "drink",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 2,
+      "sample_id": "3-2",
+      "source": "real-actiondata-all/捡东西5.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "pick_up",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "7e25914fdc94d0f7cbd76f18b1c86889e86a97fa4523b78d00d47c02f5b10068",
+      "bytes": 6032166,
+      "frames": 67,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.68,
+      "validation": "container metadata only; full decode pending",
+      "id": "7e25914fdc94d0f7",
+      "aliases": [
+        "real-actiondata-all/捡东西5.mp4",
+        "real-actiondata-0909/捡东西5.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "7e25914fdc94d0f7",
+        "source": "real-actiondata-all/捡东西5.mp4",
+        "group": "1d4d072b22d10fe1",
+        "split": "train",
+        "video_label": "pick_up",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 2,
+      "sample_id": "3-3",
+      "source": "real-actiondata-all/捡东西11.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "pick_up",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "59f61340c12266019a7d7d21cfc0102717cffe5cad1c7fa68fe41e93ebbcd0bd",
+      "bytes": 8410603,
+      "frames": 84,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.36,
+      "validation": "container metadata only; full decode pending",
+      "id": "59f61340c1226601",
+      "aliases": [
+        "real-actiondata-all/捡东西11.mp4",
+        "real-actiondata-0909/捡东西11.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "59f61340c1226601",
+        "source": "real-actiondata-all/捡东西11.mp4",
+        "group": "1d4d072b22d10fe1",
+        "split": "train",
+        "video_label": "pick_up",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 3,
+      "sample_id": "4-1",
+      "source": "real-actiondata-all/捡东西10.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "pick_up",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "d143b29383cdc52c9542014a348b6fd083179490962728e0a913caa12450e48f",
+      "bytes": 7467797,
+      "frames": 77,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.08,
+      "validation": "container metadata only; full decode pending",
+      "id": "d143b29383cdc52c",
+      "aliases": [
+        "real-actiondata-all/捡东西10.mp4",
+        "real-actiondata-0909/捡东西10.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "d143b29383cdc52c",
+        "source": "real-actiondata-all/捡东西10.mp4",
+        "group": "1d4d072b22d10fe1",
+        "split": "train",
+        "video_label": "pick_up",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 3,
+      "sample_id": "4-2",
+      "source": "real-actiondata-all/挥手25.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "6c9797473973ffee10cf49d41a4a46ba6b7956ef0eda93551763ba95a99cb696",
+      "bytes": 5485546,
+      "frames": 65,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.6,
+      "validation": "container metadata only; full decode pending",
+      "id": "6c9797473973ffee",
+      "aliases": [
+        "real-actiondata-all/挥手25.mp4",
+        "real-actiondata-0909/挥手25.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "6c9797473973ffee",
+        "source": "real-actiondata-all/挥手25.mp4",
+        "group": "d0ab8993eff23b00",
+        "split": "train",
+        "video_label": "wave",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 3,
+      "sample_id": "4-3",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "drink",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "59679fde5a979f9856d0ca6522902a954c825574920504d75feb491f1ba06dab",
+      "bytes": 8037200,
+      "frames": 89,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.56,
+      "validation": "container metadata only; full decode pending",
+      "id": "59679fde5a979f98",
+      "aliases": [
+        "real-actiondata-all/喝水21.mp4",
+        "real-actiondata-0909/喝水21.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "59679fde5a979f98",
+        "source": "real-actiondata-all/喝水21.mp4",
+        "group": "692f42ad7971542b",
+        "split": "train",
+        "video_label": "drink",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 4,
+      "sample_id": "5-1",
+      "source": "real-actiondata-all/捡东西9.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "pick_up",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "5aa82626ac7ce644afb34367b6abb8c073e35ed3dccf32e3ac81638e00e65cce",
+      "bytes": 5747740,
+      "frames": 58,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.32,
+      "validation": "container metadata only; full decode pending",
+      "id": "5aa82626ac7ce644",
+      "aliases": [
+        "real-actiondata-all/捡东西9.mp4",
+        "real-actiondata-0909/捡东西9.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "5aa82626ac7ce644",
+        "source": "real-actiondata-all/捡东西9.mp4",
+        "group": "1d4d072b22d10fe1",
+        "split": "train",
+        "video_label": "pick_up",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 4,
+      "sample_id": "5-2",
+      "source": "real-actiondata-all/other/other83.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "other",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "abeb396181055bac23a88b0cc0ba34402f8ff0dbc703551ef015936c0aa25736",
+      "bytes": 4618232,
+      "frames": 133,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 5.32,
+      "validation": "container metadata only; full decode pending",
+      "id": "abeb396181055bac",
+      "aliases": [
+        "real-actiondata-all/other/other83.mp4",
+        "real-actiondata-0909/other/other83.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "abeb396181055bac",
+        "source": "real-actiondata-all/other/other83.mp4",
+        "group": "e71301de702bbbf6",
+        "split": "train",
+        "video_label": "other",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 4,
+      "sample_id": "5-3",
+      "source": "real-actiondata-all/捡东西6.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "pick_up",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "487a0afbadd709084025e11044b0f61b396ddf3daaaad3214ad797ccc25590b4",
+      "bytes": 7915082,
+      "frames": 88,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.52,
+      "validation": "container metadata only; full decode pending",
+      "id": "487a0afbadd70908",
+      "aliases": [
+        "real-actiondata-all/捡东西6.mp4",
+        "real-actiondata-0909/捡东西6.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "487a0afbadd70908",
+        "source": "real-actiondata-all/捡东西6.mp4",
+        "group": "1d4d072b22d10fe1",
+        "split": "train",
+        "video_label": "pick_up",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 5,
+      "sample_id": "6-1",
+      "source": "real-actiondata-all/喝水18.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "drink",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "cbf7cf6bdebd686a32e700d370e9c4b784fc0bc615bcc9dcd7f71cfd1934eab7",
+      "bytes": 5617834,
+      "frames": 78,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.12,
+      "validation": "container metadata only; full decode pending",
+      "id": "cbf7cf6bdebd686a",
+      "aliases": [
+        "real-actiondata-all/喝水18.mp4",
+        "real-actiondata-0909/喝水18.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "cbf7cf6bdebd686a",
+        "source": "real-actiondata-all/喝水18.mp4",
+        "group": "692f42ad7971542b",
+        "split": "train",
+        "video_label": "drink",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 5,
+      "sample_id": "6-2",
+      "source": "real-actiondata-all/捡东西25.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "pick_up",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "8594e05e8a56819be0200a8e7fd7d78272c58d14634f1fa9d26b3b40644af2a5",
+      "bytes": 461284,
+      "frames": 61,
+      "fps": 30.0,
+      "width": 968,
+      "height": 544,
+      "seconds": 2.033333333333333,
+      "validation": "container metadata only; full decode pending",
+      "id": "8594e05e8a56819b",
+      "aliases": [
+        "real-actiondata-all/捡东西25.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "8594e05e8a56819b",
+        "source": "real-actiondata-all/捡东西25.mp4",
+        "group": "8594e05e8a56819b",
+        "split": "train",
+        "video_label": "pick_up",
+        "sealed_feedback_holdout": false
+      }
+    },
+    {
+      "bin_index": 5,
+      "sample_id": "6-3",
+      "source": "real-actiondata-all/喝水16.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "drink",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "8f780ff0eefc1fcb83618d09112b85b26abf37c98cb2b23d53c09a6370bfece4",
+      "bytes": 4043671,
+      "frames": 75,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 3.0,
+      "validation": "container metadata only; full decode pending",
+      "id": "8f780ff0eefc1fcb",
+      "aliases": [
+        "real-actiondata-all/喝水16.mp4",
+        "real-actiondata-0909/喝水16.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-0909",
+        "real-actiondata-all"
+      ],
+      "frozen_split": {
+        "video_id": "8f780ff0eefc1fcb",
+        "source": "real-actiondata-all/喝水16.mp4",
+        "group": "692f42ad7971542b",
+        "split": "train",
+        "video_label": "drink",
+        "sealed_feedback_holdout": false
+      }
+    }
+  ]
+}

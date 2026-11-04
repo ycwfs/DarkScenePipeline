@@ -1,0 +1,122 @@
+[
+  {
+    "segment": {
+      "source": "reports/person-object-release-20261026/input-multiaction-5min.mp4",
+      "start": 0,
+      "seconds": 180.0,
+      "sha256": "9cbf81e01eec73364354392fddb25dc1aecd002fa9ef67adb20d4df6476f3250"
+    },
+    "frames": 3960,
+    "people_max": 3,
+    "fps": {
+      "count": 161,
+      "minimum": 18.33,
+      "median": 21.68,
+      "p95": 25.14,
+      "maximum": 25.53
+    },
+    "capture_to_output_ms": {
+      "count": 3960,
+      "minimum": 70.52542082965374,
+      "median": 117.31045763008296,
+      "p95": 195.24777750484645,
+      "maximum": 491.6795310564339
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/child.mkv",
+      "start": 180.0,
+      "seconds": 30.0,
+      "sha256": "3ea747a4793baeb00a209bfc4ab7e6a13434f817ce562e250441de43d0f47648"
+    },
+    "frames": 493,
+    "people_max": 12,
+    "fps": {
+      "count": 22,
+      "minimum": 13.34,
+      "median": 16.755,
+      "p95": 22.7,
+      "maximum": 24.87
+    },
+    "capture_to_output_ms": {
+      "count": 493,
+      "minimum": 85.50374489277601,
+      "median": 158.5046797990799,
+      "p95": 276.2229090556501,
+      "maximum": 411.28978598862886
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/walking.mkv",
+      "start": 210.0,
+      "seconds": 30.0,
+      "sha256": "563984d291214f330ae41d0ae372b9bb12a4e438fbe463352fe62d09c420ec17"
+    },
+    "frames": 470,
+    "people_max": 14,
+    "fps": {
+      "count": 20,
+      "minimum": 11.75,
+      "median": 15.665,
+      "p95": 18.29,
+      "maximum": 18.29
+    },
+    "capture_to_output_ms": {
+      "count": 470,
+      "minimum": 113.6554591357708,
+      "median": 182.28188483044505,
+      "p95": 278.1202373560518,
+      "maximum": 388.33762099966407
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/phone.mkv",
+      "start": 240.0,
+      "seconds": 30.0,
+      "sha256": "31e7676c6ade55fc26110f730414d8af5e99a13717801aeadb78749187acd490"
+    },
+    "frames": 470,
+    "people_max": 14,
+    "fps": {
+      "count": 19,
+      "minimum": 12.85,
+      "median": 15.79,
+      "p95": 17.866,
+      "maximum": 17.92
+    },
+    "capture_to_output_ms": {
+      "count": 470,
+      "minimum": 107.44462022557855,
+      "median": 183.83108801208436,
+      "p95": 274.7112542623654,
+      "maximum": 407.6863108202815
+    }
+  },
+  {
+    "segment": {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "start": 270.0,
+      "seconds": 30.0,
+      "sha256": "eff6f33a47ce138c02ef4ef25bba5aaeec12797fb45e95fc941600c1df1d8f5a"
+    },
+    "frames": 353,
+    "people_max": 18,
+    "fps": {
+      "count": 18,
+      "minimum": 9.61,
+      "median": 11.600000000000001,
+      "p95": 15.382499999999999,
+      "maximum": 16.02
+    },
+    "capture_to_output_ms": {
+      "count": 353,
+      "minimum": 138.84968496859074,
+      "median": 255.00737503170967,
+      "p95": 422.25531870499253,
+      "maximum": 491.0021680407226
+    }
+  }
+]

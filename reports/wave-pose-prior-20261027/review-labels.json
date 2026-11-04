@@ -1,0 +1,202 @@
+[
+  {
+    "id": "long-videos-new-01-T44-G1-F574",
+    "truth": "uncertain",
+    "assessment": "儿童转身并摆臂，右腕确有短暂高于双肩；仅凭当前取样不能可靠区分招手与随意摆臂，保留待人工确认，不计已知误报。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 22.96
+  },
+  {
+    "id": "long-videos-new-07-T237-G0-F2382",
+    "truth": "not_wave",
+    "assessment": "灰衣人物行走/站立，双手在腰部附近，没有挥手；3帧先验过滤。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 95.8
+  },
+  {
+    "id": "long-videos-new-07-T311-G0-F3388",
+    "truth": "not_wave",
+    "assessment": "后方黑衣人物站立观看，未见挥手；前景遮挡时存在姿态归属不稳，已保留证据。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 135.52
+  },
+  {
+    "id": "long-videos-new-07-T311-G1-F3664",
+    "truth": "not_wave",
+    "assessment": "黑衣人物站立，手位于腰背附近，未见挥手。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 146.56
+  },
+  {
+    "id": "long-videos-new-07-T311-G1-F3703",
+    "truth": "not_wave",
+    "assessment": "黑衣人物站立及低位指示手势，未见招手摆动；右手靠近腰背。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 148.64
+  },
+  {
+    "id": "old-videos-1fa7b05d59e8d258-T1-G0-F29",
+    "truth": "wave",
+    "assessment": "旧挥手30：右手举起并往复挥动，与既有逐人标注一致，保留。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "old-videos-220cc82202abab6e-T1-G0-F29",
+    "truth": "wave",
+    "assessment": "旧挥手33：左手举起并往复挥动，与既有逐人标注一致，保留。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "old-videos-56f605e0ad40c73a-T1-G0-F29",
+    "truth": "wave",
+    "assessment": "挥手28.mp4：既有逐人标注为挥手，原图序列可见举手摆动，动作保留。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "old-videos-92b9a42823e68e4e-T2-G0-F29",
+    "truth": "wave",
+    "assessment": "挥手29.mp4：既有逐人标注为挥手，原图序列可见举手摆动，动作保留。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "old-videos-b576f320195dfed9-T2-G0-F24",
+    "truth": "wave",
+    "assessment": "挥手3.mp4：既有逐人标注为挥手，原图序列可见举手摆动，动作保留。本段原亮度低于35，先验跳过，不能算作先验能力通过。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "old-videos-c99b19d78b33d718-T1-G0-F24",
+    "truth": "wave",
+    "assessment": "挥手12.mp4：既有逐人标注为挥手，原图序列可见举手摆动，动作保留。本段原亮度低于35，先验跳过，不能算作先验能力通过。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "old-videos-d0ab8993eff23b00-T2-G0-F24",
+    "truth": "wave",
+    "assessment": "挥手1.mp4：既有逐人标注为挥手，原图序列可见举手摆动，动作保留。本段原亮度低于35，先验跳过，不能算作先验能力通过。",
+    "basis": "historical person/time annotation plus raw-frame visual check"
+  },
+  {
+    "id": "long-videos-new-01-T658-G0-F6660",
+    "truth": "uncertain",
+    "assessment": "棕色衣服人物有前伸/指示手势，不能仅因手低于肩就判定不是挥手；暂列待确认，过滤不计作纠错。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 266.4
+  },
+  {
+    "id": "long-videos-new-01-T815-G1-F8276",
+    "truth": "not_wave",
+    "assessment": "棕色衣服人物双手在身体下方，随行走轻摆，未见挥手。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 331.04
+  },
+  {
+    "id": "long-videos-new-07-T321-G0-F3874",
+    "truth": "not_wave",
+    "assessment": "灰色上衣人物手部靠近脸/耳，继而放低；未见招手摆动。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 154.96
+  },
+  {
+    "id": "long-videos-new-09-T607-G0-F3466",
+    "truth": "uncertain",
+    "assessment": "白衣人物举手作引导/指示后放下；满足抬腕几何条件，但不能可靠区分引导手势与招手，暂列待确认。",
+    "basis": "assistant raw-frame sequence review",
+    "reviewed_end": 138.64
+  },
+  {
+    "id": "long-videos-new-07-T559-G0-F6109",
+    "truth": "not_wave",
+    "assessment": "条纹衣背包人物站着观看并低位持物/操作手机；覆盖三次触发的完整上下文，未见挥手。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 245.4
+  },
+  {
+    "id": "long-videos-new-07-T894-G0-F10049",
+    "truth": "not_wave",
+    "assessment": "灰西装人物抱臂站立，仅移动身体，未挥手。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 401.96
+  },
+  {
+    "id": "long-videos-new-07-T913-G0-F10526",
+    "truth": "not_wave",
+    "assessment": "浅蓝衣人物双手背在身后站立，未挥手。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 421.04
+  },
+  {
+    "id": "long-videos-new-07-T894-G0-F10727",
+    "truth": "not_wave",
+    "assessment": "灰西装人物伸手接/握牵引带，未作招手摆动。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 429.08
+  },
+  {
+    "id": "long-videos-new-07-T942-G1-F10775",
+    "truth": "not_wave",
+    "assessment": "浅蓝衣人物双手背后站着观看，未挥手。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 431.0
+  },
+  {
+    "id": "long-videos-new-07-T894-G2-F11201",
+    "truth": "not_wave",
+    "assessment": "浅蓝衣人物双手在胸前持手机观看/操作，未挥手。此轨迹ID和之前西装人物相同但generation不同，不视为同一身份。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 448.04
+  },
+  {
+    "id": "long-videos-new-07-T966-G0-F11284",
+    "truth": "not_wave",
+    "assessment": "灰西装人物手持牵引带带机器人移动，覆盖两次触发及后续上下文，没有挥手。",
+    "basis": "assistant raw-frame and temporal-context review",
+    "reviewed_end": 451.88
+  },
+  {
+    "id": "wave-shorts-new-01-child-retained-T9-G1-F124",
+    "truth": "uncertain",
+    "assessment": "短片重启核对，同一原片动作：儿童转身并摆臂，右腕确有短暂高于双肩；仅凭当前取样不能可靠区分招手与随意摆臂，保留待人工确认，不计已知误报。",
+    "basis": "assistant raw-frame review; matched physical event in full source",
+    "reviewed_end": 4.96,
+    "same_physical_event": "long-videos-new-01-T44-G1-F574"
+  },
+  {
+    "id": "wave-shorts-new-01-wave-veto-T14-G0-F135",
+    "truth": "uncertain",
+    "assessment": "短片重启核对，同一原片动作：棕色衣服人物有前伸/指示手势，不能仅因手低于肩就判定不是挥手；暂列待确认，过滤不计作纠错。",
+    "basis": "assistant raw-frame review; matched physical event in full source",
+    "reviewed_end": 5.4,
+    "same_physical_event": "long-videos-new-01-T658-G0-F6660"
+  },
+  {
+    "id": "wave-shorts-new-07-standing-veto-T23-G0-F132",
+    "truth": "not_wave",
+    "assessment": "短片重启核对，同一原片动作：灰衣人物行走/站立，双手在腰部附近，没有挥手；3帧先验过滤。",
+    "basis": "assistant raw-frame review; matched physical event in full source",
+    "reviewed_end": 5.8,
+    "same_physical_event": "long-videos-new-07-T237-G0-F2382"
+  },
+  {
+    "id": "wave-shorts-new-09-raised-retained-T29-G0-F141",
+    "truth": "uncertain",
+    "assessment": "短片重启核对，同一原片动作：白衣人物举手作引导/指示后放下；满足抬腕几何条件，但不能可靠区分引导手势与招手，暂列待确认。",
+    "basis": "assistant raw-frame review; matched physical event in full source",
+    "reviewed_end": 5.64,
+    "same_physical_event": "long-videos-new-09-T607-G0-F3466"
+  },
+  {
+    "id": "long-videos-new-07-T992-G0-F11880",
+    "truth": "not_wave",
+    "assessment": "黑外套人物在该动作窗口内低头看手机、右臂自然垂下，未挥手；右手举起是475.9秒后的另一窗口，不能倒灌至本窗口。",
+    "basis": "assistant raw-frame and full temporal-context review",
+    "reviewed_end": 475.2
+  },
+  {
+    "id": "long-videos-new-07-T992-G0-F11919",
+    "truth": "uncertain",
+    "assessment": "人物右手短暂举起作手势后放下，无法可靠区分招手与指示/点赞。腕关键点亦有偏移；暂列待确认，保留不计作真挥手或误挥手。",
+    "basis": "assistant raw-frame and full temporal-context review",
+    "reviewed_end": 476.76
+  }
+]

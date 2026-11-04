@@ -1,0 +1,23 @@
+{
+  "demo_inputs": 23,
+  "demo_frames": 5207,
+  "demo_events": 2399,
+  "demo_clips": 19,
+  "demo_incomplete_context": 13,
+  "tests": {
+    "source": 114,
+    "archive": 85,
+    "archive_deselected": 1
+  },
+  "stream_clips": 29,
+  "fault_clips": 10,
+  "four_gpu_clips": 2,
+  "all_scenarios_realtime_target_met": false,
+  "model_weights_changed": false,
+  "image_changed": false,
+  "notes": [
+    "Finite loopback tests passed, high-density throughput below15FPS",
+    "health transient write-in-progress may report degraded",
+    "same source evaluated historically; demo is not independent accuracy benchmark"
+  ]
+}

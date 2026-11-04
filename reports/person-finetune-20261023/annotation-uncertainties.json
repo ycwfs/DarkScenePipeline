@@ -1,0 +1,52 @@
+[
+  {
+    "video_id": "92cb1dbf7394409d",
+    "track_id": 3,
+    "source": "real-actiondata-all/追逐25.mp4",
+    "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+    "review_evidence": "review/chase-index.json",
+    "status": "uncertain",
+    "segments": [],
+    "note": "Background person with raised arm: walking versus another gesture; do not inherit foreground chase label."
+  },
+  {
+    "video_id": "1e8fc5383e0c7ebf",
+    "track_id": 2,
+    "source": "real-actiondata-all/挥手10.mp4",
+    "reviewer": "assistant visual review",
+    "review_evidence": "review/wave-index.json",
+    "status": "uncertain",
+    "segments": [],
+    "note": "Static dark detection; cannot reliably distinguish fixture/person."
+  },
+  {
+    "video_id": "1e8fc5383e0c7ebf",
+    "track_id": 6,
+    "source": "real-actiondata-all/挥手10.mp4",
+    "reviewer": "assistant visual review",
+    "review_evidence": "review/wave-index.json",
+    "status": "uncertain",
+    "segments": [],
+    "note": "Static dark detection; cannot reliably distinguish fixture/person."
+  },
+  {
+    "video_id": "92ea11e60e5d47c6",
+    "track_id": 5,
+    "source": "real-actiondata-all/挥手11.mp4",
+    "reviewer": "assistant visual review",
+    "review_evidence": "review/wave-index.json",
+    "status": "uncertain",
+    "segments": [],
+    "note": "Static dark detection; actual actor elsewhere; uncertain entity."
+  },
+  {
+    "video_id": "5014b0b77ada6229",
+    "track_id": 2,
+    "source": "real-actiondata-all/挥手2.mp4",
+    "reviewer": "assistant visual review",
+    "review_evidence": "review/wave-index.json",
+    "status": "uncertain",
+    "segments": [],
+    "note": "Track changes from background bystander to foreground actor; mixed identity."
+  }
+]

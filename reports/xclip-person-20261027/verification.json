@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "video_count": 15,
+  "videos": [
+    {
+      "path": "long-videos/new-07/xclip.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 720,
+      "height": 404,
+      "nb_frames": "13500"
+    },
+    {
+      "path": "long-videos/new-01/xclip.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 720,
+      "height": 404,
+      "nb_frames": "9876"
+    },
+    {
+      "path": "long-videos/new-09/xclip.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 720,
+      "height": 404,
+      "nb_frames": "6050"
+    },
+    {
+      "path": "short-videos/test/8ac476f8fb995f97/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "137"
+    },
+    {
+      "path": "short-videos/test/92cb1dbf7394409d/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "141"
+    },
+    {
+      "path": "short-videos/test/56f605e0ad40c73a/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "85"
+    },
+    {
+      "path": "short-videos/test/da3c570dcc033d1b/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "117"
+    },
+    {
+      "path": "short-videos/test/fb6b017c01b4e300/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "131"
+    },
+    {
+      "path": "short-videos/test/7ce9e264c4e2c972/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "61"
+    },
+    {
+      "path": "short-videos/val/220255c6344fa810/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "62"
+    },
+    {
+      "path": "short-videos/val/de33753bf592c4cc/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "54"
+    },
+    {
+      "path": "short-videos/val/7a744e54208d220c/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "70"
+    },
+    {
+      "path": "short-videos/val/82eb9f0050410b2a/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "125"
+    },
+    {
+      "path": "short-videos/val/fde9a3e95b99c510/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "93"
+    },
+    {
+      "path": "short-videos/val/9831d442adecfc66/comparison.mp4",
+      "decode_passed": true,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 404,
+      "nb_frames": "59"
+    }
+  ],
+  "old_source_files": 118,
+  "known_windows": 412,
+  "full_frames": 29426,
+  "no_pose_network": true,
+  "no_skeleton_classifier": true,
+  "no_object_model": true,
+  "no_finetuning": true,
+  "optimized_forward": "Every inference process asserted max logit error<.03 vs stock HF fp16 forward before scoring. PID1 output filename collided across containers; retained one parity JSON only."
+}

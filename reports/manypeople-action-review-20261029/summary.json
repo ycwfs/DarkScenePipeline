@@ -1,0 +1,80 @@
+{
+  "sources": 9,
+  "source_minutes": 53.54441791666667,
+  "historical_runs": 103,
+  "observations": 7049,
+  "original_clips": 454,
+  "initial_events": 47600,
+  "initial_non_other": 994,
+  "main_review": 473,
+  "xclip_review": 2011,
+  "main_with_initial_trigger": 473,
+  "by_label": {
+    "跑动": 54,
+    "挥手": 100,
+    "喝水": 285,
+    "捡物": 27,
+    "跌倒": 5,
+    "投掷": 2
+  },
+  "by_source": {
+    "01": {
+      "跑动": 27,
+      "挥手": 7,
+      "喝水": 7,
+      "捡物": 6
+    },
+    "02": {
+      "喝水": 75,
+      "挥手": 9,
+      "跌倒": 2,
+      "投掷": 2,
+      "跑动": 4
+    },
+    "03": {
+      "喝水": 62,
+      "捡物": 13,
+      "挥手": 13,
+      "跑动": 6,
+      "跌倒": 3
+    },
+    "04": {
+      "挥手": 13,
+      "喝水": 22,
+      "跑动": 1
+    },
+    "05": {
+      "喝水": 28,
+      "挥手": 10
+    },
+    "06": {
+      "挥手": 4,
+      "喝水": 11,
+      "跑动": 8
+    },
+    "07": {
+      "捡物": 5,
+      "喝水": 39,
+      "挥手": 33,
+      "跑动": 1
+    },
+    "08": {
+      "喝水": 9,
+      "挥手": 8,
+      "跑动": 6,
+      "捡物": 3
+    },
+    "09": {
+      "喝水": 32,
+      "挥手": 3,
+      "跑动": 1
+    }
+  },
+  "other_candidates": 16087,
+  "held_windows": 31513,
+  "human_annotations": 0,
+  "training_started": false,
+  "grouping": "same source + conservative person association + same label; gap<=1.2s; trigger span<=10s",
+  "other_policy": "unreviewed prediction pool only; exclude all-person candidate time intervals plus 1s; not GT",
+  "exclusions": "No millions of unselected grid configurations, no interrupted diagnostics or concatenated live/fault reruns; see excluded-runs.json"
+}

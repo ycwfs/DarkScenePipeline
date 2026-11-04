@@ -1,0 +1,61 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>暗场人体与姿态微调 · 2026-10-24</title><style>
+:root{color-scheme:dark;--bg:#10191d;--panel:#1a272c;--ink:#ecf2ef;--muted:#afc3c2;--accent:#a8e6b7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,sans-serif}
+main{max-width:1480px;margin:auto;padding:48px 28px}header{max-width:1000px;margin-bottom:32px}.eyebrow{letter-spacing:.16em;color:var(--accent);font-size:13px}h1{font-size:clamp(30px,4vw,50px);line-height:1.2;margin:14px 0 24px}p{color:var(--muted)}.notice{padding:18px 22px;border-left:3px solid #e5bc79;background:#302d24;color:#f1dfc0}
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin:28px 0}.stat{padding:16px 24px;background:var(--panel);min-width:210px}.stat b{display:block;font-size:28px;color:var(--accent)}
+nav{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0}button{font:inherit;background:transparent;border:1px solid #617672;color:var(--ink);padding:7px 18px;cursor:pointer}button[aria-pressed=true]{background:var(--accent);color:#142219}button:focus-visible,a:focus-visible{outline:3px solid #e5bc79;outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}article{background:var(--panel);padding:22px;min-width:0}article h2{font-size:24px;margin:4px 0}article p{min-height:54px;margin-top:8px}.meta{font-size:13px;color:var(--accent)}video{width:100%;aspect-ratio:1440/940;background:#080d10}a{color:var(--accent);text-underline-offset:4px}article a{display:inline-block;margin-top:12px}.legend{font-size:15px}footer{margin-top:40px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:800px){main{padding:28px 16px}.grid{grid-template-columns:1fr}.stats{gap:10px}.stat{flex:1;padding:12px}.stat b{font-size:24px}}
+</style><main><header><div class="eyebrow">DARKSCENE / EXPERIMENT 2026.10.24</div>
+<h1>暗场检出改善，<br>还不能直接上线。</h1>
+<p>使用总体审核认可的辅助框与骨架，经连续性、最短持续时间筛选后，微调 YOLO26m 与 RTMO-s。14 段完整视频展示训练和平滑各自的效果与代价。</p>
+<div class="notice">亮场中出现人形展品的持续误检；平滑不能纠正稳定的假人。极暗弯腰仍漏检。本轮保留候选与对照，生产权重和算子包未替换。</div>
+<div class="stats"><div class="stat">暗场测试辅助框命中<b>18/44 → 43/44</b></div><div class="stat">辅助关节点匹配<b>162/201 → 176/201</b></div><div class="stat">完整对照视频<b>14 段</b></div></div>
+<p>以上是对筛选后辅助标签的一致性，不是独立人工精标准确率。44 帧来自5段视频；全部8段暗场测试视频均在下面，含没有可靠标签的失败案例。</p>
+<p class="legend">四格读法：左上原模型，右上原模型＋平滑；左下微调模型，右下微调模型＋平滑。人体框立即显示；平滑骨架需人物确认0.4秒、关节点连续0.16秒。为诊断效果，视频主动显示暗场姿态；运行照度门仍为75。</p>
+<a href="README.md">实验报告</a> · <a href="dark-finetune-video-review.zip">下载全部视频</a></header>
+<nav aria-label="筛选视频"><button data-filter="全部" aria-pressed="true">全部</button><button data-filter="暗场留出" aria-pressed="false">暗场留出</button><button data-filter="亮场回归" aria-pressed="false">亮场回归</button><button data-filter="训练内示例" aria-pressed="false">训练内示例</button></nav>
+<div class="grid"><article data-category="暗场留出"><div class="meta">暗场留出 · 81 帧 · 3.24 秒</div>
+<h2>other225.mp4</h2><p>暗场漏框减少，但骨架仍会缺点；平滑会隐藏短暂结果。</p>
+<video controls preload="none" poster="posters/02cfb195aba51c8e.jpg" src="videos/02cfb195aba51c8e.mp4"></video>
+<a href="videos/02cfb195aba51c8e.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 93 帧 · 3.72 秒</div>
+<h2>other227.mp4</h2><p>困难暗场，新增框也不够连续，平滑后没有完整骨架。</p>
+<video controls preload="none" poster="posters/168083707a4147ee.jpg" src="videos/168083707a4147ee.mp4"></video>
+<a href="videos/168083707a4147ee.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 49 帧 · 1.96 秒</div>
+<h2>捡东西18.mp4</h2><p>极暗弯腰失败案例，未进入有可靠标签的44帧指标。</p>
+<video controls preload="none" poster="posters/35ec19ec97d6d0f0.jpg" src="videos/35ec19ec97d6d0f0.mp4"></video>
+<a href="videos/35ec19ec97d6d0f0.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 79 帧 · 3.16 秒</div>
+<h2>捡东西20.mp4</h2><p>困难片段仍漏检；原/新均不稳定，未进入44帧指标。</p>
+<video controls preload="none" poster="posters/58f5536a4ea9f55b.jpg" src="videos/58f5536a4ea9f55b.mp4"></video>
+<a href="videos/58f5536a4ea9f55b.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 121 帧 · 4.84 秒</div>
+<h2>other230.mp4</h2><p>极暗人物，只在部分时间检出。</p>
+<video controls preload="none" poster="posters/5b9fe350fe2eb33b.jpg" src="videos/5b9fe350fe2eb33b.mp4"></video>
+<a href="videos/5b9fe350fe2eb33b.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 116 帧 · 4.64 秒</div>
+<h2>other200.mp4</h2><p>暗场框和骨架覆盖改善。</p>
+<video controls preload="none" poster="posters/7e9bc4c0e9a12906.jpg" src="videos/7e9bc4c0e9a12906.mp4"></video>
+<a href="videos/7e9bc4c0e9a12906.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 82 帧 · 3.28 秒</div>
+<h2>other223.mp4</h2><p>可观察新模型与平滑的分别作用。</p>
+<video controls preload="none" poster="posters/d7c5ba82952df18d.jpg" src="videos/d7c5ba82952df18d.mp4"></video>
+<a href="videos/d7c5ba82952df18d.mp4" download>下载对照视频 ↗</a></article><article data-category="暗场留出"><div class="meta">暗场留出 · 101 帧 · 4.04 秒</div>
+<h2>挥手34.mp4</h2><p>新增骨架仍短暂、断续，持续时间筛选后明显减少。</p>
+<video controls preload="none" poster="posters/f50f562c1c39d257.jpg" src="videos/f50f562c1c39d257.mp4"></video>
+<a href="videos/f50f562c1c39d257.mp4" download>下载对照视频 ↗</a></article><article data-category="训练内示例"><div class="meta">训练内示例 · 67 帧 · 2.68 秒</div>
+<h2>挥手18.mp4</h2><p>此前确认示例；训练内回放，不能代表泛化。</p>
+<video controls preload="none" poster="posters/4078760fdadd05f6.jpg" src="videos/4078760fdadd05f6.mp4"></video>
+<a href="videos/4078760fdadd05f6.mp4" download>下载对照视频 ↗</a></article><article data-category="训练内示例"><div class="meta">训练内示例 · 72 帧 · 2.88 秒</div>
+<h2>捡东西1.mp4</h2><p>此前确认示例；框改善，弯腰骨架仍不完整。</p>
+<video controls preload="none" poster="posters/1d4d072b22d10fe1.jpg" src="videos/1d4d072b22d10fe1.mp4"></video>
+<a href="videos/1d4d072b22d10fe1.mp4" download>下载对照视频 ↗</a></article><article data-category="亮场回归"><div class="meta">亮场回归 · 85 帧 · 2.83 秒</div>
+<h2>挥手28.mp4</h2><p>亮场回归：左侧人形展品新增误检，平滑无法消除。</p>
+<video controls preload="none" poster="posters/56f605e0ad40c73a.jpg" src="videos/56f605e0ad40c73a.mp4"></video>
+<a href="videos/56f605e0ad40c73a.mp4" download>下载对照视频 ↗</a></article><article data-category="亮场回归"><div class="meta">亮场回归 · 117 帧 · 3.90 秒</div>
+<h2>喝水26.mp4</h2><p>亮场回归：左侧人形展品被持续画出骨架。</p>
+<video controls preload="none" poster="posters/da3c570dcc033d1b.jpg" src="videos/da3c570dcc033d1b.mp4"></video>
+<a href="videos/da3c570dcc033d1b.mp4" download>下载对照视频 ↗</a></article><article data-category="亮场回归"><div class="meta">亮场回归 · 61 帧 · 2.03 秒</div>
+<h2>捡东西23.mp4</h2><p>亮场动作姿态回归；固定动作模型未参与本视频。</p>
+<video controls preload="none" poster="posters/7ce9e264c4e2c972.jpg" src="videos/7ce9e264c4e2c972.mp4"></video>
+<a href="videos/7ce9e264c4e2c972.mp4" download>下载对照视频 ↗</a></article><article data-category="亮场回归"><div class="meta">亮场回归 · 131 帧 · 5.24 秒</div>
+<h2>other100.mp4</h2><p>亮场other回归，供检查额外假人。</p>
+<video controls preload="none" poster="posters/fb6b017c01b4e300.jpg" src="videos/fb6b017c01b4e300.mp4"></video>
+<a href="videos/fb6b017c01b4e300.mp4" download>下载对照视频 ↗</a></article></div><footer>候选权重在 models/。人物ID仅为短期跟踪号。动作分类和生产部署未在本轮替换。</footer></main>
+<script>document.querySelectorAll('button[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('button[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.querySelectorAll('article').forEach(x=>{x.hidden=b.dataset.filter!=='全部'&&x.dataset.category!==b.dataset.filter;if(x.hidden)x.querySelector('video').pause()})}));document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('video').forEach(x=>{if(x!==v)x.pause()})));</script></html>

@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "complete": {
+    "normal_stop": true,
+    "service_returncode": 0,
+    "session_status": "stopped",
+    "source_frames": 3000,
+    "source_duration_seconds": 120.0,
+    "wall_playback_seconds": 120.00134754413739,
+    "recorder_returncode": 0,
+    "http_clients": {
+      "viewer-10-mjpeg.mkv": 0,
+      "viewer-10-flv.mkv": 0,
+      "viewer-10-hls.mkv": 0,
+      "viewer-120-mjpeg.mkv": 0,
+      "viewer-120-flv.mkv": 0,
+      "viewer-120-hls.mkv": 0
+    },
+    "completion_monotonic": 3830589.60890317
+  },
+  "session_status": "stopped",
+  "health_samples_fps_below15": 49,
+  "output_gaps_over_1s": 0,
+  "main_health_samples": 113,
+  "health_statuses": {
+    "ok": 110,
+    "degraded": 3
+  },
+  "fps_proc": {
+    "count": 113,
+    "minimum": 8.89,
+    "median": 15.39,
+    "p95": 18.94,
+    "maximum": 25.26
+  },
+  "capture_to_output_ms": {
+    "count": 1763,
+    "minimum": 79.84788808971643,
+    "median": 191.53425935655832,
+    "p95": 445.4903323203322,
+    "maximum": 664.7627530619502
+  },
+  "output_intervals_seconds": {
+    "count": 1762,
+    "minimum": 0.02100298088043928,
+    "median": 0.06108554755337536,
+    "p95": 0.12326365055050696,
+    "maximum": 0.49450397677719593
+  },
+  "main_frames_processed": 1763,
+  "all_event_count": 1688,
+  "object_overlay_frames": 0,
+  "object_boxes": 0,
+  "followed_object_boxes": 0,
+  "final_labels": {
+    "other": 1685,
+    "chase": 1,
+    "drink": 2
+  },
+  "prior_reasons": {
+    "object_prior": {
+      "unaffected_action": 1682,
+      "no_compatible_object": 4,
+      "single_frame_support": 2
+    },
+    "wave_prior": {
+      "unaffected_action": 1688
+    },
+    "running_prior": {
+      "unaffected_action": 1687,
+      "speed_supported": 1
+    }
+  },
+  "vetoed_actions": {
+    "pick_up": 1,
+    "drink": 3
+  },
+  "action_result_age_seconds": {
+    "count": 1688,
+    "minimum": 0.16279437812045217,
+    "median": 0.2852415454108268,
+    "p95": 0.4614481278695166,
+    "maximum": 0.739858056884259
+  },
+  "coalesced_action_tasks": 0,
+  "object_history_bytes": {
+    "count": 14,
+    "minimum": 10471680.0,
+    "median": 15707520.0,
+    "p95": 20986992.0,
+    "maximum": 22688640.0
+  },
+  "clips_saved": 2,
+  "clips_context_complete": 2,
+  "clip_labels": {
+    "drinking_water": 1,
+    "running": 1
+  },
+  "clip_totals": {
+    "frames_recording_input": 2938,
+    "max_recorders": 1,
+    "events_received": 1688,
+    "events_without_output_frame": 0,
+    "clips_saved": 2,
+    "clips_abandoned": 0,
+    "clips_forced": 0,
+    "frames_dropped": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "uploads_dropped": 0,
+    "totals": {
+      "clips_saved": 2,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0
+    },
+    "clips": [
+      {
+        "session": "E000_T058_G000/R00001",
+        "seq": 1,
+        "label": "Running",
+        "label_key": "running",
+        "confidence": 0.9369,
+        "labels_in_clip": {
+          "Running": 1
+        },
+        "frames": 63,
+        "fps": 13.0,
+        "duration_seconds": 3.96,
+        "trigger_stream_time": 95.492,
+        "first_event": {
+          "frame_index": 2361,
+          "timestamp": 95.492,
+          "label": "Running",
+          "confidence": 0.9369,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 93.54990044981241,
+          "writer_drop_start": 0,
+          "last_action_source_time": 95.49240253865719,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-27 12:10:20",
+        "video": "/evidence/live-4gpu/clips/input/20261027_120846_1/E000_T058_G000/R00001/running/E000_T058_G000_R00001_20261027_121023_running_0001.mp4",
+        "frames_written": 52,
+        "capture_fps": 15.909,
+        "playback_speed": 0.99,
+        "person_id": 58,
+        "history_generation": 0,
+        "capture_epoch": 0,
+        "action_key": "running",
+        "recording_id": 1,
+        "start_source_time": 93.54990044981241,
+        "end_source_time": 97.5099004498124,
+        "pre_context_available": 1.9420995501875922,
+        "post_context_available": 2.0174979111552176,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E000_T185_G000/R00002",
+        "seq": 1,
+        "label": "Drinking water",
+        "label_key": "drinking_water",
+        "confidence": 0.9274,
+        "labels_in_clip": {
+          "Drinking water": 2
+        },
+        "frames": 75,
+        "fps": 22.0,
+        "duration_seconds": 4.513,
+        "trigger_stream_time": 143.124,
+        "first_event": {
+          "frame_index": 3552,
+          "timestamp": 143.124,
+          "label": "Drinking water",
+          "confidence": 0.9274,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 141.1995552177541,
+          "writer_drop_start": 0,
+          "last_action_source_time": 143.67214850895107,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-27 12:11:08",
+        "video": "/evidence/live-4gpu/clips/input/20261027_120846_1/E000_T185_G000/R00002/drinking_water/E000_T185_G000_R00002_20261027_121111_drinking_water_0001.mp4",
+        "frames_written": 100,
+        "capture_fps": 16.619,
+        "playback_speed": 0.993,
+        "person_id": 185,
+        "history_generation": 0,
+        "capture_epoch": 0,
+        "action_key": "drinking_water",
+        "recording_id": 2,
+        "start_source_time": 141.1995552177541,
+        "end_source_time": 145.7125552177541,
+        "pre_context_available": 1.9244447822458994,
+        "post_context_available": 2.040406708803033,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      }
+    ],
+    "object_overlay": {
+      "max_history_bytes": 4944960,
+      "frames": 2938,
+      "frames_with_objects": 4,
+      "boxes": 4,
+      "followed_boxes": 3
+    },
+    "writer_alive": false,
+    "recovery_stage_dir": "/tmp/darkpipe_person_clips_a_qs7as4",
+    "uploads_pending": 0,
+    "write_error": null,
+    "error": null
+  },
+  "final_health_clip_counters": {
+    "clips_saved": 2,
+    "clips_failed": 0,
+    "clips_forced": 0,
+    "clips_abandoned": 0,
+    "frames_dropped": 0,
+    "write_errors": 0
+  },
+  "reconnects": 0,
+  "push_restarts": 0,
+  "hls_restarts": 0,
+  "parent_rss_bytes": {
+    "count": 1763,
+    "minimum": 1026224128.0,
+    "median": 1333780480.0,
+    "p95": 1524314112.0,
+    "maximum": 1524314112.0
+  },
+  "sse_events": 1688,
+  "decoded_videos": 9,
+  "audit_wrapper_changes_pixels": false,
+  "source_seconds": 120.0,
+  "cards": "0,1,2,3",
+  "limitation": "Local loopback RTX3090 finite stream; not onsite vGPU/NFS/HDFS or infinite-duration guarantee; no independent end-to-end receiver latency probe this run."
+}

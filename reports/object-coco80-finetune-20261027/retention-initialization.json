@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "target_rows": [
+    0,
+    39,
+    41,
+    65,
+    67,
+    73
+  ],
+  "classifier_tensors": [
+    "model.23.cv3.0.2.weight",
+    "model.23.cv3.0.2.bias",
+    "model.23.cv3.1.2.weight",
+    "model.23.cv3.1.2.bias",
+    "model.23.cv3.2.2.weight",
+    "model.23.cv3.2.2.bias",
+    "model.23.one2one_cv3.0.2.weight",
+    "model.23.one2one_cv3.0.2.bias",
+    "model.23.one2one_cv3.1.2.weight",
+    "model.23.one2one_cv3.1.2.bias",
+    "model.23.one2one_cv3.2.2.weight",
+    "model.23.one2one_cv3.2.2.bias"
+  ],
+  "shared_features_and_boxes_frozen": true,
+  "other74_rows_frozen": true,
+  "batchnorm_stats_frozen": true,
+  "weight_decay": 0,
+  "ema_frozen_tensors_restored_each_step": true
+}

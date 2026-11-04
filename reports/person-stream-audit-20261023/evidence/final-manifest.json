@@ -1,0 +1,17 @@
+{
+  "code_sha256": {
+    "reports/person-stream-audit-20261023/scripts/stream_experiment.py": "3ce65e566131559d3363dfaa42242ad8ddd47d1151d5e9f9a1933678c32dc906",
+    "reports/person-stream-audit-20261023/scripts/network_capture.py": "be51ea5a130260d77bd9c6fcd7fa3ba5d7990e5892527fe45157c027a7d7a15a",
+    "reports/person-stream-audit-20261023/scripts/clip_capacity.py": "4f3cb08a4e5e0d8c6fc5170b2c8f7a57f6f99ba150b232b98760edcea33c6ee6",
+    "reports/person-stream-audit-20261023/scripts/person_clips.py": "fdc73deac39d37f192abd0579ee3fcd87fd675b851c46cc53e76a30a95a88210",
+    "reports/person-stream-audit-20261023/scripts/run_stream.py": "5e479a47591171f75eb29d3d1d192bf366a8d4e6749eb4f06871d35a3c577810",
+    "reports/person-stream-audit-20261023/scripts/capture_timeout_probe.py": "76683cfb31a6d4456465f81ab71967df627726269a88b736d3d81d58eb402c01",
+    "reports/person-stream-audit-20261023/scripts/analyze_streams.py": "670a6b262b450dfbb52d63aca1ef38326f0ce0a76dd592f4e360015f5ff71916",
+    "reports/person-optimization-20261023/scripts/runtime.py": "05e37db6800cc1543b02583376dcd6f8d8675ac4d030605a3300d4add880e8b3",
+    "tests/test_person_stream_clips.py": "0cfa1baa8a9c5f6ec54e9b2d6e73c64f154ca44d8490cd948bfdaf2cd5c1da5b"
+  },
+  "measurement_scope": "native RTX3090 GPUs 2/3/4, loopback RTSP/RTMP relays, local SSD; no platform, NFS or container validation",
+  "production_entry_changed": false,
+  "model_changed": false,
+  "source_snapshots": "evidence/*-source and evidence/*-run.py retain earlier experiment revisions"
+}

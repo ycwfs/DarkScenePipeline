@@ -1,0 +1,12 @@
+{
+  "stage": "faults",
+  "command": [
+    "/ssd1/wfs/project/lowlight/DarkScenePipeline/.venv/bin/python",
+    "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/platform-recheck-20261029/scripts/run_faults.py",
+    "--cards",
+    "0,1,2"
+  ],
+  "started_unix": 1793241337.885884,
+  "returncode": 0,
+  "elapsed_seconds": 149.11678981781006
+}

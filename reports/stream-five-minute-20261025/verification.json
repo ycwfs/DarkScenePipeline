@@ -1,0 +1,1519 @@
+{
+  "source_seconds": 300.56,
+  "source_frames": 7514,
+  "source_segments": 29,
+  "unique_sources": true,
+  "complete": {
+    "normal_stop": true,
+    "service_returncode": 0,
+    "session_status": "stopped",
+    "source_frames": 7514,
+    "source_duration_seconds": 300.56,
+    "wall_playback_seconds": 300.56996439397335,
+    "recorder_returncode": 0,
+    "http_clients": {
+      "viewer-10-mjpeg.mkv": 0,
+      "viewer-10-flv.mkv": 0,
+      "viewer-10-hls.mkv": 0,
+      "viewer-140-mjpeg.mkv": 0,
+      "viewer-140-flv.mkv": 0,
+      "viewer-140-hls.mkv": 0,
+      "viewer-275-mjpeg.mkv": 0,
+      "viewer-275-flv.mkv": 0,
+      "viewer-275-hls.mkv": 0
+    },
+    "completion_monotonic": 3628463.665735177
+  },
+  "configuration": {
+    "person_mode": true,
+    "input_processed": false,
+    "mode": "serve",
+    "input": "rtsp://127.0.0.1:47027/input",
+    "output": "",
+    "enhance": "retinexformer",
+    "sr": "bicubic",
+    "sr_scale": 2,
+    "recognize": "behavior",
+    "device": "cuda:0",
+    "ckpt_dir": "/app/ckpts",
+    "proc_max_side": 720,
+    "denoise": "fast",
+    "color_saturation": 1.0,
+    "enhance_chunk": 32,
+    "sr_chunk": 4,
+    "gpus": "0,1,2",
+    "start_frame": 0,
+    "sr_fp32": false,
+    "reco_stride": null,
+    "reco_span_sec": 1.0,
+    "reco_min_conf": 0.75,
+    "pose_overlay": true,
+    "reco_ckpt": "",
+    "skel_fusion_alpha": 0.95,
+    "skel_no_person": "soft",
+    "fuse_mode": "alpha",
+    "lum_gate": 30.0,
+    "act_tau": 0.65,
+    "skel_tau": 0.65,
+    "labels": "",
+    "xclip_model": "",
+    "xclip_reject_tau": null,
+    "no_label_bar": true,
+    "events_json": "",
+    "max_frames": null,
+    "host": "0.0.0.0",
+    "port": 42841,
+    "jpeg_quality": 85,
+    "max_stream_fps": 15.0,
+    "record": "",
+    "clip_dir": "/evidence/live/clips",
+    "clip_pre_sec": 2.0,
+    "clip_post_sec": 2.0,
+    "clip_max_sec": 15.0,
+    "clip_skip_labels": "other",
+    "clip_min_conf": 0.0,
+    "clip_session": "input/20261025_035659_1",
+    "clip_denoise": "off",
+    "stream_formats": "mjpeg,flv,hls",
+    "hls_dir": "",
+    "rtmp_push_url": "rtmp://127.0.0.1:58421/enhanced",
+    "max_flv_clients": 4,
+    "stream_bitrate": "3M",
+    "rr_bundle": "",
+    "rr_steps": 28,
+    "rr_cfg_scale": 3.0,
+    "rr_chunk": 8,
+    "rr_prompt": "",
+    "stats": {}
+  },
+  "processed_main_frames": 6932,
+  "main_capture_span_frames": 7514,
+  "capture_frames_not_processed": 582,
+  "output_seconds": 300.1997142041127,
+  "output_main_frames": 4503,
+  "output_unmapped_markers": 0,
+  "health_samples": 236,
+  "health_non_ok": 5,
+  "health_non_ok_samples": [
+    {
+      "elapsed": 33.69611391611397,
+      "http_status": 200,
+      "error": null,
+      "details": {
+        "status": "degraded",
+        "degraded_reason": "出流阻塞或已退出：hls",
+        "frame_age_s": 0.03,
+        "processing_error": null,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0
+      }
+    },
+    {
+      "elapsed": 140.2952603227459,
+      "http_status": 200,
+      "error": null,
+      "details": {
+        "status": "degraded",
+        "degraded_reason": "出流阻塞或已退出：hls",
+        "frame_age_s": 0.03,
+        "processing_error": null,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0
+      }
+    },
+    {
+      "elapsed": 169.2958549130708,
+      "http_status": 200,
+      "error": null,
+      "details": {
+        "status": "degraded",
+        "degraded_reason": "出流阻塞或已退出：push",
+        "frame_age_s": 0.04,
+        "processing_error": null,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0
+      }
+    },
+    {
+      "elapsed": 189.69663358386606,
+      "http_status": 200,
+      "error": null,
+      "details": {
+        "status": "degraded",
+        "degraded_reason": "出流阻塞或已退出：hls",
+        "frame_age_s": 0.03,
+        "processing_error": null,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0
+      }
+    },
+    {
+      "elapsed": 223.0964153748937,
+      "http_status": 200,
+      "error": null,
+      "details": {
+        "status": "degraded",
+        "degraded_reason": "出流阻塞或已退出：push",
+        "frame_age_s": 0.04,
+        "processing_error": null,
+        "push_alive": true,
+        "push_restarts": 0,
+        "push_wedged_s": 0.0,
+        "hls_alive": true,
+        "hls_restarts": 0,
+        "hls_wedged_s": 0.0
+      }
+    }
+  ],
+  "processing_fps": {
+    "n": 236,
+    "min": 19.69,
+    "median": 22.96,
+    "p95": 25.0825,
+    "max": 25.36
+  },
+  "processing_latency_ms": {
+    "n": 236,
+    "min": 83.4,
+    "median": 122.95,
+    "p95": 181.875,
+    "max": 480.5
+  },
+  "maximum_frame_age_s": 0.12,
+  "input_reconnects": 0,
+  "push_restarts": 0,
+  "hls_restarts": 0,
+  "capture_to_receiver_seconds": {
+    "n": 4503,
+    "min": 0.23510827403515577,
+    "median": 0.3126329383812845,
+    "p95": 0.368079232936725,
+    "max": 0.6749995523132384
+  },
+  "receiver_unique_main_frames": 4348,
+  "receiver_unique_frame_gap_seconds": {
+    "n": 4347,
+    "min": 0.0007162201218307018,
+    "median": 0.06684660725295544,
+    "p95": 0.10222477414645254,
+    "max": 0.16778564592823386
+  },
+  "receiver_errors_during_input": [],
+  "model_decision": {
+    "frames": 8293,
+    "events": 499,
+    "submitted": 499,
+    "max_decision_age": 0.4033368402160704,
+    "decision_age_p95": 0.27680826657451685,
+    "coalesced": 0,
+    "action_workers": [
+      {
+        "device": "cuda:2",
+        "stats": {
+          "windows": 499,
+          "uploaded_frames": 6273,
+          "reused_frames": 9695,
+          "calls": 499
+        },
+        "queue": {
+          "submitted": 499,
+          "max_pending": 1
+        }
+      }
+    ]
+  },
+  "event_counts": {
+    "other": 283,
+    "wave": 67,
+    "drink": 65,
+    "chase": 13,
+    "pick_up": 36,
+    "throw": 17,
+    "fall": 18
+  },
+  "event_log_stats": {
+    "path": "/evidence/live/clips/input/20261025_035659_1/events.jsonl",
+    "events_written": 499,
+    "events_dropped": 0
+  },
+  "sse": {
+    "events": 499,
+    "errors": [
+      {
+        "time": 3628458.253323874,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628458.454402294,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628458.655429459,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628458.856453848,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628459.073976879,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628459.275072804,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628459.47616516,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628459.702772452,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628459.903895042,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628460.104900332,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628460.305896877,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628460.506861237,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628460.707634008,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628460.908639477,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628461.109619236,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628461.310609547,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628461.511691308,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628461.724865711,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628461.925907932,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628462.126962712,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628462.338272864,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628462.53922427,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628462.740171246,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628462.94073061,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628463.142208177,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628463.360456417,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628463.5610718,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "time": 3628463.802491288,
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      }
+    ],
+    "thread_stopped": true
+  },
+  "recording": {
+    "frames_recording_input": 8293,
+    "max_recorders": 3,
+    "events_received": 499,
+    "events_without_output_frame": 0,
+    "clips_saved": 47,
+    "clips_abandoned": 0,
+    "clips_forced": 0,
+    "frames_dropped": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "uploads_dropped": 0,
+    "totals": {
+      "clips_saved": 47,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0
+    },
+    "writer_alive": false,
+    "recovery_stage_dir": "/tmp/darkpipe_person_clips_q40p2gab",
+    "uploads_pending": 0,
+    "write_error": null,
+    "error": null
+  },
+  "clips": 47,
+  "clip_labels": {
+    "Waving": 11,
+    "Drinking water": 9,
+    "Chasing": 6,
+    "Picking up object": 13,
+    "Throwing object": 5,
+    "Falling": 3
+  },
+  "context_complete": 46,
+  "cross_person_overlaps": [
+    {
+      "first": 4,
+      "second": 5,
+      "seconds": 2.045876401934777
+    },
+    {
+      "first": 5,
+      "second": 6,
+      "seconds": 2.5685760239809667
+    },
+    {
+      "first": 5,
+      "second": 7,
+      "seconds": 0.8035972929298794
+    },
+    {
+      "first": 6,
+      "second": 7,
+      "seconds": 2.7190212689489215
+    },
+    {
+      "first": 6,
+      "second": 8,
+      "seconds": 0.07543772209064059
+    },
+    {
+      "first": 14,
+      "second": 15,
+      "seconds": 2.5992587836906296
+    },
+    {
+      "first": 18,
+      "second": 19,
+      "seconds": 1.5621917496733317
+    },
+    {
+      "first": 19,
+      "second": 20,
+      "seconds": 2.5238592283092487
+    },
+    {
+      "first": 20,
+      "second": 21,
+      "seconds": 2.1211090397275996
+    },
+    {
+      "first": 21,
+      "second": 22,
+      "seconds": 2.9545381860211535
+    },
+    {
+      "first": 21,
+      "second": 23,
+      "seconds": 1.3940432569347365
+    },
+    {
+      "first": 22,
+      "second": 23,
+      "seconds": 2.4345050709135876
+    },
+    {
+      "first": 27,
+      "second": 29,
+      "seconds": 0.594017507873474
+    },
+    {
+      "first": 28,
+      "second": 29,
+      "seconds": 2.1553790371604293
+    },
+    {
+      "first": 29,
+      "second": 30,
+      "seconds": 2.3190674161165816
+    },
+    {
+      "first": 30,
+      "second": 31,
+      "seconds": 3.5203761780560114
+    },
+    {
+      "first": 31,
+      "second": 32,
+      "seconds": 5.038999999999987
+    },
+    {
+      "first": 33,
+      "second": 34,
+      "seconds": 0.04020903035251422
+    },
+    {
+      "first": 38,
+      "second": 40,
+      "seconds": 2.0719086337610975
+    },
+    {
+      "first": 39,
+      "second": 40,
+      "seconds": 2.5878224450796665
+    },
+    {
+      "first": 42,
+      "second": 43,
+      "seconds": 2.7113388990424596
+    },
+    {
+      "first": 44,
+      "second": 45,
+      "seconds": 2.3603754196241766
+    },
+    {
+      "first": 45,
+      "second": 46,
+      "seconds": 2.9235593072921233
+    }
+  ],
+  "all_videos_decode": true,
+  "decoded_video_files": 59,
+  "caveats": [
+    "Local loopback and local storage, not a real camera/NFS/HDFS/platform soak test",
+    "Synthetic scene cuts and historically seen sources; no accuracy benchmark or guarantee of all true actions",
+    "Streaming latest-frame scheduling drops input frames and can repeat output frames; continuous duration is not every-frame inference",
+    "Capture-to-receiver latency excludes camera/encoder-to-capture delay"
+  ],
+  "clips_index": [
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T011_G000/R00001/waving/E000_T011_G000_R00001_20261025_035836_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T011_G000/R00001/waving/E000_T011_G000_R00001_20261025_035836_waving_0001.json",
+      "person_id": 11,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9614,
+      "source_start": 21.377726396080106,
+      "source_end": 33.17572639608011,
+      "duration": 11.834,
+      "context_complete": true,
+      "pre": 1.9945689938105602,
+      "post": 2.004295742187651,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        1,
+        2
+      ],
+      "frames_written": 284,
+      "index": 1
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T011_G000/R00002/waving/E000_T011_G000_R00002_20261025_035846_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T011_G000/R00002/waving/E000_T011_G000_R00002_20261025_035846_waving_0001.json",
+      "person_id": 11,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.959,
+      "source_start": 31.317644237075,
+      "source_end": 37.374644237075,
+      "duration": 6.084,
+      "context_complete": true,
+      "pre": 1.9396511528156708,
+      "post": 2.0022734612859807,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        2
+      ],
+      "frames_written": 146,
+      "index": 2
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T011_G000/R00003/waving/E000_T011_G000_R00003_20261025_035851_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T011_G000/R00003/waving/E000_T011_G000_R00003_20261025_035851_waving_0001.json",
+      "person_id": 11,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9596,
+      "source_start": 35.50496303383261,
+      "source_end": 47.85596303383261,
+      "duration": 12.375,
+      "context_complete": true,
+      "pre": 1.9933323560580618,
+      "post": 2.005603852890431,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        2
+      ],
+      "frames_written": 297,
+      "index": 3
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T011_G000/R00004/waving/E000_T011_G000_R00004_20261025_035902_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T011_G000/R00004/waving/E000_T011_G000_R00004_20261025_035902_waving_0001.json",
+      "person_id": 11,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9581,
+      "source_start": 47.091435107868165,
+      "source_end": 52.69943510786817,
+      "duration": 5.64,
+      "context_complete": true,
+      "pre": 1.9588602820224992,
+      "post": 2.045876401934777,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        2,
+        3
+      ],
+      "frames_written": 141,
+      "index": 4
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T014_G000/R00005/drinking_water/E000_T014_G000_R00005_20261025_035906_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T014_G000/R00005/drinking_water/E000_T014_G000_R00005_20261025_035906_drinking_water_0001.json",
+      "person_id": 14,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9612,
+      "source_start": 50.65355870593339,
+      "source_end": 56.181558705933384,
+      "duration": 5.542,
+      "context_complete": true,
+      "pre": 1.9627366839572744,
+      "post": 2.006004802949718,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        2,
+        3,
+        4
+      ],
+      "frames_written": 133,
+      "index": 5
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T015_G000/R00006/chasing/E000_T015_G000_R00006_20261025_035909_chasing_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T015_G000/R00006/chasing/E000_T015_G000_R00006_20261025_035909_chasing_0001.json",
+      "person_id": 15,
+      "label": "Chasing",
+      "action_key": "chasing",
+      "confidence": 0.958,
+      "source_start": 53.61298268195242,
+      "source_end": 58.096982681952426,
+      "duration": 4.52,
+      "context_complete": true,
+      "pre": 1.9193127079382606,
+      "post": 2.0413284202255397,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        3,
+        4,
+        5
+      ],
+      "frames_written": 113,
+      "index": 6
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00007/picking_up_object/E000_T017_G000_R00007_20261025_035910_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00007/picking_up_object/E000_T017_G000_R00007_20261025_035910_picking_up_object_0001.json",
+      "person_id": 17,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.911,
+      "source_start": 55.377961413003504,
+      "source_end": 60.895961413003505,
+      "duration": 5.542,
+      "context_complete": true,
+      "pre": 1.9613339768871754,
+      "post": 2.0047962659336633,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        4,
+        5
+      ],
+      "frames_written": 133,
+      "index": 7
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00008/throwing_object/E000_T017_G000_R00008_20261025_035913_throwing_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00008/throwing_object/E000_T017_G000_R00008_20261025_035913_throwing_object_0001.json",
+      "person_id": 17,
+      "label": "Throwing object",
+      "action_key": "throwing_object",
+      "confidence": 0.7835,
+      "source_start": 58.021544959861785,
+      "source_end": 62.01454495986178,
+      "duration": 4.0,
+      "context_complete": true,
+      "pre": 1.954750430028895,
+      "post": 2.0385494187772224,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5
+      ],
+      "frames_written": 96,
+      "index": 8
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00009/waving/E000_T017_G000_R00009_20261025_035915_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00009/waving/E000_T017_G000_R00009_20261025_035915_waving_0001.json",
+      "person_id": 17,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9229,
+      "source_start": 59.57921758200973,
+      "source_end": 64.13221758200973,
+      "duration": 4.584,
+      "context_complete": true,
+      "pre": 1.996077807880937,
+      "post": 2.0350881332270774,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5
+      ],
+      "frames_written": 110,
+      "index": 9
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00010/picking_up_object/E000_T017_G000_R00010_20261025_035917_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00010/picking_up_object/E000_T017_G000_R00010_20261025_035917_picking_up_object_0001.json",
+      "person_id": 17,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.953,
+      "source_start": 62.25529834581539,
+      "source_end": 67.2572983458154,
+      "duration": 5.04,
+      "context_complete": true,
+      "pre": 1.9589970440752893,
+      "post": 2.0037926921136773,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5
+      ],
+      "frames_written": 126,
+      "index": 10
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00011/picking_up_object/E000_T017_G000_R00011_20261025_035921_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00011/picking_up_object/E000_T017_G000_R00011_20261025_035921_picking_up_object_0001.json",
+      "person_id": 17,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9586,
+      "source_start": 66.37593070883304,
+      "source_end": 71.93893070883303,
+      "duration": 5.6,
+      "context_complete": true,
+      "pre": 1.9973646810576327,
+      "post": 2.0016898148804785,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5
+      ],
+      "frames_written": 140,
+      "index": 11
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00012/waving/E000_T017_G000_R00012_20261025_035923_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00012/waving/E000_T017_G000_R00012_20261025_035923_waving_0001.json",
+      "person_id": 17,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.8777,
+      "source_start": 68.45535561162978,
+      "source_end": 72.45035561162979,
+      "duration": 4.0,
+      "context_complete": true,
+      "pre": 1.9949397782608855,
+      "post": 2.000133041646336,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5
+      ],
+      "frames_written": 96,
+      "index": 12
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00013/picking_up_object/E000_T017_G000_R00013_20261025_035926_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00013/picking_up_object/E000_T017_G000_R00013_20261025_035926_picking_up_object_0001.json",
+      "person_id": 17,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9568,
+      "source_start": 70.5786522156559,
+      "source_end": 75.1336522156559,
+      "duration": 4.584,
+      "context_complete": true,
+      "pre": 1.9956431742347718,
+      "post": 2.0340487168356844,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5
+      ],
+      "frames_written": 110,
+      "index": 13
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T017_G000/R00014/picking_up_object/E000_T017_G000_R00014_20261025_035929_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T017_G000/R00014/picking_up_object/E000_T017_G000_R00014_20261025_035929_picking_up_object_0001.json",
+      "person_id": 17,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9515,
+      "source_start": 73.77814678475261,
+      "source_end": 79.8551467847526,
+      "duration": 6.084,
+      "context_complete": true,
+      "pre": 1.9611486051380496,
+      "post": 2.038011090781538,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5,
+        6
+      ],
+      "frames_written": 146,
+      "index": 14
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T019_G000/R00015/waving/E000_T019_G000_R00015_20261025_035932_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T019_G000/R00015/waving/E000_T019_G000_R00015_20261025_035932_waving_0001.json",
+      "person_id": 19,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9613,
+      "source_start": 77.25588800106198,
+      "source_end": 85.97088800106198,
+      "duration": 8.75,
+      "context_complete": true,
+      "pre": 1.9994073888287005,
+      "post": 2.0360336384363507,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        5,
+        6,
+        7
+      ],
+      "frames_written": 210,
+      "index": 15
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T020_G000/R00016/drinking_water/E000_T020_G000_R00016_20261025_040007_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T020_G000/R00016/drinking_water/E000_T020_G000_R00016_20261025_040007_drinking_water_0001.json",
+      "person_id": 20,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9589,
+      "source_start": 111.74013316491619,
+      "source_end": 126.77913316491617,
+      "duration": 15.042,
+      "context_complete": false,
+      "pre": 1.9951622249744787,
+      "post": 0.04057555285839953,
+      "closed_because": "达到 clip_max_sec 上限",
+      "source_segments": [
+        8
+      ],
+      "frames_written": 361,
+      "index": 16
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T020_G000/R00017/drinking_water/E000_T020_G000_R00017_20261025_040020_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T020_G000/R00017/drinking_water/E000_T020_G000_R00017_20261025_040020_drinking_water_0001.json",
+      "person_id": 20,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9434,
+      "source_start": 125.25683792494237,
+      "source_end": 129.77883792494237,
+      "duration": 4.542,
+      "context_complete": true,
+      "pre": 1.995457464948288,
+      "post": 2.0003315081149253,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        8
+      ],
+      "frames_written": 109,
+      "index": 17
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T020_G000/R00018/drinking_water/E000_T020_G000_R00018_20261025_040023_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T020_G000/R00018/drinking_water/E000_T020_G000_R00018_20261025_040023_drinking_water_0001.json",
+      "person_id": 20,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9589,
+      "source_start": 127.937008457724,
+      "source_end": 137.055008457724,
+      "duration": 9.125,
+      "context_complete": true,
+      "pre": 1.9202869321666753,
+      "post": 2.004307818815107,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        8,
+        9
+      ],
+      "frames_written": 219,
+      "index": 18
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T023_G000/R00019/waving/E000_T023_G000_R00019_20261025_040030_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T023_G000/R00019/waving/E000_T023_G000_R00019_20261025_040030_waving_0001.json",
+      "person_id": 23,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9603,
+      "source_start": 135.49281670805067,
+      "source_end": 140.49381670805067,
+      "duration": 5.042,
+      "context_complete": true,
+      "pre": 1.9654786818400112,
+      "post": 2.000995955266063,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        8,
+        9,
+        10
+      ],
+      "frames_written": 121,
+      "index": 19
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T024_G000/R00020/picking_up_object/E000_T024_G000_R00020_20261025_040033_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T024_G000/R00020/picking_up_object/E000_T024_G000_R00020_20261025_040033_picking_up_object_0001.json",
+      "person_id": 24,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9451,
+      "source_start": 137.96995747974142,
+      "source_end": 143.49995747974143,
+      "duration": 5.542,
+      "context_complete": true,
+      "pre": 1.9693379101492496,
+      "post": 2.0094405796565127,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        9,
+        10,
+        11
+      ],
+      "frames_written": 133,
+      "index": 20
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T025_G000/R00021/chasing/E000_T025_G000_R00021_20261025_040036_chasing_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T025_G000/R00021/chasing/E000_T025_G000_R00021_20261025_040036_chasing_0001.json",
+      "person_id": 25,
+      "label": "Chasing",
+      "action_key": "chasing",
+      "confidence": 0.9246,
+      "source_start": 141.37884844001383,
+      "source_end": 147.49284844001383,
+      "duration": 6.125,
+      "context_complete": true,
+      "pre": 1.9574469498768394,
+      "post": 2.0735974739640994,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        10,
+        11,
+        12
+      ],
+      "frames_written": 147,
+      "index": 21
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T028_G000/R00022/chasing/E000_T028_G000_R00022_20261025_040040_chasing_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T028_G000/R00022/chasing/E000_T028_G000_R00022_20261025_040040_chasing_0001.json",
+      "person_id": 28,
+      "label": "Chasing",
+      "action_key": "chasing",
+      "confidence": 0.9022,
+      "source_start": 144.53831025399268,
+      "source_end": 148.53331025399268,
+      "duration": 4.0,
+      "context_complete": true,
+      "pre": 1.9829851358979909,
+      "post": 2.0121494139358447,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        11,
+        12
+      ],
+      "frames_written": 96,
+      "index": 22
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T029_G000/R00023/throwing_object/E000_T029_G000_R00023_20261025_040041_throwing_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T029_G000/R00023/throwing_object/E000_T029_G000_R00023_20261025_040041_throwing_object_0001.json",
+      "person_id": 29,
+      "label": "Throwing object",
+      "action_key": "throwing_object",
+      "confidence": 0.9105,
+      "source_start": 146.0988051830791,
+      "source_end": 154.2188051830791,
+      "duration": 8.125,
+      "context_complete": true,
+      "pre": 1.9584902068115753,
+      "post": 2.0071464221738324,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        11,
+        12
+      ],
+      "frames_written": 195,
+      "index": 23
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T029_G000/R00024/picking_up_object/E000_T029_G000_R00024_20261025_040047_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T029_G000/R00024/picking_up_object/E000_T029_G000_R00024_20261025_040047_picking_up_object_0001.json",
+      "person_id": 29,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9589,
+      "source_start": 152.293212601915,
+      "source_end": 157.335212601915,
+      "duration": 5.084,
+      "context_complete": true,
+      "pre": 1.9970827879756712,
+      "post": 2.0045926259905116,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        12
+      ],
+      "frames_written": 122,
+      "index": 24
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T029_G000/R00025/throwing_object/E000_T029_G000_R00025_20261025_040051_throwing_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T029_G000/R00025/throwing_object/E000_T029_G000_R00025_20261025_040051_throwing_object_0001.json",
+      "person_id": 29,
+      "label": "Throwing object",
+      "action_key": "throwing_object",
+      "confidence": 0.9044,
+      "source_start": 156.49350623507053,
+      "source_end": 160.51250623507053,
+      "duration": 4.042,
+      "context_complete": true,
+      "pre": 1.996789154820135,
+      "post": 2.0222538590021486,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        12
+      ],
+      "frames_written": 97,
+      "index": 25
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T029_G000/R00026/throwing_object/E000_T029_G000_R00026_20261025_040054_throwing_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T029_G000/R00026/throwing_object/E000_T029_G000_R00026_20261025_040054_throwing_object_0001.json",
+      "person_id": 29,
+      "label": "Throwing object",
+      "action_key": "throwing_object",
+      "confidence": 0.9183,
+      "source_start": 159.13577063381672,
+      "source_end": 165.7707706338167,
+      "duration": 6.667,
+      "context_complete": true,
+      "pre": 1.9595247560739608,
+      "post": 2.037467024978241,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        12
+      ],
+      "frames_written": 160,
+      "index": 26
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T029_G000/R00027/picking_up_object/E000_T029_G000_R00027_20261025_040057_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T029_G000/R00027/picking_up_object/E000_T029_G000_R00027_20261025_040057_picking_up_object_0001.json",
+      "person_id": 29,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9456,
+      "source_start": 162.28910198574886,
+      "source_end": 167.37210198574886,
+      "duration": 5.084,
+      "context_complete": true,
+      "pre": 1.967193404141824,
+      "post": 2.037216221813111,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        12
+      ],
+      "frames_written": 122,
+      "index": 27
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T029_G000/R00028/throwing_object/E000_T029_G000_R00028_20261025_040059_throwing_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T029_G000/R00028/throwing_object/E000_T029_G000_R00028_20261025_040059_throwing_object_0001.json",
+      "person_id": 29,
+      "label": "Throwing object",
+      "action_key": "throwing_object",
+      "confidence": 0.9106,
+      "source_start": 163.8554635150358,
+      "source_end": 168.9334635150358,
+      "duration": 5.084,
+      "context_complete": true,
+      "pre": 1.9968318748548768,
+      "post": 2.0435368314124673,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        12,
+        13
+      ],
+      "frames_written": 122,
+      "index": 28
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T032_G000/R00029/drinking_water/E000_T032_G000_R00029_20261025_040102_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T032_G000/R00029/drinking_water/E000_T032_G000_R00029_20261025_040102_drinking_water_0001.json",
+      "person_id": 32,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9575,
+      "source_start": 166.77808447787538,
+      "source_end": 173.41808447787537,
+      "duration": 6.667,
+      "context_complete": true,
+      "pre": 1.992210912015281,
+      "post": 2.0009651690348846,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        12,
+        13,
+        14
+      ],
+      "frames_written": 160,
+      "index": 29
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T033_G000/R00030/drinking_water/E000_T033_G000_R00030_20261025_040106_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T033_G000/R00030/drinking_water/E000_T033_G000_R00030_20261025_040106_drinking_water_0001.json",
+      "person_id": 33,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9441,
+      "source_start": 171.0990170617588,
+      "source_end": 178.7320170617588,
+      "duration": 7.64,
+      "context_complete": true,
+      "pre": 1.9592783281318873,
+      "post": 2.0334618399776616,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        13,
+        14
+      ],
+      "frames_written": 191,
+      "index": 30
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T036_G000/R00031/waving/E000_T036_G000_R00031_20261025_040110_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T036_G000/R00031/waving/E000_T036_G000_R00031_20261025_040110_waving_0001.json",
+      "person_id": 36,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9513,
+      "source_start": 175.21164088370278,
+      "source_end": 181.7796408837028,
+      "duration": 6.6,
+      "context_complete": true,
+      "pre": 1.9596545061878885,
+      "post": 2.0042365109846116,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        14,
+        15
+      ],
+      "frames_written": 165,
+      "index": 31
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T033_G001/R00032/drinking_water/E000_T033_G001_R00032_20261025_040111_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T033_G001/R00032/drinking_water/E000_T033_G001_R00032_20261025_040111_drinking_water_0001.json",
+      "person_id": 33,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9312,
+      "source_start": 176.49331382708624,
+      "source_end": 181.53231382708623,
+      "duration": 5.042,
+      "context_complete": true,
+      "pre": 1.9609815628044203,
+      "post": 2.001446996010827,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        14,
+        15
+      ],
+      "frames_written": 121,
+      "index": 32
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T038_G000/R00033/picking_up_object/E000_T038_G000_R00033_20261025_040130_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T038_G000/R00033/picking_up_object/E000_T038_G000_R00033_20261025_040130_picking_up_object_0001.json",
+      "person_id": 38,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9528,
+      "source_start": 195.3458858220838,
+      "source_end": 199.85388582208378,
+      "duration": 4.542,
+      "context_complete": true,
+      "pre": 1.951409567806877,
+      "post": 2.0363735482953302,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        15,
+        16
+      ],
+      "frames_written": 109,
+      "index": 33
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T042_G000/R00034/picking_up_object/E000_T042_G000_R00034_20261025_040135_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T042_G000/R00034/picking_up_object/E000_T042_G000_R00034_20261025_040135_picking_up_object_0001.json",
+      "person_id": 42,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9045,
+      "source_start": 199.81367679173127,
+      "source_end": 203.81667679173125,
+      "duration": 4.042,
+      "context_complete": true,
+      "pre": 1.9966185981593867,
+      "post": 2.0066047026514866,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16
+      ],
+      "frames_written": 97,
+      "index": 34
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T042_G000/R00035/falling/E000_T042_G000_R00035_20261025_040135_falling_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T042_G000/R00035/falling/E000_T042_G000_R00035_20261025_040135_falling_0001.json",
+      "person_id": 42,
+      "label": "Falling",
+      "action_key": "falling",
+      "confidence": 0.9313,
+      "source_start": 200.33889328781515,
+      "source_end": 206.93889328781518,
+      "duration": 6.6,
+      "context_complete": true,
+      "pre": 1.9974021020755117,
+      "post": 2.000388935115211,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16
+      ],
+      "frames_written": 165,
+      "index": 35
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T042_G000/R00036/picking_up_object/E000_T042_G000_R00036_20261025_040138_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T042_G000/R00036/picking_up_object/E000_T042_G000_R00036_20261025_040138_picking_up_object_0001.json",
+      "person_id": 42,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.9194,
+      "source_start": 203.45687507884577,
+      "source_end": 207.45387507884578,
+      "duration": 4.0,
+      "context_complete": true,
+      "pre": 1.9954203110448816,
+      "post": 2.0018996401019535,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16
+      ],
+      "frames_written": 96,
+      "index": 36
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T042_G000/R00037/falling/E000_T042_G000_R00037_20261025_040143_falling_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T042_G000/R00037/falling/E000_T042_G000_R00037_20261025_040143_falling_0001.json",
+      "person_id": 42,
+      "label": "Falling",
+      "action_key": "falling",
+      "confidence": 0.9119,
+      "source_start": 208.3024379410781,
+      "source_end": 214.3764379410781,
+      "duration": 6.084,
+      "context_complete": true,
+      "pre": 1.9918574488125955,
+      "post": 2.0058877742625896,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16
+      ],
+      "frames_written": 146,
+      "index": 37
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T042_G000/R00038/falling/E000_T042_G000_R00038_20261025_040150_falling_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T042_G000/R00038/falling/E000_T042_G000_R00038_20261025_040150_falling_0001.json",
+      "person_id": 42,
+      "label": "Falling",
+      "action_key": "falling",
+      "confidence": 0.9222,
+      "source_start": 215.11528780777007,
+      "source_end": 222.21428780777006,
+      "duration": 7.125,
+      "context_complete": true,
+      "pre": 1.943007582120572,
+      "post": 2.0423131599798694,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16,
+        17
+      ],
+      "frames_written": 171,
+      "index": 38
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T042_G000/R00039/picking_up_object/E000_T042_G000_R00039_20261025_040154_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T042_G000/R00039/picking_up_object/E000_T042_G000_R00039_20261025_040154_picking_up_object_0001.json",
+      "person_id": 42,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.8992,
+      "source_start": 218.69820161908865,
+      "source_end": 222.73020161908863,
+      "duration": 4.042,
+      "context_complete": true,
+      "pre": 1.9990937708020056,
+      "post": 2.0332416280805887,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16,
+        17
+      ],
+      "frames_written": 97,
+      "index": 39
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T043_G000/R00040/chasing/E000_T043_G000_R00040_20261025_040155_chasing_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T043_G000/R00040/chasing/E000_T043_G000_R00040_20261025_040155_chasing_0001.json",
+      "person_id": 43,
+      "label": "Chasing",
+      "action_key": "chasing",
+      "confidence": 0.9052,
+      "source_start": 220.14237917400897,
+      "source_end": 225.09437917400896,
+      "duration": 4.959,
+      "context_complete": true,
+      "pre": 1.916916215881713,
+      "post": 2.0013051242083293,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        16,
+        17
+      ],
+      "frames_written": 119,
+      "index": 40
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T043_G001/R00041/chasing/E000_T043_G001_R00041_20261025_040158_chasing_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T043_G001/R00041/chasing/E000_T043_G001_R00041_20261025_040158_chasing_0001.json",
+      "person_id": 43,
+      "label": "Chasing",
+      "action_key": "chasing",
+      "confidence": 0.9049,
+      "source_start": 222.8568359008059,
+      "source_end": 226.8248359008059,
+      "duration": 4.0,
+      "context_complete": true,
+      "pre": 1.959459489084793,
+      "post": 2.008634778793919,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        17
+      ],
+      "frames_written": 96,
+      "index": 41
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T049_G000/R00042/drinking_water/E000_T049_G000_R00042_20261025_040206_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T049_G000/R00042/drinking_water/E000_T049_G000_R00042_20261025_040206_drinking_water_0001.json",
+      "person_id": 49,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9587,
+      "source_start": 230.61197847500443,
+      "source_end": 236.17197847500444,
+      "duration": 5.584,
+      "context_complete": true,
+      "pre": 1.9633169148862635,
+      "post": 2.0376132293045544,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        18,
+        19,
+        20
+      ],
+      "frames_written": 134,
+      "index": 42
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T050_G000/R00043/waving/E000_T050_G000_R00043_20261025_040208_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T050_G000/R00043/waving/E000_T050_G000_R00043_20261025_040208_waving_0001.json",
+      "person_id": 50,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9562,
+      "source_start": 233.46063957596198,
+      "source_end": 238.49063957596195,
+      "duration": 5.042,
+      "context_complete": true,
+      "pre": 1.9926558139287067,
+      "post": 2.001788192167851,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        19,
+        20,
+        21
+      ],
+      "frames_written": 121,
+      "index": 43
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T063_G000/R00044/drinking_water/E000_T063_G000_R00044_20261025_040233_drinking_water_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T063_G000/R00044/drinking_water/E000_T063_G000_R00044_20261025_040233_drinking_water_0001.json",
+      "person_id": 63,
+      "label": "Drinking water",
+      "action_key": "drinking_water",
+      "confidence": 0.9611,
+      "source_start": 258.41410320671275,
+      "source_end": 264.4971032067128,
+      "duration": 6.084,
+      "context_complete": true,
+      "pre": 1.958192183177914,
+      "post": 2.0042892628275126,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        23,
+        24,
+        25
+      ],
+      "frames_written": 146,
+      "index": 44
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T064_G000/R00045/waving/E000_T064_G000_R00045_20261025_040237_waving_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T064_G000/R00045/waving/E000_T064_G000_R00045_20261025_040237_waving_0001.json",
+      "person_id": 64,
+      "label": "Waving",
+      "action_key": "waving",
+      "confidence": 0.9486,
+      "source_start": 262.1367277870886,
+      "source_end": 267.7777277870886,
+      "duration": 5.68,
+      "context_complete": true,
+      "pre": 1.9595676028020534,
+      "post": 2.0418252052590447,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        24,
+        25,
+        26
+      ],
+      "frames_written": 142,
+      "index": 45
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T065_G000/R00046/chasing/E000_T065_G000_R00046_20261025_040240_chasing_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T065_G000/R00046/chasing/E000_T065_G000_R00046_20261025_040240_chasing_0001.json",
+      "person_id": 65,
+      "label": "Chasing",
+      "action_key": "chasing",
+      "confidence": 0.9519,
+      "source_start": 264.8541684797965,
+      "source_end": 268.8191684797965,
+      "duration": 4.0,
+      "context_complete": true,
+      "pre": 1.9561269100941558,
+      "post": 2.0092940071224916,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        25,
+        26
+      ],
+      "frames_written": 96,
+      "index": 46
+    },
+    {
+      "file": "live/clips/input/20261025_035659_1/E000_T067_G000/R00047/picking_up_object/E000_T067_G000_R00047_20261025_040244_picking_up_object_0001.mp4",
+      "metadata": "live/clips/input/20261025_035659_1/E000_T067_G000/R00047/picking_up_object/E000_T067_G000_R00047_20261025_040244_picking_up_object_0001.json",
+      "person_id": 67,
+      "label": "Picking up object",
+      "action_key": "picking_up_object",
+      "confidence": 0.959,
+      "source_start": 269.209533710964,
+      "source_end": 274.25253371096403,
+      "duration": 5.084,
+      "context_complete": true,
+      "pre": 1.9707616789266353,
+      "post": 2.0339738493152026,
+      "closed_because": "post 静默期结束",
+      "source_segments": [
+        26,
+        27,
+        28
+      ],
+      "frames_written": 122,
+      "index": 47
+    }
+  ]
+}

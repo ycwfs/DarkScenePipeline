@@ -1,0 +1,112 @@
+{
+  "runs": [
+    {
+      "entry": "platform-entry",
+      "status": "finished",
+      "events": 9,
+      "all_events_two_people": true,
+      "all_selections_highest_person": true,
+      "label_counts": {
+        "Waving": 9
+      },
+      "clips": {
+        "session": "挥手3/20261022_113630_1",
+        "clips_saved": 1,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "media": [
+        {
+          "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/platform-entry/挥手3/20261022_113630_1/挥手3-处理后.mp4",
+          "full_decode": true,
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 874,
+          "duration": "6.400000",
+          "nb_read_frames": "160"
+        },
+        {
+          "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/platform-entry/挥手3/20261022_113630_1/0-6s-挥手.mp4",
+          "full_decode": true,
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 874,
+          "duration": "6.360000",
+          "nb_read_frames": "159"
+        }
+      ]
+    },
+    {
+      "entry": "box-entry",
+      "status": "finished",
+      "events": 9,
+      "all_events_two_people": true,
+      "all_selections_highest_person": true,
+      "label_counts": {
+        "Waving": 9
+      },
+      "clips": {
+        "session": "挥手3/20261022_193631_2501998",
+        "clips_saved": 1,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "media": [
+        {
+          "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/box-entry/挥手3/20261022_193631_2501998/挥手3-处理后.mp4",
+          "full_decode": true,
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 874,
+          "duration": "6.400000",
+          "nb_read_frames": "160"
+        },
+        {
+          "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/multiperson-pose-20261022/box-entry/挥手3/20261022_193631_2501998/0-6s-挥手.mp4",
+          "full_decode": true,
+          "codec_name": "h264",
+          "width": 1440,
+          "height": 874,
+          "duration": "6.360000",
+          "nb_read_frames": "159"
+        }
+      ]
+    }
+  ],
+  "video_labels_match": true,
+  "selected_slots_match": true,
+  "lum_gate_override": 0,
+  "production_default_lum_gate": 75,
+  "physical_gpus": {
+    "platform-entry": 1,
+    "box-entry": 5
+  },
+  "packaged_defaults_used_except": [
+    "lum_gate",
+    "gpu_ids",
+    "input/output paths",
+    "extra_hosts"
+  ],
+  "quality_clip_denoise": true,
+  "physical_nvidia_box_tested": false
+}

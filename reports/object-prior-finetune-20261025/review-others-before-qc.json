@@ -1,0 +1,2844 @@
+{
+  "method": "assistant visual review of numbered original/gamma ROIs; proposals only select images; not independent human GT",
+  "records": {
+    "0": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "1": {
+      "boxes": [
+        [
+          6,
+          157,
+          65,
+          247,
+          344
+        ]
+      ]
+    },
+    "2": {
+      "boxes": [
+        [
+          4,
+          83,
+          280,
+          147,
+          355
+        ]
+      ]
+    },
+    "3": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "4": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "5": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "6": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "7": {
+      "boxes": [
+        [
+          6,
+          145,
+          67,
+          249,
+          348
+        ]
+      ]
+    },
+    "8": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "9": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "10": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "11": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "12": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "13": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "14": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "15": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "16": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "17": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "18": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "19": {
+      "boxes": [],
+      "note": "Visible staff IDs/lanyards and hands are not target objects."
+    },
+    "20": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "21": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "22": {
+      "boxes": [
+        [
+          6,
+          79,
+          69,
+          321,
+          297
+        ]
+      ]
+    },
+    "23": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "24": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "25": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "26": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "27": {
+      "boxes": [],
+      "note": "Visible staff IDs/lanyards and hands are not target objects."
+    },
+    "28": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "29": {
+      "boxes": [],
+      "note": "Visible staff IDs/lanyards and hands are not target objects."
+    },
+    "30": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "31": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "32": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "33": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "34": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "35": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "36": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "37": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "38": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "39": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "40": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "41": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "42": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "43": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "44": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "45": {
+      "boxes": [
+        [
+          2,
+          219,
+          174,
+          232,
+          195
+        ]
+      ]
+    },
+    "46": {
+      "exclude": "Visually reviewed; ambiguous/occluded small items, cropped context, or redundant exhibit view; not used as background."
+    },
+    "47": {
+      "boxes": [
+        [
+          6,
+          117,
+          57,
+          180,
+          284
+        ]
+      ]
+    },
+    "48": {
+      "boxes": [
+        [
+          6,
+          94,
+          83,
+          252,
+          281
+        ]
+      ]
+    },
+    "49": {
+      "boxes": [],
+      "note": "Hands/staff badges, no visible target object."
+    },
+    "50": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "51": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          344
+        ]
+      ]
+    },
+    "52": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "53": {
+      "boxes": [],
+      "note": "Hands/staff badges, no visible target object."
+    },
+    "54": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "55": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "56": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "57": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "58": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          340
+        ]
+      ]
+    },
+    "59": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "60": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "61": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "62": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "63": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "64": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "65": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "66": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          340
+        ]
+      ]
+    },
+    "67": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "68": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "69": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "70": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "71": {
+      "boxes": [
+        [
+          6,
+          150,
+          68,
+          249,
+          349
+        ]
+      ]
+    },
+    "72": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "73": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "74": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "75": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "76": {
+      "boxes": [
+        [
+          2,
+          239,
+          115,
+          253,
+          130
+        ]
+      ],
+      "valid_region": [
+        145,
+        45,
+        280,
+        285
+      ]
+    },
+    "77": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "78": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "79": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          349
+        ]
+      ]
+    },
+    "80": {
+      "boxes": [
+        [
+          2,
+          238,
+          114,
+          252,
+          133
+        ]
+      ],
+      "valid_region": [
+        145,
+        50,
+        280,
+        300
+      ]
+    },
+    "81": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "82": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "83": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "84": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "85": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "86": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "87": {
+      "boxes": [
+        [
+          2,
+          79,
+          172,
+          113,
+          199
+        ]
+      ]
+    },
+    "88": {
+      "boxes": [
+        [
+          2,
+          207,
+          114,
+          234,
+          128
+        ]
+      ]
+    },
+    "89": {
+      "boxes": [
+        [
+          2,
+          271,
+          178,
+          304,
+          210
+        ]
+      ],
+      "valid_region": [
+        40,
+        45,
+        360,
+        350
+      ]
+    },
+    "90": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "91": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "92": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "93": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "94": {
+      "exclude": "Visually reviewed; small-object identity/boundaries ambiguous, occluded context, or redundant view; not a negative label."
+    },
+    "95": {
+      "boxes": [
+        [
+          6,
+          145,
+          68,
+          249,
+          350
+        ]
+      ]
+    },
+    "96": {
+      "boxes": [
+        [
+          2,
+          140,
+          200,
+          168,
+          218
+        ]
+      ],
+      "valid_region": [
+        125,
+        140,
+        173,
+        240
+      ],
+      "note": "Other hand and small background robot excluded from local verified region."
+    },
+    "97": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "98": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "99": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "100": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "101": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "102": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "103": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "104": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "105": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "106": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "107": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "108": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "109": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "110": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "111": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "112": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "113": {
+      "boxes": [],
+      "note": "No clearly visible target objects; visible hands/background reviewed."
+    },
+    "114": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "115": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "116": {
+      "boxes": [],
+      "note": "No clearly visible target objects; visible hands/background reviewed."
+    },
+    "117": {
+      "boxes": [
+        [
+          2,
+          210,
+          154,
+          223,
+          163
+        ]
+      ]
+    },
+    "118": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "119": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "120": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "121": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "122": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "123": {
+      "boxes": [],
+      "note": "No clearly visible target objects; visible hands/background reviewed."
+    },
+    "124": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "125": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "126": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "127": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "128": {
+      "boxes": [],
+      "note": "No clearly visible target objects; visible hands/background reviewed."
+    },
+    "129": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "130": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "131": {
+      "boxes": [],
+      "note": "No clearly visible target objects; visible hands/background reviewed."
+    },
+    "132": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "133": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "134": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "135": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "136": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "137": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "138": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "139": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "140": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "141": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "142": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "143": {
+      "exclude": "Visually reviewed; identity/boundaries of small hand objects uncertain, or redundant/cropped context; excluded rather than assumed negative."
+    },
+    "144": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "145": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "146": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "147": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "148": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "149": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "150": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "151": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "152": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "153": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "154": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "155": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "156": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "157": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "158": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "159": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "160": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "161": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "162": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "163": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "164": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "165": {
+      "boxes": [
+        [
+          2,
+          141,
+          319,
+          164,
+          342
+        ]
+      ],
+      "valid_region": [
+        130,
+        285,
+        170,
+        350
+      ]
+    },
+    "166": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "167": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "168": {
+      "boxes": [
+        [
+          2,
+          241,
+          170,
+          259,
+          186
+        ]
+      ]
+    },
+    "169": {
+      "boxes": [
+        [
+          2,
+          215,
+          188,
+          230,
+          202
+        ]
+      ]
+    },
+    "170": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "171": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "172": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "173": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "174": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "175": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "176": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "177": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "178": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "179": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "180": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "181": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "182": {
+      "boxes": [],
+      "valid_region": [
+        140,
+        50,
+        270,
+        350
+      ],
+      "note": "Empty hands/staff badge; background exhibit outside verified crop."
+    },
+    "183": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "184": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "185": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "186": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "187": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "188": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "189": {
+      "boxes": [
+        [
+          4,
+          230,
+          183,
+          254,
+          209
+        ]
+      ],
+      "valid_region": [
+        150,
+        50,
+        270,
+        350
+      ]
+    },
+    "190": {
+      "exclude": "Visually reviewed; small-object class or boundaries uncertain, or redundant/cropped context. Not used as a negative."
+    },
+    "191": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          249,
+          350
+        ]
+      ]
+    },
+    "192": {
+      "boxes": [],
+      "valid_region": [
+        145,
+        60,
+        260,
+        350
+      ]
+    },
+    "193": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "194": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "195": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "196": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "197": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "198": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "199": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "200": {
+      "boxes": [
+        [
+          2,
+          236,
+          164,
+          259,
+          189
+        ]
+      ],
+      "valid_region": [
+        130,
+        40,
+        280,
+        193
+      ]
+    },
+    "201": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "202": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "203": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "204": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "205": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "206": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "207": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "208": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "209": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "210": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "211": {
+      "boxes": [
+        [
+          6,
+          99,
+          135,
+          194,
+          224
+        ]
+      ],
+      "valid_region": [
+        80,
+        120,
+        200,
+        240
+      ]
+    },
+    "212": {
+      "boxes": [
+        [
+          2,
+          230,
+          152,
+          242,
+          166
+        ]
+      ]
+    },
+    "213": {
+      "boxes": [
+        [
+          6,
+          153,
+          249,
+          224,
+          350
+        ]
+      ],
+      "valid_region": [
+        145,
+        240,
+        250,
+        360
+      ]
+    },
+    "214": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "215": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "216": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "217": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "218": {
+      "boxes": [
+        [
+          2,
+          181,
+          128,
+          196,
+          142
+        ]
+      ]
+    },
+    "219": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "220": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "221": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "222": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "223": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "224": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "225": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "226": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "227": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "228": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "229": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "230": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "231": {
+      "boxes": [
+        [
+          6,
+          123,
+          62,
+          181,
+          284
+        ]
+      ]
+    },
+    "232": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "233": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "234": {
+      "boxes": [
+        [
+          6,
+          140,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "235": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "236": {
+      "boxes": [
+        [
+          2,
+          160,
+          122,
+          180,
+          142
+        ]
+      ],
+      "valid_region": [
+        155,
+        80,
+        290,
+        330
+      ]
+    },
+    "237": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "238": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "239": {
+      "exclude": "Visually reviewed; small items unclear or occluded; ambiguous handheld tablet/device or redundant view; not used as negative."
+    },
+    "240": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "241": {
+      "boxes": [
+        [
+          2,
+          244,
+          198,
+          277,
+          219
+        ]
+      ],
+      "valid_region": [
+        85,
+        45,
+        320,
+        355
+      ]
+    },
+    "242": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "243": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "244": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "245": {
+      "boxes": [
+        [
+          2,
+          199,
+          199,
+          229,
+          220
+        ]
+      ],
+      "valid_region": [
+        90,
+        60,
+        310,
+        350
+      ]
+    },
+    "246": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "247": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "248": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "249": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "250": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "251": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "252": {
+      "boxes": [],
+      "note": "Visible hands/staff items without target objects."
+    },
+    "253": {
+      "boxes": [
+        [
+          2,
+          218,
+          94,
+          231,
+          116
+        ]
+      ],
+      "valid_region": [
+        150,
+        70,
+        250,
+        300
+      ]
+    },
+    "254": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "255": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "256": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "257": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "258": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "259": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "260": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "261": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "262": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "263": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "264": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "265": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "266": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "267": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "268": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "269": {
+      "boxes": [
+        [
+          3,
+          154,
+          70,
+          177,
+          101
+        ]
+      ]
+    },
+    "270": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "271": {
+      "boxes": [
+        [
+          3,
+          216,
+          18,
+          239,
+          40
+        ]
+      ],
+      "valid_region": [
+        200,
+        0,
+        270,
+        100
+      ],
+      "note": "Camera body on tripod; front person handheld item uncertain and excluded."
+    },
+    "272": {
+      "boxes": [
+        [
+          2,
+          214,
+          334,
+          233,
+          347
+        ]
+      ],
+      "valid_region": [
+        140,
+        295,
+        260,
+        355
+      ]
+    },
+    "273": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "274": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "275": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "276": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "277": {
+      "boxes": [],
+      "note": "Visible hands/staff items without target objects."
+    },
+    "278": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "279": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "280": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "281": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "282": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "283": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "284": {
+      "boxes": [
+        [
+          3,
+          145,
+          79,
+          167,
+          97
+        ]
+      ],
+      "valid_region": [
+        134,
+        45,
+        240,
+        170
+      ]
+    },
+    "285": {
+      "exclude": "Visually reviewed; small-object semantics/boundaries uncertain, overlapping people, or redundant view; not used as background."
+    },
+    "286": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "287": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "288": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "289": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "290": {
+      "boxes": [
+        [
+          2,
+          161,
+          131,
+          177,
+          145
+        ]
+      ]
+    },
+    "291": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "292": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "293": {
+      "boxes": [
+        [
+          2,
+          197,
+          145,
+          218,
+          157
+        ]
+      ]
+    },
+    "294": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "295": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "296": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "297": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "298": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "299": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "300": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "301": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "302": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "303": {
+      "boxes": [
+        [
+          6,
+          145,
+          65,
+          250,
+          350
+        ]
+      ]
+    },
+    "304": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "305": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "306": {
+      "boxes": [
+        [
+          6,
+          151,
+          78,
+          243,
+          334
+        ]
+      ]
+    },
+    "307": {
+      "boxes": [
+        [
+          0,
+          155,
+          151,
+          166,
+          171
+        ]
+      ]
+    },
+    "308": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "309": {
+      "boxes": [],
+      "valid_region": [
+        150,
+        75,
+        260,
+        330
+      ]
+    },
+    "310": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "311": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "312": {
+      "boxes": [
+        [
+          4,
+          181,
+          134,
+          224,
+          174
+        ],
+        [
+          6,
+          218,
+          47,
+          259,
+          193
+        ]
+      ]
+    },
+    "313": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "314": {
+      "boxes": [
+        [
+          4,
+          229,
+          142,
+          249,
+          160
+        ]
+      ]
+    },
+    "315": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "316": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "317": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "318": {
+      "boxes": [
+        [
+          4,
+          190,
+          164,
+          220,
+          193
+        ]
+      ]
+    },
+    "319": {
+      "boxes": [],
+      "note": "Clearly visible empty hands/clothing; no target object in crop."
+    },
+    "320": {
+      "boxes": [
+        [
+          4,
+          212,
+          162,
+          238,
+          195
+        ]
+      ]
+    },
+    "321": {
+      "boxes": [
+        [
+          4,
+          133,
+          200,
+          180,
+          251
+        ]
+      ]
+    },
+    "322": {
+      "boxes": [
+        [
+          4,
+          140,
+          158,
+          207,
+          194
+        ]
+      ]
+    },
+    "323": {
+      "boxes": [],
+      "note": "Clearly visible empty hands/clothing; no target object in crop."
+    },
+    "324": {
+      "boxes": [],
+      "note": "Clearly visible empty hands/clothing; no target object in crop."
+    },
+    "325": {
+      "boxes": [],
+      "note": "Clearly visible empty hands/clothing; no target object in crop."
+    },
+    "326": {
+      "boxes": [
+        [
+          4,
+          134,
+          184,
+          170,
+          236
+        ]
+      ]
+    },
+    "327": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "328": {
+      "boxes": [
+        [
+          4,
+          229,
+          168,
+          256,
+          216
+        ]
+      ]
+    },
+    "329": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "330": {
+      "boxes": [
+        [
+          4,
+          173,
+          154,
+          211,
+          186
+        ]
+      ]
+    },
+    "331": {
+      "boxes": [
+        [
+          2,
+          147,
+          211,
+          172,
+          231
+        ]
+      ]
+    },
+    "332": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "333": {
+      "boxes": [
+        [
+          2,
+          178,
+          182,
+          191,
+          202
+        ]
+      ]
+    },
+    "334": {
+      "boxes": [
+        [
+          4,
+          121,
+          175,
+          164,
+          215
+        ]
+      ]
+    },
+    "335": {
+      "exclude": "Visually reviewed; cannot reliably distinguish tiny/blurred hand item or context incomplete; not used as a negative."
+    },
+    "336": {
+      "boxes": [
+        [
+          4,
+          176,
+          166,
+          207,
+          206
+        ]
+      ]
+    },
+    "337": {
+      "boxes": [
+        [
+          4,
+          158,
+          168,
+          194,
+          191
+        ]
+      ]
+    },
+    "338": {
+      "boxes": [
+        [
+          4,
+          163,
+          163,
+          186,
+          202
+        ]
+      ]
+    },
+    "339": {
+      "boxes": [
+        [
+          4,
+          136,
+          183,
+          176,
+          229
+        ]
+      ]
+    },
+    "340": {
+      "boxes": [
+        [
+          4,
+          190,
+          285,
+          255,
+          317
+        ]
+      ]
+    },
+    "341": {
+      "boxes": [
+        [
+          4,
+          162,
+          174,
+          212,
+          217
+        ]
+      ]
+    },
+    "342": {
+      "boxes": [
+        [
+          4,
+          133,
+          167,
+          173,
+          201
+        ]
+      ]
+    },
+    "343": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "344": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "345": {
+      "boxes": [
+        [
+          4,
+          214,
+          231,
+          260,
+          286
+        ]
+      ]
+    },
+    "346": {
+      "boxes": [
+        [
+          4,
+          226,
+          230,
+          296,
+          310
+        ]
+      ]
+    },
+    "347": {
+      "boxes": [
+        [
+          4,
+          157,
+          190,
+          187,
+          230
+        ]
+      ]
+    },
+    "348": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "349": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "350": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "351": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "352": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "353": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "354": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "355": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "356": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "357": {
+      "boxes": [
+        [
+          0,
+          183,
+          150,
+          197,
+          180
+        ]
+      ]
+    },
+    "358": {
+      "boxes": [
+        [
+          0,
+          184,
+          178,
+          202,
+          206
+        ]
+      ]
+    },
+    "359": {
+      "boxes": [
+        [
+          0,
+          151,
+          185,
+          166,
+          205
+        ]
+      ]
+    },
+    "360": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "361": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "362": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "363": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "364": {
+      "boxes": [
+        [
+          6,
+          153,
+          77,
+          245,
+          332
+        ]
+      ]
+    },
+    "365": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "366": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "367": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "368": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "369": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "370": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "371": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "372": {
+      "boxes": [
+        [
+          4,
+          182,
+          188,
+          210,
+          228
+        ]
+      ]
+    },
+    "373": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "374": {
+      "boxes": [],
+      "valid_region": [
+        160,
+        55,
+        267,
+        350
+      ]
+    },
+    "375": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "376": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "377": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "378": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "379": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "380": {
+      "boxes": [
+        [
+          0,
+          225,
+          197,
+          240,
+          225
+        ]
+      ]
+    },
+    "381": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "382": {
+      "exclude": "Visually reviewed; dark/blurred item, partial target or ambiguous background figure; not a negative label."
+    },
+    "383": {
+      "boxes": [],
+      "note": "Visible empty hands and clothing; fixed furniture/equipment is out of the action-object ontology."
+    },
+    "384": {
+      "boxes": [
+        [
+          2,
+          104,
+          98,
+          122,
+          120
+        ]
+      ],
+      "valid_region": [
+        50,
+        70,
+        175,
+        175
+      ]
+    },
+    "385": {
+      "boxes": [],
+      "valid_region": [
+        140,
+        80,
+        260,
+        350
+      ]
+    },
+    "386": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "387": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "388": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "389": {
+      "boxes": [
+        [
+          2,
+          152,
+          194,
+          162,
+          211
+        ]
+      ]
+    },
+    "390": {
+      "boxes": [
+        [
+          2,
+          174,
+          137,
+          190,
+          157
+        ]
+      ]
+    },
+    "391": {
+      "boxes": [
+        [
+          2,
+          214,
+          143,
+          235,
+          158
+        ]
+      ]
+    },
+    "392": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "393": {
+      "boxes": [
+        [
+          2,
+          151,
+          196,
+          162,
+          211
+        ]
+      ]
+    },
+    "394": {
+      "boxes": [
+        [
+          0,
+          227,
+          182,
+          244,
+          214
+        ]
+      ]
+    },
+    "395": {
+      "boxes": [
+        [
+          2,
+          228,
+          156,
+          243,
+          171
+        ]
+      ]
+    },
+    "396": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "397": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "398": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "399": {
+      "boxes": [
+        [
+          2,
+          114,
+          254,
+          161,
+          288
+        ]
+      ]
+    },
+    "400": {
+      "boxes": [
+        [
+          2,
+          228,
+          161,
+          249,
+          173
+        ]
+      ]
+    },
+    "401": {
+      "boxes": [
+        [
+          5,
+          145,
+          74,
+          167,
+          102
+        ]
+      ]
+    },
+    "402": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "403": {
+      "boxes": [
+        [
+          2,
+          179,
+          111,
+          193,
+          127
+        ]
+      ]
+    },
+    "404": {
+      "boxes": [
+        [
+          2,
+          147,
+          99,
+          161,
+          124
+        ]
+      ]
+    },
+    "405": {
+      "boxes": [
+        [
+          2,
+          211,
+          146,
+          227,
+          159
+        ]
+      ]
+    },
+    "406": {
+      "boxes": [
+        [
+          2,
+          155,
+          97,
+          167,
+          123
+        ]
+      ]
+    },
+    "407": {
+      "boxes": [
+        [
+          2,
+          203,
+          158,
+          229,
+          186
+        ]
+      ]
+    },
+    "408": {
+      "boxes": [
+        [
+          2,
+          161,
+          124,
+          178,
+          139
+        ]
+      ]
+    },
+    "409": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "410": {
+      "boxes": [
+        [
+          2,
+          189,
+          246,
+          209,
+          260
+        ]
+      ]
+    },
+    "411": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "412": {
+      "boxes": [
+        [
+          2,
+          177,
+          102,
+          191,
+          117
+        ],
+        [
+          2,
+          229,
+          289,
+          250,
+          313
+        ]
+      ]
+    },
+    "413": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "414": {
+      "boxes": [
+        [
+          2,
+          169,
+          132,
+          185,
+          145
+        ]
+      ]
+    },
+    "415": {
+      "boxes": [
+        [
+          2,
+          163,
+          117,
+          178,
+          138
+        ]
+      ],
+      "valid_region": [
+        130,
+        70,
+        240,
+        340
+      ]
+    },
+    "416": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "417": {
+      "boxes": [
+        [
+          5,
+          135,
+          127,
+          186,
+          177
+        ]
+      ]
+    },
+    "418": {
+      "boxes": [
+        [
+          6,
+          143,
+          65,
+          237,
+          305
+        ]
+      ]
+    },
+    "419": {
+      "boxes": [
+        [
+          6,
+          149,
+          65,
+          245,
+          342
+        ]
+      ]
+    },
+    "420": {
+      "boxes": [
+        [
+          6,
+          144,
+          65,
+          248,
+          344
+        ]
+      ]
+    },
+    "421": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "422": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "423": {
+      "boxes": [
+        [
+          6,
+          146,
+          65,
+          238,
+          300
+        ]
+      ]
+    },
+    "424": {
+      "exclude": "Visually reviewed; item class/boundaries unclear, occlusion or incomplete context; not used as a negative."
+    },
+    "425": {
+      "boxes": [
+        [
+          2,
+          170,
+          143,
+          188,
+          152
+        ]
+      ],
+      "valid_region": [
+        165,
+        50,
+        240,
+        315
+      ]
+    },
+    "426": {
+      "boxes": [
+        [
+          2,
+          225,
+          187,
+          248,
+          202
+        ]
+      ]
+    },
+    "427": {
+      "boxes": [
+        [
+          2,
+          113,
+          113,
+          129,
+          139
+        ]
+      ]
+    }
+  },
+  "pages_reviewed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ]
+}

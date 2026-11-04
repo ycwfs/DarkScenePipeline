@@ -1,0 +1,48 @@
+{
+  "authorized": "User explicitly requested formal integration of both priors",
+  "files": {
+    "main.py": {
+      "before": "b0fd29aefea87b0a2310a5e2f62081f803638cfb8ff464530e32217e2f9aeea9",
+      "after": "8f1abe9c7591a8aff4d54ba165b0c36d8a76961d1ad00c082f5e48f701e8b03d"
+    },
+    "suanzi.json": {
+      "before": "746f2b96e41820a5ab8efce41f6146eeed0a9569770528688f1056d8ed82ce7a",
+      "after": "718255cbb98d403b2cc06b7ab12fce2b61e1f799fd5c5f878daf20c509471671"
+    },
+    "darkpipe/config.py": {
+      "before": "c352b588287d0f9275bad2a79eb5462192599add9b023441d800d78639608f62",
+      "after": "352079747079e2baaa37262e8effa18f2758381574af2e0b2b315bfad6eadf59"
+    },
+    "darkpipe/person/core.py": {
+      "before": "f91315d3d74b685f85fd07cf470c96dc5bb37fa782703cc51829a5bcd57f4c19",
+      "after": "9476d9987d14b084fffa212c3dc51511f61cb7aabefcba31e36e1371a20b2e78"
+    },
+    "darkpipe/person/runtime.py": {
+      "before": "1a3c1083505011f649fa50548a690c9e6860635ce49c02afd82e235a206bc55e",
+      "after": "9fea006e0ef1f1537935f0c9ea54acc00c4cbca2aded5362d350fe9e7db0f898"
+    },
+    "darkpipe/person/action_engine.py": {
+      "before": "34984d171ced30622f03a6a17c0860e6e191bc9aa681c6b6a3679dde4adc2fdb",
+      "after": "a9258e06530e5d8bdcb449dfc7b252c686207e1972dc8c52d82d1acb57264bb2"
+    },
+    "darkpipe/person/wave_prior.py": {
+      "before": null,
+      "after": "3d5225466661bf5db24ecf7260096b6e3fb5c1d762dbe6d1d91870f8441c6885"
+    },
+    "darkpipe/person/running_prior.py": {
+      "before": null,
+      "after": "29d209e612e2332d224fc96aff2e9b1a3a1362fbdacca2ff075391b570e295c8"
+    }
+  },
+  "defaults": {
+    "lum_gate": 35.0,
+    "reco_min_conf": 0.925,
+    "skel_fusion_alpha": 0.972,
+    "skel_no_person": "soft",
+    "object_min_conf": 0.581,
+    "person_object_prior": true,
+    "wave_pose_min_frames": 3,
+    "running_pose_min_speed": 0.35
+  },
+  "model_policy": "Original six model hashes unchanged; no training"
+}

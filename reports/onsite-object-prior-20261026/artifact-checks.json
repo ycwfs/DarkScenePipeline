@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "policy_tests": "9 passed",
+  "html_links": 434,
+  "media": [
+    {
+      "file": "demos/01_da3c570dcc033d1b.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "117"
+    },
+    {
+      "file": "demos/02_ad442c59b37f1b2f.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "101"
+    },
+    {
+      "file": "demos/03_28cee3446ca3ff28.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "111"
+    },
+    {
+      "file": "demos/04_fd54d3f8ee4adff7.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "77"
+    },
+    {
+      "file": "demos/05_7ce9e264c4e2c972.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "61"
+    },
+    {
+      "file": "demos/06_c7b116d2eb6141a6.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "72"
+    },
+    {
+      "file": "demos/07_8bf98cf74cd2d587.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "91"
+    },
+    {
+      "file": "demos/08_92cb1dbf7394409d.mp4",
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 574,
+      "nb_read_frames": "141"
+    }
+  ],
+  "video_csv_rows": 535,
+  "window_csv_rows": 4234,
+  "previous_overlap": {
+    "windows": 55,
+    "matched": 55,
+    "differing": []
+  },
+  "source_hashes_verified": true
+}

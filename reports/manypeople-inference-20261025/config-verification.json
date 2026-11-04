@@ -1,0 +1,67 @@
+{
+  "expected": {
+    "person_mode": true,
+    "input_processed": false,
+    "reco_min_conf": 0.75,
+    "lum_gate": 30.0,
+    "skel_fusion_alpha": 0.95,
+    "skel_no_person": "soft",
+    "fuse_mode": "alpha",
+    "proc_max_side": 720,
+    "sr": "bicubic",
+    "sr_scale": 2,
+    "clip_pre_sec": 2.0,
+    "clip_post_sec": 2.0,
+    "clip_max_sec": 15.0,
+    "pose_overlay": true,
+    "label_bar": false,
+    "enhance": "retinexformer"
+  },
+  "jobs": [
+    {
+      "number": 1,
+      "gpu_ids": "1,0",
+      "configuration_matches": true
+    },
+    {
+      "number": 2,
+      "gpu_ids": "1,0",
+      "configuration_matches": true
+    },
+    {
+      "number": 3,
+      "gpu_ids": "0,1",
+      "configuration_matches": true
+    },
+    {
+      "number": 4,
+      "gpu_ids": "0,1",
+      "configuration_matches": true
+    },
+    {
+      "number": 5,
+      "gpu_ids": "1,0",
+      "configuration_matches": true
+    },
+    {
+      "number": 6,
+      "gpu_ids": "1,0",
+      "configuration_matches": true
+    },
+    {
+      "number": 7,
+      "gpu_ids": "0,1",
+      "configuration_matches": true
+    },
+    {
+      "number": 8,
+      "gpu_ids": "1,0",
+      "configuration_matches": true
+    },
+    {
+      "number": 9,
+      "gpu_ids": "1,0",
+      "configuration_matches": true
+    }
+  ]
+}

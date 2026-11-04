@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>动作骨架 · 10 个本地样本</title><style>
+*{box-sizing:border-box}body{margin:0;background:#10161d;color:#edf3f5;font:16px/1.6 system-ui,sans-serif}
+main{max-width:1280px;margin:auto;padding:36px 24px}h1{font-size:32px;margin:8px 0}h2{font-size:21px;margin:0 0 14px}
+.intro{max-width:880px;color:#bac9d2}.tag{color:#82deae;font-size:14px;letter-spacing:1px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:30px}
+article{background:#1b2530;border:1px solid #344250;border-radius:14px;padding:18px}video{display:block;width:100%;border-radius:8px;background:#000}
+p{margin:8px 0;color:#bfccd5}.result{color:#9be4b6}span{color:#a2b0bc;font-size:14px}a{color:#9acaff}footer{margin-top:28px;color:#aabac6}
+@media(max-width:700px){.grid{grid-template-columns:1fr}main{padding:20px 14px}h1{font-size:26px}}
+</style><main><div class="tag">LOCAL PREVIEW · 2026-10-19</div><h1>动作骨架 · 10 个本地样本</h1>
+<p class="intro">默认阈值 0.75；处理长边 720；照度门 75；RGB 与骨架融合权重 0.7。骨架只绘制在分支参与且与最终动作一致的候选人物上。视频开头约 1 秒积累识别窗口，此时没有骨架。</p>
+<p class="intro">这是绘制功能预览，包含训练内样本，不能作为泛化精度或实时性能验收。骨架候选不等于可靠的人物身份定位。<a href="README.md">查看说明</a> · <a href="overview.jpg">截图总览</a></p>
+<div class="grid"><article><h2>01 · 喝水16</h2>
+<video controls playsinline preload="metadata" poster="stills/01_喝水16_pose.jpg" src="videos/01_喝水16_pose.mp4"></video>
+<p class="result">喝水 4 <span>（事件数）</span></p>
+<p>3.00 秒 · 75 帧 · 有骨架 51 帧</p>
+<p>绿线为骨架，黄点为关键点。</p><a href="videos/01_喝水16_pose.mp4" download>下载视频</a></article><article><h2>02 · 喝水17</h2>
+<video controls playsinline preload="metadata" poster="stills/02_喝水17_pose.jpg" src="videos/02_喝水17_pose.mp4"></video>
+<p class="result">喝水 3 <span>（事件数）</span></p>
+<p>2.48 秒 · 62 帧 · 有骨架 38 帧</p>
+<p>绿线为骨架，黄点为关键点。</p><a href="videos/02_喝水17_pose.mp4" download>下载视频</a></article><article><h2>03 · 喝水18</h2>
+<video controls playsinline preload="metadata" poster="stills/03_喝水18_pose.jpg" src="videos/03_喝水18_pose.mp4"></video>
+<p class="result">喝水 3 / 其他 1 <span>（事件数）</span></p>
+<p>3.12 秒 · 78 帧 · 有骨架 48 帧</p>
+<p>包含低于 0.75 后回到其他的时刻。</p><a href="videos/03_喝水18_pose.mp4" download>下载视频</a></article><article><h2>04 · 挥手20</h2>
+<video controls playsinline preload="metadata" poster="stills/04_挥手20_pose.jpg" src="videos/04_挥手20_pose.mp4"></video>
+<p class="result">挥手 1 / 其他 1 <span>（事件数）</span></p>
+<p>2.20 秒 · 55 帧 · 有骨架 16 帧</p>
+<p>包含低于 0.75 后回到其他的时刻。</p><a href="videos/04_挥手20_pose.mp4" download>下载视频</a></article><article><h2>05 · 挥手21</h2>
+<video controls playsinline preload="metadata" poster="stills/05_挥手21_pose.jpg" src="videos/05_挥手21_pose.mp4"></video>
+<p class="result">挥手 1 <span>（事件数）</span></p>
+<p>1.60 秒 · 40 帧 · 有骨架 16 帧</p>
+<p>绿线为骨架，黄点为关键点。</p><a href="videos/05_挥手21_pose.mp4" download>下载视频</a></article><article><h2>06 · 挥手22</h2>
+<video controls playsinline preload="metadata" poster="stills/06_挥手22_pose.jpg" src="videos/06_挥手22_pose.mp4"></video>
+<p class="result">挥手 2 <span>（事件数）</span></p>
+<p>2.16 秒 · 54 帧 · 有骨架 30 帧</p>
+<p>绿线为骨架，黄点为关键点。</p><a href="videos/06_挥手22_pose.mp4" download>下载视频</a></article><article><h2>07 · 捡东西2</h2>
+<video controls playsinline preload="metadata" poster="stills/07_捡东西2_pose.jpg" src="videos/07_捡东西2_pose.mp4"></video>
+<p class="result">捡拾物品 3 <span>（事件数）</span></p>
+<p>2.84 秒 · 71 帧 · 有骨架 47 帧</p>
+<p>绿线为骨架，黄点为关键点。</p><a href="videos/07_捡东西2_pose.mp4" download>下载视频</a></article><article><h2>08 · 追逐16</h2>
+<video controls playsinline preload="metadata" poster="stills/08_追逐16_pose.jpg" src="videos/08_追逐16_pose.mp4"></video>
+<p class="result">追逐 2 <span>（事件数）</span></p>
+<p>1.80 秒 · 45 帧 · 有骨架 13 帧</p>
+<p>快速移动时，跟随不可靠的骨架会暂时隐藏。</p><a href="videos/08_追逐16_pose.mp4" download>下载视频</a></article><article><h2>09 · 追逐19</h2>
+<video controls playsinline preload="metadata" poster="stills/09_追逐19_pose.jpg" src="videos/09_追逐19_pose.mp4"></video>
+<p class="result">追逐 4 <span>（事件数）</span></p>
+<p>2.96 秒 · 74 帧 · 有骨架 0 帧</p>
+<p>照度门关闭骨架分支，只显示动作结果。</p><a href="videos/09_追逐19_pose.mp4" download>下载视频</a></article><article><h2>10 · other1</h2>
+<video controls playsinline preload="metadata" poster="stills/10_other1_pose.jpg" src="videos/10_other1_pose.mp4"></video>
+<p class="result">其他 3 <span>（事件数）</span></p>
+<p>2.48 秒 · 59 帧 · 有骨架 0 帧</p>
+<p>最终结果为其他，不绘制动作人物。</p><a href="videos/10_other1_pose.mp4" download>下载视频</a></article></div><footer>10 段均为 H.264，保留原视频帧率与完整帧数。页面无外部依赖，解压预览包后直接打开 index.html 即可。</footer></main></html>

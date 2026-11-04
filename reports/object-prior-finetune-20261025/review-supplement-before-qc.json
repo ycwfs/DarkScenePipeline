@@ -1,0 +1,806 @@
+{
+  "method": "Assistant visual review; no auto-acceptance of proposals; coordinate QA required",
+  "pages_reviewed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "records": {
+    "0": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "1": {
+      "boxes": [
+        [
+          6,
+          152,
+          76,
+          242,
+          318
+        ]
+      ]
+    },
+    "2": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "3": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "4": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "5": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "6": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "7": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "8": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "9": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "10": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "11": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "12": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "13": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "14": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "15": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "16": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "17": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "18": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "19": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "20": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "21": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "22": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "23": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "24": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "25": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "26": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "27": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "28": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "29": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "30": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "31": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "32": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "33": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "34": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "35": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "36": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "37": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "38": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "39": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "40": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "41": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "42": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "43": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "44": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "45": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "46": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "47": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "48": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "49": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "50": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "51": {
+      "boxes": [
+        [
+          4,
+          173,
+          167,
+          205,
+          212
+        ]
+      ]
+    },
+    "52": {
+      "boxes": [
+        [
+          4,
+          134,
+          180,
+          185,
+          220
+        ]
+      ]
+    },
+    "53": {
+      "boxes": [
+        [
+          4,
+          216,
+          169,
+          247,
+          203
+        ]
+      ]
+    },
+    "54": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "55": {
+      "boxes": [
+        [
+          4,
+          197,
+          151,
+          223,
+          197
+        ]
+      ]
+    },
+    "56": {
+      "boxes": [
+        [
+          4,
+          208,
+          166,
+          232,
+          207
+        ]
+      ]
+    },
+    "57": {
+      "boxes": [
+        [
+          4,
+          156,
+          168,
+          196,
+          210
+        ]
+      ]
+    },
+    "58": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "59": {
+      "boxes": [
+        [
+          4,
+          157,
+          166,
+          191,
+          184
+        ]
+      ]
+    },
+    "60": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "61": {
+      "boxes": [
+        [
+          4,
+          221,
+          155,
+          250,
+          185
+        ]
+      ]
+    },
+    "62": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "63": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "64": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "65": {
+      "boxes": [
+        [
+          4,
+          195,
+          161,
+          219,
+          209
+        ]
+      ]
+    },
+    "66": {
+      "boxes": [
+        [
+          4,
+          140,
+          182,
+          175,
+          224
+        ]
+      ]
+    },
+    "67": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "68": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "69": {
+      "boxes": [
+        [
+          4,
+          170,
+          167,
+          205,
+          211
+        ]
+      ]
+    },
+    "70": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "71": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "72": {
+      "boxes": [
+        [
+          4,
+          150,
+          156,
+          192,
+          188
+        ]
+      ]
+    },
+    "73": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "74": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "75": {
+      "boxes": [
+        [
+          4,
+          174,
+          153,
+          204,
+          197
+        ]
+      ]
+    },
+    "76": {
+      "boxes": [
+        [
+          4,
+          199,
+          173,
+          246,
+          205
+        ]
+      ]
+    },
+    "77": {
+      "boxes": [
+        [
+          4,
+          86,
+          258,
+          155,
+          331
+        ]
+      ]
+    },
+    "78": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "79": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "80": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "81": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "82": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "83": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "84": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "85": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "86": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "87": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "88": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "89": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "90": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "91": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "92": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "93": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "94": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "95": {
+      "boxes": [
+        [
+          4,
+          141,
+          175,
+          176,
+          215
+        ]
+      ]
+    },
+    "96": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "97": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "98": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "99": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "100": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "101": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "102": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "103": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "104": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "105": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "106": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "107": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "108": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "109": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "110": {
+      "boxes": [
+        [
+          4,
+          173,
+          204,
+          206,
+          254
+        ]
+      ]
+    },
+    "111": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "112": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "113": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "114": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "115": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "116": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "117": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "118": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "119": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "120": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "121": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "122": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "123": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "124": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "125": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "126": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "127": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "128": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "129": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "130": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "131": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "132": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "133": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "134": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "135": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "136": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "137": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "138": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "139": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "140": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "141": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "142": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "143": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "144": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "145": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "146": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "147": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "148": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "149": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "150": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "151": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "152": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "153": {
+      "boxes": [
+        [
+          4,
+          222,
+          208,
+          244,
+          241
+        ]
+      ]
+    },
+    "154": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "155": {
+      "boxes": [],
+      "note": "Reviewed visible person/empty hands and context, no target object discernible."
+    },
+    "156": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "157": {
+      "boxes": [
+        [
+          4,
+          236,
+          276,
+          258,
+          323
+        ]
+      ]
+    },
+    "158": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "159": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "160": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "161": {
+      "boxes": [
+        [
+          6,
+          157,
+          63,
+          236,
+          296
+        ]
+      ]
+    },
+    "162": {
+      "boxes": [
+        [
+          6,
+          159,
+          67,
+          237,
+          294
+        ]
+      ]
+    },
+    "163": {
+      "boxes": [
+        [
+          6,
+          159,
+          67,
+          237,
+          294
+        ]
+      ]
+    },
+    "164": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "165": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "166": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "167": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "168": {
+      "boxes": [
+        [
+          2,
+          109,
+          111,
+          124,
+          143
+        ]
+      ]
+    },
+    "169": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "170": {
+      "boxes": [
+        [
+          6,
+          153,
+          67,
+          239,
+          295
+        ]
+      ]
+    },
+    "171": {
+      "boxes": [
+        [
+          2,
+          110,
+          113,
+          124,
+          147
+        ]
+      ]
+    },
+    "172": {
+      "exclude": "Visually reviewed; ambiguous/occluded small object, redundant view, or insufficient resolution; not a negative label."
+    },
+    "173": {
+      "boxes": [
+        [
+          6,
+          157,
+          68,
+          239,
+          296
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,911 @@
+[
+  {
+    "folder": "network-fast",
+    "service_error": null,
+    "harness_complete": true,
+    "captured": 5663,
+    "processed": 4275,
+    "dropped_input": 1388,
+    "seconds": 240.04353328002617,
+    "processing_fps": 17.77891821823608,
+    "submitted": 394,
+    "completed": 394,
+    "coalesced": 0,
+    "decision_age": {
+      "n": 394,
+      "p50": 0.17733415099792182,
+      "p95": 0.20621415481436994,
+      "maximum": 0.23266953881829977
+    },
+    "max_candidate_people": 2,
+    "clip_counters": {
+      "events_received": 394,
+      "frames_recording_input": 4275,
+      "max_recorders": 3,
+      "capture_discontinuities": 4,
+      "events_without_output_frame": 0,
+      "totals": {
+        "clips_saved": 36,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 179,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "uploads_dropped": 0
+      },
+      "error": null
+    },
+    "clip_closing_reasons": {
+      "post 静默期结束": 28,
+      "达到 clip_max_sec 上限": 5,
+      "输入断流/时间间隙，尾部上下文不完整": 2,
+      "服务停止，尾部上下文可能不完整": 1
+    },
+    "capture": {
+      "received": 5663,
+      "consumed": 4275,
+      "dropped": 1388,
+      "duration": 240.04353328002617,
+      "connections": [
+        {
+          "epoch": 0,
+          "opened": 1.333855003118515,
+          "first_frame": 1.4545920500531793
+        },
+        {
+          "epoch": 1,
+          "opened": 118.66041034087539,
+          "first_frame": 118.70937246689573
+        },
+        {
+          "epoch": 2,
+          "opened": 169.05258351098746,
+          "first_frame": 169.12271005799994
+        }
+      ],
+      "errors": [
+        {
+          "time": 116.53263157699257,
+          "error": "stream read failed or timed out"
+        },
+        {
+          "time": 155.58245716104284,
+          "error": "stream read failed or timed out"
+        },
+        {
+          "time": 156.0915865371935,
+          "error": "stream open failed"
+        },
+        {
+          "time": 157.09448865428567,
+          "error": "stream open failed"
+        },
+        {
+          "time": 159.09831944201142,
+          "error": "stream open failed"
+        },
+        {
+          "time": 163.10205714218318,
+          "error": "stream open failed"
+        }
+      ],
+      "last_frame_at": 240.01255701528862,
+      "thread_alive": false
+    },
+    "receivers": [
+      {
+        "url": "rtsp://127.0.0.1:45233/enhanced",
+        "decoded": 4506,
+        "matched": 4506,
+        "unique_source_frames": 3094,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": {
+          "n": 4506,
+          "p50": 0.8595066112466156,
+          "p95": 5.336119097541086,
+          "maximum": 14.345985473133624
+        },
+        "normal_received_age": {
+          "n": 2666,
+          "p50": 0.8574031468015164,
+          "p95": 0.8995967886876315,
+          "maximum": 1.0758174969814718
+        },
+        "normal_intervals": [
+          [
+            10,
+            58
+          ],
+          [
+            85,
+            108
+          ],
+          [
+            132,
+            153
+          ],
+          [
+            180,
+            198
+          ],
+          [
+            210,
+            235
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "output_up",
+            "seconds": 5.727252210024744
+          },
+          {
+            "action": "source_resume",
+            "seconds": 1.3792497301474214
+          },
+          {
+            "action": "source_up",
+            "seconds": 6.837211554870009
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": null
+          }
+        ],
+        "client_disconnects": 34
+      },
+      {
+        "url": "rtmp://127.0.0.1:60475/enhanced-rtmp",
+        "decoded": 2226,
+        "matched": 2226,
+        "unique_source_frames": 1560,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": {
+          "n": 2226,
+          "p50": 1.8719505318440497,
+          "p95": 5.445456212037243,
+          "maximum": 15.11040172399953
+        },
+        "normal_received_age": {
+          "n": 1303,
+          "p50": 1.7422601361759007,
+          "p95": 2.7388815764803436,
+          "maximum": 3.0768584618344903
+        },
+        "normal_intervals": [
+          [
+            10,
+            58
+          ],
+          [
+            85,
+            108
+          ],
+          [
+            132,
+            153
+          ],
+          [
+            180,
+            198
+          ],
+          [
+            210,
+            235
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "output_up",
+            "seconds": 8.735697266180068
+          },
+          {
+            "action": "source_resume",
+            "seconds": 5.48943901900202
+          },
+          {
+            "action": "source_up",
+            "seconds": 7.56330798426643
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": 1.8696302832104266
+          }
+        ],
+        "client_disconnects": 81
+      },
+      {
+        "url": "rtsp://127.0.0.1:45233/enhanced",
+        "decoded": 955,
+        "matched": 955,
+        "unique_source_frames": 736,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": {
+          "n": 955,
+          "p50": 0.862019021064043,
+          "p95": 0.9002174089197069,
+          "maximum": 1.3668303871527314
+        },
+        "normal_received_age": {
+          "n": 604,
+          "p50": 0.8612934697885066,
+          "p95": 0.8815283322008327,
+          "maximum": 0.9150050459429622
+        },
+        "normal_intervals": [
+          [
+            10,
+            58
+          ],
+          [
+            85,
+            108
+          ],
+          [
+            132,
+            153
+          ],
+          [
+            180,
+            198
+          ],
+          [
+            210,
+            235
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "output_up",
+            "seconds": 131.75231901323423
+          },
+          {
+            "action": "source_resume",
+            "seconds": 85.67800915520638
+          },
+          {
+            "action": "source_up",
+            "seconds": 40.73886061226949
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": 3.6559806703589857
+          }
+        ],
+        "client_disconnects": 11
+      }
+    ],
+    "faults": [
+      {
+        "time": 60.08159347390756,
+        "action": "output_down"
+      },
+      {
+        "time": 72.1076826620847,
+        "action": "output_up"
+      },
+      {
+        "time": 110.16735463915393,
+        "action": "source_pause"
+      },
+      {
+        "time": 118.18199252011254,
+        "action": "source_resume"
+      },
+      {
+        "time": 155.35355217801407,
+        "action": "source_down"
+      },
+      {
+        "time": 163.12114106304944,
+        "action": "source_up"
+      },
+      {
+        "time": 200.20402100495994,
+        "action": "viewer_reconnect"
+      }
+    ]
+  },
+  {
+    "folder": "network-off",
+    "service_error": null,
+    "harness_complete": false,
+    "captured": 5642,
+    "processed": 4405,
+    "dropped_input": 1237,
+    "seconds": 240.02804455300793,
+    "processing_fps": 18.326061879377306,
+    "submitted": 393,
+    "completed": 393,
+    "coalesced": 0,
+    "decision_age": {
+      "n": 393,
+      "p50": 0.17203402519226074,
+      "p95": 0.20364635307341813,
+      "maximum": 0.23832137510180473
+    },
+    "max_candidate_people": 2,
+    "clip_counters": {
+      "events_received": 393,
+      "frames_recording_input": 4405,
+      "max_recorders": 3,
+      "capture_discontinuities": 4,
+      "events_without_output_frame": 0,
+      "totals": {
+        "clips_saved": 34,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "uploads_dropped": 0
+      },
+      "error": null
+    },
+    "clip_closing_reasons": {
+      "post 静默期结束": 26,
+      "达到 clip_max_sec 上限": 7,
+      "输入断流/时间间隙，尾部上下文不完整": 1
+    },
+    "capture": {
+      "received": 5642,
+      "consumed": 4405,
+      "dropped": 1237,
+      "duration": 240.02804455300793,
+      "connections": [
+        {
+          "epoch": 0,
+          "opened": 1.7094301250763237,
+          "first_frame": 1.8783384752459824
+        },
+        {
+          "epoch": 1,
+          "opened": 118.76375140110031,
+          "first_frame": 118.84885775623843
+        },
+        {
+          "epoch": 2,
+          "opened": 168.91677518608049,
+          "first_frame": 168.9759519812651
+        }
+      ],
+      "errors": [
+        {
+          "time": 116.41723118908703,
+          "error": "stream read failed or timed out"
+        },
+        {
+          "time": 155.43991309124976,
+          "error": "stream read failed or timed out"
+        },
+        {
+          "time": 155.95035396702588,
+          "error": "stream open failed"
+        },
+        {
+          "time": 156.9544448540546,
+          "error": "stream open failed"
+        },
+        {
+          "time": 158.95820545544848,
+          "error": "stream open failed"
+        },
+        {
+          "time": 162.9619625993073,
+          "error": "stream open failed"
+        }
+      ],
+      "last_frame_at": 240.0018193591386,
+      "thread_alive": false
+    },
+    "receivers": [
+      {
+        "url": "rtsp://127.0.0.1:45097/enhanced",
+        "decoded": 0,
+        "matched": 0,
+        "unique_source_frames": 0,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": null,
+        "normal_received_age": null,
+        "normal_intervals": [
+          [
+            10,
+            58
+          ],
+          [
+            85,
+            108
+          ],
+          [
+            132,
+            153
+          ],
+          [
+            180,
+            198
+          ],
+          [
+            210,
+            235
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "output_up",
+            "seconds": null
+          },
+          {
+            "action": "source_resume",
+            "seconds": null
+          },
+          {
+            "action": "source_up",
+            "seconds": null
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": null
+          }
+        ],
+        "client_disconnects": 335
+      },
+      {
+        "url": "rtmp://127.0.0.1:41127/enhanced-rtmp",
+        "decoded": 5378,
+        "matched": 5378,
+        "unique_source_frames": 3884,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": {
+          "n": 5378,
+          "p50": 0.21379627147689462,
+          "p95": 3.782271623727858,
+          "maximum": 13.723609105683863
+        },
+        "normal_received_age": {
+          "n": 3347,
+          "p50": 0.20934017095714808,
+          "p95": 0.2464649497065693,
+          "maximum": 0.43946212716400623
+        },
+        "normal_intervals": [
+          [
+            10,
+            58
+          ],
+          [
+            85,
+            108
+          ],
+          [
+            132,
+            153
+          ],
+          [
+            180,
+            198
+          ],
+          [
+            210,
+            235
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "output_up",
+            "seconds": 7.7483328320086
+          },
+          {
+            "action": "source_resume",
+            "seconds": 0.9532088479027152
+          },
+          {
+            "action": "source_up",
+            "seconds": 6.176266645081341
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": 0.26753870118409395
+          }
+        ],
+        "client_disconnects": 40
+      },
+      {
+        "url": "rtsp://127.0.0.1:45097/enhanced",
+        "decoded": 0,
+        "matched": 0,
+        "unique_source_frames": 0,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": null,
+        "normal_received_age": null,
+        "normal_intervals": [
+          [
+            10,
+            58
+          ],
+          [
+            85,
+            108
+          ],
+          [
+            132,
+            153
+          ],
+          [
+            180,
+            198
+          ],
+          [
+            210,
+            235
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "output_up",
+            "seconds": null
+          },
+          {
+            "action": "source_resume",
+            "seconds": null
+          },
+          {
+            "action": "source_up",
+            "seconds": null
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": null
+          }
+        ],
+        "client_disconnects": 75
+      }
+    ],
+    "faults": [
+      {
+        "time": 60.23227696213871,
+        "action": "output_down"
+      },
+      {
+        "time": 72.00185857340693,
+        "action": "output_up"
+      },
+      {
+        "time": 110.06088656140491,
+        "action": "source_pause"
+      },
+      {
+        "time": 118.07621340313926,
+        "action": "source_resume"
+      },
+      {
+        "time": 155.24637313513085,
+        "action": "source_down"
+      },
+      {
+        "time": 163.0130333211273,
+        "action": "source_up"
+      },
+      {
+        "time": 200.07560720201582,
+        "action": "viewer_reconnect"
+      }
+    ]
+  },
+  {
+    "folder": "final-stop",
+    "service_error": null,
+    "harness_complete": true,
+    "captured": 1724,
+    "processed": 1159,
+    "dropped_input": 565,
+    "seconds": 78.0248535471037,
+    "processing_fps": 14.792952850722866,
+    "submitted": 105,
+    "completed": 105,
+    "coalesced": 0,
+    "decision_age": {
+      "n": 105,
+      "p50": 0.1714260741136968,
+      "p95": 0.2033647382631898,
+      "maximum": 0.26023961091414094
+    },
+    "max_candidate_people": 2,
+    "clip_counters": {
+      "events_received": 105,
+      "frames_recording_input": 1159,
+      "max_recorders": 2,
+      "capture_discontinuities": 4,
+      "events_without_output_frame": 0,
+      "totals": {
+        "clips_saved": 10,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "uploads_dropped": 0
+      },
+      "error": null
+    },
+    "clip_closing_reasons": {
+      "post 静默期结束": 6,
+      "输入断流/时间间隙，尾部上下文不完整": 2,
+      "达到 clip_max_sec 上限": 1,
+      "服务停止，尾部上下文可能不完整": 1
+    },
+    "capture": {
+      "received": 1724,
+      "consumed": 1159,
+      "dropped": 565,
+      "duration": 78.0248535471037,
+      "connections": [
+        {
+          "epoch": 0,
+          "opened": 1.5117234610952437,
+          "first_frame": 1.6290367268957198
+        },
+        {
+          "epoch": 1,
+          "opened": 20.75658411672339,
+          "first_frame": 20.815591958817095
+        },
+        {
+          "epoch": 2,
+          "opened": 59.066309603862464,
+          "first_frame": 59.13590792892501
+        }
+      ],
+      "errors": [
+        {
+          "time": 18.491317255888134,
+          "error": "stream read failed or timed out"
+        },
+        {
+          "time": 50.278592341113836,
+          "error": "stream read failed or timed out"
+        },
+        {
+          "time": 50.786978414747864,
+          "error": "stream open failed"
+        },
+        {
+          "time": 51.79068308509886,
+          "error": "stream open failed"
+        },
+        {
+          "time": 53.79458681913093,
+          "error": "stream open failed"
+        }
+      ],
+      "last_frame_at": 77.98840381298214,
+      "thread_alive": false
+    },
+    "receivers": [
+      {
+        "url": "rtsp://127.0.0.1:38721/enhanced",
+        "decoded": 1158,
+        "matched": 963,
+        "unique_source_frames": 546,
+        "outage_slates": 195,
+        "unpaired": 195,
+        "all_received_age": {
+          "n": 963,
+          "p50": 0.2655146801844239,
+          "p95": 2.111721788300201,
+          "maximum": 3.069125880021602
+        },
+        "normal_received_age": {
+          "n": 458,
+          "p50": 0.2497188150882721,
+          "p95": 0.2943370408378541,
+          "maximum": 0.4038258739747107
+        },
+        "normal_intervals": [
+          [
+            5,
+            12
+          ],
+          [
+            24,
+            30
+          ],
+          [
+            43,
+            50
+          ],
+          [
+            62,
+            65
+          ],
+          [
+            70,
+            76
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "source_resume",
+            "seconds": 0.9110918077640235
+          },
+          {
+            "action": "output_up",
+            "seconds": 8.93796588666737
+          },
+          {
+            "action": "source_up",
+            "seconds": 3.2367523312568665
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": null
+          }
+        ],
+        "client_disconnects": 30
+      },
+      {
+        "url": "rtmp://127.0.0.1:53341/enhanced-rtmp",
+        "decoded": 1347,
+        "matched": 1152,
+        "unique_source_frames": 706,
+        "outage_slates": 195,
+        "unpaired": 195,
+        "all_received_age": {
+          "n": 1152,
+          "p50": 0.2119428168516606,
+          "p95": 1.9777171721449134,
+          "maximum": 3.043364987242967
+        },
+        "normal_received_age": {
+          "n": 538,
+          "p50": 0.20976478466764092,
+          "p95": 0.2559974126284942,
+          "maximum": 0.36104967491701245
+        },
+        "normal_intervals": [
+          [
+            5,
+            12
+          ],
+          [
+            24,
+            30
+          ],
+          [
+            43,
+            50
+          ],
+          [
+            62,
+            65
+          ],
+          [
+            70,
+            76
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "source_resume",
+            "seconds": 0.8455697307363153
+          },
+          {
+            "action": "output_up",
+            "seconds": 11.7636528047733
+          },
+          {
+            "action": "source_up",
+            "seconds": 3.2231375630944967
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": 0.23565893899649382
+          }
+        ],
+        "client_disconnects": 41
+      },
+      {
+        "url": "rtsp://127.0.0.1:38721/enhanced",
+        "decoded": 316,
+        "matched": 316,
+        "unique_source_frames": 250,
+        "outage_slates": 0,
+        "unpaired": 0,
+        "all_received_age": {
+          "n": 316,
+          "p50": 0.2409709000494331,
+          "p95": 0.28184040437918156,
+          "maximum": 0.5173297878354788
+        },
+        "normal_received_age": {
+          "n": 144,
+          "p50": 0.24134546448476613,
+          "p95": 0.27931517765391617,
+          "maximum": 0.2849704581312835
+        },
+        "normal_intervals": [
+          [
+            5,
+            12
+          ],
+          [
+            24,
+            30
+          ],
+          [
+            43,
+            50
+          ],
+          [
+            62,
+            65
+          ],
+          [
+            70,
+            76
+          ]
+        ],
+        "recovery": [
+          {
+            "action": "source_resume",
+            "seconds": 45.7368159359321
+          },
+          {
+            "action": "output_up",
+            "seconds": 27.93801024183631
+          },
+          {
+            "action": "source_up",
+            "seconds": 9.792354367207736
+          },
+          {
+            "action": "viewer_reconnect",
+            "seconds": 0.7109871748834848
+          }
+        ],
+        "client_disconnects": 10
+      }
+    ],
+    "faults": [
+      {
+        "time": 12.192943334113806,
+        "action": "source_pause"
+      },
+      {
+        "time": 20.207623342983425,
+        "action": "source_resume"
+      },
+      {
+        "time": 30.239440180826932,
+        "action": "output_down"
+      },
+      {
+        "time": 38.006429037079215,
+        "action": "output_up"
+      },
+      {
+        "time": 50.140927956905216,
+        "action": "source_down"
+      },
+      {
+        "time": 56.15208491170779,
+        "action": "source_up"
+      },
+      {
+        "time": 65.23345210403204,
+        "action": "viewer_reconnect"
+      },
+      {
+        "time": 78.00767710385844,
+        "action": "sigterm"
+      }
+    ]
+  }
+]

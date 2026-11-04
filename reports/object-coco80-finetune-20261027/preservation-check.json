@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "unchanged_shared_features_and_localization": true,
+  "unchanged_other_class_rows": 74,
+  "updated_existing_classes": [
+    0,
+    39,
+    41,
+    65,
+    67,
+    73
+  ],
+  "nc": 80
+}

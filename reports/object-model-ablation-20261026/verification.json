@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "model_input_coverage_passed": true,
+  "action_rows": 9904,
+  "object_rows": 1248,
+  "html_local_links": 23,
+  "example_panels": 8,
+  "public_api_checks": 12,
+  "api_max_score_error": 0.005643248558044434,
+  "api_min_iou": 0.9994235639576564,
+  "unit_tests": "9 passed tests/test_person_object_prior.py",
+  "runtime_integration": false,
+  "versions": {
+    "torch": "2.7.0",
+    "ultralytics": "8.4.163",
+    "numpy": "2.0.2",
+    "opencv-python": "5.0.0.93",
+    "matplotlib": "3.10.9"
+  }
+}

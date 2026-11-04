@@ -1,0 +1,30 @@
+{
+  "recommended": {
+    "reco_min_conf": 0.905,
+    "object_min_conf": 0.358,
+    "skel_fusion_alpha": 0.95,
+    "lum_gate": 30.0,
+    "skel_no_person": "soft"
+  },
+  "coarse_recommended": {
+    "reco_min_conf": 0.9,
+    "object_min_conf": 0.36,
+    "skel_fusion_alpha": 0.95,
+    "lum_gate": 30.0,
+    "skel_no_person": "soft"
+  },
+  "object_only": {
+    "reco_min_conf": 0.85,
+    "object_min_conf": 0.37,
+    "skel_fusion_alpha": 0.95,
+    "lum_gate": 30.0,
+    "skel_no_person": "soft"
+  },
+  "action_only": {
+    "reco_min_conf": 0.9,
+    "object_min_conf": 0.35,
+    "skel_fusion_alpha": 0.95,
+    "lum_gate": 30.0,
+    "skel_no_person": "soft"
+  }
+}

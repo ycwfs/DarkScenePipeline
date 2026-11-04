@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "platform_payload_files": 63,
+  "box_payload_files": 82,
+  "unchanged_model_files": 12,
+  "changed_from_tau075": [
+    "CLAUDE.md",
+    "README.md",
+    "darkpipe/assets/NotoSansCJK-subset.ttf",
+    "darkpipe/config.py",
+    "darkpipe/constants.py",
+    "darkpipe/person/clips.py",
+    "darkpipe/person/core.py",
+    "main.py",
+    "models.json",
+    "suanzi.json"
+  ],
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_person_tau085_20261025.tar.gz",
+      "alias": "platform/dark-demo-v2.tar.gz",
+      "sha256": "389de87c814ae9f01e7177bdf01b7d39fcc946bcebbb64cfd57ae51d199cfaeb",
+      "bytes": 349162771
+    },
+    {
+      "path": "platform/dark-demo-v2_person_tau085_20261025.zip",
+      "alias": "platform/dark-demo-v2.zip",
+      "sha256": "3eda18b17ebff8ea81afca36cc8e386b2b68c37bc90854a381a8f4c41daeb7b2",
+      "bytes": 349193305
+    },
+    {
+      "path": "NVIDIA-Box_tau085_20261025.zip",
+      "alias": "NVIDIA-Box.zip",
+      "sha256": "27c0c6648b33809684051b143d618726284ec552ded240ec29f4515c3455e6c9",
+      "bytes": 381551564
+    }
+  ],
+  "model_training": false,
+  "object_prior": false
+}

@@ -1,0 +1,6 @@
+{
+  "windows": 204,
+  "label_changes": [],
+  "max_absolute_rgb_difference": 0.0023342370986938477,
+  "scope": "Frozen reviewed test ROIs, same poses, object evidence not recomputed; this verifies action input/cache equivalence, not complete detector/stream accuracy."
+}

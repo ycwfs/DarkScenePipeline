@@ -1,0 +1,88 @@
+[
+  {
+    "id": "crowd-camera",
+    "frames": 150,
+    "baseline_fps": 6.890550487662773,
+    "candidate_fps": 7.8596663197793575,
+    "baseline_torch_peak_mib": 1010.9169921875,
+    "candidate_torch_peak_mib": 481.4228515625,
+    "candidate_gpu_mib": 1326,
+    "candidate_rss_mib": 2733.7265625,
+    "baseline_labels": {
+      "other": 115
+    },
+    "candidate_labels": {
+      "other": 114
+    }
+  },
+  {
+    "id": "crowd-child",
+    "frames": 150,
+    "baseline_fps": 10.246117814320103,
+    "candidate_fps": 12.398720998040144,
+    "baseline_torch_peak_mib": 1010.9169921875,
+    "candidate_torch_peak_mib": 481.41943359375,
+    "candidate_gpu_mib": 1344,
+    "candidate_rss_mib": 2705.69140625,
+    "baseline_labels": {
+      "other": 46
+    },
+    "candidate_labels": {
+      "other": 46
+    }
+  },
+  {
+    "id": "lighting-01",
+    "frames": 141,
+    "baseline_fps": 12.90722462376265,
+    "candidate_fps": 15.459179577099484,
+    "baseline_torch_peak_mib": 919.4423828125,
+    "candidate_torch_peak_mib": 440.86962890625,
+    "candidate_gpu_mib": 1192,
+    "candidate_rss_mib": 2554.09765625,
+    "baseline_labels": {
+      "chase": 1,
+      "drink": 8
+    },
+    "candidate_labels": {
+      "chase": 1,
+      "drink": 8
+    }
+  },
+  {
+    "id": "lighting-05",
+    "frames": 150,
+    "baseline_fps": 13.448906866196342,
+    "candidate_fps": 15.343965464924656,
+    "baseline_torch_peak_mib": 1011.4208984375,
+    "candidate_torch_peak_mib": 481.416015625,
+    "candidate_gpu_mib": 1292,
+    "candidate_rss_mib": 2599.03515625,
+    "baseline_labels": {
+      "other": 12,
+      "wave": 8
+    },
+    "candidate_labels": {
+      "other": 12,
+      "wave": 8
+    }
+  },
+  {
+    "id": "rule-喝水27",
+    "frames": 125,
+    "baseline_fps": 10.556177569565996,
+    "candidate_fps": 13.112773996282124,
+    "baseline_torch_peak_mib": 919.44384765625,
+    "candidate_torch_peak_mib": 440.57958984375,
+    "candidate_gpu_mib": 1322,
+    "candidate_rss_mib": 2659.296875,
+    "baseline_labels": {
+      "other": 2,
+      "drink": 5
+    },
+    "candidate_labels": {
+      "other": 4,
+      "drink": 3
+    }
+  }
+]

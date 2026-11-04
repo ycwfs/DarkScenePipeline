@@ -1,0 +1,10 @@
+{
+  "primary_question": "Does person-ROI fine-tuning improve fixed-threshold per-person action recognition relative to pn2 on identical held-out windows?",
+  "primary_descriptive_metric": "fused macro-F1 over test-supported classes at threshold 0.75",
+  "secondary_metrics": ["RGB macro-F1", "window accuracy", "other false positives", "class recall", "skeleton coverage", "oracle-RGB fusion ceiling"],
+  "uncertainty_unit": "frozen source group; windows within each group remain paired and dependent",
+  "uncertainty_estimand": "mean group accuracy difference (selected minus baseline), 5000 paired group bootstrap draws, percentile 95% interval",
+  "paired_test": "two-sided exact sign test on non-tied group accuracy changes; RGB and fused form one Holm-corrected family",
+  "training_seeds": [23],
+  "limitations": "One fine-tuning seed. Group intervals describe empirical sample variation, not training-seed uncertainty or cross-camera generalization. Macro-F1 is descriptive because some action classes have very few independent videos."
+}

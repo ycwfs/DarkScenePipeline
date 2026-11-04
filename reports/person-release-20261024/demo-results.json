@@ -1,0 +1,190 @@
+[
+  {
+    "id": "66b08dbe0db5a20e",
+    "source": "real-actiondata-all/喝水4.mp4",
+    "video": "demos/0-15_66b08dbe0db5a20e.mp4",
+    "poster": "demos/0-15_66b08dbe0db5a20e.jpg",
+    "band": "0-15",
+    "people_mode": 1,
+    "people_max": 2,
+    "raw_mean_luma": 7.295688514870988,
+    "frames": 141,
+    "labels": {
+      "chase": 1,
+      "drink": 8
+    }
+  },
+  {
+    "id": "827a586dc386a23a",
+    "source": "real-actiondata/喝水7.mp4",
+    "video": "demos/0-15_827a586dc386a23a.mp4",
+    "poster": "demos/0-15_827a586dc386a23a.jpg",
+    "band": "0-15",
+    "people_mode": 2,
+    "people_max": 3,
+    "raw_mean_luma": 8.22583918004615,
+    "frames": 159,
+    "labels": {
+      "other": 6,
+      "drink": 9
+    }
+  },
+  {
+    "id": "97c76cf3392a9c1b",
+    "source": "real-actiondata-all/挥手13.mp4",
+    "video": "demos/15-30_97c76cf3392a9c1b.mp4",
+    "poster": "demos/15-30_97c76cf3392a9c1b.jpg",
+    "band": "15-30",
+    "people_mode": 1,
+    "people_max": 2,
+    "raw_mean_luma": 22.210658206701776,
+    "frames": 133,
+    "labels": {
+      "other": 2,
+      "wave": 6
+    }
+  },
+  {
+    "id": "7e25914fdc94d0f7",
+    "source": "real-actiondata-all/捡东西5.mp4",
+    "video": "demos/30-45_7e25914fdc94d0f7.mp4",
+    "poster": "demos/30-45_7e25914fdc94d0f7.jpg",
+    "band": "30-45",
+    "people_mode": 1,
+    "people_max": 1,
+    "raw_mean_luma": 37.232284341647784,
+    "frames": 67,
+    "labels": {
+      "other": 4
+    }
+  },
+  {
+    "id": "684c5ecbeb5d5fbd",
+    "source": "real-actiondata-all/挥手4.mp4",
+    "video": "demos/30-45_684c5ecbeb5d5fbd.mp4",
+    "poster": "demos/30-45_684c5ecbeb5d5fbd.jpg",
+    "band": "30-45",
+    "people_mode": 2,
+    "people_max": 2,
+    "raw_mean_luma": 32.27118116806133,
+    "frames": 169,
+    "labels": {
+      "other": 14,
+      "wave": 10
+    }
+  },
+  {
+    "id": "694bca760d51b0de",
+    "source": "real-actiondata-all/捡东西8.mp4",
+    "video": "demos/45-60_694bca760d51b0de.mp4",
+    "poster": "demos/45-60_694bca760d51b0de.jpg",
+    "band": "45-60",
+    "people_mode": 1,
+    "people_max": 2,
+    "raw_mean_luma": 52.276373494163025,
+    "frames": 56,
+    "labels": {
+      "other": 2
+    }
+  },
+  {
+    "id": "abeb396181055bac",
+    "source": "real-actiondata-all/other/other83.mp4",
+    "video": "demos/60-75_abeb396181055bac.mp4",
+    "poster": "demos/60-75_abeb396181055bac.jpg",
+    "band": "60-75",
+    "people_mode": 1,
+    "people_max": 1,
+    "raw_mean_luma": 67.70653745804796,
+    "frames": 133,
+    "labels": {
+      "other": 9
+    }
+  },
+  {
+    "id": "cbf7cf6bdebd686a",
+    "source": "real-actiondata-all/喝水18.mp4",
+    "video": "demos/75+_cbf7cf6bdebd686a.mp4",
+    "poster": "demos/75+_cbf7cf6bdebd686a.jpg",
+    "band": "75+",
+    "people_mode": 1,
+    "people_max": 1,
+    "raw_mean_luma": 89.17300748925452,
+    "frames": 78,
+    "labels": {
+      "drink": 3,
+      "other": 2
+    }
+  },
+  {
+    "id": "6d410d75543e1fbd",
+    "source": "real-actiondata-all/捡东西14.mp4",
+    "video": "demos/75+_6d410d75543e1fbd.mp4",
+    "poster": "demos/75+_6d410d75543e1fbd.jpg",
+    "band": "75+",
+    "people_mode": 2,
+    "people_max": 2,
+    "raw_mean_luma": 119.29078105359724,
+    "frames": 54,
+    "labels": {
+      "pick_up": 2,
+      "other": 1
+    }
+  },
+  {
+    "id": "9b4e6f0167c2053b",
+    "source": "real-actiondata-all/other/other91.mp4",
+    "video": "demos/75+_9b4e6f0167c2053b.mp4",
+    "poster": "demos/75+_9b4e6f0167c2053b.jpg",
+    "band": "75+",
+    "people_mode": 3,
+    "people_max": 3,
+    "raw_mean_luma": 120.37600688724254,
+    "frames": 36,
+    "labels": {
+      "other": 3
+    }
+  },
+  {
+    "id": "1778dcfef14aa661",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_100424_drinking_water_0077.mp4",
+    "video": "demos/unknown_1778dcfef14aa661.mp4",
+    "poster": "demos/unknown_1778dcfef14aa661.jpg",
+    "band": "原图亮度未知",
+    "people_mode": 4,
+    "people_max": 4,
+    "raw_mean_luma": null,
+    "frames": 74,
+    "labels": {
+      "other": 14
+    }
+  },
+  {
+    "id": "4fbb0825fd4d5cbc",
+    "source": "online-negative-sample/20261012_083305_78/waving/20261012_100047_waving_0068.mp4",
+    "video": "demos/unknown_4fbb0825fd4d5cbc.mp4",
+    "poster": "demos/unknown_4fbb0825fd4d5cbc.jpg",
+    "band": "原图亮度未知",
+    "people_mode": 8,
+    "people_max": 8,
+    "raw_mean_luma": null,
+    "frames": 81,
+    "labels": {
+      "other": 31
+    }
+  },
+  {
+    "id": "b7e6e87223a4032a",
+    "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4",
+    "video": "demos/unknown_b7e6e87223a4032a.mp4",
+    "poster": "demos/unknown_b7e6e87223a4032a.jpg",
+    "band": "原图亮度未知",
+    "people_mode": 13,
+    "people_max": 16,
+    "raw_mean_luma": null,
+    "frames": 59,
+    "labels": {
+      "other": 34
+    }
+  }
+]

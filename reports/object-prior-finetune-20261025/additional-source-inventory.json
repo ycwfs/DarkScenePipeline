@@ -1,0 +1,198 @@
+[
+  {
+    "source": "real-actiondata-0909/other/2屏_白_无.avi",
+    "id": "c37288412655e3dc",
+    "sha256": "c37288412655e3dc4566ba5c8a06dc351b2de80f871d0b646b9fd6a1954da2b9",
+    "aliases": [
+      "real-actiondata-0909/other/2屏_白_无.avi"
+    ],
+    "processed": false,
+    "width": 1920,
+    "height": 1080,
+    "frames": 765,
+    "fps": 23.74,
+    "bytes": 15425464,
+    "added_by_full_extension_scan": true,
+    "frozen_split": {
+      "video_id": "c37288412655e3dc",
+      "split": "unassigned",
+      "group": null,
+      "reason": "Previously unlisted AVI; original/cut recording family must be reconciled before training."
+    },
+    "container_frames": 833,
+    "decoded_timestamps": "ffprobe best_effort_timestamp_time; AVI index may include absent chunks",
+    "object_review": {
+      "frames_fraction": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "result": "Empty monitored scene at all three samples; no relevant handheld target",
+      "training_allowed": false,
+      "reason": "Recording/cut grouping unresolved; kept outside train/val/test"
+    }
+  },
+  {
+    "source": "real-actiondata-0909/other/2屏_黑_无.avi",
+    "id": "9e8f8386f8d22801",
+    "sha256": "9e8f8386f8d228019bb223eb0ad6cb5a1c0ef8ebfb18284ced9267bcea281d83",
+    "aliases": [
+      "real-actiondata-0909/other/2屏_黑_无.avi"
+    ],
+    "processed": false,
+    "width": 1920,
+    "height": 1080,
+    "frames": 477,
+    "fps": 24.921,
+    "bytes": 8342196,
+    "added_by_full_extension_scan": true,
+    "frozen_split": {
+      "video_id": "9e8f8386f8d22801",
+      "split": "unassigned",
+      "group": null,
+      "reason": "Previously unlisted AVI; original/cut recording family must be reconciled before training."
+    },
+    "object_review": {
+      "frames_fraction": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "result": "Empty monitored scene at all three samples; no relevant handheld target",
+      "training_allowed": false,
+      "reason": "Recording/cut grouping unresolved; kept outside train/val/test"
+    }
+  },
+  {
+    "source": "real-actiondata-0909/other/5屏_白_无.avi",
+    "id": "0084ed7a59d0db86",
+    "sha256": "0084ed7a59d0db86a2c3dcd95b4bf015c9e8cdac8804d021e2c8b8d37600fc2d",
+    "aliases": [
+      "real-actiondata-0909/other/5屏_白_无.avi"
+    ],
+    "processed": false,
+    "width": 1920,
+    "height": 1080,
+    "frames": 365,
+    "fps": 19.449,
+    "bytes": 1172666,
+    "added_by_full_extension_scan": true,
+    "frozen_split": {
+      "video_id": "0084ed7a59d0db86",
+      "split": "unassigned",
+      "group": null,
+      "reason": "Previously unlisted AVI; original/cut recording family must be reconciled before training."
+    },
+    "container_frames": 395,
+    "decoded_timestamps": "ffprobe best_effort_timestamp_time; AVI index may include absent chunks",
+    "object_review": {
+      "frames_fraction": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "result": "Empty monitored scene at all three samples; no relevant handheld target",
+      "training_allowed": false,
+      "reason": "Recording/cut grouping unresolved; kept outside train/val/test"
+    }
+  },
+  {
+    "source": "real-actiondata-0909/other/5屏_黑_无.avi",
+    "id": "e0034e97384a701e",
+    "sha256": "e0034e97384a701e05c9cf55bdb003bbcdbc928e6434e8286a6b0dc80d649773",
+    "aliases": [
+      "real-actiondata-0909/other/5屏_黑_无.avi"
+    ],
+    "processed": false,
+    "width": 1920,
+    "height": 1080,
+    "frames": 225,
+    "fps": 19.972,
+    "bytes": 4265152,
+    "added_by_full_extension_scan": true,
+    "frozen_split": {
+      "video_id": "e0034e97384a701e",
+      "split": "unassigned",
+      "group": null,
+      "reason": "Previously unlisted AVI; original/cut recording family must be reconciled before training."
+    },
+    "container_frames": 225,
+    "decoded_timestamps": "ffprobe best_effort_timestamp_time; AVI index may include absent chunks",
+    "object_review": {
+      "frames_fraction": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "result": "Empty monitored scene at all three samples; no relevant handheld target",
+      "training_allowed": false,
+      "reason": "Recording/cut grouping unresolved; kept outside train/val/test"
+    }
+  },
+  {
+    "source": "real-actiondata-0909/other/中心屏_白_无.avi",
+    "id": "c0f3f8bf9dfeddf3",
+    "sha256": "c0f3f8bf9dfeddf3756cd23742b600df5d52997ecb9e2521b64ce754422164f4",
+    "aliases": [
+      "real-actiondata-0909/other/中心屏_白_无.avi"
+    ],
+    "processed": false,
+    "width": 1920,
+    "height": 1080,
+    "frames": 621,
+    "fps": 25.004,
+    "bytes": 13353218,
+    "added_by_full_extension_scan": true,
+    "frozen_split": {
+      "video_id": "c0f3f8bf9dfeddf3",
+      "split": "unassigned",
+      "group": null,
+      "reason": "Previously unlisted AVI; original/cut recording family must be reconciled before training."
+    },
+    "container_frames": 621,
+    "decoded_timestamps": "ffprobe best_effort_timestamp_time; AVI index may include absent chunks",
+    "object_review": {
+      "frames_fraction": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "result": "Empty monitored scene at all three samples; no relevant handheld target",
+      "training_allowed": false,
+      "reason": "Recording/cut grouping unresolved; kept outside train/val/test"
+    }
+  },
+  {
+    "source": "real-actiondata-0909/other/中心屏_黑_无.avi",
+    "id": "f6d19d6a591f44c9",
+    "sha256": "f6d19d6a591f44c9cebd83394bab8af881bf19954649d8932bb8bfe41768252f",
+    "aliases": [
+      "real-actiondata-0909/other/中心屏_黑_无.avi"
+    ],
+    "processed": false,
+    "width": 1920,
+    "height": 1080,
+    "frames": 436,
+    "fps": 24.841,
+    "bytes": 9380386,
+    "added_by_full_extension_scan": true,
+    "frozen_split": {
+      "video_id": "f6d19d6a591f44c9",
+      "split": "unassigned",
+      "group": null,
+      "reason": "Previously unlisted AVI; original/cut recording family must be reconciled before training."
+    },
+    "container_frames": 437,
+    "decoded_timestamps": "ffprobe best_effort_timestamp_time; AVI index may include absent chunks",
+    "object_review": {
+      "frames_fraction": [
+        0.2,
+        0.5,
+        0.8
+      ],
+      "result": "Empty monitored scene at all three samples; no relevant handheld target",
+      "training_allowed": false,
+      "reason": "Recording/cut grouping unresolved; kept outside train/val/test"
+    }
+  }
+]

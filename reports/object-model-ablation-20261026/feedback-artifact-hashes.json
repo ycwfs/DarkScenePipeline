@@ -1,0 +1,13 @@
+{
+  "reports/object-model-ablation-20261026/user-feedback-labels.json": "6dfacdf8e75f8bb563530fdf60f996894fc672cbb40698eec0457aa3e276aba9",
+  "reports/object-model-ablation-20261026/false-positive-summary.json": "a0948e78f0333a88de6845079c363f485cf00484b6e3dcc7c838eb03279f1ec1",
+  "reports/object-model-ablation-20261026/false-positive-tradeoff.csv": "bcde4a1e1c7d4ba0a732ecf1878edcae576fe548973d772a2b4e1f0661cd224c",
+  "reports/object-model-ablation-20261026/feedback-labeled-windows.csv": "6c4d8a18c218825d3805e114bf2c15c265da8c05b5f36738e4c066100a9ec58f",
+  "reports/object-model-ablation-20261026/feedback-candidate-groups.csv": "0585eb4911e6c894a7f5c5d911c7717db99cab3f01a37c92ba28e27776852009",
+  "reports/object-model-ablation-20261026/feedback-candidate-group-summary.csv": "e6400f45dae43cf806b743ea7374be1af5f106a72e01217a0866b5d7c6acfcea",
+  "reports/object-model-ablation-20261026/feedback-label-verification.json": "d77b2783df31caa8f1eef3bcafea885da5880588c5d732a485fe3a15f05a7d50",
+  "reports/object-model-ablation-20261026/false-positive-tradeoff.md": "844579ac79301939905b1fa82b5f5335b32029a2d7c2bb37eab6ef1b263c9d8c",
+  "reports/object-model-ablation-20261026/scripts/user_feedback.py": "dac7029f855d3f830bbed5a8cdc37dc61d80c33a7ff424e7b1894b5c6177a9d5",
+  "reports/object-model-ablation-20261026/figures/03-false-positive-tradeoff.png": "6cffff053b2eeb631de3b02f70c3c740024f6516178aa9629e80cd2fc73801f5",
+  "reports/object-model-ablation-20261026/figures/03-false-positive-tradeoff.pdf": "1658279bec9fc7cbf877e7081dd5e90d06bf840765310ba64670b9edabbab14f"
+}

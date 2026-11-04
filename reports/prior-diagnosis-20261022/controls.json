@@ -1,0 +1,222 @@
+{
+  "export_controls": [
+    {
+      "name": "bus_control",
+      "detections": [
+        {
+          "label": "person",
+          "score": 0.9633356928825378
+        },
+        {
+          "label": "person",
+          "score": 0.9542966485023499
+        },
+        {
+          "label": "person",
+          "score": 0.9507094025611877
+        },
+        {
+          "label": "person",
+          "score": 0.8322230577468872
+        },
+        {
+          "label": "bus",
+          "score": 0.956142783164978
+        }
+      ],
+      "pytorch_gpu": [
+        {
+          "label": "person",
+          "score": 0.963355302810669
+        },
+        {
+          "label": "person",
+          "score": 0.9542927145957947
+        },
+        {
+          "label": "person",
+          "score": 0.950661301612854
+        },
+        {
+          "label": "person",
+          "score": 0.8322754502296448
+        },
+        {
+          "label": "bus",
+          "score": 0.9561351537704468
+        }
+      ],
+      "onnx_cpu": [
+        {
+          "label": "person",
+          "score": 0.9633914232254028
+        },
+        {
+          "label": "bus",
+          "score": 0.9561638832092285
+        },
+        {
+          "label": "person",
+          "score": 0.95427405834198
+        },
+        {
+          "label": "person",
+          "score": 0.9506491422653198
+        },
+        {
+          "label": "person",
+          "score": 0.832317590713501
+        }
+      ],
+      "pytorch_cpu": [
+        {
+          "label": "person",
+          "score": 0.9633913636207581
+        },
+        {
+          "label": "bus",
+          "score": 0.9561637043952942
+        },
+        {
+          "label": "person",
+          "score": 0.95427405834198
+        },
+        {
+          "label": "person",
+          "score": 0.9506491422653198
+        },
+        {
+          "label": "person",
+          "score": 0.8323179483413696
+        }
+      ],
+      "max_box_error_px": 0.025634765625,
+      "max_score_error": 5.239248275756836e-05,
+      "probe_equals_deploy": true
+    },
+    {
+      "name": "喝水16_frame34_raw720",
+      "detections": [
+        {
+          "label": "person",
+          "score": 0.9376577734947205
+        },
+        {
+          "label": "train",
+          "score": 0.3009050488471985
+        },
+        {
+          "label": "train",
+          "score": 0.2888069748878479
+        }
+      ],
+      "pytorch_gpu": [
+        {
+          "label": "person",
+          "score": 0.9376997947692871
+        },
+        {
+          "label": "train",
+          "score": 0.30122148990631104
+        },
+        {
+          "label": "train",
+          "score": 0.2889977693557739
+        }
+      ],
+      "onnx_cpu": [
+        {
+          "label": "person",
+          "score": 0.9376488327980042
+        },
+        {
+          "label": "train",
+          "score": 0.3016397953033447
+        },
+        {
+          "label": "train",
+          "score": 0.2891339063644409
+        }
+      ],
+      "pytorch_cpu": [
+        {
+          "label": "person",
+          "score": 0.9376491904258728
+        },
+        {
+          "label": "train",
+          "score": 0.3016393184661865
+        },
+        {
+          "label": "train",
+          "score": 0.28913387656211853
+        }
+      ],
+      "max_box_error_px": 0.023174285888671875,
+      "max_score_error": 0.00031644105911254883,
+      "probe_equals_deploy": true
+    }
+  ],
+  "fused_weight_check": {
+    "matched": 224,
+    "max_error": 3.0517578125e-05,
+    "largest": [
+      {
+        "name": "model.0.conv.weight",
+        "max_error": 3.0517578125e-05
+      },
+      {
+        "name": "model.23.one2one_cv3.0.1.0.conv.weight",
+        "max_error": 1.9073486328125e-06
+      },
+      {
+        "name": "model.23.one2one_cv2.1.0.conv.bias",
+        "max_error": 1.9073486328125e-06
+      },
+      {
+        "name": "model.23.one2one_cv3.1.1.1.conv.bias",
+        "max_error": 1.9073486328125e-06
+      },
+      {
+        "name": "model.23.one2one_cv3.2.1.1.conv.bias",
+        "max_error": 1.9073486328125e-06
+      },
+      {
+        "name": "model.0.conv.bias",
+        "max_error": 9.5367431640625e-07
+      },
+      {
+        "name": "model.2.m.0.cv3.conv.bias",
+        "max_error": 9.5367431640625e-07
+      },
+      {
+        "name": "model.9.cv2.conv.bias",
+        "max_error": 9.5367431640625e-07
+      },
+      {
+        "name": "model.10.m.0.attn.qkv.conv.bias",
+        "max_error": 9.5367431640625e-07
+      },
+      {
+        "name": "model.23.one2one_cv2.0.0.conv.weight",
+        "max_error": 9.5367431640625e-07
+      }
+    ]
+  },
+  "synthetic_missing_evidence": [
+    {
+      "synthetic_case": "unavailable_detector",
+      "valid_skeletons": 0,
+      "rgb": "drink 0.9",
+      "result": "drink",
+      "reason": "先验通过 drink: 检测器不可用，喝水先验放行"
+    },
+    {
+      "synthetic_case": "active_detector_empty_result",
+      "valid_skeletons": 0,
+      "rgb": "drink 0.9",
+      "result": "other",
+      "reason": "先验否决 drink: 手部附近没有杯子/容器"
+    }
+  ]
+}

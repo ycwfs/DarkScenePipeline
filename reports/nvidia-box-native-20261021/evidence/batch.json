@@ -1,0 +1,51 @@
+{
+  "status": "finished",
+  "files": 2,
+  "physical_gpu": 4,
+  "videos": {
+    "input/20261021_163416_1562893/喝水甲/0-3s-喝水.mp4": {
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 874,
+      "duration": "2.960000",
+      "nb_read_frames": "74"
+    },
+    "input/20261021_163416_1562893/喝水甲/喝水甲-处理后.mp4": {
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 874,
+      "duration": "3.000000",
+      "nb_read_frames": "75"
+    },
+    "input/20261021_163416_1562893/喝水_乙/0-3s-喝水.mp4": {
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 874,
+      "duration": "2.960000",
+      "nb_read_frames": "74"
+    },
+    "input/20261021_163416_1562893/喝水_乙/喝水_乙-处理后.mp4": {
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 874,
+      "duration": "3.000000",
+      "nb_read_frames": "75"
+    }
+  },
+  "events_total": 8,
+  "clips": {
+    "session": "input/20261021_163416_1562893",
+    "clips_saved": 2,
+    "clips_abandoned": 0,
+    "frames_dropped": 0,
+    "clips_forced": 0,
+    "uploads_dropped": 0,
+    "stage_orphans_cleaned": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "writer_alive": 0,
+    "uploads_pending": 0
+  },
+  "source": "Two hardlinks of 喝水16.mp4, one filename contains a space; orchestration test, not two independent accuracy samples."
+}

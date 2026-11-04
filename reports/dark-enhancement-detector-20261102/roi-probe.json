@@ -1,0 +1,1115 @@
+{
+  "protocol": "reviewed box crop, 50% box margin; oracle diagnostic, not deployable recall",
+  "records": [
+    {
+      "id": "H001",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            125,
+            61
+          ],
+          "model_person_height": 637.7813333333332,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            125,
+            61
+          ],
+          "model_person_height": 637.7813333333332,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            125,
+            61
+          ],
+          "model_person_height": 637.7813333333332,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H002",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            117,
+            69
+          ],
+          "model_person_height": 634.3273187717632,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            117,
+            69
+          ],
+          "model_person_height": 634.3273187717632,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            117,
+            69
+          ],
+          "model_person_height": 634.3273187717632,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H003",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            120,
+            69
+          ],
+          "model_person_height": 632.4345679012346,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            120,
+            69
+          ],
+          "model_person_height": 632.4345679012346,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            120,
+            69
+          ],
+          "model_person_height": 632.4345679012346,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H004",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            121,
+            72
+          ],
+          "model_person_height": 633.1435567799203,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            121,
+            72
+          ],
+          "model_person_height": 633.1435567799203,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            121,
+            72
+          ],
+          "model_person_height": 633.1435567799203,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H005",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            160,
+            69
+          ],
+          "model_person_height": 635.925925925926,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            160,
+            69
+          ],
+          "model_person_height": 635.925925925926,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            160,
+            69
+          ],
+          "model_person_height": 635.925925925926,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H006",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            158,
+            53
+          ],
+          "model_person_height": 636.3994374120955,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            158,
+            53
+          ],
+          "model_person_height": 636.3994374120955,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            158,
+            53
+          ],
+          "model_person_height": 636.3994374120955,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H007",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            198,
+            69
+          ],
+          "model_person_height": 634.7923681257015,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            198,
+            69
+          ],
+          "model_person_height": 634.7923681257015,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            198,
+            69
+          ],
+          "model_person_height": 634.7923681257015,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H008",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            216,
+            97
+          ],
+          "model_person_height": 637.3113854595337,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            216,
+            97
+          ],
+          "model_person_height": 637.3113854595337,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            216,
+            97
+          ],
+          "model_person_height": 637.3113854595337,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H009",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            201,
+            70
+          ],
+          "model_person_height": 637.2286714575271,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            201,
+            70
+          ],
+          "model_person_height": 637.2286714575271,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            201,
+            70
+          ],
+          "model_person_height": 637.2286714575271,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H010",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            61,
+            29
+          ],
+          "model_person_height": 627.9538554948392,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            61,
+            29
+          ],
+          "model_person_height": 627.9538554948392,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            61,
+            29
+          ],
+          "model_person_height": 627.9538554948392,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H011",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            85,
+            36
+          ],
+          "model_person_height": 633.7254901960785,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            85,
+            36
+          ],
+          "model_person_height": 633.7254901960785,
+          "matched": 0,
+          "predictions": 1,
+          "unmatched": 1,
+          "ious": [],
+          "pred_boxes_720": [
+            [
+              417.13958740234375,
+              98.21551513671875,
+              436.0,
+              130.0
+            ]
+          ],
+          "pred_scores": [
+            0.4570351839065552
+          ]
+        },
+        "ft720": {
+          "crop_shape": [
+            85,
+            36
+          ],
+          "model_person_height": 633.7254901960785,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H012",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            83,
+            40
+          ],
+          "model_person_height": 634.5738509593931,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            83,
+            40
+          ],
+          "model_person_height": 634.5738509593931,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            83,
+            40
+          ],
+          "model_person_height": 634.5738509593931,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H013",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            94,
+            37
+          ],
+          "model_person_height": 636.72182821119,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            94,
+            37
+          ],
+          "model_person_height": 636.72182821119,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            94,
+            37
+          ],
+          "model_person_height": 636.72182821119,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H014",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            95,
+            37
+          ],
+          "model_person_height": 630.019493177388,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            95,
+            37
+          ],
+          "model_person_height": 630.019493177388,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            95,
+            37
+          ],
+          "model_person_height": 630.019493177388,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H015",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            76,
+            36
+          ],
+          "model_person_height": 630.0194931773879,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            76,
+            36
+          ],
+          "model_person_height": 630.0194931773879,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            76,
+            36
+          ],
+          "model_person_height": 630.0194931773879,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H016",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            152,
+            52
+          ],
+          "model_person_height": 637.8947368421053,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            152,
+            52
+          ],
+          "model_person_height": 637.8947368421053,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            152,
+            52
+          ],
+          "model_person_height": 637.8947368421053,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H017",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            144,
+            62
+          ],
+          "model_person_height": 636.7572016460904,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            144,
+            62
+          ],
+          "model_person_height": 636.7572016460904,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            144,
+            62
+          ],
+          "model_person_height": 636.7572016460904,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H018",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            179,
+            71
+          ],
+          "model_person_height": 635.2989861369749,
+          "matched": 0,
+          "predictions": 1,
+          "unmatched": 1,
+          "ious": [],
+          "pred_boxes_720": [
+            [
+              292.3359680175781,
+              135.03208923339844,
+              314.9797058105469,
+              174.756103515625
+            ]
+          ],
+          "pred_scores": [
+            0.5314124226570129
+          ]
+        },
+        "ntire720": {
+          "crop_shape": [
+            179,
+            71
+          ],
+          "model_person_height": 635.2989861369749,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            179,
+            71
+          ],
+          "model_person_height": 635.2989861369749,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H019",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            142,
+            33
+          ],
+          "model_person_height": 632.2378716744914,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            142,
+            33
+          ],
+          "model_person_height": 632.2378716744914,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            142,
+            33
+          ],
+          "model_person_height": 632.2378716744914,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H020",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            130,
+            55
+          ],
+          "model_person_height": 635.3504273504273,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            130,
+            55
+          ],
+          "model_person_height": 635.3504273504273,
+          "matched": 0,
+          "predictions": 1,
+          "unmatched": 1,
+          "ious": [],
+          "pred_boxes_720": [
+            [
+              332.80023193359375,
+              90.29810333251953,
+              360.0,
+              153.0
+            ]
+          ],
+          "pred_scores": [
+            0.8841972351074219
+          ]
+        },
+        "ft720": {
+          "crop_shape": [
+            130,
+            55
+          ],
+          "model_person_height": 635.3504273504273,
+          "matched": 0,
+          "predictions": 1,
+          "unmatched": 1,
+          "ious": [],
+          "pred_boxes_720": [
+            [
+              333.7590637207031,
+              89.88510131835938,
+              360.0,
+              153.0
+            ]
+          ],
+          "pred_scores": [
+            0.6442298889160156
+          ]
+        }
+      }
+    },
+    {
+      "id": "H021",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            122,
+            40
+          ],
+          "model_person_height": 637.7656344869459,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            122,
+            40
+          ],
+          "model_person_height": 637.7656344869459,
+          "matched": 0,
+          "predictions": 1,
+          "unmatched": 1,
+          "ious": [],
+          "pred_boxes_720": [
+            [
+              343.1812438964844,
+              81.1962890625,
+              362.0,
+              139.53585815429688
+            ]
+          ],
+          "pred_scores": [
+            0.5806776285171509
+          ]
+        },
+        "ft720": {
+          "crop_shape": [
+            122,
+            40
+          ],
+          "model_person_height": 637.7656344869459,
+          "matched": 0,
+          "predictions": 1,
+          "unmatched": 1,
+          "ious": [],
+          "pred_boxes_720": [
+            [
+              342.8038330078125,
+              82.28550720214844,
+              362.0,
+              128.67335510253906
+            ]
+          ],
+          "pred_scores": [
+            0.7522031664848328
+          ]
+        }
+      }
+    },
+    {
+      "id": "H022",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            100,
+            42
+          ],
+          "model_person_height": 634.4296296296295,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            100,
+            42
+          ],
+          "model_person_height": 634.4296296296295,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            100,
+            42
+          ],
+          "model_person_height": 634.4296296296295,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H023",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            95,
+            41
+          ],
+          "model_person_height": 630.019493177388,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            95,
+            41
+          ],
+          "model_person_height": 630.019493177388,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            95,
+            41
+          ],
+          "model_person_height": 630.019493177388,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    },
+    {
+      "id": "H024",
+      "conditions": {
+        "raw720": {
+          "crop_shape": [
+            98,
+            41
+          ],
+          "model_person_height": 635.1625094482237,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ntire720": {
+          "crop_shape": [
+            98,
+            41
+          ],
+          "model_person_height": 635.1625094482237,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        },
+        "ft720": {
+          "crop_shape": [
+            98,
+            41
+          ],
+          "model_person_height": 635.1625094482237,
+          "matched": 0,
+          "predictions": 0,
+          "unmatched": 0,
+          "ious": [],
+          "pred_boxes_720": [],
+          "pred_scores": []
+        }
+      }
+    }
+  ]
+}

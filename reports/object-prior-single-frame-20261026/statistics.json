@@ -1,0 +1,274 @@
+{
+  "contrasts": {
+    "val:drink:single_interaction-minus-baseline": {
+      "groups": 3,
+      "windows": 10,
+      "reference_correct": 10,
+      "policy_correct": 3,
+      "difference": -0.7,
+      "difference_ci95": [
+        -1.0,
+        0.0
+      ]
+    },
+    "val:drink:single_interaction-minus-strict": {
+      "groups": 3,
+      "windows": 10,
+      "reference_correct": 1,
+      "policy_correct": 3,
+      "difference": 0.2,
+      "difference_ci95": [
+        0.0,
+        0.6666666666666666
+      ]
+    },
+    "val:drink:single_roi-minus-baseline": {
+      "groups": 3,
+      "windows": 10,
+      "reference_correct": 10,
+      "policy_correct": 3,
+      "difference": -0.7,
+      "difference_ci95": [
+        -1.0,
+        0.0
+      ]
+    },
+    "val:drink:single_roi-minus-strict": {
+      "groups": 3,
+      "windows": 10,
+      "reference_correct": 1,
+      "policy_correct": 3,
+      "difference": 0.2,
+      "difference_ci95": [
+        0.0,
+        0.6666666666666666
+      ]
+    },
+    "val:pick_up:single_interaction-minus-baseline": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 4,
+      "policy_correct": 1,
+      "difference": -0.75,
+      "difference_ci95": [
+        -1.0,
+        -0.5
+      ]
+    },
+    "val:pick_up:single_interaction-minus-strict": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 0,
+      "policy_correct": 1,
+      "difference": 0.25,
+      "difference_ci95": [
+        0.0,
+        0.5
+      ]
+    },
+    "val:pick_up:single_roi-minus-baseline": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 4,
+      "policy_correct": 3,
+      "difference": -0.25,
+      "difference_ci95": [
+        -0.5,
+        0.0
+      ]
+    },
+    "val:pick_up:single_roi-minus-strict": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 0,
+      "policy_correct": 3,
+      "difference": 0.75,
+      "difference_ci95": [
+        0.5,
+        1.0
+      ]
+    },
+    "val:other:single_interaction-minus-baseline": {
+      "groups": 3,
+      "windows": 7,
+      "reference_correct": 0,
+      "policy_correct": 7,
+      "difference": 1.0,
+      "difference_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "val:other:single_interaction-minus-strict": {
+      "groups": 3,
+      "windows": 7,
+      "reference_correct": 7,
+      "policy_correct": 7,
+      "difference": 0.0,
+      "difference_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "val:other:single_roi-minus-baseline": {
+      "groups": 3,
+      "windows": 7,
+      "reference_correct": 0,
+      "policy_correct": 2,
+      "difference": 0.2857142857142857,
+      "difference_ci95": [
+        0.0,
+        1.0
+      ]
+    },
+    "val:other:single_roi-minus-strict": {
+      "groups": 3,
+      "windows": 7,
+      "reference_correct": 7,
+      "policy_correct": 2,
+      "difference": -0.7142857142857143,
+      "difference_ci95": [
+        -1.0,
+        0.0
+      ]
+    },
+    "test:drink:single_interaction-minus-baseline": {
+      "groups": 4,
+      "windows": 11,
+      "reference_correct": 10,
+      "policy_correct": 8,
+      "difference": -0.18181818181818182,
+      "difference_ci95": [
+        -0.5,
+        0.0
+      ]
+    },
+    "test:drink:single_interaction-minus-strict": {
+      "groups": 4,
+      "windows": 11,
+      "reference_correct": 5,
+      "policy_correct": 8,
+      "difference": 0.2727272727272727,
+      "difference_ci95": [
+        0.0,
+        0.6666666666666666
+      ]
+    },
+    "test:drink:single_roi-minus-baseline": {
+      "groups": 4,
+      "windows": 11,
+      "reference_correct": 10,
+      "policy_correct": 8,
+      "difference": -0.18181818181818182,
+      "difference_ci95": [
+        -0.5,
+        0.0
+      ]
+    },
+    "test:drink:single_roi-minus-strict": {
+      "groups": 4,
+      "windows": 11,
+      "reference_correct": 5,
+      "policy_correct": 8,
+      "difference": 0.2727272727272727,
+      "difference_ci95": [
+        0.0,
+        0.6666666666666666
+      ]
+    },
+    "test:pick_up:single_interaction-minus-baseline": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 4,
+      "policy_correct": 1,
+      "difference": -0.75,
+      "difference_ci95": [
+        -1.0,
+        -0.5
+      ]
+    },
+    "test:pick_up:single_interaction-minus-strict": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 0,
+      "policy_correct": 1,
+      "difference": 0.25,
+      "difference_ci95": [
+        0.0,
+        0.5
+      ]
+    },
+    "test:pick_up:single_roi-minus-baseline": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 4,
+      "policy_correct": 4,
+      "difference": 0.0,
+      "difference_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "test:pick_up:single_roi-minus-strict": {
+      "groups": 2,
+      "windows": 4,
+      "reference_correct": 0,
+      "policy_correct": 4,
+      "difference": 1.0,
+      "difference_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "test:other:single_interaction-minus-baseline": {
+      "groups": 2,
+      "windows": 3,
+      "reference_correct": 0,
+      "policy_correct": 3,
+      "difference": 1.0,
+      "difference_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "test:other:single_interaction-minus-strict": {
+      "groups": 2,
+      "windows": 3,
+      "reference_correct": 3,
+      "policy_correct": 3,
+      "difference": 0.0,
+      "difference_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "test:other:single_roi-minus-baseline": {
+      "groups": 2,
+      "windows": 3,
+      "reference_correct": 0,
+      "policy_correct": 1,
+      "difference": 0.3333333333333333,
+      "difference_ci95": [
+        0.0,
+        0.5
+      ]
+    },
+    "test:other:single_roi-minus-strict": {
+      "groups": 2,
+      "windows": 3,
+      "reference_correct": 3,
+      "policy_correct": 1,
+      "difference": -0.6666666666666666,
+      "difference_ci95": [
+        -1.0,
+        -0.5
+      ]
+    }
+  },
+  "runs": 1,
+  "seed": 25,
+  "bootstrap_repetitions": 5000,
+  "method": "paired source-group percentile bootstrap; same-scene auxiliary GT; descriptive only",
+  "significance": "No p-values: too few independent scenes and post-result exploratory comparison",
+  "feedback_truth": "unknown; no accuracy or corrected-error metric"
+}

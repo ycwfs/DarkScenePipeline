@@ -1,0 +1,23 @@
+{
+  "platform_version": "full_priors_20261027",
+  "archive_sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+  "stream_seconds": 900,
+  "fault_seconds": 110,
+  "same_historical_inputs": 23,
+  "real_image": "darkpipe-operator:0.3.0",
+  "cards": "0,1,2",
+  "storage": "local",
+  "network": "localhost RTSP/RTMP",
+  "goals": [
+    "final labels and prior evidence",
+    "all output formats and viewer reconnection",
+    "per-person overlapping clips and graceful draining",
+    "capture/output fault recovery",
+    "cycle throughput, action age, bounded caches and memory observations"
+  ],
+  "limitations": [
+    "No connection to onsite platform/vGPU/NFS/HDFS",
+    "No independent accuracy benchmark",
+    "No source watermark: latency starts at decoded frame delivery, not camera capture"
+  ]
+}

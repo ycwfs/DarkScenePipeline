@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-25",
+  "status": "completed: one training run, frozen holdout/feedback evaluation, candidate not promoted",
+  "confirmed_by_user": {
+    "classes": "action-related objects only; separately label humanoid exhibits/robots",
+    "new_nine_videos": "reserved for final feedback validation",
+    "policy": "conservative default; compare strict"
+  },
+  "classes": {
+    "0": "bottle",
+    "1": "cup",
+    "2": "phone",
+    "3": "camera",
+    "4": "paper",
+    "5": "portable_object",
+    "6": "robot_or_exhibit"
+  },
+  "label_rules": [
+    "Label actual visible objects, never copy video-level action into object labels.",
+    "Unclear objects are ignore regions; exclude affected training crops unless supported ignore loss exists.",
+    "Portable_object requires visible actual small movable item; not clothes, limbs or arbitrary nonperson detector box.",
+    "Processed feedback pixels cannot recover original camera resolution and must not be enhanced twice.",
+    "Review all onsite sources; annotate sampled diverse frames, not every near-duplicate video frame.",
+    "Frame/ROI/processed copies and overlaps stay in the source group.",
+    "Preserve historical train/val/test split; select detector/policy thresholds on old val only.",
+    "New nine videos are already inspected feedback, not a blind unseen test."
+  ],
+  "action_defaults": {
+    "threshold": 0.85,
+    "alpha": 0.95,
+    "lum_gate": 30
+  },
+  "prior_policy": {
+    "conservative": "Require sustained same-person contradictory evidence for rejection; missing/occluded object is unknown; never promote an action based on object presence.",
+    "strict": "Require sustained same-person drink or pickup interaction support; unknown becomes other."
+  },
+  "initialization": "original pretrained yolo26m-detect.pt, not person-only fine-tune",
+  "evaluation": [
+    "object detection box precision/recall on reviewed annotations",
+    "true drink/pickup retention on old heldout reviewed person windows",
+    "false drink/pickup suppression on frozen nine/454 feedback",
+    "other actions unchanged except confidently associated robot candidates",
+    "latency/fps and complete clip saving if promoting to production"
+  ],
+  "deployment": "do not replace current detector/person model with unvalidated object head",
+  "annotation_sampling": "3 uniform source frames (20%,50%,80%), original-pixel person ROI plus middle whole-frame. Add targeted object-visible samples when needed; never count upscales/augmentations as new originals.",
+  "proposal_model": "Grounding DINO tiny, local public weights; explicit person competing class, all predictions unreviewed until visually checked",
+  "training_plan": {
+    "architecture": "YOLO26m independent 7-class object detector, initialized from original COCO pretrained model",
+    "epochs": 20,
+    "seed": 25,
+    "imgsz": 640,
+    "batch": 12,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "freeze": 10,
+    "mosaic": 0,
+    "selection": "old validation object mAP50-95 (one-to-one head, nms=False), no feedback selection",
+    "fallback": "if class coverage insufficient, record unsupported classes rather than invent labels"
+  },
+  "completed_date": "2026-10-26",
+  "decision": "Keep tau085 production without object prior. Conservative produced no feedback veto; strict loses true actions and mistakes camera for bottle.",
+  "evaluation_note": "New feedback has no complete person-action truth; report suppression and existing-file coverage only. Other action classes remain unchanged, including exhibit candidates outside drink/pick_up."
+}

@@ -1,0 +1,245 @@
+{
+  "box": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/staging/NVIDIA-Box",
+  "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/喝水16.mp4",
+  "physical_gpu": "1",
+  "native": true,
+  "container_used": false,
+  "offline": {
+    "session": {
+      "session": "喝水16/20261021_163245_1556360",
+      "mode": "offline",
+      "status": "finished",
+      "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/喝水16.mp4",
+      "local_input": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-0909/喝水16.mp4",
+      "started_at": "2026-10-21 16:32:48",
+      "stopped_at": "2026-10-21 16:33:39",
+      "output_video": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/final-run/offline/喝水16/20261021_163245_1556360/喝水16-处理后.mp4"
+      ],
+      "events_json": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/final-run/offline/喝水16/20261021_163245_1556360/喝水16_events.json"
+      ],
+      "events_total": 4,
+      "label_counts": {
+        "Drinking water": 4
+      },
+      "clips": {
+        "session": "喝水16/20261021_163245_1556360",
+        "clips_saved": 1,
+        "clips_abandoned": 0,
+        "clips_forced": 0,
+        "frames_dropped": 0,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "clip_videos": [
+        [
+          "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/final-run/offline/喝水16/20261021_163245_1556360/0-3s-喝水.mp4"
+        ]
+      ],
+      "stats": {
+        "frames": 75,
+        "seconds": 43.195,
+        "fps": 1.74,
+        "frames_written": 75,
+        "events": 4,
+        "gpus": 1,
+        "clips": {
+          "session": "喝水16/20261021_163245_1556360",
+          "clips_saved": 1,
+          "clips_abandoned": 0,
+          "clips_forced": 0,
+          "frames_dropped": 0,
+          "uploads_dropped": 0,
+          "stage_orphans_cleaned": 0,
+          "clips_unfinished": 0,
+          "clips_failed": 0,
+          "write_errors": 0,
+          "write_error": null,
+          "recovery_stage_dir": null,
+          "writer_alive": false,
+          "uploads_pending": 0
+        },
+        "wall_seconds": 51.097
+      },
+      "config": {
+        "enhance": "retinexformer",
+        "sr": "bicubic_x2",
+        "sr_scale": 2,
+        "recognize": "behavior",
+        "gpu_ids": "0",
+        "reco_span_sec": 1.0,
+        "proc_max_side": 720
+      }
+    },
+    "videos": {
+      "喝水16/20261021_163245_1556360/0-3s-喝水.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "2.960000",
+        "nb_read_frames": "74"
+      },
+      "喝水16/20261021_163245_1556360/喝水16-处理后.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "3.000000",
+        "nb_read_frames": "75"
+      }
+    },
+    "events": 4,
+    "events_with_actor_poses": 4
+  },
+  "online": {
+    "exit_code": 0,
+    "sent_sigterm": true,
+    "session": {
+      "session": "127.0.0.1/20261021_163343_1559147",
+      "mode": "serve",
+      "status": "stopped",
+      "source": "http://127.0.0.1:53735/live.mjpg",
+      "local_input": "http://127.0.0.1:53735/live.mjpg",
+      "started_at": "2026-10-21 16:33:46",
+      "endpoints": {
+        "events_sse": "http://<容器地址>:56775/events",
+        "health": "http://<容器地址>:56775/health",
+        "config": "http://<容器地址>:56775/config",
+        "stream_mjpeg": "http://<容器地址>:56775/stream",
+        "stream_flv": "http://<容器地址>:56775/live.flv",
+        "stream_hls": "http://<容器地址>:56775/hls/index.m3u8",
+        "rtmp_push": "rtmp://127.0.0.1:59943/live/box"
+      },
+      "clip_dir": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/final-run/online/saved/127.0.0.1/20261021_163343_1559147",
+      "event_log": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/final-run/online/saved/127.0.0.1/20261021_163343_1559147/events.jsonl",
+      "hdfs_clip_dir": "",
+      "clip_skip_labels": "other",
+      "config": {
+        "enhance": "retinexformer",
+        "sr": "bicubic_x2",
+        "recognize": "behavior",
+        "gpu_ids": "0",
+        "reco_span_sec": 1.0,
+        "reco_min_conf": 0.75,
+        "proc_max_side": 720,
+        "pose_overlay": true,
+        "fuse_mode": "alpha",
+        "lum_gate": 75.0,
+        "skel_fusion_alpha": 0.7,
+        "skel_no_person": "soft",
+        "act_tau": 0.65,
+        "skel_tau": 0.65,
+        "clip_pre_sec": 2.0,
+        "clip_post_sec": 2.0,
+        "clip_max_sec": 15.0,
+        "clip_denoise": "quality",
+        "serve_port": 56775,
+        "run_seconds": 90.0
+      },
+      "stopped_at": "2026-10-21 16:35:13",
+      "clips": {
+        "session": "127.0.0.1/20261021_163343_1559147",
+        "clips_saved": 6,
+        "clips_abandoned": 1,
+        "clips_forced": 0,
+        "frames_dropped": 254,
+        "uploads_dropped": 0,
+        "stage_orphans_cleaned": 0,
+        "clips_unfinished": 0,
+        "clips_failed": 0,
+        "write_errors": 0,
+        "write_error": null,
+        "recovery_stage_dir": null,
+        "writer_alive": false,
+        "uploads_pending": 0
+      },
+      "event_log_stats": {
+        "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/nvidia-box-native-20261021/final-run/online/saved/127.0.0.1/20261021_163343_1559147/events.jsonl",
+        "events_written": 22,
+        "events_dropped": 0
+      },
+      "events_total": 22,
+      "hdfs_uploaded": 0,
+      "hdfs_failed": 0
+    },
+    "videos": {
+      "hls.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "6.000000",
+        "nb_read_frames": "90"
+      },
+      "flv.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "5.999000",
+        "nb_read_frames": "90"
+      },
+      "saved/127.0.0.1/20261021_163343_1559147/drinking_water/20261021_163410_drinking_water_0003.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "9.142857",
+        "nb_read_frames": "64"
+      },
+      "saved/127.0.0.1/20261021_163343_1559147/drinking_water/20261021_163358_drinking_water_0001.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "7.611111",
+        "nb_read_frames": "137"
+      },
+      "saved/127.0.0.1/20261021_163343_1559147/drinking_water/20261021_163418_drinking_water_0004.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "4.666667",
+        "nb_read_frames": "28"
+      },
+      "saved/127.0.0.1/20261021_163343_1559147/drinking_water/20261021_163405_drinking_water_0002.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "6.500000",
+        "nb_read_frames": "39"
+      },
+      "saved/127.0.0.1/20261021_163343_1559147/drinking_water/20261021_163426_drinking_water_0005.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "8.875000",
+        "nb_read_frames": "142"
+      },
+      "saved/127.0.0.1/20261021_163343_1559147/drinking_water/20261021_163441_drinking_water_0006.mp4": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "duration": "10.384615",
+        "nb_read_frames": "135"
+      },
+      "rtmp.flv": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 874,
+        "nb_read_frames": "831"
+      }
+    },
+    "sse_events": 21,
+    "health_http_200": 55,
+    "client_errors": [],
+    "last_poll_error": "<urlopen error [Errno 111] Connection refused>",
+    "clients": {
+      "flv": 0,
+      "hls": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "new-07-000": {
+    "truth": "false_action",
+    "description": "21.32秒/T26白衣人物手机贴耳通话，非喝水；手机仍被识别为瓶，支持分数0.583→0.767。",
+    "review": "Assistant visual review of five raw frames plus source temporal context; agrees with prior user not_drink feedback for this scene."
+  }
+}

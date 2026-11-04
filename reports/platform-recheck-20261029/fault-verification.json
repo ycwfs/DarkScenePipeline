@@ -1,0 +1,968 @@
+{
+  "passed": true,
+  "seconds": 110,
+  "recoveries": {
+    "source_resume": {
+      "health_ok_seconds": 0.5588813270442188,
+      "receiver_activity_seconds": 0.05808428302407265
+    },
+    "output_up": {
+      "health_ok_seconds": 7.946955154184252,
+      "receiver_activity_seconds": 13.042258495930582
+    },
+    "source_up": {
+      "health_ok_seconds": 5.680022235959768,
+      "receiver_activity_seconds": 0.004712770693004131
+    }
+  },
+  "outage_indications": {
+    "source_pause": {
+      "statuses": {
+        "degraded": 4,
+        "ok": 7
+      },
+      "http_statuses": {
+        "200": 8,
+        "503": 3
+      }
+    },
+    "output_down": {
+      "statuses": {
+        "degraded": 9
+      },
+      "http_statuses": {
+        "200": 9
+      }
+    },
+    "source_down": {
+      "statuses": {
+        "degraded": 9
+      },
+      "http_statuses": {
+        "503": 9
+      }
+    }
+  },
+  "epochs": [
+    0,
+    1,
+    2
+  ],
+  "reconnects": 2,
+  "push_restarts": 4,
+  "received_frames": [
+    969,
+    269
+  ],
+  "expected_receiver_disconnects": [
+    49,
+    14
+  ],
+  "stale_processing": [
+    {
+      "outage": "source_pause",
+      "processed_frames_after_three_seconds": 3,
+      "last_output_after_fault_seconds": 4.222382339183241
+    },
+    {
+      "outage": "source_down",
+      "processed_frames_after_three_seconds": 0,
+      "last_output_after_fault_seconds": 0.13353409804403782
+    }
+  ],
+  "events": 179,
+  "clips_saved": 12,
+  "clips_context_complete": 8,
+  "clip_frame_drops": 0,
+  "final_clip_counters": {
+    "clips_failed": 0,
+    "clips_forced": 0,
+    "clips_abandoned": 0,
+    "write_errors": 0
+  },
+  "session_clips": {
+    "frames_recording_input": 1909,
+    "max_recorders": 2,
+    "events_received": 179,
+    "capture_discontinuities": 4,
+    "events_without_output_frame": 0,
+    "clips_saved": 12,
+    "clips_abandoned": 0,
+    "clips_forced": 0,
+    "frames_dropped": 0,
+    "clips_unfinished": 0,
+    "clips_failed": 0,
+    "write_errors": 0,
+    "uploads_dropped": 0,
+    "totals": {
+      "clips_saved": 12,
+      "clips_abandoned": 0,
+      "clips_forced": 0,
+      "frames_dropped": 0,
+      "clips_unfinished": 0,
+      "clips_failed": 0,
+      "write_errors": 0,
+      "uploads_dropped": 0
+    },
+    "clips": [
+      {
+        "session": "E000_T001_G001/R00001",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9608,
+        "labels_in_clip": {
+          "Waving": 1
+        },
+        "frames": 65,
+        "fps": 25.0,
+        "duration_seconds": 3.285,
+        "trigger_stream_time": 28.214,
+        "first_event": {
+          "frame_index": 680,
+          "timestamp": 28.214,
+          "label": "Waving",
+          "confidence": 0.9608,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 26.93100625090301,
+          "writer_drop_start": 0,
+          "last_action_source_time": 28.214359511621296,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:09",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E000_T001_G001/R00001/waving/E000_T001_G001_R00001_20261029_023611_waving_0001.mp4",
+        "frames_written": 83,
+        "capture_fps": 19.787,
+        "playback_speed": 0.989,
+        "person_id": 1,
+        "history_generation": 1,
+        "capture_epoch": 0,
+        "action_key": "waving",
+        "recording_id": 1,
+        "start_source_time": 26.93100625090301,
+        "end_source_time": 30.21600625090301,
+        "pre_context_available": 1.2829937490969883,
+        "post_context_available": 2.001646739281714,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      },
+      {
+        "session": "E000_T001_G001/R00002",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9577,
+        "labels_in_clip": {
+          "Waving": 5
+        },
+        "frames": 125,
+        "fps": 24.0,
+        "duration_seconds": 6.072,
+        "trigger_stream_time": 30.297,
+        "first_event": {
+          "frame_index": 732,
+          "timestamp": 30.297,
+          "label": "Waving",
+          "confidence": 0.9556,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 28.340025817975402,
+          "writer_drop_start": 0,
+          "last_action_source_time": 32.41123155178502,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:10",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E000_T001_G001/R00002/waving/E000_T001_G001_R00002_20261029_023614_waving_0001.mp4",
+        "frames_written": 146,
+        "capture_fps": 20.586,
+        "playback_speed": 0.998,
+        "person_id": 1,
+        "history_generation": 1,
+        "capture_epoch": 0,
+        "action_key": "waving",
+        "recording_id": 2,
+        "start_source_time": 28.340025817975402,
+        "end_source_time": 34.412025817975405,
+        "pre_context_available": 1.9569741820245987,
+        "post_context_available": 2.0007942661903826,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E000_T001_G001/R00003",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9506,
+        "labels_in_clip": {
+          "Waving": 2
+        },
+        "frames": 93,
+        "fps": 24.0,
+        "duration_seconds": 4.44,
+        "trigger_stream_time": 34.494,
+        "first_event": {
+          "frame_index": 837,
+          "timestamp": 34.494,
+          "label": "Waving",
+          "confidence": 0.9448,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 32.57680002460256,
+          "writer_drop_start": 0,
+          "last_action_source_time": 35.014939485583454,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:15",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E000_T001_G001/R00003/waving/E000_T001_G001_R00003_20261029_023618_waving_0001.mp4",
+        "frames_written": 107,
+        "capture_fps": 20.946,
+        "playback_speed": 0.996,
+        "person_id": 1,
+        "history_generation": 1,
+        "capture_epoch": 0,
+        "action_key": "waving",
+        "recording_id": 3,
+        "start_source_time": 32.57680002460256,
+        "end_source_time": 37.01680002460256,
+        "pre_context_available": 1.9171999753974376,
+        "post_context_available": 2.0018605390191055,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E000_T001_G001/R00004",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9583,
+        "labels_in_clip": {
+          "Waving": 11
+        },
+        "frames": 157,
+        "fps": 24.0,
+        "duration_seconds": 7.641,
+        "trigger_stream_time": 37.096,
+        "first_event": {
+          "frame_index": 902,
+          "timestamp": 37.096,
+          "label": "Waving",
+          "confidence": 0.9538,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 35.09678456000984,
+          "writer_drop_start": 0,
+          "last_action_source_time": 42.37113279290497,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "输入断流/时间间隙，尾部上下文不完整",
+        "started_at": "2026-10-29 02:36:17",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E000_T001_G001/R00004/waving/E000_T001_G001_R00004_20261029_023621_waving_0001.mp4",
+        "frames_written": 184,
+        "capture_fps": 20.547,
+        "playback_speed": 0.997,
+        "person_id": 1,
+        "history_generation": 1,
+        "capture_epoch": 0,
+        "action_key": "waving",
+        "recording_id": 4,
+        "start_source_time": 35.09678456000984,
+        "end_source_time": 42.737784560009835,
+        "pre_context_available": 1.9992154399901594,
+        "post_context_available": 0.36665176710486236,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      },
+      {
+        "session": "E001_T002_G000/R00005",
+        "seq": 1,
+        "label": "Running",
+        "label_key": "running",
+        "confidence": 0.9555,
+        "labels_in_clip": {
+          "Running": 2
+        },
+        "frames": 90,
+        "fps": 25.0,
+        "duration_seconds": 4.035,
+        "trigger_stream_time": 52.775,
+        "first_event": {
+          "frame_index": 1187,
+          "timestamp": 52.775,
+          "label": "Running",
+          "confidence": 0.9509,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 51.26095267292112,
+          "writer_drop_start": 0,
+          "last_action_source_time": 53.294873805716634,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:33",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T002_G000/R00005/running/E001_T002_G000_R00005_20261029_023636_running_0001.mp4",
+        "frames_written": 101,
+        "capture_fps": 22.305,
+        "playback_speed": 0.999,
+        "person_id": 2,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "running",
+        "recording_id": 5,
+        "start_source_time": 51.26095267292112,
+        "end_source_time": 55.29595267292112,
+        "pre_context_available": 1.5140473270788775,
+        "post_context_available": 2.001078867204484,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      },
+      {
+        "session": "E001_T004_G000/R00006",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9339,
+        "labels_in_clip": {
+          "Waving": 1
+        },
+        "frames": 84,
+        "fps": 24.0,
+        "duration_seconds": 3.998,
+        "trigger_stream_time": 59.055,
+        "first_event": {
+          "frame_index": 1344,
+          "timestamp": 59.055,
+          "label": "Waving",
+          "confidence": 0.9339,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 57.059183022007346,
+          "writer_drop_start": 0,
+          "last_action_source_time": 59.055430041626096,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:39",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T004_G000/R00006/waving/E001_T004_G000_R00006_20261029_023642_waving_0001.mp4",
+        "frames_written": 96,
+        "capture_fps": 21.011,
+        "playback_speed": 1.0,
+        "person_id": 4,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "waving",
+        "recording_id": 6,
+        "start_source_time": 57.059183022007346,
+        "end_source_time": 61.057183022007344,
+        "pre_context_available": 1.9958169779926536,
+        "post_context_available": 2.001752980381248,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T004_G000/R00007",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9513,
+        "labels_in_clip": {
+          "Picking up object": 3
+        },
+        "frames": 98,
+        "fps": 17.0,
+        "duration_seconds": 5.039,
+        "trigger_stream_time": 61.131,
+        "first_event": {
+          "frame_index": 1396,
+          "timestamp": 61.131,
+          "label": "Picking up object",
+          "confidence": 0.9339,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 59.13814123580232,
+          "writer_drop_start": 0,
+          "last_action_source_time": 62.1766159189865,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:41",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T004_G000/R00007/picking_up_object/E001_T004_G000_R00007_20261029_023645_picking_up_object_0001.mp4",
+        "frames_written": 86,
+        "capture_fps": 19.448,
+        "playback_speed": 0.996,
+        "person_id": 4,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 7,
+        "start_source_time": 59.13814123580232,
+        "end_source_time": 64.17714123580232,
+        "pre_context_available": 1.9928587641976776,
+        "post_context_available": 2.000525316815825,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T004_G000/R00008",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9501,
+        "labels_in_clip": {
+          "Picking up object": 3
+        },
+        "frames": 105,
+        "fps": 24.0,
+        "duration_seconds": 5.115,
+        "trigger_stream_time": 65.294,
+        "first_event": {
+          "frame_index": 1500,
+          "timestamp": 65.294,
+          "label": "Picking up object",
+          "confidence": 0.9301,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 63.29555114591494,
+          "writer_drop_start": 0,
+          "last_action_source_time": 66.3769626216963,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:45",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T004_G000/R00008/picking_up_object/E001_T004_G000_R00008_20261029_023649_picking_up_object_0001.mp4",
+        "frames_written": 123,
+        "capture_fps": 20.528,
+        "playback_speed": 0.998,
+        "person_id": 4,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 8,
+        "start_source_time": 63.29555114591494,
+        "end_source_time": 68.41055114591494,
+        "pre_context_available": 1.998448854085055,
+        "post_context_available": 2.0335885242186436,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T004_G000/R00009",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9548,
+        "labels_in_clip": {
+          "Picking up object": 3
+        },
+        "frames": 106,
+        "fps": 24.0,
+        "duration_seconds": 5.04,
+        "trigger_stream_time": 69.493,
+        "first_event": {
+          "frame_index": 1605,
+          "timestamp": 69.493,
+          "label": "Picking up object",
+          "confidence": 0.9321,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 67.53911285568029,
+          "writer_drop_start": 0,
+          "last_action_source_time": 70.5321040507406,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:50",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T004_G000/R00009/picking_up_object/E001_T004_G000_R00009_20261029_023653_picking_up_object_0001.mp4",
+        "frames_written": 121,
+        "capture_fps": 21.032,
+        "playback_speed": 1.0,
+        "person_id": 4,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 9,
+        "start_source_time": 67.53911285568029,
+        "end_source_time": 72.5791128556803,
+        "pre_context_available": 1.9538871443197081,
+        "post_context_available": 2.0470088049396935,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T004_G000/R00010",
+        "seq": 1,
+        "label": "Picking up object",
+        "label_key": "picking_up_object",
+        "confidence": 0.9512,
+        "labels_in_clip": {
+          "Picking up object": 2
+        },
+        "frames": 108,
+        "fps": 25.0,
+        "duration_seconds": 5.042,
+        "trigger_stream_time": 73.69,
+        "first_event": {
+          "frame_index": 1710,
+          "timestamp": 73.69,
+          "label": "Picking up object",
+          "confidence": 0.9511,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 71.69114236580208,
+          "writer_drop_start": 0,
+          "last_action_source_time": 74.73137597599998,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:54",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T004_G000/R00010/picking_up_object/E001_T004_G000_R00010_20261029_023657_picking_up_object_0001.mp4",
+        "frames_written": 127,
+        "capture_fps": 21.42,
+        "playback_speed": 0.993,
+        "person_id": 4,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "picking_up_object",
+        "recording_id": 10,
+        "start_source_time": 71.69114236580208,
+        "end_source_time": 76.73314236580208,
+        "pre_context_available": 1.9988576341979183,
+        "post_context_available": 2.0017663898021,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E001_T006_G000/R00011",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9607,
+        "labels_in_clip": {
+          "Waving": 10
+        },
+        "frames": 208,
+        "fps": 25.0,
+        "duration_seconds": 8.638,
+        "trigger_stream_time": 76.296,
+        "first_event": {
+          "frame_index": 1775,
+          "timestamp": 76.296,
+          "label": "Waving",
+          "confidence": 0.9517,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 74.33805669890717,
+          "writer_drop_start": 0,
+          "last_action_source_time": 80.97318973997608,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "post 静默期结束",
+        "started_at": "2026-10-29 02:36:56",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E001_T006_G000/R00011/waving/E001_T006_G000_R00011_20261029_023700_waving_0001.mp4",
+        "frames_written": 216,
+        "capture_fps": 24.08,
+        "playback_speed": 1.0,
+        "person_id": 6,
+        "history_generation": 4294967296,
+        "capture_epoch": 1,
+        "action_key": "waving",
+        "recording_id": 11,
+        "start_source_time": 74.33805669890717,
+        "end_source_time": 82.97605669890717,
+        "pre_context_available": 1.9579433010928398,
+        "post_context_available": 2.0028669589310937,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": true
+      },
+      {
+        "session": "E002_T010_G000/R00012",
+        "seq": 1,
+        "label": "Waving",
+        "label_key": "waving",
+        "confidence": 0.9621,
+        "labels_in_clip": {
+          "Waving": 21
+        },
+        "frames": 324,
+        "fps": 24.0,
+        "duration_seconds": 14.921,
+        "trigger_stream_time": 125.343,
+        "first_event": {
+          "frame_index": 2693,
+          "timestamp": 125.343,
+          "label": "Waving",
+          "confidence": 0.9523,
+          "topk": [],
+          "model": "",
+          "window": 0,
+          "skeleton_active": false,
+          "actor_poses": [],
+          "skeleton_selected_slot": -1,
+          "clip_start_source_time": 123.34682207088917,
+          "writer_drop_start": 0,
+          "last_action_source_time": 137.42850198084489,
+          "writer_frames_dropped": 0
+        },
+        "closed_because": "输入断流/时间间隙，尾部上下文不完整",
+        "started_at": "2026-10-29 02:37:45",
+        "video": "/evidence/faults/clips/input/20261029_023541_1/E002_T010_G000/R00012/waving/E002_T010_G000_R00012_20261029_023749_waving_0001.mp4",
+        "frames_written": 359,
+        "capture_fps": 21.714,
+        "playback_speed": 0.998,
+        "person_id": 10,
+        "history_generation": 8589934592,
+        "capture_epoch": 2,
+        "action_key": "waving",
+        "recording_id": 12,
+        "start_source_time": 123.34682207088917,
+        "end_source_time": 138.26782207088917,
+        "pre_context_available": 1.9961779291108286,
+        "post_context_available": 0.8393200900442821,
+        "requested_pre": 2.0,
+        "requested_post": 2.0,
+        "recording_policy": "full frame per person and action; overlapping files allowed",
+        "writer_frames_dropped": 0,
+        "context_complete": false
+      }
+    ],
+    "object_overlay": {
+      "max_history_bytes": 4654080,
+      "frames": 1909,
+      "frames_with_objects": 58,
+      "boxes": 58,
+      "followed_boxes": 39,
+      "alignment_hidden": 18
+    },
+    "writer_alive": false,
+    "recovery_stage_dir": "/tmp/darkpipe_person_clips_2dvhtfg_",
+    "uploads_pending": 0,
+    "write_error": null,
+    "error": null
+  },
+  "clip_decode": [
+    {
+      "path": "faults/clips/input/20261029_023541_1/E000_T001_G001/R00003/waving/E000_T001_G001_R00003_20261029_023618_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "107"
+          }
+        ],
+        "format": {
+          "duration": "4.459000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E000_T001_G001/R00002/waving/E000_T001_G001_R00002_20261029_023614_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "146"
+          }
+        ],
+        "format": {
+          "duration": "6.084000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E000_T001_G001/R00004/waving/E000_T001_G001_R00004_20261029_023621_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "184"
+          }
+        ],
+        "format": {
+          "duration": "7.667000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E000_T001_G001/R00001/waving/E000_T001_G001_R00001_20261029_023611_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "83"
+          }
+        ],
+        "format": {
+          "duration": "3.320000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T006_G000/R00011/waving/E001_T006_G000_R00011_20261029_023700_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "216"
+          }
+        ],
+        "format": {
+          "duration": "8.640000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T004_G000/R00009/picking_up_object/E001_T004_G000_R00009_20261029_023653_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "121"
+          }
+        ],
+        "format": {
+          "duration": "5.042000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T004_G000/R00006/waving/E001_T004_G000_R00006_20261029_023642_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "96"
+          }
+        ],
+        "format": {
+          "duration": "4.000000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T004_G000/R00010/picking_up_object/E001_T004_G000_R00010_20261029_023657_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "127"
+          }
+        ],
+        "format": {
+          "duration": "5.080000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T004_G000/R00008/picking_up_object/E001_T004_G000_R00008_20261029_023649_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "123"
+          }
+        ],
+        "format": {
+          "duration": "5.125000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T004_G000/R00007/picking_up_object/E001_T004_G000_R00007_20261029_023645_picking_up_object_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "17/1",
+            "nb_frames": "86"
+          }
+        ],
+        "format": {
+          "duration": "5.059000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E002_T010_G000/R00012/waving/E002_T010_G000_R00012_20261029_023749_waving_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "24/1",
+            "nb_frames": "359"
+          }
+        ],
+        "format": {
+          "duration": "14.959000"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "path": "faults/clips/input/20261029_023541_1/E001_T002_G000/R00005/running/E001_T002_G000_R00005_20261029_023636_running_0001.mp4",
+      "passed": true,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 808,
+            "avg_frame_rate": "25/1",
+            "nb_frames": "101"
+          }
+        ],
+        "format": {
+          "duration": "4.040000"
+        }
+      },
+      "stderr": ""
+    }
+  ],
+  "normal_stop": true,
+  "owned_processes_alive": 0,
+  "limitation": "Controlled localhost outages, local storage; not real NFS failure or unlimited reliability guarantee. RTMP may repeat last image briefly until input-lost warning appears. Receiver activity after input recovery includes warning/last-image frames; it is not fresh-source end-to-end recovery latency. A few buffered in-flight frames can finish after the source pause."
+}

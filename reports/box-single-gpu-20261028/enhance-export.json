@@ -1,0 +1,14 @@
+{
+  "derived_from": "/ssd1/wfs/project/lowlight/DarkScenePipeline/NVIDIA-Box/weights/NTIRE.pth",
+  "source_sha256": "ba460a6882090ff3312c11fe96b3e7dc5be8e013b8c3b3a7ef6a529cc5ff27fa",
+  "output": "/ssd1/wfs/project/lowlight/DarkScenePipeline/NVIDIA-Box/weights/retinexformer_ntire_720_box.onnx",
+  "sha256": "95cf81c70ede88b3b60523a775963e85f3812b92df5ba414d816053e3fdf2426",
+  "input_shape": [
+    1,
+    3,
+    404,
+    720
+  ],
+  "precision": "float16",
+  "training": "No retraining; same NTIRE weights; exported for Box TensorRT"
+}

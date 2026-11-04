@@ -1,0 +1,12 @@
+{
+  "epoch": 7,
+  "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/person-finetune-20261023/checkpoints/epoch-07.pth",
+  "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf",
+  "key": [
+    0.8934789550999552,
+    0.8962645369202746,
+    -0.03225806451612903
+  ],
+  "selected_on": "validation only",
+  "test_evaluated": false
+}

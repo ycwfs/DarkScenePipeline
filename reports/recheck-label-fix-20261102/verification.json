@@ -1,0 +1,108 @@
+{
+  "scope": "Real GPU inference in the original image, enhancement/SR off to reproduce the prior run; not a streaming or throughput acceptance",
+  "counts": {
+    "output_labels_checked": 1915,
+    "clip_labels_checked": 1915,
+    "output_recovered_draws": 13,
+    "clip_recovered_draws": 13
+  },
+  "events": 153,
+  "recovered_events": 1,
+  "recovered_summary": [
+    {
+      "timestamp": 46.28,
+      "track_id": 10,
+      "label": "wave",
+      "confidence": 0.8778330683708191,
+      "recheck": {
+        "recovered": true,
+        "mechanism": "continuation",
+        "lower": 0.85,
+        "upper": 0.925
+      }
+    }
+  ],
+  "decoded": [
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T010_G000_R00001_20261102_041253_waving_0001.mp4",
+      "frames": 283
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T010_G000_R00002_20261102_041303_waving_0001.mp4",
+      "frames": 154
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T010_G000_R00003_20261102_041308_waving_0001.mp4",
+      "frames": 323
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T010_G000_R00004_20261102_041321_waving_0001.mp4",
+      "frames": 128
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T011_G000_R00005_20261102_041326_drinking_water_0001.mp4",
+      "frames": 141
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T012_G000_R00006_20261102_041329_running_0001.mp4",
+      "frames": 115
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T014_G000_R00007_20261102_041333_drinking_water_0001.mp4",
+      "frames": 102
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/E000_T014_G000_R00008_20261102_041337_waving_0001.mp4",
+      "frames": 101
+    },
+    {
+      "path": "outputs/input65/20261102_041206_1/input65-处理后.mp4",
+      "frames": 1625
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T010_G000_R00001_20261102_041802_waving_0001.mp4",
+      "frames": 283
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T010_G000_R00002_20261102_041814_waving_0001.mp4",
+      "frames": 154
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T010_G000_R00003_20261102_041820_waving_0001.mp4",
+      "frames": 323
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T010_G000_R00004_20261102_041836_waving_0001.mp4",
+      "frames": 128
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T011_G000_R00005_20261102_041841_drinking_water_0001.mp4",
+      "frames": 141
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T012_G000_R00006_20261102_041845_running_0001.mp4",
+      "frames": 115
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T014_G000_R00007_20261102_041850_drinking_water_0001.mp4",
+      "frames": 102
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/E000_T014_G000_R00008_20261102_041854_waving_0001.mp4",
+      "frames": 101
+    },
+    {
+      "path": "outputs/input65/20261102_041718_1/input65-处理后.mp4",
+      "frames": 1625
+    }
+  ],
+  "previews": [
+    {
+      "file": "confirmed-1.jpg",
+      "timestamp": 46.28,
+      "label": "wave",
+      "confidence": 0.8778330683708191,
+      "track_id": 10
+    }
+  ]
+}

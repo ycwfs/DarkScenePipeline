@@ -1,0 +1,21 @@
+{
+  "platform/dark-demo-v2/darkpipe/stages/recognize.py": "6b5a899667061cf8a5c9b9ce6e39af13bf7d8781e3ad3383b2bb8eec9b61e932",
+  "reports/person-action-20261023/scripts/demo.py": "7714077bd2ae8bc5196761fb6924f06f34ac5dbdc2d17d6ddafbef414b1e656b",
+  "reports/person-action-20261023/scripts/person_core.py": "906702c5981ae47d3c596846d4db48e7ab20f860771f85a9f1c366f1a8481c0c",
+  "reports/person-finetune-20261023/scripts/analyze.py": "fed7f41cd71db8637093d9ea3d5dd142fd1ddc8698544b60a2ce1e78356529dc",
+  "reports/person-finetune-20261023/scripts/assemble.py": "600fcf091864533eae3663120f1f33384629b8222fe0a65dfae1d5b9a057edf6",
+  "reports/person-finetune-20261023/scripts/build_review.py": "819b668de6470a7c7a32df0c00c30d6b6b4567d5a10a4fec722b369fe686088d",
+  "reports/person-finetune-20261023/scripts/compare_demos.py": "f81d11212d7f5df74fd11fd4d6b6200f6a943a241b12d36bf622ee82ea10a6e3",
+  "reports/person-finetune-20261023/scripts/detail_review.py": "eec18b7052ca8b8d8a183a781b62921e0d7e3fab76a8b6c3e9b9b9d6b0d5a944",
+  "reports/person-finetune-20261023/scripts/evaluate_test.py": "1bc61c4d9ff3843091a6fae1bc123c9ffb4414db01b7e0723caee1dff139f786",
+  "reports/person-finetune-20261023/scripts/finalize.py": "5b5196c46270faf4e11011643923e0c5eb373a5d625ad8f58b816abbd4637cc0",
+  "reports/person-finetune-20261023/scripts/finish_run.py": "8d94baae257d25b360a338dafa7f84a26350d43aac520dd4481b6febaafa29ab",
+  "reports/person-finetune-20261023/scripts/freeze_splits.py": "9d4f9496651d9c797fd4795d7d14de0c1955ed84222c49483f02dd65de4e9d10",
+  "reports/person-finetune-20261023/scripts/inventory.py": "5d0e5a4ffcfea66567f5f61c81bcdcf0a4fb61bc160a3cd5e2765052621d264e",
+  "reports/person-finetune-20261023/scripts/prepare_people.py": "ceb44a5dcf820e9cc4208a9bd35acb57c43b262bb9e1bfe41064f86f99931bb1",
+  "reports/person-finetune-20261023/scripts/render_demo.py": "3312294f09c67a477a38645fcfea3a186ff15145c760d2f10294b11291ee2518",
+  "reports/person-finetune-20261023/scripts/review_index.py": "476c6c11ebad2ff80000468012fee1740e7028ec94fa0b6c955034a104093ea9",
+  "reports/person-finetune-20261023/scripts/run_training.py": "c21f6c61d53a23b16d5070251aea793b4a4b0f4e384f85702dfb52f932b8b745",
+  "reports/person-finetune-20261023/scripts/save_wave_annotations.py": "b7142c4a47926e6a8ff1098566713655081b56a696550f0cb8e642abb981536a",
+  "reports/person-finetune-20261023/scripts/train.py": "ce18082eae41c6d484496e357429421f3972b921c3621803465e7979c5c3f4c8"
+}

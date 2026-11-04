@@ -1,0 +1,161 @@
+﻿source_number,track_id,history_generation,action,start,end,windows,max_confidence,roi_supported_windows,object_classes,event_indices,review_status
+1,90,1,drink,45.92,46.44,2,0.8781324625015259,0,{},"[551, 556]",unreviewed candidate segment; inspect video before calling FP/TP
+1,118,0,pick_up,48.92,49.96,3,0.9096185564994812,0,{},"[601, 611, 621]",unreviewed candidate segment; inspect video before calling FP/TP
+1,266,0,pick_up,128.76,129.8,3,0.9066110849380493,0,{},"[1657, 1666, 1676]",unreviewed candidate segment; inspect video before calling FP/TP
+1,317,0,drink,149.92,149.92,1,0.9447130560874939,0,{},[1935],unreviewed candidate segment; inspect video before calling FP/TP
+1,510,0,pick_up,209.0,210.04,3,0.9089158177375793,0,{},"[2818, 2829, 2838]",unreviewed candidate segment; inspect video before calling FP/TP
+1,722,0,pick_up,288.96,290.0,3,0.9096982479095459,0,{},"[4159, 4167, 4174]",unreviewed candidate segment; inspect video before calling FP/TP
+1,895,0,pick_up,369.28,369.8,2,0.9083716869354248,0,{},"[5242, 5249]",unreviewed candidate segment; inspect video before calling FP/TP
+2,39,0,drink,22.08,23.64,4,0.8983557224273682,0,{},"[349, 360, 371, 382]",unreviewed candidate segment; inspect video before calling FP/TP
+2,51,2,drink,29.32,30.36,3,0.943509042263031,2,{'bottle': 2},"[483, 491, 500]",unreviewed candidate segment; inspect video before calling FP/TP
+2,44,0,drink,34.4,34.92,2,0.8953668475151062,0,{},"[554, 562]",unreviewed candidate segment; inspect video before calling FP/TP
+2,44,0,drink,51.04,51.56,2,0.8836343884468079,0,{},"[825, 832]",unreviewed candidate segment; inspect video before calling FP/TP
+2,19,0,drink,48.6,49.64,3,0.899803102016449,3,{'bottle': 6},"[791, 799, 805]",unreviewed candidate segment; inspect video before calling FP/TP
+2,104,0,drink,61.04,61.56,2,0.902683675289154,0,{},"[965, 973]",unreviewed candidate segment; inspect video before calling FP/TP
+2,248,0,drink,124.08,125.64,4,0.8734499216079712,1,{'bottle': 2},"[2064, 2075, 2085, 2095]",unreviewed candidate segment; inspect video before calling FP/TP
+2,287,0,drink,140.4,140.92,2,0.8787658214569092,0,{},"[2368, 2376]",unreviewed candidate segment; inspect video before calling FP/TP
+2,270,1,drink,142.0,142.0,1,0.9055735468864441,0,{},[2394],unreviewed candidate segment; inspect video before calling FP/TP
+2,335,2,drink,187.76,188.28,2,0.908237636089325,0,{},"[3265, 3274]",unreviewed candidate segment; inspect video before calling FP/TP
+2,335,2,drink,203.36,206.48,7,0.9096606373786926,6,{'bottle': 8},"[3506, 3515, 3523, 3533, 3542, 3550, 3559]",unreviewed candidate segment; inspect video before calling FP/TP
+2,325,1,drink,189.44,190.48,2,0.8715016841888428,0,{},"[3292, 3310]",unreviewed candidate segment; inspect video before calling FP/TP
+2,363,0,drink,201.52,201.52,1,0.9154286980628967,1,{'bottle': 1},[3478],unreviewed candidate segment; inspect video before calling FP/TP
+2,392,0,drink,228.24,232.92,7,0.9052071571350098,2,{'bottle': 2},"[3820, 3835, 3840, 3862, 3868, 3873, 3879]",unreviewed candidate segment; inspect video before calling FP/TP
+2,400,0,drink,234.24,234.76,2,0.9147687554359436,0,{},"[3896, 3903]",unreviewed candidate segment; inspect video before calling FP/TP
+2,410,1,drink,254.68,255.2,2,0.9432789087295532,0,{},"[4219, 4223]",unreviewed candidate segment; inspect video before calling FP/TP
+2,458,0,drink,256.68,258.24,4,0.891764223575592,0,{},"[4243, 4251, 4259, 4267]",unreviewed candidate segment; inspect video before calling FP/TP
+2,480,1,drink,271.72,272.76,3,0.9088919162750244,0,{},"[4472, 4480, 4489]",unreviewed candidate segment; inspect video before calling FP/TP
+2,480,1,drink,275.88,277.96,5,0.8929731845855713,0,{},"[4533, 4542, 4550, 4558, 4568]",unreviewed candidate segment; inspect video before calling FP/TP
+2,480,1,drink,284.2,285.24,3,0.8904573917388916,0,{},"[4647, 4655, 4662]",unreviewed candidate segment; inspect video before calling FP/TP
+2,480,1,drink,292.52,293.04,2,0.8929668664932251,1,{'bottle': 1},"[4749, 4755]",unreviewed candidate segment; inspect video before calling FP/TP
+2,480,1,drink,314.36,314.88,2,0.898508608341217,1,{'bottle': 1},"[5030, 5035]",unreviewed candidate segment; inspect video before calling FP/TP
+2,502,0,drink,272.4,273.44,3,0.8979544043540955,0,{},"[4485, 4493, 4500]",unreviewed candidate segment; inspect video before calling FP/TP
+2,563,0,drink,302.4,302.4,1,0.9118664860725403,0,{},[4862],unreviewed candidate segment; inspect video before calling FP/TP
+2,566,0,drink,304.6,305.64,3,0.8990033864974976,0,{},"[4893, 4900, 4906]",unreviewed candidate segment; inspect video before calling FP/TP
+2,566,0,drink,309.88,311.44,2,0.8945084810256958,0,{},"[4965, 4989]",unreviewed candidate segment; inspect video before calling FP/TP
+2,610,0,drink,330.24,330.24,1,0.9049263000488281,0,{},[5255],unreviewed candidate segment; inspect video before calling FP/TP
+2,609,0,drink,331.44,331.96,2,0.8985851407051086,0,{},"[5274, 5281]",unreviewed candidate segment; inspect video before calling FP/TP
+2,609,0,drink,336.64,338.72,5,0.9045126438140869,0,{},"[5343, 5351, 5358, 5365, 5372]",unreviewed candidate segment; inspect video before calling FP/TP
+2,609,0,drink,351.72,352.76,3,0.9215290546417236,0,{},"[5551, 5558, 5566]",unreviewed candidate segment; inspect video before calling FP/TP
+2,609,0,drink,356.92,359.0,5,0.9134724736213684,0,{},"[5622, 5628, 5634, 5640, 5646]",unreviewed candidate segment; inspect video before calling FP/TP
+2,808,0,drink,424.4,424.92,2,0.9339032173156738,1,{'bottle': 2},"[6578, 6589]",unreviewed candidate segment; inspect video before calling FP/TP
+3,3,1,drink,17.120684827393095,20.240809632385297,4,0.8945425748825073,0,{},"[123, 128, 141, 145]",unreviewed candidate segment; inspect video before calling FP/TP
+3,3,1,drink,29.601184047361897,32.20128805152206,4,0.9064967036247253,0,{},"[225, 231, 236, 253]",unreviewed candidate segment; inspect video before calling FP/TP
+3,3,1,drink,38.44153766150646,40.00160006400256,4,0.9047152996063232,0,{},"[325, 332, 337, 342]",unreviewed candidate segment; inspect video before calling FP/TP
+3,3,1,drink,43.12172486899476,43.6417456698268,2,0.8925507068634033,0,{},"[372, 378]",unreviewed candidate segment; inspect video before calling FP/TP
+3,3,1,drink,52.48209928397136,53.52214088563543,2,0.8837758898735046,0,{},"[482, 496]",unreviewed candidate segment; inspect video before calling FP/TP
+3,3,1,drink,56.642265690627625,58.72234889395576,5,0.9081974625587463,0,{},"[533, 539, 545, 551, 557]",unreviewed candidate segment; inspect video before calling FP/TP
+3,130,0,drink,74.68298731949278,77.28309132365295,6,0.8924427628517151,0,{},"[720, 726, 733, 739, 746, 752]",unreviewed candidate segment; inspect video before calling FP/TP
+3,130,0,drink,88.72354894195769,90.28361134445379,4,0.8968173861503601,0,{},"[919, 928, 938, 948]",unreviewed candidate segment; inspect video before calling FP/TP
+3,130,0,drink,99.16396655866235,101.24404976199048,3,0.8850826621055603,0,{},"[1083, 1106, 1114]",unreviewed candidate segment; inspect video before calling FP/TP
+3,197,0,drink,106.2442497699908,110.40441617664708,7,0.9064897894859314,0,{},"[1183, 1191, 1200, 1208, 1215, 1224, 1249]",unreviewed candidate segment; inspect video before calling FP/TP
+3,197,0,drink,128.60514420576823,131.72526901076043,5,0.9048191905021667,0,{},"[1541, 1568, 1575, 1582, 1590]",unreviewed candidate segment; inspect video before calling FP/TP
+3,197,0,drink,135.88543541741672,137.96551862074483,5,0.9053593873977661,0,{},"[1654, 1662, 1670, 1678, 1686]",unreviewed candidate segment; inspect video before calling FP/TP
+3,197,1,drink,143.32573302932119,144.36577463098524,3,0.9079222083091736,0,{},"[1762, 1770, 1778]",unreviewed candidate segment; inspect video before calling FP/TP
+3,197,1,drink,146.4458578343134,150.0860034401376,7,0.9119471311569214,0,{},"[1812, 1820, 1828, 1835, 1844, 1854, 1873]",unreviewed candidate segment; inspect video before calling FP/TP
+3,298,0,drink,163.16652666106646,163.68654746189847,2,0.907914936542511,2,{'bottle': 13},"[2071, 2082]",unreviewed candidate segment; inspect video before calling FP/TP
+3,315,1,drink,171.16684667386696,172.72690907636306,4,0.9055129289627075,0,{},"[2186, 2193, 2200, 2208]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,182.32729309172367,183.36733469338773,3,0.8980426788330078,0,{},"[2343, 2351, 2359]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,185.44741789671588,185.96743869754792,2,0.8980380892753601,0,{},"[2392, 2401]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,191.16764670586824,196.36785471418858,7,0.9071112275123596,0,{},"[2477, 2500, 2507, 2513, 2519, 2540, 2549]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,199.48797951918078,201.04804192167688,4,0.9118641018867493,0,{},"[2597, 2605, 2612, 2620]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,204.6881875275011,205.7282291291652,3,0.897013783454895,0,{},"[2677, 2686, 2695]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,218.728749149966,220.2888115524621,3,0.898593008518219,0,{},"[2892, 2900, 2912]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,0,drink,228.60914436577465,230.16920676827075,4,0.9063254594802856,0,{},"[3029, 3036, 3043, 3051]",unreviewed candidate segment; inspect video before calling FP/TP
+3,370,0,pick_up,198.92795711828475,200.48801952078085,4,0.9007988572120667,0,{},"[2589, 2596, 2604, 2611]",unreviewed candidate segment; inspect video before calling FP/TP
+3,370,0,pick_up,216.60866434657387,217.12868514740592,2,0.8666209578514099,2,"{'paper': 1, 'phone': 1}","[2854, 2863]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,1,drink,234.48937957518302,236.56946277851114,5,0.9125239849090576,0,{},"[3113, 3121, 3129, 3137, 3144]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,1,drink,238.64954598183928,239.68958758350334,3,0.9002615809440613,0,{},"[3160, 3164, 3170]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,1,drink,248.52994119764793,250.09000360014403,4,0.9015811085700989,0,{},"[3285, 3291, 3298, 3305]",unreviewed candidate segment; inspect video before calling FP/TP
+3,337,1,drink,252.6901076043042,254.2501700068003,4,0.9079328775405884,0,{},"[3331, 3337, 3343, 3349]",unreviewed candidate segment; inspect video before calling FP/TP
+3,446,0,pick_up,237.96951878075123,237.96951878075123,1,0.9034363627433777,0,{},[3156],unreviewed candidate segment; inspect video before calling FP/TP
+3,491,0,drink,274.6509860394416,275.6910276411057,3,0.8962461948394775,0,{},"[3551, 3556, 3560]",unreviewed candidate segment; inspect video before calling FP/TP
+3,491,0,drink,278.2911316452658,278.8111524460979,2,0.8986158967018127,0,{},"[3584, 3588]",unreviewed candidate segment; inspect video before calling FP/TP
+3,491,0,drink,286.6114644585784,288.1715268610745,4,0.905193567276001,0,{},"[3635, 3639, 3642, 3646]",unreviewed candidate segment; inspect video before calling FP/TP
+3,822,1,drink,393.97575903036125,393.97575903036125,1,0.917782187461853,1,{'bottle': 1},[4586],unreviewed candidate segment; inspect video before calling FP/TP
+3,923,0,drink,442.0976839073563,442.61770470818834,2,0.8876080513000488,0,{},"[5004, 5010]",unreviewed candidate segment; inspect video before calling FP/TP
+3,985,0,drink,482.1392855714229,483.699347973919,4,0.9097332954406738,0,{},"[5375, 5380, 5385, 5389]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1000,0,drink,512.3404936197448,512.8605144205768,2,0.8962578177452087,0,{},"[5657, 5663]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1000,0,drink,533.1413256530261,534.1813672546903,3,0.905994713306427,2,{'bottle': 3},"[5938, 5946, 5953]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1077,0,drink,542.8217128685147,544.9017960718429,5,0.9045446515083313,0,{},"[6054, 6059, 6065, 6070, 6075]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1077,0,drink,552.7021080843234,553.7421496859874,3,0.8905935287475586,0,{},"[6155, 6160, 6164]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1077,3,drink,560.9824392975719,561.502460098404,2,0.8858686089515686,0,{},"[6230, 6234]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1077,4,drink,565.3426137045482,567.9427177087084,4,0.8964651823043823,0,{},"[6261, 6267, 6272, 6288]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1164,0,drink,572.7029081163247,574.3429737189488,3,0.8900258541107178,1,{'bottle': 1},"[6327, 6331, 6340]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1164,0,drink,576.4230569222769,579.0231609264371,6,0.9085606932640076,0,{},"[6360, 6364, 6368, 6376, 6384, 6392]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1181,0,drink,578.023120924837,578.5431417256691,2,0.9073927998542786,0,{},"[6377, 6385]",unreviewed candidate segment; inspect video before calling FP/TP
+3,1181,0,drink,581.1432457298292,582.1832873314933,3,0.9022246599197388,0,{},"[6423, 6429, 6435]",unreviewed candidate segment; inspect video before calling FP/TP
+4,53,1,drink,45.2,45.72,2,0.9035565257072449,0,{},"[709, 715]",unreviewed candidate segment; inspect video before calling FP/TP
+4,187,0,drink,66.72,67.24,2,0.8946523666381836,1,{'bottle': 1},"[1018, 1026]",unreviewed candidate segment; inspect video before calling FP/TP
+4,254,1,drink,83.16,83.68,2,0.9017272591590881,0,{},"[1299, 1307]",unreviewed candidate segment; inspect video before calling FP/TP
+4,296,0,drink,95.88,95.88,1,0.900295615196228,0,{},[1511],unreviewed candidate segment; inspect video before calling FP/TP
+4,311,0,drink,102.68,103.2,2,0.9463406205177307,1,{'bottle': 1},"[1612, 1622]",unreviewed candidate segment; inspect video before calling FP/TP
+4,303,1,drink,104.92,105.44,2,0.8594310283660889,0,{},"[1650, 1657]",unreviewed candidate segment; inspect video before calling FP/TP
+4,533,1,drink,187.48,187.48,1,0.9017548561096191,0,{},[3108],unreviewed candidate segment; inspect video before calling FP/TP
+4,610,0,drink,211.6,211.6,1,0.9121124148368835,1,{'bottle': 4},[3565],unreviewed candidate segment; inspect video before calling FP/TP
+4,632,0,drink,213.68,214.2,2,0.8602449297904968,0,{},"[3606, 3619]",unreviewed candidate segment; inspect video before calling FP/TP
+5,61,2,drink,52.48,53.52,3,0.9066067337989807,3,{'bottle': 4},"[655, 663, 671]",unreviewed candidate segment; inspect video before calling FP/TP
+5,61,2,drink,59.24,60.28,3,0.9051022529602051,3,{'bottle': 12},"[764, 771, 778]",unreviewed candidate segment; inspect video before calling FP/TP
+5,88,2,drink,54.12,54.64,2,0.9105580449104309,0,{},"[683, 691]",unreviewed candidate segment; inspect video before calling FP/TP
+5,2,1,drink,64.16,64.16,1,0.9228782057762146,1,{'bottle': 3},[832],unreviewed candidate segment; inspect video before calling FP/TP
+5,2,1,drink,81.84,82.36,2,0.9168489575386047,0,{},"[1130, 1138]",unreviewed candidate segment; inspect video before calling FP/TP
+5,154,0,drink,87.4,90.0,6,0.9058490991592407,2,{'bottle': 2},"[1216, 1223, 1235, 1244, 1256, 1266]",unreviewed candidate segment; inspect video before calling FP/TP
+5,148,0,drink,99.96,101.52,4,0.9453333020210266,0,{},"[1413, 1420, 1428, 1436]",unreviewed candidate segment; inspect video before calling FP/TP
+5,209,0,drink,111.6,113.16,3,0.9478874206542969,0,{},"[1606, 1615, 1634]",unreviewed candidate segment; inspect video before calling FP/TP
+5,209,0,drink,116.28,125.64,15,0.9481828808784485,0,{},"[1685, 1694, 1702, 1710, 1730, 1738, 1746, 1754, 1762, 1778, 1785, 1792, 1815, 1822, 1831]",unreviewed candidate segment; inspect video before calling FP/TP
+5,222,0,drink,117.36,117.88,2,0.897107720375061,0,{},"[1703, 1712]",unreviewed candidate segment; inspect video before calling FP/TP
+5,271,1,drink,134.8,135.84,3,0.9090937376022339,1,{'bottle': 1},"[1970, 1979, 1990]",unreviewed candidate segment; inspect video before calling FP/TP
+5,271,1,drink,167.56,175.36,13,0.9062660336494446,3,{'bottle': 3},"[2530, 2538, 2547, 2553, 2559, 2567, 2576, 2586, 2616, 2626, 2636, 2646, 2664]",unreviewed candidate segment; inspect video before calling FP/TP
+5,271,1,drink,178.48,179.52,3,0.905906081199646,3,{'bottle': 6},"[2722, 2731, 2738]",unreviewed candidate segment; inspect video before calling FP/TP
+5,271,1,drink,187.32,187.84,2,0.8872000575065613,2,{'bottle': 8},"[2887, 2898]",unreviewed candidate segment; inspect video before calling FP/TP
+5,271,1,drink,191.48,193.04,4,0.9039924144744873,4,{'bottle': 15},"[2970, 2978, 2988, 2997]",unreviewed candidate segment; inspect video before calling FP/TP
+5,329,1,drink,176.36,176.88,2,0.9035701155662537,1,{'bottle': 1},"[2682, 2692]",unreviewed candidate segment; inspect video before calling FP/TP
+5,337,0,drink,181.16,181.68,2,0.8871841430664062,0,{},"[2764, 2774]",unreviewed candidate segment; inspect video before calling FP/TP
+5,389,0,drink,209.28,209.8,2,0.8723948001861572,0,{},"[3268, 3277]",unreviewed candidate segment; inspect video before calling FP/TP
+6,29,0,drink,13.88,14.44,2,0.9461653828620911,0,{},"[215, 224]",unreviewed candidate segment; inspect video before calling FP/TP
+6,213,0,drink,50.36,50.88,2,0.8842484951019287,0,{},"[855, 861]",unreviewed candidate segment; inspect video before calling FP/TP
+6,385,3,drink,108.12,108.68,2,0.8928186297416687,0,{},"[1758, 1768]",unreviewed candidate segment; inspect video before calling FP/TP
+6,481,0,drink,122.84,123.88,3,0.9021321535110474,0,{},"[1996, 2005, 2012]",unreviewed candidate segment; inspect video before calling FP/TP
+6,507,0,drink,127.56,129.12,4,0.9540097117424011,0,{},"[2063, 2072, 2079, 2086]",unreviewed candidate segment; inspect video before calling FP/TP
+6,546,0,drink,153.92,154.44,2,0.937300443649292,0,{},"[2405, 2412]",unreviewed candidate segment; inspect video before calling FP/TP
+7,28,0,pick_up,21.24,24.88,7,0.9030313491821289,2,{'bottle': 3},"[237, 245, 254, 272, 280, 286, 294]",unreviewed candidate segment; inspect video before calling FP/TP
+7,26,0,drink,21.32,21.84,2,0.9195146560668945,2,{'bottle': 4},"[240, 247]",unreviewed candidate segment; inspect video before calling FP/TP
+7,121,0,drink,56.4,56.4,1,0.906886875629425,0,{},[710],unreviewed candidate segment; inspect video before calling FP/TP
+7,155,0,drink,59.32,60.36,3,0.9357407689094543,0,{},"[741, 746, 751]",unreviewed candidate segment; inspect video before calling FP/TP
+7,163,0,drink,62.8,63.84,3,0.9533003568649292,0,{},"[775, 780, 785]",unreviewed candidate segment; inspect video before calling FP/TP
+7,169,3,drink,85.2,85.2,1,0.911981999874115,0,{},[1030],unreviewed candidate segment; inspect video before calling FP/TP
+7,259,0,drink,103.04,103.56,2,0.896862268447876,0,{},"[1184, 1192]",unreviewed candidate segment; inspect video before calling FP/TP
+7,273,0,drink,111.44,111.44,1,0.9038218259811401,0,{},[1281],unreviewed candidate segment; inspect video before calling FP/TP
+7,294,1,drink,129.28,129.8,2,0.8725390434265137,0,{},"[1479, 1486]",unreviewed candidate segment; inspect video before calling FP/TP
+7,290,0,drink,139.08,140.12,3,0.8949833512306213,0,{},"[1590, 1597, 1603]",unreviewed candidate segment; inspect video before calling FP/TP
+7,290,0,drink,142.72,143.76,3,0.9081098437309265,0,{},"[1628, 1633, 1640]",unreviewed candidate segment; inspect video before calling FP/TP
+7,444,0,drink,205.68,206.72,2,0.8915727138519287,0,{},"[2487, 2505]",unreviewed candidate segment; inspect video before calling FP/TP
+7,572,1,drink,273.28,274.32,3,0.9236188530921936,3,{'bottle': 3},"[3466, 3472, 3478]",unreviewed candidate segment; inspect video before calling FP/TP
+7,788,0,drink,362.84,363.88,2,0.8835670351982117,2,{'bottle': 7},"[4396, 4403]",unreviewed candidate segment; inspect video before calling FP/TP
+7,858,1,drink,385.08,385.6,2,0.8990427851676941,0,{},"[4609, 4613]",unreviewed candidate segment; inspect video before calling FP/TP
+7,888,1,drink,401.92,402.44,2,0.9121448993682861,0,{},"[4746, 4752]",unreviewed candidate segment; inspect video before calling FP/TP
+7,891,1,drink,410.64,410.64,1,0.9143526554107666,0,{},[4836],unreviewed candidate segment; inspect video before calling FP/TP
+7,913,0,drink,412.72,413.24,2,0.8854193687438965,0,{},"[4860, 4867]",unreviewed candidate segment; inspect video before calling FP/TP
+7,894,1,drink,433.2,437.36,9,0.9154414534568787,0,{},"[5087, 5094, 5101, 5108, 5115, 5122, 5129, 5137, 5144]",unreviewed candidate segment; inspect video before calling FP/TP
+7,904,0,drink,435.64,436.16,2,0.9068840146064758,0,{},"[5120, 5127]",unreviewed candidate segment; inspect video before calling FP/TP
+7,894,2,drink,448.56,449.08,2,0.8891164660453796,2,{'bottle': 4},"[5258, 5262]",unreviewed candidate segment; inspect video before calling FP/TP
+7,975,0,drink,453.6,454.12,2,0.9033908247947693,0,{},"[5301, 5307]",unreviewed candidate segment; inspect video before calling FP/TP
+7,1019,0,drink,474.72,475.24,2,0.9095975756645203,0,{},"[5515, 5520]",unreviewed candidate segment; inspect video before calling FP/TP
+7,1041,1,drink,488.56,488.56,1,0.911011815071106,0,{},[5715],unreviewed candidate segment; inspect video before calling FP/TP
+8,192,4,pick_up,57.0,57.0,1,0.9167571663856506,0,{},[1163],unreviewed candidate segment; inspect video before calling FP/TP
+8,367,0,drink,100.2,101.24,3,0.8980787396430969,1,{'bottle': 1},"[2093, 2105, 2116]",unreviewed candidate segment; inspect video before calling FP/TP
+8,567,0,drink,147.36,148.4,3,0.9393606185913086,0,{},"[2982, 2989, 2999]",unreviewed candidate segment; inspect video before calling FP/TP
+9,30,0,drink,9.48,10.0,2,0.899347186088562,0,{},"[139, 147]",unreviewed candidate segment; inspect video before calling FP/TP
+9,198,0,drink,50.56,50.56,1,0.9036942720413208,1,{'bottle': 1},[1063],unreviewed candidate segment; inspect video before calling FP/TP
+9,227,0,drink,56.4,56.4,1,0.9231866598129272,0,{},[1152],unreviewed candidate segment; inspect video before calling FP/TP
+9,210,1,drink,60.56,62.12,4,0.9086403250694275,0,{},"[1217, 1229, 1242, 1252]",unreviewed candidate segment; inspect video before calling FP/TP
+9,281,0,drink,75.76,77.84,4,0.8858628869056702,1,{'bottle': 2},"[1529, 1557, 1571, 1586]",unreviewed candidate segment; inspect video before calling FP/TP
+9,333,3,drink,92.68,93.72,3,0.947810173034668,3,{'bottle': 20},"[1935, 1945, 1957]",unreviewed candidate segment; inspect video before calling FP/TP
+9,333,3,drink,100.48,103.08,6,0.9346081614494324,6,{'bottle': 47},"[2102, 2113, 2124, 2137, 2148, 2159]",unreviewed candidate segment; inspect video before calling FP/TP
+9,501,1,drink,125.88,125.88,1,0.9163904786109924,1,{'bottle': 3},[2703],unreviewed candidate segment; inspect video before calling FP/TP
+9,649,0,drink,154.92,155.44,2,0.9096938967704773,0,{},"[3319, 3330]",unreviewed candidate segment; inspect video before calling FP/TP
+9,738,1,drink,169.2,169.72,2,0.8964630961418152,2,{'bottle': 3},"[3642, 3657]",unreviewed candidate segment; inspect video before calling FP/TP
+9,843,0,drink,189.88,191.96,5,0.9045707583427429,0,{},"[4106, 4119, 4129, 4142, 4154]",unreviewed candidate segment; inspect video before calling FP/TP
+9,864,1,drink,196.84,198.4,4,0.901875913143158,0,{},"[4262, 4271, 4281, 4291]",unreviewed candidate segment; inspect video before calling FP/TP
+9,864,2,drink,200.16,200.68,2,0.9034059047698975,0,{},"[4325, 4336]",unreviewed candidate segment; inspect video before calling FP/TP
+9,864,3,drink,207.32,208.36,3,0.8952183127403259,0,{},"[4460, 4469, 4476]",unreviewed candidate segment; inspect video before calling FP/TP
+9,939,1,drink,214.76,214.76,1,0.9361274242401123,0,{},[4570],unreviewed candidate segment; inspect video before calling FP/TP

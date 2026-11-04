@@ -1,0 +1,1 @@
+{"checked":2484,"configurations":{"baseline":828,"trained_same_defaults":828,"selected":828},"mismatched_labels":0,"implementation":"Production fuse_person, filter_object_evidence, apply_wave_prior and apply_running_prior vs vector calibration on same sampled windows. Full tracking not covered."}

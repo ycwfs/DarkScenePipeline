@@ -1,0 +1,40 @@
+{
+  "cards": [
+    1,
+    2,
+    3
+  ],
+  "seconds": 20.0,
+  "samples": [
+    {
+      "name": "四候选0047",
+      "source": "online-negative-sample/20261012_083305_78/picking_up_object/20261012_095504_picking_up_object_0047.mp4",
+      "processed": true
+    },
+    {
+      "name": "八候选0118",
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101642_drinking_water_0118.mp4",
+      "processed": true
+    }
+  ],
+  "auto_backend": true,
+  "process_workers": false,
+  "code_sha256": {
+    "profile_actions.py": "76851a67956ca80347f2f2cd639571ad3984756539020a218281c030272c8c8e",
+    "action_engine.py": "f46022bd0432b0be963135ec3b15e6027efa702c181e52649c22c8e51e3847e1",
+    "runtime.py": "7a16ac910d7f7253333a2a31f13aba488ecb87b5d092191bc7ccb36176f5f0c0",
+    "summarize.py": "54395a3eb781f63fa5b57da8c0be03db6b472cd93132eb01aab190c9fac16530",
+    "live_replay.py": "ea7eeef7b33d64f7d8ce5f4496d892852be6bd7a87baf64e829a0d7ab0853bda",
+    "run_demo.py": "ea640c2a6748e4dbcb87f4e95b41573f5a4ee70dc045c1516d8f666e22d915b0",
+    "verify_runs.py": "2d5961ae2b23571bdf2082c32c2717485321609a1a83a3296fe0326608f1bde3",
+    "scheduling.py": "f1dc4c5bc859e3640c3cd53ef64d7aae3bb8efbaf806a139ad90598702b1d5c6",
+    "accuracy_regression.py": "f9c7988da1777f5829a65f4622a065a330746a548575305ed4321c2d505f2938",
+    "process_pool.py": "abfc4587a175d383a2df635f252878b74270b73df97e7b4d00be54de1e18a25d",
+    "benchmark.py": "15d2a00d1087697a4002683f265834f91c919a77e44c0dec78e41c9c3c1ef34b"
+  },
+  "source_sha256": {
+    "online-negative-sample/20261012_083305_78/picking_up_object/20261012_095504_picking_up_object_0047.mp4": "d1bdd97aecd7ae06384e5a1afd601dac573f3ee7945cc68af507ed818773ddfb",
+    "online-negative-sample/20261012_083305_78/drinking_water/20261012_101642_drinking_water_0118.mp4": "90ecea111b1cf012795a9df05025478ae09f4650ccaf528353af6b9a672a11da"
+  },
+  "method": "Native-rate latest-frame replay, one slot, no source slowdown. Short videos loop; tracker and submission history reset at clip boundaries, including skipped boundary frames. Input FPS equals consumed unique source indices / emitted source duration. No RTSP, platform, HAMI, NFS or remote player included."
+}

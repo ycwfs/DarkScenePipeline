@@ -1,0 +1,116 @@
+{
+  "videos": 7,
+  "frames": 696,
+  "predictions": 233,
+  "max_detected_people": 16,
+  "labels": {
+    "drink": 23,
+    "wave": 23,
+    "other": 187
+  },
+  "modes": {
+    "rgb_low_luma": 46,
+    "rgb_skeleton": 135,
+    "rgb_soft_no_pose": 52
+  },
+  "checks": [
+    {
+      "name": "挥手3",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 22,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 808,
+      "avg_frame_rate": "25/1",
+      "duration": "6.400000",
+      "nb_read_frames": "160"
+    },
+    {
+      "name": "挥手4",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 24,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 808,
+      "avg_frame_rate": "25/1",
+      "duration": "6.760000",
+      "nb_read_frames": "169"
+    },
+    {
+      "name": "挥手20",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 3,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 808,
+      "avg_frame_rate": "25/1",
+      "duration": "2.200000",
+      "nb_read_frames": "55"
+    },
+    {
+      "name": "喝水16",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 4,
+      "codec_name": "h264",
+      "width": 1440,
+      "height": 808,
+      "avg_frame_rate": "25/1",
+      "duration": "3.000000",
+      "nb_read_frames": "75"
+    },
+    {
+      "name": "多人0060",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 38,
+      "codec_name": "h264",
+      "width": 1680,
+      "height": 944,
+      "avg_frame_rate": "29/1",
+      "duration": "2.034483",
+      "nb_read_frames": "59"
+    },
+    {
+      "name": "多人0054",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 41,
+      "codec_name": "h264",
+      "width": 1680,
+      "height": 944,
+      "avg_frame_rate": "30/1",
+      "duration": "2.000000",
+      "nb_read_frames": "60"
+    },
+    {
+      "name": "多人0055",
+      "full_decode": true,
+      "track_alignment": true,
+      "own_rgb_inputs": true,
+      "per_person_fusion": true,
+      "predictions": 101,
+      "codec_name": "h264",
+      "width": 1680,
+      "height": 944,
+      "avg_frame_rate": "28/1",
+      "duration": "4.214286",
+      "nb_read_frames": "118"
+    }
+  ]
+}

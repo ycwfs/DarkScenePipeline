@@ -1,0 +1,12 @@
+{
+  "eager": {
+    "ms": 25.4167712914447,
+    "startup_seconds": 0.07125438470393419,
+    "max_difference": 0.0
+  },
+  "compile": {
+    "ms": 18.030055053532124,
+    "startup_seconds": 20.672087190207094,
+    "max_difference": 0.0009765625
+  }
+}

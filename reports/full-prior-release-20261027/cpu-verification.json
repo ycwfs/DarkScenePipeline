@@ -1,0 +1,7 @@
+{
+  "passed": 114,
+  "failed": 0,
+  "seconds": 12.39,
+  "command": "pytest tests/test_wave_pose_prior.py tests/test_running_pose_prior.py tests/test_person_object_prior.py tests/test_person_object_runtime.py tests/test_person_object_overlay.py tests/test_person_release.py tests/test_person_stream_clips.py tests/test_v2_delivery.py",
+  "scope": "host source regression, prior turn execution"
+}

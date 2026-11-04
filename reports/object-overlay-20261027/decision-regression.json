@@ -1,0 +1,14 @@
+{
+  "decisions_equal": true,
+  "windows": 7,
+  "max_fused_probability_difference": 0.00014740228652954102,
+  "bit_identical_probabilities": false,
+  "source": "real-actiondata-all/\u559d\u6c3427.mp4",
+  "keys": [
+    "track_id",
+    "history_generation",
+    "frame_index",
+    "timestamp",
+    "label"
+  ]
+}

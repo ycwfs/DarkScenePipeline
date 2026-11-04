@@ -1,0 +1,8 @@
+{
+  "finite_parameter_update": true,
+  "updates": 6,
+  "steps": 6,
+  "head_delta_max": 5.884608253836632e-05,
+  "max_memory_GB": 22.48772864,
+  "weights_persisted": false
+}

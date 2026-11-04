@@ -1,0 +1,44 @@
+[
+  {
+    "name": "mp-ft29-extract-new-0",
+    "container": "d7bc3f6953b5709d94c1b6e006ed78664c16d93983b02c7504c31307b0249ea9",
+    "gpu": 0,
+    "scope": "new",
+    "shard": 0
+  },
+  {
+    "name": "mp-ft29-extract-new-1",
+    "container": "35cb32d279459a1c2f8cad1da300f48379f3768a92e239777f4495ccd00453bc",
+    "gpu": 1,
+    "scope": "new",
+    "shard": 1
+  },
+  {
+    "name": "mp-ft29-extract-new-2",
+    "container": "d49fe24cf9e0600dd798ad116990c7403bafc4d7eb31ca06f0fd4f2f9473e97d",
+    "gpu": 2,
+    "scope": "new",
+    "shard": 2
+  },
+  {
+    "name": "mp-ft29-extract-old-0",
+    "container": "818ef81d498afc0104b2c1dfa823d15deb5c209eacd44e64adc26f2d58e6ddff",
+    "gpu": 3,
+    "scope": "old",
+    "shard": 0
+  },
+  {
+    "name": "mp-ft29-extract-old-1",
+    "container": "acf1114066203d0866f77c83806a96a58e79f9fd295aa54ec8ed15708d651373",
+    "gpu": 4,
+    "scope": "old",
+    "shard": 1
+  },
+  {
+    "name": "mp-ft29-extract-old-2",
+    "container": "49ca8c30feae2eef7847c806085c54edc2d82c119f0bb88d58fe4c16e19363bb",
+    "gpu": 5,
+    "scope": "old",
+    "shard": 2
+  }
+]

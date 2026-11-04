@@ -1,0 +1,23 @@
+[
+  {
+    "id": "new-07-000",
+    "truth": "not_drink",
+    "assessment": "完整07号21.32秒/T26：白衣人物持手机贴耳通话，无容器饮用；当前7类把手机附近误检为瓶（0.583），误喝水1窗→候选0窗。候选未检出手机，不能称正确识别手机。",
+    "basis": "assistant_visual_review_of_all_five_sample_frames",
+    "independence": "与short-07-000为同一现实事件，不能相加为两个独立纠错"
+  },
+  {
+    "id": "short-07-000",
+    "truth": "not_drink",
+    "assessment": "相同历史短片07号11.36秒/T03：手机通话；当前7类错误瓶0.597，喝水误报1窗→0窗。与长片同一事件，短片重新起跟踪和采样，分开报告。",
+    "basis": "assistant_visual_review_of_all_five_sample_frames",
+    "independence": "与new-07-000相关，非独立重复"
+  },
+  {
+    "id": "short-09-001",
+    "truth": "not_drink",
+    "assessment": "相同历史短片09号8.76秒/T09：双手持相机拍照，非喝水；当前7类错误瓶0.589，误喝水1窗→0窗。候选未正确检出相机/手机；完整09号两版本来均无喝水触发，不能称完整09减少一次误报。",
+    "basis": "assistant_visual_review_of_all_five_sample_frames",
+    "independence": "当前源历史查看过，属于现场回归"
+  }
+]

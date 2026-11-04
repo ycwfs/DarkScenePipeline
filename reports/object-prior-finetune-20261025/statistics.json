@@ -1,0 +1,430 @@
+{
+  "objects": {
+    "val_bottle_finetuned_roi_minus_full": {
+      "groups": 1,
+      "denominator": 3,
+      "before": 0.0,
+      "after": 0.6666666666666666,
+      "difference": 0.6666666666666666,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "difference_ci95": [
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_phone_finetuned_roi_minus_full": {
+      "groups": 1,
+      "denominator": 1,
+      "before": 0.0,
+      "after": 0.0,
+      "difference": 0.0,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_paper_finetuned_roi_minus_full": {
+      "groups": 11,
+      "denominator": 15,
+      "before": 0.0,
+      "after": 0.6666666666666666,
+      "difference": 0.6666666666666666,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.4,
+        0.9230769230769231
+      ],
+      "difference_ci95": [
+        0.4,
+        0.9230769230769231
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_robot_or_exhibit_finetuned_roi_minus_full": {
+      "groups": 4,
+      "denominator": 4,
+      "before": 0.0,
+      "after": 0.5,
+      "difference": 0.5,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.0,
+        1.0
+      ],
+      "difference_ci95": [
+        0.0,
+        1.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_bottle_finetuned_roi_minus_full": {
+      "groups": 4,
+      "denominator": 12,
+      "before": 0.0,
+      "after": 0.3333333333333333,
+      "difference": 0.3333333333333333,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.75
+      ],
+      "difference_ci95": [
+        0.0,
+        0.75
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_phone_finetuned_roi_minus_full": {
+      "groups": 3,
+      "denominator": 3,
+      "before": 0.0,
+      "after": 0.0,
+      "difference": 0.0,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_paper_finetuned_roi_minus_full": {
+      "groups": 9,
+      "denominator": 12,
+      "before": 0.0,
+      "after": 0.5833333333333334,
+      "difference": 0.5833333333333334,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.36363636363636365,
+        0.8888888888888888
+      ],
+      "difference_ci95": [
+        0.36363636363636365,
+        0.8888888888888888
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_robot_or_exhibit_finetuned_roi_minus_full": {
+      "groups": 5,
+      "denominator": 7,
+      "before": 0.0,
+      "after": 0.7142857142857143,
+      "difference": 0.7142857142857143,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.45454545454545453,
+        1.0
+      ],
+      "difference_ci95": [
+        0.45454545454545453,
+        1.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    }
+  },
+  "actions": {
+    "val_drink_conservative_correct_minus_baseline": {
+      "groups": 3,
+      "denominator": 10,
+      "before": 1.0,
+      "after": 1.0,
+      "difference": 0.0,
+      "before_ci95": [
+        1.0,
+        1.0
+      ],
+      "after_ci95": [
+        1.0,
+        1.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_drink_strict_correct_minus_baseline": {
+      "groups": 3,
+      "denominator": 10,
+      "before": 1.0,
+      "after": 0.1,
+      "difference": -0.9,
+      "before_ci95": [
+        1.0,
+        1.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.3333333333333333
+      ],
+      "difference_ci95": [
+        -1.0,
+        -0.6666666666666667
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_pick_up_conservative_correct_minus_baseline": {
+      "groups": 2,
+      "denominator": 4,
+      "before": 1.0,
+      "after": 1.0,
+      "difference": 0.0,
+      "before_ci95": [
+        1.0,
+        1.0
+      ],
+      "after_ci95": [
+        1.0,
+        1.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_pick_up_strict_correct_minus_baseline": {
+      "groups": 2,
+      "denominator": 4,
+      "before": 1.0,
+      "after": 0.0,
+      "difference": -1.0,
+      "before_ci95": [
+        1.0,
+        1.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.0
+      ],
+      "difference_ci95": [
+        -1.0,
+        -1.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_other_conservative_correct_minus_baseline": {
+      "groups": 3,
+      "denominator": 7,
+      "before": 0.0,
+      "after": 0.0,
+      "difference": 0.0,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "val_other_strict_correct_minus_baseline": {
+      "groups": 3,
+      "denominator": 7,
+      "before": 0.0,
+      "after": 1.0,
+      "difference": 1.0,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        1.0,
+        1.0
+      ],
+      "difference_ci95": [
+        1.0,
+        1.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_drink_conservative_correct_minus_baseline": {
+      "groups": 4,
+      "denominator": 11,
+      "before": 0.9090909090909091,
+      "after": 0.9090909090909091,
+      "difference": 0.0,
+      "before_ci95": [
+        0.75,
+        1.0
+      ],
+      "after_ci95": [
+        0.75,
+        1.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_drink_strict_correct_minus_baseline": {
+      "groups": 4,
+      "denominator": 11,
+      "before": 0.9090909090909091,
+      "after": 0.45454545454545453,
+      "difference": -0.45454545454545453,
+      "before_ci95": [
+        0.75,
+        1.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.8333333333333334
+      ],
+      "difference_ci95": [
+        -0.8,
+        -0.16666666666666663
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_pick_up_conservative_correct_minus_baseline": {
+      "groups": 2,
+      "denominator": 4,
+      "before": 1.0,
+      "after": 1.0,
+      "difference": 0.0,
+      "before_ci95": [
+        1.0,
+        1.0
+      ],
+      "after_ci95": [
+        1.0,
+        1.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_pick_up_strict_correct_minus_baseline": {
+      "groups": 2,
+      "denominator": 4,
+      "before": 1.0,
+      "after": 0.0,
+      "difference": -1.0,
+      "before_ci95": [
+        1.0,
+        1.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.0
+      ],
+      "difference_ci95": [
+        -1.0,
+        -1.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_other_conservative_correct_minus_baseline": {
+      "groups": 2,
+      "denominator": 3,
+      "before": 0.0,
+      "after": 0.0,
+      "difference": 0.0,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        0.0,
+        0.0
+      ],
+      "difference_ci95": [
+        0.0,
+        0.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    },
+    "test_other_strict_correct_minus_baseline": {
+      "groups": 2,
+      "denominator": 3,
+      "before": 0.0,
+      "after": 1.0,
+      "difference": 1.0,
+      "before_ci95": [
+        0.0,
+        0.0
+      ],
+      "after_ci95": [
+        1.0,
+        1.0
+      ],
+      "difference_ci95": [
+        1.0,
+        1.0
+      ],
+      "method": "paired source-group percentile bootstrap, 5000 resamples, RNG seed25; descriptive only",
+      "inference_limit": "same camera/scenes and assistant GT; not an independent-population interval"
+    }
+  },
+  "runs": 1,
+  "seed": 25,
+  "significance_tests": "Not performed: too few independent scenes, assistant GT, selected action subset.",
+  "multiplicity": "No confirmatory p-values or significance claims. All descriptive contrasts are listed."
+}

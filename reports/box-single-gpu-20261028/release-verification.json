@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "archive": "NVIDIA-Box_Orin4GB_candidate_20261028.zip",
+  "sha256": "b39805ea3d5a5f43c40681eca3de122ee71064216c2e8ee2280600d8f73b5c2a",
+  "bytes": 486768347,
+  "archive_files": 99,
+  "manifest_payload_files": 98,
+  "alias": "NVIDIA-Box.zip",
+  "alias_sha256": "b39805ea3d5a5f43c40681eca3de122ee71064216c2e8ee2280600d8f73b5c2a",
+  "compared_with_tested_archive": "reports/box-single-gpu-20261028/NVIDIA-Box_review.zip",
+  "final_vs_tested_changes": [
+    "README.md",
+    "VERIFICATION.md"
+  ],
+  "executables_and_weights_identical": true,
+  "engines_in_archive": false,
+  "cpu_tests": 107,
+  "suite": [
+    {
+      "name": "archive-check-env",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/check_env.py"
+      ],
+      "elapsed_seconds": 18.338711814023554,
+      "returncode": 0
+    },
+    {
+      "name": "archive-entry",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/benchmark_box.py",
+        "--video",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/喝水27.mp4",
+        "--output-dir",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/archive-entry",
+        "--backend",
+        "tensorrt"
+      ],
+      "elapsed_seconds": 23.123771068174392,
+      "returncode": 0
+    },
+    {
+      "name": "archive-demos",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/scripts/bench_offline.py",
+        "--runtime",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/runtime",
+        "--name",
+        "archive-demos",
+        "--ids",
+        "all",
+        "--max-frames",
+        "0",
+        "--sr-scale",
+        "1"
+      ],
+      "elapsed_seconds": 528.7155697909184,
+      "returncode": 0
+    },
+    {
+      "name": "archive-probe",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/scripts/bench_offline.py",
+        "--runtime",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/release-extracted/NVIDIA-Box/runtime",
+        "--name",
+        "archive-probe",
+        "--max-frames",
+        "150",
+        "--sr-scale",
+        "1"
+      ],
+      "elapsed_seconds": 80.1182432291098,
+      "returncode": 0
+    },
+    {
+      "name": "archive-faults",
+      "command": [
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/native-test-env/bin/python",
+        "-u",
+        "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/box-single-gpu-20261028/scripts/run_faults.py"
+      ],
+      "elapsed_seconds": 125.9823028948158,
+      "returncode": 0
+    }
+  ],
+  "physical_orin_tested": false,
+  "platform_unchanged": {
+    "passed": true,
+    "archives": [
+      {
+        "path": "platform/dark-demo-v2_full_priors_20261027.tar.gz",
+        "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+        "unchanged": true
+      },
+      {
+        "path": "platform/dark-demo-v2_full_priors_20261027.zip",
+        "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+        "unchanged": true
+      },
+      {
+        "path": "platform/dark-demo-v2.tar.gz",
+        "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+        "unchanged": true
+      },
+      {
+        "path": "platform/dark-demo-v2.zip",
+        "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+        "unchanged": true
+      }
+    ],
+    "platform_files": 69,
+    "image": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212"
+  }
+}

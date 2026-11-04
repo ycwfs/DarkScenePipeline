@@ -1,0 +1,42 @@
+{
+  "input": "input-live-300s.mp4",
+  "frames": 7500,
+  "seconds": 300.0,
+  "fps": 25,
+  "sha256": "0c0f7d97015e1b38014755d463158fc513a2e75b53bc62725f010f67f85aa890",
+  "segments": [
+    {
+      "source": "reports/person-object-release-20261026/input-multiaction-5min.mp4",
+      "start": 0,
+      "seconds": 180.0,
+      "sha256": "9cbf81e01eec73364354392fddb25dc1aecd002fa9ef67adb20d4df6476f3250"
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/child.mkv",
+      "start": 180.0,
+      "seconds": 30.0,
+      "sha256": "3ea747a4793baeb00a209bfc4ab7e6a13434f817ce562e250441de43d0f47648"
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/walking.mkv",
+      "start": 210.0,
+      "seconds": 30.0,
+      "sha256": "563984d291214f330ae41d0ae372b9bb12a4e438fbe463352fe62d09c420ec17"
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/phone.mkv",
+      "start": 240.0,
+      "seconds": 30.0,
+      "sha256": "31e7676c6ade55fc26110f730414d8af5e99a13717801aeadb78749187acd490"
+    },
+    {
+      "source": "reports/full-prior-release-20261027/inputs/camera.mkv",
+      "start": 270.0,
+      "seconds": 30.0,
+      "sha256": "eff6f33a47ce138c02ef4ef25bba5aaeec12797fb45e95fc941600c1df1d8f5a"
+    }
+  ],
+  "selection": "Existing fixed raw-scene montage first180s + four prior-reviewed crowd excerpts, no outcome selection this release",
+  "caveat": "Hard scene cuts, continuous tracking without oracle resets; historical sources, not independent accuracy benchmark",
+  "markers": false
+}

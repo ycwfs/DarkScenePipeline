@@ -1,0 +1,72 @@
+{
+  "source": "/tmp/lum_curve.jsonl",
+  "sha256": "5a7b64f7b4a8f00badde9d06d932237cb402ecc64e1a899aa58167b9578b84dd",
+  "rows": 4680,
+  "named_rows": 2100,
+  "note": "Historical 840 preprocessing, no box/keypoint ground truth; availability only",
+  "bins": [
+    {
+      "lo": 0,
+      "hi": 15,
+      "n": 314,
+      "pose": 88,
+      "person": 145
+    },
+    {
+      "lo": 15,
+      "hi": 30,
+      "n": 251,
+      "pose": 169,
+      "person": 154
+    },
+    {
+      "lo": 30,
+      "hi": 45,
+      "n": 514,
+      "pose": 364,
+      "person": 320
+    },
+    {
+      "lo": 45,
+      "hi": 60,
+      "n": 86,
+      "pose": 60,
+      "person": 47
+    },
+    {
+      "lo": 60,
+      "hi": 75,
+      "n": 47,
+      "pose": 22,
+      "person": 20
+    },
+    {
+      "lo": 75,
+      "hi": 90,
+      "n": 12,
+      "pose": 12,
+      "person": 12
+    },
+    {
+      "lo": 90,
+      "hi": 105,
+      "n": 240,
+      "pose": 239,
+      "person": 238
+    },
+    {
+      "lo": 105,
+      "hi": 256,
+      "n": 636,
+      "pose": 636,
+      "person": 632
+    },
+    {
+      "lo": 75,
+      "hi": 256,
+      "n": 888,
+      "pose": 887,
+      "person": 882
+    }
+  ]
+}

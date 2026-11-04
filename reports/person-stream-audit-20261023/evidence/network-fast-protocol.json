@@ -1,0 +1,14 @@
+{
+  "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata/挥手.mp4",
+  "input_url": "rtsp://127.0.0.1:38459/input",
+  "outputs": [
+    "rtsp://127.0.0.1:45233/enhanced",
+    "rtmp://127.0.0.1:60475/enhanced-rtmp"
+  ],
+  "origin": 3485178.589667054,
+  "seconds": 240.0,
+  "denoise": "fast",
+  "gpus": "2,3,4",
+  "model": "same ROI VideoMamba and ST-GCN",
+  "test": "loopback network; independent capture and output relays"
+}

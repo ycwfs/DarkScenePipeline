@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "reviewed_drinking_windows": 18,
+  "all_drinking_windows": 527,
+  "known_positive": "new-01_1935",
+  "user_confirmed_negative_windows": 526,
+  "settings": 16,
+  "labeled_rows": 8432,
+  "candidate_groups": 234,
+  "original_predictions_sha256": "0ef6fbbb96d739df56c77650d7819d636256b6a401075784826246f760bd9c21",
+  "labels_sha256": "6dfacdf8e75f8bb563530fdf60f996894fc672cbb40698eec0457aa3e276aba9",
+  "label_scope_confirmed": true,
+  "window_accounting_passed": true,
+  "original_predictions_unchanged": true,
+  "html_links_checked": 25
+}

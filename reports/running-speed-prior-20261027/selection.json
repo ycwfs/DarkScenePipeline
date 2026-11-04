@@ -1,0 +1,31 @@
+{
+  "threshold": 0.35,
+  "missing_policy": "bypass",
+  "calibration": {
+    "threshold": 0.35,
+    "missing_policy": "bypass",
+    "val": {
+      "true_baseline": 8,
+      "true_kept": 8,
+      "false_baseline": 1,
+      "false_kept": 1,
+      "unknown_baseline": 1
+    },
+    "long": {
+      "true_baseline": 4,
+      "true_kept": 4,
+      "false_baseline": 6,
+      "false_kept": 2,
+      "unknown_baseline": 0
+    },
+    "train": {
+      "true_baseline": 88,
+      "true_kept": 88,
+      "false_baseline": 1,
+      "false_kept": 1,
+      "unknown_baseline": 23
+    }
+  },
+  "selection": "Historical val and user-labeled long triggers; preserve >=95% baseline val TP and all child TP, maximize FP removed, ties smallest threshold.",
+  "test_opened": false
+}

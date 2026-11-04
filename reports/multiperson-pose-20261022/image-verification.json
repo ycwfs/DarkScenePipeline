@@ -1,0 +1,7 @@
+{
+  "image": "darkpipe-operator:0.3.0",
+  "image_id": "sha256:d359716620d7eb757cd7c36733e25642469450f1c801e0367fc99248f0a2f212",
+  "archive_sha256": "a562d53d7bc588aded2d146939a634cf3e0a78afd6dfb8c5f53692c6afec2b77",
+  "archive_bytes": 6796727259,
+  "unchanged": true
+}

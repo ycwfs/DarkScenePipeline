@@ -1,0 +1,62 @@
+[
+  {
+    "video": "videos/20261012_095918_drinking_water_0060_多人骨架.mp4",
+    "full_decode": true,
+    "codec_name": "h264",
+    "width": 1680,
+    "height": 1020,
+    "avg_frame_rate": "29/1",
+    "duration": "2.034483",
+    "nb_read_frames": "59"
+  },
+  {
+    "video": "videos/20261012_095756_drinking_water_0054_多人骨架.mp4",
+    "full_decode": true,
+    "codec_name": "h264",
+    "width": 1680,
+    "height": 1020,
+    "avg_frame_rate": "30/1",
+    "duration": "2.000000",
+    "nb_read_frames": "60"
+  },
+  {
+    "video": "videos/20261012_095808_drinking_water_0055_多人骨架.mp4",
+    "full_decode": true,
+    "codec_name": "h264",
+    "width": 1680,
+    "height": 1020,
+    "avg_frame_rate": "28/1",
+    "duration": "4.214286",
+    "nb_read_frames": "118"
+  },
+  {
+    "video": "videos/20261012_095850_waving_0058_多人骨架.mp4",
+    "full_decode": true,
+    "codec_name": "h264",
+    "width": 1680,
+    "height": 1020,
+    "avg_frame_rate": "26/1",
+    "duration": "2.000000",
+    "nb_read_frames": "52"
+  },
+  {
+    "video": "videos/20261012_101212_drinking_water_0101_多人骨架.mp4",
+    "full_decode": true,
+    "codec_name": "h264",
+    "width": 1680,
+    "height": 1020,
+    "avg_frame_rate": "30/1",
+    "duration": "3.933333",
+    "nb_read_frames": "118"
+  },
+  {
+    "video": "videos/20261012_102056_waving_0124_多人骨架.mp4",
+    "full_decode": true,
+    "codec_name": "h264",
+    "width": 1680,
+    "height": 1020,
+    "avg_frame_rate": "30/1",
+    "duration": "2.000000",
+    "nb_read_frames": "60"
+  }
+]

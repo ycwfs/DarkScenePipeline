@@ -1,0 +1,3519 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "video_id": "cdf104cc6253966a",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐1.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.96,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "901784aacea534bc",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐10.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 4.84,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "901784aacea534bc",
+      "track_id": 2,
+      "source": "real-actiondata-all/追逐10.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.4,
+          "end": 3.2,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "bfd2db8cb178efbe",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐11.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 6.8,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "c17f742cd8d7b896",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐12.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 7.76,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "7fa46853e7cf819b",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐15.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.36,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "299dc5ba055194ff",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐16.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.8,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "d21ef1640dc121c1",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐17.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.8,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "225fb5f887e81816",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐18.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.28,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "32aa9118ccdb4725",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐19.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.96,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "f21a7596fffdf10d",
+      "track_id": 2,
+      "source": "real-actiondata-all/追逐2.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.4,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "aa13c847a4ce6f72",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐21.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.36,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "ee7f2945335d08b8",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐22.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.6,
+          "end": 3.24,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "8ac476f8fb995f97",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐24.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.35,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "92cb1dbf7394409d",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐25.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 4.7,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "92cb1dbf7394409d",
+      "track_id": 3,
+      "source": "real-actiondata-all/追逐25.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "uncertain",
+      "segments": [],
+      "note": "Background person with raised arm: walking versus another gesture; do not inherit foreground chase label."
+    },
+    {
+      "video_id": "900addcaf0b89534",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐26.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.4,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "900addcaf0b89534",
+      "track_id": 4,
+      "source": "real-actiondata-all/追逐26.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.4,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "98156edd41f51291",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐27.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.1,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "1d4f3e8381ae99d8",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐28.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.0,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "55d5fe642b62b5d4",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐29.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.9,
+          "end": 4.166666666666667,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "0316340911c7335a",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐3.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 4.52,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "e15ce2bb67f79eca",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐33.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.68,
+          "label": "other"
+        }
+      ],
+      "entity_type": "detector_false_positive",
+      "note": "Detection follows an office chair/desk, not a moving person; explicit hard negative."
+    },
+    {
+      "video_id": "80bf5ddc05d436f1",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐35.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.72,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "3bb7bbbb5dac2886",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐36.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.7333333333333334,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "83739a9c1ef166ae",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐37.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.45,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "220255c6344fa810",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐38.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.066666666666667,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "31845bb3ebe9242c",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐39.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.7333333333333334,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "5fc474000ad8b057",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐4.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.05,
+          "end": 3.6,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "de7f71c723b0f8d2",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐40.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 4.066666666666666,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "5d7ceafa65fb28dd",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐41.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.08,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "aef56c711adfd170",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐42.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.45,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "372e72a806a6ba1f",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐43.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.6,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "9bc2715b7cba4538",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐44.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.88,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "2dfb81cf7be15dda",
+      "track_id": 1,
+      "source": "real-actiondata-all/追逐5.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/chase-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.88,
+          "label": "chase"
+        }
+      ],
+      "note": "Visible running/jogging actor; uses the existing field dataset chase vocabulary. Uncertain action boundaries excluded."
+    },
+    {
+      "video_id": "692f42ad7971542b",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.4,
+          "end": 3.7,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "2f8105910668ee63",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水1.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.55,
+          "end": 2.9,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "98e5b2023b50498c",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水10.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.5,
+          "end": 3.8,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "3c1be7546e6abe4c",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水11.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 4.04,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "a10a2ba1533ca770",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水12.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.8,
+          "end": 3.9,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "5f67300e5f3bf4ba",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水13.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.05,
+          "end": 3.3,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "66a5c0f15fb59cf1",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水14.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 2.45,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "8f780ff0eefc1fcb",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水16.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.6,
+          "end": 3.0,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "a8b212b367a7594f",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水17.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.4,
+          "end": 1.95,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "cbf7cf6bdebd686a",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水18.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.15,
+          "end": 1.8,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "e68e8be5396ab726",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水19.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.15,
+          "end": 1.55,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "0c6f7f8f83b0ee00",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水2.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 2.7,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "59679fde5a979f98",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水21.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.35,
+          "end": 3.0,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "90b78be8cd090104",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水22.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.45,
+          "end": 2.6,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "c25c3e234ecfa853",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水23.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.32,
+          "label": "other"
+        }
+      ],
+      "entity_type": "detector_false_positive",
+      "note": "Detection is an office chair, not the drinking actor (T02)."
+    },
+    {
+      "video_id": "c25c3e234ecfa853",
+      "track_id": 2,
+      "source": "real-actiondata-all/喝水23.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.5,
+          "end": 2.3,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "fb82c167efa488f9",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水24.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.5,
+          "end": 2.85,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "4f9d96b816a7970a",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水25.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 2.55,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "da3c570dcc033d1b",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水26.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 3.05,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "82eb9f0050410b2a",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水27.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.95,
+          "end": 3.0,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "a02f3d1c93a8e74f",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水28.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 3.1,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "371297cdfb7efc6a",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水3.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.8,
+          "end": 5.35,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "c7547c3416afe581",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水31.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.45,
+          "end": 2.1,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "fada77e68305ac31",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水32.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.85,
+          "end": 2.65,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "444d81366fe842a5",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水33.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 2.9,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "ad442c59b37f1b2f",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水34.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 2.7,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "a677b36824b2473f",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水35.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.7,
+          "end": 3.0,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "5da1038bd2222f4b",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水36.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.6,
+          "end": 2.2,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "ffc37f3401a63fc4",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水37.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.85,
+          "end": 3.05,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "3b3cd82b736befd7",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水38.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.85,
+          "end": 2.95,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "1768113a9c6b3f61",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水39.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 3.3,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "66b08dbe0db5a20e",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水4.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.8,
+          "end": 5.64,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "912a7119bb3fdd06",
+      "track_id": 3,
+      "source": "real-actiondata-all/喝水40.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 3.05,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "252284bbb3974d0a",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水41.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.9,
+          "end": 3.0,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "3e91ea8431c106a4",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水42.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.5,
+          "end": 2.75,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "8bf98cf74cd2d587",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水43.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.4,
+          "end": 3.3,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "f157abb768a96786",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水5.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 7.36,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "6eb2b57242657a4f",
+      "track_id": 3,
+      "source": "real-actiondata-all/喝水6.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.7,
+          "end": 3.0,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "3fd3b533e82ba0cd",
+      "track_id": 1,
+      "source": "real-actiondata-all/喝水9.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 2.2,
+          "end": 3.92,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "68f13a8512ef7609",
+      "track_id": 1,
+      "source": "real-actiondata/喝水.mp4",
+      "reviewer": "assistant visual review of dense half-second track timeline",
+      "review_evidence": "review/detail-68f13a85-T01-00.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 2.3,
+          "end": 5.6,
+          "label": "drink"
+        },
+        {
+          "start": 7.25,
+          "end": 11.65,
+          "label": "drink"
+        },
+        {
+          "start": 12.9,
+          "end": 15.6,
+          "label": "drink"
+        },
+        {
+          "start": 18.0,
+          "end": 22.6,
+          "label": "drink"
+        },
+        {
+          "start": 0,
+          "end": 2.0,
+          "label": "other"
+        },
+        {
+          "start": 6.0,
+          "end": 6.8,
+          "label": "other"
+        },
+        {
+          "start": 11.9,
+          "end": 12.6,
+          "label": "other"
+        },
+        {
+          "start": 16.2,
+          "end": 17.7,
+          "label": "other"
+        },
+        {
+          "start": 23.0,
+          "end": 24.64,
+          "label": "other"
+        }
+      ],
+      "note": "Repeated action bouts annotated separately; walking/gaps remain other or unlabeled. Original pickup clip also contains a short drink."
+    },
+    {
+      "video_id": "314915317e94aa69",
+      "track_id": 1,
+      "source": "real-actiondata/喝水1.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.7,
+          "end": 6.1,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "7b53648a940fbcba",
+      "track_id": 1,
+      "source": "real-actiondata/喝水10.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.55,
+          "end": 6.9,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "16787743e3446a1a",
+      "track_id": 1,
+      "source": "real-actiondata/喝水11.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 5.2,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "e7e805c9abfc755e",
+      "track_id": 1,
+      "source": "real-actiondata/喝水12.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.8,
+          "end": 3.9,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "0fd5052f531d2567",
+      "track_id": 1,
+      "source": "real-actiondata/喝水2.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.8,
+          "end": 6.95,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "35f30d6b84db9fa2",
+      "track_id": 1,
+      "source": "real-actiondata/喝水3.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 2.7,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "427b2d3c2fad1d3c",
+      "track_id": 1,
+      "source": "real-actiondata/喝水4.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.8,
+          "end": 5.3,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "2ff1431546aa2bc4",
+      "track_id": 1,
+      "source": "real-actiondata/喝水5.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.5,
+          "end": 5.2,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "bdddda5a72273061",
+      "track_id": 1,
+      "source": "real-actiondata/喝水6.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.7,
+          "end": 7.0,
+          "label": "drink"
+        },
+        {
+          "start": 8.3,
+          "end": 10.52,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "827a586dc386a23a",
+      "track_id": 3,
+      "source": "real-actiondata/喝水7.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.75,
+          "end": 4.95,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "ae5c589b531cb804",
+      "track_id": 2,
+      "source": "real-actiondata/喝水8.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 3.5,
+          "end": 4.7,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "0237087ac4147814",
+      "track_id": 2,
+      "source": "real-actiondata/喝水9.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/drink-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 2.0,
+          "end": 4.55,
+          "label": "drink"
+        }
+      ],
+      "note": "Visible cup/bottle brought to mouth by this tracked actor; conservative action intervals, other times remain unlabeled."
+    },
+    {
+      "video_id": "59f61340c1226601",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西11.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.8,
+          "end": 3.36,
+          "label": "other"
+        }
+      ],
+      "note": "Visible bystander or actor already standing after the pickup; no pickup in this detected track segment."
+    },
+    {
+      "video_id": "db55821778e02f2d",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西12.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.5,
+          "end": 2.45,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "6d410d75543e1fbd",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西14.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 1.5,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "6d410d75543e1fbd",
+      "track_id": 2,
+      "source": "real-actiondata-all/捡东西14.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.8,
+          "label": "other"
+        }
+      ],
+      "note": "Visible bystander or actor already standing after the pickup; no pickup in this detected track segment."
+    },
+    {
+      "video_id": "fb1220b3d09cfde0",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西15.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.15,
+          "end": 1.5,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "9831d442adecfc66",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西16.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.3,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "9831d442adecfc66",
+      "track_id": 2,
+      "source": "real-actiondata-all/捡东西16.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.9666666666666666,
+          "label": "other"
+        }
+      ],
+      "note": "Visible bystander or actor already standing after the pickup; no pickup in this detected track segment."
+    },
+    {
+      "video_id": "461f50795b91148e",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西17.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.6,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "461f50795b91148e",
+      "track_id": 2,
+      "source": "real-actiondata-all/捡东西17.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.5,
+          "label": "other"
+        }
+      ],
+      "note": "Visible bystander or actor already standing after the pickup; no pickup in this detected track segment."
+    },
+    {
+      "video_id": "c0725bb2829586bb",
+      "track_id": 4,
+      "source": "real-actiondata-all/捡东西19.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.35,
+          "end": 1.95,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "1f153eddcd6d673e",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西2.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.3,
+          "end": 1.9,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "d59b214aa23a2b10",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西21.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 1.55,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "e89e6fbe81384ec5",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西22.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.4,
+          "end": 2.0,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "7ce9e264c4e2c972",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西23.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 1.5,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "182e3a30ac1a8d7b",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西24.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.35,
+          "end": 1.7,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "8594e05e8a56819b",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西25.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.15,
+          "end": 1.45,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "69d2c833d0f01ff3",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西26.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.9,
+          "end": 2.35,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "fd54d3f8ee4adff7",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西27.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.3,
+          "end": 1.8,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "0a3821a9af502a18",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西3.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.4,
+          "end": 1.9,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "aa9c286e92910886",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西4.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.3,
+          "end": 1.65,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "5aa82626ac7ce644",
+      "track_id": 1,
+      "source": "real-actiondata-all/捡东西9.mp4",
+      "reviewer": "assistant visual review of 12-timepoint track contact sheet",
+      "review_evidence": "review/pick_up-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.2,
+          "end": 1.7,
+          "label": "pick_up"
+        }
+      ],
+      "note": "This actor bends/reaches toward the floor and lifts the object. Later standing portion is not labeled pick_up."
+    },
+    {
+      "video_id": "8cedf1246047632a",
+      "track_id": 1,
+      "source": "real-actiondata/捡东西.mp4",
+      "reviewer": "assistant visual review of dense half-second track timeline",
+      "review_evidence": "review/detail-8cedf124-T01-00.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 2.1,
+          "label": "pick_up"
+        },
+        {
+          "start": 7.05,
+          "end": 8.6,
+          "label": "pick_up"
+        },
+        {
+          "start": 11.6,
+          "end": 13.2,
+          "label": "pick_up"
+        },
+        {
+          "start": 15.5,
+          "end": 16.8,
+          "label": "pick_up"
+        },
+        {
+          "start": 18.7,
+          "end": 20.8,
+          "label": "pick_up"
+        },
+        {
+          "start": 3.85,
+          "end": 4.7,
+          "label": "drink"
+        },
+        {
+          "start": 2.4,
+          "end": 3.2,
+          "label": "other"
+        },
+        {
+          "start": 4.9,
+          "end": 6.8,
+          "label": "other"
+        },
+        {
+          "start": 8.9,
+          "end": 11.3,
+          "label": "other"
+        },
+        {
+          "start": 13.45,
+          "end": 15.15,
+          "label": "other"
+        },
+        {
+          "start": 17.0,
+          "end": 18.35,
+          "label": "other"
+        },
+        {
+          "start": 21.0,
+          "end": 21.92,
+          "label": "other"
+        }
+      ],
+      "note": "Repeated action bouts annotated separately; walking/gaps remain other or unlabeled. Original pickup clip also contains a short drink."
+    },
+    {
+      "video_id": "99ab4050cc230278",
+      "track_id": 1,
+      "source": "real-actiondata/摔倒.mp4",
+      "status": "reviewed",
+      "reviewer": "assistant visual review of dense half-second timeline",
+      "review_evidence": "review/detail-99ab4050-T01-00.jpg",
+      "segments": [
+        {
+          "start": 1.8,
+          "end": 4.4,
+          "label": "fall"
+        },
+        {
+          "start": 9.9,
+          "end": 12.1,
+          "label": "fall"
+        },
+        {
+          "start": 16.9,
+          "end": 19.3,
+          "label": "fall"
+        },
+        {
+          "start": 0,
+          "end": 1.5,
+          "label": "other"
+        },
+        {
+          "start": 5.5,
+          "end": 9.5,
+          "label": "other"
+        },
+        {
+          "start": 13.1,
+          "end": 16.5,
+          "label": "other"
+        },
+        {
+          "start": 20.9,
+          "end": 21.28,
+          "label": "other"
+        }
+      ],
+      "note": "Individual action bouts separated from walking and recovery; throw source contains pickups. Fall is staged collapse as in the original class vocabulary."
+    },
+    {
+      "video_id": "cbcdd343aba8623e",
+      "track_id": 1,
+      "source": "real-actiondata/抛物.mp4",
+      "status": "reviewed",
+      "reviewer": "assistant visual review of dense half-second timeline",
+      "review_evidence": "review/detail-cbcdd343-T01-00.jpg",
+      "segments": [
+        {
+          "start": 0.65,
+          "end": 1.7,
+          "label": "throw"
+        },
+        {
+          "start": 3.15,
+          "end": 4.55,
+          "label": "throw"
+        },
+        {
+          "start": 10.65,
+          "end": 11.65,
+          "label": "throw"
+        },
+        {
+          "start": 13.45,
+          "end": 14.65,
+          "label": "throw"
+        },
+        {
+          "start": 6.5,
+          "end": 7.95,
+          "label": "pick_up"
+        },
+        {
+          "start": 1.9,
+          "end": 2.8,
+          "label": "other"
+        },
+        {
+          "start": 4.8,
+          "end": 6.2,
+          "label": "other"
+        },
+        {
+          "start": 8.25,
+          "end": 10.3,
+          "label": "other"
+        },
+        {
+          "start": 11.9,
+          "end": 13.2,
+          "label": "other"
+        }
+      ],
+      "note": "Individual action bouts separated from walking and recovery; throw source contains pickups. Fall is staged collapse as in the original class vocabulary."
+    },
+    {
+      "video_id": "cbcdd343aba8623e",
+      "track_id": 2,
+      "source": "real-actiondata/抛物.mp4",
+      "status": "reviewed",
+      "reviewer": "assistant visual review of dense half-second timeline",
+      "review_evidence": "review/detail-cbcdd343-T02-00.jpg",
+      "segments": [
+        {
+          "start": 15.2,
+          "end": 16.3,
+          "label": "throw"
+        },
+        {
+          "start": 17.95,
+          "end": 18.9,
+          "label": "throw"
+        },
+        {
+          "start": 16.65,
+          "end": 17.8,
+          "label": "pick_up"
+        },
+        {
+          "start": 19.1,
+          "end": 20.72,
+          "label": "other"
+        }
+      ],
+      "note": "Individual action bouts separated from walking and recovery; throw source contains pickups. Fall is staged collapse as in the original class vocabulary."
+    },
+    {
+      "video_id": "d0ab8993eff23b00",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手1.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.55,
+          "label": "other"
+        },
+        {
+          "start": 0.8,
+          "end": 3.4,
+          "label": "wave"
+        },
+        {
+          "start": 3.65,
+          "end": 4.6,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "d0ab8993eff23b00",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手1.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 4.6,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "1e8fc5383e0c7ebf",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手10.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "uncertain",
+      "segments": [],
+      "note": "Static dark detection; cannot reliably distinguish fixture/person."
+    },
+    {
+      "video_id": "1e8fc5383e0c7ebf",
+      "track_id": 6,
+      "source": "real-actiondata-all/挥手10.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "uncertain",
+      "segments": [],
+      "note": "Static dark detection; cannot reliably distinguish fixture/person."
+    },
+    {
+      "video_id": "92ea11e60e5d47c6",
+      "track_id": 5,
+      "source": "real-actiondata-all/挥手11.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "uncertain",
+      "segments": [],
+      "note": "Static dark detection; actual actor elsewhere; uncertain entity."
+    },
+    {
+      "video_id": "c99b19d78b33d718",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手12.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.04999999999999999,
+          "label": "other"
+        },
+        {
+          "start": 0.3,
+          "end": 4.7,
+          "label": "wave"
+        },
+        {
+          "start": 4.95,
+          "end": 5.2,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "97c76cf3392a9c1b",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手13.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.55,
+          "label": "other"
+        },
+        {
+          "start": 0.8,
+          "end": 4.0,
+          "label": "wave"
+        },
+        {
+          "start": 4.25,
+          "end": 4.84,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "fc9a731d5218260f",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手14.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.09999999999999998,
+          "label": "other"
+        },
+        {
+          "start": 0.35,
+          "end": 1.6,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "fc9a731d5218260f",
+      "track_id": 3,
+      "source": "real-actiondata-all/挥手14.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.72,
+          "end": 5.1,
+          "label": "wave"
+        },
+        {
+          "start": 5.35,
+          "end": 5.88,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6849b046cceacd3e",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手15.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 1.52,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6849b046cceacd3e",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手15.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.52,
+          "end": 3.1,
+          "label": "wave"
+        },
+        {
+          "start": 3.35,
+          "end": 3.64,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "9e9349dda617afef",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手16.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.1,
+          "end": 2.1,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "541cb241bad70b01",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手19.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.04999999999999999,
+          "label": "other"
+        },
+        {
+          "start": 0.3,
+          "end": 2.0,
+          "label": "wave"
+        },
+        {
+          "start": 2.25,
+          "end": 2.36,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "5014b0b77ada6229",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手2.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.65,
+          "label": "other"
+        },
+        {
+          "start": 0.9,
+          "end": 4.2,
+          "label": "wave"
+        },
+        {
+          "start": 4.45,
+          "end": 4.720000000000001,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "5014b0b77ada6229",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手2.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "uncertain",
+      "segments": [],
+      "note": "Track changes from background bystander to foreground actor; mixed identity."
+    },
+    {
+      "video_id": "5014b0b77ada6229",
+      "track_id": 4,
+      "source": "real-actiondata-all/挥手2.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.8,
+          "end": 4.76,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "fcde48c0e250ed15",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手20.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.1,
+          "end": 1.95,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "7c2f7e8b8bb28479",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手21.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 1.3,
+          "label": "wave"
+        },
+        {
+          "start": 1.55,
+          "end": 1.6,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6e54fd92e95d43cf",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手22.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.15,
+          "end": 2.1,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "c76c09cceba63e7c",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手23.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.55,
+          "label": "other"
+        },
+        {
+          "start": 0.8,
+          "end": 2.6,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "7ebba3f14b97c2e6",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手24.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 2.3,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "f019d7af0cfd4e52",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手26.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.30000000000000004,
+          "label": "other"
+        },
+        {
+          "start": 0.55,
+          "end": 2.2,
+          "label": "wave"
+        },
+        {
+          "start": 2.45,
+          "end": 2.64,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "56f605e0ad40c73a",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手28.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.04999999999999999,
+          "label": "other"
+        },
+        {
+          "start": 0.3,
+          "end": 2.25,
+          "label": "wave"
+        },
+        {
+          "start": 2.5,
+          "end": 2.8333333333333335,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "56f605e0ad40c73a",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手28.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 2.8333333333333335,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "56f605e0ad40c73a",
+      "track_id": 3,
+      "source": "real-actiondata-all/挥手28.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.7666666666666667,
+          "end": 2.8333333333333335,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "92b9a42823e68e4e",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手29.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.09999999999999998,
+          "label": "other"
+        },
+        {
+          "start": 0.35,
+          "end": 2.15,
+          "label": "wave"
+        },
+        {
+          "start": 2.4,
+          "end": 2.9,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "92b9a42823e68e4e",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手29.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.9,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "b576f320195dfed9",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手3.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.4,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "b576f320195dfed9",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手3.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.04999999999999999,
+          "label": "other"
+        },
+        {
+          "start": 0.3,
+          "end": 5.15,
+          "label": "wave"
+        },
+        {
+          "start": 5.4,
+          "end": 6.4,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "1fa7b05d59e8d258",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手30.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.04999999999999999,
+          "label": "other"
+        },
+        {
+          "start": 0.3,
+          "end": 2.2,
+          "label": "wave"
+        },
+        {
+          "start": 2.45,
+          "end": 2.7,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "1fa7b05d59e8d258",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手30.mp4",
+      "reviewer": "user confirmed other on 2026-10-23",
+      "review_evidence": "user reply to annotation question; track previews retained",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.7,
+          "label": "other"
+        }
+      ],
+      "note": "User explicitly confirmed this target person is other; hand-near-face appearance is not a drink label."
+    },
+    {
+      "video_id": "d460cd44355a4f93",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手31.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.1,
+          "end": 1.4,
+          "label": "wave"
+        },
+        {
+          "start": 1.65,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "d460cd44355a4f93",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手31.mp4",
+      "reviewer": "user confirmed other on 2026-10-23",
+      "review_evidence": "user reply to annotation question; track previews retained",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "User explicitly confirmed this target person is other; hand-near-face appearance is not a drink label."
+    },
+    {
+      "video_id": "d460cd44355a4f93",
+      "track_id": 3,
+      "source": "real-actiondata-all/挥手31.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.1066666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "e46d679b4461ef23",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手32.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.7,
+          "label": "other"
+        },
+        {
+          "start": 0.95,
+          "end": 2.5,
+          "label": "wave"
+        },
+        {
+          "start": 2.75,
+          "end": 3.1,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "220cc82202abab6e",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手33.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 1.95,
+          "label": "wave"
+        },
+        {
+          "start": 2.2,
+          "end": 2.6,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6c1950379c24ba7d",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手36.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.56,
+          "end": 2.84,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered full-scene review confirms T01 is an office chair; actual actor is T02.",
+      "entity_type": "detector_false_positive"
+    },
+    {
+      "video_id": "6c1950379c24ba7d",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手36.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 1.0,
+          "end": 2.3,
+          "label": "wave"
+        },
+        {
+          "start": 2.55,
+          "end": 3.0,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "684c5ecbeb5d5fbd",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手4.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.8500000000000001,
+          "label": "other"
+        },
+        {
+          "start": 1.1,
+          "end": 6.1,
+          "label": "wave"
+        },
+        {
+          "start": 6.35,
+          "end": 6.720000000000001,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "684c5ecbeb5d5fbd",
+      "track_id": 2,
+      "source": "real-actiondata-all/挥手4.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.720000000000001,
+          "label": "other"
+        }
+      ],
+      "note": "Visible inactive bystander, target distinct from the waving person."
+    },
+    {
+      "video_id": "1a5e5b4ed53143da",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手40.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 2.0,
+          "label": "wave"
+        },
+        {
+          "start": 2.25,
+          "end": 2.32,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "530259c765726e91",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手41.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.3,
+          "end": 2.2,
+          "label": "wave"
+        },
+        {
+          "start": 2.45,
+          "end": 2.7333333333333334,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "0483b0eb81ca3c6d",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手42.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 1.7,
+          "label": "wave"
+        },
+        {
+          "start": 1.95,
+          "end": 2.3333333333333335,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "922a3b6dce08796f",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手43.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 1.8,
+          "label": "wave"
+        },
+        {
+          "start": 2.05,
+          "end": 2.373333333333333,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "911066dba60e270b",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手44.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 1.65,
+          "label": "wave"
+        },
+        {
+          "start": 1.9,
+          "end": 2.3666666666666667,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6f2be3a333cb9a45",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手45.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.09999999999999998,
+          "label": "other"
+        },
+        {
+          "start": 0.35,
+          "end": 2.0,
+          "label": "wave"
+        },
+        {
+          "start": 2.25,
+          "end": 2.7,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6e5e18443fb4531b",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手46.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.09999999999999998,
+          "label": "other"
+        },
+        {
+          "start": 0.35,
+          "end": 1.95,
+          "label": "wave"
+        },
+        {
+          "start": 2.2,
+          "end": 2.3666666666666667,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "40fd7c59db83e26e",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手47.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.2,
+          "end": 1.85,
+          "label": "wave"
+        },
+        {
+          "start": 2.1,
+          "end": 2.24,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "b9755309bb164855",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手48.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.25,
+          "end": 1.5,
+          "label": "wave"
+        },
+        {
+          "start": 1.75,
+          "end": 1.84,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "ba0ba14210f3266c",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手49.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.25,
+          "end": 2.15,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "c938ebc5ebb6248d",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手5.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.75,
+          "label": "other"
+        },
+        {
+          "start": 1.0,
+          "end": 4.9,
+          "label": "wave"
+        },
+        {
+          "start": 5.15,
+          "end": 5.28,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "e97748ccd8371f16",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手50.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.04999999999999999,
+          "label": "other"
+        },
+        {
+          "start": 0.3,
+          "end": 1.6,
+          "label": "wave"
+        },
+        {
+          "start": 1.85,
+          "end": 1.92,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "df7aa782aaa5214d",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手51.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 2.15,
+          "label": "wave"
+        },
+        {
+          "start": 2.4,
+          "end": 2.52,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "015b1467f9ba6016",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手53.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.04,
+          "end": 0.2,
+          "label": "other"
+        },
+        {
+          "start": 0.45,
+          "end": 1.95,
+          "label": "wave"
+        },
+        {
+          "start": 2.2,
+          "end": 2.4400000000000004,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "bbbaa4e6f7331a04",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手6.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.65,
+          "label": "other"
+        },
+        {
+          "start": 0.9,
+          "end": 4.0,
+          "label": "wave"
+        },
+        {
+          "start": 4.25,
+          "end": 4.28,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "344e4ea836d29ee5",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手7.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.7,
+          "label": "wave"
+        },
+        {
+          "start": 5.95,
+          "end": 6.08,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "cc0741511b08ff42",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手8.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.25,
+          "label": "other"
+        },
+        {
+          "start": 0.5,
+          "end": 2.5,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "cdb9e33c9032ef05",
+      "track_id": 1,
+      "source": "real-actiondata-all/挥手9.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 0.15000000000000002,
+          "label": "other"
+        },
+        {
+          "start": 0.4,
+          "end": 2.35,
+          "label": "wave"
+        },
+        {
+          "start": 2.6,
+          "end": 2.92,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6d3442ab1f3262e0",
+      "track_id": 1,
+      "source": "real-actiondata/挥手.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 1.45,
+          "label": "other"
+        },
+        {
+          "start": 1.7,
+          "end": 4.1,
+          "label": "wave"
+        },
+        {
+          "start": 4.35,
+          "end": 4.6,
+          "label": "other"
+        },
+        {
+          "start": 4.85,
+          "end": 6.1,
+          "label": "wave"
+        },
+        {
+          "start": 6.35,
+          "end": 6.6,
+          "label": "other"
+        },
+        {
+          "start": 6.85,
+          "end": 8.1,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6d3442ab1f3262e0",
+      "track_id": 2,
+      "source": "real-actiondata/挥手.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 8.0,
+          "end": 9.2,
+          "label": "wave"
+        },
+        {
+          "start": 9.45,
+          "end": 10.95,
+          "label": "other"
+        },
+        {
+          "start": 11.2,
+          "end": 13.6,
+          "label": "wave"
+        },
+        {
+          "start": 13.85,
+          "end": 15.45,
+          "label": "other"
+        },
+        {
+          "start": 15.7,
+          "end": 16.7,
+          "label": "wave"
+        },
+        {
+          "start": 16.95,
+          "end": 18.15,
+          "label": "other"
+        },
+        {
+          "start": 18.4,
+          "end": 20.4,
+          "label": "wave"
+        },
+        {
+          "start": 20.65,
+          "end": 21.35,
+          "label": "other"
+        },
+        {
+          "start": 21.6,
+          "end": 22.4,
+          "label": "wave"
+        },
+        {
+          "start": 22.65,
+          "end": 23.25,
+          "label": "other"
+        },
+        {
+          "start": 23.5,
+          "end": 24.2,
+          "label": "wave"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "6d3442ab1f3262e0",
+      "track_id": 4,
+      "source": "real-actiondata/挥手.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/wave-index.json",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 23.96,
+          "end": 27.1,
+          "label": "other"
+        },
+        {
+          "start": 27.35,
+          "end": 28.5,
+          "label": "wave"
+        },
+        {
+          "start": 28.75,
+          "end": 30.2,
+          "label": "other"
+        }
+      ],
+      "note": "Numbered track temporal sheets; uncertain transition margins remain unlabeled."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 1,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 2,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 3,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "user confirmed other on 2026-10-23",
+      "review_evidence": "user reply to annotation question; track previews retained",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "User explicitly confirmed this target person is other; hand-near-face appearance is not a drink label."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 4,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 5,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 6,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 8,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 9,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 10,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 11,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Static service robot misdetected as human.",
+      "entity_type": "detector_false_positive"
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 12,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    },
+    {
+      "video_id": "ab4913f4f9f2230d",
+      "track_id": 13,
+      "source": "online-negative-sample/20261012_083305_78/drinking_water/20261012_101308_drinking_water_0104.mp4",
+      "reviewer": "assistant visual review",
+      "review_evidence": "review/negative-0104-0.jpg and negative-0104-1.jpg",
+      "status": "reviewed",
+      "segments": [
+        {
+          "start": 0,
+          "end": 2.1666666666666665,
+          "label": "other"
+        }
+      ],
+      "note": "Standing, walking, holding phone, or stretching; no clearly visible named target action."
+    }
+  ]
+}

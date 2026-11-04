@@ -1,0 +1,10 @@
+{
+  "short-07-000": {
+    "truth": "false_action",
+    "description": "白衣人物手机贴耳通话，非喝水；错误瓶子分数0.597→0.728，误报保留。"
+  },
+  "short-09-001": {
+    "truth": "false_action",
+    "description": "黑衣人物持相机拍摄，非喝水；旧模型误认瓶0.589，候选不再支持喝水。"
+  }
+}

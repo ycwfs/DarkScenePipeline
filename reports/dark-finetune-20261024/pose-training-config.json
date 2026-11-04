@@ -1,0 +1,1 @@
+{"epochs":10,"train_images":2388,"val_images":69,"lr_neck":2e-05,"lr_head":5e-05,"freeze":"backbone and visibility output; all BatchNorm running statistics","official_loss":true,"unknown_visibility_loss_weight":0.0,"seed":24,"batch":8,"amp":false}

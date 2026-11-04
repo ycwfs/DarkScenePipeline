@@ -1,0 +1,80 @@
+{
+  "15": {
+    "windows": 908,
+    "pose_available": 783,
+    "changed_pose_availability": 136,
+    "changed_skeleton_vectors": 143
+  },
+  "20": {
+    "windows": 908,
+    "pose_available": 759,
+    "changed_pose_availability": 112,
+    "changed_skeleton_vectors": 119
+  },
+  "25": {
+    "windows": 908,
+    "pose_available": 653,
+    "changed_pose_availability": 6,
+    "changed_skeleton_vectors": 13
+  },
+  "30": {
+    "windows": 908,
+    "pose_available": 647,
+    "changed_pose_availability": 0,
+    "changed_skeleton_vectors": 0
+  },
+  "35": {
+    "windows": 908,
+    "pose_available": 335,
+    "changed_pose_availability": 312,
+    "changed_skeleton_vectors": 314
+  },
+  "40": {
+    "windows": 908,
+    "pose_available": 212,
+    "changed_pose_availability": 435,
+    "changed_skeleton_vectors": 444
+  },
+  "45": {
+    "windows": 908,
+    "pose_available": 75,
+    "changed_pose_availability": 572,
+    "changed_skeleton_vectors": 572
+  },
+  "50": {
+    "windows": 908,
+    "pose_available": 75,
+    "changed_pose_availability": 572,
+    "changed_skeleton_vectors": 572
+  },
+  "55": {
+    "windows": 908,
+    "pose_available": 67,
+    "changed_pose_availability": 580,
+    "changed_skeleton_vectors": 580
+  },
+  "60": {
+    "windows": 908,
+    "pose_available": 57,
+    "changed_pose_availability": 590,
+    "changed_skeleton_vectors": 591
+  },
+  "65": {
+    "windows": 908,
+    "pose_available": 28,
+    "changed_pose_availability": 619,
+    "changed_skeleton_vectors": 619
+  },
+  "70": {
+    "windows": 908,
+    "pose_available": 0,
+    "changed_pose_availability": 647,
+    "changed_skeleton_vectors": 647
+  },
+  "75": {
+    "windows": 908,
+    "pose_available": 0,
+    "changed_pose_availability": 647,
+    "changed_skeleton_vectors": 647
+  }
+}

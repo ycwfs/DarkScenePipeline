@@ -1,0 +1,215 @@
+[
+  {
+    "name": "挥手3",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手3.mp4",
+    "frames": 160,
+    "fps": 25.0,
+    "video": "videos/挥手3_多人骨架.mp4",
+    "events": 9,
+    "active_events": 0,
+    "multiperson_events": 0,
+    "max_people": 0,
+    "frames_with_pose": 0,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {},
+    "final_labels": {
+      "Waving": 9
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 1.3117647984065115,
+    "elapsed": 21.35163885494694
+  },
+  {
+    "name": "挥手4",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手4.mp4",
+    "frames": 169,
+    "fps": 25.0,
+    "video": "videos/挥手4_多人骨架.mp4",
+    "events": 10,
+    "active_events": 0,
+    "multiperson_events": 0,
+    "max_people": 0,
+    "frames_with_pose": 0,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {},
+    "final_labels": {
+      "Waving": 10
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 1.076593070244416,
+    "elapsed": 20.58967767795548
+  },
+  {
+    "name": "挥手5",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手5.mp4",
+    "frames": 132,
+    "fps": 25.0,
+    "video": "videos/挥手5_多人骨架.mp4",
+    "events": 7,
+    "active_events": 0,
+    "multiperson_events": 0,
+    "max_people": 0,
+    "frames_with_pose": 0,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {},
+    "final_labels": {
+      "Drinking water": 1,
+      "Waving": 6
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 3.527447413885965,
+    "elapsed": 20.274216396268457
+  },
+  {
+    "name": "挥手20",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手20.mp4",
+    "frames": 55,
+    "fps": 25.0,
+    "video": "videos/挥手20_多人骨架.mp4",
+    "events": 2,
+    "active_events": 2,
+    "multiperson_events": 0,
+    "max_people": 1,
+    "frames_with_pose": 31,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {
+      "wave": 16,
+      "drink": 15
+    },
+    "final_labels": {
+      "Waving": 1,
+      "Other": 1
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 0.854698673193343,
+    "elapsed": 7.537075466942042
+  },
+  {
+    "name": "追逐16",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/追逐16.mp4",
+    "frames": 45,
+    "fps": 25.0,
+    "video": "videos/追逐16_多人骨架.mp4",
+    "events": 2,
+    "active_events": 2,
+    "multiperson_events": 0,
+    "max_people": 1,
+    "frames_with_pose": 13,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {
+      "chase": 13
+    },
+    "final_labels": {
+      "Chasing": 2
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 0.6864877751795575,
+    "elapsed": 6.57429114356637
+  },
+  {
+    "name": "喝水16",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/喝水16.mp4",
+    "frames": 75,
+    "fps": 25.0,
+    "video": "videos/喝水16_多人骨架.mp4",
+    "events": 4,
+    "active_events": 4,
+    "multiperson_events": 0,
+    "max_people": 1,
+    "frames_with_pose": 51,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {
+      "drink": 51
+    },
+    "final_labels": {
+      "Drinking water": 4
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 1.3144081695238126,
+    "elapsed": 9.900918965227902
+  },
+  {
+    "name": "捡东西2",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/捡东西2.mp4",
+    "frames": 71,
+    "fps": 25.0,
+    "video": "videos/捡东西2_多人骨架.mp4",
+    "events": 3,
+    "active_events": 3,
+    "multiperson_events": 0,
+    "max_people": 1,
+    "frames_with_pose": 47,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {
+      "pick_up": 47
+    },
+    "final_labels": {
+      "Picking up object": 3
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 1.20867851767689,
+    "elapsed": 9.602420725859702
+  },
+  {
+    "name": "挥手18",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手18.mp4",
+    "frames": 67,
+    "fps": 25.0,
+    "video": "videos/挥手18_多人骨架.mp4",
+    "events": 3,
+    "active_events": 0,
+    "multiperson_events": 0,
+    "max_people": 0,
+    "frames_with_pose": 0,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {},
+    "final_labels": {
+      "Waving": 3
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 3.365890187304467,
+    "elapsed": 10.630339583847672
+  },
+  {
+    "name": "other80",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/other/other80.mp4",
+    "frames": 88,
+    "fps": 25.0,
+    "video": "videos/other80_多人骨架.mp4",
+    "events": 4,
+    "active_events": 4,
+    "multiperson_events": 0,
+    "max_people": 1,
+    "frames_with_pose": 64,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {
+      "wave": 64
+    },
+    "final_labels": {
+      "Other": 4
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 1.9011010183952748,
+    "elapsed": 12.144437904004008
+  },
+  {
+    "name": "other1",
+    "source": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/other/other1.mp4",
+    "frames": 59,
+    "fps": 23.75,
+    "video": "videos/other1_多人骨架.mp4",
+    "events": 3,
+    "active_events": 3,
+    "multiperson_events": 0,
+    "max_people": 0,
+    "frames_with_pose": 0,
+    "frames_with_multiple_people": 0,
+    "per_person_labels": {},
+    "final_labels": {
+      "Other": 3
+    },
+    "fusion_verified": true,
+    "recognition_seconds_p95": 1.130271957349032,
+    "elapsed": 8.657981517724693
+  }
+]

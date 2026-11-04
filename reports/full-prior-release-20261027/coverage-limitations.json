@@ -1,0 +1,26 @@
+[
+  {
+    "brightness": [
+      15,
+      30
+    ],
+    "people_mode": 2,
+    "reason": "No source in the fixed train subset with this sustained detector count and duration2–9s"
+  },
+  {
+    "brightness": [
+      45,
+      60
+    ],
+    "people_mode": 2,
+    "reason": "No source in the fixed train subset with this sustained detector count and duration2–9s"
+  },
+  {
+    "brightness": [
+      60,
+      75
+    ],
+    "people_mode": 2,
+    "reason": "No source in the fixed train subset with this sustained detector count and duration2–9s"
+  }
+]

@@ -1,0 +1,281 @@
+[
+  {
+    "id": "lighting-01",
+    "original": {
+      "chase": 1,
+      "drink": 8
+    },
+    "candidate": {
+      "chase": 1,
+      "drink": 8
+    },
+    "original_windows": 9,
+    "candidate_windows": 9
+  },
+  {
+    "id": "lighting-02",
+    "original": {
+      "other": 6,
+      "drink": 9
+    },
+    "candidate": {
+      "other": 6,
+      "drink": 9
+    },
+    "original_windows": 15,
+    "candidate_windows": 15
+  },
+  {
+    "id": "lighting-03",
+    "original": {
+      "other": 2,
+      "wave": 6
+    },
+    "candidate": {
+      "other": 2,
+      "wave": 6
+    },
+    "original_windows": 8,
+    "candidate_windows": 8
+  },
+  {
+    "id": "lighting-04",
+    "original": {
+      "other": 4
+    },
+    "candidate": {
+      "other": 4
+    },
+    "original_windows": 4,
+    "candidate_windows": 4
+  },
+  {
+    "id": "lighting-05",
+    "original": {
+      "other": 14,
+      "wave": 10
+    },
+    "candidate": {
+      "other": 14,
+      "wave": 10
+    },
+    "original_windows": 24,
+    "candidate_windows": 24
+  },
+  {
+    "id": "lighting-06",
+    "original": {
+      "chase": 1,
+      "other": 1
+    },
+    "candidate": {
+      "other": 2
+    },
+    "original_windows": 2,
+    "candidate_windows": 2
+  },
+  {
+    "id": "lighting-07",
+    "original": {
+      "other": 9
+    },
+    "candidate": {
+      "other": 9
+    },
+    "original_windows": 9,
+    "candidate_windows": 9
+  },
+  {
+    "id": "lighting-08",
+    "original": {
+      "drink": 3,
+      "other": 2
+    },
+    "candidate": {
+      "drink": 3,
+      "other": 2
+    },
+    "original_windows": 5,
+    "candidate_windows": 5
+  },
+  {
+    "id": "lighting-09",
+    "original": {
+      "other": 2,
+      "pick_up": 1
+    },
+    "candidate": {
+      "other": 2,
+      "pick_up": 1
+    },
+    "original_windows": 3,
+    "candidate_windows": 3
+  },
+  {
+    "id": "lighting-10",
+    "original": {
+      "other": 3
+    },
+    "candidate": {
+      "other": 3
+    },
+    "original_windows": 3,
+    "candidate_windows": 3
+  },
+  {
+    "id": "lighting-11",
+    "original": {
+      "other": 14
+    },
+    "candidate": {
+      "other": 14
+    },
+    "original_windows": 14,
+    "candidate_windows": 14
+  },
+  {
+    "id": "lighting-12",
+    "original": {
+      "other": 31
+    },
+    "candidate": {
+      "other": 31
+    },
+    "original_windows": 31,
+    "candidate_windows": 31
+  },
+  {
+    "id": "lighting-13",
+    "original": {
+      "other": 34
+    },
+    "candidate": {
+      "other": 34
+    },
+    "original_windows": 34,
+    "candidate_windows": 34
+  },
+  {
+    "id": "rule-挥手22",
+    "original": {
+      "wave": 3
+    },
+    "candidate": {
+      "wave": 3
+    },
+    "original_windows": 3,
+    "candidate_windows": 3
+  },
+  {
+    "id": "rule-挥手32",
+    "original": {
+      "other": 2,
+      "wave": 4
+    },
+    "candidate": {
+      "other": 2,
+      "wave": 4
+    },
+    "original_windows": 6,
+    "candidate_windows": 6
+  },
+  {
+    "id": "rule-追逐20",
+    "original": {
+      "chase": 1
+    },
+    "candidate": {
+      "chase": 1
+    },
+    "original_windows": 1,
+    "candidate_windows": 1
+  },
+  {
+    "id": "rule-喝水27",
+    "original": {
+      "other": 2,
+      "drink": 5
+    },
+    "candidate": {
+      "other": 4,
+      "drink": 3
+    },
+    "original_windows": 7,
+    "candidate_windows": 7
+  },
+  {
+    "id": "crowd-child",
+    "original": {
+      "other": 366,
+      "chase": 2,
+      "wave": 1
+    },
+    "candidate": {
+      "other": 366,
+      "chase": 2,
+      "wave": 1
+    },
+    "original_windows": 369,
+    "candidate_windows": 369
+  },
+  {
+    "id": "crowd-walking",
+    "original": {
+      "other": 474
+    },
+    "candidate": {
+      "other": 479
+    },
+    "original_windows": 474,
+    "candidate_windows": 479
+  },
+  {
+    "id": "crowd-phone",
+    "original": {
+      "other": 414,
+      "drink": 1
+    },
+    "candidate": {
+      "other": 414,
+      "drink": 1
+    },
+    "original_windows": 415,
+    "candidate_windows": 415
+  },
+  {
+    "id": "crowd-camera",
+    "original": {
+      "other": 687,
+      "drink": 1
+    },
+    "candidate": {
+      "other": 682
+    },
+    "original_windows": 688,
+    "candidate_windows": 682
+  },
+  {
+    "id": "new-01-wave-veto",
+    "original": {
+      "other": 188,
+      "chase": 1
+    },
+    "candidate": {
+      "other": 185,
+      "chase": 1
+    },
+    "original_windows": 189,
+    "candidate_windows": 186
+  },
+  {
+    "id": "new-07-standing-veto",
+    "original": {
+      "other": 86
+    },
+    "candidate": {
+      "other": 86
+    },
+    "original_windows": 86,
+    "candidate_windows": 86
+  }
+]

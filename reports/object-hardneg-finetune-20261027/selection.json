@@ -1,0 +1,236 @@
+{
+  "rows": [
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch0.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.6830648945115421,
+        "metrics/recall(B)": 0.48769996630821255,
+        "metrics/mAP50(B)": 0.4714533409927389,
+        "metrics/mAP50-95(B)": 0.20896051015327596,
+        "fitness": 0.20896051015327596
+      },
+      "score": 0.20896051015327596
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch1.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9104505773401007,
+        "metrics/recall(B)": 0.3740057282232655,
+        "metrics/mAP50(B)": 0.5356221104231166,
+        "metrics/mAP50-95(B)": 0.2812792396429262,
+        "fitness": 0.2812792396429262
+      },
+      "score": 0.2812792396429262
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch2.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.9604362955420254,
+        "metrics/recall(B)": 0.3457387309317701,
+        "metrics/mAP50(B)": 0.5200424658088749,
+        "metrics/mAP50-95(B)": 0.29364506992672695,
+        "fitness": 0.29364506992672695
+      },
+      "score": 0.29364506992672695
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch3.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.7431990513691678,
+        "metrics/recall(B)": 0.3939308801933744,
+        "metrics/mAP50(B)": 0.4582651574010566,
+        "metrics/mAP50-95(B)": 0.273752793152494,
+        "fitness": 0.273752793152494
+      },
+      "score": 0.273752793152494
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch4.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.5611949663607555,
+        "metrics/recall(B)": 0.6297619047619047,
+        "metrics/mAP50(B)": 0.5742104746008767,
+        "metrics/mAP50-95(B)": 0.3564681606629338,
+        "fitness": 0.3564681606629338
+      },
+      "score": 0.3564681606629338
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch5.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.5884531812873225,
+        "metrics/recall(B)": 0.6297619047619047,
+        "metrics/mAP50(B)": 0.6335427451413935,
+        "metrics/mAP50-95(B)": 0.34931655600271333,
+        "fitness": 0.34931655600271333
+      },
+      "score": 0.34931655600271333
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch6.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.7777469885301999,
+        "metrics/recall(B)": 0.4813314841028027,
+        "metrics/mAP50(B)": 0.5772595639654463,
+        "metrics/mAP50-95(B)": 0.33561972497157366,
+        "fitness": 0.33561972497157366
+      },
+      "score": 0.33561972497157366
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch7.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.5352122186499656,
+        "metrics/recall(B)": 0.6297619047619047,
+        "metrics/mAP50(B)": 0.5980306672494172,
+        "metrics/mAP50-95(B)": 0.3514587227946498,
+        "fitness": 0.3514587227946498
+      },
+      "score": 0.3514587227946498
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch8.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.5859623772105569,
+        "metrics/recall(B)": 0.5988447743815793,
+        "metrics/mAP50(B)": 0.6329495308716707,
+        "metrics/mAP50-95(B)": 0.3651635549438661,
+        "fitness": 0.3651635549438661
+      },
+      "score": 0.3651635549438661
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch9.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.5791528182694746,
+        "metrics/recall(B)": 0.6297619047619047,
+        "metrics/mAP50(B)": 0.6052900025013814,
+        "metrics/mAP50-95(B)": 0.3466208854455046,
+        "fitness": 0.3466208854455046
+      },
+      "score": 0.3466208854455046
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch10.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.6687139848981394,
+        "metrics/recall(B)": 0.5964285714285714,
+        "metrics/mAP50(B)": 0.5620092026029526,
+        "metrics/mAP50-95(B)": 0.32184484231541244,
+        "fitness": 0.32184484231541244
+      },
+      "score": 0.32184484231541244
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch11.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.607200300228302,
+        "metrics/recall(B)": 0.6297619047619047,
+        "metrics/mAP50(B)": 0.5541859997083014,
+        "metrics/mAP50-95(B)": 0.33212171850535144,
+        "fitness": 0.33212171850535144
+      },
+      "score": 0.33212171850535144
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch12.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.6173557879805306,
+        "metrics/recall(B)": 0.4214285714285714,
+        "metrics/mAP50(B)": 0.4907208205912334,
+        "metrics/mAP50-95(B)": 0.3174672658675213,
+        "fitness": 0.3174672658675213
+      },
+      "score": 0.3174672658675213
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch13.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.6475448796878105,
+        "metrics/recall(B)": 0.5047619047619047,
+        "metrics/mAP50(B)": 0.5154226276060387,
+        "metrics/mAP50-95(B)": 0.32405094234840914,
+        "fitness": 0.32405094234840914
+      },
+      "score": 0.32405094234840914
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch14.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.7753975189151143,
+        "metrics/recall(B)": 0.4943876880904363,
+        "metrics/mAP50(B)": 0.5555275383657736,
+        "metrics/mAP50-95(B)": 0.34605363527986954,
+        "fitness": 0.34605363527986954
+      },
+      "score": 0.34605363527986954
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch15.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.6610538708921359,
+        "metrics/recall(B)": 0.5231932928440012,
+        "metrics/mAP50(B)": 0.5605482038588474,
+        "metrics/mAP50-95(B)": 0.3466607354853896,
+        "fitness": 0.3466607354853896
+      },
+      "score": 0.3466607354853896
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch16.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.8308014570950383,
+        "metrics/recall(B)": 0.3875248145632907,
+        "metrics/mAP50(B)": 0.5471742424242425,
+        "metrics/mAP50-95(B)": 0.3356357528691919,
+        "fitness": 0.3356357528691919
+      },
+      "score": 0.3356357528691919
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch17.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.7224857051780073,
+        "metrics/recall(B)": 0.4214285714285714,
+        "metrics/mAP50(B)": 0.5216024035805329,
+        "metrics/mAP50-95(B)": 0.33255490801004806,
+        "fitness": 0.33255490801004806
+      },
+      "score": 0.33255490801004806
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch18.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.7666302349712554,
+        "metrics/recall(B)": 0.48743590373944456,
+        "metrics/mAP50(B)": 0.5520497835497835,
+        "metrics/mAP50-95(B)": 0.3437367544862166,
+        "fitness": 0.3437367544862166
+      },
+      "score": 0.3437367544862166
+    },
+    {
+      "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch19.pt",
+      "metrics": {
+        "metrics/precision(B)": 0.7521479890845622,
+        "metrics/recall(B)": 0.48264490045242237,
+        "metrics/mAP50(B)": 0.5525120126381594,
+        "metrics/mAP50-95(B)": 0.3372763071232929,
+        "fitness": 0.3372763071232929
+      },
+      "score": 0.3372763071232929
+    }
+  ],
+  "selected": {
+    "path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-hardneg-finetune-20261027/runs/hardneg/weights/epoch8.pt",
+    "metrics": {
+      "metrics/precision(B)": 0.5859623772105569,
+      "metrics/recall(B)": 0.5988447743815793,
+      "metrics/mAP50(B)": 0.6329495308716707,
+      "metrics/mAP50-95(B)": 0.3651635549438661,
+      "fitness": 0.3651635549438661
+    },
+    "score": 0.3651635549438661
+  },
+  "criterion": "old + source03 validation one-to-one head nms=False mAP50-95; earliest epoch breaks ties; test untouched"
+}

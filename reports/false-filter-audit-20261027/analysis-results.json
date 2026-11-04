@@ -1,0 +1,2897 @@
+{
+  "scope": "Retrospective cached evidence diagnosis; no new threshold selected, no deployed code/model/package changed.",
+  "windows": 51834,
+  "old_windows": 4234,
+  "flow_defaults_match": true,
+  "stages": {
+    "rgb": {
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 466,
+          "other_total": 2829,
+          "other_false": 15,
+          "macro_f1": 0.9807879873568625,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.991869918699187
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.9887640449438202
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 204,
+              "fp": 3,
+              "fn": 2,
+              "f1": 0.9878934624697336
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 36,
+              "fp": 8,
+              "fn": 0,
+              "f1": 0.9
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2814,
+              "fp": 2,
+              "fn": 15,
+              "f1": 0.9969884853852967
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 28,
+          "other_total": 162,
+          "other_false": 6,
+          "macro_f1": 0.8199425114762539,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 5,
+              "fn": 0,
+              "f1": 0.6153846153846154
+            },
+            "other": {
+              "total": 162,
+              "tp": 156,
+              "fp": 8,
+              "fn": 6,
+              "f1": 0.9570552147239264
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 42,
+          "other_total": 163,
+          "other_false": 8,
+          "macro_f1": 0.8417617748254536,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 19,
+              "fp": 3,
+              "fn": 6,
+              "f1": 0.8085106382978723
+            },
+            "drink": {
+              "total": 11,
+              "tp": 8,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8421052631578947
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.7272727272727273
+            },
+            "other": {
+              "total": 163,
+              "tp": 155,
+              "fp": 8,
+              "fn": 8,
+              "f1": 0.950920245398773
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 347,
+      "new_known_drink_tp": 1
+    },
+    "fusion": {
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 466,
+          "other_total": 2829,
+          "other_false": 9,
+          "macro_f1": 0.9865388442239168,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 204,
+              "fp": 2,
+              "fn": 2,
+              "f1": 0.9902912621359223
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 36,
+              "fp": 6,
+              "fn": 0,
+              "f1": 0.9230769230769231
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2820,
+              "fp": 2,
+              "fn": 9,
+              "f1": 0.9980534418686958
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 28,
+          "other_total": 162,
+          "other_false": 4,
+          "macro_f1": 0.8435920177383593,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.7272727272727273
+            },
+            "other": {
+              "total": 162,
+              "tp": 158,
+              "fp": 8,
+              "fn": 4,
+              "f1": 0.9634146341463414
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 40,
+          "other_total": 163,
+          "other_false": 4,
+          "macro_f1": 0.857892079596582,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 8,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8421052631578947
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.8
+            },
+            "other": {
+              "total": 163,
+              "tp": 159,
+              "fp": 10,
+              "fn": 4,
+              "f1": 0.9578313253012049
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 123,
+      "new_known_drink_tp": 1
+    },
+    "objects_formal": {
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 426,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9513823298917108,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 177,
+              "fp": 2,
+              "fn": 29,
+              "f1": 0.9194805194805195
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 23,
+              "fp": 2,
+              "fn": 13,
+              "f1": 0.7540983606557377
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 42,
+              "fn": 5,
+              "f1": 0.991747146619842
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 1,
+      "new_known_drink_tp": 0
+    },
+    "wave_candidate": {
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 426,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9513823298917108,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 177,
+              "fp": 2,
+              "fn": 29,
+              "f1": 0.9194805194805195
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 23,
+              "fp": 2,
+              "fn": 13,
+              "f1": 0.7540983606557377
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 42,
+              "fn": 5,
+              "f1": 0.991747146619842
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 1,
+      "new_known_drink_tp": 0
+    },
+    "running_candidate": {
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 426,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9513823298917108,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 177,
+              "fp": 2,
+              "fn": 29,
+              "f1": 0.9194805194805195
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 23,
+              "fp": 2,
+              "fn": 13,
+              "f1": 0.7540983606557377
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 42,
+              "fn": 5,
+              "f1": 0.991747146619842
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 1,
+      "new_known_drink_tp": 0
+    }
+  },
+  "lost_vs_rgb": [
+    {
+      "id": "9831d442adecfc66_0",
+      "source": "real-actiondata-all/捡东西16.mp4",
+      "split": "val",
+      "timestamp": 0.9666666666666667,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9564843773841858,
+      "fused_score": 0.9539658427238464,
+      "pose_valid": true,
+      "object_support": 0.3002563416957855
+    },
+    {
+      "id": "e89e6fbe81384ec5_1",
+      "source": "real-actiondata-all/捡东西22.mp4",
+      "split": "val",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9546635746955872,
+      "fused_score": 0.9510458707809448,
+      "pose_valid": true,
+      "object_support": 0.011697606183588505
+    },
+    {
+      "id": "e89e6fbe81384ec5_2",
+      "source": "real-actiondata-all/捡东西22.mp4",
+      "split": "val",
+      "timestamp": 1.9666666666666666,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9553822875022888,
+      "fused_score": 0.9360854625701904,
+      "pose_valid": true,
+      "object_support": 0.3155686855316162
+    },
+    {
+      "id": "da3c570dcc033d1b_2",
+      "source": "real-actiondata-all/喝水26.mp4",
+      "split": "test",
+      "timestamp": 1.9666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9598929286003113,
+      "fused_score": 0.9597949981689453,
+      "pose_valid": true,
+      "object_support": 0.07158447802066803
+    },
+    {
+      "id": "da3c570dcc033d1b_3",
+      "source": "real-actiondata-all/喝水26.mp4",
+      "split": "test",
+      "timestamp": 2.466666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.957830011844635,
+      "fused_score": 0.9586333632469177,
+      "pose_valid": true,
+      "object_support": 0.08872278779745102
+    },
+    {
+      "id": "da3c570dcc033d1b_4",
+      "source": "real-actiondata-all/喝水26.mp4",
+      "split": "test",
+      "timestamp": 2.966666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9422726035118103,
+      "fused_score": 0.9431055784225464,
+      "pose_valid": true,
+      "object_support": 0.44111406803131104
+    },
+    {
+      "id": "5da1038bd2222f4b_1",
+      "source": "real-actiondata-all/喝水36.mp4",
+      "split": "test",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9351774454116821,
+      "fused_score": 0.9331027269363403,
+      "pose_valid": true,
+      "object_support": 0.5377500057220459
+    },
+    {
+      "id": "5da1038bd2222f4b_2",
+      "source": "real-actiondata-all/喝水36.mp4",
+      "split": "test",
+      "timestamp": 1.9666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9411550164222717,
+      "fused_score": 0.9390823245048523,
+      "pose_valid": true,
+      "object_support": 0.5377500057220459
+    },
+    {
+      "id": "7ce9e264c4e2c972_0",
+      "source": "real-actiondata-all/捡东西23.mp4",
+      "split": "test",
+      "timestamp": 0.9666666666666667,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9541056752204895,
+      "fused_score": 0.9519140124320984,
+      "pose_valid": true,
+      "object_support": 0.19545195996761322
+    },
+    {
+      "id": "92cb1dbf7394409d_7",
+      "source": "real-actiondata-all/追逐25.mp4",
+      "split": "test",
+      "timestamp": 3.966666666666667,
+      "track_id": 1,
+      "truth": "chase",
+      "stage": "fusion",
+      "rgb_score": 0.9305824637413025,
+      "fused_score": 0.9045615196228027,
+      "pose_valid": true,
+      "object_support": null
+    },
+    {
+      "id": "92cb1dbf7394409d_9",
+      "source": "real-actiondata-all/追逐25.mp4",
+      "split": "test",
+      "timestamp": 4.466666666666667,
+      "track_id": 1,
+      "truth": "chase",
+      "stage": "fusion",
+      "rgb_score": 0.939822256565094,
+      "fused_score": 0.9137313365936279,
+      "pose_valid": true,
+      "object_support": null
+    },
+    {
+      "id": "692f42ad7971542b_3",
+      "source": "real-actiondata-all/喝水.mp4",
+      "split": "train",
+      "timestamp": 2.52,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9590193033218384,
+      "fused_score": 0.9600464701652527,
+      "pose_valid": true,
+      "object_support": 0.49009454250335693
+    },
+    {
+      "id": "59679fde5a979f98_1",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "split": "train",
+      "timestamp": 1.48,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9598031044006348,
+      "fused_score": 0.9608151912689209,
+      "pose_valid": true,
+      "object_support": 0.020623380318284035
+    },
+    {
+      "id": "59679fde5a979f98_2",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "split": "train",
+      "timestamp": 2.0,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9582274556159973,
+      "fused_score": 0.9585492610931396,
+      "pose_valid": true,
+      "object_support": 0.020623380318284035
+    },
+    {
+      "id": "59679fde5a979f98_3",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "split": "train",
+      "timestamp": 2.52,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.95986008644104,
+      "fused_score": 0.9585724472999573,
+      "pose_valid": true,
+      "object_support": 0.0040643662214279175
+    },
+    {
+      "id": "59679fde5a979f98_4",
+      "source": "real-actiondata-all/喝水21.mp4",
+      "split": "train",
+      "timestamp": 3.04,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9597646594047546,
+      "fused_score": 0.9586666226387024,
+      "pose_valid": true,
+      "object_support": 0.0
+    },
+    {
+      "id": "90b78be8cd090104_1",
+      "source": "real-actiondata-all/喝水22.mp4",
+      "split": "train",
+      "timestamp": 1.48,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9527347087860107,
+      "fused_score": 0.9445459842681885,
+      "pose_valid": true,
+      "object_support": 0.5178799629211426
+    },
+    {
+      "id": "90b78be8cd090104_2",
+      "source": "real-actiondata-all/喝水22.mp4",
+      "split": "train",
+      "timestamp": 2.0,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9523107409477234,
+      "fused_score": 0.9531720876693726,
+      "pose_valid": true,
+      "object_support": 0.35031265020370483
+    },
+    {
+      "id": "90b78be8cd090104_3",
+      "source": "real-actiondata-all/喝水22.mp4",
+      "split": "train",
+      "timestamp": 2.52,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.947300136089325,
+      "fused_score": 0.948544442653656,
+      "pose_valid": true,
+      "object_support": 0.35031265020370483
+    },
+    {
+      "id": "fb82c167efa488f9_2",
+      "source": "real-actiondata-all/喝水24.mp4",
+      "split": "train",
+      "timestamp": 1.9666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.956089198589325,
+      "fused_score": 0.9572468996047974,
+      "pose_valid": true,
+      "object_support": 0.30740877985954285
+    },
+    {
+      "id": "fb82c167efa488f9_3",
+      "source": "real-actiondata-all/喝水24.mp4",
+      "split": "train",
+      "timestamp": 2.466666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9567205309867859,
+      "fused_score": 0.9578646421432495,
+      "pose_valid": true,
+      "object_support": 0.15742504596710205
+    },
+    {
+      "id": "fb82c167efa488f9_4",
+      "source": "real-actiondata-all/喝水24.mp4",
+      "split": "train",
+      "timestamp": 2.966666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9534355401992798,
+      "fused_score": 0.9541953802108765,
+      "pose_valid": true,
+      "object_support": 0.11098218709230423
+    },
+    {
+      "id": "4f9d96b816a7970a_1",
+      "source": "real-actiondata-all/喝水25.mp4",
+      "split": "train",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.954253613948822,
+      "fused_score": 0.9555153250694275,
+      "pose_valid": true,
+      "object_support": 0.33952367305755615
+    },
+    {
+      "id": "4f9d96b816a7970a_2",
+      "source": "real-actiondata-all/喝水25.mp4",
+      "split": "train",
+      "timestamp": 1.9666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9566055536270142,
+      "fused_score": 0.9577785730361938,
+      "pose_valid": true,
+      "object_support": 0.07984311878681183
+    },
+    {
+      "id": "4f9d96b816a7970a_3",
+      "source": "real-actiondata-all/喝水25.mp4",
+      "split": "train",
+      "timestamp": 2.466666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9581031799316406,
+      "fused_score": 0.9591612219810486,
+      "pose_valid": true,
+      "object_support": 0.1308795064687729
+    },
+    {
+      "id": "a02f3d1c93a8e74f_4",
+      "source": "real-actiondata-all/喝水28.mp4",
+      "split": "train",
+      "timestamp": 2.966666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9586601257324219,
+      "fused_score": 0.9554234743118286,
+      "pose_valid": true,
+      "object_support": 0.4116198420524597
+    },
+    {
+      "id": "fada77e68305ac31_3",
+      "source": "real-actiondata-all/喝水32.mp4",
+      "split": "train",
+      "timestamp": 2.52,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9571273922920227,
+      "fused_score": 0.9579976797103882,
+      "pose_valid": true,
+      "object_support": 0.3538423776626587
+    },
+    {
+      "id": "444d81366fe842a5_1",
+      "source": "real-actiondata-all/喝水33.mp4",
+      "split": "train",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9576784372329712,
+      "fused_score": 0.9585790634155273,
+      "pose_valid": true,
+      "object_support": 0.40429770946502686
+    },
+    {
+      "id": "444d81366fe842a5_2",
+      "source": "real-actiondata-all/喝水33.mp4",
+      "split": "train",
+      "timestamp": 1.9666666666666666,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.957952618598938,
+      "fused_score": 0.9590245485305786,
+      "pose_valid": true,
+      "object_support": 0.3152633011341095
+    },
+    {
+      "id": "444d81366fe842a5_3",
+      "source": "real-actiondata-all/喝水33.mp4",
+      "split": "train",
+      "timestamp": 2.466666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.957342803478241,
+      "fused_score": 0.9584723114967346,
+      "pose_valid": true,
+      "object_support": 0.0789833813905716
+    },
+    {
+      "id": "444d81366fe842a5_4",
+      "source": "real-actiondata-all/喝水33.mp4",
+      "split": "train",
+      "timestamp": 2.966666666666667,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.95633465051651,
+      "fused_score": 0.9574963450431824,
+      "pose_valid": true,
+      "object_support": 0.14524079859256744
+    },
+    {
+      "id": "6d410d75543e1fbd_0",
+      "source": "real-actiondata-all/捡东西14.mp4",
+      "split": "train",
+      "timestamp": 0.9666666666666667,
+      "track_id": 2,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9561452865600586,
+      "fused_score": 0.937424898147583,
+      "pose_valid": true,
+      "object_support": 0.48475390672683716
+    },
+    {
+      "id": "fb1220b3d09cfde0_0",
+      "source": "real-actiondata-all/捡东西15.mp4",
+      "split": "train",
+      "timestamp": 0.9666666666666667,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9545248746871948,
+      "fused_score": 0.9499331712722778,
+      "pose_valid": true,
+      "object_support": 0.5717824697494507
+    },
+    {
+      "id": "fb1220b3d09cfde0_1",
+      "source": "real-actiondata-all/捡东西15.mp4",
+      "split": "train",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9570749402046204,
+      "fused_score": 0.9567972421646118,
+      "pose_valid": true,
+      "object_support": 0.28460976481437683
+    },
+    {
+      "id": "461f50795b91148e_0",
+      "source": "real-actiondata-all/捡东西17.mp4",
+      "split": "train",
+      "timestamp": 0.9666666666666667,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9547232389450073,
+      "fused_score": 0.9508079886436462,
+      "pose_valid": true,
+      "object_support": 0.32534343004226685
+    },
+    {
+      "id": "461f50795b91148e_2",
+      "source": "real-actiondata-all/捡东西17.mp4",
+      "split": "train",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9576869606971741,
+      "fused_score": 0.955449640750885,
+      "pose_valid": true,
+      "object_support": 0.025997884571552277
+    },
+    {
+      "id": "8594e05e8a56819b_0",
+      "source": "real-actiondata-all/捡东西25.mp4",
+      "split": "train",
+      "timestamp": 0.9666666666666667,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9539286494255066,
+      "fused_score": 0.9427274465560913,
+      "pose_valid": true,
+      "object_support": 0.10689017176628113
+    },
+    {
+      "id": "8594e05e8a56819b_1",
+      "source": "real-actiondata-all/捡东西25.mp4",
+      "split": "train",
+      "timestamp": 1.4666666666666666,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9563257098197937,
+      "fused_score": 0.9335446953773499,
+      "pose_valid": true,
+      "object_support": 0.10689017176628113
+    },
+    {
+      "id": "68f13a8512ef7609_6",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 4.08,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9544234275817871,
+      "fused_score": 0.955630362033844,
+      "pose_valid": true,
+      "object_support": 0.49866485595703125
+    },
+    {
+      "id": "68f13a8512ef7609_7",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 4.6,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9538661241531372,
+      "fused_score": 0.9549214243888855,
+      "pose_valid": true,
+      "object_support": 0.49866485595703125
+    },
+    {
+      "id": "68f13a8512ef7609_8",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 5.12,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9514237642288208,
+      "fused_score": 0.9525189399719238,
+      "pose_valid": true,
+      "object_support": 0.33020704984664917
+    },
+    {
+      "id": "68f13a8512ef7609_9",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 5.64,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9518523216247559,
+      "fused_score": 0.953083872795105,
+      "pose_valid": true,
+      "object_support": 0.544883668422699
+    },
+    {
+      "id": "68f13a8512ef7609_18",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 10.32,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9562293291091919,
+      "fused_score": 0.9573057293891907,
+      "pose_valid": true,
+      "object_support": 0.5701595544815063
+    },
+    {
+      "id": "68f13a8512ef7609_27",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 15.0,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.9425681829452515,
+      "fused_score": 0.9434683918952942,
+      "pose_valid": true,
+      "object_support": 0.502077579498291
+    },
+    {
+      "id": "68f13a8512ef7609_28",
+      "source": "real-actiondata/喝水.mp4",
+      "split": "train",
+      "timestamp": 15.52,
+      "track_id": 1,
+      "truth": "drink",
+      "stage": "objects",
+      "rgb_score": 0.954047441482544,
+      "fused_score": 0.9525223970413208,
+      "pose_valid": true,
+      "object_support": 0.20374669134616852
+    },
+    {
+      "id": "cbcdd343aba8623e_13",
+      "source": "real-actiondata/抛物.mp4",
+      "split": "train",
+      "timestamp": 7.72,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9579764604568481,
+      "fused_score": 0.9579702019691467,
+      "pose_valid": true,
+      "object_support": 0.04458236321806908
+    },
+    {
+      "id": "cbcdd343aba8623e_32",
+      "source": "real-actiondata/抛物.mp4",
+      "split": "train",
+      "timestamp": 17.6,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9559640884399414,
+      "fused_score": 0.9502652287483215,
+      "pose_valid": true,
+      "object_support": 0.03265021741390228
+    },
+    {
+      "id": "cbcdd343aba8623e_33",
+      "source": "real-actiondata/抛物.mp4",
+      "split": "train",
+      "timestamp": 18.12,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9437032341957092,
+      "fused_score": 0.9440260529518127,
+      "pose_valid": true,
+      "object_support": 0.043454091995954514
+    },
+    {
+      "id": "8cedf1246047632a_1",
+      "source": "real-actiondata/捡东西.mp4",
+      "split": "train",
+      "timestamp": 1.48,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.953745424747467,
+      "fused_score": 0.9272928237915039,
+      "pose_valid": true,
+      "object_support": 0.009024943225085735
+    },
+    {
+      "id": "8cedf1246047632a_2",
+      "source": "real-actiondata/捡东西.mp4",
+      "split": "train",
+      "timestamp": 2.0,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9525694847106934,
+      "fused_score": 0.9268814325332642,
+      "pose_valid": true,
+      "object_support": 0.20651264488697052
+    },
+    {
+      "id": "8cedf1246047632a_36",
+      "source": "real-actiondata/捡东西.mp4",
+      "split": "train",
+      "timestamp": 19.72,
+      "track_id": 1,
+      "truth": "pick_up",
+      "stage": "objects",
+      "rgb_score": 0.9546594619750977,
+      "fused_score": 0.9507325291633606,
+      "pose_valid": true,
+      "object_support": 0.4418623447418213
+    }
+  ],
+  "object_threshold_diagnostics": [
+    {
+      "threshold": 0.581,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 426,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9513823298917108,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 177,
+              "fp": 2,
+              "fn": 29,
+              "f1": 0.9194805194805195
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 23,
+              "fp": 2,
+              "fn": 13,
+              "f1": 0.7540983606557377
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 42,
+              "fn": 5,
+              "f1": 0.991747146619842
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 1,
+      "new_known_drink_tp": 0
+    },
+    {
+      "threshold": 0.55,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 428,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.954702739937855,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 178,
+              "fp": 2,
+              "fn": 28,
+              "f1": 0.9222797927461139
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 24,
+              "fp": 2,
+              "fn": 12,
+              "f1": 0.7741935483870968
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 40,
+              "fn": 5,
+              "f1": 0.9920955559458985
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 4,
+      "new_known_drink_tp": 0
+    },
+    {
+      "threshold": 0.5,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 431,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9559648170981522,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 181,
+              "fp": 2,
+              "fn": 25,
+              "f1": 0.9305912596401028
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 24,
+              "fp": 2,
+              "fn": 12,
+              "f1": 0.7741935483870968
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 37,
+              "fn": 5,
+              "f1": 0.9926186291739895
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 36,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.8248658777120316,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 5,
+              "fp": 0,
+              "fn": 6,
+              "f1": 0.625
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 14,
+              "fn": 2,
+              "f1": 0.9526627218934911
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 9,
+      "new_known_drink_tp": 0
+    },
+    {
+      "threshold": 0.35,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 441,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9647653625147833,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 189,
+              "fp": 2,
+              "fn": 17,
+              "f1": 0.9521410579345088
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 26,
+              "fp": 2,
+              "fn": 10,
+              "f1": 0.8125
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 27,
+              "fn": 5,
+              "f1": 0.9943661971830986
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 37,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.8416077267702334,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 6,
+              "fp": 0,
+              "fn": 5,
+              "f1": 0.7058823529411765
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 13,
+              "fn": 2,
+              "f1": 0.9554896142433235
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 16,
+      "new_known_drink_tp": 0
+    },
+    {
+      "threshold": 0.1,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 455,
+          "other_total": 2829,
+          "other_false": 8,
+          "macro_f1": 0.9753032242708067,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 198,
+              "fp": 2,
+              "fn": 8,
+              "f1": 0.9753694581280788
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 31,
+              "fp": 5,
+              "fn": 5,
+              "f1": 0.8611111111111112
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2821,
+              "fp": 13,
+              "fn": 8,
+              "f1": 0.9962917181705809
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 27,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.8315151515151514,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 2,
+              "fn": 1,
+              "f1": 0.6666666666666666
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 9,
+              "fn": 3,
+              "f1": 0.9636363636363636
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 38,
+          "other_total": 163,
+          "other_false": 4,
+          "macro_f1": 0.8295003941696439,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 6,
+              "fp": 0,
+              "fn": 5,
+              "f1": 0.7058823529411765
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.8
+            },
+            "other": {
+              "total": 163,
+              "tp": 159,
+              "fp": 12,
+              "fn": 4,
+              "f1": 0.9520958083832335
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 29,
+      "new_known_drink_tp": 0
+    },
+    {
+      "threshold": 0.01,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 463,
+          "other_total": 2829,
+          "other_false": 9,
+          "macro_f1": 0.983761560305233,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 202,
+              "fp": 2,
+              "fn": 4,
+              "f1": 0.9853658536585366
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 35,
+              "fp": 6,
+              "fn": 1,
+              "f1": 0.9090909090909091
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2820,
+              "fp": 5,
+              "fn": 9,
+              "f1": 0.9975238769013088
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 28,
+          "other_total": 162,
+          "other_false": 4,
+          "macro_f1": 0.8435920177383593,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.7272727272727273
+            },
+            "other": {
+              "total": 162,
+              "tp": 158,
+              "fp": 8,
+              "fn": 4,
+              "f1": 0.9634146341463414
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 40,
+          "other_total": 163,
+          "other_false": 4,
+          "macro_f1": 0.857892079596582,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 8,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8421052631578947
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 4,
+              "fp": 2,
+              "fn": 0,
+              "f1": 0.8
+            },
+            "other": {
+              "total": 163,
+              "tp": 159,
+              "fp": 10,
+              "fn": 4,
+              "f1": 0.9578313253012049
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 65,
+      "new_known_drink_tp": 1
+    }
+  ],
+  "causal_memory_diagnostics": [
+    {
+      "seconds": 1.0,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 426,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.9513823298917108,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 177,
+              "fp": 2,
+              "fn": 29,
+              "f1": 0.9194805194805195
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 23,
+              "fp": 2,
+              "fn": 13,
+              "f1": 0.7540983606557377
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 42,
+              "fn": 5,
+              "f1": 0.991747146619842
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 1,
+      "new_known_drink_tp": 0,
+      "changes": []
+    },
+    {
+      "seconds": 2.0,
+      "old": {
+        "train": {
+          "known": 3297,
+          "unknown": 459,
+          "positive_total": 468,
+          "positive_correct": 436,
+          "other_total": 2829,
+          "other_false": 5,
+          "macro_f1": 0.958028273157168,
+          "classes": {
+            "wave": {
+              "total": 122,
+              "tp": 122,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "throw": {
+              "total": 6,
+              "tp": 6,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "chase": {
+              "total": 88,
+              "tp": 88,
+              "fp": 1,
+              "fn": 0,
+              "f1": 0.9943502824858758
+            },
+            "fall": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "drink": {
+              "total": 206,
+              "tp": 186,
+              "fp": 2,
+              "fn": 20,
+              "f1": 0.9441624365482234
+            },
+            "pick_up": {
+              "total": 36,
+              "tp": 24,
+              "fp": 2,
+              "fn": 12,
+              "f1": 0.7741935483870968
+            },
+            "other": {
+              "total": 2829,
+              "tp": 2824,
+              "fp": 32,
+              "fn": 5,
+              "f1": 0.9934916446789798
+            }
+          }
+        },
+        "val": {
+          "known": 198,
+          "unknown": 28,
+          "positive_total": 36,
+          "positive_correct": 25,
+          "other_total": 162,
+          "other_false": 3,
+          "macro_f1": 0.7541636676576435,
+          "classes": {
+            "wave": {
+              "total": 9,
+              "tp": 6,
+              "fp": 0,
+              "fn": 3,
+              "f1": 0.8
+            },
+            "chase": {
+              "total": 13,
+              "tp": 8,
+              "fp": 1,
+              "fn": 5,
+              "f1": 0.7272727272727273
+            },
+            "drink": {
+              "total": 10,
+              "tp": 10,
+              "fp": 0,
+              "fn": 0,
+              "f1": 1.0
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "f1": 0.2857142857142857
+            },
+            "other": {
+              "total": 162,
+              "tp": 159,
+              "fp": 11,
+              "fn": 3,
+              "f1": 0.9578313253012049
+            }
+          }
+        },
+        "test": {
+          "known": 214,
+          "unknown": 38,
+          "positive_total": 51,
+          "positive_correct": 34,
+          "other_total": 163,
+          "other_false": 2,
+          "macro_f1": 0.7844593837535013,
+          "classes": {
+            "wave": {
+              "total": 11,
+              "tp": 11,
+              "fp": 3,
+              "fn": 0,
+              "f1": 0.88
+            },
+            "chase": {
+              "total": 25,
+              "tp": 17,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.8095238095238095
+            },
+            "drink": {
+              "total": 11,
+              "tp": 3,
+              "fp": 0,
+              "fn": 8,
+              "f1": 0.42857142857142855
+            },
+            "pick_up": {
+              "total": 4,
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "f1": 0.8571428571428571
+            },
+            "other": {
+              "total": 163,
+              "tp": 161,
+              "fp": 16,
+              "fn": 2,
+              "f1": 0.9470588235294117
+            }
+          }
+        }
+      },
+      "new_known_drink_fp": 1,
+      "new_known_drink_tp": 0,
+      "changes": [
+        {
+          "id": "68f13a8512ef7609_6",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata/喝水.mp4",
+          "timestamp": 4.08,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 2.56,
+          "from_window": "68f13a8512ef7609_5"
+        },
+        {
+          "id": "68f13a8512ef7609_18",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata/喝水.mp4",
+          "timestamp": 10.32,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 8.8,
+          "from_window": "68f13a8512ef7609_17"
+        },
+        {
+          "id": "68f13a8512ef7609_27",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata/喝水.mp4",
+          "timestamp": 15.0,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 13.72,
+          "from_window": "68f13a8512ef7609_26"
+        },
+        {
+          "id": "68f13a8512ef7609_28",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata/喝水.mp4",
+          "timestamp": 15.52,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 13.72,
+          "from_window": "68f13a8512ef7609_26"
+        },
+        {
+          "id": "692f42ad7971542b_3",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata-all/喝水.mp4",
+          "timestamp": 2.52,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 1.0,
+          "from_window": "692f42ad7971542b_2"
+        },
+        {
+          "id": "8cedf1246047632a_36",
+          "truth": "pick_up",
+          "is_drink": null,
+          "source": "real-actiondata/捡东西.mp4",
+          "timestamp": 19.72,
+          "track_id": 1,
+          "label": "pick_up",
+          "proof_time": 18.2,
+          "from_window": "8cedf1246047632a_35"
+        },
+        {
+          "id": "a02f3d1c93a8e74f_4",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata-all/喝水28.mp4",
+          "timestamp": 2.966666666666667,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 1.4666666666666666,
+          "from_window": "a02f3d1c93a8e74f_3"
+        },
+        {
+          "id": "fada77e68305ac31_3",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata-all/喝水32.mp4",
+          "timestamp": 2.52,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 1.0,
+          "from_window": "fada77e68305ac31_2"
+        },
+        {
+          "id": "fb82c167efa488f9_2",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata-all/喝水24.mp4",
+          "timestamp": 1.9666666666666666,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 0.7333333333333333,
+          "from_window": "fb82c167efa488f9_1"
+        },
+        {
+          "id": "fb82c167efa488f9_3",
+          "truth": "drink",
+          "is_drink": null,
+          "source": "real-actiondata-all/喝水24.mp4",
+          "timestamp": 2.466666666666667,
+          "track_id": 1,
+          "label": "drink",
+          "proof_time": 0.7333333333333333,
+          "from_window": "fb82c167efa488f9_1"
+        }
+      ]
+    }
+  ],
+  "exact_runtime_memory": [
+    {
+      "source": "new-01",
+      "seconds": 1.0,
+      "events": 5565,
+      "changed_windows": 0,
+      "changes": []
+    },
+    {
+      "source": "new-01",
+      "seconds": 2.0,
+      "events": 5565,
+      "changed_windows": 0,
+      "changes": []
+    },
+    {
+      "source": "new-07",
+      "seconds": 1.0,
+      "events": 6312,
+      "changed_windows": 0,
+      "changes": []
+    },
+    {
+      "source": "new-07",
+      "seconds": 2.0,
+      "events": 6312,
+      "changed_windows": 0,
+      "changes": []
+    },
+    {
+      "source": "new-09",
+      "seconds": 1.0,
+      "events": 5036,
+      "changed_windows": 0,
+      "changes": []
+    },
+    {
+      "source": "new-09",
+      "seconds": 2.0,
+      "events": 5036,
+      "changed_windows": 0,
+      "changes": []
+    }
+  ],
+  "limits": "New 9-video evidence uses historical approximate actor binding; only 527 original drink candidates have binary feedback. Old test is historical and already inspected. Memory is decision-only replay, not integrated real-time behavior."
+}

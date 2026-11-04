@@ -1,0 +1,1680 @@
+[
+  {
+    "id": "long-videos-new-01-T44-G1-F574",
+    "scope": "long-videos",
+    "directory": "long-videos/new-01",
+    "source": {
+      "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+      "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+      "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "bytes": 214371254,
+      "sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "duration": 395.04,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 9876,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 1
+    },
+    "track_id": 44,
+    "history_generation": 1,
+    "start": 22.96,
+    "end": 22.96,
+    "baseline_windows": 1,
+    "candidate_windows": 1,
+    "indices": [
+      226
+    ],
+    "representative": 226,
+    "counts": [
+      0,
+      6
+    ],
+    "reliable": [
+      26,
+      23
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 1,
+      "3_total": 1,
+      "5_total": 1,
+      "8_total": 0,
+      "3_consecutive": 1,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-01-T44-G1-F574.jpg"
+  },
+  {
+    "id": "long-videos-new-01-T658-G0-F6660",
+    "scope": "long-videos",
+    "directory": "long-videos/new-01",
+    "source": {
+      "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+      "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+      "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "bytes": 214371254,
+      "sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "duration": 395.04,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 9876,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 1
+    },
+    "track_id": 658,
+    "history_generation": 0,
+    "start": 266.4,
+    "end": 266.4,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      3793
+    ],
+    "representative": 3793,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-01-T658-G0-F6660.jpg"
+  },
+  {
+    "id": "long-videos-new-01-T815-G1-F8276",
+    "scope": "long-videos",
+    "directory": "long-videos/new-01",
+    "source": {
+      "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+      "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+      "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "bytes": 214371254,
+      "sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "duration": 395.04,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 9876,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 1
+    },
+    "track_id": 815,
+    "history_generation": 1,
+    "start": 331.04,
+    "end": 331.04,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      4721
+    ],
+    "representative": 4721,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-01-T815-G1-F8276.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T237-G0-F2382",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 237,
+    "history_generation": 0,
+    "start": 95.28,
+    "end": 95.8,
+    "baseline_windows": 2,
+    "candidate_windows": 0,
+    "indices": [
+      1109,
+      1113
+    ],
+    "representative": 1109,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T237-G0-F2382.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T311-G0-F3388",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 311,
+    "history_generation": 0,
+    "start": 135.52,
+    "end": 135.52,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      1552
+    ],
+    "representative": 1552,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      12,
+      12
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T311-G0-F3388.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T311-G1-F3664",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 311,
+    "history_generation": 1,
+    "start": 146.56,
+    "end": 146.56,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      1681
+    ],
+    "representative": 1681,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      18,
+      4
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T311-G1-F3664.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T311-G1-F3703",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 311,
+    "history_generation": 1,
+    "start": 148.12,
+    "end": 148.64,
+    "baseline_windows": 2,
+    "candidate_windows": 0,
+    "indices": [
+      1699,
+      1705
+    ],
+    "representative": 1699,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      16,
+      0
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T311-G1-F3703.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T321-G0-F3874",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 321,
+    "history_generation": 0,
+    "start": 154.96,
+    "end": 154.96,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      1771
+    ],
+    "representative": 1771,
+    "counts": [
+      1,
+      0
+    ],
+    "reliable": [
+      16,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 1,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T321-G0-F3874.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T559-G0-F6109",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 559,
+    "history_generation": 0,
+    "start": 244.36,
+    "end": 245.4,
+    "baseline_windows": 3,
+    "candidate_windows": 0,
+    "indices": [
+      3104,
+      3111,
+      3117
+    ],
+    "representative": 3104,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      1,
+      3
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T559-G0-F6109.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T894-G0-F10049",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 894,
+    "history_generation": 0,
+    "start": 401.96,
+    "end": 401.96,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      4748
+    ],
+    "representative": 4748,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T894-G0-F10049.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T913-G0-F10526",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 913,
+    "history_generation": 0,
+    "start": 421.04,
+    "end": 421.04,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      4951
+    ],
+    "representative": 4951,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T913-G0-F10526.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T894-G0-F10727",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 894,
+    "history_generation": 0,
+    "start": 429.08,
+    "end": 429.08,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      5043
+    ],
+    "representative": 5043,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T894-G0-F10727.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T942-G1-F10775",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 942,
+    "history_generation": 1,
+    "start": 431.0,
+    "end": 431.0,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      5064
+    ],
+    "representative": 5064,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      19,
+      25
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T942-G1-F10775.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T894-G2-F11201",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 894,
+    "history_generation": 2,
+    "start": 448.04,
+    "end": 448.04,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      5255
+    ],
+    "representative": 5255,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T894-G2-F11201.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T966-G0-F11284",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 966,
+    "history_generation": 0,
+    "start": 451.36,
+    "end": 451.88,
+    "baseline_windows": 2,
+    "candidate_windows": 0,
+    "indices": [
+      5279,
+      5283
+    ],
+    "representative": 5279,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      15,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T966-G0-F11284.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T992-G0-F11880",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 992,
+    "history_generation": 0,
+    "start": 475.2,
+    "end": 475.2,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      5519
+    ],
+    "representative": 5519,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-07-T992-G0-F11880.jpg"
+  },
+  {
+    "id": "long-videos-new-07-T992-G0-F11919",
+    "scope": "long-videos",
+    "directory": "long-videos/new-07",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 166479314,
+      "sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "duration": 540.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 13500,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 7
+    },
+    "track_id": 992,
+    "history_generation": 0,
+    "start": 476.76,
+    "end": 476.76,
+    "baseline_windows": 1,
+    "candidate_windows": 1,
+    "indices": [
+      5539
+    ],
+    "representative": 5539,
+    "counts": [
+      0,
+      13
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 1,
+      "3_total": 1,
+      "5_total": 1,
+      "8_total": 1,
+      "3_consecutive": 1,
+      "5_consecutive": 1,
+      "8_consecutive": 1
+    },
+    "image": "wave-review/long-videos-new-07-T992-G0-F11919.jpg"
+  },
+  {
+    "id": "long-videos-new-09-T607-G0-F3466",
+    "scope": "long-videos",
+    "directory": "long-videos/new-09",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+      "bytes": 131077996,
+      "sha256": "ef0658fe87e45bc8a43f608057f5fc26b2810aa307a56a7e2f017c5b747d974d",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/data-10-25-manypeople/extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+      "duration": 242.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "frames": 6050,
+      "codec": "h264",
+      "probe_errors": "",
+      "number": 9
+    },
+    "track_id": 607,
+    "history_generation": 0,
+    "start": 138.64,
+    "end": 138.64,
+    "baseline_windows": 1,
+    "candidate_windows": 1,
+    "indices": [
+      2992
+    ],
+    "representative": 2992,
+    "counts": [
+      11,
+      1
+    ],
+    "reliable": [
+      16,
+      16
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 1,
+      "3_total": 1,
+      "5_total": 1,
+      "8_total": 1,
+      "3_consecutive": 1,
+      "5_consecutive": 1,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/long-videos-new-09-T607-G0-F3466.jpg"
+  },
+  {
+    "id": "wave-shorts-new-01-child-retained-T9-G1-F124",
+    "scope": "wave-shorts",
+    "directory": "wave-shorts/new-01-child-retained",
+    "source": {
+      "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+      "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+      "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "bytes": 209294705,
+      "sha256": "afd0609aa2341a23bde6819506a18224a2d0a539ba9abf98a8f5ac3d1a6b1070",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/wave-pose-prior-20261027/inputs/new-01-child-retained.mkv",
+      "duration": 12.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 25.0,
+      "frames": 300,
+      "codec": "ffv1",
+      "probe_errors": "",
+      "number": 1,
+      "id": "new-01-child-retained",
+      "source_offset": 18,
+      "original_sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+      "original_bytes": 214371254
+    },
+    "track_id": 9,
+    "history_generation": 1,
+    "start": 4.96,
+    "end": 4.96,
+    "baseline_windows": 1,
+    "candidate_windows": 1,
+    "indices": [
+      57
+    ],
+    "representative": 57,
+    "counts": [
+      0,
+      6
+    ],
+    "reliable": [
+      26,
+      23
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 1,
+      "3_total": 1,
+      "5_total": 1,
+      "8_total": 0,
+      "3_consecutive": 1,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/wave-shorts-new-01-child-retained-T9-G1-F124.jpg"
+  },
+  {
+    "id": "wave-shorts-new-01-wave-veto-T14-G0-F135",
+    "scope": "wave-shorts",
+    "directory": "wave-shorts/new-01-wave-veto",
+    "source": {
+      "archive": "vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.7z",
+      "archive_sha256": "477f26dcd4275f89289e3bdc2033d16e1edc86b0f73c38a169b5fdcf3895cfbc",
+      "path": "extracted/archive-01/vlc-record-2026-10-20-08h45m12s-存储_一层展厅内中心屏_20261005130000_20261005135959_1.avi-.avi",
+      "bytes": 193774844,
+      "sha256": "efd16a18202431c5ecc3ce6282d4754e5b36e3b5abdad09844d76a4ea9957107",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/wave-pose-prior-20261027/inputs/new-01-wave-veto.mkv",
+      "duration": 12.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 25.0,
+      "frames": 300,
+      "codec": "ffv1",
+      "probe_errors": "",
+      "number": 1,
+      "id": "new-01-wave-veto",
+      "source_offset": 261,
+      "original_sha256": "385d3649ab4e247e67fa49d53d972e7cfbc1c11ee371e7b809aecfde696caea2",
+      "original_bytes": 214371254
+    },
+    "track_id": 14,
+    "history_generation": 0,
+    "start": 5.4,
+    "end": 5.4,
+    "baseline_windows": 1,
+    "candidate_windows": 0,
+    "indices": [
+      74
+    ],
+    "representative": 74,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/wave-shorts-new-01-wave-veto-T14-G0-F135.jpg"
+  },
+  {
+    "id": "wave-shorts-new-07-standing-veto-T23-G0-F132",
+    "scope": "wave-shorts",
+    "directory": "wave-shorts/new-07-standing-veto",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅5#屏_20261016145000_20261016145900.avi",
+      "bytes": 204870824,
+      "sha256": "2891cc22e50a5e29bfbd165ecc435c34fd48d8af204b275510e3a07703219684",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/wave-pose-prior-20261027/inputs/new-07-standing-veto.mkv",
+      "duration": 12.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 25.0,
+      "frames": 300,
+      "codec": "ffv1",
+      "probe_errors": "",
+      "number": 7,
+      "id": "new-07-standing-veto",
+      "source_offset": 90,
+      "original_sha256": "93558ea6c0dddbaeaec4a595a7c203a74e1ba582046b9454239e1a2325fd9dad",
+      "original_bytes": 166479314
+    },
+    "track_id": 23,
+    "history_generation": 0,
+    "start": 5.28,
+    "end": 5.8,
+    "baseline_windows": 2,
+    "candidate_windows": 0,
+    "indices": [
+      22,
+      25
+    ],
+    "representative": 22,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      26,
+      26
+    ],
+    "reason": "insufficient_raised_wrist_frames",
+    "variants": {
+      "1_total": 0,
+      "3_total": 0,
+      "5_total": 0,
+      "8_total": 0,
+      "3_consecutive": 0,
+      "5_consecutive": 0,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/wave-shorts-new-07-standing-veto-T23-G0-F132.jpg"
+  },
+  {
+    "id": "wave-shorts-new-09-raised-retained-T29-G0-F141",
+    "scope": "wave-shorts",
+    "directory": "wave-shorts/new-09-raised-retained",
+    "source": {
+      "archive": "大厅视频.7z",
+      "archive_sha256": "762ede5c7806371f80330b5cfe4ef24d2d8e8e8c21a966ee33a9e6a85e6c889f",
+      "path": "extracted/archive-02/存储_一层展厅内中心屏_20261016144800_20261016145200.avi",
+      "bytes": 215351555,
+      "sha256": "29449706c2e50185b0fe7988bfb55c0b35762c634c1a752e8e7b906b6bf0c50d",
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/wave-pose-prior-20261027/inputs/new-09-raised-retained.mkv",
+      "duration": 12.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": 25.0,
+      "frames": 300,
+      "codec": "ffv1",
+      "probe_errors": "",
+      "number": 9,
+      "id": "new-09-raised-retained",
+      "source_offset": 133,
+      "original_sha256": "ef0658fe87e45bc8a43f608057f5fc26b2810aa307a56a7e2f017c5b747d974d",
+      "original_bytes": 131077996
+    },
+    "track_id": 29,
+    "history_generation": 0,
+    "start": 5.64,
+    "end": 5.64,
+    "baseline_windows": 1,
+    "candidate_windows": 1,
+    "indices": [
+      110
+    ],
+    "representative": 110,
+    "counts": [
+      11,
+      1
+    ],
+    "reliable": [
+      16,
+      16
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 1,
+      "3_total": 1,
+      "5_total": 1,
+      "8_total": 1,
+      "3_consecutive": 1,
+      "5_consecutive": 1,
+      "8_consecutive": 0
+    },
+    "image": "wave-review/wave-shorts-new-09-raised-retained-T29-G0-F141.jpg"
+  },
+  {
+    "id": "old-videos-1fa7b05d59e8d258-T1-G0-F29",
+    "scope": "old-videos",
+    "directory": "old-videos/1fa7b05d59e8d258",
+    "source": {
+      "source": "real-actiondata-all/挥手30.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "1fa7b05d59e8d258a86d6a1bfe8ee82d0227ecb661cf96b62e990d3722dfbf73",
+      "bytes": 2102917,
+      "frames": 81,
+      "fps": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.7,
+      "validation": "container metadata only; full decode pending",
+      "id": "1fa7b05d59e8d258",
+      "aliases": [
+        "real-actiondata-all/挥手30.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-all"
+      ],
+      "split": "val",
+      "group": "1fa7b05d59e8d258",
+      "raw_mean_luma": 118.96756192435215,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/1fa7b05d59e8d258/result.json",
+      "cache_sha256": "25415560bd156f6f6370b46a2f9fb21bedb3f51a7bdad35bc7409ca0e7cb3899",
+      "scope": "onsite",
+      "windows": 12,
+      "box_frames": 81,
+      "people_mode": 3,
+      "people_max": 3,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手30.mp4",
+      "duration": 2.7,
+      "number": 0
+    },
+    "track_id": 1,
+    "history_generation": 0,
+    "start": 0.9666666666666667,
+    "end": 2.466666666666667,
+    "baseline_windows": 4,
+    "candidate_windows": 4,
+    "indices": [
+      0,
+      3,
+      6,
+      9
+    ],
+    "representative": 0,
+    "counts": [
+      0,
+      22
+    ],
+    "reliable": [
+      30,
+      30
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 4,
+      "3_total": 4,
+      "5_total": 4,
+      "8_total": 4,
+      "3_consecutive": 4,
+      "5_consecutive": 4,
+      "8_consecutive": 4
+    },
+    "image": "wave-review/old-videos-1fa7b05d59e8d258-T1-G0-F29.jpg"
+  },
+  {
+    "id": "old-videos-220cc82202abab6e-T1-G0-F29",
+    "scope": "old-videos",
+    "directory": "old-videos/220cc82202abab6e",
+    "source": {
+      "source": "real-actiondata-all/挥手33.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "220cc82202abab6e20a8912c365b479ea909d553f8be50130a1a8ad81e4106cd",
+      "bytes": 2032636,
+      "frames": 78,
+      "fps": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.6,
+      "validation": "container metadata only; full decode pending",
+      "id": "220cc82202abab6e",
+      "aliases": [
+        "real-actiondata-all/挥手33.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-all"
+      ],
+      "split": "val",
+      "group": "220cc82202abab6e",
+      "raw_mean_luma": 120.92318282034532,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/220cc82202abab6e/result.json",
+      "cache_sha256": "9b426c4213560206569c24c4435c5cead6f2ea4082a39ea51a53398053da6c64",
+      "scope": "onsite",
+      "windows": 4,
+      "box_frames": 78,
+      "people_mode": 1,
+      "people_max": 1,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手33.mp4",
+      "duration": 2.6,
+      "number": 0
+    },
+    "track_id": 1,
+    "history_generation": 0,
+    "start": 0.9666666666666667,
+    "end": 2.466666666666667,
+    "baseline_windows": 4,
+    "candidate_windows": 4,
+    "indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "representative": 0,
+    "counts": [
+      18,
+      0
+    ],
+    "reliable": [
+      30,
+      30
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 4,
+      "3_total": 4,
+      "5_total": 4,
+      "8_total": 4,
+      "3_consecutive": 4,
+      "5_consecutive": 4,
+      "8_consecutive": 4
+    },
+    "image": "wave-review/old-videos-220cc82202abab6e-T1-G0-F29.jpg"
+  },
+  {
+    "id": "old-videos-56f605e0ad40c73a-T1-G0-F29",
+    "scope": "old-videos",
+    "directory": "old-videos/56f605e0ad40c73a",
+    "source": {
+      "source": "real-actiondata-all/挥手28.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "56f605e0ad40c73a2bf3bdb5360219283e55707b5a5feb2ddb5cadfa66ae5895",
+      "bytes": 2048023,
+      "frames": 85,
+      "fps": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.8333333333333335,
+      "validation": "container metadata only; full decode pending",
+      "id": "56f605e0ad40c73a",
+      "aliases": [
+        "real-actiondata-all/挥手28.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-all"
+      ],
+      "split": "test",
+      "group": "56f605e0ad40c73a",
+      "raw_mean_luma": 120.70845334227171,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/56f605e0ad40c73a/result.json",
+      "cache_sha256": "c6c4913f6903abb970c4692e9be0735a95e3312e22da80a74feab0bf8c1f4601",
+      "scope": "onsite",
+      "windows": 11,
+      "box_frames": 85,
+      "people_mode": 3,
+      "people_max": 4,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手28.mp4",
+      "duration": 2.8333333333333335,
+      "number": 0
+    },
+    "track_id": 1,
+    "history_generation": 0,
+    "start": 0.9666666666666667,
+    "end": 2.466666666666667,
+    "baseline_windows": 4,
+    "candidate_windows": 4,
+    "indices": [
+      0,
+      2,
+      5,
+      8
+    ],
+    "representative": 0,
+    "counts": [
+      1,
+      22
+    ],
+    "reliable": [
+      30,
+      30
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 4,
+      "3_total": 4,
+      "5_total": 4,
+      "8_total": 4,
+      "3_consecutive": 4,
+      "5_consecutive": 4,
+      "8_consecutive": 4
+    },
+    "image": "wave-review/old-videos-56f605e0ad40c73a-T1-G0-F29.jpg"
+  },
+  {
+    "id": "old-videos-92b9a42823e68e4e-T2-G0-F29",
+    "scope": "old-videos",
+    "directory": "old-videos/92b9a42823e68e4e",
+    "source": {
+      "source": "real-actiondata-all/挥手29.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "92b9a42823e68e4e801599bf14b430f23dd2f62e41c8d48986633d4ebab66d6a",
+      "bytes": 2156658,
+      "frames": 87,
+      "fps": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 2.9,
+      "validation": "container metadata only; full decode pending",
+      "id": "92b9a42823e68e4e",
+      "aliases": [
+        "real-actiondata-all/挥手29.mp4"
+      ],
+      "datasets": [
+        "real-actiondata-all"
+      ],
+      "split": "test",
+      "group": "92b9a42823e68e4e",
+      "raw_mean_luma": 120.2751460343879,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/92b9a42823e68e4e/result.json",
+      "cache_sha256": "4d82f139bf6a2f2806f43d74c45eab7d49cc49e019218cd715d0fc0007409ebf",
+      "scope": "onsite",
+      "windows": 12,
+      "box_frames": 87,
+      "people_mode": 3,
+      "people_max": 3,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手29.mp4",
+      "duration": 2.9,
+      "number": 0
+    },
+    "track_id": 2,
+    "history_generation": 0,
+    "start": 0.9666666666666667,
+    "end": 2.033333333333333,
+    "baseline_windows": 3,
+    "candidate_windows": 3,
+    "indices": [
+      0,
+      5,
+      8
+    ],
+    "representative": 0,
+    "counts": [
+      18,
+      0
+    ],
+    "reliable": [
+      29,
+      29
+    ],
+    "reason": "wrist_above_both_shoulders",
+    "variants": {
+      "1_total": 3,
+      "3_total": 3,
+      "5_total": 3,
+      "8_total": 3,
+      "3_consecutive": 3,
+      "5_consecutive": 3,
+      "8_consecutive": 3
+    },
+    "image": "wave-review/old-videos-92b9a42823e68e4e-T2-G0-F29.jpg"
+  },
+  {
+    "id": "old-videos-b576f320195dfed9-T2-G0-F24",
+    "scope": "old-videos",
+    "directory": "old-videos/b576f320195dfed9",
+    "source": {
+      "source": "real-actiondata-all/挥手3.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "b576f320195dfed9a3dba0015a91c35753a28a9be8f77653c509dce3bce14658",
+      "bytes": 9336054,
+      "frames": 160,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 6.4,
+      "validation": "container metadata only; full decode pending",
+      "id": "b576f320195dfed9",
+      "aliases": [
+        "real-actiondata-all/挥手3.mp4",
+        "real-actiondata-0909/挥手3.mp4",
+        "real-actiondata/挥手3.mp4",
+        "real-actiondata-cutdrink/挥手3.mp4"
+      ],
+      "datasets": [
+        "real-actiondata",
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "split": "train",
+      "group": "d0ab8993eff23b00",
+      "raw_mean_luma": 30.99133724729699,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/b576f320195dfed9/result.json",
+      "cache_sha256": "dc23cd23389e036bed5d3079c8640118479a076ec731c493c5b25f45267d886a",
+      "scope": "onsite",
+      "windows": 22,
+      "box_frames": 160,
+      "people_mode": 2,
+      "people_max": 2,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手3.mp4",
+      "duration": 6.4,
+      "number": 0
+    },
+    "track_id": 2,
+    "history_generation": 0,
+    "start": 0.96,
+    "end": 5.64,
+    "baseline_windows": 10,
+    "candidate_windows": 10,
+    "indices": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      12,
+      15,
+      16,
+      18
+    ],
+    "representative": 1,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      0,
+      0
+    ],
+    "reason": "below_luma_gate",
+    "variants": {
+      "1_total": 10,
+      "3_total": 10,
+      "5_total": 10,
+      "8_total": 10,
+      "3_consecutive": 10,
+      "5_consecutive": 10,
+      "8_consecutive": 10
+    },
+    "image": "wave-review/old-videos-b576f320195dfed9-T2-G0-F24.jpg"
+  },
+  {
+    "id": "old-videos-c99b19d78b33d718-T1-G0-F24",
+    "scope": "old-videos",
+    "directory": "old-videos/c99b19d78b33d718",
+    "source": {
+      "source": "real-actiondata-all/挥手12.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "c99b19d78b33d71839b414de98889a52787f0c9ab00c44f40cc453c076d75779",
+      "bytes": 4225763,
+      "frames": 130,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 5.2,
+      "validation": "container metadata only; full decode pending",
+      "id": "c99b19d78b33d718",
+      "aliases": [
+        "real-actiondata-all/挥手12.mp4",
+        "real-actiondata-0909/挥手12.mp4",
+        "real-actiondata/挥手12.mp4",
+        "real-actiondata-cutdrink/挥手12.mp4"
+      ],
+      "datasets": [
+        "real-actiondata",
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "split": "train",
+      "group": "d0ab8993eff23b00",
+      "raw_mean_luma": 21.25714582680143,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/c99b19d78b33d718/result.json",
+      "cache_sha256": "7ff52a4a9360994a9e15f7f05119f5a30f96d80429630e4f8387bc00a21969e8",
+      "scope": "onsite",
+      "windows": 9,
+      "box_frames": 130,
+      "people_mode": 1,
+      "people_max": 2,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手12.mp4",
+      "duration": 5.2,
+      "number": 0
+    },
+    "track_id": 1,
+    "history_generation": 0,
+    "start": 0.96,
+    "end": 5.12,
+    "baseline_windows": 9,
+    "candidate_windows": 9,
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "representative": 0,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      0,
+      0
+    ],
+    "reason": "below_luma_gate",
+    "variants": {
+      "1_total": 9,
+      "3_total": 9,
+      "5_total": 9,
+      "8_total": 9,
+      "3_consecutive": 9,
+      "5_consecutive": 9,
+      "8_consecutive": 9
+    },
+    "image": "wave-review/old-videos-c99b19d78b33d718-T1-G0-F24.jpg"
+  },
+  {
+    "id": "old-videos-d0ab8993eff23b00-T2-G0-F24",
+    "scope": "old-videos",
+    "directory": "old-videos/d0ab8993eff23b00",
+    "source": {
+      "source": "real-actiondata-all/挥手1.mp4",
+      "dataset": "real-actiondata-all",
+      "video_label": "wave",
+      "label_provenance": "historical video label",
+      "processed": false,
+      "sealed_holdout": false,
+      "person_annotations": "not yet reviewed",
+      "sha256": "d0ab8993eff23b007c6a83c65e3151b5525fb3a8af7591645a053cb519875a1f",
+      "bytes": 6085733,
+      "frames": 115,
+      "fps": 25.0,
+      "width": 1920,
+      "height": 1080,
+      "seconds": 4.6,
+      "validation": "container metadata only; full decode pending",
+      "id": "d0ab8993eff23b00",
+      "aliases": [
+        "real-actiondata-all/挥手1.mp4",
+        "real-actiondata-0909/挥手1.mp4",
+        "real-actiondata/挥手1.mp4",
+        "real-actiondata-cutdrink/挥手1.mp4"
+      ],
+      "datasets": [
+        "real-actiondata",
+        "real-actiondata-0909",
+        "real-actiondata-all",
+        "real-actiondata-cutdrink"
+      ],
+      "split": "train",
+      "group": "d0ab8993eff23b00",
+      "raw_mean_luma": 30.896610123433533,
+      "demo": false,
+      "cache": "reports/person-release-20261024/data/d0ab8993eff23b00/result.json",
+      "cache_sha256": "37bfc256a18f317af79d1bdb5742efa731f7f0ad2394d51c5a57baf9cf60f1d0",
+      "scope": "onsite",
+      "windows": 14,
+      "box_frames": 115,
+      "people_mode": 2,
+      "people_max": 2,
+      "absolute_path": "/ssd1/wfs/project/lowlight/DarkScenePipeline/real-actiondata-all/挥手1.mp4",
+      "duration": 4.6,
+      "number": 0
+    },
+    "track_id": 2,
+    "history_generation": 0,
+    "start": 0.96,
+    "end": 4.08,
+    "baseline_windows": 7,
+    "candidate_windows": 7,
+    "indices": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13
+    ],
+    "representative": 1,
+    "counts": [
+      0,
+      0
+    ],
+    "reliable": [
+      0,
+      0
+    ],
+    "reason": "below_luma_gate",
+    "variants": {
+      "1_total": 7,
+      "3_total": 7,
+      "5_total": 7,
+      "8_total": 7,
+      "3_consecutive": 7,
+      "5_consecutive": 7,
+      "8_consecutive": 7
+    },
+    "image": "wave-review/old-videos-d0ab8993eff23b00-T2-G0-F24.jpg"
+  }
+]

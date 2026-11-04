@@ -1,0 +1,802 @@
+[
+  {
+    "path": "archive-demos/lighting-01/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "141"
+        }
+      ],
+      "format": {
+        "duration": "5.640000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-01/clips/review/E000_T001_G000/R00002/drinking_water/E000_T001_G000_R00002_20261028_215701_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "140"
+        }
+      ],
+      "format": {
+        "duration": "5.600000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-01/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261028_215700_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "75"
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-02/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "159"
+        }
+      ],
+      "format": {
+        "duration": "6.360000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-02/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261028_215712_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "101"
+        }
+      ],
+      "format": {
+        "duration": "4.040000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-02/clips/review/E000_T003_G000/R00002/drinking_water/E000_T003_G000_R00002_20261028_215713_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "157"
+        }
+      ],
+      "format": {
+        "duration": "6.280000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-03/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "133"
+        }
+      ],
+      "format": {
+        "duration": "5.320000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-03/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261028_215724_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "132"
+        }
+      ],
+      "format": {
+        "duration": "5.280000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-04/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "67"
+        }
+      ],
+      "format": {
+        "duration": "2.680000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-05/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "169"
+        }
+      ],
+      "format": {
+        "duration": "6.760000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-05/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261028_215742_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "168"
+        }
+      ],
+      "format": {
+        "duration": "6.720000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-06/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "56"
+        }
+      ],
+      "format": {
+        "duration": "2.240000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-07/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "133"
+        }
+      ],
+      "format": {
+        "duration": "5.320000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-08/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "78"
+        }
+      ],
+      "format": {
+        "duration": "3.120000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-08/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261028_215811_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "77"
+        }
+      ],
+      "format": {
+        "duration": "3.080000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-09/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "54"
+        }
+      ],
+      "format": {
+        "duration": "1.800000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-09/clips/review/E000_T002_G000/R00001/picking_up_object/E000_T002_G000_R00001_20261028_215819_picking_up_object_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "53"
+        }
+      ],
+      "format": {
+        "duration": "1.767000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-10/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "36"
+        }
+      ],
+      "format": {
+        "duration": "1.200000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-11/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "27/1",
+          "nb_frames": "74"
+        }
+      ],
+      "format": {
+        "duration": "2.741000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-12/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "81"
+        }
+      ],
+      "format": {
+        "duration": "2.700000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/lighting-13/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "29/1",
+          "nb_frames": "59"
+        }
+      ],
+      "format": {
+        "duration": "2.035000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-挥手22/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "54"
+        }
+      ],
+      "format": {
+        "duration": "2.160000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-挥手22/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261028_215848_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "53"
+        }
+      ],
+      "format": {
+        "duration": "2.120000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-挥手32/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "93"
+        }
+      ],
+      "format": {
+        "duration": "3.100000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-挥手32/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261028_215856_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "93"
+        }
+      ],
+      "format": {
+        "duration": "3.100000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-追逐20/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "95"
+        }
+      ],
+      "format": {
+        "duration": "3.800000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-追逐20/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261028_215903_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "75"
+        }
+      ],
+      "format": {
+        "duration": "3.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-喝水27/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "125"
+        }
+      ],
+      "format": {
+        "duration": "4.167000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/rule-喝水27/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261028_215913_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "30/1",
+          "nb_frames": "125"
+        }
+      ],
+      "format": {
+        "duration": "4.167000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-child/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-child/clips/review/E000_T020_G001/R00003/running/E000_T020_G001_R00003_20261028_215953_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-child/clips/review/E000_T020_G001/R00001/running/E000_T020_G001_R00001_20261028_215944_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-child/clips/review/E000_T027_G001/R00002/waving/E000_T027_G001_R00002_20261028_215950_waving_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-walking/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-phone/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-phone/clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261028_220215_drinking_water_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "102"
+        }
+      ],
+      "format": {
+        "duration": "4.080000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/crowd-camera/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "750"
+        }
+      ],
+      "format": {
+        "duration": "30.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/new-01-wave-veto/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/new-01-wave-veto/clips/review/E000_T006_G000/R00001/running/E000_T006_G000_R00001_20261028_220439_running_0001.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "101"
+        }
+      ],
+      "format": {
+        "duration": "4.040000"
+      }
+    },
+    "stderr": ""
+  },
+  {
+    "path": "archive-demos/new-07-standing-veto/output.mp4",
+    "passed": true,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 720,
+          "height": 404,
+          "avg_frame_rate": "25/1",
+          "nb_frames": "300"
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    },
+    "stderr": ""
+  }
+]

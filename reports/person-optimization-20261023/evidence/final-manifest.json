@@ -1,0 +1,24 @@
+{
+  "checkpoint_sha256": {
+    "roi": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf",
+    "production": "d30b36c4c1ca9ab276442b4d0544b3d705f4ead68c7dcb5a721b696f9ee5f362"
+  },
+  "code_sha256": {
+    "reports/person-optimization-20261023/scripts/make_report.py": "7ffca6e3d06948f2593344724785bfe0f21dac521e137888965f4e2d7e7b64c2",
+    "reports/person-optimization-20261023/scripts/profile_actions.py": "76851a67956ca80347f2f2cd639571ad3984756539020a218281c030272c8c8e",
+    "reports/person-optimization-20261023/scripts/action_engine.py": "f46022bd0432b0be963135ec3b15e6027efa702c181e52649c22c8e51e3847e1",
+    "reports/person-optimization-20261023/scripts/runtime.py": "7a16ac910d7f7253333a2a31f13aba488ecb87b5d092191bc7ccb36176f5f0c0",
+    "reports/person-optimization-20261023/scripts/verify_live.py": "75b86c24ac8a49d0e94b721a0231c410bb036486e13dadbfc426ace16149c181",
+    "reports/person-optimization-20261023/scripts/summarize.py": "e3ab205036ccb3fbf8b1cbbac76bba775201ddb61bf5a14b1cf5e6bee96c9370",
+    "reports/person-optimization-20261023/scripts/live_replay.py": "ea7eeef7b33d64f7d8ce5f4496d892852be6bd7a87baf64e829a0d7ab0853bda",
+    "reports/person-optimization-20261023/scripts/run_demo.py": "ea640c2a6748e4dbcb87f4e95b41573f5a4ee70dc045c1516d8f666e22d915b0",
+    "reports/person-optimization-20261023/scripts/verify_runs.py": "2d5961ae2b23571bdf2082c32c2717485321609a1a83a3296fe0326608f1bde3",
+    "reports/person-optimization-20261023/scripts/scheduling.py": "f1dc4c5bc859e3640c3cd53ef64d7aae3bb8efbaf806a139ad90598702b1d5c6",
+    "reports/person-optimization-20261023/scripts/accuracy_regression.py": "f9c7988da1777f5829a65f4622a065a330746a548575305ed4321c2d505f2938",
+    "reports/person-optimization-20261023/scripts/process_pool.py": "abfc4587a175d383a2df635f252878b74270b73df97e7b4d00be54de1e18a25d",
+    "reports/person-optimization-20261023/scripts/benchmark.py": "15d2a00d1087697a4002683f265834f91c919a77e44c0dec78e41c9c3c1ef34b",
+    "tests/test_person_optimized_scheduling.py": "62b1f35c021e590bc462e92a299111a1cb43c0424759dabfe94b3b0ea4326e9e"
+  },
+  "production_changed_by_this_task": false,
+  "accuracy_scope": "Frozen 204 windows and unchanged full-frame input replay; not live sampling equivalence"
+}

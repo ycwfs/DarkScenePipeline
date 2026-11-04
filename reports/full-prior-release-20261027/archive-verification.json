@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "platform_payload_files": 69,
+  "box_payload_files": 88,
+  "unchanged_model_files": 13,
+  "added_model_files": 0,
+  "changed_from_object_prior_release": [
+    "CLAUDE.md",
+    "README.md",
+    "darkpipe/config.py",
+    "darkpipe/person/action_engine.py",
+    "darkpipe/person/core.py",
+    "darkpipe/person/running_prior.py",
+    "darkpipe/person/runtime.py",
+    "darkpipe/person/wave_prior.py",
+    "main.py",
+    "models.json",
+    "suanzi.json"
+  ],
+  "archives": [
+    {
+      "path": "platform/dark-demo-v2_full_priors_20261027.tar.gz",
+      "alias": "platform/dark-demo-v2.tar.gz",
+      "sha256": "bf814f30efefb87851ab33da7de8491be70f6bf3f0061d8acb629c8b656c3841",
+      "bytes": 417898523
+    },
+    {
+      "path": "platform/dark-demo-v2_full_priors_20261027.zip",
+      "alias": "platform/dark-demo-v2.zip",
+      "sha256": "ef52fb06722f2aadc261f06f094591c1f40b06688fa0a3d0f01d4e3bba9b0b02",
+      "bytes": 417932498
+    },
+    {
+      "path": "NVIDIA-Box_full_priors_20261027.zip",
+      "alias": "NVIDIA-Box.zip",
+      "sha256": "11d4c56ebd55eab7c5053e3a0ed0b3c52907b285570a790ebff023e5a962b481",
+      "bytes": 450288872
+    }
+  ],
+  "model_training": false,
+  "object_prior": true
+}

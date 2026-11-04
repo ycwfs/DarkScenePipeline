@@ -1,0 +1,17 @@
+{
+  "formal_cli_manifest_defaults_match_flow": true,
+  "flow_models_sha_matches": true,
+  "actual_ppt_defaults_verified": true,
+  "formal_wave_running_parameters": {
+    "wave_pose_min_frames": false,
+    "running_pose_min_speed": false
+  },
+  "defaults": {
+    "skel_fusion_alpha": 0.972,
+    "lum_gate": 35.0,
+    "reco_min_conf": 0.925,
+    "object_min_conf": 0.581,
+    "person_object_prior": true
+  },
+  "formal_and_candidate_distinction": "Formal flow and package exclude wave/running priors; isolated running candidate includes both."
+}

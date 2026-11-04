@@ -1,0 +1,13 @@
+{
+  "annotator": "Codex visual inspection of original/gamma frames",
+  "coordinate_system": "native 1920x1080 pixels",
+  "review_status": "pending_user_review",
+  "include_in_training": false,
+  "note": "Additional first/last frame boxes; interpolation is only a draft. No pose visibility is confirmed.",
+  "frames": [
+    {"video":"挥手18","frame_index_zero_based":0,"bbox_xyxy":[270,80,792,960]},
+    {"video":"挥手18","frame_index_zero_based":66,"bbox_xyxy":[790,190,1180,1080]},
+    {"video":"捡东西1","frame_index_zero_based":0,"bbox_xyxy":[570,230,880,902]},
+    {"video":"捡东西1","frame_index_zero_based":71,"bbox_xyxy":[720,120,1036,788]}
+  ]
+}

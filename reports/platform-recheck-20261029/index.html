@@ -1,0 +1,144 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>平台复核 · 2026-10-29</title>
+<style>body{font:16px system-ui,sans-serif;max-width:1150px;margin:32px auto;padding:0 20px;color:#22354a}video{width:100%;max-height:640px;background:#111}a{color:#2264ab}article{border-top:1px solid #ccd6df;padding-top:20px;margin-top:28px}p{line-height:1.7}td,th{padding:8px;border-bottom:1px solid #ddd;text-align:left}table{border-collapse:collapse;width:100%}</style>
+<h1>当前平台包 · 完整功能与实时复核</h1>
+<p>对应10月27日完整先验正式包。原镜像、三GPU实时推流，外部接收录像。模型和阈值未改；展示实际误报/漏报。</p>
+<p><a href="README.md">完整报告与限制</a> · <a href="live/effective-config.json">实际参数</a> · <a href="../full-prior-release-20261027/index.html">原报告结果</a></p>
+<h2>15分钟连续真实流输出</h2><video id="stream" controls preload="metadata" src="live/full-output-15min.mp4"></video>
+<p><a href="live/full-output-15min.mp4">下载15分钟展示版</a> · <a href="live/full-output-stream.mp4">保留黑色预热和尾部的完整接收版</a> · <a href="live/clips-index.html">全部实时动作片段</a></p>
+<p>实际处理17661帧；保存85段，82段前后文完整。片段根据最终人物动作保存，完整输出与片段显示时刻可能因异步回绘缓冲不同而略有差异。</p>
+<h2>23段同输入复跑</h2>
+<article id="lighting-01"><h3>喝水4</h3>
+<p>帧数141；峰值检测人数2；人物窗口9；最终标签 {&#x27;chase&#x27;: 1, &#x27;drink&#x27;: 8}</p>
+<video controls preload="none" poster="demos/lighting-01/preview.jpg" src="demos/lighting-01/output.mp4"></video>
+<p><a href="demos/lighting-01/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/喝水4.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-01/clips/review/E000_T001_G000/R00002/drinking_water/E000_T001_G000_R00002_20261029_022305_drinking_water_0001.mp4">E000_T001_G000_R00002_20261029_022305_drinking_water_0001.mp4</a></p>
+<p><a href="demos/lighting-01/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261029_022304_running_0001.mp4">E000_T001_G000_R00001_20261029_022304_running_0001.mp4</a></p>
+</details></article>
+<article id="lighting-02"><h3>喝水7</h3>
+<p>帧数159；峰值检测人数3；人物窗口15；最终标签 {&#x27;other&#x27;: 6, &#x27;drink&#x27;: 9}</p>
+<video controls preload="none" poster="demos/lighting-02/preview.jpg" src="demos/lighting-02/output.mp4"></video>
+<p><a href="demos/lighting-02/events.json">事件及先验证据</a> · <a href="../../real-actiondata/喝水7.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-02/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261029_022320_drinking_water_0001.mp4">E000_T001_G000_R00001_20261029_022320_drinking_water_0001.mp4</a></p>
+<p><a href="demos/lighting-02/clips/review/E000_T003_G000/R00002/drinking_water/E000_T003_G000_R00002_20261029_022321_drinking_water_0001.mp4">E000_T003_G000_R00002_20261029_022321_drinking_water_0001.mp4</a></p>
+</details></article>
+<article id="lighting-03"><h3>挥手13</h3>
+<p>帧数133；峰值检测人数2；人物窗口8；最终标签 {&#x27;other&#x27;: 2, &#x27;wave&#x27;: 6}</p>
+<video controls preload="none" poster="demos/lighting-03/preview.jpg" src="demos/lighting-03/output.mp4"></video>
+<p><a href="demos/lighting-03/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/挥手13.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-03/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261029_022336_waving_0001.mp4">E000_T001_G000_R00001_20261029_022336_waving_0001.mp4</a></p>
+</details></article>
+<article id="lighting-04"><h3>捡东西5</h3>
+<p>帧数67；峰值检测人数1；人物窗口4；最终标签 {&#x27;other&#x27;: 4}</p>
+<video controls preload="none" poster="demos/lighting-04/preview.jpg" src="demos/lighting-04/output.mp4"></video>
+<p><a href="demos/lighting-04/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/捡东西5.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="lighting-05"><h3>挥手4</h3>
+<p>帧数169；峰值检测人数2；人物窗口24；最终标签 {&#x27;other&#x27;: 14, &#x27;wave&#x27;: 10}</p>
+<video controls preload="none" poster="demos/lighting-05/preview.jpg" src="demos/lighting-05/output.mp4"></video>
+<p><a href="demos/lighting-05/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/挥手4.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-05/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261029_022359_waving_0001.mp4">E000_T001_G000_R00001_20261029_022359_waving_0001.mp4</a></p>
+</details></article>
+<article id="lighting-06"><h3>捡东西8</h3>
+<p>帧数56；峰值检测人数2；人物窗口2；最终标签 {&#x27;chase&#x27;: 1, &#x27;other&#x27;: 1}</p>
+<video controls preload="none" poster="demos/lighting-06/preview.jpg" src="demos/lighting-06/output.mp4"></video>
+<p><a href="demos/lighting-06/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/捡东西8.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-06/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261029_022414_running_0001.mp4">E000_T001_G000_R00001_20261029_022414_running_0001.mp4</a></p>
+</details></article>
+<article id="lighting-07"><h3>other83</h3>
+<p>帧数133；峰值检测人数1；人物窗口9；最终标签 {&#x27;other&#x27;: 9}</p>
+<video controls preload="none" poster="demos/lighting-07/preview.jpg" src="demos/lighting-07/output.mp4"></video>
+<p><a href="demos/lighting-07/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/other/other83.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="lighting-08"><h3>喝水18</h3>
+<p>帧数78；峰值检测人数1；人物窗口5；最终标签 {&#x27;drink&#x27;: 3, &#x27;other&#x27;: 2}</p>
+<video controls preload="none" poster="demos/lighting-08/preview.jpg" src="demos/lighting-08/output.mp4"></video>
+<p><a href="demos/lighting-08/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/喝水18.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-08/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261029_022438_drinking_water_0001.mp4">E000_T001_G000_R00001_20261029_022438_drinking_water_0001.mp4</a></p>
+</details></article>
+<article id="lighting-09"><h3>捡东西14</h3>
+<p>帧数54；峰值检测人数2；人物窗口3；最终标签 {&#x27;other&#x27;: 2, &#x27;pick_up&#x27;: 1}</p>
+<video controls preload="none" poster="demos/lighting-09/preview.jpg" src="demos/lighting-09/output.mp4"></video>
+<p><a href="demos/lighting-09/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/捡东西14.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/lighting-09/clips/review/E000_T002_G000/R00001/picking_up_object/E000_T002_G000_R00001_20261029_022449_picking_up_object_0001.mp4">E000_T002_G000_R00001_20261029_022449_picking_up_object_0001.mp4</a></p>
+</details></article>
+<article id="lighting-10"><h3>other91</h3>
+<p>帧数36；峰值检测人数3；人物窗口3；最终标签 {&#x27;other&#x27;: 3}</p>
+<video controls preload="none" poster="demos/lighting-10/preview.jpg" src="demos/lighting-10/output.mp4"></video>
+<p><a href="demos/lighting-10/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/other/other91.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="lighting-11"><h3>20261012_100424_drinking_water_0077</h3>
+<p>帧数74；峰值检测人数4；人物窗口14；最终标签 {&#x27;other&#x27;: 14}</p>
+<video controls preload="none" poster="demos/lighting-11/preview.jpg" src="demos/lighting-11/output.mp4"></video>
+<p><a href="demos/lighting-11/events.json">事件及先验证据</a> · <a href="../../online-negative-sample/20261012_083305_78/drinking_water/20261012_100424_drinking_water_0077.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="lighting-12"><h3>20261012_100047_waving_0068</h3>
+<p>帧数81；峰值检测人数8；人物窗口31；最终标签 {&#x27;other&#x27;: 31}</p>
+<video controls preload="none" poster="demos/lighting-12/preview.jpg" src="demos/lighting-12/output.mp4"></video>
+<p><a href="demos/lighting-12/events.json">事件及先验证据</a> · <a href="../../online-negative-sample/20261012_083305_78/waving/20261012_100047_waving_0068.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="lighting-13"><h3>20261012_095918_drinking_water_0060</h3>
+<p>帧数59；峰值检测人数16；人物窗口34；最终标签 {&#x27;other&#x27;: 34}</p>
+<video controls preload="none" poster="demos/lighting-13/preview.jpg" src="demos/lighting-13/output.mp4"></video>
+<p><a href="demos/lighting-13/events.json">事件及先验证据</a> · <a href="../../online-negative-sample/20261012_083305_78/drinking_water/20261012_095918_drinking_water_0060.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="rule-挥手22"><h3>挥手22</h3>
+<p>帧数54；峰值检测人数1；人物窗口3；最终标签 {&#x27;wave&#x27;: 3}</p>
+<video controls preload="none" poster="demos/rule-挥手22/preview.jpg" src="demos/rule-挥手22/output.mp4"></video>
+<p><a href="demos/rule-挥手22/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/挥手22.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/rule-挥手22/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261029_022527_waving_0001.mp4">E000_T001_G000_R00001_20261029_022527_waving_0001.mp4</a></p>
+</details></article>
+<article id="rule-挥手32"><h3>挥手32</h3>
+<p>帧数93；峰值检测人数2；人物窗口6；最终标签 {&#x27;other&#x27;: 2, &#x27;wave&#x27;: 4}</p>
+<video controls preload="none" poster="demos/rule-挥手32/preview.jpg" src="demos/rule-挥手32/output.mp4"></video>
+<p><a href="demos/rule-挥手32/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/挥手32.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/rule-挥手32/clips/review/E000_T001_G000/R00001/waving/E000_T001_G000_R00001_20261029_022537_waving_0001.mp4">E000_T001_G000_R00001_20261029_022537_waving_0001.mp4</a></p>
+</details></article>
+<article id="rule-追逐20"><h3>追逐20</h3>
+<p>帧数95；峰值检测人数1；人物窗口1；最终标签 {&#x27;chase&#x27;: 1}</p>
+<video controls preload="none" poster="demos/rule-追逐20/preview.jpg" src="demos/rule-追逐20/output.mp4"></video>
+<p><a href="demos/rule-追逐20/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/追逐20.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/rule-追逐20/clips/review/E000_T001_G000/R00001/running/E000_T001_G000_R00001_20261029_022546_running_0001.mp4">E000_T001_G000_R00001_20261029_022546_running_0001.mp4</a></p>
+</details></article>
+<article id="rule-喝水27"><h3>喝水27</h3>
+<p>帧数125；峰值检测人数1；人物窗口7；最终标签 {&#x27;other&#x27;: 2, &#x27;drink&#x27;: 5}</p>
+<video controls preload="none" poster="demos/rule-喝水27/preview.jpg" src="demos/rule-喝水27/output.mp4"></video>
+<p><a href="demos/rule-喝水27/events.json">事件及先验证据</a> · <a href="../../real-actiondata-all/喝水27.mp4">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/rule-喝水27/clips/review/E000_T001_G000/R00001/drinking_water/E000_T001_G000_R00001_20261029_022559_drinking_water_0001.mp4">E000_T001_G000_R00001_20261029_022559_drinking_water_0001.mp4</a></p>
+</details></article>
+<article id="crowd-child"><h3>new-01 10–40s</h3>
+<p>帧数750；峰值检测人数13；人物窗口369；最终标签 {&#x27;other&#x27;: 366, &#x27;chase&#x27;: 2, &#x27;wave&#x27;: 1}</p>
+<video controls preload="none" poster="demos/crowd-child/preview.jpg" src="demos/crowd-child/output.mp4"></video>
+<p><a href="demos/crowd-child/events.json">事件及先验证据</a> · <a href="../../reports/full-prior-release-20261027/inputs/child.mkv">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/crowd-child/clips/review/E000_T020_G001/R00003/running/E000_T020_G001_R00003_20261029_022651_running_0001.mp4">E000_T020_G001_R00003_20261029_022651_running_0001.mp4</a></p>
+<p><a href="demos/crowd-child/clips/review/E000_T020_G001/R00001/running/E000_T020_G001_R00001_20261029_022638_running_0001.mp4">E000_T020_G001_R00001_20261029_022638_running_0001.mp4</a></p>
+<p><a href="demos/crowd-child/clips/review/E000_T027_G001/R00002/waving/E000_T027_G001_R00002_20261029_022646_waving_0001.mp4">E000_T027_G001_R00002_20261029_022646_waving_0001.mp4</a></p>
+</details></article>
+<article id="crowd-walking"><h3>new-01 185–215s</h3>
+<p>帧数750；峰值检测人数14；人物窗口474；最终标签 {&#x27;other&#x27;: 474}</p>
+<video controls preload="none" poster="demos/crowd-walking/preview.jpg" src="demos/crowd-walking/output.mp4"></video>
+<p><a href="demos/crowd-walking/events.json">事件及先验证据</a> · <a href="../../reports/full-prior-release-20261027/inputs/walking.mkv">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+<article id="crowd-phone"><h3>new-07 10–40s</h3>
+<p>帧数750；峰值检测人数14；人物窗口415；最终标签 {&#x27;other&#x27;: 414, &#x27;drink&#x27;: 1}</p>
+<video controls preload="none" poster="demos/crowd-phone/preview.jpg" src="demos/crowd-phone/output.mp4"></video>
+<p><a href="demos/crowd-phone/events.json">事件及先验证据</a> · <a href="../../reports/full-prior-release-20261027/inputs/phone.mkv">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/crowd-phone/clips/review/E000_T003_G000/R00001/drinking_water/E000_T003_G000_R00001_20261029_022953_drinking_water_0001.mp4">E000_T003_G000_R00001_20261029_022953_drinking_water_0001.mp4</a></p>
+</details></article>
+<article id="crowd-camera"><h3>new-09 94–124s</h3>
+<p>帧数750；峰值检测人数19；人物窗口688；最终标签 {&#x27;other&#x27;: 687, &#x27;drink&#x27;: 1}</p>
+<video controls preload="none" poster="demos/crowd-camera/preview.jpg" src="demos/crowd-camera/output.mp4"></video>
+<p><a href="demos/crowd-camera/events.json">事件及先验证据</a> · <a href="../../reports/full-prior-release-20261027/inputs/camera.mkv">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/crowd-camera/clips/review/E000_T009_G000/R00001/drinking_water/E000_T009_G000_R00001_20261029_023128_drinking_water_0001.mp4">E000_T009_G000_R00001_20261029_023128_drinking_water_0001.mp4</a></p>
+</details></article>
+<article id="new-01-wave-veto"><h3>new-01-wave-veto</h3>
+<p>帧数300；峰值检测人数14；人物窗口189；最终标签 {&#x27;other&#x27;: 188, &#x27;chase&#x27;: 1}</p>
+<video controls preload="none" poster="demos/new-01-wave-veto/preview.jpg" src="demos/new-01-wave-veto/output.mp4"></video>
+<p><a href="demos/new-01-wave-veto/events.json">事件及先验证据</a> · <a href="../../reports/wave-pose-prior-20261027/inputs/new-01-wave-veto.mkv">输入视频</a></p><details><summary>本样本保存片段</summary>
+<p><a href="demos/new-01-wave-veto/clips/review/E000_T006_G000/R00001/running/E000_T006_G000_R00001_20261029_023304_running_0001.mp4">E000_T006_G000_R00001_20261029_023304_running_0001.mp4</a></p>
+</details></article>
+<article id="new-07-standing-veto"><h3>new-07-standing-veto</h3>
+<p>帧数300；峰值检测人数9；人物窗口86；最终标签 {&#x27;other&#x27;: 86}</p>
+<video controls preload="none" poster="demos/new-07-standing-veto/preview.jpg" src="demos/new-07-standing-veto/output.mp4"></video>
+<p><a href="demos/new-07-standing-veto/events.json">事件及先验证据</a> · <a href="../../reports/wave-pose-prior-20261027/inputs/new-07-standing-veto.mkv">输入视频</a></p><details><summary>本样本保存片段</summary>
+</details></article>
+</html>

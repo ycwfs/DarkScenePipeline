@@ -1,0 +1,26 @@
+[
+  {
+    "video_id": "2f8105910668ee63",
+    "source": "real-actiondata-all/喝水1.mp4",
+    "split": "train",
+    "image": "draft-review/2f8105910668ee63.jpg",
+    "views": 4,
+    "proposals": 8
+  },
+  {
+    "video_id": "692f42ad7971542b",
+    "source": "real-actiondata-all/喝水.mp4",
+    "split": "train",
+    "image": "draft-review/692f42ad7971542b.jpg",
+    "views": 4,
+    "proposals": 10
+  },
+  {
+    "video_id": "98e5b2023b50498c",
+    "source": "real-actiondata-all/喝水10.mp4",
+    "split": "train",
+    "image": "draft-review/98e5b2023b50498c.jpg",
+    "views": 4,
+    "proposals": 6
+  }
+]

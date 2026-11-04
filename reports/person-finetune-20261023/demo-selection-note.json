@@ -1,0 +1,6 @@
+{
+  "reason": "Include the exact earlier user-reported 181324 feedback clip, in place of a third similar older crowd clip.",
+  "chosen_before_test_inference": true,
+  "model_predictions_used": false,
+  "samples": 10
+}

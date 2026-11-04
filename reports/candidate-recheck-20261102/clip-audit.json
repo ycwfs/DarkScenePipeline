@@ -1,0 +1,273 @@
+{
+  "count": 32,
+  "decoded_count": 32,
+  "incomplete": [
+    {
+      "file": "E000_T017_G000_R00016_20261102_010123_drinking_water_0001.mp4",
+      "duration": 15.0,
+      "context_complete": false,
+      "pre_context_available": 2.0,
+      "post_context_available": 0.480000000000004,
+      "writer_frames_dropped": 0
+    }
+  ],
+  "write_error_count": 0,
+  "clips": [
+    {
+      "file": "E000_T010_G000_R00004_20261102_010020_waving_0001.mp4",
+      "duration": 5.12,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999999,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T025_G000_R00024_20261102_010213_waving_0001.mp4",
+      "duration": 4.08,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T014_G000_R00010_20261102_010046_picking_up_object_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T017_G000_R00017_20261102_010141_drinking_water_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T017_G000_R00019_20261102_010151_drinking_water_0001.mp4",
+      "duration": 5.64,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T018_G000_R00020_20261102_010155_waving_0001.mp4",
+      "duration": 5.64,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T038_G003_R00027_20261102_010306_running_0001.mp4",
+      "duration": 5.12,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T010_G000_R00003_20261102_010006_waving_0001.mp4",
+      "duration": 12.92,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999999,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T016_G000_R00013_20261102_010057_waving_0001.mp4",
+      "duration": 5.6,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T012_G000_R00006_20261102_010028_running_0001.mp4",
+      "duration": 4.6,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T016_G000_R00015_20261102_010100_waving_0001.mp4",
+      "duration": 5.08,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T010_G000_R00001_20261102_005950_waving_0001.mp4",
+      "duration": 11.32,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0000000000000036,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T014_G000_R00011_20261102_010054_picking_up_object_0001.mp4",
+      "duration": 4.56,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T025_G000_R00023_20261102_010210_waving_0001.mp4",
+      "duration": 4.08,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T025_G000_R00025_20261102_010222_waving_0001.mp4",
+      "duration": 4.6,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T020_G000_R00021_20261102_010158_picking_up_object_0001.mp4",
+      "duration": 5.64,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T014_G000_R00009_20261102_010040_picking_up_object_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T014_G000_R00007_20261102_010032_drinking_water_0001.mp4",
+      "duration": 4.08,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999999,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T300_G000_R00032_20261102_010608_drinking_water_0001.mp4",
+      "duration": 7.16,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T014_G000_R00012_20261102_010055_drinking_water_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T119_G000_R00029_20261102_010346_running_0001.mp4",
+      "duration": 4.08,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T017_G000_R00018_20261102_010146_drinking_water_0001.mp4",
+      "duration": 5.64,
+      "context_complete": true,
+      "pre_context_available": 1.9999999999999858,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T016_G000_R00014_20261102_010059_drinking_water_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T017_G000_R00016_20261102_010123_drinking_water_0001.mp4",
+      "duration": 15.0,
+      "context_complete": false,
+      "pre_context_available": 2.0,
+      "post_context_available": 0.480000000000004,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T026_G000_R00026_20261102_010234_drinking_water_0001.mp4",
+      "duration": 5.64,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T014_G000_R00008_20261102_010036_waving_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 1.999999999999993,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T010_G000_R00002_20261102_010001_waving_0001.mp4",
+      "duration": 6.16,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999999,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T300_G000_R00031_20261102_010545_drinking_water_0001.mp4",
+      "duration": 4.04,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T060_G000_R00028_20261102_010306_waving_0001.mp4",
+      "duration": 4.08,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T011_G000_R00005_20261102_010024_drinking_water_0001.mp4",
+      "duration": 5.64,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000063,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T215_G000_R00030_20261102_010500_drinking_water_0001.mp4",
+      "duration": 5.12,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.0400000000000205,
+      "writer_frames_dropped": 0
+    },
+    {
+      "file": "E000_T021_G000_R00022_20261102_010204_running_0001.mp4",
+      "duration": 4.6,
+      "context_complete": true,
+      "pre_context_available": 2.0,
+      "post_context_available": 2.039999999999992,
+      "writer_frames_dropped": 0
+    }
+  ]
+}

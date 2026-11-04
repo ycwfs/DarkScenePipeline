@@ -1,0 +1,406 @@
+{
+  "models/videomamba_t_behavior_32f_person_roi_20261023.pth": {
+    "bytes": 28104357,
+    "sha256": "1077cd7d25351607d89fb5cce60b0924be9fb03cbb2045b3e27ce396af2771bf"
+  },
+  "models/model-card.json": {
+    "bytes": 25300,
+    "sha256": "36c31a4f000771f0bc4535f29a95dad8f33a5a1eaa5a5171efa41e937c70d74c"
+  },
+  "README.md": {
+    "bytes": 3891,
+    "sha256": "f473901433828abcab41666bc7fc02a1f8fd0de84daf94f8d20f670b918288b9"
+  },
+  "selection.json": {
+    "bytes": 365,
+    "sha256": "f611152b27ac46a36f61b1385fb160b3e3fd1dee9db936ff9e32e3f00c0ca84c"
+  },
+  "protocol.json": {
+    "bytes": 1709,
+    "sha256": "0a39ba8b5a7fa1e72713bd8b18b98baedac5468c9b5374c3272a07b3955f04d5"
+  },
+  "training-history.json": {
+    "bytes": 116151,
+    "sha256": "4328e69834e52de88e7b157f2cdbd410c2a285222b647da8ea9436ebcab9dcc2"
+  },
+  "analysis/results.json": {
+    "bytes": 128691,
+    "sha256": "18f6818430dd33f96dfbe39bdbe6b7e8d7f74d4134befc35c42893fb683d4dee"
+  },
+  "demo-comparison.json": {
+    "bytes": 11666,
+    "sha256": "59b34925c1a9e67289cbc70083034df3dd65015ac393bb31954a5a86d243f6ff"
+  },
+  "test-completion.json": {
+    "bytes": 236,
+    "sha256": "b6aafd100fa27a7576ea6ec6fed5a7afe0e83411b0a738308339e8b05d66bb4c"
+  },
+  "model-environment-provenance.json": {
+    "bytes": 1510,
+    "sha256": "90ca6bc803348f11ba2caf3ec8f2828537a1d07c2a26d6554612d4a59df5d92b"
+  },
+  "source-code-hashes.json": {
+    "bytes": 2443,
+    "sha256": "a91e6ce46caddd40f50611d7c1d3484b46809102e1bf62a57c7c11ebce77c0cc"
+  },
+  "RUNBOOK.md": {
+    "bytes": 4788,
+    "sha256": "4452ecf94ca9c8b78ae9f27991c7371c9e533beafeb60995ab7ce0a3443c29b4"
+  },
+  "demo-index.html": {
+    "bytes": 4477,
+    "sha256": "df71fe1d6b25df01bb1630ccb51e3a9c2d8f84973f640eb8907ff6b4cc95c548"
+  },
+  "annotations-review.html": {
+    "bytes": 52556,
+    "sha256": "e409220457abec07e40c96dd8c3eace35661d5fc28f8b1b7b3d62dee81c7afde"
+  },
+  "annotations.json": {
+    "bytes": 107354,
+    "sha256": "47604d712311d7846b902d27f7c1c478353548ce8435a140dd463da251d9ee52"
+  },
+  "splits.json": {
+    "bytes": 134109,
+    "sha256": "b48429fdb2167b55d870f72ba608ec5ca1e6784672ea8da87184ff1c80179efd"
+  },
+  "training-data.json": {
+    "bytes": 22615782,
+    "sha256": "51f93c974ed831530b26ee5c625fbb564850fb7e858f9f93602b51643b548584"
+  },
+  "label-amendment.json": {
+    "bytes": 475,
+    "sha256": "b8e3c1aece2a71ce29d54e12b2aabcaa2ebd72437e529380f2b593416dce1957"
+  },
+  "analysis/analysis-report.md": {
+    "bytes": 6057,
+    "sha256": "39c2f56d5fd6284dddd3ff5e01718677180e0b373657571d494e540eb80e6d53"
+  },
+  "analysis/stats-appendix.md": {
+    "bytes": 1368,
+    "sha256": "a9368a4ef8c8800be9ebf33406a2c81c11665deddcab16513d5df6b5f5539f67"
+  },
+  "analysis/figure-catalog.md": {
+    "bytes": 869,
+    "sha256": "1a836b056c0d472e26010170369707763324a9f34f310b448e398e1a4d3aa6a7"
+  },
+  "analysis/paired-test-windows.csv": {
+    "bytes": 32570,
+    "sha256": "faf9b2a9d900015978e7d74a8967f17eafee7d7f42b1af12fd54df5428c83f4f"
+  },
+  "analysis/figures/03-class-recall.pdf": {
+    "bytes": 16289,
+    "sha256": "6edb12f4fba1a2cdfcc58c6faf9966a3bfafe2a8f7d540cd4ea0481a15ef5c6e"
+  },
+  "analysis/figures/03-class-recall.png": {
+    "bytes": 44608,
+    "sha256": "fb57442225776bfa0da523bf0c0537a025ba6e1cfacf4cbecf34767f6112aa6a"
+  },
+  "analysis/figures/02-validation-and-coverage.svg": {
+    "bytes": 62973,
+    "sha256": "fe8609e26c2fff4c2ec10b7b34ad1243585e809c236d874f89a89ced06107cc9"
+  },
+  "analysis/figures/03-class-recall.svg": {
+    "bytes": 47905,
+    "sha256": "64256a0d42048d89aa74dfced393b76df8c533a54d2180816f05aacdec473d41"
+  },
+  "analysis/figures/02-validation-and-coverage.png": {
+    "bytes": 109598,
+    "sha256": "aeebae8d34ab2691da77ebc3af8e791e66e829397e76170eef8889a1864b68cf"
+  },
+  "analysis/figures/01-test-comparison.svg": {
+    "bytes": 51561,
+    "sha256": "dd3af76d19b1533b5ba86072e23d22fa62563ab40eea00b46a4398c94060e8b4"
+  },
+  "analysis/figures/01-test-comparison.pdf": {
+    "bytes": 18805,
+    "sha256": "4c0d5426dccce538aeb0f5f556ff222dd0313ac6795db0fd0b025c92a3d21890"
+  },
+  "analysis/figures/02-validation-and-coverage.pdf": {
+    "bytes": 20797,
+    "sha256": "90e88941fa80832bf856a248a196fb47761bd4d5424000e4a3e9216f4b1ce0cf"
+  },
+  "analysis/figures/01-test-comparison.png": {
+    "bytes": 78464,
+    "sha256": "3cec054c98a59310a76baf37ba182bc4512e6031547e2c91da26db740a4c5837"
+  },
+  "comparisons/喝水16_微调前后.mp4": {
+    "bytes": 453223,
+    "sha256": "bd2b4077386cad1133cc1a38ef843ae93cfadf91fafcfeb32ab86f0e29cb89d8"
+  },
+  "comparisons/回传留出_181324_微调前后.mp4": {
+    "bytes": 512623,
+    "sha256": "6b3f3e51bd9cda792c324d712160992d03adeda983d4aa10b8044f29c16a4d18"
+  },
+  "comparisons/挥手3_微调前后.mp4": {
+    "bytes": 1266863,
+    "sha256": "e4d8c946cd62c524f7c42f7f68e5da53b12cb4c4b2e5acefd2ea398eba27fc82"
+  },
+  "comparisons/多人0054_微调前后.mp4": {
+    "bytes": 771597,
+    "sha256": "369015f6be03b42c0dc0d1079e35bdace862e025f92ee9b28e121c3297206d17"
+  },
+  "comparisons/挥手4_微调前后.mp4": {
+    "bytes": 1383224,
+    "sha256": "13ce68c717c05786aa395f8f7ce9a928f683a34075ba835d644567a6b14edb22"
+  },
+  "comparisons/多人0060_微调前后.mp4": {
+    "bytes": 709243,
+    "sha256": "39772d3fd9a15e16275aad5b5061d8d875a77f30932aa67bd49196958331f974"
+  },
+  "comparisons/留出_捡东西23_微调前后.mp4": {
+    "bytes": 258513,
+    "sha256": "51260111714801e63733302f592c48a79dc5cb4f28e7887220530414c3377c9f"
+  },
+  "comparisons/留出_挥手28_微调前后.mp4": {
+    "bytes": 439083,
+    "sha256": "43c8bd053526e944750d86837293196959c99a08c5633454bdb1f8520fcbc32a"
+  },
+  "comparisons/挥手20_微调前后.mp4": {
+    "bytes": 419940,
+    "sha256": "6f50d93d43ac3de016340a262f8bc8537c4462bc36f402b86111c715b45f4d7a"
+  },
+  "comparisons/留出_喝水26_微调前后.mp4": {
+    "bytes": 496178,
+    "sha256": "58770e79957ee775f64c283fb7f4903d87a69e016b1d6987ece0885cf80840dc"
+  },
+  "demo/videos/喝水16_逐人融合.mp4": {
+    "bytes": 224506,
+    "sha256": "a66f9ea8045381bc27d83810d0367c9115650d8f33ca48b70676a6061b96f8de"
+  },
+  "demo/videos/挥手4_逐人融合.mp4": {
+    "bytes": 771571,
+    "sha256": "036c2a0c17696a0c5668fac0c7c5ac62f2f97e78ad587db2f6d93dd7a4fbe99f"
+  },
+  "demo/videos/留出_挥手28_逐人融合.mp4": {
+    "bytes": 227249,
+    "sha256": "56935ef9898f8c979da2ef12aa71bc75b656dbaca0aac651a569db827f5ac49e"
+  },
+  "demo/videos/留出_捡东西23_逐人融合.mp4": {
+    "bytes": 128792,
+    "sha256": "22cbe56e51e6ea3fe0f372cee075965fb75e11c63ba95da6ab28af7b7404a5a1"
+  },
+  "demo/videos/多人0060_逐人融合.mp4": {
+    "bytes": 517342,
+    "sha256": "aeca0f34c1d44f98ec2b48c4e0f0508b322a116ae68411ec79f3b67dd99c0d5f"
+  },
+  "demo/videos/挥手20_逐人融合.mp4": {
+    "bytes": 235958,
+    "sha256": "8311ef03da4678af7b907a3dc8b2c9d4e2b86699e79c23be1577b8ba0c2b2a68"
+  },
+  "demo/videos/多人0054_逐人融合.mp4": {
+    "bytes": 583391,
+    "sha256": "565903ce4d21265702e29db14ca7f07d9ce8fa2a3d48c3aaf1e789b42e6923b4"
+  },
+  "demo/videos/挥手3_逐人融合.mp4": {
+    "bytes": 691859,
+    "sha256": "9eadd9ea10b8b8274f2a548bc12040d72f63ce6a46cd2aaf2e746e30bff6a541"
+  },
+  "demo/videos/留出_喝水26_逐人融合.mp4": {
+    "bytes": 240681,
+    "sha256": "d61888026c5654020c51506dded0e1a801447cc99e40f58c47e1083b4720692a"
+  },
+  "demo/videos/回传留出_181324_逐人融合.mp4": {
+    "bytes": 306624,
+    "sha256": "04e81e9238c6add9caf069c43d473ca21c45746fbd235ec53ceb7f212e746a3f"
+  },
+  "demo/events/挥手4_frames.json": {
+    "bytes": 114651,
+    "sha256": "3ccc7f7fd16783f504a3375c091eda181e41d713f38f2f0fa910acf45df79e83"
+  },
+  "demo/events/回传留出_181324.json": {
+    "bytes": 13900,
+    "sha256": "e0c5113b1fb3d220f5aa25e2bf4f471c233f33ccaa7ff068361afa47865c6ce6"
+  },
+  "demo/events/挥手3.json": {
+    "bytes": 96456,
+    "sha256": "a6b6c0813a8a624b103b8fa97f4ae4f277e1993b821a725c02d2c150bd376d41"
+  },
+  "demo/events/喝水16_frames.json": {
+    "bytes": 29663,
+    "sha256": "d1ae8bbfcc247785dad2c9c41d00defc6e7cade687880316a0a6320b6ad3fc00"
+  },
+  "demo/events/多人0054.json": {
+    "bytes": 199341,
+    "sha256": "2d69b4418f75ce1c7430186b72889287cf6aa39d3371f9a71b837719f84ce6c0"
+  },
+  "demo/events/留出_挥手28_frames.json": {
+    "bytes": 75459,
+    "sha256": "04ffb6be590782b2c161e01e748d8c54d43d19e189ec2c87770bc00186c33ca1"
+  },
+  "demo/events/多人0054_frames.json": {
+    "bytes": 265761,
+    "sha256": "0cf1e4ee7938e3aadaec0501816a36fa159fb7b81bf33ff4b09cbddf9195fccf"
+  },
+  "demo/events/喝水16.json": {
+    "bytes": 18620,
+    "sha256": "408b8b0ecc7ac28723c2147dfda9df10801cf8a0890ac36481ab070d789cd667"
+  },
+  "demo/events/回传留出_181324_frames.json": {
+    "bytes": 25261,
+    "sha256": "a2daa677e299d48d25ed5a1fe5796aed72aee1be69754529c9cce9b0f3fe4b5f"
+  },
+  "demo/events/留出_捡东西23_frames.json": {
+    "bytes": 25477,
+    "sha256": "99dcf16255b49192377531cde5e506bbffd7e43084019f81aba59e07985084fa"
+  },
+  "demo/events/挥手20.json": {
+    "bytes": 14020,
+    "sha256": "359bae31b2510bc8c680cef8ee61a1d08024b2be55735a6a1f7246b148c6d119"
+  },
+  "demo/events/多人0060.json": {
+    "bytes": 189761,
+    "sha256": "ddc9e7715e7ec1339d9e3c57c11fb30bb9995c3ba63accfe7a562432572fbabf"
+  },
+  "demo/events/挥手4.json": {
+    "bytes": 105202,
+    "sha256": "a1be67d7421f41ec5c325aaeb86b4246442f5f62dc0c7debfb5da42115c15267"
+  },
+  "demo/events/挥手20_frames.json": {
+    "bytes": 22005,
+    "sha256": "7e7229727d8e6105a92f41ca9ad6a72f876c07ab00bb1d06528df17393fca2c2"
+  },
+  "demo/events/挥手3_frames.json": {
+    "bytes": 109128,
+    "sha256": "ed157831c780f73eaed0064672c4250aa514370389bc99ce654471696476cb6e"
+  },
+  "demo/events/多人0060_frames.json": {
+    "bytes": 245494,
+    "sha256": "8533d28f8b075513eeb9e7fd29f89d07b25d322788167b5ade944bf5edbf6adf"
+  },
+  "demo/events/留出_捡东西23.json": {
+    "bytes": 14980,
+    "sha256": "410fc4af55927e962fb2bf39fd93d48f30485ec6be22d70b2598e1e327d5cfe0"
+  },
+  "demo/events/留出_挥手28.json": {
+    "bytes": 52497,
+    "sha256": "bc84192d059ec554c3454e8974f3262faa4bd39ea59d719efd143df57ed4e0e3"
+  },
+  "demo/events/留出_喝水26.json": {
+    "bytes": 29815,
+    "sha256": "7188459e262086f98095a4789f31ab5758736caa36fa2266989010aad206ee7f"
+  },
+  "demo/events/留出_喝水26_frames.json": {
+    "bytes": 51928,
+    "sha256": "8d57bba70a4057398d85373283f67e610e29c1fec9d40e1b4cbd70bbda82dfd9"
+  },
+  "demo-baseline/videos/喝水16_逐人融合.mp4": {
+    "bytes": 224967,
+    "sha256": "140fd85fb8015ad31c820fc40ee4e1600f0f1c7de45c2bba5009b73674d9633c"
+  },
+  "demo-baseline/videos/挥手4_逐人融合.mp4": {
+    "bytes": 779800,
+    "sha256": "dd9eefa999d80b3428aaf4634621e842951bb5bb03583be862050277d5fbcf2f"
+  },
+  "demo-baseline/videos/留出_挥手28_逐人融合.mp4": {
+    "bytes": 227329,
+    "sha256": "3d86e32d41df9f3fba412001d0c67ae7a897faa380de95e2b2a9a93180bb22df"
+  },
+  "demo-baseline/videos/留出_捡东西23_逐人融合.mp4": {
+    "bytes": 128662,
+    "sha256": "40b3fba7efd1bf223f3c7eb229d8b9e1acd4f3defd554434e8f8f341b42094d2"
+  },
+  "demo-baseline/videos/多人0060_逐人融合.mp4": {
+    "bytes": 517342,
+    "sha256": "aeca0f34c1d44f98ec2b48c4e0f0508b322a116ae68411ec79f3b67dd99c0d5f"
+  },
+  "demo-baseline/videos/挥手20_逐人融合.mp4": {
+    "bytes": 235988,
+    "sha256": "0667683f2b048a1212adba45bfd37f17d321c16d9c4409e691447ed747baa16c"
+  },
+  "demo-baseline/videos/多人0054_逐人融合.mp4": {
+    "bytes": 584863,
+    "sha256": "0132ea909f9cf38dd9fd85e82e90b746d7d90f4a14a838a72224c62e379c9ba4"
+  },
+  "demo-baseline/videos/挥手3_逐人融合.mp4": {
+    "bytes": 702998,
+    "sha256": "97c250180cb845c5f0355b88642271f831a4962f01d4f25839f7d83fae676e5e"
+  },
+  "demo-baseline/videos/留出_喝水26_逐人融合.mp4": {
+    "bytes": 240348,
+    "sha256": "ea03f63186b4fa3a9565ff348f9bfecf1fe090d4ffbd587a713f1d121f8d8f27"
+  },
+  "demo-baseline/videos/回传留出_181324_逐人融合.mp4": {
+    "bytes": 306624,
+    "sha256": "04e81e9238c6add9caf069c43d473ca21c45746fbd235ec53ceb7f212e746a3f"
+  },
+  "demo-baseline/events/挥手4_frames.json": {
+    "bytes": 114625,
+    "sha256": "5e74c267c1356f65452642a2262b6e0528310f7ec7c47184514eef7995c237d6"
+  },
+  "demo-baseline/events/回传留出_181324.json": {
+    "bytes": 13899,
+    "sha256": "6d2179ae9423325de7d561a9300a87eefe821b086d9d16b145fa953cdc74fd3e"
+  },
+  "demo-baseline/events/挥手3.json": {
+    "bytes": 96289,
+    "sha256": "fe642fca9df397988cc96f77596259cc110eb8ba6405166b8687a1e0bfefb6ed"
+  },
+  "demo-baseline/events/喝水16_frames.json": {
+    "bytes": 29663,
+    "sha256": "d1ae8bbfcc247785dad2c9c41d00defc6e7cade687880316a0a6320b6ad3fc00"
+  },
+  "demo-baseline/events/多人0054.json": {
+    "bytes": 198807,
+    "sha256": "de7a4b7f754a60e368c8436915e9f61f3e9500bf5e5836e213e9f8a1c7eed75d"
+  },
+  "demo-baseline/events/留出_挥手28_frames.json": {
+    "bytes": 75459,
+    "sha256": "04ffb6be590782b2c161e01e748d8c54d43d19e189ec2c87770bc00186c33ca1"
+  },
+  "demo-baseline/events/多人0054_frames.json": {
+    "bytes": 265761,
+    "sha256": "50d5f968132b64297885294a008be0065dc12bdf5a0dcdb51159d88fdbfd0a78"
+  },
+  "demo-baseline/events/喝水16.json": {
+    "bytes": 18601,
+    "sha256": "df6670c56566fd6e9b1985dc1803907fc7fe5eff0b07c56ee7fab39dad49a879"
+  },
+  "demo-baseline/events/回传留出_181324_frames.json": {
+    "bytes": 25261,
+    "sha256": "a2daa677e299d48d25ed5a1fe5796aed72aee1be69754529c9cce9b0f3fe4b5f"
+  },
+  "demo-baseline/events/留出_捡东西23_frames.json": {
+    "bytes": 25477,
+    "sha256": "99dcf16255b49192377531cde5e506bbffd7e43084019f81aba59e07985084fa"
+  },
+  "demo-baseline/events/挥手20.json": {
+    "bytes": 14012,
+    "sha256": "5d5e657b314888a76e75edec469102b8e803853ecb6bf64cbc5437e7f903d58a"
+  },
+  "demo-baseline/events/多人0060.json": {
+    "bytes": 189304,
+    "sha256": "7282ad0f36e2fc00faad1520229c3598995969838f76c1a3bc0cef06664c9234"
+  },
+  "demo-baseline/events/挥手4.json": {
+    "bytes": 105004,
+    "sha256": "c714df13fc666e44483189197cb593c4cc8199c69ca503513c79f22659839be4"
+  },
+  "demo-baseline/events/挥手20_frames.json": {
+    "bytes": 22005,
+    "sha256": "7e7229727d8e6105a92f41ca9ad6a72f876c07ab00bb1d06528df17393fca2c2"
+  },
+  "demo-baseline/events/挥手3_frames.json": {
+    "bytes": 109128,
+    "sha256": "2db14dff91815ccfdf03adc824e85a64638fad36a51f9177a4738bfb13df556c"
+  },
+  "demo-baseline/events/多人0060_frames.json": {
+    "bytes": 245494,
+    "sha256": "8533d28f8b075513eeb9e7fd29f89d07b25d322788167b5ade944bf5edbf6adf"
+  },
+  "demo-baseline/events/留出_捡东西23.json": {
+    "bytes": 14950,
+    "sha256": "1cbba1fedd65e40b9ba4a5e5b55c1d79baae5d27b39f05dc6b546b1096e07fdd"
+  },
+  "demo-baseline/events/留出_挥手28.json": {
+    "bytes": 52351,
+    "sha256": "21af7d3018c4f8c137f000c0602a8f09e224f4eb29bf91c767aacc8877e0a944"
+  },
+  "demo-baseline/events/留出_喝水26.json": {
+    "bytes": 29788,
+    "sha256": "dc2363b97e4e8574d008ef6f1458dfa7cbd3f59f73d23247d771971c33cedc4e"
+  },
+  "demo-baseline/events/留出_喝水26_frames.json": {
+    "bytes": 51928,
+    "sha256": "8d57bba70a4057398d85373283f67e610e29c1fec9d40e1b4cbd70bbda82dfd9"
+  }
+}

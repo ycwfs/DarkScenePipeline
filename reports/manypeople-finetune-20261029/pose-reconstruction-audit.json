@@ -1,0 +1,5 @@
+{
+  "training_windows_checked": 194,
+  "max_abs_difference": 0.0,
+  "comparison": "Reconstructed same-person pose normalization vs original deployment-compatible cached normalized tensors, gate30. No class scores used."
+}

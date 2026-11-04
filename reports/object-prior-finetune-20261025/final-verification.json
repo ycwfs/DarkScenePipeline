@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "dataset_images": 397,
+  "group_split_checks": 133,
+  "locked_rule_and_model_unchanged": true,
+  "action_rule_replay_matched": 619,
+  "portable_cpu_probe": [
+    {
+      "id": "da3c570dcc033d1b_000058_T001",
+      "predictions": 1,
+      "max_abs_error": 0.00263214111328125,
+      "providers": [
+        "CPUExecutionProvider"
+      ]
+    },
+    {
+      "id": "8ac476f8fb995f97_000109_T001",
+      "predictions": 0,
+      "max_abs_error": 0.0,
+      "providers": [
+        "CPUExecutionProvider"
+      ]
+    }
+  ],
+  "demo_videos": [
+    {
+      "video": "demos/old-drink-supported.mp4",
+      "frames": 84,
+      "sha256": "a522db7bf07c44e9ae879a05a9f1c94f1be1e2b239bae2d7fdb763360d439c58",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "84"
+      }
+    },
+    {
+      "video": "demos/old-drink-missed.mp4",
+      "frames": 91,
+      "sha256": "482c8584d4b742a3b5db6e41aabe803bdb87f9f9e62440a801beb2f2a9ca9c38",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "91"
+      }
+    },
+    {
+      "video": "demos/old-pickup-missed.mp4",
+      "frames": 61,
+      "sha256": "72dbd9cc11d3bb251409011e9fae53f987864843c53638f5831ee40ab6d7585a",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "61"
+      }
+    },
+    {
+      "video": "demos/new05-phone.mp4",
+      "frames": 151,
+      "sha256": "dc94f49efe97f2227eb3b0317c6a1a80464831f0a764429b990e17232cb00020",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "151"
+      }
+    },
+    {
+      "video": "demos/new03-exhibit.mp4",
+      "frames": 149,
+      "sha256": "2d77953121273a4eb098ca7c211d0bd814130eafdbb1522c8b3ebf432c2a0fb8",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "149"
+      }
+    },
+    {
+      "video": "demos/new09-supported.mp4",
+      "frames": 151,
+      "sha256": "fbc5eaa4c0d3f9fccb9fee39aade6db67f796762c2a8a4e05591bf93684119e3",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "151"
+      }
+    },
+    {
+      "video": "demos/new03-near.mp4",
+      "frames": 149,
+      "sha256": "16581e6452c78fccc04bbf6837bb409b5ee9c5d8b9e2b83a99173703cf5730c7",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "149"
+      }
+    },
+    {
+      "video": "demos/new07-pickup.mp4",
+      "frames": 151,
+      "sha256": "41cca5291391ede078da4d091bebd2fb5439d3645c03445671f0d7884c8e5082",
+      "full_decode_passed": true,
+      "stream": {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 850,
+        "nb_read_frames": "151"
+      }
+    }
+  ],
+  "html_local_links": 111,
+  "production_prior_enabled": false,
+  "limitation": "No new end-to-end streaming/performance test; existing release engineering checks remain separately documented."
+}

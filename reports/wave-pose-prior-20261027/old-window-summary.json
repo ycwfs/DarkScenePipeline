@@ -1,0 +1,606 @@
+{
+  "summary": {
+    "onsite": {
+      "val": {
+        "baseline": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 226,
+          "true_wave_total": 9,
+          "true_wave_retained": 6,
+          "false_wave": 0,
+          "unknown_wave": 7,
+          "filtered_true_wave": 0
+        }
+      },
+      "test": {
+        "baseline": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 206,
+          "true_wave_total": 11,
+          "true_wave_retained": 11,
+          "false_wave": 3,
+          "unknown_wave": 6,
+          "filtered_true_wave": 0
+        }
+      },
+      "train": {
+        "baseline": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 84,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 83,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 83,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 83,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 83,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 81,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 81,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 122,
+          "false_wave": 0,
+          "unknown_wave": 78,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 1657,
+          "true_wave_total": 122,
+          "true_wave_retained": 121,
+          "false_wave": 0,
+          "unknown_wave": 76,
+          "filtered_true_wave": 1
+        }
+      },
+      "all": {
+        "baseline": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 97,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 96,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 96,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 96,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 96,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 94,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 94,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 139,
+          "false_wave": 3,
+          "unknown_wave": 91,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 2089,
+          "true_wave_total": 142,
+          "true_wave_retained": 138,
+          "false_wave": 3,
+          "unknown_wave": 89,
+          "filtered_true_wave": 1
+        }
+      }
+    },
+    "online_supplement": {
+      "val": {
+        "baseline": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 0,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        }
+      },
+      "test": {
+        "baseline": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 46,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        }
+      },
+      "train": {
+        "baseline": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 2099,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        }
+      },
+      "all": {
+        "baseline": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_total": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "1_consecutive": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_total": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "3_consecutive": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_total": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "5_consecutive": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_total": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        },
+        "8_consecutive": {
+          "windows": 2145,
+          "true_wave_total": 0,
+          "true_wave_retained": 0,
+          "false_wave": 0,
+          "unknown_wave": 0,
+          "filtered_true_wave": 0
+        }
+      }
+    }
+  },
+  "stats": {
+    "exactly_bound_wave_windows": 239,
+    "source_samples_checked": 7648
+  },
+  "source_probabilities_sha256": "d058a6e4e263237b7c625699e7a0e0afdef4c7e4b374c24aa3b9bb7d79d46e29",
+  "caveat": "Historical cached exact actor windows and current frozen probabilities; no new action forward, no new independent generalization test. Only preexisting wave outputs may change."
+}

@@ -1,0 +1,289 @@
+﻿model,variant,group_id,source_id,track_id,history_generation,start,end,windows,retained,outcome,event_ids
+n,native_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+n,native_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+n,native_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+n,native_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+n,native_raw,4,new-01,895,0,369.28,369.8,2,True,retained_candidate,new-01_5242 new-01_5249
+n,native_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+n,native_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+n,native_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+n,native_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+n,native_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+n,native_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+n,native_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+n,native_raw,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+n,native_raw,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+n,native_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+n,native_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+n,native_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+n,native_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+n,native_gamma,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+n,native_gamma,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+n,native_gamma,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+n,native_gamma,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+n,native_gamma,4,new-01,895,0,369.28,369.8,2,True,retained_candidate,new-01_5242 new-01_5249
+n,native_gamma,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+n,native_gamma,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+n,native_gamma,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+n,native_gamma,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+n,native_gamma,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+n,native_gamma,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+n,native_gamma,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+n,native_gamma,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+n,native_gamma,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+n,native_gamma,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+n,native_gamma,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+n,native_gamma,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+n,native_gamma,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+n,small_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+n,small_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+n,small_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+n,small_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+n,small_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+n,small_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+n,small_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+n,small_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+n,small_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+n,small_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+n,small_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+n,small_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+n,small_raw,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+n,small_raw,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+n,small_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+n,small_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+n,small_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+n,small_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+n,small_enhanced,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+n,small_enhanced,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+n,small_enhanced,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+n,small_enhanced,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+n,small_enhanced,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+n,small_enhanced,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+n,small_enhanced,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+n,small_enhanced,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+n,small_enhanced,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+n,small_enhanced,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+n,small_enhanced,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+n,small_enhanced,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+n,small_enhanced,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+n,small_enhanced,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+n,small_enhanced,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+n,small_enhanced,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+n,small_enhanced,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+n,small_enhanced,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+s,native_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+s,native_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+s,native_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+s,native_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+s,native_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+s,native_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+s,native_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+s,native_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+s,native_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+s,native_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+s,native_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+s,native_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+s,native_raw,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+s,native_raw,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+s,native_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+s,native_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+s,native_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+s,native_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+s,native_gamma,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+s,native_gamma,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+s,native_gamma,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+s,native_gamma,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+s,native_gamma,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+s,native_gamma,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+s,native_gamma,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+s,native_gamma,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+s,native_gamma,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+s,native_gamma,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+s,native_gamma,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+s,native_gamma,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+s,native_gamma,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+s,native_gamma,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+s,native_gamma,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+s,native_gamma,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+s,native_gamma,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+s,native_gamma,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+s,small_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+s,small_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+s,small_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+s,small_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+s,small_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+s,small_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+s,small_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+s,small_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+s,small_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+s,small_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+s,small_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+s,small_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+s,small_raw,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+s,small_raw,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+s,small_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+s,small_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+s,small_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+s,small_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+s,small_enhanced,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+s,small_enhanced,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+s,small_enhanced,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+s,small_enhanced,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+s,small_enhanced,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+s,small_enhanced,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+s,small_enhanced,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+s,small_enhanced,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+s,small_enhanced,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+s,small_enhanced,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+s,small_enhanced,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+s,small_enhanced,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+s,small_enhanced,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+s,small_enhanced,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+s,small_enhanced,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+s,small_enhanced,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+s,small_enhanced,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+s,small_enhanced,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m,native_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m,native_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m,native_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m,native_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m,native_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m,native_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m,native_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m,native_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m,native_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+m,native_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m,native_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m,native_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m,native_raw,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m,native_raw,13,new-07,559,0,254.24,254.24,1,True,retained_candidate,new-07_3233
+m,native_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m,native_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m,native_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m,native_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m,native_gamma,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m,native_gamma,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m,native_gamma,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m,native_gamma,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m,native_gamma,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m,native_gamma,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m,native_gamma,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m,native_gamma,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m,native_gamma,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+m,native_gamma,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m,native_gamma,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m,native_gamma,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m,native_gamma,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m,native_gamma,13,new-07,559,0,254.24,254.24,1,True,retained_candidate,new-07_3233
+m,native_gamma,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m,native_gamma,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m,native_gamma,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m,native_gamma,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m,small_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m,small_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m,small_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m,small_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m,small_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m,small_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m,small_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m,small_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m,small_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+m,small_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m,small_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m,small_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m,small_raw,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m,small_raw,13,new-07,559,0,254.24,254.24,1,True,retained_candidate,new-07_3233
+m,small_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m,small_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m,small_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m,small_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m,small_enhanced,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m,small_enhanced,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m,small_enhanced,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m,small_enhanced,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m,small_enhanced,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m,small_enhanced,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m,small_enhanced,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m,small_enhanced,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m,small_enhanced,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+m,small_enhanced,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m,small_enhanced,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m,small_enhanced,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m,small_enhanced,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m,small_enhanced,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+m,small_enhanced,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m,small_enhanced,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m,small_enhanced,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m,small_enhanced,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m_finetuned,native_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m_finetuned,native_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m_finetuned,native_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m_finetuned,native_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m_finetuned,native_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m_finetuned,native_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m_finetuned,native_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m_finetuned,native_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m_finetuned,native_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,True,retained_candidate,new-03_2854 new-03_2863
+m_finetuned,native_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m_finetuned,native_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,True,retained_candidate,new-03_4507
+m_finetuned,native_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m_finetuned,native_raw,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m_finetuned,native_raw,13,new-07,559,0,254.24,254.24,1,True,retained_candidate,new-07_3233
+m_finetuned,native_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m_finetuned,native_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m_finetuned,native_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m_finetuned,native_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m_finetuned,native_gamma,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m_finetuned,native_gamma,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m_finetuned,native_gamma,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m_finetuned,native_gamma,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m_finetuned,native_gamma,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m_finetuned,native_gamma,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m_finetuned,native_gamma,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m_finetuned,native_gamma,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m_finetuned,native_gamma,8,new-03,370,0,216.60866434657387,217.12868514740592,2,True,retained_candidate,new-03_2854 new-03_2863
+m_finetuned,native_gamma,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m_finetuned,native_gamma,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m_finetuned,native_gamma,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m_finetuned,native_gamma,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m_finetuned,native_gamma,13,new-07,559,0,254.24,254.24,1,True,retained_candidate,new-07_3233
+m_finetuned,native_gamma,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m_finetuned,native_gamma,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m_finetuned,native_gamma,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m_finetuned,native_gamma,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m_finetuned,small_raw,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m_finetuned,small_raw,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m_finetuned,small_raw,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m_finetuned,small_raw,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m_finetuned,small_raw,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m_finetuned,small_raw,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m_finetuned,small_raw,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m_finetuned,small_raw,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m_finetuned,small_raw,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+m_finetuned,small_raw,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m_finetuned,small_raw,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m_finetuned,small_raw,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m_finetuned,small_raw,12,new-07,28,0,21.24,24.88,7,True,retained_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m_finetuned,small_raw,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+m_finetuned,small_raw,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m_finetuned,small_raw,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m_finetuned,small_raw,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m_finetuned,small_raw,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743
+m_finetuned,small_enhanced,0,new-01,118,0,48.92,49.96,3,False,suppressed_candidate,new-01_601 new-01_611 new-01_621
+m_finetuned,small_enhanced,1,new-01,266,0,128.76,129.8,3,False,suppressed_candidate,new-01_1657 new-01_1666 new-01_1676
+m_finetuned,small_enhanced,2,new-01,510,0,209.0,210.04,3,False,suppressed_candidate,new-01_2818 new-01_2829 new-01_2838
+m_finetuned,small_enhanced,3,new-01,722,0,288.96,290.0,3,False,suppressed_candidate,new-01_4159 new-01_4167 new-01_4174
+m_finetuned,small_enhanced,4,new-01,895,0,369.28,369.8,2,False,suppressed_candidate,new-01_5242 new-01_5249
+m_finetuned,small_enhanced,5,new-03,98,0,93.20372814912596,93.20372814912596,1,False,suppressed_candidate,new-03_992
+m_finetuned,small_enhanced,6,new-03,139,0,78.92315692627706,78.92315692627706,1,False,suppressed_candidate,new-03_769
+m_finetuned,small_enhanced,7,new-03,370,0,198.92795711828475,200.48801952078085,4,False,suppressed_candidate,new-03_2589 new-03_2596 new-03_2604 new-03_2611
+m_finetuned,small_enhanced,8,new-03,370,0,216.60866434657387,217.12868514740592,2,False,suppressed_candidate,new-03_2854 new-03_2863
+m_finetuned,small_enhanced,9,new-03,446,0,237.96951878075123,237.96951878075123,1,False,suppressed_candidate,new-03_3156
+m_finetuned,small_enhanced,10,new-03,797,0,386.4154566182647,386.4154566182647,1,False,suppressed_candidate,new-03_4507
+m_finetuned,small_enhanced,11,new-03,1164,0,583.7033481339254,583.7033481339254,1,False,suppressed_candidate,new-03_6455
+m_finetuned,small_enhanced,12,new-07,28,0,21.24,24.88,7,False,suppressed_candidate,new-07_237 new-07_245 new-07_254 new-07_272 new-07_280 new-07_286 new-07_294
+m_finetuned,small_enhanced,13,new-07,559,0,254.24,254.24,1,False,suppressed_candidate,new-07_3233
+m_finetuned,small_enhanced,14,new-07,976,1,454.4,454.4,1,False,suppressed_candidate,new-07_5309
+m_finetuned,small_enhanced,15,new-07,1033,0,483.88,483.88,1,False,suppressed_candidate,new-07_5642
+m_finetuned,small_enhanced,16,new-08,192,4,57.0,57.0,1,False,suppressed_candidate,new-08_1163
+m_finetuned,small_enhanced,17,new-08,741,1,186.96,186.96,1,False,suppressed_candidate,new-08_3743

@@ -1,0 +1,194 @@
+[
+  {
+    "run": "runs/repeat-1/喝水16",
+    "frames": 75,
+    "events": 4,
+    "identical_crop_hashes": 4,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-2/喝水16",
+    "frames": 75,
+    "events": 4,
+    "identical_crop_hashes": 4,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-3/喝水16",
+    "frames": 75,
+    "events": 4,
+    "identical_crop_hashes": 4,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/paced/喝水16",
+    "frames": 75,
+    "events": 4,
+    "identical_crop_hashes": 4,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-1/挥手3",
+    "frames": 160,
+    "events": 22,
+    "identical_crop_hashes": 22,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-2/挥手3",
+    "frames": 160,
+    "events": 22,
+    "identical_crop_hashes": 22,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-3/挥手3",
+    "frames": 160,
+    "events": 22,
+    "identical_crop_hashes": 22,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/paced/挥手3",
+    "frames": 160,
+    "events": 22,
+    "identical_crop_hashes": 22,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-1/留出_挥手28",
+    "frames": 85,
+    "events": 11,
+    "identical_crop_hashes": 11,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-2/留出_挥手28",
+    "frames": 85,
+    "events": 11,
+    "identical_crop_hashes": 11,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-3/留出_挥手28",
+    "frames": 85,
+    "events": 11,
+    "identical_crop_hashes": 11,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/paced/留出_挥手28",
+    "frames": 85,
+    "events": 11,
+    "identical_crop_hashes": 11,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-1/多人0060",
+    "frames": 59,
+    "events": 38,
+    "identical_crop_hashes": 38,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-2/多人0060",
+    "frames": 59,
+    "events": 38,
+    "identical_crop_hashes": 38,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-3/多人0060",
+    "frames": 59,
+    "events": 38,
+    "identical_crop_hashes": 38,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/paced/多人0060",
+    "frames": 59,
+    "events": 38,
+    "identical_crop_hashes": 38,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-1/多人0054",
+    "frames": 60,
+    "events": 41,
+    "identical_crop_hashes": 41,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-2/多人0054",
+    "frames": 60,
+    "events": 41,
+    "identical_crop_hashes": 41,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-3/多人0054",
+    "frames": 60,
+    "events": 41,
+    "identical_crop_hashes": 41,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/paced/多人0054",
+    "frames": 60,
+    "events": 41,
+    "identical_crop_hashes": 41,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-1/回传留出_181324",
+    "frames": 50,
+    "events": 3,
+    "identical_crop_hashes": 3,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-2/回传留出_181324",
+    "frames": 50,
+    "events": 3,
+    "identical_crop_hashes": 3,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/repeat-3/回传留出_181324",
+    "frames": 50,
+    "events": 3,
+    "identical_crop_hashes": 3,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  },
+  {
+    "run": "runs/paced/回传留出_181324",
+    "frames": 50,
+    "events": 3,
+    "identical_crop_hashes": 3,
+    "max_probability_abs_error": 0.0,
+    "labels_modes_frame_ids_equal": true
+  }
+]

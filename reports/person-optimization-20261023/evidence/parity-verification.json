@@ -1,0 +1,146 @@
+[
+  {
+    "run": "1gpu/repeat-1/喝水16",
+    "decoded_frames": 75,
+    "events": 4,
+    "max_probability_error": 0.00014060735702514648,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "1gpu/repeat-1/回传留出_181324",
+    "decoded_frames": 50,
+    "events": 3,
+    "max_probability_error": 0.0003501772880554199,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "1gpu/repeat-1/多人0054",
+    "decoded_frames": 60,
+    "events": 41,
+    "max_probability_error": 0.0001792311668395996,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "1gpu/repeat-1/多人0060",
+    "decoded_frames": 59,
+    "events": 38,
+    "max_probability_error": 0.00017887353897094727,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "1gpu/repeat-1/挥手3",
+    "decoded_frames": 160,
+    "events": 22,
+    "max_probability_error": 0.00016242265701293945,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "1gpu/repeat-1/留出_挥手28",
+    "decoded_frames": 85,
+    "events": 11,
+    "max_probability_error": 1.2814998626708984e-05,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "2gpu/repeat-1/喝水16",
+    "decoded_frames": 75,
+    "events": 4,
+    "max_probability_error": 0.00014060735702514648,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "2gpu/repeat-1/回传留出_181324",
+    "decoded_frames": 50,
+    "events": 3,
+    "max_probability_error": 0.0003501772880554199,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "2gpu/repeat-1/多人0054",
+    "decoded_frames": 60,
+    "events": 41,
+    "max_probability_error": 0.0001805424690246582,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "2gpu/repeat-1/多人0060",
+    "decoded_frames": 59,
+    "events": 38,
+    "max_probability_error": 0.00021708011627197266,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "2gpu/repeat-1/挥手3",
+    "decoded_frames": 160,
+    "events": 22,
+    "max_probability_error": 0.0001761317253112793,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "2gpu/repeat-1/留出_挥手28",
+    "decoded_frames": 85,
+    "events": 11,
+    "max_probability_error": 1.2814998626708984e-05,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "3gpu/repeat-1/喝水16",
+    "decoded_frames": 75,
+    "events": 4,
+    "max_probability_error": 0.00014060735702514648,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "3gpu/repeat-1/回传留出_181324",
+    "decoded_frames": 50,
+    "events": 3,
+    "max_probability_error": 0.0003501772880554199,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "3gpu/repeat-1/多人0054",
+    "decoded_frames": 60,
+    "events": 41,
+    "max_probability_error": 0.0001805424690246582,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "3gpu/repeat-1/多人0060",
+    "decoded_frames": 59,
+    "events": 38,
+    "max_probability_error": 0.00021708011627197266,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "3gpu/repeat-1/挥手3",
+    "decoded_frames": 160,
+    "events": 22,
+    "max_probability_error": 0.0001761317253112793,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  },
+  {
+    "run": "3gpu/repeat-1/留出_挥手28",
+    "decoded_frames": 85,
+    "events": 11,
+    "max_probability_error": 1.2814998626708984e-05,
+    "same_labels_modes_sampling": true,
+    "crop_hashes_checked": true
+  }
+]

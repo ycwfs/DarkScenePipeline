@@ -1,0 +1,19 @@
+{
+  "platform/dark-demo-v2/main.py": "67a68806c4de21e9fc357ea0f247b39fbef934486b3d02819cf4f0a80230c702",
+  "platform/dark-demo-v2/darkpipe/config.py": "0473b37fc30f8ccd1b6287a10279b660bd35535df09e262168469551f950ad95",
+  "platform/dark-demo-v2/darkpipe/constants.py": "4b450a125a10f8e29dbadba0444305a5206de0b266438cf9416535e05d309958",
+  "platform/dark-demo-v2/darkpipe/person/core.py": "40c42b2f41cf7b6c330dfd259bdb8976b29101504613250806527cdcee1da3d8",
+  "platform/dark-demo-v2/darkpipe/person/clips.py": "7698afde4289d22de1995b5c20a1aaef60180c22fbe97a5c3876f4e27f8dfa4d",
+  "platform/dark-demo-v2/darkpipe/assets/NotoSansCJK-subset.ttf": "5c4df08fbe603b20d5b60e9f4cbfeb6b21327f324eadd409f2e27c26e9c164b0",
+  "platform/dark-demo-v2/models.json": "63d9f8b42546a069c402fd887e2833e25b7147d378d40c5aa2562ef73a3640fa",
+  "platform/dark-demo-v2/suanzi.json": "c6c2ce33f6072aea81228221fe3f7ce64f57046e6a56b6e756d2a117f0e1f6e2",
+  "platform/dark-demo-v2/README.md": "f381f1948e66684c660a34f82cb20afbaf5c6ad4a49d109a6293ee3965bd9d1e",
+  "platform/dark-demo-v2/CLAUDE.md": "5aead02fb8351fffd0befb6f7d65645a09b813578d6ed69fe916663238b4f5c9",
+  "NVIDIA-Box/README.md": "9f12a09ff18e71f846ebbc22664782b5213a7ff87073131b9ecfce32a04de3c8",
+  "NVIDIA-Box/VERIFICATION.md": "6c1ac32269cde820ab4e6609bfbd19ccc471d51d0215983a7b80983eb5306d07",
+  "scripts/package_nvidia_box.py": "91ae76ae05fc39a4d328930b50722984ccb8942eb566053f56a8e2c1cfff7e2b",
+  "tests/test_v2_delivery.py": "ab7035983cef3630e8ea2b5619feae59febf24b6a7ea9844e02bd23cfcf1f53d",
+  "tests/test_nvidia_box_native.py": "3a7983e464f9003f0002f656962f4d310ea7618d6b57bb8527fc2898d5576b76",
+  "README.md": "be463a09f067dc3157e09a59702abce9602a38997eb35219583914898774db0b",
+  "AGENTS.md": "e170381b4fdfa27c2b48eeaa0c2d38d24f08c85d45889b0d18698eea7e58f541"
+}

@@ -1,0 +1,17 @@
+{
+  "source": "new-01",
+  "provenance": "User: only children actually running in full 01/07/09; assistant associated each saved running trigger with raw temporal context, not speed evidence.",
+  "labels": [
+    {"frame":521,"track_id":37,"truth":"chase","group":"child37-run-away","note":"Gray-sweater child moving away; consecutive raw frames show running/hopping stride."},
+    {"frame":613,"track_id":37,"truth":"chase","group":"child37-run-away","note":"Same child farther from camera; running sequence."},
+    {"frame":4878,"track_id":460,"truth":"other","group":"adult460-walk","note":"Black-shirt adult walking with cup."},
+    {"frame":4951,"track_id":470,"truth":"other","group":"adult470-walk","note":"Black-clad adult walking with bag."},
+    {"frame":5773,"track_id":558,"truth":"other","group":"overlap558-walk","note":"Two overlapping adults walking together; detector box merges bodies."},
+    {"frame":7475,"track_id":749,"truth":"chase","group":"child749-run-across","note":"Dark-shirt child running toward the foreground."},
+    {"frame":7488,"track_id":749,"truth":"chase","group":"child749-run-across","note":"Same child running out of frame."},
+    {"frame":8120,"track_id":795,"truth":"other","group":"adult795-walk","note":"Black-shirt adult walking away."},
+    {"frame":8828,"track_id":822,"truth":"other","group":"adult822-walk","note":"Blue-shirt adult slowly walking/turning."},
+    {"frame":9341,"track_id":909,"truth":"other","group":"far909-not-running","note":"Distant person bends/stands by counter, not running in temporal context; limited pixel detail."}
+  ],
+  "scope_limit": "Only baseline running triggers reviewed. Not exhaustive ground truth for full-video running recall; repeated child windows belong to two episodes."
+}

@@ -1,0 +1,58 @@
+{
+  "created": "2026-11-01T18:32:52.926766",
+  "status": "frozen_before_corrected_results",
+  "baseline": {
+    "alpha": 0.972,
+    "gate": 35,
+    "action": 0.925,
+    "object": 0.581,
+    "wave_frames": 3,
+    "running_speed": 0.35
+  },
+  "bins": [
+    [
+      0.65,
+      0.75
+    ],
+    [
+      0.75,
+      0.85
+    ],
+    [
+      0.85,
+      0.925
+    ]
+  ],
+  "lower_endpoint": "strictly greater than .65; other lower endpoints inclusive; upper endpoints exclusive",
+  "continuation": {
+    "max_from_original_anchor_s": 1.2,
+    "max_adjacent_gap_s": 0.65,
+    "same_identity_and_action": true,
+    "reset": "other, different action, prior reject, gap, generation change",
+    "refresh_anchor_by_recovered": false,
+    "require_positive_prior_support": true,
+    "added_temporal_wait_s": 0
+  },
+  "running": {
+    "windows": 2,
+    "min_span_s": 0.5,
+    "max_adjacent_gap_s": 0.65,
+    "require_bright_reliable_speed": 0.35,
+    "diagnostics": [
+      {
+        "windows": 1,
+        "min_span_s": 0
+      },
+      {
+        "windows": 3,
+        "min_span_s": 1
+      }
+    ],
+    "no_retroactive_output": true
+  },
+  "truth": "Historical reviewed labels plus exact human-labelled 736 crowded windows; no pseudo other, excluded or conflicted windows",
+  "scope": "Paired causal offline replay of frozen current production probabilities; no production edits or promotion",
+  "delay": "Running: first qualifying subthreshold candidate to confirmation on source timeline; continuation no additional future-frame wait; not camera-to-display latency",
+  "selection": "Fixed declared rules; no selecting settings by held-out test results",
+  "source_separation": "old train/val/test and new human feedback separately; all historically viewed, not untouched blind test"
+}

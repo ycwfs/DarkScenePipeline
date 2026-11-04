@@ -1,0 +1,16 @@
+[
+  {
+    "video": "挥手3",
+    "windows": 22,
+    "rgb_pixels_exact": true,
+    "tracking_exact": true,
+    "skeleton_probs_match": true
+  },
+  {
+    "video": "喝水16",
+    "windows": 4,
+    "rgb_pixels_exact": true,
+    "tracking_exact": true,
+    "skeleton_probs_match": true
+  }
+]

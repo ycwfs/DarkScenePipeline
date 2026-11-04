@@ -1,0 +1,13 @@
+{
+  "source":"real-actiondata-all/挥手18.mp4",
+  "video_id":"4078760fdadd05f6",
+  "frame":30,
+  "reference_size":[960,540],
+  "coordinate_system":"COCO17; person's anatomical left/right; reference image pixels",
+  "annotator":"Codex visual inspection of gamma frame, visible body joints only",
+  "review_status":"pending_user_review",
+  "include_in_training":false,
+  "points":{"5":[505,175],"6":[414,160],"7":[544,240],"8":[370,91],"9":[536,302],"10":[324,27],"11":[497,325],"12":[446,318],"13":[517,423],"14":[440,415],"15":[525,518],"16":[451,522]},
+  "unknown_joints":[0,1,2,3,4],
+  "note":"Dark clothing and noise make joint centers approximate; these are visual drafts, not human-verified keypoints. No facial joints guessed. 捡东西1 frame32 remains pose-unresolved rather than inventing an occluded bent-body skeleton."
+}

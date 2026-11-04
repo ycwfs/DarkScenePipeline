@@ -1,0 +1,7489 @@
+{
+  "records": [
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.48,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "00a4f341393019b6_1",
+      "source_id": "00a4f341393019b6",
+      "split": "val",
+      "group": "00a4f341393019b6",
+      "processed": false,
+      "raw_luma": 112.73004192987658,
+      "samples": [
+        {
+          "frame": 12,
+          "binding_valid": true,
+          "person_roi": [
+            1253,
+            264,
+            1631,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_12_1253_264_1631_1080",
+            "a_00a4f341393019b6_12_1292_600_1609_858"
+          ],
+          "raw_luma": 112.63429088283829
+        },
+        {
+          "frame": 18,
+          "binding_valid": true,
+          "person_roi": [
+            1162,
+            317,
+            1587,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_18_1162_317_1587_1080",
+            "a_00a4f341393019b6_18_1235_667_1526_902"
+          ],
+          "raw_luma": 112.40848878231571
+        },
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            1102,
+            489,
+            1514,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_25_1102_489_1514_1080",
+            "a_00a4f341393019b6_25_1168_761_1401_899"
+          ],
+          "raw_luma": 112.65075949876237
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            1035,
+            580,
+            1524,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_31_1035_580_1524_1080",
+            "a_00a4f341393019b6_31_1138_826_1363_955"
+          ],
+          "raw_luma": 113.0268456339384
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            602,
+            1531,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_37_1010_602_1531_1080",
+            "a_00a4f341393019b6_37_1148_836_1356_956"
+          ],
+          "raw_luma": 112.91654677874037
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 12,
+              "bbox": [
+                1273.7972412109375,
+                693.504150390625,
+                1350.95947265625,
+                794.2205810546875
+              ],
+              "confidence": 0.918010950088501,
+              "class_id": 4
+            },
+            {
+              "frame": 18,
+              "bbox": [
+                1221.297119140625,
+                760.07373046875,
+                1313.4017333984375,
+                876.0465087890625
+              ],
+              "confidence": 0.8958921432495117,
+              "class_id": 4
+            },
+            {
+              "frame": 25,
+              "bbox": [
+                1137.599853515625,
+                868.281494140625,
+                1237.3033447265625,
+                988.4663696289062
+              ],
+              "confidence": 0.9672945737838745,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.73004192987658
+        },
+        "original80": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 37,
+              "bbox": [
+                1084.3125,
+                986.81787109375,
+                1171.62109375,
+                1063.72607421875
+              ],
+              "confidence": 0.618057131767273,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.73004192987658,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 12,
+              "bbox": [
+                1274.697021484375,
+                694.059326171875,
+                1350.9150390625,
+                793.1236572265625
+              ],
+              "confidence": 0.8919290900230408,
+              "class_id": 73
+            },
+            {
+              "frame": 18,
+              "bbox": [
+                1222.7237548828125,
+                760.3566284179688,
+                1311.8878173828125,
+                873.37548828125
+              ],
+              "confidence": 0.7171467542648315,
+              "class_id": 73
+            },
+            {
+              "frame": 25,
+              "bbox": [
+                1139.7264404296875,
+                868.408447265625,
+                1236.05810546875,
+                985.855224609375
+              ],
+              "confidence": 0.9363090395927429,
+              "class_id": 73
+            },
+            {
+              "frame": 31,
+              "bbox": [
+                1096.1737060546875,
+                945.72802734375,
+                1186.92724609375,
+                1051.7421875
+              ],
+              "confidence": 0.8307747840881348,
+              "class_id": 73
+            },
+            {
+              "frame": 37,
+              "bbox": [
+                1084.3125,
+                986.81787109375,
+                1171.62109375,
+                1063.72607421875
+              ],
+              "confidence": 0.9625930786132812,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.73004192987658,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.0,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "00a4f341393019b6_2",
+      "source_id": "00a4f341393019b6",
+      "split": "val",
+      "group": "00a4f341393019b6",
+      "processed": false,
+      "raw_luma": 112.72281349525576,
+      "samples": [
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            1102,
+            489,
+            1514,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_25_1102_489_1514_1080",
+            "a_00a4f341393019b6_25_1168_761_1401_899"
+          ],
+          "raw_luma": 112.65075949876237
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            1035,
+            580,
+            1524,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_31_1035_580_1524_1080",
+            "a_00a4f341393019b6_31_1138_826_1363_955"
+          ],
+          "raw_luma": 113.0268456339384
+        },
+        {
+          "frame": 38,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            595,
+            1531,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_38_1010_595_1531_1080",
+            "a_00a4f341393019b6_38_1158_838_1355_951"
+          ],
+          "raw_luma": 112.88816161991198
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            1023,
+            479,
+            1508,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_44_1023_479_1508_1080",
+            "a_00a4f341393019b6_44_1233_765_1377_951"
+          ],
+          "raw_luma": 112.51150731916941
+        },
+        {
+          "frame": 50,
+          "binding_valid": true,
+          "person_roi": [
+            1087,
+            339,
+            1455,
+            1080
+          ],
+          "views": [
+            "a_00a4f341393019b6_50_1087_339_1455_1080",
+            "a_00a4f341393019b6_50_1178_661_1381_951"
+          ],
+          "raw_luma": 112.24361803836632
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 25,
+              "bbox": [
+                1137.599853515625,
+                868.281494140625,
+                1237.3033447265625,
+                988.4663696289062
+              ],
+              "confidence": 0.9672945737838745,
+              "class_id": 4
+            },
+            {
+              "frame": 44,
+              "bbox": [
+                1084.1168212890625,
+                984.5324096679688,
+                1171.55517578125,
+                1063.5706787109375
+              ],
+              "confidence": 0.8688384890556335,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.72281349525576
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.72281349525576,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 25,
+              "bbox": [
+                1139.7264404296875,
+                868.408447265625,
+                1236.05810546875,
+                985.855224609375
+              ],
+              "confidence": 0.9363090395927429,
+              "class_id": 73
+            },
+            {
+              "frame": 31,
+              "bbox": [
+                1096.1737060546875,
+                945.72802734375,
+                1186.92724609375,
+                1051.7421875
+              ],
+              "confidence": 0.8307747840881348,
+              "class_id": 73
+            },
+            {
+              "frame": 38,
+              "bbox": [
+                1084.1668701171875,
+                986.55517578125,
+                1171.7393798828125,
+                1062.9503173828125
+              ],
+              "confidence": 0.9591354131698608,
+              "class_id": 73
+            },
+            {
+              "frame": 44,
+              "bbox": [
+                1084.2867431640625,
+                986.3170166015625,
+                1171.57373046875,
+                1063.051513671875
+              ],
+              "confidence": 0.9292500615119934,
+              "class_id": 73
+            },
+            {
+              "frame": 50,
+              "bbox": [
+                1085.97900390625,
+                986.2007446289062,
+                1171.26318359375,
+                1063.021484375
+              ],
+              "confidence": 0.8233247995376587,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.72281349525576,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.48,
+      "baseline": "drink",
+      "truth": null,
+      "id": "252284bbb3974d0a_1",
+      "source_id": "252284bbb3974d0a",
+      "split": "val",
+      "group": "252284bbb3974d0a",
+      "processed": false,
+      "raw_luma": 32.03203858270592,
+      "samples": [
+        {
+          "frame": 12,
+          "binding_valid": true,
+          "person_roi": [
+            862,
+            365,
+            1270,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_12_862_365_1270_1080",
+            "a_252284bbb3974d0a_12_898_539_1248_930"
+          ],
+          "raw_luma": 32.70321595847084
+        },
+        {
+          "frame": 18,
+          "binding_valid": true,
+          "person_roi": [
+            838,
+            370,
+            1263,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_18_838_370_1263_1080",
+            "a_252284bbb3974d0a_18_896_548_1234_944"
+          ],
+          "raw_luma": 32.46700919623213
+        },
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            824,
+            377,
+            1256,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_25_824_377_1256_1080",
+            "a_252284bbb3974d0a_25_925_543_1197_957"
+          ],
+          "raw_luma": 31.55181120049505
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            815,
+            378,
+            1254,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_31_815_378_1254_1080",
+            "a_252284bbb3974d0a_31_920_546_1197_964"
+          ],
+          "raw_luma": 31.654997617574256
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            809,
+            380,
+            1259,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_37_809_380_1259_1080",
+            "a_252284bbb3974d0a_37_904_541_1211_958"
+          ],
+          "raw_luma": 31.612005809955992
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.03203858270592
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.03203858270592,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.03203858270592,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.0,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "252284bbb3974d0a_2",
+      "source_id": "252284bbb3974d0a",
+      "split": "val",
+      "group": "252284bbb3974d0a",
+      "processed": false,
+      "raw_luma": 31.67681567635279,
+      "samples": [
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            824,
+            377,
+            1256,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_25_824_377_1256_1080",
+            "a_252284bbb3974d0a_25_925_543_1197_957"
+          ],
+          "raw_luma": 31.55181120049505
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            815,
+            378,
+            1254,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_31_815_378_1254_1080",
+            "a_252284bbb3974d0a_31_920_546_1197_964"
+          ],
+          "raw_luma": 31.654997617574256
+        },
+        {
+          "frame": 38,
+          "binding_valid": true,
+          "person_roi": [
+            801,
+            374,
+            1264,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_38_801_374_1264_1080",
+            "a_252284bbb3974d0a_38_892_545_1215_951"
+          ],
+          "raw_luma": 31.659262750962593
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            800,
+            373,
+            1266,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_44_800_373_1266_1080",
+            "a_252284bbb3974d0a_44_907_536_1215_874"
+          ],
+          "raw_luma": 31.721083677117708
+        },
+        {
+          "frame": 50,
+          "binding_valid": true,
+          "person_roi": [
+            801,
+            346,
+            1266,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_50_801_346_1266_1080",
+            "a_252284bbb3974d0a_50_907_526_1210_959"
+          ],
+          "raw_luma": 31.86215227241474
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.67681567635279
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.67681567635279,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.67681567635279,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.52,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "252284bbb3974d0a_3",
+      "source_id": "252284bbb3974d0a",
+      "split": "val",
+      "group": "252284bbb3974d0a",
+      "processed": false,
+      "raw_luma": 31.97136517614652,
+      "samples": [
+        {
+          "frame": 38,
+          "binding_valid": true,
+          "person_roi": [
+            801,
+            374,
+            1264,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_38_801_374_1264_1080",
+            "a_252284bbb3974d0a_38_892_545_1215_951"
+          ],
+          "raw_luma": 31.659262750962593
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            800,
+            373,
+            1266,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_44_800_373_1266_1080",
+            "a_252284bbb3974d0a_44_907_536_1215_874"
+          ],
+          "raw_luma": 31.721083677117708
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            804,
+            364,
+            1263,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_51_804_364_1263_1080",
+            "a_252284bbb3974d0a_51_913_531_1208_960"
+          ],
+          "raw_luma": 31.8856258010176
+        },
+        {
+          "frame": 57,
+          "binding_valid": true,
+          "person_roi": [
+            806,
+            372,
+            1261,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_57_806_372_1261_1080",
+            "a_252284bbb3974d0a_57_914_524_1212_959"
+          ],
+          "raw_luma": 32.18160041597909
+        },
+        {
+          "frame": 63,
+          "binding_valid": true,
+          "person_roi": [
+            809,
+            339,
+            1268,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_63_809_339_1268_1080",
+            "a_252284bbb3974d0a_63_916_515_1218_963"
+          ],
+          "raw_luma": 32.56271906971947
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.97136517614652
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.97136517614652,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.97136517614652,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 4,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.04,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "252284bbb3974d0a_4",
+      "source_id": "252284bbb3974d0a",
+      "split": "val",
+      "group": "252284bbb3974d0a",
+      "processed": false,
+      "raw_luma": 32.45838259774219,
+      "samples": [
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            804,
+            364,
+            1263,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_51_804_364_1263_1080",
+            "a_252284bbb3974d0a_51_913_531_1208_960"
+          ],
+          "raw_luma": 31.8856258010176
+        },
+        {
+          "frame": 57,
+          "binding_valid": true,
+          "person_roi": [
+            806,
+            372,
+            1261,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_57_806_372_1261_1080",
+            "a_252284bbb3974d0a_57_914_524_1212_959"
+          ],
+          "raw_luma": 32.18160041597909
+        },
+        {
+          "frame": 64,
+          "binding_valid": true,
+          "person_roi": [
+            810,
+            338,
+            1265,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_64_810_338_1265_1080",
+            "a_252284bbb3974d0a_64_917_518_1217_962"
+          ],
+          "raw_luma": 32.56682546754675
+        },
+        {
+          "frame": 70,
+          "binding_valid": true,
+          "person_roi": [
+            809,
+            359,
+            1273,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_70_809_359_1273_1080",
+            "a_252284bbb3974d0a_70_921_524_1209_961"
+          ],
+          "raw_luma": 32.852171414328936
+        },
+        {
+          "frame": 76,
+          "binding_valid": true,
+          "person_roi": [
+            811,
+            376,
+            1267,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_76_811_376_1267_1080",
+            "a_252284bbb3974d0a_76_929_545_1209_964"
+          ],
+          "raw_luma": 32.31717158965896
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.45838259774219
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.45838259774219,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.45838259774219,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 5,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.56,
+      "baseline": "drink",
+      "truth": null,
+      "id": "252284bbb3974d0a_5",
+      "source_id": "252284bbb3974d0a",
+      "split": "val",
+      "group": "252284bbb3974d0a",
+      "processed": false,
+      "raw_luma": 32.36307697633045,
+      "samples": [
+        {
+          "frame": 64,
+          "binding_valid": true,
+          "person_roi": [
+            810,
+            338,
+            1265,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_64_810_338_1265_1080",
+            "a_252284bbb3974d0a_64_917_518_1217_962"
+          ],
+          "raw_luma": 32.56682546754675
+        },
+        {
+          "frame": 70,
+          "binding_valid": true,
+          "person_roi": [
+            809,
+            359,
+            1273,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_70_809_359_1273_1080",
+            "a_252284bbb3974d0a_70_921_524_1209_961"
+          ],
+          "raw_luma": 32.852171414328936
+        },
+        {
+          "frame": 77,
+          "binding_valid": true,
+          "person_roi": [
+            813,
+            375,
+            1265,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_77_813_375_1265_1080",
+            "a_252284bbb3974d0a_77_938_542_1207_965"
+          ],
+          "raw_luma": 32.20008748968647
+        },
+        {
+          "frame": 83,
+          "binding_valid": true,
+          "person_roi": [
+            855,
+            394,
+            1260,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_83_855_394_1260_1080",
+            "a_252284bbb3974d0a_83_939_573_1203_942"
+          ],
+          "raw_luma": 32.060714758663366
+        },
+        {
+          "frame": 89,
+          "binding_valid": true,
+          "person_roi": [
+            862,
+            408,
+            1245,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_89_862_408_1245_1080",
+            "a_252284bbb3974d0a_89_915_575_1176_925"
+          ],
+          "raw_luma": 31.771522851347633
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.36307697633045
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.36307697633045,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 32.36307697633045,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 6,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 4.08,
+      "baseline": "drink",
+      "truth": null,
+      "id": "252284bbb3974d0a_6",
+      "source_id": "252284bbb3974d0a",
+      "split": "val",
+      "group": "252284bbb3974d0a",
+      "processed": false,
+      "raw_luma": 31.779144252569786,
+      "samples": [
+        {
+          "frame": 77,
+          "binding_valid": true,
+          "person_roi": [
+            813,
+            375,
+            1265,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_77_813_375_1265_1080",
+            "a_252284bbb3974d0a_77_938_542_1207_965"
+          ],
+          "raw_luma": 32.20008748968647
+        },
+        {
+          "frame": 83,
+          "binding_valid": true,
+          "person_roi": [
+            855,
+            394,
+            1260,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_83_855_394_1260_1080",
+            "a_252284bbb3974d0a_83_939_573_1203_942"
+          ],
+          "raw_luma": 32.060714758663366
+        },
+        {
+          "frame": 90,
+          "binding_valid": true,
+          "person_roi": [
+            860,
+            414,
+            1241,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_90_860_414_1241_1080",
+            "a_252284bbb3974d0a_90_915_575_1160_921"
+          ],
+          "raw_luma": 31.696044557893288
+        },
+        {
+          "frame": 96,
+          "binding_valid": true,
+          "person_roi": [
+            833,
+            396,
+            1246,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_96_833_396_1246_1080",
+            "a_252284bbb3974d0a_96_900_570_1071_875"
+          ],
+          "raw_luma": 31.539410124449944
+        },
+        {
+          "frame": 102,
+          "binding_valid": true,
+          "person_roi": [
+            788,
+            383,
+            1216,
+            1080
+          ],
+          "views": [
+            "a_252284bbb3974d0a_102_788_383_1216_1080",
+            "a_252284bbb3974d0a_102_881_550_1123_869"
+          ],
+          "raw_luma": 31.27461527777777
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.779144252569786
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.779144252569786,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 31.779144252569786,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.48,
+      "baseline": "drink",
+      "truth": null,
+      "id": "3b3cd82b736befd7_1",
+      "source_id": "3b3cd82b736befd7",
+      "split": "test",
+      "group": "3b3cd82b736befd7",
+      "processed": false,
+      "raw_luma": 112.39178022552254,
+      "samples": [
+        {
+          "frame": 12,
+          "binding_valid": true,
+          "person_roi": [
+            114,
+            414,
+            475,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_12_114_414_475_1080",
+            "a_3b3cd82b736befd7_12_155_540_398_834"
+          ],
+          "raw_luma": 112.39991151333882
+        },
+        {
+          "frame": 18,
+          "binding_valid": true,
+          "person_roi": [
+            118,
+            411,
+            472,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_18_118_411_472_1080",
+            "a_3b3cd82b736befd7_18_153_540_413_817"
+          ],
+          "raw_luma": 112.42063215415291
+        },
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            122,
+            412,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_25_122_412_473_1080",
+            "a_3b3cd82b736befd7_25_153_536_413_824"
+          ],
+          "raw_luma": 112.32145231710672
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            125,
+            411,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_31_125_411_473_1080",
+            "a_3b3cd82b736befd7_31_152_531_408_826"
+          ],
+          "raw_luma": 112.41510225522552
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            123,
+            408,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_37_123_408_473_1080",
+            "a_3b3cd82b736befd7_37_152_525_410_826"
+          ],
+          "raw_luma": 112.42301929661716
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 31,
+              "bbox": [
+                243.6522674560547,
+                587.5245361328125,
+                286.9079895019531,
+                654.476318359375
+              ],
+              "confidence": 0.6968325972557068,
+              "class_id": 0
+            },
+            {
+              "frame": 37,
+              "bbox": [
+                238.8724822998047,
+                576.3213500976562,
+                282.54095458984375,
+                636.8223266601562
+              ],
+              "confidence": 0.8719227910041809,
+              "class_id": 0
+            },
+            {
+              "frame": 37,
+              "bbox": [
+                240.51596069335938,
+                569.2166748046875,
+                265.3148193359375,
+                604.5366821289062
+              ],
+              "confidence": 0.6132367849349976,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.39178022552254
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.39178022552254,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.39178022552254,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.0,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "3b3cd82b736befd7_2",
+      "source_id": "3b3cd82b736befd7",
+      "split": "test",
+      "group": "3b3cd82b736befd7",
+      "processed": false,
+      "raw_luma": 112.42612447422476,
+      "samples": [
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            122,
+            412,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_25_122_412_473_1080",
+            "a_3b3cd82b736befd7_25_153_536_413_824"
+          ],
+          "raw_luma": 112.32145231710672
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            125,
+            411,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_31_125_411_473_1080",
+            "a_3b3cd82b736befd7_31_152_531_408_826"
+          ],
+          "raw_luma": 112.41510225522552
+        },
+        {
+          "frame": 38,
+          "binding_valid": true,
+          "person_roi": [
+            123,
+            407,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_38_123_407_473_1080",
+            "a_3b3cd82b736befd7_38_152_525_411_826"
+          ],
+          "raw_luma": 112.42162347359735
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            124,
+            406,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_44_124_406_473_1080",
+            "a_3b3cd82b736befd7_44_169_528_419_825"
+          ],
+          "raw_luma": 112.45842604166664
+        },
+        {
+          "frame": 50,
+          "binding_valid": true,
+          "person_roi": [
+            127,
+            403,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_50_127_403_473_1080",
+            "a_3b3cd82b736befd7_50_169_523_421_822"
+          ],
+          "raw_luma": 112.4775052530253
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 31,
+              "bbox": [
+                243.6522674560547,
+                587.5245361328125,
+                286.9079895019531,
+                654.476318359375
+              ],
+              "confidence": 0.6968325972557068,
+              "class_id": 0
+            },
+            {
+              "frame": 38,
+              "bbox": [
+                238.09059143066406,
+                572.0079345703125,
+                280.1697998046875,
+                634.9334716796875
+              ],
+              "confidence": 0.8070975542068481,
+              "class_id": 0
+            },
+            {
+              "frame": 38,
+              "bbox": [
+                239.52447509765625,
+                568.5391235351562,
+                265.5316162109375,
+                604.7334594726562
+              ],
+              "confidence": 0.6039282083511353,
+              "class_id": 0
+            },
+            {
+              "frame": 44,
+              "bbox": [
+                236.3855438232422,
+                564.4620971679688,
+                278.2709655761719,
+                620.81640625
+              ],
+              "confidence": 0.7183642387390137,
+              "class_id": 0
+            },
+            {
+              "frame": 50,
+              "bbox": [
+                237.98524475097656,
+                562.0369873046875,
+                279.0830383300781,
+                617.2667236328125
+              ],
+              "confidence": 0.654034435749054,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.42612447422476
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.42612447422476,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.42612447422476,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.52,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "3b3cd82b736befd7_3",
+      "source_id": "3b3cd82b736befd7",
+      "split": "test",
+      "group": "3b3cd82b736befd7",
+      "processed": false,
+      "raw_luma": 112.47341185336306,
+      "samples": [
+        {
+          "frame": 38,
+          "binding_valid": true,
+          "person_roi": [
+            123,
+            407,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_38_123_407_473_1080",
+            "a_3b3cd82b736befd7_38_152_525_411_826"
+          ],
+          "raw_luma": 112.42162347359735
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            124,
+            406,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_44_124_406_473_1080",
+            "a_3b3cd82b736befd7_44_169_528_419_825"
+          ],
+          "raw_luma": 112.45842604166664
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            128,
+            397,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_51_128_397_473_1080",
+            "a_3b3cd82b736befd7_51_169_521_422_824"
+          ],
+          "raw_luma": 112.47926914191417
+        },
+        {
+          "frame": 57,
+          "binding_valid": true,
+          "person_roi": [
+            135,
+            397,
+            471,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_57_135_397_471_1080",
+            "a_3b3cd82b736befd7_57_163_519_426_822"
+          ],
+          "raw_luma": 112.50195330033003
+        },
+        {
+          "frame": 63,
+          "binding_valid": true,
+          "person_roi": [
+            147,
+            390,
+            467,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_63_147_390_467_1080",
+            "a_3b3cd82b736befd7_63_165_512_435_824"
+          ],
+          "raw_luma": 112.48498192037952
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 38,
+              "bbox": [
+                238.09059143066406,
+                572.0079345703125,
+                280.1697998046875,
+                634.9334716796875
+              ],
+              "confidence": 0.8070975542068481,
+              "class_id": 0
+            },
+            {
+              "frame": 38,
+              "bbox": [
+                239.52447509765625,
+                568.5391235351562,
+                265.5316162109375,
+                604.7334594726562
+              ],
+              "confidence": 0.6039282083511353,
+              "class_id": 0
+            },
+            {
+              "frame": 44,
+              "bbox": [
+                236.3855438232422,
+                564.4620971679688,
+                278.2709655761719,
+                620.81640625
+              ],
+              "confidence": 0.7183642387390137,
+              "class_id": 0
+            },
+            {
+              "frame": 51,
+              "bbox": [
+                238.98089599609375,
+                563.6456298828125,
+                279.0556945800781,
+                613.7294921875
+              ],
+              "confidence": 0.7495759129524231,
+              "class_id": 0
+            },
+            {
+              "frame": 63,
+              "bbox": [
+                250.34165954589844,
+                553.105224609375,
+                293.4414978027344,
+                609.1616821289062
+              ],
+              "confidence": 0.7028523683547974,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.47341185336306
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.47341185336306,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.47341185336306,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 4,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.04,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "3b3cd82b736befd7_4",
+      "source_id": "3b3cd82b736befd7",
+      "split": "test",
+      "group": "3b3cd82b736befd7",
+      "processed": false,
+      "raw_luma": 112.45369506067794,
+      "samples": [
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            128,
+            397,
+            473,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_51_128_397_473_1080",
+            "a_3b3cd82b736befd7_51_169_521_422_824"
+          ],
+          "raw_luma": 112.47926914191417
+        },
+        {
+          "frame": 57,
+          "binding_valid": true,
+          "person_roi": [
+            135,
+            397,
+            471,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_57_135_397_471_1080",
+            "a_3b3cd82b736befd7_57_163_519_426_822"
+          ],
+          "raw_luma": 112.50195330033003
+        },
+        {
+          "frame": 64,
+          "binding_valid": true,
+          "person_roi": [
+            149,
+            390,
+            471,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_64_149_390_471_1080",
+            "a_3b3cd82b736befd7_64_166_511_436_823"
+          ],
+          "raw_luma": 112.4796662059956
+        },
+        {
+          "frame": 70,
+          "binding_valid": true,
+          "person_roi": [
+            143,
+            394,
+            573,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_70_143_394_573_1080",
+            "a_3b3cd82b736befd7_70_185_518_440_812"
+          ],
+          "raw_luma": 112.44851687637514
+        },
+        {
+          "frame": 76,
+          "binding_valid": true,
+          "person_roi": [
+            165,
+            405,
+            631,
+            1080
+          ],
+          "views": [
+            "a_3b3cd82b736befd7_76_165_405_631_1080",
+            "a_3b3cd82b736befd7_76_219_537_444_765"
+          ],
+          "raw_luma": 112.39517487623762
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 51,
+              "bbox": [
+                238.98089599609375,
+                563.6456298828125,
+                279.0556945800781,
+                613.7294921875
+              ],
+              "confidence": 0.7495759129524231,
+              "class_id": 0
+            },
+            {
+              "frame": 64,
+              "bbox": [
+                253.38169860839844,
+                557.2083129882812,
+                297.3383483886719,
+                615.5883178710938
+              ],
+              "confidence": 0.7446512579917908,
+              "class_id": 0
+            },
+            {
+              "frame": 70,
+              "bbox": [
+                283.979736328125,
+                568.320068359375,
+                336.6514587402344,
+                644.1978759765625
+              ],
+              "confidence": 0.8485042452812195,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.45369506067794
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.45369506067794,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.45369506067794,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.9666666666666667,
+      "baseline": "drink",
+      "truth": null,
+      "id": "5da1038bd2222f4b_0",
+      "source_id": "5da1038bd2222f4b",
+      "split": "test",
+      "group": "5da1038bd2222f4b",
+      "processed": false,
+      "raw_luma": 103.61095686795241,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            189,
+            773,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_0_616_189_773_544",
+            "a_5da1038bd2222f4b_0_652_264_765_433"
+          ],
+          "raw_luma": 103.52802119086908
+        },
+        {
+          "frame": 7,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            189,
+            771,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_7_616_189_771_544",
+            "a_5da1038bd2222f4b_7_651_262_753_415"
+          ],
+          "raw_luma": 103.59422906696919
+        },
+        {
+          "frame": 15,
+          "binding_valid": true,
+          "person_roi": [
+            617,
+            188,
+            770,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_15_617_188_770_544",
+            "a_5da1038bd2222f4b_15_649_263_755_369"
+          ],
+          "raw_luma": 103.62575262651265
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            187,
+            772,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_22_616_187_772_544",
+            "a_5da1038bd2222f4b_22_650_260_754_357"
+          ],
+          "raw_luma": 103.63360750137512
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            188,
+            773,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_29_616_188_773_544",
+            "a_5da1038bd2222f4b_29_651_258_757_349"
+          ],
+          "raw_luma": 103.66468153534103
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.61095686795241
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.61095686795241,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.61095686795241,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "5da1038bd2222f4b_1",
+      "source_id": "5da1038bd2222f4b",
+      "split": "test",
+      "group": "5da1038bd2222f4b",
+      "processed": false,
+      "raw_luma": 103.67300809182481,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            617,
+            188,
+            770,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_14_617_188_770_544",
+            "a_5da1038bd2222f4b_14_649_262_752_376"
+          ],
+          "raw_luma": 103.63044165635313
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            187,
+            772,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_22_616_187_772_544",
+            "a_5da1038bd2222f4b_22_650_260_754_357"
+          ],
+          "raw_luma": 103.63360750137512
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            188,
+            773,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_29_616_188_773_544",
+            "a_5da1038bd2222f4b_29_651_258_757_349"
+          ],
+          "raw_luma": 103.66468153534103
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            619,
+            187,
+            758,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_36_619_187_758_544",
+            "a_5da1038bd2222f4b_36_649_257_748_345"
+          ],
+          "raw_luma": 103.70234224766226
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            620,
+            187,
+            753,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_44_620_187_753_544",
+            "a_5da1038bd2222f4b_44_648_257_746_343"
+          ],
+          "raw_luma": 103.74919820544555
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.67300809182481
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.67300809182481,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.67300809182481,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "5da1038bd2222f4b_2",
+      "source_id": "5da1038bd2222f4b",
+      "split": "test",
+      "group": "5da1038bd2222f4b",
+      "processed": false,
+      "raw_luma": 103.72250559068601,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            616,
+            188,
+            773,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_29_616_188_773_544",
+            "a_5da1038bd2222f4b_29_651_258_757_349"
+          ],
+          "raw_luma": 103.66468153534103
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            619,
+            187,
+            758,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_37_619_187_758_544",
+            "a_5da1038bd2222f4b_37_649_258_747_345"
+          ],
+          "raw_luma": 103.71223350522551
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            620,
+            187,
+            753,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_44_620_187_753_544",
+            "a_5da1038bd2222f4b_44_648_257_746_343"
+          ],
+          "raw_luma": 103.74919820544555
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            619,
+            187,
+            760,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_51_619_187_760_544",
+            "a_5da1038bd2222f4b_51_648_257_746_345"
+          ],
+          "raw_luma": 103.7442480919967
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            618,
+            188,
+            763,
+            544
+          ],
+          "views": [
+            "a_5da1038bd2222f4b_59_618_188_763_544",
+            "a_5da1038bd2222f4b_59_650_261_744_432"
+          ],
+          "raw_luma": 103.70732139713971
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.72250559068601
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.72250559068601,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 103.72250559068601,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.9666666666666667,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "7ce9e264c4e2c972_0",
+      "source_id": "7ce9e264c4e2c972",
+      "split": "test",
+      "group": "7ce9e264c4e2c972",
+      "processed": false,
+      "raw_luma": 104.24397820858258,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            438,
+            102,
+            531,
+            331
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_0_438_102_531_331",
+            "a_7ce9e264c4e2c972_0_454_177_516_267"
+          ],
+          "raw_luma": 104.29157725522552
+        },
+        {
+          "frame": 7,
+          "binding_valid": true,
+          "person_roi": [
+            446,
+            132,
+            570,
+            321
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_7_446_132_570_321",
+            "a_7ce9e264c4e2c972_7_479_181_541_266"
+          ],
+          "raw_luma": 104.29913877887788
+        },
+        {
+          "frame": 15,
+          "binding_valid": true,
+          "person_roi": [
+            463,
+            162,
+            584,
+            314
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_15_463_162_584_314",
+            "a_7ce9e264c4e2c972_15_487_216_553_287"
+          ],
+          "raw_luma": 104.29933655115511
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            465,
+            172,
+            588,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_22_465_172_588_313",
+            "a_7ce9e264c4e2c972_22_493_215_557_294"
+          ],
+          "raw_luma": 104.15900302186468
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            466,
+            172,
+            590,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_29_466_172_590_313",
+            "a_7ce9e264c4e2c972_29_494_216_556_296"
+          ],
+          "raw_luma": 104.194267759901
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.24397820858258
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.24397820858258,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.24397820858258,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "7ce9e264c4e2c972_1",
+      "source_id": "7ce9e264c4e2c972",
+      "split": "test",
+      "group": "7ce9e264c4e2c972",
+      "processed": false,
+      "raw_luma": 104.19925783731694,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            463,
+            162,
+            583,
+            314
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_14_463_162_583_314",
+            "a_7ce9e264c4e2c972_14_485_213_550_280"
+          ],
+          "raw_luma": 104.3065222841034
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            465,
+            172,
+            588,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_22_465_172_588_313",
+            "a_7ce9e264c4e2c972_22_493_215_557_294"
+          ],
+          "raw_luma": 104.15900302186468
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            466,
+            172,
+            590,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_29_466_172_590_313",
+            "a_7ce9e264c4e2c972_29_494_216_556_296"
+          ],
+          "raw_luma": 104.194267759901
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            467,
+            163,
+            589,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_36_467_163_589_313",
+            "a_7ce9e264c4e2c972_36_489_217_557_275"
+          ],
+          "raw_luma": 104.20312691487898
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            476,
+            125,
+            581,
+            321
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_44_476_125_581_321",
+            "a_7ce9e264c4e2c972_44_485_194_556_264"
+          ],
+          "raw_luma": 104.2143628059681
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 44,
+              "bbox": [
+                526.14794921875,
+                226.0737762451172,
+                543.7783813476562,
+                252.14857482910156
+              ],
+              "confidence": 0.8882984519004822,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.19925783731694
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.19925783731694,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.19925783731694,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "pick_up",
+      "truth": null,
+      "id": "7ce9e264c4e2c972_2",
+      "source_id": "7ce9e264c4e2c972",
+      "split": "test",
+      "group": "7ce9e264c4e2c972",
+      "processed": false,
+      "raw_luma": 104.21922264088712,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            466,
+            172,
+            590,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_29_466_172_590_313",
+            "a_7ce9e264c4e2c972_29_494_216_556_296"
+          ],
+          "raw_luma": 104.194267759901
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            469,
+            161,
+            588,
+            313
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_37_469_161_588_313",
+            "a_7ce9e264c4e2c972_37_488_217_558_272"
+          ],
+          "raw_luma": 104.22430519801979
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            476,
+            125,
+            581,
+            321
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_44_476_125_581_321",
+            "a_7ce9e264c4e2c972_44_485_194_556_264"
+          ],
+          "raw_luma": 104.2143628059681
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            482,
+            92,
+            560,
+            327
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_51_482_92_560_327",
+            "a_7ce9e264c4e2c972_51_486_176_559_264"
+          ],
+          "raw_luma": 104.22524382563256
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            482,
+            91,
+            555,
+            327
+          ],
+          "views": [
+            "a_7ce9e264c4e2c972_59_482_91_555_327",
+            "a_7ce9e264c4e2c972_59_486_171_555_262"
+          ],
+          "raw_luma": 104.24293429936743
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 37,
+              "bbox": [
+                534.6209106445312,
+                255.72715759277344,
+                550.0209350585938,
+                280.5352783203125
+              ],
+              "confidence": 0.697105348110199,
+              "class_id": 4
+            },
+            {
+              "frame": 44,
+              "bbox": [
+                526.14794921875,
+                226.0737762451172,
+                543.7783813476562,
+                252.14857482910156
+              ],
+              "confidence": 0.8882984519004822,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.21922264088712
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.21922264088712,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.21922264088712,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "drink",
+      "truth": null,
+      "id": "82eb9f0050410b2a_1",
+      "source_id": "82eb9f0050410b2a",
+      "split": "val",
+      "group": "82eb9f0050410b2a",
+      "processed": false,
+      "raw_luma": 120.92549786359494,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            607,
+            114,
+            864,
+            756
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_14_607_114_864_756",
+            "a_82eb9f0050410b2a_14_651_221_818_454"
+          ],
+          "raw_luma": 120.98028739686467
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            598,
+            117,
+            871,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_22_598_117_871_757",
+            "a_82eb9f0050410b2a_22_647_224_832_475"
+          ],
+          "raw_luma": 120.96287213627612
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            586,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_29_586_117_874_757",
+            "a_82eb9f0050410b2a_29_649_223_847_474"
+          ],
+          "raw_luma": 120.92619830170517
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            582,
+            117,
+            873,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_36_582_117_873_757",
+            "a_82eb9f0050410b2a_36_649_220_833_473"
+          ],
+          "raw_luma": 120.87336446644662
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            578,
+            116,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_44_578_116_874_757",
+            "a_82eb9f0050410b2a_44_649_220_831_478"
+          ],
+          "raw_luma": 120.8383242780528
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 36,
+              "bbox": [
+                636.6370849609375,
+                263.8284606933594,
+                708.5328369140625,
+                319.4676208496094
+              ],
+              "confidence": 0.7252482175827026,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.92549786359494
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.92549786359494,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.92549786359494,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "82eb9f0050410b2a_2",
+      "source_id": "82eb9f0050410b2a",
+      "split": "val",
+      "group": "82eb9f0050410b2a",
+      "processed": false,
+      "raw_luma": 120.83478953509609,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            586,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_29_586_117_874_757",
+            "a_82eb9f0050410b2a_29_649_223_847_474"
+          ],
+          "raw_luma": 120.92619830170517
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            582,
+            117,
+            873,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_37_582_117_873_757",
+            "a_82eb9f0050410b2a_37_649_221_830_474"
+          ],
+          "raw_luma": 120.87761244499447
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            578,
+            116,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_44_578_116_874_757",
+            "a_82eb9f0050410b2a_44_649_220_831_478"
+          ],
+          "raw_luma": 120.8383242780528
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            577,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_51_577_117_874_757",
+            "a_82eb9f0050410b2a_51_647_243_829_476"
+          ],
+          "raw_luma": 120.77922644389437
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            579,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_59_579_117_874_757",
+            "a_82eb9f0050410b2a_59_641_240_829_476"
+          ],
+          "raw_luma": 120.81387924573707
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 59,
+              "bbox": [
+                683.2052612304688,
+                263.0611877441406,
+                722.843505859375,
+                307.7970275878906
+              ],
+              "confidence": 0.5834298133850098,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.83478953509609
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.83478953509609,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.83478953509609,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.466666666666667,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "82eb9f0050410b2a_3",
+      "source_id": "82eb9f0050410b2a",
+      "split": "val",
+      "group": "82eb9f0050410b2a",
+      "processed": false,
+      "raw_luma": 120.78407391536028,
+      "samples": [
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            578,
+            116,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_44_578_116_874_757",
+            "a_82eb9f0050410b2a_44_649_220_831_478"
+          ],
+          "raw_luma": 120.8383242780528
+        },
+        {
+          "frame": 52,
+          "binding_valid": true,
+          "person_roi": [
+            578,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_52_578_117_874_757",
+            "a_82eb9f0050410b2a_52_645_224_828_477"
+          ],
+          "raw_luma": 120.77040280528053
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            579,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_59_579_117_874_757",
+            "a_82eb9f0050410b2a_59_641_240_829_476"
+          ],
+          "raw_luma": 120.81387924573707
+        },
+        {
+          "frame": 66,
+          "binding_valid": true,
+          "person_roi": [
+            580,
+            118,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_66_580_118_874_757",
+            "a_82eb9f0050410b2a_66_640_223_829_477"
+          ],
+          "raw_luma": 120.68902042079208
+        },
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            580,
+            120,
+            874,
+            756
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_74_580_120_874_756",
+            "a_82eb9f0050410b2a_74_643_235_829_480"
+          ],
+          "raw_luma": 120.83868112623762
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 59,
+              "bbox": [
+                683.2052612304688,
+                263.0611877441406,
+                722.843505859375,
+                307.7970275878906
+              ],
+              "confidence": 0.5834298133850098,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.78407391536028
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.78407391536028,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.78407391536028,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 4,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.966666666666667,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "82eb9f0050410b2a_4",
+      "source_id": "82eb9f0050410b2a",
+      "split": "val",
+      "group": "82eb9f0050410b2a",
+      "processed": false,
+      "raw_luma": 120.8520234575899,
+      "samples": [
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            579,
+            117,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_59_579_117_874_757",
+            "a_82eb9f0050410b2a_59_641_240_829_476"
+          ],
+          "raw_luma": 120.81387924573707
+        },
+        {
+          "frame": 67,
+          "binding_valid": true,
+          "person_roi": [
+            580,
+            119,
+            874,
+            757
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_67_580_119_874_757",
+            "a_82eb9f0050410b2a_67_640_223_829_478"
+          ],
+          "raw_luma": 120.72335643564355
+        },
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            580,
+            120,
+            874,
+            756
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_74_580_120_874_756",
+            "a_82eb9f0050410b2a_74_643_235_829_480"
+          ],
+          "raw_luma": 120.83868112623762
+        },
+        {
+          "frame": 81,
+          "binding_valid": true,
+          "person_roi": [
+            581,
+            122,
+            873,
+            756
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_81_581_122_873_756",
+            "a_82eb9f0050410b2a_81_653_227_830_483"
+          ],
+          "raw_luma": 120.94014291460395
+        },
+        {
+          "frame": 89,
+          "binding_valid": true,
+          "person_roi": [
+            608,
+            125,
+            896,
+            765
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_89_608_125_896_765",
+            "a_82eb9f0050410b2a_89_676_233_845_476"
+          ],
+          "raw_luma": 120.97875307343233
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 59,
+              "bbox": [
+                683.2052612304688,
+                263.0611877441406,
+                722.843505859375,
+                307.7970275878906
+              ],
+              "confidence": 0.5834298133850098,
+              "class_id": 0
+            },
+            {
+              "frame": 89,
+              "bbox": [
+                743.0020751953125,
+                289.5993347167969,
+                780.2426147460938,
+                347.6415100097656
+              ],
+              "confidence": 0.8396134972572327,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.8520234575899
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.8520234575899,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.8520234575899,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 5,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.466666666666667,
+      "baseline": "drink",
+      "truth": null,
+      "id": "82eb9f0050410b2a_5",
+      "source_id": "82eb9f0050410b2a",
+      "split": "val",
+      "group": "82eb9f0050410b2a",
+      "processed": false,
+      "raw_luma": 120.90830265874243,
+      "samples": [
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            580,
+            120,
+            874,
+            756
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_74_580_120_874_756",
+            "a_82eb9f0050410b2a_74_643_235_829_480"
+          ],
+          "raw_luma": 120.83868112623762
+        },
+        {
+          "frame": 82,
+          "binding_valid": true,
+          "person_roi": [
+            583,
+            122,
+            873,
+            756
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_82_583_122_873_756",
+            "a_82eb9f0050410b2a_82_655_225_831_484"
+          ],
+          "raw_luma": 120.94572282384487
+        },
+        {
+          "frame": 89,
+          "binding_valid": true,
+          "person_roi": [
+            608,
+            125,
+            896,
+            765
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_89_608_125_896_765",
+            "a_82eb9f0050410b2a_89_676_233_845_476"
+          ],
+          "raw_luma": 120.97875307343233
+        },
+        {
+          "frame": 96,
+          "binding_valid": true,
+          "person_roi": [
+            646,
+            130,
+            894,
+            768
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_96_646_130_894_768",
+            "a_82eb9f0050410b2a_96_698_235_864_453"
+          ],
+          "raw_luma": 120.93127770558306
+        },
+        {
+          "frame": 104,
+          "binding_valid": true,
+          "person_roi": [
+            677,
+            130,
+            917,
+            771
+          ],
+          "views": [
+            "a_82eb9f0050410b2a_104_677_130_917_771",
+            "a_82eb9f0050410b2a_104_745_237_903_449"
+          ],
+          "raw_luma": 120.72251287128714
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 82,
+              "bbox": [
+                636.4246826171875,
+                265.359130859375,
+                707.4081420898438,
+                319.5103454589844
+              ],
+              "confidence": 0.7302600145339966,
+              "class_id": 0
+            },
+            {
+              "frame": 82,
+              "bbox": [
+                722.2350463867188,
+                263.8321838378906,
+                753.7837524414062,
+                311.4368591308594
+              ],
+              "confidence": 0.6884538531303406,
+              "class_id": 0
+            },
+            {
+              "frame": 89,
+              "bbox": [
+                743.0020751953125,
+                289.5993347167969,
+                780.2426147460938,
+                347.6415100097656
+              ],
+              "confidence": 0.8396134972572327,
+              "class_id": 0
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.90830265874243
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.90830265874243,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.90830265874243,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.96,
+      "baseline": "drink",
+      "truth": null,
+      "id": "8bf98cf74cd2d587_0",
+      "source_id": "8bf98cf74cd2d587",
+      "split": "val",
+      "group": "8bf98cf74cd2d587",
+      "processed": false,
+      "raw_luma": 14.488165216541184,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.488165216541184
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.488165216541184,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.488165216541184,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.48,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "8bf98cf74cd2d587_1",
+      "source_id": "8bf98cf74cd2d587",
+      "split": "val",
+      "group": "8bf98cf74cd2d587",
+      "processed": false,
+      "raw_luma": 14.834135842422132,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.834135842422132
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.834135842422132,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.834135842422132,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.0,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "8bf98cf74cd2d587_2",
+      "source_id": "8bf98cf74cd2d587",
+      "split": "val",
+      "group": "8bf98cf74cd2d587",
+      "processed": false,
+      "raw_luma": 14.152140787867848,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.152140787867848
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.152140787867848,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.152140787867848,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.52,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "8bf98cf74cd2d587_3",
+      "source_id": "8bf98cf74cd2d587",
+      "split": "val",
+      "group": "8bf98cf74cd2d587",
+      "processed": false,
+      "raw_luma": 13.593063505032141,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.593063505032141
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.593063505032141,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.593063505032141,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 4,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.04,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "8bf98cf74cd2d587_4",
+      "source_id": "8bf98cf74cd2d587",
+      "split": "val",
+      "group": "8bf98cf74cd2d587",
+      "processed": false,
+      "raw_luma": 13.96286802289604,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.96286802289604
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.96286802289604,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.96286802289604,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 5,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.56,
+      "baseline": "drink",
+      "truth": null,
+      "id": "8bf98cf74cd2d587_5",
+      "source_id": "8bf98cf74cd2d587",
+      "split": "val",
+      "group": "8bf98cf74cd2d587",
+      "processed": false,
+      "raw_luma": 14.774167046870701,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.774167046870701
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.774167046870701,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.774167046870701,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.9666666666666667,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "9831d442adecfc66_0",
+      "source_id": "9831d442adecfc66",
+      "split": "val",
+      "group": "9831d442adecfc66",
+      "processed": false,
+      "raw_luma": 120.70991266888407,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            298,
+            794,
+            776
+          ],
+          "views": [
+            "a_9831d442adecfc66_0_531_298_794_776",
+            "a_9831d442adecfc66_0_595_494_755_599"
+          ],
+          "raw_luma": 120.63581269251924
+        },
+        {
+          "frame": 7,
+          "binding_valid": true,
+          "person_roi": [
+            543,
+            376,
+            845,
+            765
+          ],
+          "views": [
+            "a_9831d442adecfc66_7_543_376_845_765",
+            "a_9831d442adecfc66_7_618_504_768_675"
+          ],
+          "raw_luma": 120.66275420448295
+        },
+        {
+          "frame": 15,
+          "binding_valid": true,
+          "person_roi": [
+            559,
+            387,
+            869,
+            779
+          ],
+          "views": [
+            "a_9831d442adecfc66_15_559_387_869_779",
+            "a_9831d442adecfc66_15_625_512_773_693"
+          ],
+          "raw_luma": 120.78454450288777
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            575,
+            390,
+            839,
+            772
+          ],
+          "views": [
+            "a_9831d442adecfc66_22_575_390_839_772",
+            "a_9831d442adecfc66_22_634_516_780_683"
+          ],
+          "raw_luma": 120.77787374174915
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            583,
+            342,
+            858,
+            768
+          ],
+          "views": [
+            "a_9831d442adecfc66_29_583_342_858_768",
+            "a_9831d442adecfc66_29_640_515_799_606"
+          ],
+          "raw_luma": 120.60174588833883
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.70991266888407
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.70991266888407,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 0,
+              "bbox": [
+                734.8294067382812,
+                669.39208984375,
+                794.4473876953125,
+                700.7897338867188
+              ],
+              "confidence": 0.8251787424087524,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.70991266888407,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "9831d442adecfc66_2",
+      "source_id": "9831d442adecfc66",
+      "split": "val",
+      "group": "9831d442adecfc66",
+      "processed": false,
+      "raw_luma": 120.63315344611608,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            558,
+            386,
+            868,
+            778
+          ],
+          "views": [
+            "a_9831d442adecfc66_14_558_386_868_778",
+            "a_9831d442adecfc66_14_623_510_773_693"
+          ],
+          "raw_luma": 120.7659024271177
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            575,
+            390,
+            839,
+            772
+          ],
+          "views": [
+            "a_9831d442adecfc66_22_575_390_839_772",
+            "a_9831d442adecfc66_22_634_516_780_683"
+          ],
+          "raw_luma": 120.77787374174915
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            583,
+            342,
+            858,
+            768
+          ],
+          "views": [
+            "a_9831d442adecfc66_29_583_342_858_768",
+            "a_9831d442adecfc66_29_640_515_799_606"
+          ],
+          "raw_luma": 120.60174588833883
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            610,
+            201,
+            852,
+            797
+          ],
+          "views": [
+            "a_9831d442adecfc66_36_610_201_852_797",
+            "a_9831d442adecfc66_36_641_421_824_613"
+          ],
+          "raw_luma": 120.50711359667216
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            642,
+            140,
+            838,
+            810
+          ],
+          "views": [
+            "a_9831d442adecfc66_44_642_140_838_810",
+            "a_9831d442adecfc66_44_677_371_833_618"
+          ],
+          "raw_luma": 120.46562338765125
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 36,
+              "bbox": [
+                729.1549072265625,
+                479.5944519042969,
+                793.4793701171875,
+                559.9838256835938
+              ],
+              "confidence": 0.6010896563529968,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.63315344611608
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.63315344611608,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 36,
+              "bbox": [
+                729.0576171875,
+                477.0025634765625,
+                792.380126953125,
+                555.68359375
+              ],
+              "confidence": 0.953315258026123,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.63315344611608,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.9666666666666667,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "a53b3b956be0d543_0",
+      "source_id": "a53b3b956be0d543",
+      "split": "val",
+      "group": "a53b3b956be0d543",
+      "processed": false,
+      "raw_luma": 104.51231539423473,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            551,
+            87,
+            603,
+            256
+          ],
+          "views": [
+            "a_a53b3b956be0d543_0_551_87_603_256",
+            "a_a53b3b956be0d543_0_551_140_603_215"
+          ],
+          "raw_luma": 104.5319825941969
+        },
+        {
+          "frame": 7,
+          "binding_valid": true,
+          "person_roi": [
+            552,
+            107,
+            608,
+            251
+          ],
+          "views": [
+            "a_a53b3b956be0d543_7_552_107_608_251",
+            "a_a53b3b956be0d543_7_552_139_608_217"
+          ],
+          "raw_luma": 104.51024008182068
+        },
+        {
+          "frame": 15,
+          "binding_valid": true,
+          "person_roi": [
+            554,
+            128,
+            614,
+            257
+          ],
+          "views": [
+            "a_a53b3b956be0d543_15_554_128_614_257",
+            "a_a53b3b956be0d543_15_554_149_614_220"
+          ],
+          "raw_luma": 104.50508454345434
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            558,
+            129,
+            613,
+            257
+          ],
+          "views": [
+            "a_a53b3b956be0d543_22_558_129_613_257",
+            "a_a53b3b956be0d543_22_558_157_613_220"
+          ],
+          "raw_luma": 104.51568674367435
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            558,
+            118,
+            613,
+            258
+          ],
+          "views": [
+            "a_a53b3b956be0d543_29_558_118_613_258",
+            "a_a53b3b956be0d543_29_558_150_613_217"
+          ],
+          "raw_luma": 104.52487503094058
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.51231539423473
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.51231539423473,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.51231539423473,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "a53b3b956be0d543_1",
+      "source_id": "a53b3b956be0d543",
+      "split": "val",
+      "group": "a53b3b956be0d543",
+      "processed": false,
+      "raw_luma": 104.54153634466962,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            553,
+            126,
+            614,
+            256
+          ],
+          "views": [
+            "a_a53b3b956be0d543_14_553_126_614_256",
+            "a_a53b3b956be0d543_14_553_149_614_218"
+          ],
+          "raw_luma": 104.49894761757426
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            558,
+            129,
+            613,
+            257
+          ],
+          "views": [
+            "a_a53b3b956be0d543_22_558_129_613_257",
+            "a_a53b3b956be0d543_22_558_157_613_220"
+          ],
+          "raw_luma": 104.51568674367435
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            558,
+            118,
+            613,
+            258
+          ],
+          "views": [
+            "a_a53b3b956be0d543_29_558_118_613_258",
+            "a_a53b3b956be0d543_29_558_150_613_217"
+          ],
+          "raw_luma": 104.52487503094058
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            539,
+            94,
+            614,
+            262
+          ],
+          "views": [
+            "a_a53b3b956be0d543_36_539_94_614_262",
+            "a_a53b3b956be0d543_36_539_140_614_217"
+          ],
+          "raw_luma": 104.55960498143563
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            523,
+            82,
+            617,
+            262
+          ],
+          "views": [
+            "a_a53b3b956be0d543_44_523_82_617_262",
+            "a_a53b3b956be0d543_44_523_117_609_217"
+          ],
+          "raw_luma": 104.60431547029702
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.54153634466962
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.54153634466962,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.54153634466962,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.9666666666666667,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "ac90f7d005131df1_0",
+      "source_id": "ac90f7d005131df1",
+      "split": "test",
+      "group": "ac90f7d005131df1",
+      "processed": false,
+      "raw_luma": 102.47302170289294,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            370,
+            389,
+            636,
+            544
+          ],
+          "views": [
+            "a_ac90f7d005131df1_0_370_389_636_544",
+            "a_ac90f7d005131df1_0_437_502_560_544"
+          ],
+          "raw_luma": 102.2306786200495
+        },
+        {
+          "frame": 7,
+          "binding_valid": true,
+          "person_roi": [
+            336,
+            431,
+            648,
+            544
+          ],
+          "views": [
+            "a_ac90f7d005131df1_7_336_431_648_544"
+          ],
+          "raw_luma": 102.49790825426292
+        },
+        {
+          "frame": 15,
+          "binding_valid": true,
+          "person_roi": [
+            334,
+            433,
+            645,
+            544
+          ],
+          "views": [
+            "a_ac90f7d005131df1_15_334_433_645_544"
+          ],
+          "raw_luma": 102.58819350935093
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            353,
+            365,
+            617,
+            544
+          ],
+          "views": [
+            "a_ac90f7d005131df1_22_353_365_617_544",
+            "a_ac90f7d005131df1_22_477_488_531_544"
+          ],
+          "raw_luma": 102.40670556586907
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            400,
+            275,
+            599,
+            544
+          ],
+          "views": [
+            "a_ac90f7d005131df1_29_400_275_599_544",
+            "a_ac90f7d005131df1_29_450_478_539_544"
+          ],
+          "raw_luma": 102.49377513063807
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 102.47302170289294
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 102.47302170289294,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 102.47302170289294,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "wave",
+      "truth": "drink",
+      "id": "ad442c59b37f1b2f_1",
+      "source_id": "ad442c59b37f1b2f",
+      "split": "test",
+      "group": "ad442c59b37f1b2f",
+      "processed": false,
+      "raw_luma": 104.52693562046633,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            380,
+            94,
+            456,
+            322
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_14_380_94_456_322",
+            "a_ad442c59b37f1b2f_14_380_171_449_276"
+          ],
+          "raw_luma": 104.51822643701868
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            378,
+            96,
+            466,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_22_378_96_466_321",
+            "a_ad442c59b37f1b2f_22_378_147_466_272"
+          ],
+          "raw_luma": 104.52420282934544
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            367,
+            95,
+            466,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_29_367_95_466_321",
+            "a_ad442c59b37f1b2f_29_379_127_466_269"
+          ],
+          "raw_luma": 104.53069496355884
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            368,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_36_368_95_464_321",
+            "a_ad442c59b37f1b2f_36_377_127_463_270"
+          ],
+          "raw_luma": 104.5305911991199
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            369,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_44_369_95_464_321",
+            "a_ad442c59b37f1b2f_44_378_126_462_271"
+          ],
+          "raw_luma": 104.54651939287677
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "wave",
+          "applied": false,
+          "reason": "unaffected_action",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52693562046633
+        },
+        "original80": {
+          "label": "wave",
+          "applied": false,
+          "reason": "unaffected_action",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52693562046633,
+          "class_schema": "coco80",
+          "compatible_classes": []
+        },
+        "candidate": {
+          "label": "wave",
+          "applied": false,
+          "reason": "unaffected_action",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52693562046633,
+          "class_schema": "coco80",
+          "compatible_classes": []
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "ad442c59b37f1b2f_2",
+      "source_id": "ad442c59b37f1b2f",
+      "split": "test",
+      "group": "ad442c59b37f1b2f",
+      "processed": false,
+      "raw_luma": 104.54679070836771,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            367,
+            95,
+            466,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_29_367_95_466_321",
+            "a_ad442c59b37f1b2f_29_379_123_466_238"
+          ],
+          "raw_luma": 104.53069496355884
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            368,
+            95,
+            465,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_37_368_95_465_321",
+            "a_ad442c59b37f1b2f_37_378_123_463_238"
+          ],
+          "raw_luma": 104.53667012857535
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            369,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_44_369_95_464_321",
+            "a_ad442c59b37f1b2f_44_378_123_462_238"
+          ],
+          "raw_luma": 104.54651939287677
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            369,
+            95,
+            463,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_51_369_95_463_321",
+            "a_ad442c59b37f1b2f_51_374_123_462_239"
+          ],
+          "raw_luma": 104.55908492849284
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            367,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_59_367_95_464_321",
+            "a_ad442c59b37f1b2f_59_373_122_462_240"
+          ],
+          "raw_luma": 104.56200519458196
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.54679070836771
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.54679070836771,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.54679070836771,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.466666666666667,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "ad442c59b37f1b2f_3",
+      "source_id": "ad442c59b37f1b2f",
+      "split": "test",
+      "group": "ad442c59b37f1b2f",
+      "processed": false,
+      "raw_luma": 104.52139591820509,
+      "samples": [
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            369,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_44_369_95_464_321",
+            "a_ad442c59b37f1b2f_44_378_123_462_238"
+          ],
+          "raw_luma": 104.54651939287677
+        },
+        {
+          "frame": 52,
+          "binding_valid": true,
+          "person_roi": [
+            368,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_52_368_95_464_321",
+            "a_ad442c59b37f1b2f_52_373_123_462_240"
+          ],
+          "raw_luma": 104.55840071163365
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            367,
+            95,
+            464,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_59_367_95_464_321",
+            "a_ad442c59b37f1b2f_59_373_122_462_240"
+          ],
+          "raw_luma": 104.56200519458196
+        },
+        {
+          "frame": 66,
+          "binding_valid": true,
+          "person_roi": [
+            371,
+            95,
+            463,
+            321
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_66_371_95_463_321",
+            "a_ad442c59b37f1b2f_66_373_123_461_240"
+          ],
+          "raw_luma": 104.4759685231023
+        },
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            370,
+            95,
+            466,
+            322
+          ],
+          "views": [
+            "a_ad442c59b37f1b2f_74_370_95_466_322",
+            "a_ad442c59b37f1b2f_74_383_125_463_239"
+          ],
+          "raw_luma": 104.4599356229373
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52139591820509
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52139591820509,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52139591820509,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "c7b116d2eb6141a6_1",
+      "source_id": "c7b116d2eb6141a6",
+      "split": "test",
+      "group": "c7b116d2eb6141a6",
+      "processed": false,
+      "raw_luma": 104.21928531041578,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            439,
+            88,
+            526,
+            314
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_14_439_88_526_314",
+            "a_c7b116d2eb6141a6_14_439_169_515_253"
+          ],
+          "raw_luma": 104.20027557068207
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            438,
+            94,
+            521,
+            313
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_22_438_94_521_313",
+            "a_c7b116d2eb6141a6_22_438_168_521_255"
+          ],
+          "raw_luma": 104.22012226003851
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            443,
+            121,
+            529,
+            305
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_29_443_121_529_305",
+            "a_c7b116d2eb6141a6_29_449_181_519_251"
+          ],
+          "raw_luma": 104.25532327076458
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            440,
+            147,
+            550,
+            306
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_36_440_147_550_306",
+            "a_c7b116d2eb6141a6_36_456_204_530_273"
+          ],
+          "raw_luma": 104.23167052392738
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            432,
+            163,
+            575,
+            311
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_44_432_163_575_311",
+            "a_c7b116d2eb6141a6_44_454_208_544_280"
+          ],
+          "raw_luma": 104.21836328039053
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 14,
+              "bbox": [
+                442.7196044921875,
+                200.1785888671875,
+                470.8638610839844,
+                230.14378356933594
+              ],
+              "confidence": 0.9665425419807434,
+              "class_id": 4
+            },
+            {
+              "frame": 22,
+              "bbox": [
+                452.0462646484375,
+                217.3943328857422,
+                473.05035400390625,
+                246.43878173828125
+              ],
+              "confidence": 0.6632526516914368,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.21928531041578
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.21928531041578,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 14,
+              "bbox": [
+                442.5190734863281,
+                199.6541290283203,
+                470.3575134277344,
+                229.7421417236328
+              ],
+              "confidence": 0.6498907208442688,
+              "class_id": 73
+            },
+            {
+              "frame": 22,
+              "bbox": [
+                452.4140625,
+                214.59664916992188,
+                472.19781494140625,
+                244.87954711914062
+              ],
+              "confidence": 0.9604425430297852,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.21928531041578,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "c7b116d2eb6141a6_2",
+      "source_id": "c7b116d2eb6141a6",
+      "split": "test",
+      "group": "c7b116d2eb6141a6",
+      "processed": false,
+      "raw_luma": 104.24811407947435,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            443,
+            121,
+            529,
+            305
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_29_443_121_529_305",
+            "a_c7b116d2eb6141a6_29_449_181_519_251"
+          ],
+          "raw_luma": 104.25532327076458
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            440,
+            147,
+            550,
+            306
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_37_440_147_550_306",
+            "a_c7b116d2eb6141a6_37_457_205_529_271"
+          ],
+          "raw_luma": 104.23444418660615
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            432,
+            163,
+            575,
+            311
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_44_432_163_575_311",
+            "a_c7b116d2eb6141a6_44_454_208_544_280"
+          ],
+          "raw_luma": 104.21836328039053
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            433,
+            155,
+            560,
+            299
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_51_433_155_560_299",
+            "a_c7b116d2eb6141a6_51_450_203_526_267"
+          ],
+          "raw_luma": 104.27945029565456
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            425,
+            125,
+            544,
+            308
+          ],
+          "views": [
+            "a_c7b116d2eb6141a6_59_425_125_544_308",
+            "a_c7b116d2eb6141a6_59_438_184_523_256"
+          ],
+          "raw_luma": 104.31615145077006
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.24811407947435
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.24811407947435,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.24811407947435,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 12,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 3.966666666666667,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "d8dd1f8db660b670_12",
+      "source_id": "d8dd1f8db660b670",
+      "split": "val",
+      "group": "d8dd1f8db660b670",
+      "processed": false,
+      "raw_luma": 120.6297575522982,
+      "samples": [
+        {
+          "frame": 89,
+          "binding_valid": true,
+          "person_roi": [
+            675,
+            124,
+            874,
+            707
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_89_675_124_874_707",
+            "a_d8dd1f8db660b670_89_683_350_869_537"
+          ],
+          "raw_luma": 120.64106354166665
+        },
+        {
+          "frame": 97,
+          "binding_valid": true,
+          "person_roi": [
+            692,
+            150,
+            878,
+            761
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_97_692_150_878_761",
+            "a_d8dd1f8db660b670_97_706_369_875_580"
+          ],
+          "raw_luma": 120.82968147689769
+        },
+        {
+          "frame": 104,
+          "binding_valid": true,
+          "person_roi": [
+            673,
+            248,
+            909,
+            733
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_104_673_248_909_733",
+            "a_d8dd1f8db660b670_104_726_424_846_571"
+          ],
+          "raw_luma": 120.67564595709571
+        },
+        {
+          "frame": 111,
+          "binding_valid": true,
+          "person_roi": [
+            671,
+            316,
+            923,
+            740
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_111_671_316_923_740",
+            "a_d8dd1f8db660b670_111_734_435_840_644"
+          ],
+          "raw_luma": 120.47451364480196
+        },
+        {
+          "frame": 119,
+          "binding_valid": true,
+          "person_roi": [
+            679,
+            327,
+            922,
+            736
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_119_679_327_922_736",
+            "a_d8dd1f8db660b670_119_729_493_844_646"
+          ],
+          "raw_luma": 120.37686524339934
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 89,
+              "bbox": [
+                713.9025268554688,
+                437.5498962402344,
+                776.1345825195312,
+                500.4527282714844
+              ],
+              "confidence": 0.7167507410049438,
+              "class_id": 4
+            },
+            {
+              "frame": 104,
+              "bbox": [
+                748.9596557617188,
+                554.8275756835938,
+                802.630859375,
+                625.2637329101562
+              ],
+              "confidence": 0.7403991222381592,
+              "class_id": 4
+            },
+            {
+              "frame": 111,
+              "bbox": [
+                740.4063110351562,
+                616.4705810546875,
+                813.9217529296875,
+                698.4144897460938
+              ],
+              "confidence": 0.8042601346969604,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.6297575522982
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.6297575522982,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 89,
+              "bbox": [
+                714.3915405273438,
+                438.4130554199219,
+                776.1082763671875,
+                500.0909423828125
+              ],
+              "confidence": 0.9072491526603699,
+              "class_id": 73
+            },
+            {
+              "frame": 97,
+              "bbox": [
+                740.5507202148438,
+                483.8553466796875,
+                787.6621704101562,
+                549.63525390625
+              ],
+              "confidence": 0.8385722637176514,
+              "class_id": 73
+            },
+            {
+              "frame": 111,
+              "bbox": [
+                741.2095947265625,
+                614.271240234375,
+                813.0297241210938,
+                693.217041015625
+              ],
+              "confidence": 0.7068982720375061,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.6297575522982,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 14,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 4.466666666666667,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "d8dd1f8db660b670_14",
+      "source_id": "d8dd1f8db660b670",
+      "split": "val",
+      "group": "d8dd1f8db660b670",
+      "processed": false,
+      "raw_luma": 120.47141399524716,
+      "samples": [
+        {
+          "frame": 104,
+          "binding_valid": true,
+          "person_roi": [
+            673,
+            248,
+            909,
+            733
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_104_673_248_909_733",
+            "a_d8dd1f8db660b670_104_726_424_846_571"
+          ],
+          "raw_luma": 120.67564595709571
+        },
+        {
+          "frame": 112,
+          "binding_valid": true,
+          "person_roi": [
+            671,
+            316,
+            923,
+            736
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_112_671_316_923_736",
+            "a_d8dd1f8db660b670_112_734_436_839_644"
+          ],
+          "raw_luma": 120.4743441040979
+        },
+        {
+          "frame": 119,
+          "binding_valid": true,
+          "person_roi": [
+            679,
+            327,
+            922,
+            736
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_119_679_327_922_736",
+            "a_d8dd1f8db660b670_119_729_493_844_646"
+          ],
+          "raw_luma": 120.37686524339934
+        },
+        {
+          "frame": 126,
+          "binding_valid": true,
+          "person_roi": [
+            669,
+            274,
+            911,
+            738
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_126_669_274_911_738",
+            "a_d8dd1f8db660b670_126_691_441_858_576"
+          ],
+          "raw_luma": 120.44861418798129
+        },
+        {
+          "frame": 134,
+          "binding_valid": true,
+          "person_roi": [
+            635,
+            160,
+            901,
+            738
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_134_635_160_901_738",
+            "a_d8dd1f8db660b670_134_653_383_877_561"
+          ],
+          "raw_luma": 120.46665963627612
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 104,
+              "bbox": [
+                748.9596557617188,
+                554.8275756835938,
+                802.630859375,
+                625.2637329101562
+              ],
+              "confidence": 0.7403991222381592,
+              "class_id": 4
+            },
+            {
+              "frame": 112,
+              "bbox": [
+                739.9794921875,
+                618.59228515625,
+                813.7892456054688,
+                697.93408203125
+              ],
+              "confidence": 0.7100661396980286,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.47141399524716
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.47141399524716,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 126,
+              "bbox": [
+                734.54150390625,
+                669.7074584960938,
+                810.3298950195312,
+                700.18359375
+              ],
+              "confidence": 0.7589390277862549,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.47141399524716,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 16,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 4.966666666666667,
+      "baseline": "pick_up",
+      "truth": "other",
+      "id": "d8dd1f8db660b670_16",
+      "source_id": "d8dd1f8db660b670",
+      "split": "val",
+      "group": "d8dd1f8db660b670",
+      "processed": false,
+      "raw_luma": 120.48137478126718,
+      "samples": [
+        {
+          "frame": 119,
+          "binding_valid": true,
+          "person_roi": [
+            679,
+            327,
+            922,
+            736
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_119_679_327_922_736",
+            "a_d8dd1f8db660b670_119_729_493_844_646"
+          ],
+          "raw_luma": 120.37686524339934
+        },
+        {
+          "frame": 127,
+          "binding_valid": true,
+          "person_roi": [
+            663,
+            259,
+            908,
+            741
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_127_663_259_908_741",
+            "a_d8dd1f8db660b670_127_683_435_861_575"
+          ],
+          "raw_luma": 120.4612359082783
+        },
+        {
+          "frame": 134,
+          "binding_valid": true,
+          "person_roi": [
+            635,
+            160,
+            901,
+            738
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_134_635_160_901_738",
+            "a_d8dd1f8db660b670_134_653_383_877_561"
+          ],
+          "raw_luma": 120.46665963627612
+        },
+        {
+          "frame": 141,
+          "binding_valid": true,
+          "person_roi": [
+            607,
+            126,
+            886,
+            747
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_141_607_126_886_747",
+            "a_d8dd1f8db660b670_141_649_377_866_561"
+          ],
+          "raw_luma": 120.50486465209019
+        },
+        {
+          "frame": 149,
+          "binding_valid": true,
+          "person_roi": [
+            598,
+            112,
+            818,
+            739
+          ],
+          "views": [
+            "a_d8dd1f8db660b670_149_598_112_818_739",
+            "a_d8dd1f8db660b670_149_604_359_793_550"
+          ],
+          "raw_luma": 120.66315334158415
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.48137478126718
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.48137478126718,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 127,
+              "bbox": [
+                734.1505737304688,
+                669.7098999023438,
+                810.66650390625,
+                700.1400146484375
+              ],
+              "confidence": 0.8673774003982544,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.48137478126718,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "drink",
+      "truth": null,
+      "id": "da3c570dcc033d1b_1",
+      "source_id": "da3c570dcc033d1b",
+      "split": "test",
+      "group": "da3c570dcc033d1b",
+      "processed": false,
+      "raw_luma": 120.29548035358224,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            1019,
+            73,
+            1172,
+            530
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_14_1019_73_1172_530",
+            "a_da3c570dcc033d1b_14_1032_144_1150_305"
+          ],
+          "raw_luma": 120.23894588146314
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            1019,
+            74,
+            1173,
+            529
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_22_1019_74_1173_529",
+            "a_da3c570dcc033d1b_22_1033_145_1150_312"
+          ],
+          "raw_luma": 120.30216355198019
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            1013,
+            75,
+            1182,
+            529
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_29_1013_75_1182_529",
+            "a_da3c570dcc033d1b_29_1028_147_1165_332"
+          ],
+          "raw_luma": 120.27224409378438
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            76,
+            1193,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_36_1010_76_1193_528",
+            "a_da3c570dcc033d1b_36_1041_147_1182_333"
+          ],
+          "raw_luma": 120.29900115167766
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            77,
+            1196,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_44_1010_77_1196_528",
+            "a_da3c570dcc033d1b_44_1053_147_1179_334"
+          ],
+          "raw_luma": 120.38591577970296
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.29548035358224
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.29548035358224,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.29548035358224,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "da3c570dcc033d1b_2",
+      "source_id": "da3c570dcc033d1b",
+      "split": "test",
+      "group": "da3c570dcc033d1b",
+      "processed": false,
+      "raw_luma": 120.35424132170053,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            1013,
+            75,
+            1182,
+            529
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_29_1013_75_1182_529",
+            "a_da3c570dcc033d1b_29_1028_147_1165_332"
+          ],
+          "raw_luma": 120.27224409378438
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            76,
+            1193,
+            529
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_37_1010_76_1193_529",
+            "a_da3c570dcc033d1b_37_1043_147_1181_333"
+          ],
+          "raw_luma": 120.30321111454894
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            77,
+            1196,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_44_1010_77_1196_528",
+            "a_da3c570dcc033d1b_44_1053_147_1179_334"
+          ],
+          "raw_luma": 120.38591577970296
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            1011,
+            80,
+            1198,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_51_1011_80_1198_528",
+            "a_da3c570dcc033d1b_51_1056_149_1184_335"
+          ],
+          "raw_luma": 120.42272604166665
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            80,
+            1199,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_59_1012_80_1199_528",
+            "a_da3c570dcc033d1b_59_1059_147_1182_336"
+          ],
+          "raw_luma": 120.35624208952146
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.35424132170053
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.35424132170053,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.35424132170053,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.466666666666667,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "da3c570dcc033d1b_3",
+      "source_id": "da3c570dcc033d1b",
+      "split": "test",
+      "group": "da3c570dcc033d1b",
+      "processed": false,
+      "raw_luma": 120.3092079239076,
+      "samples": [
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            1010,
+            77,
+            1196,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_44_1010_77_1196_528",
+            "a_da3c570dcc033d1b_44_1053_147_1179_334"
+          ],
+          "raw_luma": 120.38591577970296
+        },
+        {
+          "frame": 52,
+          "binding_valid": true,
+          "person_roi": [
+            1011,
+            80,
+            1198,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_52_1011_80_1198_528",
+            "a_da3c570dcc033d1b_52_1055_149_1184_335"
+          ],
+          "raw_luma": 120.4230268392464
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            80,
+            1199,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_59_1012_80_1199_528",
+            "a_da3c570dcc033d1b_59_1059_147_1182_336"
+          ],
+          "raw_luma": 120.35624208952146
+        },
+        {
+          "frame": 66,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            81,
+            1199,
+            527
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_66_1012_81_1199_527",
+            "a_da3c570dcc033d1b_66_1060_146_1179_338"
+          ],
+          "raw_luma": 120.28349942244222
+        },
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            81,
+            1199,
+            527
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_74_1012_81_1199_527",
+            "a_da3c570dcc033d1b_74_1061_146_1180_337"
+          ],
+          "raw_luma": 120.10573078589108
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.3092079239076
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.3092079239076,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.3092079239076,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 4,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.966666666666667,
+      "baseline": "drink",
+      "truth": "drink",
+      "id": "da3c570dcc033d1b_4",
+      "source_id": "da3c570dcc033d1b",
+      "split": "test",
+      "group": "da3c570dcc033d1b",
+      "processed": false,
+      "raw_luma": 120.16163326049401,
+      "samples": [
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            80,
+            1199,
+            528
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_59_1012_80_1199_528",
+            "a_da3c570dcc033d1b_59_1059_147_1182_336"
+          ],
+          "raw_luma": 120.35624208952146
+        },
+        {
+          "frame": 67,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            81,
+            1199,
+            527
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_67_1012_81_1199_527",
+            "a_da3c570dcc033d1b_67_1060_146_1179_337"
+          ],
+          "raw_luma": 120.27536784240922
+        },
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            81,
+            1199,
+            527
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_74_1012_81_1199_527",
+            "a_da3c570dcc033d1b_74_1061_146_1180_337"
+          ],
+          "raw_luma": 120.10573078589108
+        },
+        {
+          "frame": 81,
+          "binding_valid": true,
+          "person_roi": [
+            1012,
+            82,
+            1199,
+            526
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_81_1012_82_1199_526",
+            "a_da3c570dcc033d1b_81_1057_149_1180_337"
+          ],
+          "raw_luma": 120.07954207577006
+        },
+        {
+          "frame": 89,
+          "binding_valid": true,
+          "person_roi": [
+            1003,
+            81,
+            1198,
+            526
+          ],
+          "views": [
+            "a_da3c570dcc033d1b_89_1003_81_1198_526",
+            "a_da3c570dcc033d1b_89_1043_152_1167_335"
+          ],
+          "raw_luma": 120.14626590346535
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.16163326049401
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.16163326049401,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 120.16163326049401,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.9666666666666667,
+      "baseline": "pick_up",
+      "truth": null,
+      "id": "e89e6fbe81384ec5_0",
+      "source_id": "e89e6fbe81384ec5",
+      "split": "val",
+      "group": "e89e6fbe81384ec5",
+      "processed": false,
+      "raw_luma": 104.48299077572796,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            477,
+            79,
+            531,
+            256
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_0_477_79_531_256",
+            "a_e89e6fbe81384ec5_0_478_135_531_216"
+          ],
+          "raw_luma": 104.59955886963695
+        },
+        {
+          "frame": 7,
+          "binding_valid": true,
+          "person_roi": [
+            467,
+            88,
+            587,
+            260
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_7_467_88_587_260",
+            "a_e89e6fbe81384ec5_7_495_133_563_217"
+          ],
+          "raw_luma": 104.5918448260451
+        },
+        {
+          "frame": 15,
+          "binding_valid": true,
+          "person_roi": [
+            514,
+            105,
+            594,
+            259
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_15_514_105_594_259",
+            "a_e89e6fbe81384ec5_15_524_144_583_218"
+          ],
+          "raw_luma": 104.3643258491474
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            525,
+            122,
+            608,
+            253
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_22_525_122_608_253",
+            "a_e89e6fbe81384ec5_22_532_169_598_224"
+          ],
+          "raw_luma": 104.39089547579758
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            138,
+            620,
+            254
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_29_531_138_620_254",
+            "a_e89e6fbe81384ec5_29_540_174_608_242"
+          ],
+          "raw_luma": 104.48535471672167
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.48299077572796
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.48299077572796,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.48299077572796,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.4666666666666666,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "e89e6fbe81384ec5_1",
+      "source_id": "e89e6fbe81384ec5",
+      "split": "val",
+      "group": "e89e6fbe81384ec5",
+      "processed": false,
+      "raw_luma": 104.45732067744859,
+      "samples": [
+        {
+          "frame": 14,
+          "binding_valid": true,
+          "person_roi": [
+            514,
+            104,
+            591,
+            257
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_14_514_104_591_257",
+            "a_e89e6fbe81384ec5_14_521_137_583_217"
+          ],
+          "raw_luma": 104.38128154565456
+        },
+        {
+          "frame": 22,
+          "binding_valid": true,
+          "person_roi": [
+            525,
+            122,
+            608,
+            253
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_22_525_122_608_253",
+            "a_e89e6fbe81384ec5_22_532_169_598_224"
+          ],
+          "raw_luma": 104.39089547579758
+        },
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            138,
+            620,
+            254
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_29_531_138_620_254",
+            "a_e89e6fbe81384ec5_29_540_174_608_242"
+          ],
+          "raw_luma": 104.48535471672167
+        },
+        {
+          "frame": 36,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            140,
+            626,
+            256
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_36_531_140_626_256",
+            "a_e89e6fbe81384ec5_36_546_173_616_233"
+          ],
+          "raw_luma": 104.49843323019802
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            138,
+            627,
+            255
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_44_531_138_627_255",
+            "a_e89e6fbe81384ec5_44_546_173_614_245"
+          ],
+          "raw_luma": 104.51398747593508
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.45732067744859
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.45732067744859,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.45732067744859,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.9666666666666666,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "e89e6fbe81384ec5_2",
+      "source_id": "e89e6fbe81384ec5",
+      "split": "val",
+      "group": "e89e6fbe81384ec5",
+      "processed": false,
+      "raw_luma": 104.508107361283,
+      "samples": [
+        {
+          "frame": 29,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            138,
+            620,
+            254
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_29_531_138_620_254",
+            "a_e89e6fbe81384ec5_29_540_174_608_242"
+          ],
+          "raw_luma": 104.48535471672167
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            140,
+            626,
+            256
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_37_531_140_626_256",
+            "a_e89e6fbe81384ec5_37_547_173_616_239"
+          ],
+          "raw_luma": 104.50479929867987
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            138,
+            627,
+            255
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_44_531_138_627_255",
+            "a_e89e6fbe81384ec5_44_546_173_614_245"
+          ],
+          "raw_luma": 104.51398747593508
+        },
+        {
+          "frame": 51,
+          "binding_valid": true,
+          "person_roi": [
+            533,
+            123,
+            621,
+            254
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_51_533_123_621_254",
+            "a_e89e6fbe81384ec5_51_541_161_606_220"
+          ],
+          "raw_luma": 104.47898255981848
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            539,
+            102,
+            612,
+            258
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_59_539_102_612_258",
+            "a_e89e6fbe81384ec5_59_539_143_612_218"
+          ],
+          "raw_luma": 104.55053244980746
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.508107361283
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.508107361283,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.508107361283,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.466666666666667,
+      "baseline": "pick_up",
+      "truth": null,
+      "id": "e89e6fbe81384ec5_3",
+      "source_id": "e89e6fbe81384ec5",
+      "split": "val",
+      "group": "e89e6fbe81384ec5",
+      "processed": false,
+      "raw_luma": 104.52819701874483,
+      "samples": [
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            531,
+            138,
+            627,
+            255
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_44_531_138_627_255",
+            "a_e89e6fbe81384ec5_44_546_173_614_245"
+          ],
+          "raw_luma": 104.51398747593508
+        },
+        {
+          "frame": 52,
+          "binding_valid": true,
+          "person_roi": [
+            533,
+            123,
+            621,
+            254
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_52_533_123_621_254",
+            "a_e89e6fbe81384ec5_52_541_160_606_220"
+          ],
+          "raw_luma": 104.47774282178219
+        },
+        {
+          "frame": 59,
+          "binding_valid": true,
+          "person_roi": [
+            539,
+            102,
+            612,
+            258
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_59_539_102_612_258",
+            "a_e89e6fbe81384ec5_59_539_143_612_218"
+          ],
+          "raw_luma": 104.55053244980746
+        },
+        {
+          "frame": 66,
+          "binding_valid": true,
+          "person_roi": [
+            540,
+            86,
+            604,
+            260
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_66_540_86_604_260",
+            "a_e89e6fbe81384ec5_66_540_132_604_219"
+          ],
+          "raw_luma": 104.57198829757975
+        },
+        {
+          "frame": 74,
+          "binding_valid": true,
+          "person_roi": [
+            538,
+            79,
+            599,
+            261
+          ],
+          "views": [
+            "a_e89e6fbe81384ec5_74_538_79_599_261",
+            "a_e89e6fbe81384ec5_74_538_131_599_218"
+          ],
+          "raw_luma": 104.42587602447745
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52819701874483
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52819701874483,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 104.52819701874483,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 2,
+      "history_generation": 0,
+      "timestamp": 1.08,
+      "baseline": "drink",
+      "truth": null,
+      "id": "f50f562c1c39d257_0",
+      "source_id": "f50f562c1c39d257",
+      "split": "test",
+      "group": "f50f562c1c39d257",
+      "processed": false,
+      "raw_luma": 14.404246035736385,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.404246035736385
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.404246035736385,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 14.404246035736385,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 3,
+      "track_id": 4,
+      "history_generation": 0,
+      "timestamp": 3.72,
+      "baseline": "drink",
+      "truth": null,
+      "id": "f50f562c1c39d257_3",
+      "source_id": "f50f562c1c39d257",
+      "split": "test",
+      "group": "f50f562c1c39d257",
+      "processed": false,
+      "raw_luma": 13.879825608068618,
+      "samples": [],
+      "variants": {
+        "baseline": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.879825608068618
+        },
+        "original80": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.879825608068618,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        },
+        "candidate": {
+          "label": "drink",
+          "applied": false,
+          "reason": "below_luma_gate",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 13.879825608068618,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 0,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 0.96,
+      "baseline": "pick_up",
+      "truth": null,
+      "id": "fd54d3f8ee4adff7_0",
+      "source_id": "fd54d3f8ee4adff7",
+      "split": "test",
+      "group": "fd54d3f8ee4adff7",
+      "processed": false,
+      "raw_luma": 112.16025340378764,
+      "samples": [
+        {
+          "frame": 0,
+          "binding_valid": true,
+          "person_roi": [
+            413,
+            366,
+            762,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_0_413_366_762_1080",
+            "a_fd54d3f8ee4adff7_0_466_668_721_923"
+          ],
+          "raw_luma": 112.00608787472497
+        },
+        {
+          "frame": 6,
+          "binding_valid": true,
+          "person_roi": [
+            299,
+            439,
+            766,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_6_299_439_766_1080",
+            "a_fd54d3f8ee4adff7_6_417_707_658_927"
+          ],
+          "raw_luma": 112.14199007150717
+        },
+        {
+          "frame": 12,
+          "binding_valid": true,
+          "person_roi": [
+            215,
+            573,
+            725,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_12_215_573_725_1080",
+            "a_fd54d3f8ee4adff7_12_364_797_563_955"
+          ],
+          "raw_luma": 112.22362657453246
+        },
+        {
+          "frame": 18,
+          "binding_valid": true,
+          "person_roi": [
+            212,
+            664,
+            635,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_18_212_664_635_1080",
+            "a_fd54d3f8ee4adff7_18_364_846_533_1029"
+          ],
+          "raw_luma": 112.07301467615511
+        },
+        {
+          "frame": 24,
+          "binding_valid": true,
+          "person_roi": [
+            204,
+            691,
+            637,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_24_204_691_637_1080",
+            "a_fd54d3f8ee4adff7_24_382_867_507_1062"
+          ],
+          "raw_luma": 112.20331551155115
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.16025340378764
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.16025340378764,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.16025340378764,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 1,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 1.48,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "fd54d3f8ee4adff7_1",
+      "source_id": "fd54d3f8ee4adff7",
+      "split": "test",
+      "group": "fd54d3f8ee4adff7",
+      "processed": false,
+      "raw_luma": 112.25436519118708,
+      "samples": [
+        {
+          "frame": 12,
+          "binding_valid": true,
+          "person_roi": [
+            215,
+            573,
+            725,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_12_215_573_725_1080",
+            "a_fd54d3f8ee4adff7_12_364_797_563_955"
+          ],
+          "raw_luma": 112.22362657453246
+        },
+        {
+          "frame": 18,
+          "binding_valid": true,
+          "person_roi": [
+            212,
+            664,
+            635,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_18_212_664_635_1080",
+            "a_fd54d3f8ee4adff7_18_364_846_533_1029"
+          ],
+          "raw_luma": 112.07301467615511
+        },
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            201,
+            693,
+            638,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_25_201_693_638_1080",
+            "a_fd54d3f8ee4adff7_25_385_867_505_1067"
+          ],
+          "raw_luma": 112.2107191281628
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            182,
+            689,
+            643,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_31_182_689_643_1080",
+            "a_fd54d3f8ee4adff7_31_369_879_506_1057"
+          ],
+          "raw_luma": 112.2927966790429
+        },
+        {
+          "frame": 37,
+          "binding_valid": true,
+          "person_roi": [
+            147,
+            623,
+            659,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_37_147_623_659_1080",
+            "a_fd54d3f8ee4adff7_37_345_858_515_991"
+          ],
+          "raw_luma": 112.40475259557203
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 37,
+              "bbox": [
+                336.70947265625,
+                924.9274291992188,
+                446.8115234375,
+                1017.4581298828125
+              ],
+              "confidence": 0.7568854093551636,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.25436519118708
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.25436519118708,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 37,
+              "bbox": [
+                337.1863708496094,
+                923.4888305664062,
+                445.8256530761719,
+                1012.1177368164062
+              ],
+              "confidence": 0.8617786765098572,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.25436519118708,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "event_index": 2,
+      "track_id": 1,
+      "history_generation": 0,
+      "timestamp": 2.0,
+      "baseline": "pick_up",
+      "truth": "pick_up",
+      "id": "fd54d3f8ee4adff7_2",
+      "source_id": "fd54d3f8ee4adff7",
+      "split": "test",
+      "group": "fd54d3f8ee4adff7",
+      "processed": false,
+      "raw_luma": 112.35237252324842,
+      "samples": [
+        {
+          "frame": 25,
+          "binding_valid": true,
+          "person_roi": [
+            201,
+            693,
+            638,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_25_201_693_638_1080",
+            "a_fd54d3f8ee4adff7_25_385_867_505_1067"
+          ],
+          "raw_luma": 112.2107191281628
+        },
+        {
+          "frame": 31,
+          "binding_valid": true,
+          "person_roi": [
+            182,
+            689,
+            643,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_31_182_689_643_1080",
+            "a_fd54d3f8ee4adff7_31_369_879_506_1057"
+          ],
+          "raw_luma": 112.2927966790429
+        },
+        {
+          "frame": 38,
+          "binding_valid": true,
+          "person_roi": [
+            143,
+            592,
+            668,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_38_143_592_668_1080",
+            "a_fd54d3f8ee4adff7_38_339_840_523_996"
+          ],
+          "raw_luma": 112.40263830445544
+        },
+        {
+          "frame": 44,
+          "binding_valid": true,
+          "person_roi": [
+            193,
+            449,
+            656,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_44_193_449_656_1080",
+            "a_fd54d3f8ee4adff7_44_302_733_543_990"
+          ],
+          "raw_luma": 112.390007460121
+        },
+        {
+          "frame": 50,
+          "binding_valid": true,
+          "person_roi": [
+            239,
+            411,
+            645,
+            1080
+          ],
+          "views": [
+            "a_fd54d3f8ee4adff7_50_239_411_645_1080",
+            "a_fd54d3f8ee4adff7_50_307_676_544_987"
+          ],
+          "raw_luma": 112.40093796067106
+        }
+      ],
+      "variants": {
+        "baseline": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 50,
+              "bbox": [
+                304.6017761230469,
+                775.7816162109375,
+                380.78851318359375,
+                875.2840576171875
+              ],
+              "confidence": 0.7364988923072815,
+              "class_id": 4
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.35237252324842
+        },
+        "original80": {
+          "label": "other",
+          "applied": true,
+          "reason": "no_compatible_object",
+          "evidence": [],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.35237252324842,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        },
+        "candidate": {
+          "label": "pick_up",
+          "applied": true,
+          "reason": "single_frame_support",
+          "evidence": [
+            {
+              "frame": 44,
+              "bbox": [
+                306.7991943359375,
+                816.865234375,
+                407.4324645996094,
+                916.0609741210938
+              ],
+              "confidence": 0.8130355477333069,
+              "class_id": 73
+            }
+          ],
+          "object_min_conf": 0.581,
+          "lum_gate": 35.0,
+          "raw_luma": 112.35237252324842,
+          "class_schema": "coco80",
+          "compatible_classes": [
+            39,
+            41,
+            67,
+            73,
+            65
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "test": {
+      "windows": 25,
+      "sources": 9,
+      "models": {
+        "baseline": {
+          "true_actions_retained": 6,
+          "true_actions": 15,
+          "other_false_triggers": 1,
+          "other_windows": 3,
+          "labels": {
+            "drink": 6,
+            "other": 13,
+            "pick_up": 5,
+            "wave": 1
+          }
+        },
+        "original80": {
+          "true_actions_retained": 0,
+          "true_actions": 15,
+          "other_false_triggers": 0,
+          "other_windows": 3,
+          "labels": {
+            "other": 22,
+            "wave": 1,
+            "drink": 2
+          }
+        },
+        "candidate": {
+          "true_actions_retained": 2,
+          "true_actions": 15,
+          "other_false_triggers": 1,
+          "other_windows": 3,
+          "labels": {
+            "other": 19,
+            "wave": 1,
+            "pick_up": 3,
+            "drink": 2
+          }
+        }
+      }
+    },
+    "val": {
+      "windows": 30,
+      "sources": 8,
+      "models": {
+        "baseline": {
+          "true_actions_retained": 11,
+          "true_actions": 14,
+          "other_false_triggers": 4,
+          "other_windows": 7,
+          "labels": {
+            "pick_up": 5,
+            "drink": 17,
+            "other": 8
+          }
+        },
+        "original80": {
+          "true_actions_retained": 7,
+          "true_actions": 14,
+          "other_false_triggers": 1,
+          "other_windows": 7,
+          "labels": {
+            "pick_up": 1,
+            "other": 17,
+            "drink": 12
+          }
+        },
+        "candidate": {
+          "true_actions_retained": 9,
+          "true_actions": 14,
+          "other_false_triggers": 5,
+          "other_windows": 7,
+          "labels": {
+            "pick_up": 7,
+            "drink": 12,
+            "other": 11
+          }
+        }
+      }
+    }
+  },
+  "detector_threshold": 0.581,
+  "lum_gate": 35.0,
+  "note": "Secondary diagnostic on 55 historical selected action windows, frozen old upstream predictions/bindings, not a current complete pipeline or current action .925/RGB .972 rerun. Only detector changed."
+}

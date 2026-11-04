@@ -1,0 +1,57 @@
+{
+  "baseline": "/ssd1/wfs/project/lowlight/DarkScenePipeline/reports/object-prior-finetune-20261025/models/yolo26m_objects_candidate.pt",
+  "baseline_sha256": "b2d4bfc6d236626a81394b015bb848597c7aca397e09155145629a945c32422e",
+  "dataset_sha256": "a7c9f0a8682cbe74b7d9518cd01b4df565be644c47e14b10becaea7b96a30734",
+  "train_new_sources": [
+    2,
+    4,
+    5,
+    6,
+    8
+  ],
+  "val_new_sources": [
+    3
+  ],
+  "test_new_sources": [
+    1,
+    7,
+    9
+  ],
+  "note": "New training/val roles explicitly supersede prior feedback-only roles; original source grouping retained. All nine videos were previously inspected/calibrated, so test is held out from this training only. Same site and some same visitors across sources; no independent scene generalization claim.",
+  "classes": [
+    "bottle",
+    "cup",
+    "phone",
+    "camera",
+    "paper",
+    "portable_object",
+    "robot_or_exhibit",
+    "microphone"
+  ],
+  "seed": 27,
+  "epochs": 20,
+  "imgsz": 640,
+  "batch": 12,
+  "optimizer": "AdamW",
+  "lr0": 0.0001,
+  "freeze": 10,
+  "augmentation": "No mosaic/mixup; translation .03, scale .1, flip .5; mild HSV",
+  "selection": "Maximum validation one-to-one mAP50-95 across 20 saved epochs, earliest breaks ties; no test-based selection",
+  "evaluation": {
+    "confidence": 0.581,
+    "iou": 0.5,
+    "rgb_alpha": 0.972,
+    "raw_luma_gate": 35,
+    "action_threshold": 0.925,
+    "primary": "phone/camera/microphone mistaken for bottle/cup; final action decisions on complete new01/07/09",
+    "secondary": "true-container recall, old heldout object regression",
+    "mic_prior": "New class 7 is not added to prior support classes; fixed policy isolates detector change"
+  },
+  "limits": [
+    "Assistant visual auxiliary boxes; not independently adjudicated",
+    "Single training seed; sparse camera/microphone heldout support",
+    "Validation contains no camera/microphone; no class-specific epoch tuning",
+    "No cup annotations; cannot estimate cup performance",
+    "Mined hard cases, not representative exhaustive object annotations"
+  ]
+}
